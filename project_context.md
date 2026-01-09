@@ -43,33 +43,63 @@
 ├── lib/                # validations.ts, utils.ts
 ├── locales/            # en.json, zh.json
 └── tests/              # Property-based tests (Vitest)
-3. Core Correctness Properties (Must be Verified)
+```
+
+## 3. Core Correctness Properties (Must be Verified)
+
 See design.md for full definitions. All features must pass these Property Tests.
 
-Language Consistency: Switching locale updates ALL text instantly.
+- **Language Consistency**: Switching locale updates ALL text instantly.
+- **Persistence**: Refreshing page keeps the selected language.
+- **Scroll Position**: Switching language does not jump scroll position.
+- **Responsive Nav**: Hamburger menu appears < 768px; Links active based on scroll position.
+- **Form Safety**: Invalid data implies NO submission; Valid data implies success message.
+- **A11y**: All interactive elements must be keyboard accessible and focusable.
 
-Persistence: Refreshing page keeps the selected language.
+## 4. Current Project State
 
-Scroll Position: Switching language does not jump scroll position.
+**Phase**: 🌑 Initialization  
+**Current Focus**: 开发工具配置已完成，准备进入 Phase 1 项目搭建阶段。
 
-Responsive Nav: Hamburger menu appears < 768px; Links active based on scroll position.
+### Known Constraints & Rules
 
-Form Safety: Invalid data implies NO submission; Valid data implies success message.
+- **Git**: 提交消息必须使用简体中文（例如：`feat: 初始化项目结构`）
+- **Tests**: 没有属性测试通过的功能不能视为"完成"
+- **Performance**: 图片必须使用 `next/image` 并启用懒加载
+- **MCP**: 已配置四个 MCP 服务器，可在开发过程中使用增强功能
 
-A11y: All interactive elements must be keyboard accessible and focusable.
+## 5. Development Roadmap (Progress Tracking)
 
-4. Current Project State
-Phase: 🌑 Initialization Current Focus: Setting up the Next.js scaffold and Tailwind configuration.
+### Phase 0: 开发工具配置 ✅
 
-Known Constraints & Rules
-Git: Commit messages must be in Chinese (e.g., feat: 初始化项目结构).
+**[x] 0.1 MCP 服务器配置**
 
-Tests: No feature is "Done" until the corresponding Property Test is written and passing.
+- 配置 Filesystem MCP：支持项目目录的文件系统操作
+- 配置 Brave Search MCP：支持网络搜索功能（需 API Key）
+- 配置 Context7 MCP：支持文档和代码示例查询（需 API Key）
+- 配置 GitHub MCP：支持 GitHub 仓库和 Git 操作（需 Personal Access Token）
+- 创建自动配置脚本：`setup-mcp.sh`, `setup-brave-mcp.sh`, `setup-context7-mcp.sh`, `setup-github-mcp.sh`
+- 提供配置文档：`MCP-QUICKSTART.md`, `mcp-setup.md`
+- 创建配置模板文件：`mcp-config.json.template`（保护敏感 API 密钥）
+- 更新 `.gitignore` 以排除包含真实 API 密钥的配置文件
 
-Performance: Images must use next/image with lazy loading.
+**相关文件**：
 
-5. Development Roadmap (Progress Tracking)
-Phase 1: Initialization & Infrastructure
+- `mcp-config.json.template`：MCP 配置模板（不含敏感信息）
+- `MCP-QUICKSTART.md`：快速开始指南
+- `mcp-setup.md`：详细配置文档
+- `setup-*.sh`：自动化配置脚本
+
+**注意事项**：
+
+- `mcp-config.json` 包含真实的 API 密钥，已被 `.gitignore` 排除
+- 所有 MCP 配置脚本已设置为可执行
+- 配置文件位置：`~/.cursor/mcp.json`
+
+---
+
+### Phase 1: Initialization & Infrastructure
+
 [ ] 1.1 Project Setup: Next.js + TS + Tailwind (Config colors & fonts).
 
 [ ] 1.2 I18n Setup: next-intl, locales JSON structure, middleware.
@@ -78,7 +108,8 @@ Phase 1: Initialization & Infrastructure
 
 [ ] 1.4 Property Test: Language Persistence (Prop #2).
 
-Phase 2: Layout & Navigation
+### Phase 2: Layout & Navigation
+
 [ ] 3.1 Navbar: Sticky, scroll spy, smooth scroll.
 
 [ ] 3.2 Mobile Menu: Hamburger animation & logic.
@@ -89,7 +120,8 @@ Phase 2: Layout & Navigation
 
 [ ] Test: Hamburger logic (Prop #6), Scroll preservation (Prop #3).
 
-Phase 3: Home Page Sections (Static)
+### Phase 3: Home Page Sections (Static)
+
 [ ] 5.1 Hero Banner: Fullscreen (100vh), CTA.
 
 [ ] 5.3 About Us: Mission/Values/History.
@@ -102,7 +134,8 @@ Phase 3: Home Page Sections (Static)
 
 [ ] Test: Accordion interaction (Prop #9).
 
-Phase 4: Contact & Dynamic Features
+### Phase 4: Contact & Dynamic Features
+
 [ ] 7.1 Form Validation: Zod schema (validations.ts).
 
 [ ] 7.3 Contact UI: Form layout + File upload UI.
@@ -111,7 +144,8 @@ Phase 4: Contact & Dynamic Features
 
 [ ] Test: Form integrity (Prop #10, #11).
 
-Phase 5: Blog & Final Polish
+### Phase 5: Blog & Final Polish
+
 [ ] 9.1 Blog System: List view + Detail view + SEO.
 
 [ ] 10.1 Integration: Final One-Page assembly.
