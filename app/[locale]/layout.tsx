@@ -38,11 +38,14 @@ export function generateStaticParams() {
  */
 export default async function RootLayout({
   children,
-  params: { locale },
+  params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }>) {
+  // Next.js 15: params 需要被 await
+  const { locale } = await params;
+
   // 验证 locale 是否有效
   if (!locales.includes(locale as any)) {
     notFound();
