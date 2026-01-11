@@ -59,20 +59,22 @@ See design.md for full definitions. All features must pass these Property Tests.
 ## 4. Current Project State
 
 **Phase**: 🌱 Phase 1 - Infrastructure Setup
-**Current Focus**: 国际化配置完成，接下来进行测试环境搭建。
+**Current Focus**: 测试环境搭建完成，接下来进行语言持久化属性测试。
 **Last Updated**: 2026-01-11
 
 ### Recently Completed
 
 **✅ Task 1.1: Next.js 项目初始化**
+
 - Next.js 15.5.9 + TypeScript + App Router 项目初始化
 - Tailwind CSS 3.4+ 配置完成
   - 品牌色系：Primary Cyan (#81C3D7)、Primary Blue (#416788)、Secondary Grey (#5a6d7c)、Dark Blue (#2f6690)
   - 流式字体系统：使用 clamp() 实现响应式字体尺寸（Body: 14px-18px）
 - 项目目录结构创建：components/、lib/、locales/、tests/
-- 开发服务器验证成功（http://localhost:3000）
+- 开发服务器验证成功（<http://localhost:3000）>
 
 **✅ Task 1.2: I18n 国际化配置**
+
 - next-intl 4.7.0 安装完成
 - i18n 路由配置：middleware.ts 实现自动语言检测
 - 双语翻译文件：locales/en.json、locales/zh.json
@@ -80,6 +82,17 @@ See design.md for full definitions. All features must pass these Property Tests.
 - LanguageSwitcher 语言切换器组件（零布局偏移）
 - 路由前缀策略：localePrefix='always'（强制显示语言前缀）
 - 验证通过：双语切换功能正常运行
+
+**✅ Task 1.3: 测试环境搭建**
+
+- Vitest 4.0.16 测试框架安装完成
+- fast-check 4.5.3 属性测试库安装完成
+- @testing-library/react 16.3.1 组件测试库安装完成
+- happy-dom 20.1.0 浏览器环境模拟（替代 jsdom，更轻量高效）
+- vitest.config.mts 配置文件：支持 TypeScript、React、路径别名
+- 测试环境设置文件：tests/setup.ts（自动清理 DOM）
+- 测试脚本配置：test、test:watch、test:ui、test:coverage
+- 示例测试验证通过：6 个测试全部通过（属性测试 + React 组件测试）
 
 ### Known Constraints & Rules
 
@@ -124,7 +137,7 @@ See design.md for full definitions. All features must pass these Property Tests.
 
 [x] 1.2 I18n Setup: next-intl, locales JSON structure, middleware.
 
-[ ] 1.3 Test Setup: Vitest + fast-check env.
+[x] 1.3 Test Setup: Vitest + fast-check env.
 
 [ ] 1.4 Property Test: Language Persistence (Prop #2).
 
