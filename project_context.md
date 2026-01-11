@@ -59,7 +59,7 @@ See design.md for full definitions. All features must pass these Property Tests.
 ## 4. Current Project State
 
 **Phase**: 🚀 Phase 2 - Layout & Navigation
-**Current Focus**: Navbar 组件完成，接下来实现响应式汉堡菜单（Task 3.2）。
+**Current Focus**: 响应式汉堡菜单完成，接下来实现页脚组件（Task 3.3）。
 **Last Updated**: 2026-01-11
 
 ### Recently Completed
@@ -123,6 +123,28 @@ See design.md for full definitions. All features must pass these Property Tests.
 - 测试页面：创建包含所有导航区块的测试页面
 - 验证需求：5.1, 5.2, 3.3, 3.4
 
+**✅ Task 3.2: 响应式汉堡菜单**
+
+- 移动端菜单状态管理：useState + useRef
+- 汉堡菜单按钮（<768px 显示）：
+  - 三横线图标，打开时变为 X 形（旋转动画）
+  - 响应滚动状态的颜色变化
+  - 无障碍属性：aria-label, aria-expanded
+- 移动端菜单抽屉：
+  - 从右侧滑入/滑出动画（transform: translateX）
+  - 背景遮罩：半透明黑色 + 毛玻璃效果
+  - 点击遮罩关闭菜单
+- 键盘导航支持：
+  - ESC 键关闭菜单
+  - Tab 键焦点循环（焦点陷阱）
+  - 菜单打开时自动聚焦第一个链接
+- 用户体验优化：
+  - 菜单打开时锁定背景滚动
+  - 点击菜单项后自动关闭菜单
+  - 平滑动画过渡（300ms duration）
+- 响应式显示：md:hidden / hidden md:flex
+- 验证需求：5.4, 5.5, 5.6
+
 ### Known Constraints & Rules
 
 - **Git**: 提交消息必须使用简体中文（例如：`feat: 初始化项目结构`）
@@ -174,7 +196,7 @@ See design.md for full definitions. All features must pass these Property Tests.
 
 [x] 3.1 Navbar: Sticky, scroll spy, smooth scroll.
 
-[ ] 3.2 Mobile Menu: Hamburger animation & logic.
+[x] 3.2 Mobile Menu: Hamburger animation & logic.
 
 [ ] 3.3 Footer: Quick links & company info.
 
