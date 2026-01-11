@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 import HeroBanner from '@/components/sections/HeroBanner';
+import AboutUs from '@/components/sections/AboutUs';
 
 /**
  * 首页组件 - 单页滚动式网站
@@ -14,31 +15,7 @@ export default function Home() {
       <HeroBanner />
 
       {/* About 区块 */}
-      <section id="about" className="min-h-screen flex items-center justify-center bg-white">
-        <div className="max-w-4xl mx-auto p-8">
-          <h2 className="text-h2 font-bold text-primary-blue mb-6 text-center">
-            关于我们
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-h4 font-semibold text-primary-blue mb-4">
-                我们的使命
-              </h3>
-              <p className="text-body text-gray-700">
-                为全球品牌和合作伙伴提供创新、高质量、高性价比的背包解决方案
-              </p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-h4 font-semibold text-primary-blue mb-4">
-                我们的愿景
-              </h3>
-              <p className="text-body text-gray-700">
-                成为全球最值得信赖的背包制造合作伙伴
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <AboutUs />
 
       {/* Features 区块 */}
       <section
