@@ -58,8 +58,8 @@ See design.md for full definitions. All features must pass these Property Tests.
 
 ## 4. Current Project State
 
-**Phase**: 🌱 Phase 1 - Infrastructure Setup
-**Current Focus**: 测试环境搭建完成，接下来进行语言持久化属性测试。
+**Phase**: 🌱 Phase 1 - Infrastructure Setup (已完成)
+**Current Focus**: Phase 1 所有任务完成，准备进入 Phase 2 布局组件开发。
 **Last Updated**: 2026-01-11
 
 ### Recently Completed
@@ -82,6 +82,7 @@ See design.md for full definitions. All features must pass these Property Tests.
 - LanguageSwitcher 语言切换器组件（零布局偏移）
 - 路由前缀策略：localePrefix='always'（强制显示语言前缀）
 - 验证通过：双语切换功能正常运行
+- **英文翻译内容已完成**：已填充所有区块的完整英文翻译（about, banner, features, services, faq, contact, footer, nav, customization）
 
 **✅ Task 1.3: 测试环境搭建**
 
@@ -93,6 +94,18 @@ See design.md for full definitions. All features must pass these Property Tests.
 - 测试环境设置文件：tests/setup.ts（自动清理 DOM）
 - 测试脚本配置：test、test:watch、test:ui、test:coverage
 - 示例测试验证通过：6 个测试全部通过（属性测试 + React 组件测试）
+
+**✅ Task 1.4: 语言持久化属性测试**
+
+- 创建属性测试文件：tests/properties/locale-persistence.test.ts
+- 实现属性 2：语言偏好持久化往返一致性验证
+- 测试覆盖：
+  - localStorage 存储后读取的往返一致性（100 次迭代）
+  - 多次读取的一致性验证（100 次迭代）
+  - 语言切换时的正确性验证（100 次迭代）
+  - 补充单元测试：中文/英文偏好、空值处理、覆盖更新
+- 所有测试通过：13 个测试（包括 7 个新增的语言持久化测试）
+- 验证需求 2.4：语言偏好持久化功能正确性得到保证
 
 ### Known Constraints & Rules
 
@@ -131,7 +144,7 @@ See design.md for full definitions. All features must pass these Property Tests.
 
 ---
 
-### Phase 1: Initialization & Infrastructure
+### Phase 1: Initialization & Infrastructure ✅
 
 [x] 1.1 Project Setup: Next.js + TS + Tailwind (Config colors & fonts).
 
@@ -139,7 +152,7 @@ See design.md for full definitions. All features must pass these Property Tests.
 
 [x] 1.3 Test Setup: Vitest + fast-check env.
 
-[ ] 1.4 Property Test: Language Persistence (Prop #2).
+[x] 1.4 Property Test: Language Persistence (Prop #2).
 
 ### Phase 2: Layout & Navigation
 
