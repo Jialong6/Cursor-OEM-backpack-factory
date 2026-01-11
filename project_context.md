@@ -58,8 +58,19 @@ See design.md for full definitions. All features must pass these Property Tests.
 
 ## 4. Current Project State
 
-**Phase**: 🌑 Initialization  
-**Current Focus**: 开发工具配置已完成，准备进入 Phase 1 项目搭建阶段。
+**Phase**: 🌱 Phase 1 - Infrastructure Setup
+**Current Focus**: Next.js 项目初始化完成，接下来进行 I18n 和测试环境配置。
+**Last Updated**: 2026-01-09
+
+### Recently Completed (Task 1.1) ✅
+
+- ✅ Next.js 15.5.9 + TypeScript + App Router 项目初始化
+- ✅ Tailwind CSS 3.4+ 配置完成
+  - 品牌色系：Primary Cyan (#81C3D7)、Primary Blue (#416788)、Secondary Grey (#5a6d7c)、Dark Blue (#2f6690)
+  - 流式字体系统：使用 clamp() 实现响应式字体尺寸（Body: 14px-18px）
+- ✅ 项目目录结构创建：components/、lib/、locales/、tests/
+- ✅ 开发服务器验证成功（http://localhost:3000）
+- ✅ .gitignore 配置完成
 
 ### Known Constraints & Rules
 
@@ -100,7 +111,7 @@ See design.md for full definitions. All features must pass these Property Tests.
 
 ### Phase 1: Initialization & Infrastructure
 
-[ ] 1.1 Project Setup: Next.js + TS + Tailwind (Config colors & fonts).
+[x] 1.1 Project Setup: Next.js + TS + Tailwind (Config colors & fonts).
 
 [ ] 1.2 I18n Setup: next-intl, locales JSON structure, middleware.
 

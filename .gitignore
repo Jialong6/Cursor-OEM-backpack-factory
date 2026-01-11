@@ -10,6 +10,9 @@ yarn-error.log*
 out/
 build/
 dist/
+next-env.d.ts
+*.tsbuildinfo
+.vercel
 
 # Environment variables
 .env
@@ -47,3 +50,4 @@ Thumbs.db
 mcp-config.json
 # But keep the template version
 !mcp-config.json.template
+.claude/
