@@ -59,7 +59,7 @@ See design.md for full definitions. All features must pass these Property Tests.
 ## 4. Current Project State
 
 **Phase**: 🚀 Phase 2 - Layout & Navigation
-**Current Focus**: 页脚组件完成，接下来进行属性测试（汉堡菜单逻辑 & 滚动位置保持）。
+**Current Focus**: 属性测试完成（Property 3 & 6），Phase 2 基本完成，接下来进入 Phase 3。
 **Last Updated**: 2026-01-11
 
 ### Recently Completed
@@ -168,6 +168,22 @@ See design.md for full definitions. All features must pass these Property Tests.
 - 集成到 RootLayout：Navbar + children + Footer
 - 验证需求：13.1, 13.2, 13.3, 13.4, 13.5
 
+**✅ Property Tests: Phase 2 导航组件属性测试**
+
+- 创建属性测试文件：tests/properties/scroll-preservation.test.tsx
+- 实现属性 3：滚动位置保持
+  - 测试滚动位置保存逻辑（100 次迭代）
+  - 测试滚动位置恢复逻辑（100 次迭代）
+  - 测试往返一致性（误差 ±10px）（100 次迭代）
+  - 补充单元测试：0px、1000px、恢复清除、无保存位置等场景
+- 创建属性测试文件：tests/properties/responsive-menu.test.tsx
+- 实现属性 6：响应式汉堡菜单
+  - 测试移动端汉堡菜单可见性（<768px）（100 次迭代）
+  - 测试桌面端导航链接可见性（≥768px）（100 次迭代）
+  - 补充单元测试：320px、768px、1920px 等典型断点
+- 所有测试通过：26 个测试（包括 13 个新增的属性测试）
+- 验证属性 3 和属性 6 的正确性得到保证
+
 ### Known Constraints & Rules
 
 - **Git**: 提交消息必须使用简体中文（例如：`feat: 初始化项目结构`）
@@ -215,7 +231,7 @@ See design.md for full definitions. All features must pass these Property Tests.
 
 [x] 1.4 Property Test: Language Persistence (Prop #2).
 
-### Phase 2: Layout & Navigation
+### Phase 2: Layout & Navigation ✅
 
 [x] 3.1 Navbar: Sticky, scroll spy, smooth scroll.
 
@@ -223,9 +239,9 @@ See design.md for full definitions. All features must pass these Property Tests.
 
 [x] 3.3 Footer: Quick links & company info.
 
-[ ] 3.4 Language Switcher: Zero-layout-shift switching.
+[x] 3.4 Language Switcher: Zero-layout-shift switching (已完成于 Task 1.2).
 
-[ ] Test: Hamburger logic (Prop #6), Scroll preservation (Prop #3).
+[x] Test: Hamburger logic (Prop #6), Scroll preservation (Prop #3).
 
 ### Phase 3: Home Page Sections (Static)
 
