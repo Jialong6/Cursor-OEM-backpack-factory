@@ -1,4 +1,5 @@
 import { useTranslations } from 'next-intl';
+import HeroBanner from '@/components/sections/HeroBanner';
 
 /**
  * 首页组件 - 单页滚动式网站
@@ -10,21 +11,7 @@ export default function Home() {
   return (
     <main className="relative">
       {/* Banner 区块 */}
-      <section
-        id="banner"
-        className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-cyan to-primary-blue"
-      >
-        <div className="text-center text-white p-8 max-w-4xl">
-          <h1 className="text-h1 font-bold mb-6">Better Bags Myanmar</h1>
-          <p className="text-h3 mb-8">{t('common.tagline')}</p>
-          <p className="text-body max-w-2xl mx-auto mb-8">
-            专注于高品质 OEM 背包制造，服务全球客户超过 20 年
-          </p>
-          <button className="px-8 py-3 bg-white text-primary-blue rounded-lg hover:bg-white/90 transition-all font-semibold">
-            获取报价
-          </button>
-        </div>
-      </section>
+      <HeroBanner />
 
       {/* About 区块 */}
       <section id="about" className="min-h-screen flex items-center justify-center bg-white">
