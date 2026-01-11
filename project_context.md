@@ -58,8 +58,8 @@ See design.md for full definitions. All features must pass these Property Tests.
 
 ## 4. Current Project State
 
-**Phase**: 🌱 Phase 1 - Infrastructure Setup (已完成)
-**Current Focus**: Phase 1 所有任务完成，准备进入 Phase 2 布局组件开发。
+**Phase**: 🚀 Phase 2 - Layout & Navigation
+**Current Focus**: Navbar 组件完成，接下来实现响应式汉堡菜单（Task 3.2）。
 **Last Updated**: 2026-01-11
 
 ### Recently Completed
@@ -106,6 +106,22 @@ See design.md for full definitions. All features must pass these Property Tests.
   - 补充单元测试：中文/英文偏好、空值处理、覆盖更新
 - 所有测试通过：13 个测试（包括 7 个新增的语言持久化测试）
 - 验证需求 2.4：语言偏好持久化功能正确性得到保证
+
+**✅ Task 3.1: 固定导航栏组件（Navbar）**
+
+- 创建 Navbar 组件：components/layout/Navbar.tsx
+- 实现功能：
+  - 固定定位（sticky）在视口顶部，z-index: 50
+  - 滚动检测：页面滚动 > 20px 时背景从透明变为半透明白色 + 毛玻璃效果
+  - Intersection Observer 监听当前可见区块
+  - 导航链接高亮：当前区块对应的链接自动高亮
+  - 平滑滚动：点击导航链接平滑滚动到对应区块（考虑导航栏高度偏移）
+  - Logo 设计：BB 渐变色方块 + "Better Bags" 文字
+  - 集成 LanguageSwitcher 组件
+  - 桌面端导航链接布局（移动端汉堡菜单待实现）
+- 语言文件统一：zh.json 和 en.json 的导航键统一为 "nav"
+- 测试页面：创建包含所有导航区块的测试页面
+- 验证需求：5.1, 5.2, 3.3, 3.4
 
 ### Known Constraints & Rules
 
@@ -156,7 +172,7 @@ See design.md for full definitions. All features must pass these Property Tests.
 
 ### Phase 2: Layout & Navigation
 
-[ ] 3.1 Navbar: Sticky, scroll spy, smooth scroll.
+[x] 3.1 Navbar: Sticky, scroll spy, smooth scroll.
 
 [ ] 3.2 Mobile Menu: Hamburger animation & logic.
 

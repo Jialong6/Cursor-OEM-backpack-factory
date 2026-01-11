@@ -3,14 +3,15 @@
     "brandName": "缅甸优质背包厂",
     "tagline": "高端 OEM 背包制造商"
   },
-  "navigation": {
-    "home": "首页",
+  "nav": {
+    "banner": "首页",
     "about": "关于我们",
     "features": "核心优势",
     "services": "服务流程",
+    "process": "服务流程",
     "faq": "常见问题",
     "contact": "联系我们",
-    "blog": "博客"
+    "blogs": "博客"
   },
   "hero": {
     "title": "缅甸优质背包厂",
