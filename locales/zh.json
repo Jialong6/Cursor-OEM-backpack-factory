@@ -34,5 +34,49 @@
     "switchTo": "切换到",
     "english": "English",
     "chinese": "中文"
+  },
+  "footer": {
+    "companyInfo": {
+      "name": "缅甸优质背包有限公司",
+      "address": "缅甸仰光 Ngwe Pin Lai 工业区 Myay Taing Block No.24, Plot No. 48",
+      "email": "jay@biteerbags.com",
+      "phone": "+1 814.880.1463"
+    },
+    "email": "邮箱",
+    "tel": "电话/WhatsApp",
+    "quickLinks": "快捷链接",
+    "hours": "工作时间",
+    "hoursTime": "周一至周五 9:00-17:00",
+    "copyright": "版权所有 | Better Bags Myanmar OEM 背包工厂",
+    "links": [
+      {
+        "name": "首页",
+        "href": "#banner"
+      },
+      {
+        "name": "关于我们",
+        "href": "#about"
+      },
+      {
+        "name": "核心优势",
+        "href": "#features"
+      },
+      {
+        "name": "服务流程",
+        "href": "#services"
+      },
+      {
+        "name": "常见问题",
+        "href": "#faq"
+      },
+      {
+        "name": "联系我们",
+        "href": "#contact"
+      },
+      {
+        "name": "博客",
+        "href": "#blogs"
+      }
+    ]
   }
 }
