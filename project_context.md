@@ -58,9 +58,19 @@ See design.md for full definitions. All features must pass these Property Tests.
 
 ## 4. Current Project State
 
-**Phase**: 🚀 Phase 2 - Layout & Navigation
-**Current Focus**: 属性测试完成（Property 3 & 6），Phase 2 基本完成，接下来进入 Phase 3。
+**Phase**: ✅ Phase 2 已完成 → ⏳ Phase 3 准备中  
+**Current Focus**: Phase 2 布局组件开发已完成，包括 Navbar、Footer、响应式汉堡菜单和属性测试。下一步开始 Phase 3 首页区块组件开发。  
 **Last Updated**: 2026-01-11
+
+### Progress Summary
+
+**已完成阶段**: Phase 0 (MCP配置) ✅ | Phase 1 (初始化) ✅ | Phase 2 (布局组件) ✅  
+**当前阶段**: Phase 3 (首页区块组件) - 待开始  
+**测试状态**: 26 个测试通过（包括 Property 2, 3, 6）  
+**代码提交**: 13 个提交
+
+**已完成需求**: 需求 1, 2, 5, 13 ✅ | 需求 3 (60%), 需求 4 (50%)  
+**待完成需求**: 需求 6-12, 14-16 ⏳
 
 ### Recently Completed
 
@@ -243,7 +253,7 @@ See design.md for full definitions. All features must pass these Property Tests.
 
 [x] Test: Hamburger logic (Prop #6), Scroll preservation (Prop #3).
 
-### Phase 3: Home Page Sections (Static)
+### Phase 3: Home Page Sections (Static) ⏳
 
 [ ] 5.1 Hero Banner: Fullscreen (100vh), CTA.
 
@@ -256,6 +266,8 @@ See design.md for full definitions. All features must pass these Property Tests.
 [ ] 5.6 FAQ: Accordion component with Schema.org.
 
 [ ] Test: Accordion interaction (Prop #9).
+
+**下一步**: 创建 `components/sections/` 目录下的所有区块组件，使用已完成的英文翻译内容。
 
 ### Phase 4: Contact & Dynamic Features
 
@@ -276,3 +288,26 @@ See design.md for full definitions. All features must pass these Property Tests.
 [ ] 12.1 Polish: Fluid fonts, Responsive images, A11y checks.
 
 [ ] 13.1 SEO: Metadata, Sitemap, OpenGraph.
+
+---
+
+## 6. 测试覆盖情况
+
+### ✅ 已完成的属性测试
+
+- [x] **Property 2**: 语言偏好持久化往返 ✅
+- [x] **Property 3**: 滚动位置保持 ✅
+- [x] **Property 6**: 响应式汉堡菜单 ✅
+
+### ⏳ 待完成的属性测试
+
+- [ ] **Property 1**: 语言切换一致性
+- [ ] **Property 4**: 导航锚点滚动（Phase 3）
+- [ ] **Property 5**: 导航激活状态同步（Phase 6）
+- [ ] **Property 7**: 字体大小响应式范围（Phase 7）
+- [ ] **Property 8**: 图片宽高比保持（Phase 7）
+- [ ] **Property 9**: FAQ手风琴交互（Phase 3）
+- [ ] **Property 10**: 表单验证完整性（Phase 4）
+- [ ] **Property 11**: 表单提交成功处理（Phase 4）
+- [ ] **Property 12**: 键盘焦点可见性（Phase 9）
+- [ ] **Property 13**: 页脚链接滚动（可选）
