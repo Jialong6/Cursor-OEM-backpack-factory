@@ -1,0 +1,37 @@
+{
+  "common": {
+    "brandName": "Better Bags Myanmar",
+    "tagline": "Premium OEM Backpack Factory"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About Us",
+    "features": "Features",
+    "services": "Services",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "blog": "Blog"
+  },
+  "hero": {
+    "title": "Better Bags Myanmar",
+    "subtitle": "Premium OEM Backpack Factory",
+    "description": "High-end B2B manufacturing with customization services",
+    "cta": "Contact Us"
+  },
+  "home": {
+    "setupComplete": "Setup Complete",
+    "features": {
+      "nextjs": "Next.js 15 + TypeScript",
+      "tailwind": "Tailwind CSS Configured",
+      "brandColors": "Brand Colors Loaded",
+      "fluidFonts": "Fluid Typography Configured",
+      "i18n": "Bilingual Support (EN/ZH)",
+      "middleware": "Smart Language Detection"
+    }
+  },
+  "language": {
+    "switchTo": "Switch to",
+    "english": "English",
+    "chinese": "中文"
+  }
+}

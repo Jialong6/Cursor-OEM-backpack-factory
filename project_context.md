@@ -59,18 +59,27 @@ See design.md for full definitions. All features must pass these Property Tests.
 ## 4. Current Project State
 
 **Phase**: 🌱 Phase 1 - Infrastructure Setup
-**Current Focus**: Next.js 项目初始化完成，接下来进行 I18n 和测试环境配置。
-**Last Updated**: 2026-01-09
+**Current Focus**: 国际化配置完成，接下来进行测试环境搭建。
+**Last Updated**: 2026-01-11
 
-### Recently Completed (Task 1.1) ✅
+### Recently Completed
 
-- ✅ Next.js 15.5.9 + TypeScript + App Router 项目初始化
-- ✅ Tailwind CSS 3.4+ 配置完成
+**✅ Task 1.1: Next.js 项目初始化**
+- Next.js 15.5.9 + TypeScript + App Router 项目初始化
+- Tailwind CSS 3.4+ 配置完成
   - 品牌色系：Primary Cyan (#81C3D7)、Primary Blue (#416788)、Secondary Grey (#5a6d7c)、Dark Blue (#2f6690)
   - 流式字体系统：使用 clamp() 实现响应式字体尺寸（Body: 14px-18px）
-- ✅ 项目目录结构创建：components/、lib/、locales/、tests/
-- ✅ 开发服务器验证成功（http://localhost:3000）
-- ✅ .gitignore 配置完成
+- 项目目录结构创建：components/、lib/、locales/、tests/
+- 开发服务器验证成功（http://localhost:3000）
+
+**✅ Task 1.2: I18n 国际化配置**
+- next-intl 4.7.0 安装完成
+- i18n 路由配置：middleware.ts 实现自动语言检测
+- 双语翻译文件：locales/en.json、locales/zh.json
+- app 目录重构为 app/[locale] 结构（支持 /en、/zh 路由）
+- LanguageSwitcher 语言切换器组件（零布局偏移）
+- 路由前缀策略：localePrefix='always'（强制显示语言前缀）
+- 验证通过：双语切换功能正常运行
 
 ### Known Constraints & Rules
 
@@ -113,7 +122,7 @@ See design.md for full definitions. All features must pass these Property Tests.
 
 [x] 1.1 Project Setup: Next.js + TS + Tailwind (Config colors & fonts).
 
-[ ] 1.2 I18n Setup: next-intl, locales JSON structure, middleware.
+[x] 1.2 I18n Setup: next-intl, locales JSON structure, middleware.
 
 [ ] 1.3 Test Setup: Vitest + fast-check env.
 
