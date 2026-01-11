@@ -267,6 +267,17 @@ interface LocaleData {
     email: { label: string; value: string };
     whatsapp: { label: string; value: string };
   };
+  customization: {
+    title: string;
+    intro: string;
+    features: Array<{
+      title: string;
+      desc: string;
+      highlights: string[];
+    }>;
+    ready: string;
+    cta: string;
+  };
   footer: {
     companyInfo: { name: string; address: string; email: string; phone: string };
     quickLinks: string;

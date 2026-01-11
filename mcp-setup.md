@@ -11,11 +11,13 @@
 在您的用户目录下创建或编辑 MCP 配置文件：
 
 **macOS/Linux 路径：**
+
 ```
 ~/.cursor/mcp.json
 ```
 
 **Windows 路径：**
+
 ```
 C:\Users\{您的用户名}\.cursor\mcp.json
 ```
@@ -212,6 +214,7 @@ C:\Users\{您的用户名}\.cursor\mcp.json
 ### Filesystem MCP
 
 重启后，您可以在 Cursor 中使用 MCP 工具来：
+
 - 读取文件
 - 写入文件
 - 列出目录
@@ -221,6 +224,7 @@ C:\Users\{您的用户名}\.cursor\mcp.json
 ### Brave Search MCP
 
 配置完成后，您可以在 Cursor 中使用 Brave Search 进行网络搜索：
+
 - 搜索最新的技术文档
 - 查找编程问题的解决方案
 - 获取实时的技术资讯
@@ -228,6 +232,7 @@ C:\Users\{您的用户名}\.cursor\mcp.json
 ### Context7 MCP
 
 配置完成后，您可以在 Cursor 中使用 Context7 获取最新的文档和代码示例：
+
 - 获取特定版本的框架文档
 - 查询最新的 API 使用示例
 - 获取相关技术栈的最佳实践
@@ -276,6 +281,7 @@ C:\Users\{您的用户名}\.cursor\mcp.json
 4. **验证配置**：确认配置文件中 `BRAVE_API_KEY` 环境变量已正确设置
 5. **查看日志**：在 Cursor 的开发者工具中查看 MCP 相关的错误日志
 6. **测试 API Key**：可以在终端中测试 API Key 是否有效：
+
    ```bash
    curl "https://api.search.brave.com/res/v1/web/search?q=test" \
      -H "X-Subscription-Token: YOUR_API_KEY"
@@ -288,16 +294,65 @@ C:\Users\{您的用户名}\.cursor\mcp.json
 1. **检查 API Key**：确保 API Key 正确且有效
    - API Key 只会显示一次，如果遗失需要重新生成
 2. **检查 Node.js 版本**：确保 Node.js 版本为 v18 或更高
+
    ```bash
    node --version
    ```
+
 3. **检查网络连接**：Context7 API 需要稳定的网络连接
 4. **验证配置**：确认配置文件中 API Key 已正确传递为参数
 5. **查看日志**：在 Cursor 的开发者工具中查看 MCP 相关的错误日志
 6. **检查包安装**：确保 `@upstash/context7-mcp` 包可以正常安装
+
    ```bash
    npx -y @upstash/context7-mcp --help
    ```
+
+## 配置同步与维护
+
+### ⚠️ 重要提示：配置文件同步
+
+本项目使用两个配置文件：
+
+1. **`mcp-config.json`**（项目本地，被 `.gitignore` 排除）
+   - 包含真实的 API Keys
+   - 仅存在于本地开发环境
+
+2. **`~/.cursor/mcp.json`**（Cursor IDE 实际使用的配置）
+   - Cursor IDE 读取此文件
+   - 必须包含真实的 API Keys 才能正常工作
+
+### 配置同步检查
+
+**常见问题**：如果 `~/.cursor/mcp.json` 中使用占位符（如 `YOUR_BRAVE_API_KEY_HERE`），而项目的 `mcp-config.json` 中有真实值，需要同步配置。
+
+**解决方案**：
+
+1. **使用配置脚本**（推荐）：
+
+   ```bash
+   ./setup-brave-mcp.sh
+   ./setup-context7-mcp.sh
+   ./setup-github-mcp.sh
+   ```
+
+2. **手动同步**：
+   - 从项目的 `mcp-config.json` 复制真实 API Keys
+   - 更新 `~/.cursor/mcp.json` 中的对应值
+   - 确保所有占位符都被替换
+
+3. **验证配置**：
+
+   ```bash
+   # 检查是否还有占位符
+   grep -r "YOUR_.*_HERE" ~/.cursor/mcp.json
+   ```
+
+### 配置检查清单
+
+- [ ] 所有 API Keys 都不是占位符
+- [ ] JSON 格式正确
+- [ ] 已重启 Cursor IDE（修改配置后必须重启）
 
 ## 参考资料
 
@@ -305,3 +360,4 @@ C:\Users\{您的用户名}\.cursor\mcp.json
 - [Cursor MCP 文档](https://docs.cursor.com/context/model-context-protocol)
 - [Context7 官方文档](https://context7.com/docs/installation)
 - [Context7 Dashboard](https://context7.com/dashboard)
+- [GitHub Personal Access Tokens](https://github.com/settings/tokens)
