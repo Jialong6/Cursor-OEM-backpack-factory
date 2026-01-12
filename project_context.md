@@ -59,8 +59,8 @@ See design.md for full definitions. All features must pass these Property Tests.
 ## 4. Current Project State
 
 **Phase**: ✅ Phase 2 已完成 → ✅ Phase 3 已完成 → ✅ Phase 4 已完成 → ✅ Phase 5 已完成（博客功能）
-**Current Focus**: Phase 5 博客功能开发已完成（博客预览区块 + 博客列表页 + 博客详情页）。下一步进入 Phase 10 首页整合与平滑滚动。
-**Last Updated**: 2026-01-12
+**Current Focus**: Phase 5 博客功能开发已完成。**重要修复**：修复了 next-intl v4.7 的 404 错误（使用 requestLocale API）。下一步进入 Phase 10 首页整合与平滑滚动。
+**Last Updated**: 2026-01-13
 
 ### Progress Summary
 
@@ -93,6 +93,11 @@ See design.md for full definitions. All features must pass these Property Tests.
 - 路由前缀策略：localePrefix='always'（强制显示语言前缀）
 - 验证通过：双语切换功能正常运行
 - **英文翻译内容已完成**：已填充所有区块的完整英文翻译（about, banner, features, services, faq, contact, footer, nav, customization）
+- **🔧 2026-01-13 修复**：修复 next-intl v4.7 的 404 错误
+  - 问题：使用了旧版 `locale` API 导致所有路由返回 404
+  - 解决：更新 `i18n.ts` 使用 `requestLocale` 并正确 await（适配 next-intl v3.22+）
+  - 修复文件：`i18n.ts`, `app/[locale]/layout.tsx`, `app/[locale]/page.tsx`
+  - 文档更新：新增 `TROUBLESHOOTING.md` 包含完整的 404 排查指南和案例研究
 
 **✅ Task 1.3: 测试环境搭建**
 
