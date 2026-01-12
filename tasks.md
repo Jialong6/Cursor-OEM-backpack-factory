@@ -114,7 +114,7 @@
   - 确保所有测试通过，如有问题请询问用户。
 
 - [ ] 7. 联系表单与API开发
-  - [ ] 7.1 创建表单验证Schema
+  - [x] 7.1 创建表单验证Schema ✅
     - 创建lib/validations.ts
     - 使用Zod定义ContactFormData验证规则
     - 定义必填字段和可选字段验证

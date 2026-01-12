@@ -297,6 +297,25 @@ See design.md for full definitions. All features must pass these Property Tests.
 - 验证需求：10.2, 10.3
 - 验证属性 9 的正确性得到保证
 
+**✅ Task 7.1: 创建表单验证 Schema**
+
+- 创建 lib/validations.ts：完整的表单验证规则
+- 安装依赖：zod, react-hook-form, @hookform/resolvers
+- 表单字段定义：
+  - 必填字段（8个）：firstName, lastName, email, countryRegion, companyBrandName, phoneNumber, subject, message
+  - 下拉选择字段（2个）：orderQuantity (4选项), techPackAvailability (3选项)
+  - 可选字段（2个）：launchTimeline, specialRequests
+  - mCaptcha验证：mcaptchaToken
+- 文件上传验证：
+  - 最大文件大小：10MB
+  - 支持格式：JPEG, PNG, WebP, PDF, DOC, DOCX
+  - 最多 5 个文件
+  - 提供 validateFile() 和 validateFiles() 辅助函数
+- 类型导出：ContactFormData, OrderQuantity, TechPackAvailability, ContactFormResponse
+- 辅助函数：formatZodErrors() 格式化错误消息
+- 所有测试通过：44/44
+- 验证需求：11.2, 11.3, 11.4, 11.5, 11.6, 11.7
+
 ### Known Constraints & Rules
 
 - **Git**: 提交消息必须使用简体中文（例如：`feat: 初始化项目结构`）
