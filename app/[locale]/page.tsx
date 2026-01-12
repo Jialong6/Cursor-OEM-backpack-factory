@@ -3,6 +3,7 @@ import HeroBanner from '@/components/sections/HeroBanner';
 import AboutUs from '@/components/sections/AboutUs';
 import Features from '@/components/sections/Features';
 import Services from '@/components/sections/Services';
+import FAQ from '@/components/sections/FAQ';
 
 /**
  * 首页组件 - 单页滚动式网站
@@ -26,30 +27,7 @@ export default function Home() {
       <Services />
 
       {/* FAQ 区块 */}
-      <section
-        id="faq"
-        className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100"
-      >
-        <div className="max-w-4xl mx-auto p-8">
-          <h2 className="text-h2 font-bold text-primary-blue mb-12 text-center">
-            常见问题
-          </h2>
-          <div className="space-y-4">
-            {[
-              { q: '最小起订量是多少？', a: '我们的 MOQ 是 150 件/款/色' },
-              { q: '打样需要多长时间？', a: '通常 7-10 个工作日' },
-              { q: '是否接受 OEM 订单？', a: '是的，我们专注于 OEM/ODM 制造' },
-            ].map((item, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="text-h4 font-semibold text-primary-blue mb-2">
-                  {item.q}
-                </h3>
-                <p className="text-body text-gray-600">{item.a}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FAQ />
 
       {/* Contact 区块 */}
       <section
