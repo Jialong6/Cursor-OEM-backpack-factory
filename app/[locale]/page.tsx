@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl';
 import HeroBanner from '@/components/sections/HeroBanner';
 import AboutUs from '@/components/sections/AboutUs';
+import Features from '@/components/sections/Features';
 
 /**
  * 首页组件 - 单页滚动式网站
@@ -18,31 +19,7 @@ export default function Home() {
       <AboutUs />
 
       {/* Features 区块 */}
-      <section
-        id="features"
-        className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100"
-      >
-        <div className="max-w-6xl mx-auto p-8">
-          <h2 className="text-h2 font-bold text-primary-blue mb-12 text-center">
-            核心优势
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {['灵活性', '沟通', '质量控制', '竞争力价格'].map((feature, index) => (
-              <div
-                key={index}
-                className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
-              >
-                <h3 className="text-h4 font-semibold text-primary-blue mb-3">
-                  {feature}
-                </h3>
-                <p className="text-body text-gray-600">
-                  专业的服务和卓越的品质保证
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Features />
 
       {/* Services 区块 */}
       <section id="services" className="min-h-screen flex items-center justify-center bg-white">
