@@ -58,16 +58,16 @@ See design.md for full definitions. All features must pass these Property Tests.
 
 ## 4. Current Project State
 
-**Phase**: ✅ Phase 2 已完成 → ✅ Phase 3 已完成
-**Current Focus**: Phase 3 首页区块组件全部完成。已完成 HeroBanner、AboutUs、Features、Services、FAQ 组件。下一步进行属性测试 (Task 5.7) 和 Phase 4 联系表单开发。
+**Phase**: ✅ Phase 2 已完成 → ✅ Phase 3 已完成 → ⏳ Phase 4 准备中
+**Current Focus**: Phase 3 全部完成（组件开发 + 属性测试）。下一步进入 Phase 4 联系表单与 API 开发。
 **Last Updated**: 2026-01-12
 
 ### Progress Summary
 
 **已完成阶段**: Phase 0 (MCP配置) ✅ | Phase 1 (初始化) ✅ | Phase 2 (布局组件) ✅ | Phase 3 (首页区块) ✅
-**当前阶段**: Phase 3 完成，准备进入 Phase 4 (联系表单)
-**测试状态**: 36 个测试通过（包括 Property 2, 3, 4, 6）
-**代码提交**: 21 个提交
+**当前阶段**: 准备进入 Phase 4 (联系表单与 API)
+**测试状态**: 44 个测试通过（包括 Property 2, 3, 4, 6, 9）
+**代码提交**: 25 个提交
 
 **已完成需求**: 需求 1, 2, 5, 6, 7, 8, 9, 10, 13 ✅ | 需求 3 (60%), 需求 4 (50%)
 **待完成需求**: 需求 11-12, 14-16 ⏳
@@ -280,6 +280,23 @@ See design.md for full definitions. All features must pass these Property Tests.
 - 所有测试通过：36/36
 - 验证需求：10.1, 10.2, 10.3, 10.4, 10.5
 
+**✅ Task 5.7: FAQ 手风琴交互属性测试**
+
+- 创建属性测试文件：tests/properties/accordion-interaction.test.tsx
+- 实现属性 9：FAQ手风琴交互
+  - 属性测试 1：点击任意问题后，该问题展开且只有一个问题处于展开状态（100 次迭代）
+  - 属性测试 2：连续点击多个问题时，正确处理展开/折叠状态切换（100 次迭代）
+  - 属性测试 3：点击已展开的问题会将其折叠，所有问题都变为折叠状态（100 次迭代）
+  - 补充单元测试：基本交互、默认展开、aria-controls、空列表、单个问题切换
+- 安装 @testing-library/user-event 依赖
+- 测试优化：
+  - 使用 beforeEach 清理 DOM
+  - 使用 within(container) 避免多组件渲染冲突
+  - 使用 getAllByRole('button') 精确查找按钮
+- 所有测试通过：44/44
+- 验证需求：10.2, 10.3
+- 验证属性 9 的正确性得到保证
+
 ### Known Constraints & Rules
 
 - **Git**: 提交消息必须使用简体中文（例如：`feat: 初始化项目结构`）
@@ -353,9 +370,11 @@ See design.md for full definitions. All features must pass these Property Tests.
 
 [x] 5.6 FAQ: Accordion component with Schema.org.
 
-[ ] 5.7 Test: Accordion interaction (Prop #9).
+[x] 5.7 Test: Accordion interaction (Prop #9).
 
-**下一步**: 开发 FAQ 手风琴交互属性测试 (Task 5.7)，然后进入 Phase 4 联系表单开发。
+**Phase 3 已完成！** 所有首页区块组件和对应的属性测试已全部实现。
+
+**下一步**: 进入 Phase 4 联系表单与 API 开发。
 
 ### Phase 4: Contact & Dynamic Features
 
@@ -387,6 +406,7 @@ See design.md for full definitions. All features must pass these Property Tests.
 - [x] **Property 3**: 滚动位置保持 ✅
 - [x] **Property 4**: 导航锚点滚动 ✅
 - [x] **Property 6**: 响应式汉堡菜单 ✅
+- [x] **Property 9**: FAQ手风琴交互 ✅
 
 ### ⏳ 待完成的属性测试
 
@@ -394,7 +414,6 @@ See design.md for full definitions. All features must pass these Property Tests.
 - [ ] **Property 5**: 导航激活状态同步（Phase 6）
 - [ ] **Property 7**: 字体大小响应式范围（Phase 7）
 - [ ] **Property 8**: 图片宽高比保持（Phase 7）
-- [ ] **Property 9**: FAQ手风琴交互（Phase 3）
 - [ ] **Property 10**: 表单验证完整性（Phase 4）
 - [ ] **Property 11**: 表单提交成功处理（Phase 4）
 - [ ] **Property 12**: 键盘焦点可见性（Phase 9）
