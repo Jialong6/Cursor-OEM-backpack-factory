@@ -2,6 +2,7 @@ import { useTranslations } from 'next-intl';
 import HeroBanner from '@/components/sections/HeroBanner';
 import AboutUs from '@/components/sections/AboutUs';
 import Features from '@/components/sections/Features';
+import Services from '@/components/sections/Services';
 
 /**
  * 首页组件 - 单页滚动式网站
@@ -22,30 +23,7 @@ export default function Home() {
       <Features />
 
       {/* Services 区块 */}
-      <section id="services" className="min-h-screen flex items-center justify-center bg-white">
-        <div className="max-w-4xl mx-auto p-8">
-          <h2 className="text-h2 font-bold text-primary-blue mb-12 text-center">
-            服务流程
-          </h2>
-          <div className="space-y-4">
-            {['咨询', '报价', '打样', '量产', '质检', '交付'].map((step, index) => (
-              <div
-                key={index}
-                className="flex items-center gap-4 bg-gray-50 p-6 rounded-lg"
-              >
-                <div className="flex-shrink-0 w-10 h-10 bg-primary-cyan text-white rounded-full flex items-center justify-center font-bold">
-                  {index + 1}
-                </div>
-                <div>
-                  <h3 className="text-h4 font-semibold text-primary-blue">
-                    {step}
-                  </h3>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Services />
 
       {/* FAQ 区块 */}
       <section
