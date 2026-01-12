@@ -216,6 +216,11 @@ export function validateFiles(files: File[]): { valid: boolean; errors: string[]
 export function formatZodErrors(errors: z.ZodError): Record<string, string[]> {
   const formattedErrors: Record<string, string[]> = {};
 
+  // 防御性检查：确保 errors.errors 存在且是数组
+  if (!errors || !errors.errors || !Array.isArray(errors.errors)) {
+    return formattedErrors;
+  }
+
   errors.errors.forEach((error) => {
     const path = error.path.join('.');
     if (!formattedErrors[path]) {

@@ -297,24 +297,70 @@ See design.md for full definitions. All features must pass these Property Tests.
 - 验证需求：10.2, 10.3
 - 验证属性 9 的正确性得到保证
 
-**✅ Task 7.1: 创建表单验证 Schema**
+---
 
-- 创建 lib/validations.ts：完整的表单验证规则
-- 安装依赖：zod, react-hook-form, @hookform/resolvers
-- 表单字段定义：
-  - 必填字段（8个）：firstName, lastName, email, countryRegion, companyBrandName, phoneNumber, subject, message
-  - 下拉选择字段（2个）：orderQuantity (4选项), techPackAvailability (3选项)
-  - 可选字段（2个）：launchTimeline, specialRequests
-  - mCaptcha验证：mcaptchaToken
+### Phase 4: 联系表单与API开发
+
+**✅ Task 7.1: 表单验证Schema**
+
+- 创建表单验证文件：lib/validations.ts
+- 使用 Zod 定义完整的联系表单验证规则：
+  - 8 个必填字段：firstName, lastName, email, countryRegion, companyBrandName, phoneNumber, subject, message
+  - 2 个下拉选择字段：orderQuantity (4个选项), techPackAvailability (3个选项)
+  - 2 个可选字段：launchTimeline, specialRequests
+  - 1 个 mCaptcha 验证 token
+- 定义字段验证规则：
+  - 名字字段：2-50字符，只允许字母、空格、连字符、撇号
+  - 邮箱：标准邮箱格式验证
+  - 电话：10-20字符，只允许数字、空格、括号、加号、连字符
+  - 消息：20-2000字符
+  - 主题：5-200字符
 - 文件上传验证：
   - 最大文件大小：10MB
-  - 支持格式：JPEG, PNG, WebP, PDF, DOC, DOCX
-  - 最多 5 个文件
-  - 提供 validateFile() 和 validateFiles() 辅助函数
-- 类型导出：ContactFormData, OrderQuantity, TechPackAvailability, ContactFormResponse
-- 辅助函数：formatZodErrors() 格式化错误消息
+  - 允许的文件类型：图片（JPEG, PNG, WebP）、文档（PDF, DOC, DOCX）
+  - 最大文件数：5个
+  - 提供 validateFile 和 validateFiles 辅助函数
+- 错误格式化：提供 formatZodErrors 函数将 Zod 错误转换为用户友好的消息
+- 导出 TypeScript 类型：ContactFormData, FileUploadData, ContactFormWithFiles, ContactFormResponse
 - 所有测试通过：44/44
 - 验证需求：11.2, 11.3, 11.4, 11.5, 11.6, 11.7
+
+**✅ Task 7.2: 表单验证完整性属性测试**
+
+- 创建属性测试文件：tests/properties/form-validation.test.tsx（28个测试，所有通过）
+- 实现属性 10：表单验证完整性
+- **优化性能**：移除 filter() 使用，改为直接生成有效数据
+  - 自定义 nameArbitrary：生成包含字母、空格、连字符、撇号的名字（2-50字符）
+  - 自定义 phoneArbitrary：生成包含数字和电话符号的号码（10-20字符）
+  - 自定义 simpleEmailArbitrary：生成符合 Zod 验证的简单邮箱格式（避免 fc.emailAddress() 生成被 Zod 拒绝的邮箱）
+  - nonEmptyString 辅助函数：确保生成的字符串不是全空格
+- **属性测试**（11个测试，100次迭代）：
+  1. 任意必填字段缺失时，验证应失败
+  2. 所有必填字段都有效时，验证应成功
+  3. 任意无效邮箱格式应被拒绝
+  4. 任意包含非法字符的电话号码应被拒绝
+  5. 任意长度小于10的电话号码应被拒绝
+  6. firstName 超过最大长度时应被拒绝
+  7. message 长度小于20时应被拒绝
+  8. subject 长度小于5时应被拒绝
+  9. 任意无效的 orderQuantity 值应被拒绝
+  10. 任意无效的 techPackAvailability 值应被拒绝
+  11. launchTimeline 和 specialRequests 为空或缺失时不应阻止验证
+- **文件上传测试**（3个属性测试）：
+  - 任意文件大小超过10MB应被 validateFile 拒绝
+  - 任意不支持的文件类型应被 validateFile 拒绝
+  - 任意支持的文件类型且大小小于10MB应被 validateFile 接受
+  - 超过5个文件时应被 validateFiles 拒绝
+- **单元测试补充**（16个测试）：
+  - 必填字段验证：空字符串、无效邮箱、无效电话、消息太短、所有字段有效
+  - 文件上传验证：文件太大、不支持类型、有效文件、超过5个文件、少于5个有效文件
+  - 可选字段验证：launchTimeline 和 specialRequests 为空不影响验证
+- **防御性编程**：formatZodErrors 函数添加防御性检查，处理边缘情况
+- 所有测试通过：72/72（包括之前的44个 + 新增的28个）
+- 验证需求：11.10
+- 验证属性 10 的正确性得到保证
+
+---
 
 ### Known Constraints & Rules
 
