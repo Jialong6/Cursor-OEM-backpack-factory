@@ -99,7 +99,7 @@
     - 以步骤形式展示六个服务阶段
     - 实现响应式布局（移动端纵向、桌面端横向）
     - _需求: 9.1, 9.2, 9.3, 9.4_
-  - [ ] 5.6 实现FAQ区块（FAQ）
+  - [x] 5.6 实现FAQ区块（FAQ） ✅
     - 创建components/sections/FAQ.tsx和components/ui/Accordion.tsx
     - 实现分类组织的手风琴FAQ
     - 点击问题展开答案，折叠其他答案

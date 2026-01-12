@@ -58,19 +58,19 @@ See design.md for full definitions. All features must pass these Property Tests.
 
 ## 4. Current Project State
 
-**Phase**: ✅ Phase 2 已完成 → ⏳ Phase 3 进行中
-**Current Focus**: Phase 3 首页区块组件开发中。已完成 HeroBanner、AboutUs、Features、Services 组件。下一步开发 FAQ 组件。
+**Phase**: ✅ Phase 2 已完成 → ✅ Phase 3 已完成
+**Current Focus**: Phase 3 首页区块组件全部完成。已完成 HeroBanner、AboutUs、Features、Services、FAQ 组件。下一步进行属性测试 (Task 5.7) 和 Phase 4 联系表单开发。
 **Last Updated**: 2026-01-12
 
 ### Progress Summary
 
-**已完成阶段**: Phase 0 (MCP配置) ✅ | Phase 1 (初始化) ✅ | Phase 2 (布局组件) ✅
-**当前阶段**: Phase 3 (首页区块组件) - 进行中 (4/5 已完成)
+**已完成阶段**: Phase 0 (MCP配置) ✅ | Phase 1 (初始化) ✅ | Phase 2 (布局组件) ✅ | Phase 3 (首页区块) ✅
+**当前阶段**: Phase 3 完成，准备进入 Phase 4 (联系表单)
 **测试状态**: 36 个测试通过（包括 Property 2, 3, 4, 6）
-**代码提交**: 18 个提交
+**代码提交**: 21 个提交
 
-**已完成需求**: 需求 1, 2, 5, 6, 7, 8, 9, 13 ✅ | 需求 3 (60%), 需求 4 (50%)
-**待完成需求**: 需求 10-12, 14-16 ⏳
+**已完成需求**: 需求 1, 2, 5, 6, 7, 8, 9, 10, 13 ✅ | 需求 3 (60%), 需求 4 (50%)
+**待完成需求**: 需求 11-12, 14-16 ⏳
 
 ### Recently Completed
 
@@ -262,6 +262,24 @@ See design.md for full definitions. All features must pass these Property Tests.
 - 所有测试通过：36/36
 - 验证需求：9.1, 9.2, 9.3, 9.4
 
+**✅ Task 5.6: FAQ 组件**
+
+- 创建 Accordion UI 组件：components/ui/Accordion.tsx
+  - 可重用的手风琴组件
+  - 一次只展开一个项目（点击问题展开答案，自动折叠其他已展开的答案）
+  - 平滑动画过渡（300ms duration）
+  - 无障碍键盘支持（aria-expanded, aria-controls）
+- 创建 FAQ 区块组件：components/sections/FAQ.tsx
+  - 展示 5 个分类的 FAQ 内容：常规及售前、订单打样与报价、样品开发、生产进度与运输、质量控制与售后支持
+  - 集成 Accordion 组件实现手风琴交互
+  - 添加 FAQPage JSON-LD 结构化数据
+  - 支持中英文内容切换
+  - 底部添加 CTA 按钮引导联系
+- 翻译内容：zh.json 和 en.json 已有完整的 faq.sections 翻译
+- 集成到 app/[locale]/page.tsx
+- 所有测试通过：36/36
+- 验证需求：10.1, 10.2, 10.3, 10.4, 10.5
+
 ### Known Constraints & Rules
 
 - **Git**: 提交消息必须使用简体中文（例如：`feat: 初始化项目结构`）
@@ -321,7 +339,7 @@ See design.md for full definitions. All features must pass these Property Tests.
 
 [x] Test: Hamburger logic (Prop #6), Scroll preservation (Prop #3).
 
-### Phase 3: Home Page Sections (Static) ⏳
+### Phase 3: Home Page Sections (Static) ✅
 
 [x] 5.1 Hero Banner: Fullscreen (100vh), CTA.
 
@@ -333,11 +351,11 @@ See design.md for full definitions. All features must pass these Property Tests.
 
 [x] 5.5 Services: 6-step process (Responsive layout).
 
-[ ] 5.6 FAQ: Accordion component with Schema.org.
+[x] 5.6 FAQ: Accordion component with Schema.org.
 
 [ ] 5.7 Test: Accordion interaction (Prop #9).
 
-**下一步**: 开发 FAQ 组件（手风琴形式）及其属性测试。
+**下一步**: 开发 FAQ 手风琴交互属性测试 (Task 5.7)，然后进入 Phase 4 联系表单开发。
 
 ### Phase 4: Contact & Dynamic Features
 
