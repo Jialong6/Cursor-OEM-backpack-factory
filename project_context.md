@@ -58,19 +58,19 @@ See design.md for full definitions. All features must pass these Property Tests.
 
 ## 4. Current Project State
 
-**Phase**: ✅ Phase 2 已完成 → ⏳ Phase 3 准备中  
-**Current Focus**: Phase 2 布局组件开发已完成，包括 Navbar、Footer、响应式汉堡菜单和属性测试。下一步开始 Phase 3 首页区块组件开发。  
-**Last Updated**: 2026-01-11
+**Phase**: ✅ Phase 2 已完成 → ⏳ Phase 3 进行中
+**Current Focus**: Phase 3 首页区块组件开发中。已完成 HeroBanner、AboutUs、Features、Services 组件。下一步开发 FAQ 组件。
+**Last Updated**: 2026-01-12
 
 ### Progress Summary
 
-**已完成阶段**: Phase 0 (MCP配置) ✅ | Phase 1 (初始化) ✅ | Phase 2 (布局组件) ✅  
-**当前阶段**: Phase 3 (首页区块组件) - 待开始  
-**测试状态**: 26 个测试通过（包括 Property 2, 3, 6）  
-**代码提交**: 13 个提交
+**已完成阶段**: Phase 0 (MCP配置) ✅ | Phase 1 (初始化) ✅ | Phase 2 (布局组件) ✅
+**当前阶段**: Phase 3 (首页区块组件) - 进行中 (4/5 已完成)
+**测试状态**: 36 个测试通过（包括 Property 2, 3, 4, 6）
+**代码提交**: 18 个提交
 
-**已完成需求**: 需求 1, 2, 5, 13 ✅ | 需求 3 (60%), 需求 4 (50%)  
-**待完成需求**: 需求 6-12, 14-16 ⏳
+**已完成需求**: 需求 1, 2, 5, 6, 7, 8, 9, 13 ✅ | 需求 3 (60%), 需求 4 (50%)
+**待完成需求**: 需求 10-12, 14-16 ⏳
 
 ### Recently Completed
 
@@ -194,6 +194,74 @@ See design.md for full definitions. All features must pass these Property Tests.
 - 所有测试通过：26 个测试（包括 13 个新增的属性测试）
 - 验证属性 3 和属性 6 的正确性得到保证
 
+**✅ Task 5.1: HeroBanner 组件**
+
+- 创建 HeroBanner 组件：components/sections/HeroBanner.tsx
+- 实现功能：
+  - 全屏设计（min-h-screen）+ 渐变背景
+  - 标题、标语、三段介绍文字
+  - "立即咨询" CTA 按钮（平滑滚动到联系区块）
+  - 六大数据统计展示（20+年经验、150+MOQ、7-10天打样、100%质检等）
+  - 向下滚动指示器（动画效果）
+- 语言文件更新：zh.json 添加 banner 和 features.stats 翻译
+- 集成到 app/[locale]/page.tsx
+- 验证需求：6.1, 6.2, 6.3, 6.4, 6.5
+
+**✅ Task 5.2: 导航锚点滚动属性测试**
+
+- 创建属性测试文件：tests/properties/navigation-scroll.test.tsx
+- 实现属性 4：导航锚点滚动
+  - 测试点击导航链接滚动到正确位置（100 次迭代）
+  - 测试滚动偏移量计算（考虑导航栏高度）（100 次迭代）
+  - 测试所有导航链接都能正确滚动（100 次迭代）
+  - 补充单元测试：各个导航区块（banner, about, features 等）
+- IntersectionObserver 模拟：修复类构造器问题
+- DOM 清理优化：每次属性测试迭代后清理 DOM
+- 所有测试通过：36 个测试（包括 10 个新增的导航滚动测试）
+- 验证属性 4 的正确性得到保证
+
+**✅ Task 5.3: AboutUs 组件**
+
+- 创建 AboutUs 组件：components/sections/AboutUs.tsx
+- 实现功能：
+  - 公司使命和愿景展示（带图标）
+  - 六大核心价值观展示（3列网格布局）
+  - 公司历史和介绍（4段描述）
+  - 合作品牌展示（Anello、New Balance、Nike、Fila）
+  - Organization JSON-LD 结构化数据
+- 语言文件更新：zh.json 添加 about 完整翻译
+- 集成到 app/[locale]/page.tsx
+- 验证需求：7.1, 7.2, 7.3, 7.4, 7.5, 7.6
+
+**✅ Task 5.4: Features 组件**
+
+- 创建 Features 组件：components/sections/Features.tsx
+- 实现功能：
+  - Jay 个人介绍区块
+  - 四大核心优势展示（使用对应品牌色）
+    - 稳定的质量与一致性 (#81C3D7)
+    - 灵活的 OEM/ODM 解决方案 (#416788)
+    - 竞争力的量产价格 (#5a6d7c)
+    - 便捷的地理位置 (#2f6690)
+  - 八种定制选项展示（4列网格布局）
+  - "立即定制" CTA 按钮（平滑滚动到联系区块）
+- 语言文件优化：用户优化 zh.json 内容更专业简洁
+- 集成到 app/[locale]/page.tsx
+- 验证需求：8.1, 8.2, 8.3, 8.4, 8.5
+
+**✅ Task 5.5: Services 组件**
+
+- 创建 Services 组件：components/sections/Services.tsx
+- 实现功能：
+  - 六步服务流程展示：接收客户询盘、生产报价、样品开发、批量生产、质量控制、包装与运输
+  - 每个步骤包含：图标、编号、标题、详细描述
+  - 响应式网格布局（移动端纵向、平板端2列、桌面端3列）
+  - 流程说明区块
+- 翻译内容：zh.json 和 en.json 已有完整的 services 翻译
+- 集成到 app/[locale]/page.tsx
+- 所有测试通过：36/36
+- 验证需求：9.1, 9.2, 9.3, 9.4
+
 ### Known Constraints & Rules
 
 - **Git**: 提交消息必须使用简体中文（例如：`feat: 初始化项目结构`）
@@ -255,19 +323,21 @@ See design.md for full definitions. All features must pass these Property Tests.
 
 ### Phase 3: Home Page Sections (Static) ⏳
 
-[ ] 5.1 Hero Banner: Fullscreen (100vh), CTA.
+[x] 5.1 Hero Banner: Fullscreen (100vh), CTA.
 
-[ ] 5.3 About Us: Mission/Values/History.
+[x] 5.2 Test: Navigation anchor scrolling (Prop #4).
 
-[ ] 5.4 Features: 4 Core advantages + Customization list.
+[x] 5.3 About Us: Mission/Values/History.
 
-[ ] 5.5 Services: 6-step process (Responsive layout).
+[x] 5.4 Features: 4 Core advantages + Customization list.
+
+[x] 5.5 Services: 6-step process (Responsive layout).
 
 [ ] 5.6 FAQ: Accordion component with Schema.org.
 
-[ ] Test: Accordion interaction (Prop #9).
+[ ] 5.7 Test: Accordion interaction (Prop #9).
 
-**下一步**: 创建 `components/sections/` 目录下的所有区块组件，使用已完成的英文翻译内容。
+**下一步**: 开发 FAQ 组件（手风琴形式）及其属性测试。
 
 ### Phase 4: Contact & Dynamic Features
 
@@ -297,12 +367,12 @@ See design.md for full definitions. All features must pass these Property Tests.
 
 - [x] **Property 2**: 语言偏好持久化往返 ✅
 - [x] **Property 3**: 滚动位置保持 ✅
+- [x] **Property 4**: 导航锚点滚动 ✅
 - [x] **Property 6**: 响应式汉堡菜单 ✅
 
 ### ⏳ 待完成的属性测试
 
 - [ ] **Property 1**: 语言切换一致性
-- [ ] **Property 4**: 导航锚点滚动（Phase 3）
 - [ ] **Property 5**: 导航激活状态同步（Phase 6）
 - [ ] **Property 7**: 字体大小响应式范围（Phase 7）
 - [ ] **Property 8**: 图片宽高比保持（Phase 7）
