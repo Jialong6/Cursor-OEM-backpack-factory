@@ -58,19 +58,19 @@ See design.md for full definitions. All features must pass these Property Tests.
 
 ## 4. Current Project State
 
-**Phase**: ✅ Phase 2 已完成 → ✅ Phase 3 已完成 → ⏳ Phase 4 进行中（联系表单与API）
-**Current Focus**: Phase 4 联系表单与 API 开发已完成（表单组件 + API 路由 + 属性测试）。下一步进入 Phase 5 博客功能开发。
+**Phase**: ✅ Phase 2 已完成 → ✅ Phase 3 已完成 → ✅ Phase 4 已完成 → ✅ Phase 5 已完成（博客功能）
+**Current Focus**: Phase 5 博客功能开发已完成（博客预览区块 + 博客列表页 + 博客详情页）。下一步进入 Phase 10 首页整合与平滑滚动。
 **Last Updated**: 2026-01-12
 
 ### Progress Summary
 
-**已完成阶段**: Phase 0 (MCP配置) ✅ | Phase 1 (初始化) ✅ | Phase 2 (布局组件) ✅ | Phase 3 (首页区块) ✅ | Phase 4 (联系表单与API) ✅
-**当前阶段**: 准备进入 Phase 5 (博客功能开发)
+**已完成阶段**: Phase 0 (MCP配置) ✅ | Phase 1 (初始化) ✅ | Phase 2 (布局组件) ✅ | Phase 3 (首页区块) ✅ | Phase 4 (联系表单与API) ✅ | Phase 5 (博客功能) ✅
+**当前阶段**: 准备进入 Phase 10 (首页整合与平滑滚动)
 **测试状态**: 79 个测试通过（包括 Property 2, 3, 4, 6, 9, 10, 11）
-**代码提交**: 28 个提交
+**代码提交**: 30 个提交
 
-**已完成需求**: 需求 1, 2, 5, 6, 7, 8, 9, 10, 13 ✅ | 需求 3 (60%), 需求 4 (50%)
-**待完成需求**: 需求 11-12, 14-16 ⏳
+**已完成需求**: 需求 1, 2, 5, 6, 7, 8, 9, 10, 11, 12, 13 ✅ | 需求 3 (60%), 需求 4 (50%)
+**待完成需求**: 需求 14-16 ⏳
 
 ### Recently Completed
 
@@ -433,6 +433,82 @@ See design.md for full definitions. All features must pass these Property Tests.
 - ✅ 所有 79 个测试通过（包括表单提交属性测试 Property 10, 11）
 - ✅ 构建成功
 - ✅ Phase 4 联系表单与 API 开发全部完成
+
+---
+
+### Phase 5: 博客功能开发
+
+**✅ Task 9.1: 博客预览区块（BlogPreview）**
+
+- 创建 Blog 组件：components/sections/Blog.tsx
+- 实现功能：
+  - 展示 3 篇精选博客文章卡片
+  - 卡片包含：标题、摘要、发布日期、分类、缩略图占位符
+  - 支持中英文内容切换
+  - 日期格式化（根据语言显示对应格式）
+  - 悬停动画效果
+  - "查看所有文章"按钮链接到博客列表页
+  - "阅读更多"链接到博客详情页
+- 添加博客翻译内容到 zh.json 和 en.json
+- 集成到首页 app/[locale]/page.tsx
+- 所有测试通过：79/79
+- 构建成功
+- 验证需求：12.1, 12.2, 12.4
+
+**✅ Task 9.2: 博客列表页**
+
+- 创建共享博客数据文件：lib/blog-data.ts
+  - 定义 BlogPost 接口类型
+  - 创建 6 篇示例博客文章数据（包含完整内容）
+  - 提供工具函数：getBlogPostBySlug, getAllBlogPosts, getFeaturedBlogPosts
+- 创建博客列表页：app/[locale]/blog/page.tsx
+- 实现功能：
+  - 展示所有博客文章（6篇）
+  - 文章卡片包含：标题、摘要、日期、分类、标签
+  - 支持中英文内容切换
+  - 返回首页链接
+  - 返回顶部按钮
+  - 文章总数显示
+  - 悬停动画效果
+- 更新 Blog.tsx 使用共享数据
+- 添加博客列表页翻译内容到 zh.json 和 en.json
+- 所有测试通过：79/79
+- 构建成功
+- 验证需求：12.4
+
+**✅ Task 9.3: 博客详情页**
+
+- 创建博客详情页：app/[locale]/blog/[slug]/page.tsx
+- 实现功能：
+  - 动态路由：使用 [slug] 参数获取对应的博客文章
+  - 文章头部：
+    - 面包屑导航（首页 > 博客 > 文章标题）
+    - 返回列表链接
+    - 分类标签
+    - 文章标题
+    - 文章元信息（日期、作者）
+    - 标签显示
+  - 文章内容：
+    - 缩略图占位符
+    - 文章摘要（高亮显示）
+    - 简单的 Markdown 渲染器（支持标题、列表、粗体、段落）
+  - 文章底部：
+    - 返回列表按钮
+    - 返回顶部按钮
+    - CTA 区块（引导用户联系）
+  - 404 处理：文章不存在时显示 404 页面
+  - 支持中英文切换
+- 添加博客详情页翻译内容到 zh.json 和 en.json
+- 所有测试通过：79/79
+- 构建成功
+- 验证需求：12.3
+
+**✅ Phase 5 检查点**
+
+- ✅ 所有 79 个测试通过
+- ✅ 构建成功
+- ✅ Phase 5 博客功能开发全部完成
+- ✅ 新增路由：/[locale]/blog, /[locale]/blog/[slug]
 
 ---
 

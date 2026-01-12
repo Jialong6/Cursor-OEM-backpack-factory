@@ -532,5 +532,32 @@
         "href": "#blogs"
       }
     ]
+  },
+  "blog": {
+    "title": "Latest Insights",
+    "subtitle": "Stay updated with industry trends, customization tips, and company news",
+    "readMore": "Read More",
+    "viewAll": "View All Articles"
+  },
+  "blogList": {
+    "title": "Blog Articles",
+    "subtitle": "In-depth insights, trends, and best practices in the backpack manufacturing industry",
+    "backToHome": "Back to Home",
+    "totalArticles": "{count} Articles",
+    "readMore": "Read More",
+    "backToTop": "Back to Top",
+    "noArticles": "No articles available"
+  },
+  "blogDetail": {
+    "home": "Home",
+    "blog": "Blog",
+    "backToList": "Back to Articles",
+    "backToTop": "Back to Top",
+    "noContent": "Article content not available",
+    "cta": {
+      "title": "Ready to Start Your Custom Backpack Project?",
+      "subtitle": "Contact us for professional OEM/ODM solutions",
+      "button": "Contact Us Now"
+    }
   }
 }

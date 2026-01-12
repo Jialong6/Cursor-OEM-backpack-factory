@@ -532,5 +532,32 @@
         "desc": "质量确认后，产品将被妥善包装，并批量发运至您的指定仓库，确保安全高效交付。"
       }
     ]
+  },
+  "blog": {
+    "title": "最新资讯",
+    "subtitle": "了解行业动态、定制技巧和公司新闻",
+    "readMore": "阅读更多",
+    "viewAll": "查看所有文章"
+  },
+  "blogList": {
+    "title": "博客文章",
+    "subtitle": "深入了解背包制造行业的见解、趋势和最佳实践",
+    "backToHome": "返回首页",
+    "totalArticles": "共 {count} 篇文章",
+    "readMore": "阅读更多",
+    "backToTop": "返回顶部",
+    "noArticles": "暂无文章"
+  },
+  "blogDetail": {
+    "home": "首页",
+    "blog": "博客",
+    "backToList": "返回文章列表",
+    "backToTop": "返回顶部",
+    "noContent": "文章内容暂未提供",
+    "cta": {
+      "title": "准备开始您的定制背包项目？",
+      "subtitle": "联系我们获取专业的 OEM/ODM 解决方案",
+      "button": "立即咨询"
+    }
   }
 }
