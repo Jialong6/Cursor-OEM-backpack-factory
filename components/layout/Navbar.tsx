@@ -15,7 +15,7 @@ const navItems = [
   { id: 'services', href: '#services', key: 'services' },
   { id: 'faq', href: '#faq', key: 'faq' },
   { id: 'contact', href: '#contact', key: 'contact' },
-  { id: 'blogs', href: '#blogs', key: 'blogs' },
+  { id: 'blog', href: '#blog', key: 'blog' },
 ] as const;
 
 /**

@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 全局平滑滚动 */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* 为固定导航栏留出空间 */
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 255, 255, 255;

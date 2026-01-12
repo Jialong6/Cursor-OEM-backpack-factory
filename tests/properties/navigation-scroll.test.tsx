@@ -28,7 +28,7 @@ vi.mock('next-intl', async () => {
         services: '服务流程',
         faq: '常见问题',
         contact: '联系我们',
-        blogs: '博客',
+        blog: '博客',
         switchTo: '切换到',
         english: 'English',
         chinese: '中文',
@@ -56,7 +56,7 @@ const mockMessages = {
     services: '服务流程',
     faq: '常见问题',
     contact: '联系我们',
-    blogs: '博客',
+    blog: '博客',
   },
   language: {
     switchTo: '切换到',
@@ -68,7 +68,7 @@ const mockMessages = {
 /**
  * 导航区块 ID 列表
  */
-const sectionIds = ['banner', 'about', 'features', 'services', 'faq', 'contact', 'blogs']
+const sectionIds = ['banner', 'about', 'features', 'services', 'faq', 'contact', 'blog']
 
 describe('导航锚点滚动属性测试', () => {
   let mockScrollTo: ReturnType<typeof vi.fn>
