@@ -387,6 +387,9 @@
     ]
   },
   "contact": {
+    "title": "Contact Us",
+    "subtitle": "Ready to Start Your Backpack Project?",
+    "intro": "Fill out the form below and we'll get back to you within 24 hours. For urgent inquiries, call or WhatsApp us directly.",
     "address": {
       "label": "Address",
       "value": "Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai Industrial Zone, Yangon, Myanmar"
@@ -402,6 +405,84 @@
     "whatsapp": {
       "label": "Whatsapp",
       "value": "+1 814.880.1463"
+    },
+    "form": {
+      "title": "Get A Quote",
+      "firstName": {
+        "label": "First Name",
+        "placeholder": "John",
+        "error": "Please enter your first name"
+      },
+      "lastName": {
+        "label": "Last Name",
+        "placeholder": "Doe",
+        "error": "Please enter your last name"
+      },
+      "email": {
+        "label": "Email Address",
+        "placeholder": "example@company.com",
+        "error": "Please enter a valid email address"
+      },
+      "countryRegion": {
+        "label": "Country/Region",
+        "placeholder": "United States",
+        "error": "Please enter your country/region"
+      },
+      "companyBrandName": {
+        "label": "Company/Brand Name",
+        "placeholder": "Your Company Name",
+        "error": "Please enter your company/brand name"
+      },
+      "phoneNumber": {
+        "label": "Phone Number",
+        "placeholder": "+1 555-123-4567",
+        "error": "Please enter a valid phone number"
+      },
+      "subject": {
+        "label": "Subject",
+        "placeholder": "e.g. Custom Travel Backpack Inquiry",
+        "error": "Please enter a subject"
+      },
+      "message": {
+        "label": "Your Message",
+        "placeholder": "Please describe your project needs, target quantity, timeline, and any special requirements...",
+        "error": "Please enter a message with at least 20 characters"
+      },
+      "orderQuantity": {
+        "label": "Estimated Order Quantity (per design)",
+        "placeholder": "Select quantity range",
+        "error": "Please select an order quantity"
+      },
+      "techPackAvailability": {
+        "label": "Do you have a tech pack or reference sample?",
+        "placeholder": "Select an option",
+        "error": "Please select an option"
+      },
+      "launchTimeline": {
+        "label": "When do you plan to launch your collection? (Optional)",
+        "placeholder": "e.g. Q2 2024"
+      },
+      "specialRequests": {
+        "label": "Any notes or special requests? (Optional)",
+        "placeholder": "Let us know any additional information..."
+      },
+      "fileUpload": {
+        "label": "Upload Files (Optional)",
+        "description": "Upload tech packs, sketches, or sample photos. Max 5 files, 10MB each.",
+        "button": "Choose Files",
+        "dragDrop": "or drag and drop files here",
+        "acceptedFormats": "Accepted formats: JPG, PNG, WebP, PDF, DOC, DOCX"
+      },
+      "submit": "Submit Inquiry",
+      "submitting": "Submitting...",
+      "success": {
+        "title": "Thank You for Your Inquiry!",
+        "message": "We've received your message and will respond within 24 hours."
+      },
+      "error": {
+        "title": "Submission Failed",
+        "message": "Sorry, there was an error submitting your form. Please try again later or contact us directly."
+      }
     }
   },
   "footer": {

@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 
 /**
  * 关于我们区块组件
@@ -15,6 +15,7 @@ import { useTranslations } from 'next-intl';
  */
 export default function AboutUs() {
   const t = useTranslations('about');
+  const locale = useLocale();
 
   // 获取六大核心价值观
   const values = t.raw('values') as Array<{
@@ -171,13 +172,7 @@ export default function AboutUs() {
             {/* 合作品牌展示 */}
             <div className="mt-10 border-t border-gray-300 pt-8">
               <p className="mb-6 text-center text-sm font-semibold uppercase tracking-wide text-gray-500">
-                {t.rich('company.p3', {
-                  match: /(Anello|New Balance|Nike|Fila)/g,
-                }) ? (
-                  <>Trusted by Global Brands</>
-                ) : (
-                  <>与全球知名品牌合作</>
-                )}
+                {locale === 'en' ? 'Trusted by Global Brands' : '与全球知名品牌合作'}
               </p>
               <div className="flex flex-wrap items-center justify-center gap-8">
                 {['Anello', 'New Balance', 'Nike', 'Fila'].map((brand) => (

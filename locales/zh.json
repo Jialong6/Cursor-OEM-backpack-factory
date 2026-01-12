@@ -57,6 +57,9 @@
     "cta": "获取报价"
   },
   "contact": {
+    "title": "联系我们",
+    "subtitle": "准备启动您的背包项目？",
+    "intro": "填写下方表单，我们会在24小时内回复。如需紧急咨询，请直接拨打电话或通过WhatsApp联系。",
     "address": {
       "label": "地址",
       "value": "Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai工业区，仰光，缅甸"
@@ -72,6 +75,84 @@
     "whatsapp": {
       "label": "WhatsApp",
       "value": "+1 814.880.1463"
+    },
+    "form": {
+      "title": "获取报价",
+      "firstName": {
+        "label": "名字",
+        "placeholder": "张",
+        "error": "请输入名字"
+      },
+      "lastName": {
+        "label": "姓氏",
+        "placeholder": "三",
+        "error": "请输入姓氏"
+      },
+      "email": {
+        "label": "邮箱地址",
+        "placeholder": "example@company.com",
+        "error": "请输入有效的邮箱地址"
+      },
+      "countryRegion": {
+        "label": "国家/地区",
+        "placeholder": "中国",
+        "error": "请输入国家/地区"
+      },
+      "companyBrandName": {
+        "label": "公司/品牌名称",
+        "placeholder": "您的公司名称",
+        "error": "请输入公司/品牌名称"
+      },
+      "phoneNumber": {
+        "label": "电话号码",
+        "placeholder": "+86 138 0000 0000",
+        "error": "请输入有效的电话号码"
+      },
+      "subject": {
+        "label": "主题",
+        "placeholder": "如：定制旅行背包询价",
+        "error": "请输入主题"
+      },
+      "message": {
+        "label": "您的消息",
+        "placeholder": "请描述您的项目需求、目标数量、时间表及任何特殊要求...",
+        "error": "请输入至少20个字符的消息"
+      },
+      "orderQuantity": {
+        "label": "预计订单数量（每个设计）",
+        "placeholder": "选择数量范围",
+        "error": "请选择订单数量"
+      },
+      "techPackAvailability": {
+        "label": "您是否有技术包或参考样品？",
+        "placeholder": "选择一个选项",
+        "error": "请选择一个选项"
+      },
+      "launchTimeline": {
+        "label": "您计划何时推出您的系列？（可选）",
+        "placeholder": "如：2024年第二季度"
+      },
+      "specialRequests": {
+        "label": "有任何备注或特殊要求吗？（可选）",
+        "placeholder": "请告诉我们任何额外信息..."
+      },
+      "fileUpload": {
+        "label": "上传文件（可选）",
+        "description": "上传技术包、草图或样品照片。最多5个文件，每个最大10MB。",
+        "button": "选择文件",
+        "dragDrop": "或拖放文件到这里",
+        "acceptedFormats": "支持格式：JPG, PNG, WebP, PDF, DOC, DOCX"
+      },
+      "submit": "提交询价",
+      "submitting": "提交中...",
+      "success": {
+        "title": "感谢您的询价！",
+        "message": "我们已收到您的消息，将在24小时内回复。"
+      },
+      "error": {
+        "title": "提交失败",
+        "message": "抱歉，提交时出现错误。请稍后再试或直接联系我们。"
+      }
     }
   },
   "faq": {

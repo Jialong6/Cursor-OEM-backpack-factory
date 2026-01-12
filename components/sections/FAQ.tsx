@@ -97,7 +97,7 @@ export default function FAQ() {
                 </>
               ) : (
                 <>
-                  Can't find what you're looking for?{' '}
+                  Can&apos;t find what you&apos;re looking for?{' '}
                   <span className="font-semibold text-primary-blue">
                     Feel free to contact us
                   </span>{' '}

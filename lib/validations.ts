@@ -98,13 +98,9 @@ export const contactFormSchema = z.object({
     .max(2000, 'Message must be less than 2000 characters'),
 
   // 下拉选择字段（需求 11.3, 11.4）
-  orderQuantity: z.enum(ORDER_QUANTITY_OPTIONS, {
-    errorMap: () => ({ message: 'Please select an estimated order quantity' }),
-  }),
+  orderQuantity: z.enum(ORDER_QUANTITY_OPTIONS),
 
-  techPackAvailability: z.enum(TECH_PACK_OPTIONS, {
-    errorMap: () => ({ message: 'Please select your tech pack availability' }),
-  }),
+  techPackAvailability: z.enum(TECH_PACK_OPTIONS),
 
   // 可选字段（需求 11.6, 11.7）
   launchTimeline: z
@@ -216,17 +212,17 @@ export function validateFiles(files: File[]): { valid: boolean; errors: string[]
 export function formatZodErrors(errors: z.ZodError): Record<string, string[]> {
   const formattedErrors: Record<string, string[]> = {};
 
-  // 防御性检查：确保 errors.errors 存在且是数组
-  if (!errors || !errors.errors || !Array.isArray(errors.errors)) {
+  // 防御性检查：确保 errors.issues 存在且是数组
+  if (!errors || !errors.issues || !Array.isArray(errors.issues)) {
     return formattedErrors;
   }
 
-  errors.errors.forEach((error) => {
-    const path = error.path.join('.');
+  errors.issues.forEach((issue) => {
+    const path = issue.path.join('.');
     if (!formattedErrors[path]) {
       formattedErrors[path] = [];
     }
-    formattedErrors[path].push(error.message);
+    formattedErrors[path].push(issue.message);
   });
 
   return formattedErrors;
