@@ -52,8 +52,8 @@ export default async function RootLayout({
     notFound();
   }
 
-  // 获取当前语言的翻译消息
-  const messages = await getMessages();
+  // 获取当前语言的翻译消息（传入 locale 参数）
+  const messages = await getMessages({ locale });
 
   return (
     <html lang={locale}>

@@ -31,46 +31,89 @@ Better Bags Myanmar 背包 OEM 工厂独立站项目，采用单页滚动式（O
 
 ## 开始使用
 
+### 前置要求
+
+- Node.js 18.x 或更高版本
+- npm 10.x 或更高版本
+
 ### 安装依赖
 
 ```bash
 npm install
-# 或
-yarn install
-# 或
-pnpm install
 ```
 
 ### 开发模式
 
+**方法 1：标准启动**
+
 ```bash
 npm run dev
-# 或
-yarn dev
-# 或
-pnpm dev
 ```
 
-在浏览器中打开 [http://localhost:3000](http://localhost:3000) 查看应用。
+**方法 2：清理缓存后启动（推荐，遇到问题时）**
+
+```bash
+# 清理缓存和端口
+rm -rf .next
+lsof -ti:3000,3001,3002,3003 | xargs kill -9 2>/dev/null
+
+# 启动开发服务器
+npm run dev
+```
+
+在浏览器中打开以下 URL 查看应用：
+
+- **http://localhost:3000/en** - 英文版
+- **http://localhost:3000/zh** - 中文版
+- **http://localhost:3000/** - 自动重定向到默认语言
+
+⚠️ **注意**：如果 3000 端口被占用，Next.js 会自动使用其他端口（如 3001, 3002），请查看终端输出中的实际端口号。
 
 ### 构建生产版本
 
 ```bash
 npm run build
-# 或
-yarn build
-# 或
-pnpm build
+```
+
+构建成功后，你会看到路由生成信息：
+
+```
+Route (app)                Size  First Load JS
+├ ● /[locale]           50.9 kB         171 kB
+├   ├ /en
+├   └ /zh
 ```
 
 ### 启动生产服务器
 
 ```bash
 npm start
-# 或
-yarn start
-# 或
-pnpm start
+```
+
+### 运行测试
+
+```bash
+# 运行所有测试
+npm test
+
+# 运行测试并监听变化
+npm run test:watch
+
+# 运行测试并生成覆盖率报告
+npm run test:coverage
+```
+
+### 故障排查
+
+如果遇到 404 错误、端口冲突或其他问题，请查看 [故障排查指南](./TROUBLESHOOTING.md)。
+
+**常见问题快速修复：**
+
+```bash
+# 一键清理并重启
+rm -rf .next && \
+lsof -ti:3000,3001,3002,3003 | xargs kill -9 2>/dev/null && \
+npm run dev
 ```
 
 ## MCP 配置
@@ -94,6 +137,7 @@ pnpm start
 - [设计文档](./design.md) - 详细的设计和架构说明
 - [任务列表](./tasks.md) - 项目任务和实现计划
 - [项目上下文](./project_context.md) - 项目背景信息
+- [故障排查指南](./TROUBLESHOOTING.md) - 常见问题和解决方案
 
 ## 功能特性
 

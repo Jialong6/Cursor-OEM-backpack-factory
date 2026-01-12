@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect } from 'react';
-import { useTranslations } from 'next-intl';
 import HeroBanner from '@/components/sections/HeroBanner';
 import AboutUs from '@/components/sections/AboutUs';
 import Features from '@/components/sections/Features';
@@ -22,7 +21,6 @@ import Blog from '@/components/sections/Blog';
  * 需求: 3.1, 3.2, 3.5
  */
 export default function Home() {
-  const t = useTranslations();
 
   /**
    * 处理 URL 锚点自动滚动
