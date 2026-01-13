@@ -22,6 +22,10 @@ html {
   }
 }
 
+/**
+ * 全局字体大小配置
+ * 需求 4.2: 确保正文字体在移动端不小于14px，在桌面端不大于18px
+ */
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -30,11 +34,69 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-  font-size: clamp(0.875rem, 0.75rem + 0.5vw, 1.125rem);
+  font-size: clamp(0.875rem, 0.75rem + 0.5vw, 1.125rem); /* 14px-18px */
+  line-height: 1.75;
 }
 
+/**
+ * 标题元素使用自适应字体大小
+ * 需求 4.1: 使用 CSS clamp() 函数实现标题字体随视口宽度流畅缩放
+ */
+@layer base {
+  h1 {
+    font-size: clamp(2rem, 1.5rem + 2vw, 3.5rem); /* 32px-56px */
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 1.25rem + 1.5vw, 2.5rem); /* 24px-40px */
+    line-height: 1.3;
+    font-weight: 700;
+  }
+
+  h3 {
+    font-size: clamp(1.25rem, 1rem + 1vw, 2rem); /* 20px-32px */
+    line-height: 1.4;
+    font-weight: 600;
+  }
+
+  h4 {
+    font-size: clamp(1.125rem, 0.875rem + 0.75vw, 1.5rem); /* 18px-24px */
+    line-height: 1.5;
+    font-weight: 600;
+  }
+
+  h5 {
+    font-size: clamp(1rem, 0.875rem + 0.5vw, 1.25rem); /* 16px-20px */
+    line-height: 1.5;
+    font-weight: 600;
+  }
+
+  h6 {
+    font-size: clamp(0.875rem, 0.75rem + 0.5vw, 1.125rem); /* 14px-18px */
+    line-height: 1.6;
+    font-weight: 600;
+  }
+}
+
+/**
+ * 自定义实用类
+ */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* 流式容器间距 - 需求 4.4 */
+  .container-fluid {
+    padding-left: clamp(1rem, 2vw, 2rem);
+    padding-right: clamp(1rem, 2vw, 2rem);
+  }
+
+  /* 流式垂直间距 */
+  .section-spacing {
+    padding-top: clamp(3rem, 5vw, 6rem);
+    padding-bottom: clamp(3rem, 5vw, 6rem);
   }
 }

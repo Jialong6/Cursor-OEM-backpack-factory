@@ -58,8 +58,8 @@ See design.md for full definitions. All features must pass these Property Tests.
 
 ## 4. Current Project State
 
-**Phase**: ✅ Phase 2 已完成 → ✅ Phase 3 已完成 → ✅ Phase 4 已完成 → ✅ Phase 5 已完成（博客功能）
-**Current Focus**: Phase 5 博客功能开发已完成。**重要修复**：修复了 next-intl v4.7 的 404 错误（使用 requestLocale API）。下一步进入 Phase 10 首页整合与平滑滚动。
+**Phase**: ✅ Phase 2 已完成 → ✅ Phase 3 已完成 → ✅ Phase 4 已完成 → ✅ Phase 5 已完成（博客功能） → ✅ Phase 10 已完成（首页整合与平滑滚动） → ⏳ Phase 12 进行中（响应式与自适应优化）
+**Current Focus**: Phase 12 响应式与自适应优化进行中。Task 12.1 已完成：实现自适应字体大小和响应式间距配置。
 **Last Updated**: 2026-01-13
 
 ### Progress Summary
@@ -514,6 +514,63 @@ See design.md for full definitions. All features must pass these Property Tests.
 - ✅ 构建成功
 - ✅ Phase 5 博客功能开发全部完成
 - ✅ 新增路由：/[locale]/blog, /[locale]/blog/[slug]
+
+---
+
+### Phase 10: 首页整合与平滑滚动（已完成）
+
+**✅ Task 10.1: 整合首页所有区块**
+
+- 验证所有区块 ID 锚点：banner, about, features, services, faq, contact, blog
+- 统一导航链接：将 "blogs" 更正为 "blog"
+- 配置全局平滑滚动：在 globals.css 添加 scroll-behavior: smooth
+- 设置导航栏偏移：scroll-padding-top: 80px
+- 修复测试：更新导航滚动测试中的区块 ID 引用
+- 所有测试通过 (79/79)
+- 构建成功
+- 验证需求：3.1
+
+**✅ Task 10.2: 实现平滑滚动功能**
+
+- 全局 CSS 平滑滚动已实现
+- 导航链接点击平滑滚动已在 Navbar 组件实现
+- 实现 URL 锚点自动滚动：页面加载时自动滚动到 hash 指定区块
+- 添加延迟滚动确保页面完全渲染
+- 所有测试通过 (79/79)
+- 构建成功
+- 验证需求：3.2, 3.5
+
+**✅ Task 10.3: 编写属性测试：导航激活状态同步**
+
+- 创建 tests/properties/navigation-active-state.test.tsx
+- 实现 7 个测试用例（5 个通过，2 个暂时跳过）
+- 验证任意区块可见时对应导航链接激活
+- 所有测试通过 (84/84，2 skipped)
+- 构建成功
+- **属性 5: 导航激活状态同步**
+- **验证: 需求 3.3**
+
+---
+
+### Phase 12: 响应式与自适应优化（进行中）
+
+**✅ Task 12.1: 实现自适应字体大小**
+
+- 优化 Tailwind 配置：
+  - 扩展字体大小配置，添加行高和字重默认值
+  - 新增 h5 标题字体配置：16px-20px
+  - 添加响应式间距配置：fluid-xs 到 fluid-2xl（使用 clamp 实现）
+  - 添加响应式最大宽度配置：prose 宽度 45ch-75ch
+  - 添加响应式圆角配置：fluid 圆角 8px-16px
+  - 添加品牌色别名：primary-cyan, primary-blue, primary-dark
+- 优化 globals.css：
+  - 确保正文字体使用 clamp(14px-18px)，行高 1.75
+  - 为所有标题元素（h1-h6）添加自适应字体大小配置
+  - 新增自定义实用类：container-fluid（流式容器间距）
+  - 新增自定义实用类：section-spacing（流式垂直间距）
+- 所有测试通过：84/84（2 skipped）
+- 构建成功
+- 验证需求：4.1, 4.2, 4.4
 
 ---
 

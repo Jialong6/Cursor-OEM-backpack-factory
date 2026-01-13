@@ -23,12 +23,14 @@
 #### 1. `.next` 缓存问题
 
 当你修改了以下文件后，旧缓存可能导致路由失效：
+
 - `middleware.ts`（路由中间件）
 - `next.config.ts`（配置文件）
 - `i18n.ts`（国际化配置）
 - `app/[locale]` 路由结构
 
 **解决方案**：
+
 ```bash
 # 删除 .next 缓存
 rm -rf .next
@@ -42,6 +44,7 @@ npm run dev
 多个开发服务器同时运行，导致访问的是旧版本的服务器。
 
 **解决方案**：
+
 ```bash
 # 清理所有占用的端口
 lsof -ti:3000,3001,3002,3003 | xargs kill -9 2>/dev/null
@@ -53,10 +56,12 @@ npm run dev
 #### 3. 访问错误的 URL
 
 ❌ 错误：
+
 - `http://localhost:3000/page`
 - `http://localhost:3000/index`
 
 ✅ 正确：
+
 - `http://localhost:3000/en` 或 `http://localhost:3000/zh`
 - `http://localhost:3000/` （会自动重定向）
 
@@ -127,6 +132,7 @@ npm run build
 ### 2. 检查浏览器开发者工具
 
 按 `F12` 打开开发者工具：
+
 - **Console**：查看 JavaScript 错误
 - **Network**：查看请求状态（200 = 成功，404 = 未找到）
 - **Application** → **Cookies**：查看 `NEXT_LOCALE` 设置
@@ -268,6 +274,7 @@ HTTP/1.1 307 Temporary Redirect
 ### 1. 每次修改配置后清理缓存
 
 修改以下文件后，务必清理 `.next`：
+
 - `middleware.ts`
 - `next.config.ts`
 - `i18n.ts`
@@ -290,6 +297,7 @@ npm run dev
 ```
 
 使用：
+
 ```bash
 chmod +x dev.sh
 ./dev.sh
@@ -318,6 +326,7 @@ echo "✅ 已清理 .next 缓存"
 99% 的 404 问题都可以通过这两步解决。
 
 如果仍然遇到问题：
+
 1. 检查 `npm run build` 是否成功
 2. 查看终端的错误信息
 3. 确认访问的是正确的 URL（带语言前缀）
