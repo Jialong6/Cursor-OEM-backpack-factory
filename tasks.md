@@ -387,9 +387,24 @@
     - _需求: 16.4, 16.5_
 
 - [ ] 15. 性能优化
-  - [ ] 15.1 配置资源压缩
-    - 确保CSS和JS文件压缩
-    - 配置Tailwind tree-shaking
+  - [x] 15.1 配置资源压缩 ✅
+    - 更新 next.config.ts 添加性能优化配置:
+      * 禁用生产环境 source maps（减小包大小）
+      * 启用 SWC 编译器移除生产环境 console.log（保留 error 和 warn）
+      * 配置图片优化：WebP 和 AVIF 格式优先
+      * 配置响应式图片尺寸（8个设备尺寸 + 8个图标尺寸）
+      * 启用实验性功能 optimizePackageImports（react-hook-form, zod）
+    - 验证 Tailwind CSS tree-shaking 配置正确:
+      * content 路径包含所有组件和页面
+      * PostCSS 配置包含 tailwindcss 和 autoprefixer
+    - 验证构建输出:
+      * CSS 文件已压缩（30KB，单行无空格）
+      * JavaScript 文件已压缩（变量名缩短，代码在一行）
+      * 首页 First Load JS: 185 kB
+      * 博客页面: 138-139 kB
+      * Shared chunks: 102 kB
+    - 所有测试通过：158/158（2 skipped）
+    - 构建成功
     - _需求: 15.4, 15.5_
   - [ ] 15.2 优化脚本加载
     - 对非关键脚本使用defer/async
