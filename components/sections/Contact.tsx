@@ -394,26 +394,27 @@ export default function Contact() {
                   />
                 </div>
 
-                {/* 文件上传 */}
+                {/* 文件上传 - 需求 16.6: 支持键盘操作 */}
                 <div>
                   <label htmlFor="fileUpload" className="block text-sm font-medium text-gray-700 mb-2">
                     {t('form.fileUpload.label')}
                   </label>
                   <p className="text-sm text-gray-500 mb-2">{t('form.fileUpload.description')}</p>
-                  <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-primary transition-colors">
+                  <div className="relative border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-primary focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 transition-colors">
                     <input
                       id="fileUpload"
                       type="file"
                       multiple
                       accept=".jpg,.jpeg,.png,.webp,.pdf,.doc,.docx"
                       onChange={handleFileChange}
-                      className="hidden"
+                      className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                      aria-label={t('form.fileUpload.label')}
                     />
-                    <label htmlFor="fileUpload" className="cursor-pointer">
-                      <div className="text-primary hover:text-primary-dark font-medium">{t('form.fileUpload.button')}</div>
+                    <div className="pointer-events-none">
+                      <div className="text-primary font-medium">{t('form.fileUpload.button')}</div>
                       <div className="text-sm text-gray-500 mt-1">{t('form.fileUpload.dragDrop')}</div>
                       <div className="text-xs text-gray-400 mt-2">{t('form.fileUpload.acceptedFormats')}</div>
-                    </label>
+                    </div>
                   </div>
 
                   {/* 文件列表 */}

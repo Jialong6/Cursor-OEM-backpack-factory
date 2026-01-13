@@ -86,8 +86,14 @@ export default async function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
+          {/* 跳过导航链接 - 需求 16.6: 支持键盘导航 */}
+          <a href="#main-content" className="skip-to-content">
+            {locale === 'zh' ? '跳转到主要内容' : 'Skip to main content'}
+          </a>
           <Navbar />
-          {children}
+          <main id="main-content">
+            {children}
+          </main>
           <Footer />
         </NextIntlClientProvider>
       </body>

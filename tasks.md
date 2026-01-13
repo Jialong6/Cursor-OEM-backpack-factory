@@ -324,15 +324,36 @@
     - _需求: 14.6, 14.7_
 
 - [ ] 14. 无障碍优化
-  - [ ] 14.1 添加图片alt文本
-    - 为所有非装饰性图片添加描述性alt文本
+  - [x] 14.1 添加图片alt文本 ✅
+    - 为所有装饰性 SVG 图标添加 aria-hidden="true" 属性
+    - 修改 10 个文件：Footer, LanguageSwitcher, HeroBanner, AboutUs, Services, Features, Blog, blog/page, blog/[slug]/page, Accordion
+    - 所有非装饰性图片（OptimizedImage）已有 alt 文本
+    - 所有测试通过：147/147（2 skipped）
+    - 构建成功
     - _需求: 16.1_
-  - [ ] 14.2 检查颜色对比度
-    - 确保文本与背景对比度符合WCAG AA标准
+  - [x] 14.2 检查颜色对比度 ✅
+    - 创建 scripts/check-contrast.js：自动检查 WCAG AA 颜色对比度
+    - 修复 Primary Cyan 对比度问题：将 DEFAULT primary 从 Cyan 改为 Blue（对比度 1.96:1 → 5.97:1）
+    - 更新 FAQ.tsx 和 AboutUs.tsx 使用 Primary Blue 替代 Primary Cyan
+    - 所有 16 个颜色组合均符合 WCAG AA 标准
+    - 所有测试通过：147/147（2 skipped）
+    - 构建成功
     - _需求: 16.2_
-  - [ ] 14.3 实现键盘导航支持
-    - 确保所有交互元素可通过Tab键访问
-    - 添加可见焦点指示器
+  - [x] 14.3 实现键盘导航支持 ✅
+    - 添加全局键盘焦点样式到 globals.css：
+      * focus-visible 样式应用于所有交互元素
+      * 链接、按钮、输入框的特定焦点样式
+      * Primary Blue (#416788) 焦点指示器配色
+    - 添加跳过导航链接到 layout.tsx：
+      * 支持 Tab 键显示、Enter 键跳转
+      * 自动隐藏，仅键盘导航时可见
+      * 中英文支持
+    - 修复文件上传按钮键盘可访问性：
+      * 使用绝对定位 + opacity-0 替代 hidden
+      * 添加 focus-within 样式显示焦点状态
+      * 添加 aria-label 改善屏幕阅读器体验
+    - 所有测试通过：147/147（2 skipped）
+    - 构建成功
     - _需求: 16.3, 16.6_
   - [ ] 14.4 编写属性测试：键盘焦点可见性
     - **属性 12: 键盘焦点可见性**

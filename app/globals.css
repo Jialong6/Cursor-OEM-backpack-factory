@@ -81,6 +81,49 @@ body {
 }
 
 /**
+ * 键盘焦点样式
+ * 需求 16.3: 当交互元素获得键盘焦点时，应显示可见的焦点指示器
+ * 需求 16.6: 支持通过Tab键在所有交互元素间移动焦点
+ */
+@layer base {
+  /* 移除默认的 outline，使用自定义焦点样式 */
+  *:focus {
+    outline: none;
+  }
+
+  /* 为所有可聚焦元素添加焦点指示器（仅限键盘导航） */
+  *:focus-visible {
+    outline: 2px solid #416788; /* Primary Blue */
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* 链接焦点样式 */
+  a:focus-visible {
+    outline: 2px solid #416788;
+    outline-offset: 2px;
+    text-decoration: underline;
+  }
+
+  /* 按钮焦点样式 */
+  button:focus-visible {
+    outline: 2px solid #416788;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(65, 103, 136, 0.1);
+  }
+
+  /* 输入框焦点样式 */
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 2px solid #416788;
+    outline-offset: 0;
+    border-color: #416788;
+    box-shadow: 0 0 0 3px rgba(65, 103, 136, 0.1);
+  }
+}
+
+/**
  * 自定义实用类
  */
 @layer utilities {
@@ -98,5 +141,22 @@ body {
   .section-spacing {
     padding-top: clamp(3rem, 5vw, 6rem);
     padding-bottom: clamp(3rem, 5vw, 6rem);
+  }
+
+  /* 跳过导航链接（无障碍） */
+  .skip-to-content {
+    position: absolute;
+    left: -9999px;
+    z-index: 999;
+    padding: 1rem;
+    background-color: #416788;
+    color: white;
+    text-decoration: none;
+  }
+
+  .skip-to-content:focus {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 1rem;
   }
 }
