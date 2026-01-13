@@ -72,7 +72,7 @@ export default function AboutUs() {
             {/* 使命 */}
             <div className="rounded-xl bg-gradient-to-br from-primary-cyan/10 to-primary-blue/10 p-8 shadow-md">
               <div className="mb-4 flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary-cyan text-white">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary-blue text-white">
                   <svg
                     className="h-6 w-6"
                     fill="none"

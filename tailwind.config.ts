@@ -13,7 +13,7 @@ const config: Config = {
         primary: {
           cyan: "#81C3D7",
           blue: "#416788",
-          DEFAULT: "#81C3D7", // 默认 primary 色
+          DEFAULT: "#416788", // 默认 primary 色 - 改为 Blue 以符合 WCAG AA 对比度标准 (5.97:1)
         },
         secondary: {
           grey: "#5a6d7c",

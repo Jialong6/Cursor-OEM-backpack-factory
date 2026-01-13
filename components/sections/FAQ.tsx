@@ -70,7 +70,7 @@ export default function FAQ() {
               <div key={sectionIndex}>
                 {/* 分类标题 */}
                 <div className="mb-6 flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-cyan text-lg font-bold text-white">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-blue text-lg font-bold text-white">
                     {sectionIndex + 1}
                   </div>
                   <h3 className="text-2xl font-bold text-primary-blue md:text-3xl">
