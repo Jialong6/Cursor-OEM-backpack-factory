@@ -6,6 +6,7 @@ import { notFound } from 'next/navigation';
 import { locales } from '@/i18n';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import { generateHomeMetadata } from '@/lib/metadata';
 import "../globals.css";
 
 const geistSans = Geist({
@@ -18,10 +19,34 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Better Bags Myanmar - Premium OEM Backpack Factory",
-  description: "High-end B2B backpack manufacturing with customization services",
-};
+/**
+ * 生成页面元数据
+ *
+ * 需求 14.1: 唯一标题标签（60字符以内）
+ * 需求 14.2: meta描述（150字符以内）
+ * 需求 14.3: Open Graph元标签
+ * 需求 14.8: hreflang标签
+ */
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  // 验证 locale 是否有效
+  if (!locales.includes(locale as any)) {
+    return {
+      ...generateHomeMetadata('en'),
+      metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://betterbagsmyanmar.com'),
+    };
+  }
+
+  return {
+    ...generateHomeMetadata(locale as 'en' | 'zh'),
+    metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://betterbagsmyanmar.com'),
+  };
+}
 
 /**
  * 生成静态路由参数
