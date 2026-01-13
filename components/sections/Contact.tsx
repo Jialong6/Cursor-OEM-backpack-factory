@@ -157,17 +157,25 @@ export default function Contact() {
             <div className="bg-white rounded-lg shadow-md p-6 md:p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">{t('form.title')}</h3>
 
-              {/* 成功提示 */}
+              {/* 成功提示 - 需求 16.5: ARIA live region */}
               {submitStatus === 'success' && (
-                <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+                <div
+                  className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg"
+                  role="alert"
+                  aria-live="polite"
+                >
                   <h4 className="text-green-800 font-semibold mb-1">{t('form.success.title')}</h4>
                   <p className="text-green-700">{t('form.success.message')}</p>
                 </div>
               )}
 
-              {/* 错误提示 */}
+              {/* 错误提示 - 需求 16.5: ARIA live region */}
               {submitStatus === 'error' && (
-                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+                <div
+                  className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg"
+                  role="alert"
+                  aria-live="assertive"
+                >
                   <h4 className="text-red-800 font-semibold mb-1">{t('form.error.title')}</h4>
                   <p className="text-red-700">{t('form.error.message')}</p>
                 </div>
@@ -186,11 +194,18 @@ export default function Contact() {
                       id="firstName"
                       type="text"
                       placeholder={t('form.firstName.placeholder')}
+                      aria-required="true"
+                      aria-invalid={errors.firstName ? 'true' : 'false'}
+                      aria-describedby={errors.firstName ? 'firstName-error' : undefined}
                       className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent ${
                         errors.firstName ? 'border-red-500' : 'border-gray-300'
                       }`}
                     />
-                    {errors.firstName && <p className="mt-1 text-sm text-red-600">{errors.firstName.message}</p>}
+                    {errors.firstName && (
+                      <p id="firstName-error" className="mt-1 text-sm text-red-600" role="alert">
+                        {errors.firstName.message}
+                      </p>
+                    )}
                   </div>
 
                   {/* 姓氏 */}
@@ -203,11 +218,18 @@ export default function Contact() {
                       id="lastName"
                       type="text"
                       placeholder={t('form.lastName.placeholder')}
+                      aria-required="true"
+                      aria-invalid={errors.lastName ? 'true' : 'false'}
+                      aria-describedby={errors.lastName ? 'lastName-error' : undefined}
                       className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent ${
                         errors.lastName ? 'border-red-500' : 'border-gray-300'
                       }`}
                     />
-                    {errors.lastName && <p className="mt-1 text-sm text-red-600">{errors.lastName.message}</p>}
+                    {errors.lastName && (
+                      <p id="lastName-error" className="mt-1 text-sm text-red-600" role="alert">
+                        {errors.lastName.message}
+                      </p>
+                    )}
                   </div>
                 </div>
 
@@ -221,11 +243,18 @@ export default function Contact() {
                     id="email"
                     type="email"
                     placeholder={t('form.email.placeholder')}
+                    aria-required="true"
+                    aria-invalid={errors.email ? 'true' : 'false'}
+                    aria-describedby={errors.email ? 'email-error' : undefined}
                     className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent ${
                       errors.email ? 'border-red-500' : 'border-gray-300'
                     }`}
                   />
-                  {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>}
+                  {errors.email && (
+                    <p id="email-error" className="mt-1 text-sm text-red-600" role="alert">
+                      {errors.email.message}
+                    </p>
+                  )}
                 </div>
 
                 {/* 国家/地区 & 公司/品牌名称 */}
@@ -240,11 +269,18 @@ export default function Contact() {
                       id="countryRegion"
                       type="text"
                       placeholder={t('form.countryRegion.placeholder')}
+                      aria-required="true"
+                      aria-invalid={errors.countryRegion ? 'true' : 'false'}
+                      aria-describedby={errors.countryRegion ? 'countryRegion-error' : undefined}
                       className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent ${
                         errors.countryRegion ? 'border-red-500' : 'border-gray-300'
                       }`}
                     />
-                    {errors.countryRegion && <p className="mt-1 text-sm text-red-600">{errors.countryRegion.message}</p>}
+                    {errors.countryRegion && (
+                      <p id="countryRegion-error" className="mt-1 text-sm text-red-600" role="alert">
+                        {errors.countryRegion.message}
+                      </p>
+                    )}
                   </div>
 
                   {/* 公司/品牌名称 */}
@@ -257,11 +293,18 @@ export default function Contact() {
                       id="companyBrandName"
                       type="text"
                       placeholder={t('form.companyBrandName.placeholder')}
+                      aria-required="true"
+                      aria-invalid={errors.companyBrandName ? 'true' : 'false'}
+                      aria-describedby={errors.companyBrandName ? 'companyBrandName-error' : undefined}
                       className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent ${
                         errors.companyBrandName ? 'border-red-500' : 'border-gray-300'
                       }`}
                     />
-                    {errors.companyBrandName && <p className="mt-1 text-sm text-red-600">{errors.companyBrandName.message}</p>}
+                    {errors.companyBrandName && (
+                      <p id="companyBrandName-error" className="mt-1 text-sm text-red-600" role="alert">
+                        {errors.companyBrandName.message}
+                      </p>
+                    )}
                   </div>
                 </div>
 
@@ -275,11 +318,18 @@ export default function Contact() {
                     id="phoneNumber"
                     type="tel"
                     placeholder={t('form.phoneNumber.placeholder')}
+                    aria-required="true"
+                    aria-invalid={errors.phoneNumber ? 'true' : 'false'}
+                    aria-describedby={errors.phoneNumber ? 'phoneNumber-error' : undefined}
                     className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent ${
                       errors.phoneNumber ? 'border-red-500' : 'border-gray-300'
                     }`}
                   />
-                  {errors.phoneNumber && <p className="mt-1 text-sm text-red-600">{errors.phoneNumber.message}</p>}
+                  {errors.phoneNumber && (
+                    <p id="phoneNumber-error" className="mt-1 text-sm text-red-600" role="alert">
+                      {errors.phoneNumber.message}
+                    </p>
+                  )}
                 </div>
 
                 {/* 主题 */}
@@ -292,11 +342,18 @@ export default function Contact() {
                     id="subject"
                     type="text"
                     placeholder={t('form.subject.placeholder')}
+                    aria-required="true"
+                    aria-invalid={errors.subject ? 'true' : 'false'}
+                    aria-describedby={errors.subject ? 'subject-error' : undefined}
                     className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent ${
                       errors.subject ? 'border-red-500' : 'border-gray-300'
                     }`}
                   />
-                  {errors.subject && <p className="mt-1 text-sm text-red-600">{errors.subject.message}</p>}
+                  {errors.subject && (
+                    <p id="subject-error" className="mt-1 text-sm text-red-600" role="alert">
+                      {errors.subject.message}
+                    </p>
+                  )}
                 </div>
 
                 {/* 订单数量 */}
@@ -307,6 +364,9 @@ export default function Contact() {
                   <select
                     {...register('orderQuantity')}
                     id="orderQuantity"
+                    aria-required="true"
+                    aria-invalid={errors.orderQuantity ? 'true' : 'false'}
+                    aria-describedby={errors.orderQuantity ? 'orderQuantity-error' : undefined}
                     className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent ${
                       errors.orderQuantity ? 'border-red-500' : 'border-gray-300'
                     }`}
@@ -321,7 +381,11 @@ export default function Contact() {
                       </option>
                     ))}
                   </select>
-                  {errors.orderQuantity && <p className="mt-1 text-sm text-red-600">{errors.orderQuantity.message}</p>}
+                  {errors.orderQuantity && (
+                    <p id="orderQuantity-error" className="mt-1 text-sm text-red-600" role="alert">
+                      {errors.orderQuantity.message}
+                    </p>
+                  )}
                 </div>
 
                 {/* 技术包可用性 */}
@@ -332,6 +396,9 @@ export default function Contact() {
                   <select
                     {...register('techPackAvailability')}
                     id="techPackAvailability"
+                    aria-required="true"
+                    aria-invalid={errors.techPackAvailability ? 'true' : 'false'}
+                    aria-describedby={errors.techPackAvailability ? 'techPackAvailability-error' : undefined}
                     className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent ${
                       errors.techPackAvailability ? 'border-red-500' : 'border-gray-300'
                     }`}
@@ -346,7 +413,11 @@ export default function Contact() {
                       </option>
                     ))}
                   </select>
-                  {errors.techPackAvailability && <p className="mt-1 text-sm text-red-600">{errors.techPackAvailability.message}</p>}
+                  {errors.techPackAvailability && (
+                    <p id="techPackAvailability-error" className="mt-1 text-sm text-red-600" role="alert">
+                      {errors.techPackAvailability.message}
+                    </p>
+                  )}
                 </div>
 
                 {/* 推出时间表（可选） */}
@@ -373,11 +444,18 @@ export default function Contact() {
                     id="message"
                     rows={6}
                     placeholder={t('form.message.placeholder')}
+                    aria-required="true"
+                    aria-invalid={errors.message ? 'true' : 'false'}
+                    aria-describedby={errors.message ? 'message-error' : undefined}
                     className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent resize-none ${
                       errors.message ? 'border-red-500' : 'border-gray-300'
                     }`}
                   />
-                  {errors.message && <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>}
+                  {errors.message && (
+                    <p id="message-error" className="mt-1 text-sm text-red-600" role="alert">
+                      {errors.message.message}
+                    </p>
+                  )}
                 </div>
 
                 {/* 特殊要求（可选） */}
@@ -417,16 +495,17 @@ export default function Contact() {
                     </div>
                   </div>
 
-                  {/* 文件列表 */}
+                  {/* 文件列表 - 需求 16.5: ARIA 标签 */}
                   {files.length > 0 && (
-                    <div className="mt-3 space-y-2">
+                    <div className="mt-3 space-y-2" role="list" aria-label="Uploaded files">
                       {files.map((file, index) => (
-                        <div key={index} className="flex items-center justify-between bg-gray-50 p-2 rounded">
+                        <div key={index} className="flex items-center justify-between bg-gray-50 p-2 rounded" role="listitem">
                           <span className="text-sm text-gray-700 truncate">{file.name}</span>
                           <button
                             type="button"
                             onClick={() => removeFile(index)}
                             className="text-red-600 hover:text-red-800 ml-2"
+                            aria-label={`Remove file ${file.name}`}
                           >
                             ✕
                           </button>
@@ -435,9 +514,9 @@ export default function Contact() {
                     </div>
                   )}
 
-                  {/* 文件错误 */}
+                  {/* 文件错误 - 需求 16.5: ARIA live region */}
                   {fileErrors.length > 0 && (
-                    <div className="mt-2 space-y-1">
+                    <div className="mt-2 space-y-1" role="alert" aria-live="assertive">
                       {fileErrors.map((error, index) => (
                         <p key={index} className="text-sm text-red-600">
                           {error}
@@ -457,10 +536,12 @@ export default function Contact() {
                   <input {...register('mcaptchaToken')} type="hidden" value="test-token-placeholder" />
                 </div>
 
-                {/* 提交按钮 */}
+                {/* 提交按钮 - 需求 16.5: ARIA 状态 */}
                 <button
                   type="submit"
                   disabled={isSubmitting}
+                  aria-busy={isSubmitting}
+                  aria-disabled={isSubmitting}
                   className="w-full bg-primary hover:bg-primary-dark text-white font-bold py-3 px-6 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? t('form.submitting') : t('form.submit')}

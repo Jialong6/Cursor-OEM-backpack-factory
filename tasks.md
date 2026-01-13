@@ -323,7 +323,7 @@
     - 构建成功，生成 22 个静态页面
     - _需求: 14.6, 14.7_
 
-- [ ] 14. 无障碍优化
+- [x] 14. 无障碍优化 ✅
   - [x] 14.1 添加图片alt文本 ✅
     - 为所有装饰性 SVG 图标添加 aria-hidden="true" 属性
     - 修改 10 个文件：Footer, LanguageSwitcher, HeroBanner, AboutUs, Services, Features, Blog, blog/page, blog/[slug]/page, Accordion
@@ -372,9 +372,18 @@
     - 构建成功
     - **属性 12: 键盘焦点可见性**
     - **验证: 需求 5.5, 16.3**
-  - [ ] 14.5 添加表单标签关联
-    - 确保所有表单字段有关联的label
-    - 添加必要的ARIA属性
+  - [x] 14.5 添加表单标签关联 ✅
+    - 验证所有表单字段已有正确的 label 关联（htmlFor 和 id）
+    - 为所有必填字段添加 aria-required="true"
+    - 为所有字段添加 aria-invalid 状态（根据验证错误动态设置）
+    - 为所有错误消息添加 aria-describedby 关联和 role="alert"
+    - 为成功/错误提示消息添加 role="alert" 和 aria-live 属性
+    - 为文件列表添加 role="list" 和 role="listitem"
+    - 为文件删除按钮添加描述性 aria-label
+    - 为文件错误消息添加 role="alert" 和 aria-live="assertive"
+    - 为提交按钮添加 aria-busy 和 aria-disabled 状态
+    - 所有测试通过：158/158（2 skipped）
+    - 构建成功
     - _需求: 16.4, 16.5_
 
 - [ ] 15. 性能优化
