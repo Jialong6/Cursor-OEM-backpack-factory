@@ -25,27 +25,27 @@ export default function Services() {
   // 步骤图标配置
   const stepIcons = [
     // 1. 接收客户询盘 - 邮件图标
-    <svg key={1} className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <svg key={1} className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
     </svg>,
     // 2. 生产报价 - 计算器图标
-    <svg key={2} className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <svg key={2} className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
     </svg>,
     // 3. 样品开发 - 画板图标
-    <svg key={3} className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <svg key={3} className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
     </svg>,
     // 4. 批量生产 - 工厂图标
-    <svg key={4} className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <svg key={4} className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
     </svg>,
     // 5. 质量控制 - 检查图标
-    <svg key={5} className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <svg key={5} className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
     </svg>,
     // 6. 包装与运输 - 货运图标
-    <svg key={6} className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <svg key={6} className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
     </svg>,
   ];

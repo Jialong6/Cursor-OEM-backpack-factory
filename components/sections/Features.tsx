@@ -139,6 +139,7 @@ export default function Features() {
                         className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary-cyan"
                         fill="currentColor"
                         viewBox="0 0 20 20"
+                        aria-hidden="true"
                       >
                         <path
                           fillRule="evenodd"
