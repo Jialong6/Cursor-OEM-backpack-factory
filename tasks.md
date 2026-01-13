@@ -282,14 +282,32 @@
     - **验证: 需求 4.5**
 
 - [ ] 13. SEO与元数据优化
-  - [ ] 13.1 配置页面元数据
-    - 为每个页面配置title和description
-    - 添加Open Graph元标签
-    - 添加hreflang标签
+  - [x] 13.1 配置页面元数据 ✅
+    - 创建 lib/metadata.ts 集中管理元数据
+    - 实现首页、博客列表、博客详情页元数据生成
+    - 配置唯一标题（60字符以内，包含品牌关键词）
+    - 配置描述（150字符以内）
+    - 添加 Open Graph 元标签（og:url, og:title, og:description, og:image）
+    - 添加 hreflang 标签（中英文版本切换）
+    - 添加 Twitter Card 和 Canonical URL
+    - 设置 metadataBase
+    - 创建 tests/metadata.test.ts（29个测试）
+    - 所有测试通过：138/138（2 skipped）
+    - 构建成功，生成 20 个静态页面
     - _需求: 14.1, 14.2, 14.3, 14.8_
-  - [ ] 13.2 确保语义化HTML结构
-    - 检查并优化HTML5语义标签使用
-    - 确保每个页面只有一个h1
+  - [x] 13.2 确保语义化HTML结构 ✅
+    - 修复博客详情页 Markdown 渲染：# 渲染为 h2，## 渲染为 h3
+    - 确保每个页面只有一个 h1 标题（符合 SEO 最佳实践）
+    - 验证所有页面使用 HTML5 语义标签：
+      * 首页：main + section（7个区块）
+      * 博客列表页：main
+      * 博客详情页：main + article
+      * Navbar：header + nav
+      * Footer：footer
+    - 创建 tests/semantic-html.test.tsx（9个测试）
+    - 验证 h1 唯一性、语义标签使用、标题层级、可访问性
+    - 所有测试通过：147/147（2 skipped）
+    - 构建成功
     - _需求: 14.4, 14.5_
   - [ ] 13.3 生成XML站点地图
     - 配置next-sitemap或手动生成sitemap.xml

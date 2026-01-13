@@ -63,23 +63,25 @@ export default function BlogDetailPage() {
 
     lines.forEach((line, index) => {
       // 标题
-      if (line.startsWith('# ')) {
+      // 注意：Markdown 中的 # 渲染为 h2，因为页面已经有一个 h1（文章标题）
+      // 符合 SEO 最佳实践：每个页面只有一个 h1（需求 14.5）
+      if (line.startsWith('### ')) {
         elements.push(
-          <h1 key={key++} className="text-3xl font-bold text-gray-900 mb-6 mt-8">
-            {line.substring(2)}
-          </h1>
+          <h4 key={key++} className="text-lg font-bold text-gray-900 mb-2 mt-4">
+            {line.substring(4)}
+          </h4>
         );
       } else if (line.startsWith('## ')) {
         elements.push(
-          <h2 key={key++} className="text-2xl font-bold text-gray-900 mb-4 mt-6">
-            {line.substring(3)}
-          </h2>
-        );
-      } else if (line.startsWith('### ')) {
-        elements.push(
           <h3 key={key++} className="text-xl font-bold text-gray-900 mb-3 mt-5">
-            {line.substring(4)}
+            {line.substring(3)}
           </h3>
+        );
+      } else if (line.startsWith('# ')) {
+        elements.push(
+          <h2 key={key++} className="text-2xl font-bold text-gray-900 mb-4 mt-6">
+            {line.substring(2)}
+          </h2>
         );
       }
       // 列表
