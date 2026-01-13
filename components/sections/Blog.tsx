@@ -1,10 +1,10 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { getFeaturedBlogPosts } from '@/lib/blog-data';
+import OptimizedImage, { IMAGE_SIZES, ASPECT_RATIOS } from '@/components/ui/OptimizedImage';
 
 /**
  * 博客预览区块组件
@@ -14,8 +14,9 @@ import { getFeaturedBlogPosts } from '@/lib/blog-data';
  * - 卡片包含标题、摘要、发布日期、缩略图
  * - 点击卡片导航到博客详情页
  * - 支持中英文内容切换
+ * - 使用优化的图片组件（响应式、懒加载、保持宽高比）
  *
- * 验证需求：12.1, 12.2, 12.4
+ * 验证需求：12.1, 12.2, 12.4, 4.5, 15.1, 15.2, 15.3
  */
 export default function Blog() {
   const t = useTranslations('blog');
@@ -53,21 +54,17 @@ export default function Blog() {
               href={`/${locale}/blog/${post.slug}`}
               className="group bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
-              {/* 文章缩略图 */}
-              <div className="relative h-48 bg-gray-200 overflow-hidden">
-                {/* TODO: 替换为实际图片 */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center">
-                  <span className="text-white text-4xl font-bold opacity-50">BB</span>
-                </div>
-                {/* 未来使用真实图片时取消注释：
-                <Image
-                  src={post.thumbnail}
-                  alt={post.title[locale]}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                */}
-              </div>
+              {/* 文章缩略图 - 使用优化的图片组件 */}
+              <OptimizedImage
+                src={post.thumbnail}
+                alt={post.title[locale]}
+                fill
+                aspectRatio={ASPECT_RATIOS.WIDE}
+                sizes={IMAGE_SIZES.BLOG_THUMBNAIL}
+                className="group-hover:scale-105 transition-transform duration-300"
+                objectFit="cover"
+                quality={80}
+              />
 
               {/* 文章内容 */}
               <div className="p-6">

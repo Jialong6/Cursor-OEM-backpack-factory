@@ -595,6 +595,28 @@ See design.md for full definitions. All features must pass these Property Tests.
 - **属性 7: 字体大小响应式范围**
 - **验证: 需求 4.2**
 
+**✅ Task 12.3: 优化图片响应式加载**
+
+- 创建 OptimizedImage 组件：components/ui/OptimizedImage.tsx
+- 核心功能：
+  - 使用 Next.js Image 组件自动优化
+  - 支持懒加载（loading="lazy"）非首屏图片
+  - 自动生成 WebP 格式和 srcset（Next.js 内置）
+  - 保持宽高比（aspectRatio 属性）
+  - 响应式 sizes 属性配置
+  - 模糊占位符支持（blur placeholder）
+  - 错误处理和回退显示（显示品牌占位符）
+- 预设配置：
+  - IMAGE_SIZES：常见场景的 sizes 配置（Banner、Content、BlogThumbnail等）
+  - ASPECT_RATIOS：常用宽高比配置（16:9、4:3、1:1等）
+- 更新博客组件：
+  - Blog.tsx：使用 OptimizedImage 替换占位符
+  - app/[locale]/blog/page.tsx：博客列表页使用 OptimizedImage
+  - app/[locale]/blog/[slug]/page.tsx：博客详情页使用 OptimizedImage（priority 首屏加载）
+- 所有测试通过：96/96（2 skipped）
+- 构建成功（无 ESLint 警告）
+- 验证需求：4.5, 15.1, 15.2, 15.3
+
 ---
 
 ### Known Constraints & Rules

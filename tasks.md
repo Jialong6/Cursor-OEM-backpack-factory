@@ -254,10 +254,19 @@
     - 构建成功
     - **属性 7: 字体大小响应式范围**
     - **验证: 需求 4.2**
-  - [ ] 12.3 优化图片响应式加载
-    - 配置Next.js Image组件
-    - 实现srcset和sizes属性
-    - 确保图片保持宽高比
+  - [x] 12.3 优化图片响应式加载 ✅
+    - 创建 OptimizedImage 组件：components/ui/OptimizedImage.tsx
+    - 实现功能：
+      * Next.js Image 组件自动优化
+      * 懒加载（loading="lazy"）非首屏图片
+      * 自动生成 WebP 格式和 srcset
+      * 保持宽高比（aspectRatio 属性）
+      * 响应式 sizes 属性配置
+      * 模糊占位符和错误处理
+    - 预设配置：IMAGE_SIZES 和 ASPECT_RATIOS
+    - 更新博客组件使用 OptimizedImage
+    - 所有测试通过：96/96（2 skipped）
+    - 构建成功（无警告）
     - _需求: 4.5, 15.1, 15.2, 15.3_
   - [ ] 12.4 编写属性测试：图片宽高比保持
     - **属性 8: 图片宽高比保持**

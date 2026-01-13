@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { getAllBlogPosts } from '@/lib/blog-data';
+import OptimizedImage, { IMAGE_SIZES, ASPECT_RATIOS } from '@/components/ui/OptimizedImage';
 
 /**
  * 博客列表页面
@@ -14,8 +15,9 @@ import { getAllBlogPosts } from '@/lib/blog-data';
  * - 支持中英文内容切换
  * - 点击卡片导航到博客详情页
  * - 返回首页链接
+ * - 使用优化的图片组件（响应式、懒加载、保持宽高比）
  *
- * 验证需求：12.4
+ * 验证需求：12.4, 4.5, 15.1, 15.2, 15.3
  */
 export default function BlogListPage() {
   const t = useTranslations('blogList');
@@ -76,23 +78,21 @@ export default function BlogListPage() {
               href={`/${locale}/blog/${post.slug}`}
               className="group bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
-              {/* 文章缩略图 */}
-              <div className="relative h-48 bg-gray-200 overflow-hidden">
-                {/* TODO: 替换为实际图片 */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center">
-                  <span className="text-white text-4xl font-bold opacity-50">BB</span>
-                </div>
-                {/* 未来使用真实图片时取消注释：
-                <Image
+              {/* 文章缩略图 - 使用优化的图片组件 */}
+              <div className="relative">
+                <OptimizedImage
                   src={post.thumbnail}
                   alt={post.title[locale]}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  aspectRatio={ASPECT_RATIOS.WIDE}
+                  sizes={IMAGE_SIZES.BLOG_THUMBNAIL}
+                  className="group-hover:scale-105 transition-transform duration-300"
+                  objectFit="cover"
+                  quality={80}
                 />
-                */}
 
                 {/* 分类标签 */}
-                <div className="absolute top-4 left-4">
+                <div className="absolute top-4 left-4 z-10">
                   <span className="bg-white text-primary px-3 py-1 rounded-full text-xs font-semibold uppercase shadow-md">
                     {post.category}
                   </span>
