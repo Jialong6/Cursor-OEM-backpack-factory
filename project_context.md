@@ -64,10 +64,10 @@ See design.md for full definitions. All features must pass these Property Tests.
 
 ### Progress Summary
 
-**已完成阶段**: Phase 0 (MCP配置) ✅ | Phase 1 (初始化) ✅ | Phase 2 (布局组件) ✅ | Phase 3 (首页区块) ✅ | Phase 4 (联系表单与API) ✅ | Phase 5 (博客功能) ✅
-**当前阶段**: 准备进入 Phase 10 (首页整合与平滑滚动)
-**测试状态**: 79 个测试通过（包括 Property 2, 3, 4, 6, 9, 10, 11）
-**代码提交**: 30 个提交
+**已完成阶段**: Phase 0 (MCP配置) ✅ | Phase 1 (初始化) ✅ | Phase 2 (布局组件) ✅ | Phase 3 (首页区块) ✅ | Phase 4 (联系表单与API) ✅ | Phase 5 (博客功能) ✅ | Phase 10 (首页整合与平滑滚动) ✅
+**当前阶段**: Phase 12 (响应式与自适应优化)
+**测试状态**: 96 个测试通过（包括 Property 2, 3, 4, 5, 6, 7, 9, 10, 11）
+**代码提交**: 32 个提交
 
 **已完成需求**: 需求 1, 2, 5, 6, 7, 8, 9, 10, 11, 12, 13 ✅ | 需求 3 (60%), 需求 4 (50%)
 **待完成需求**: 需求 14-16 ⏳
@@ -571,6 +571,29 @@ See design.md for full definitions. All features must pass these Property Tests.
 - 所有测试通过：84/84（2 skipped）
 - 构建成功
 - 验证需求：4.1, 4.2, 4.4
+
+**✅ Task 12.2: 编写属性测试：字体大小响应式范围**
+
+- 创建属性测试文件：tests/properties/font-size-range.test.tsx（12个测试）
+- 实现辅助函数：
+  - calculateBodyFontSize：计算正文字体大小（基于 clamp 公式）
+  - calculateHeadingFontSize：计算标题字体大小（h1-h6）
+- **属性测试**（3个测试，100次迭代）：
+  1. 对于任意视口宽度（320px-2560px），正文字体大小应该在 14px-18px 范围内
+  2. 正文字体大小应该随视口宽度单调递增（或保持不变）
+  3. 对于任意标题级别（h1-h6）和视口宽度，标题字体大小应该在配置范围内
+- **单元测试补充**（9个测试）：
+  - 最小视口（320px）：正文 14px，h1 32px
+  - 中等视口（768px）：正文 15.84px，标题在范围内
+  - 桌面视口（1920px）：正文 18px，h1 56px
+  - 超宽视口（2560px）：正文保持 18px（不超过最大值）
+  - 临界点测试：400px 达到最小值，1200px 达到最大值
+  - h6 标题应该与 body 使用相同的字体范围
+  - 标题层级越高，字体应该越大
+- 所有测试通过：96/96（2 skipped）
+- 构建成功
+- **属性 7: 字体大小响应式范围**
+- **验证: 需求 4.2**
 
 ---
 
