@@ -104,43 +104,43 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="min-h-screen bg-gradient-to-b from-white to-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="min-h-screen bg-white py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* 标题部分 */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">{t('title')}</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-neutral-800 mb-4">{t('title')}</h2>
           <p className="text-xl md:text-2xl text-primary font-semibold mb-2">{t('subtitle')}</p>
-          <p className="text-gray-600 max-w-2xl mx-auto">{t('intro')}</p>
+          <p className="text-neutral-600 max-w-2xl mx-auto">{t('intro')}</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* 左侧：联系信息 */}
           <div className="lg:col-span-1 space-y-6">
             {/* 地址 */}
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">{t('address.label')}</h3>
-              <p className="text-gray-600">{t('address.value')}</p>
+            <div className="bg-neutral-50 rounded-lg border border-neutral-200 p-6">
+              <h3 className="text-lg font-semibold text-neutral-800 mb-3">{t('address.label')}</h3>
+              <p className="text-neutral-600">{t('address.value')}</p>
             </div>
 
             {/* 电话 */}
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">{t('phone.label')}</h3>
+            <div className="bg-neutral-50 rounded-lg border border-neutral-200 p-6">
+              <h3 className="text-lg font-semibold text-neutral-800 mb-3">{t('phone.label')}</h3>
               <a href={`tel:${t('phone.value')}`} className="text-primary hover:text-primary-dark font-medium">
                 {t('phone.value')}
               </a>
             </div>
 
             {/* 邮箱 */}
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">{t('email.label')}</h3>
+            <div className="bg-neutral-50 rounded-lg border border-neutral-200 p-6">
+              <h3 className="text-lg font-semibold text-neutral-800 mb-3">{t('email.label')}</h3>
               <a href={`mailto:${t('email.value')}`} className="text-primary hover:text-primary-dark font-medium">
                 {t('email.value')}
               </a>
             </div>
 
             {/* WhatsApp */}
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">{t('whatsapp.label')}</h3>
+            <div className="bg-neutral-50 rounded-lg border border-neutral-200 p-6">
+              <h3 className="text-lg font-semibold text-neutral-800 mb-3">{t('whatsapp.label')}</h3>
               <a
                 href={`https://wa.me/${t('whatsapp.value').replace(/[\s()-]/g, '')}`}
                 target="_blank"
@@ -154,8 +154,8 @@ export default function Contact() {
 
           {/* 右侧：表单 */}
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-lg shadow-md p-6 md:p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">{t('form.title')}</h3>
+            <div className="bg-neutral-50 rounded-lg border border-neutral-200 p-6 md:p-8">
+              <h3 className="text-2xl font-bold text-neutral-800 mb-6">{t('form.title')}</h3>
 
               {/* 成功提示 - 需求 16.5: ARIA live region */}
               {submitStatus === 'success' && (
@@ -542,7 +542,7 @@ export default function Contact() {
                   disabled={isSubmitting}
                   aria-busy={isSubmitting}
                   aria-disabled={isSubmitting}
-                  className="w-full bg-primary hover:bg-primary-dark text-white font-bold py-3 px-6 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-primary hover:bg-primary-dark text-white font-bold py-3 px-6 rounded-lg transition-colors focus:outline-none focus:ring-4 focus:ring-primary/30 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? t('form.submitting') : t('form.submit')}
                 </button>

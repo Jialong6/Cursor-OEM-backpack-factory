@@ -1,0 +1,442 @@
+{
+  "nodes": [
+    {
+      "id": "node_start",
+      "type": "text",
+      "x": -140,
+      "y": 0,
+      "width": 280,
+      "height": 60,
+      "text": "**SOP: 客户转化流程**\n从初次接触到大货订单",
+      "color": "5"
+    },
+    {
+      "id": "node_01",
+      "type": "text",
+      "x": -140,
+      "y": 100,
+      "width": 280,
+      "height": 100,
+      "text": "**1. 收集客户信息并快速响应**\n记录客户基本信息，工作时间内数小时内回复，非工作时间设置自动回复"
+    },
+    {
+      "id": "node_02",
+      "type": "text",
+      "x": -140,
+      "y": 240,
+      "width": 280,
+      "height": 100,
+      "text": "**2. 创建客户档案**\n录入 Notion/CRM，记录来源、行业、需求摘要，便于后续更新"
+    },
+    {
+      "id": "node_03",
+      "type": "text",
+      "x": -140,
+      "y": 380,
+      "width": 280,
+      "height": 80,
+      "text": "**3. 资格评估与优先级分配**\n根据客户信息和行为分配 A/B/C/D 等级"
+    },
+    {
+      "id": "node_a",
+      "type": "text",
+      "x": -520,
+      "y": 520,
+      "width": 220,
+      "height": 120,
+      "text": "**A类: 现有客户**\n最高优先级，定制化服务，快速响应新需求，可提供优惠和快速打样",
+      "color": "4"
+    },
+    {
+      "id": "node_b",
+      "type": "text",
+      "x": -260,
+      "y": 520,
+      "width": 220,
+      "height": 120,
+      "text": "**B类: 高意向客户**\n保持高度主动性，快速安排会议，准备案例和资质证明建立信任",
+      "color": "3"
+    },
+    {
+      "id": "node_c",
+      "type": "text",
+      "x": 40,
+      "y": 520,
+      "width": 220,
+      "height": 120,
+      "text": "**C类: 需培养客户**\n定期跟进(1-2周)，提供价值内容，逐步摸清决策流程",
+      "color": "2"
+    },
+    {
+      "id": "node_d",
+      "type": "text",
+      "x": 300,
+      "y": 520,
+      "width": 220,
+      "height": 120,
+      "text": "**D类: 低意向客户**\n礼貌回复基本信息，标记低优先级，偶尔群发营销邮件保持联系",
+      "color": "1"
+    },
+    {
+      "id": "node_04",
+      "type": "text",
+      "x": -140,
+      "y": 700,
+      "width": 280,
+      "height": 100,
+      "text": "**4. 安排会议或工厂参观**\n确认 Zoom/视频参观日程，准备议程和问题清单，测试设备"
+    },
+    {
+      "id": "node_05",
+      "type": "text",
+      "x": -140,
+      "y": 840,
+      "width": 280,
+      "height": 100,
+      "text": "**5. 准备销售资料和提案**\n整理公司简介、生产视频、资质证明，准备定制化提案"
+    },
+    {
+      "id": "node_06",
+      "type": "text",
+      "x": -140,
+      "y": 980,
+      "width": 280,
+      "height": 100,
+      "text": "**6. 召开首次沟通会议**\n介绍公司优势，展示安全可靠、价格优势、沟通顺畅，确认下一步行动"
+    },
+    {
+      "id": "node_07",
+      "type": "text",
+      "x": -140,
+      "y": 1120,
+      "width": 280,
+      "height": 100,
+      "text": "**7. 会后跟进与记录**\n24小时内发送跟进邮件，回顾要点，提供补充资料，更新客户档案"
+    },
+    {
+      "id": "node_08",
+      "type": "text",
+      "x": -140,
+      "y": 1260,
+      "width": 280,
+      "height": 100,
+      "text": "**8. 确认需求细节并准备报价**\n确认设计稿、数量、材料、交期要求，内部核算成本"
+    },
+    {
+      "id": "node_09",
+      "type": "text",
+      "x": -140,
+      "y": 1400,
+      "width": 280,
+      "height": 100,
+      "text": "**9. 提供报价与合作方案**\n发送正式报价单，包含价格构成、交货周期、付款条款"
+    },
+    {
+      "id": "node_10",
+      "type": "text",
+      "x": -140,
+      "y": 1540,
+      "width": 280,
+      "height": 100,
+      "text": "**10. 样品制作与确认**\n安排打样，发送照片/视频预览，收集反馈直到客户确认"
+    },
+    {
+      "id": "node_11",
+      "type": "text",
+      "x": -140,
+      "y": 1680,
+      "width": 280,
+      "height": 100,
+      "text": "**11. 持续建立信任**\n展示资质证明和成功案例，解释质量控制流程，消除风险顾虑"
+    },
+    {
+      "id": "node_12",
+      "type": "text",
+      "x": -140,
+      "y": 1820,
+      "width": 280,
+      "height": 100,
+      "text": "**12. 未决客户持续跟进**\n每1-2周礼貌询问进展，关注客户公司动态，协助内部决策"
+    },
+    {
+      "id": "node_13",
+      "type": "text",
+      "x": -140,
+      "y": 1960,
+      "width": 280,
+      "height": 100,
+      "text": "**13. 处理价格和合同谈判**\n倾听关注点，探讨灵活方案，强调价值，以合作共赢态度协商"
+    },
+    {
+      "id": "node_14",
+      "type": "text",
+      "x": -140,
+      "y": 2100,
+      "width": 280,
+      "height": 100,
+      "text": "**14. 达成协议并确认订单**\n签署正式合同，收取订金，通知工厂准备生产"
+    },
+    {
+      "id": "node_15",
+      "type": "text",
+      "x": -140,
+      "y": 2240,
+      "width": 280,
+      "height": 100,
+      "text": "**15. 生产前内部准备**\n采购原材料，协调排产，制定进度计划并发送客户确认"
+    },
+    {
+      "id": "node_16",
+      "type": "text",
+      "x": -140,
+      "y": 2380,
+      "width": 280,
+      "height": 100,
+      "text": "**16. 定期向客户汇报进展**\n按里程碑发送简报，附照片/视频，异常情况第一时间告知"
+    },
+    {
+      "id": "node_17",
+      "type": "text",
+      "x": -140,
+      "y": 2520,
+      "width": 280,
+      "height": 100,
+      "text": "**17. 质量控制与验收**\n严格执行质检，采用 AQL 抽检标准，配合客户或第三方验货"
+    },
+    {
+      "id": "node_18",
+      "type": "text",
+      "x": -140,
+      "y": 2660,
+      "width": 280,
+      "height": 100,
+      "text": "**18. 发货与交付**\n收到尾款后安排出运，准备全套文件，通知追踪信息"
+    },
+    {
+      "id": "node_19",
+      "type": "text",
+      "x": -140,
+      "y": 2800,
+      "width": 280,
+      "height": 100,
+      "text": "**19. 销售完成与内部复盘**\n发送感谢信，处理反馈，内部总结经验，更新客户状态"
+    },
+    {
+      "id": "node_20",
+      "type": "text",
+      "x": -140,
+      "y": 2940,
+      "width": 280,
+      "height": 100,
+      "text": "**20. 维护客户关系并争取复购**\n定期联系，关注市场动态，提供增值服务，建立长期伙伴关系"
+    },
+    {
+      "id": "node_end",
+      "type": "text",
+      "x": -140,
+      "y": 3080,
+      "width": 280,
+      "height": 60,
+      "text": "**流程结束**\n进入下一轮客户开发",
+      "color": "5"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_start_01",
+      "fromNode": "node_start",
+      "fromSide": "bottom",
+      "toNode": "node_01",
+      "toSide": "top"
+    },
+    {
+      "id": "edge_01_02",
+      "fromNode": "node_01",
+      "fromSide": "bottom",
+      "toNode": "node_02",
+      "toSide": "top"
+    },
+    {
+      "id": "edge_02_03",
+      "fromNode": "node_02",
+      "fromSide": "bottom",
+      "toNode": "node_03",
+      "toSide": "top"
+    },
+    {
+      "id": "edge_03_a",
+      "fromNode": "node_03",
+      "fromSide": "bottom",
+      "toNode": "node_a",
+      "toSide": "top"
+    },
+    {
+      "id": "edge_03_b",
+      "fromNode": "node_03",
+      "fromSide": "bottom",
+      "toNode": "node_b",
+      "toSide": "top"
+    },
+    {
+      "id": "edge_03_c",
+      "fromNode": "node_03",
+      "fromSide": "bottom",
+      "toNode": "node_c",
+      "toSide": "top"
+    },
+    {
+      "id": "edge_03_d",
+      "fromNode": "node_03",
+      "fromSide": "bottom",
+      "toNode": "node_d",
+      "toSide": "top"
+    },
+    {
+      "id": "edge_a_04",
+      "fromNode": "node_a",
+      "fromSide": "bottom",
+      "toNode": "node_04",
+      "toSide": "top"
+    },
+    {
+      "id": "edge_b_04",
+      "fromNode": "node_b",
+      "fromSide": "bottom",
+      "toNode": "node_04",
+      "toSide": "top"
+    },
+    {
+      "id": "edge_c_04",
+      "fromNode": "node_c",
+      "fromSide": "bottom",
+      "toNode": "node_04",
+      "toSide": "top"
+    },
+    {
+      "id": "edge_d_04",
+      "fromNode": "node_d",
+      "fromSide": "bottom",
+      "toNode": "node_04",
+      "toSide": "top"
+    },
+    {
+      "id": "edge_04_05",
+      "fromNode": "node_04",
+      "fromSide": "bottom",
+      "toNode": "node_05",
+      "toSide": "top"
+    },
+    {
+      "id": "edge_05_06",
+      "fromNode": "node_05",
+      "fromSide": "bottom",
+      "toNode": "node_06",
+      "toSide": "top"
+    },
+    {
+      "id": "edge_06_07",
+      "fromNode": "node_06",
+      "fromSide": "bottom",
+      "toNode": "node_07",
+      "toSide": "top"
+    },
+    {
+      "id": "edge_07_08",
+      "fromNode": "node_07",
+      "fromSide": "bottom",
+      "toNode": "node_08",
+      "toSide": "top"
+    },
+    {
+      "id": "edge_08_09",
+      "fromNode": "node_08",
+      "fromSide": "bottom",
+      "toNode": "node_09",
+      "toSide": "top"
+    },
+    {
+      "id": "edge_09_10",
+      "fromNode": "node_09",
+      "fromSide": "bottom",
+      "toNode": "node_10",
+      "toSide": "top"
+    },
+    {
+      "id": "edge_10_11",
+      "fromNode": "node_10",
+      "fromSide": "bottom",
+      "toNode": "node_11",
+      "toSide": "top"
+    },
+    {
+      "id": "edge_11_12",
+      "fromNode": "node_11",
+      "fromSide": "bottom",
+      "toNode": "node_12",
+      "toSide": "top"
+    },
+    {
+      "id": "edge_12_13",
+      "fromNode": "node_12",
+      "fromSide": "bottom",
+      "toNode": "node_13",
+      "toSide": "top"
+    },
+    {
+      "id": "edge_13_14",
+      "fromNode": "node_13",
+      "fromSide": "bottom",
+      "toNode": "node_14",
+      "toSide": "top"
+    },
+    {
+      "id": "edge_14_15",
+      "fromNode": "node_14",
+      "fromSide": "bottom",
+      "toNode": "node_15",
+      "toSide": "top"
+    },
+    {
+      "id": "edge_15_16",
+      "fromNode": "node_15",
+      "fromSide": "bottom",
+      "toNode": "node_16",
+      "toSide": "top"
+    },
+    {
+      "id": "edge_16_17",
+      "fromNode": "node_16",
+      "fromSide": "bottom",
+      "toNode": "node_17",
+      "toSide": "top"
+    },
+    {
+      "id": "edge_17_18",
+      "fromNode": "node_17",
+      "fromSide": "bottom",
+      "toNode": "node_18",
+      "toSide": "top"
+    },
+    {
+      "id": "edge_18_19",
+      "fromNode": "node_18",
+      "fromSide": "bottom",
+      "toNode": "node_19",
+      "toSide": "top"
+    },
+    {
+      "id": "edge_19_20",
+      "fromNode": "node_19",
+      "fromSide": "bottom",
+      "toNode": "node_20",
+      "toSide": "top"
+    },
+    {
+      "id": "edge_20_end",
+      "fromNode": "node_20",
+      "fromSide": "bottom",
+      "toNode": "node_end",
+      "toSide": "top"
+    }
+  ]
+}

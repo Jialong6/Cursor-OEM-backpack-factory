@@ -93,33 +93,33 @@ body {
 
   /* 为所有可聚焦元素添加焦点指示器（仅限键盘导航） */
   *:focus-visible {
-    outline: 2px solid #416788; /* Primary Blue */
+    outline: 2px solid #87A575; /* Brand Green */
     outline-offset: 2px;
     border-radius: 4px;
   }
 
   /* 链接焦点样式 */
   a:focus-visible {
-    outline: 2px solid #416788;
+    outline: 2px solid #87A575;
     outline-offset: 2px;
     text-decoration: underline;
   }
 
   /* 按钮焦点样式 */
   button:focus-visible {
-    outline: 2px solid #416788;
+    outline: 2px solid #87A575;
     outline-offset: 2px;
-    box-shadow: 0 0 0 4px rgba(65, 103, 136, 0.1);
+    box-shadow: 0 0 0 4px rgba(135, 165, 117, 0.15);
   }
 
   /* 输入框焦点样式 */
   input:focus-visible,
   textarea:focus-visible,
   select:focus-visible {
-    outline: 2px solid #416788;
+    outline: 2px solid #87A575;
     outline-offset: 0;
-    border-color: #416788;
-    box-shadow: 0 0 0 3px rgba(65, 103, 136, 0.1);
+    border-color: #87A575;
+    box-shadow: 0 0 0 3px rgba(135, 165, 117, 0.15);
   }
 }
 
@@ -149,7 +149,7 @@ body {
     left: -9999px;
     z-index: 999;
     padding: 1rem;
-    background-color: #416788;
+    background-color: #87A575;
     color: white;
     text-decoration: none;
   }

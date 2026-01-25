@@ -29,22 +29,22 @@ export default function HeroBanner() {
   return (
     <section
       id="banner"
-      className="relative flex min-h-[100svh] flex-col items-center justify-center bg-gradient-to-b from-white via-cyan-50/30 to-white px-6 py-20 md:px-12"
+      className="relative flex min-h-[100svh] flex-col items-center justify-center bg-white px-6 py-20 md:px-12"
     >
       <div className="mx-auto w-full max-w-5xl text-center">
         {/* 主标语 */}
         <h1 className="mb-4 text-4xl font-bold leading-tight text-gray-900 md:text-5xl lg:text-6xl">
           {t('line1')}
         </h1>
-        <h2 className="mb-8 text-2xl font-semibold text-primary-blue md:text-3xl lg:text-4xl">
+        <h2 className="mb-8 text-2xl font-semibold text-primary md:text-3xl lg:text-4xl">
           {t('line2')}
         </h2>
 
         {/* 描述文字 */}
-        <div className="mx-auto mb-8 max-w-3xl space-y-4 text-base leading-relaxed text-gray-700 md:text-lg">
+        <div className="mx-auto mb-8 max-w-3xl space-y-4 text-base leading-relaxed text-neutral-600 md:text-lg">
           <p>
             {t('p1.pre')}
-            <span className="font-bold text-primary-cyan">
+            <span className="font-bold text-primary">
               {t('p1.highlight')}
             </span>
             {t('p1.post')}
@@ -56,7 +56,7 @@ export default function HeroBanner() {
         {/* CTA 按钮 */}
         <button
           onClick={handleScrollToContact}
-          className="mb-12 rounded-lg bg-primary-blue px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-dark-blue hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-primary-cyan/50"
+          className="mb-12 rounded-lg bg-primary px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-primary-dark hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-primary/30"
         >
           {t('cta')}
         </button>
@@ -66,12 +66,12 @@ export default function HeroBanner() {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="rounded-lg bg-white p-4 shadow-md transition-transform hover:scale-105"
+              className="rounded-lg bg-neutral-50 p-4 shadow-sm transition-transform hover:scale-105 hover:shadow-md"
             >
-              <div className="mb-2 text-2xl font-bold text-primary-blue md:text-3xl">
+              <div className="mb-2 text-2xl font-bold text-primary md:text-3xl">
                 {stat.value}
               </div>
-              <div className="text-sm text-gray-600">{stat.label}</div>
+              <div className="text-sm text-neutral-600">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -80,7 +80,7 @@ export default function HeroBanner() {
       {/* 向下滚动提示 */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <svg
-          className="h-8 w-8 text-primary-cyan"
+          className="h-8 w-8 text-primary"
           fill="none"
           strokeLinecap="round"
           strokeLinejoin="round"

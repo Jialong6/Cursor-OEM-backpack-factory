@@ -41,7 +41,7 @@ export default function Footer() {
   const quickLinks = t.raw('links') as Array<{ name: string; href: string }>;
 
   return (
-    <footer className="bg-gray-900 text-gray-300">
+    <footer className="bg-neutral-900 text-neutral-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* 公司信息 - 需求 13.1 */}
@@ -52,7 +52,7 @@ export default function Footer() {
             <div className="space-y-3">
               <p className="text-sm flex items-start gap-2">
                 <svg
-                  className="w-5 h-5 mt-0.5 flex-shrink-0 text-primary-cyan"
+                  className="w-5 h-5 mt-0.5 flex-shrink-0 text-primary"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -75,7 +75,7 @@ export default function Footer() {
               </p>
               <p className="text-sm flex items-center gap-2">
                 <svg
-                  className="w-5 h-5 flex-shrink-0 text-primary-cyan"
+                  className="w-5 h-5 flex-shrink-0 text-primary"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -94,7 +94,7 @@ export default function Footer() {
               </p>
               <p className="text-sm flex items-center gap-2">
                 <svg
-                  className="w-5 h-5 flex-shrink-0 text-primary-cyan"
+                  className="w-5 h-5 flex-shrink-0 text-primary"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -123,7 +123,7 @@ export default function Footer() {
                   <Link
                     href={link.href}
                     onClick={(e) => handleLinkClick(e, link.href)}
-                    className="text-sm hover:text-primary-cyan transition-colors"
+                    className="text-sm hover:text-primary transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -140,8 +140,8 @@ export default function Footer() {
         </div>
 
         {/* 版权信息 - 需求 13.4 */}
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p className="text-sm text-gray-400">
+        <div className="border-t border-neutral-800 mt-8 pt-8 text-center">
+          <p className="text-sm text-neutral-500">
             © {new Date().getFullYear()} {t('copyright')}
           </p>
         </div>

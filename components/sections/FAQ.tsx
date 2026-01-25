@@ -56,11 +56,11 @@ export default function FAQ() {
 
       <section
         id="faq"
-        className="relative bg-gradient-to-b from-gray-50 to-white px-6 py-20 md:px-12 lg:py-28"
+        className="relative bg-neutral-50 px-6 py-20 md:px-12 lg:py-28"
       >
         <div className="mx-auto w-full max-w-5xl">
           {/* 标题 */}
-          <h2 className="mb-16 text-center text-3xl font-bold text-primary-blue md:text-4xl lg:text-5xl">
+          <h2 className="mb-16 text-center text-3xl font-bold text-neutral-800 md:text-4xl lg:text-5xl">
             {t('title')}
           </h2>
 
@@ -70,10 +70,10 @@ export default function FAQ() {
               <div key={sectionIndex}>
                 {/* 分类标题 */}
                 <div className="mb-6 flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-blue text-lg font-bold text-white">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-lg font-bold text-white">
                     {sectionIndex + 1}
                   </div>
-                  <h3 className="text-2xl font-bold text-primary-blue md:text-3xl">
+                  <h3 className="text-2xl font-bold text-neutral-800 md:text-3xl">
                     {section.title}
                   </h3>
                 </div>
@@ -85,12 +85,12 @@ export default function FAQ() {
           </div>
 
           {/* 底部提示 */}
-          <div className="mt-16 rounded-xl bg-gradient-to-r from-primary-cyan/10 via-primary-blue/10 to-primary-cyan/10 p-8 text-center">
-            <p className="mb-4 text-lg text-gray-700">
+          <div className="mt-16 rounded-xl bg-white border border-neutral-200 p-8 text-center">
+            <p className="mb-4 text-lg text-neutral-600">
               {locale === 'zh' ? (
                 <>
                   没找到您想要的答案？
-                  <span className="font-semibold text-primary-blue">
+                  <span className="font-semibold text-primary">
                     欢迎随时联系我们
                   </span>
                   ，我们的团队将竭诚为您解答。
@@ -98,7 +98,7 @@ export default function FAQ() {
               ) : (
                 <>
                   Can&apos;t find what you&apos;re looking for?{' '}
-                  <span className="font-semibold text-primary-blue">
+                  <span className="font-semibold text-primary">
                     Feel free to contact us
                   </span>{' '}
                   — our team is here to help.
@@ -122,7 +122,7 @@ export default function FAQ() {
                   });
                 }
               }}
-              className="inline-block rounded-lg bg-primary-blue px-8 py-3 font-semibold text-white transition-all hover:bg-dark-blue hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-primary-cyan/50"
+              className="inline-block rounded-lg bg-primary px-8 py-3 font-semibold text-white transition-all hover:bg-primary-dark hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-primary/30"
             >
               {locale === 'zh' ? '联系我们' : 'Contact Us'}
             </a>

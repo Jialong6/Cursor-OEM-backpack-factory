@@ -57,7 +57,7 @@ export default function Services() {
     >
       <div className="mx-auto w-full max-w-7xl">
         {/* 标题 */}
-        <h2 className="mb-16 text-center text-3xl font-bold text-primary-blue md:text-4xl lg:text-5xl">
+        <h2 className="mb-16 text-center text-3xl font-bold text-neutral-800 md:text-4xl lg:text-5xl">
           {t('title')}
         </h2>
 
@@ -66,41 +66,41 @@ export default function Services() {
           {steps.map((step, index) => (
             <div
               key={index}
-              className="group relative rounded-xl bg-gradient-to-br from-gray-50 to-white p-8 shadow-md transition-all hover:shadow-xl"
+              className="group relative rounded-xl bg-white border border-neutral-200 p-8 shadow-sm transition-all hover:shadow-md hover:border-primary/30"
             >
               {/* 步骤编号和图标 */}
               <div className="mb-6 flex items-center gap-4">
-                <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-primary-blue text-white shadow-lg">
+                <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-primary text-white shadow-sm">
                   {stepIcons[index]}
                 </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary-cyan/20 text-2xl font-bold text-primary-blue">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-2xl font-bold text-primary">
                   {index + 1}
                 </div>
               </div>
 
               {/* 步骤标题 */}
-              <h3 className="mb-4 text-xl font-bold text-primary-blue md:text-2xl">
+              <h3 className="mb-4 text-xl font-bold text-neutral-800 md:text-2xl">
                 {step.title}
               </h3>
 
               {/* 步骤描述 */}
-              <p className="leading-relaxed text-gray-700">
+              <p className="leading-relaxed text-neutral-600">
                 {step.desc}
               </p>
 
               {/* 连接线（桌面端显示，最后一个不显示） */}
               {index < steps.length - 1 && (
-                <div className="absolute -bottom-4 left-1/2 hidden h-8 w-0.5 -translate-x-1/2 bg-gradient-to-b from-primary-cyan to-transparent md:block lg:hidden lg:even:block" />
+                <div className="absolute -bottom-4 left-1/2 hidden h-8 w-0.5 -translate-x-1/2 bg-gradient-to-b from-primary to-transparent md:block lg:hidden lg:even:block" />
               )}
             </div>
           ))}
         </div>
 
         {/* 流程说明 */}
-        <div className="mt-16 rounded-xl bg-gradient-to-r from-primary-cyan/10 via-primary-blue/10 to-primary-cyan/10 p-8 text-center">
-          <p className="text-lg text-gray-700">
-            <span className="font-semibold text-primary-blue">从询盘到交付</span>，我们的专业团队全程支持，
-            <span className="font-semibold text-primary-blue">确保每个环节高效透明</span>，
+        <div className="mt-16 rounded-xl bg-neutral-50 border border-neutral-200 p-8 text-center">
+          <p className="text-lg text-neutral-600">
+            <span className="font-semibold text-primary">从询盘到交付</span>，我们的专业团队全程支持，
+            <span className="font-semibold text-primary">确保每个环节高效透明</span>，
             让您的定制项目顺利落地。
           </p>
         </div>

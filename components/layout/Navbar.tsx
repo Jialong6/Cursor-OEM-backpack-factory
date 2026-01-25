@@ -193,14 +193,14 @@ export default function Navbar() {
             onClick={(e) => handleNavClick(e, '#banner')}
             className="flex items-center space-x-2 group z-50"
           >
-            <div className="w-10 h-10 bg-gradient-to-br from-primary-cyan to-primary-blue rounded-lg flex items-center justify-center transition-transform group-hover:scale-110">
+            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center transition-transform group-hover:scale-110">
               <span className="text-white font-bold text-xl">BB</span>
             </div>
             <div className="hidden sm:block">
               <span
                 className={`
                   text-xl font-bold transition-colors
-                  ${isScrolled ? 'text-primary-blue' : 'text-white'}
+                  ${isScrolled ? 'text-neutral-800' : 'text-white'}
                 `}
               >
                 Better Bags
@@ -221,10 +221,10 @@ export default function Navbar() {
                   ${
                     activeSection === id
                       ? isScrolled
-                        ? 'bg-primary-cyan/20 text-primary-blue'
+                        ? 'bg-primary/10 text-primary'
                         : 'bg-white/30 text-white backdrop-blur-sm'
                       : isScrolled
-                      ? 'text-gray-700 hover:bg-gray-100'
+                      ? 'text-neutral-600 hover:bg-neutral-100'
                       : 'text-white/90 hover:bg-white/20'
                   }
                 `}
@@ -242,7 +242,7 @@ export default function Navbar() {
             {/* 汉堡菜单按钮 - 移动端 */}
             <button
               onClick={toggleMobileMenu}
-              className="md:hidden p-2 rounded-lg transition-colors hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-primary-cyan"
+              className="md:hidden p-2 rounded-lg transition-colors hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-primary"
               aria-label={isMobileMenuOpen ? '关闭菜单' : '打开菜单'}
               aria-expanded={isMobileMenuOpen}
             >
@@ -317,8 +317,8 @@ export default function Navbar() {
                   transition-all duration-200
                   ${
                     activeSection === id
-                      ? 'bg-primary-cyan/20 text-primary-blue'
-                      : 'text-gray-700 hover:bg-gray-100'
+                      ? 'bg-primary/10 text-primary'
+                      : 'text-neutral-700 hover:bg-neutral-100'
                   }
                 `}
               >

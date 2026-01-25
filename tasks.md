@@ -251,9 +251,9 @@
   - [x] 12.2 编写属性测试：字体大小响应式范围 ✅
     - 创建 tests/properties/font-size-range.test.tsx（12个测试）
     - 实现 3 个属性测试（100次迭代）：
-      * 任意视口宽度下正文字体在 14px-18px 范围内
-      * 正文字体大小随视口宽度单调递增
-      * 任意标题级别和视口宽度下标题字体在配置范围内
+      - 任意视口宽度下正文字体在 14px-18px 范围内
+      - 正文字体大小随视口宽度单调递增
+      - 任意标题级别和视口宽度下标题字体在配置范围内
     - 实现 9 个单元测试：覆盖不同视口宽度和标题级别
     - 所有测试通过：96/96（2 skipped）
     - 构建成功
@@ -262,12 +262,12 @@
   - [x] 12.3 优化图片响应式加载 ✅
     - 创建 OptimizedImage 组件：components/ui/OptimizedImage.tsx
     - 实现功能：
-      * Next.js Image 组件自动优化
-      * 懒加载（loading="lazy"）非首屏图片
-      * 自动生成 WebP 格式和 srcset
-      * 保持宽高比（aspectRatio 属性）
-      * 响应式 sizes 属性配置
-      * 模糊占位符和错误处理
+      - Next.js Image 组件自动优化
+      - 懒加载（loading="lazy"）非首屏图片
+      - 自动生成 WebP 格式和 srcset
+      - 保持宽高比（aspectRatio 属性）
+      - 响应式 sizes 属性配置
+      - 模糊占位符和错误处理
     - 预设配置：IMAGE_SIZES 和 ASPECT_RATIOS
     - 更新博客组件使用 OptimizedImage
     - 所有测试通过：96/96（2 skipped）
@@ -276,9 +276,9 @@
   - [x] 12.4 编写属性测试：图片宽高比保持 ✅
     - 创建 tests/properties/image-aspect-ratio.test.tsx（13个测试）
     - 实现 3 个属性测试（100次迭代）：
-      * 任意宽高比字符串应正确设置 aspectRatio 样式
-      * 预设 ASPECT_RATIOS 应生成正确宽高比
-      * 固定尺寸图片应保持正确宽高比
+      - 任意宽高比字符串应正确设置 aspectRatio 样式
+      - 预设 ASPECT_RATIOS 应生成正确宽高比
+      - 固定尺寸图片应保持正确宽高比
     - 实现 10 个单元测试：验证所有预设宽高比数值、填充/固定尺寸模式、默认值覆盖
     - 使用正则表达式匹配 CSS aspect-ratio 格式（支持空格）
     - 所有测试通过：109/109（2 skipped）
@@ -304,11 +304,11 @@
     - 修复博客详情页 Markdown 渲染：# 渲染为 h2，## 渲染为 h3
     - 确保每个页面只有一个 h1 标题（符合 SEO 最佳实践）
     - 验证所有页面使用 HTML5 语义标签：
-      * 首页：main + section（7个区块）
-      * 博客列表页：main
-      * 博客详情页：main + article
-      * Navbar：header + nav
-      * Footer：footer
+      - 首页：main + section（7个区块）
+      - 博客列表页：main
+      - 博客详情页：main + article
+      - Navbar：header + nav
+      - Footer：footer
     - 创建 tests/semantic-html.test.tsx（9个测试）
     - 验证 h1 唯一性、语义标签使用、标题层级、可访问性
     - 所有测试通过：147/147（2 skipped）
@@ -346,17 +346,17 @@
     - _需求: 16.2_
   - [x] 14.3 实现键盘导航支持 ✅
     - 添加全局键盘焦点样式到 globals.css：
-      * focus-visible 样式应用于所有交互元素
-      * 链接、按钮、输入框的特定焦点样式
-      * Primary Blue (#416788) 焦点指示器配色
+      - focus-visible 样式应用于所有交互元素
+      - 链接、按钮、输入框的特定焦点样式
+      - Primary Blue (#416788) 焦点指示器配色
     - 添加跳过导航链接到 layout.tsx：
-      * 支持 Tab 键显示、Enter 键跳转
-      * 自动隐藏，仅键盘导航时可见
-      * 中英文支持
+      - 支持 Tab 键显示、Enter 键跳转
+      - 自动隐藏，仅键盘导航时可见
+      - 中英文支持
     - 修复文件上传按钮键盘可访问性：
-      * 使用绝对定位 + opacity-0 替代 hidden
-      * 添加 focus-within 样式显示焦点状态
-      * 添加 aria-label 改善屏幕阅读器体验
+      - 使用绝对定位 + opacity-0 替代 hidden
+      - 添加 focus-within 样式显示焦点状态
+      - 添加 aria-label 改善屏幕阅读器体验
     - 所有测试通过：147/147（2 skipped）
     - 构建成功
     - _需求: 16.3, 16.6_
@@ -364,15 +364,15 @@
     - 创建 tests/properties/keyboard-focus-visibility.test.tsx（11个测试）
     - 实现属性测试：任意可聚焦元素获得焦点时都应该能获得焦点
     - 实现 8 个单元测试：
-      * Navbar 导航链接焦点可访问性
-      * 汉堡菜单按钮焦点可访问性
-      * HeroBanner CTA 按钮焦点可访问性
-      * Contact 表单输入框焦点可访问性
-      * Contact 表单提交按钮焦点可访问性
-      * 文件上传输入框键盘可访问性
-      * 语言切换器焦点可访问性
-      * Tab 键导航顺序验证（Navbar、Contact 表单）
-      * 全局焦点样式应用验证
+      - Navbar 导航链接焦点可访问性
+      - 汉堡菜单按钮焦点可访问性
+      - HeroBanner CTA 按钮焦点可访问性
+      - Contact 表单输入框焦点可访问性
+      - Contact 表单提交按钮焦点可访问性
+      - 文件上传输入框键盘可访问性
+      - 语言切换器焦点可访问性
+      - Tab 键导航顺序验证（Navbar、Contact 表单）
+      - 全局焦点样式应用验证
     - 所有测试通过：158/158（2 skipped）
     - 构建成功
     - **属性 12: 键盘焦点可见性**
@@ -394,20 +394,20 @@
 - [ ] 15. 性能优化
   - [x] 15.1 配置资源压缩 ✅
     - 更新 next.config.ts 添加性能优化配置:
-      * 禁用生产环境 source maps（减小包大小）
-      * 启用 SWC 编译器移除生产环境 console.log（保留 error 和 warn）
-      * 配置图片优化：WebP 和 AVIF 格式优先
-      * 配置响应式图片尺寸（8个设备尺寸 + 8个图标尺寸）
-      * 启用实验性功能 optimizePackageImports（react-hook-form, zod）
+      - 禁用生产环境 source maps（减小包大小）
+      - 启用 SWC 编译器移除生产环境 console.log（保留 error 和 warn）
+      - 配置图片优化：WebP 和 AVIF 格式优先
+      - 配置响应式图片尺寸（8个设备尺寸 + 8个图标尺寸）
+      - 启用实验性功能 optimizePackageImports（react-hook-form, zod）
     - 验证 Tailwind CSS tree-shaking 配置正确:
-      * content 路径包含所有组件和页面
-      * PostCSS 配置包含 tailwindcss 和 autoprefixer
+      - content 路径包含所有组件和页面
+      - PostCSS 配置包含 tailwindcss 和 autoprefixer
     - 验证构建输出:
-      * CSS 文件已压缩（30KB，单行无空格）
-      * JavaScript 文件已压缩（变量名缩短，代码在一行）
-      * 首页 First Load JS: 185 kB
-      * 博客页面: 138-139 kB
-      * Shared chunks: 102 kB
+      - CSS 文件已压缩（30KB，单行无空格）
+      - JavaScript 文件已压缩（变量名缩短，代码在一行）
+      - 首页 First Load JS: 185 kB
+      - 博客页面: 138-139 kB
+      - Shared chunks: 102 kB
     - 所有测试通过：158/158（2 skipped）
     - 构建成功
     - _需求: 15.4, 15.5_
@@ -416,11 +416,11 @@
     - 验证 JSON-LD 脚本已优化（type="application/ld+json"，非阻塞）
     - 确认无外部 JavaScript 脚本需要 defer/async 优化
     - 创建 docs/SCRIPT_LOADING.md 最佳实践文档：
-      * 记录当前脚本状态（AboutUs.tsx, FAQ.tsx 中的 JSON-LD）
-      * 提供 Next.js Script 组件使用指南
-      * 包含三种策略示例（beforeInteractive, afterInteractive, lazyOnload）
-      * 添加 Google Analytics 和 mCaptcha 配置示例
-      * 性能最佳实践和验证方法
+      - 记录当前脚本状态（AboutUs.tsx, FAQ.tsx 中的 JSON-LD）
+      - 提供 Next.js Script 组件使用指南
+      - 包含三种策略示例（beforeInteractive, afterInteractive, lazyOnload）
+      - 添加 Google Analytics 和 mCaptcha 配置示例
+      - 性能最佳实践和验证方法
     - 所有测试通过：158/158（2 skipped）
     - 构建成功
     - _需求: 15.6_
@@ -430,7 +430,7 @@
   - 生产构建成功：22 个静态页面
   - 无错误或警告
   - 性能指标：
-    * 首页 First Load JS: 185 kB
-    * 博客列表: 138 kB
-    * 博客详情: 139 kB
-    * Shared chunks: 102 kB
+    - 首页 First Load JS: 185 kB
+    - 博客列表: 138 kB
+    - 博客详情: 139 kB
+    - Shared chunks: 102 kB

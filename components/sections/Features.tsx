@@ -49,22 +49,22 @@ export default function Features() {
   return (
     <section
       id="features"
-      className="relative bg-gradient-to-b from-gray-50 to-white px-6 py-20 md:px-12 lg:py-28"
+      className="relative bg-neutral-50 px-6 py-20 md:px-12 lg:py-28"
     >
       <div className="mx-auto w-full max-w-7xl">
         {/* Jay 个人介绍 */}
         <div className="mb-20 text-center">
-          <h2 className="mb-6 text-3xl font-bold text-primary-blue md:text-4xl">
+          <h2 className="mb-6 text-3xl font-bold text-neutral-800 md:text-4xl">
             {t('jay.title')}
           </h2>
-          <div className="mx-auto max-w-3xl text-lg leading-relaxed text-gray-700">
+          <div className="mx-auto max-w-3xl text-lg leading-relaxed text-neutral-600">
             <p>
               {t('jay.desc1')}
-              <span className="font-semibold text-primary-blue">
+              <span className="font-semibold text-primary">
                 Penn State University
               </span>
               {t('jay.and')}
-              <span className="font-semibold text-primary-blue">
+              <span className="font-semibold text-primary">
                 Harrisburg University of Science and Technology
               </span>
               {t('jay.desc2')}
@@ -74,7 +74,7 @@ export default function Features() {
 
         {/* 为什么选择 Better Bags */}
         <div className="mb-20">
-          <h2 className="mb-12 text-center text-3xl font-bold text-primary-blue md:text-4xl lg:text-5xl">
+          <h2 className="mb-12 text-center text-3xl font-bold text-neutral-800 md:text-4xl lg:text-5xl">
             {t('title')}
           </h2>
 
@@ -82,26 +82,17 @@ export default function Features() {
             {advantages.map((advantage, index) => (
               <div
                 key={index}
-                className="group rounded-xl bg-white p-8 shadow-md transition-all hover:shadow-xl"
-                style={{
-                  borderTop: `4px solid ${advantage.color}`,
-                }}
+                className="group rounded-xl bg-white border border-neutral-200 p-8 shadow-sm transition-all hover:shadow-md hover:border-primary/30"
               >
                 <div className="mb-4 flex items-center gap-3">
-                  <div
-                    className="flex h-12 w-12 items-center justify-center rounded-lg text-white"
-                    style={{ backgroundColor: advantage.color }}
-                  >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-white">
                     <span className="text-2xl font-bold">{index + 1}</span>
                   </div>
-                  <h3
-                    className="text-2xl font-bold"
-                    style={{ color: advantage.color }}
-                  >
+                  <h3 className="text-2xl font-bold text-neutral-800">
                     {advantage.title}
                   </h3>
                 </div>
-                <p className="whitespace-pre-line leading-relaxed text-gray-700">
+                <p className="whitespace-pre-line leading-relaxed text-neutral-600">
                   {advantage.desc}
                 </p>
               </div>
@@ -110,12 +101,12 @@ export default function Features() {
         </div>
 
         {/* 定制选项 */}
-        <div className="rounded-2xl bg-gradient-to-br from-primary-cyan/10 via-white to-primary-blue/10 p-8 md:p-12">
-          <h2 className="mb-6 text-center text-3xl font-bold text-primary-blue md:text-4xl">
+        <div className="rounded-2xl bg-white border border-neutral-200 p-8 md:p-12">
+          <h2 className="mb-6 text-center text-3xl font-bold text-neutral-800 md:text-4xl">
             {tCustom('title')}
           </h2>
           <div
-            className="mb-10 text-center text-lg text-gray-700"
+            className="mb-10 text-center text-lg text-neutral-600"
             dangerouslySetInnerHTML={{ __html: tCustom('intro') }}
           />
 
@@ -123,20 +114,20 @@ export default function Features() {
             {customFeatures.map((feature, index) => (
               <div
                 key={index}
-                className="rounded-lg bg-white p-6 shadow-sm transition-all hover:shadow-md"
+                className="rounded-lg bg-neutral-50 border border-neutral-200 p-6 transition-all hover:shadow-sm hover:border-primary/30"
               >
-                <h4 className="mb-3 text-lg font-bold text-primary-blue">
+                <h4 className="mb-3 text-lg font-bold text-neutral-800">
                   {feature.title}
                 </h4>
-                <p className="mb-4 text-sm text-gray-600">{feature.desc}</p>
+                <p className="mb-4 text-sm text-neutral-500">{feature.desc}</p>
                 <ul className="space-y-2">
                   {feature.highlights.map((highlight, hIndex) => (
                     <li
                       key={hIndex}
-                      className="flex items-start gap-2 text-sm text-gray-700"
+                      className="flex items-start gap-2 text-sm text-neutral-600"
                     >
                       <svg
-                        className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary-cyan"
+                        className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                         aria-hidden="true"
@@ -158,12 +149,12 @@ export default function Features() {
           {/* CTA 部分 */}
           <div className="text-center">
             <div
-              className="mb-6 text-lg text-gray-700"
+              className="mb-6 text-lg text-neutral-600"
               dangerouslySetInnerHTML={{ __html: tCustom('ready') }}
             />
             <button
               onClick={handleScrollToContact}
-              className="rounded-lg bg-primary-blue px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-dark-blue hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-primary-cyan/50"
+              className="rounded-lg bg-primary px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-primary-dark hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-primary/30"
             >
               {tCustom('cta')}
             </button>

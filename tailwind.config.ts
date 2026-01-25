@@ -9,23 +9,29 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Better Bags Myanmar 品牌色
+        // Better Bags Myanmar 品牌色 - 极简绿色主题
         primary: {
-          cyan: "#81C3D7",
-          blue: "#416788",
-          DEFAULT: "#416788", // 默认 primary 色 - 改为 Blue 以符合 WCAG AA 对比度标准 (5.97:1)
+          light: "#a3c293",    // 浅绿色 - 用于hover背景
+          DEFAULT: "#87A575",  // Logo绿 - 主色调
+          dark: "#6b8a5e",     // 深绿色 - 用于hover按钮
         },
-        secondary: {
-          grey: "#5a6d7c",
-          DEFAULT: "#5a6d7c",
-        },
-        dark: {
-          blue: "#2f6690",
+        // 中性色 - 极简风格
+        neutral: {
+          50: "#fafafa",
+          100: "#f5f5f5",
+          200: "#e5e5e5",
+          300: "#d4d4d4",
+          400: "#a3a3a3",
+          500: "#737373",
+          600: "#525252",
+          700: "#404040",
+          800: "#262626",
+          900: "#171717",
         },
         // 添加品牌色别名，方便使用
-        'primary-cyan': "#81C3D7",
-        'primary-blue': "#416788",
-        'primary-dark': "#2f6690",
+        'brand-green': "#87A575",
+        'brand-green-light': "#a3c293",
+        'brand-green-dark': "#6b8a5e",
       },
       fontSize: {
         // 流式字体尺寸 (使用 clamp 实现响应式)

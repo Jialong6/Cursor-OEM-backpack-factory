@@ -40,22 +40,22 @@ export default function Accordion({ items, defaultOpenIndex }: AccordionProps) {
         return (
           <div
             key={index}
-            className="overflow-hidden rounded-lg border-2 border-gray-200 bg-white transition-all hover:border-primary-cyan"
+            className="overflow-hidden rounded-lg border border-neutral-200 bg-white transition-all hover:border-primary/30"
           >
             {/* Question Button */}
             <button
               onClick={() => handleToggle(index)}
-              className="flex w-full items-center justify-between gap-4 p-5 text-left transition-colors hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-cyan focus:ring-offset-2"
+              className="flex w-full items-center justify-between gap-4 p-5 text-left transition-colors hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
               aria-expanded={isOpen}
               aria-controls={`accordion-content-${index}`}
             >
-              <span className="text-lg font-semibold text-primary-blue">
+              <span className="text-lg font-semibold text-neutral-800">
                 {item.q}
               </span>
 
               {/* Expand/Collapse Icon */}
               <svg
-                className={`h-6 w-6 flex-shrink-0 text-primary-cyan transition-transform duration-300 ${
+                className={`h-6 w-6 flex-shrink-0 text-primary transition-transform duration-300 ${
                   isOpen ? 'rotate-180' : ''
                 }`}
                 fill="none"
@@ -79,8 +79,8 @@ export default function Accordion({ items, defaultOpenIndex }: AccordionProps) {
                 isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
               }`}
             >
-              <div className="border-t border-gray-200 bg-gray-50 p-5">
-                <p className="leading-relaxed text-gray-700">{item.a}</p>
+              <div className="border-t border-neutral-200 bg-neutral-50 p-5">
+                <p className="leading-relaxed text-neutral-600">{item.a}</p>
               </div>
             </div>
           </div>
