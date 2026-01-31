@@ -1,234 +1,283 @@
 # 需求文档
 
-## 简介
+## 项目简介
+
+Better Bags Myanmar 背包 OEM 工厂独立站，采用单页滚动式设计，支持中英文国际化。
+
+## 技术栈
+
+- Next.js 15.1+, React 19, TypeScript 5
+- Tailwind CSS 3.4, next-intl
+- Zod, Vitest, fast-check
+- Resend/SendGrid, mCaptcha
+
+## 已完成需求
+
+### 1. 项目架构与 Tailwind CSS 配置
+- 品牌色配置（#81C3D7、#416788、#5a6d7c、#2f6690）
+- JIT 模式和 tree-shaking
+- 自定义设计令牌
+
+### 2. 国际化（i18n）支持
+- 中英文双语切换
+- 语言偏好持久化
+- 保持滚动位置
+
+### 3. 单页滚动式布局与导航
+- 7 个区块垂直排列（Banner、About、Features、Services、FAQ、Contact、Blog）
+- 平滑滚动动画
+- 导航激活状态同步
+- Sticky 导航栏
+
+### 4. 全平台自适应字体与比例
+- clamp() 函数实现字体流畅缩放
+- 正文字体 14px-18px 范围
+- 100vh/100svh 视口高度
+- 图片宽高比保持
+
+### 5. 固定导航栏组件
+- Logo + 导航链接
+- 响应式汉堡菜单（<768px）
+- 语言切换按钮
+- 键盘导航和焦点管理
+
+### 6. 首页 Banner 区块
+- 全屏海报效果
+- 主标语和统计数据
+- CTA 按钮（获取报价）
+
+### 7. 关于我们区块
+- 使命、愿景、核心价值观
+- 公司历史和合作品牌
+- Organization JSON-LD 结构化数据
+
+### 8. 特色区块
+- Jay 个人介绍
+- 四大核心优势（灵活性、沟通、质量、价格）
+- 定制选项介绍
+
+### 9. 服务流程区块
+- 6 个服务阶段步骤展示
+- 响应式布局（移动端纵向、桌面端横向）
+
+### 10. 常见问题区块
+- 分类组织的 FAQ（5 个分类）
+- 手风琴交互
+- FAQPage JSON-LD 结构化数据
+
+### 11. 联系我们区块
+- 公司联系信息
+- 完整询价表单（必填 + 可选字段）
+- mCaptcha 人机验证
+- 文件上传功能
+- 表单验证（Zod）
+
+### 12. 博客区块
+- 博客预览（3 篇精选文章）
+- 博客列表页（6 篇文章）
+- 博客详情页（Markdown 渲染）
+- 中英文内容切换
+
+### 13. 页脚区块
+- 公司信息、快捷链接、工作时间
+- 平滑滚动到对应区块
+
+### 14. SEO 与元数据优化
+- 唯一标题标签（60 字符以内）
+- Meta 描述（150 字符以内）
+- Open Graph 元标签
+- 语义化 HTML5 元素（header, nav, main, article, section, footer）
+- 每页一个 h1 标题
+- XML 站点地图（sitemap.xml）
+- SEO 友好 URL
+- hreflang 标签（中英文）
+- robots.txt
+
+### 15. 性能优化
+- 图片延迟加载（loading="lazy"）
+- WebP/AVIF 格式优化
+- 响应式图片（srcset, sizes）
+- CSS/JS 压缩和最小化
+- Tree-shaking（移除未使用样式）
+- 非关键 JS 使用 defer/async
+
+### 16. 无障碍设计（WCAG AA）
+- 图片 alt 文本
+- 颜色对比度 4.5:1
+- 键盘焦点指示器
+- 表单标签关联（for 属性）
+- ARIA 属性（aria-required, aria-invalid, aria-describedby, role="alert"）
+- Tab 键导航支持
+- Skip navigation 链接
 
-本项目为Better Bags Myanmar背包OEM工厂开发一个专业的独立站，采用单页滚动式（One-Page Scroll）海报风格设计。整个网站是一个从上到下的长页面，包含多个全屏区块（首页Banner、关于我们、特色、服务流程、常见问题、联系我们、博客），导航菜单点击后平滑滚动到对应区块。网站支持中英文国际化（i18n），采用Tailwind CSS框架构建，支持全平台自适应字体大小和比例，遵循移动优先、SEO友好、无障碍设计等现代前端最佳实践。
+## 测试状态
 
-## 术语表
+- **158 tests passed, 2 skipped**
+- **属性测试**: 13 个属性验证（fast-check, 100 次迭代）
+- **覆盖率**: 80%+
+- **构建**: 22 个静态页面
 
-- **Better Bags Myanmar**: 缅甸背包制造公司，成立于2003年，专注OEM/ODM高端背包制造
-- **独立站**: 企业自主运营的官方网站，独立于第三方电商平台
-- **OEM (原始设备制造商)**: 为其他品牌代工生产产品的制造商
-- **ODM (原始设计制造商)**: 提供设计和制造服务的制造商
-- **单页滚动式网站 (One-Page Scroll)**: 所有内容在一个页面上，通过垂直滚动浏览不同区块
-- **全屏区块 (Full-Screen Section)**: 占据整个视口高度的页面区域
-- **平滑滚动 (Smooth Scroll)**: 点击导航后页面平滑过渡到目标位置的动画效果
-- **i18n (国际化)**: Internationalization的缩写，支持多语言切换的技术方案
-- **Tailwind CSS**: 一个实用优先(utility-first)的CSS框架，通过组合原子类实现样式
-- **视口单位 (Viewport Units)**: vw/vh/vmin/vmax等相对于视口尺寸的CSS单位
-- **clamp()函数**: CSS函数，用于设置响应式的最小值、首选值和最大值
-- **SEO (搜索引擎优化)**: 提升网站在搜索结果中排名的技术
-- **Open Graph (OG)**: 一种元数据协议，用于优化内容在社交媒体分享时的展现
-- **Schema.org**: 结构化数据标记标准，帮助搜索引擎理解页面内容
-- **JSON-LD**: JavaScript Object Notation for Linked Data，一种结构化数据格式
-- **WCAG**: 网页内容无障碍指南
-- **CTA (行动号召)**: 引导用户采取特定行动的元素（如询价按钮）
-- **MOQ (最低起订量)**: Minimum Order Quantity，最小订购数量
+## 性能指标
 
-## 需求列表
+- 首页 First Load JS: 185 kB
+- 博客列表: 138 kB
+- 博客详情: 139 kB
+- Lighthouse 分数目标: >90
 
-### 需求 1: 项目架构与Tailwind CSS配置
+## 第二版需求：国际化地理路由系统 (i18n-geo-routing)
 
-**用户故事:** 作为开发者，我希望建立规范的项目结构和Tailwind CSS配置，以便高效开发并保持代码一致性。
+### 概述
 
-#### 验收标准
+本系统旨在支持10种语言（英语、简体中文、日语、德语、荷兰语、法语、葡萄牙语、西班牙语、繁体中文、俄语），实现基于IP的智能语言路由，同时确保SEO安全性和用户体验优化。系统需要在边缘计算层实现爬虫识别与用户分流，并遵循WCAG 2.2 AA/AAA无障碍标准。
 
-1. 当项目初始化时，网站系统应创建包含pages、components、assets、styles和locales文件夹的目录结构。
-2. 当配置Tailwind CSS时，网站系统应在tailwind.config.js中定义品牌色（#81C3D7、#416788、#5a6d7c、#2f6690等）、字体大小和间距比例等自定义设计令牌。
-3. 当创建CSS入口文件时，网站系统应按正确顺序包含@tailwind base、@tailwind components和@tailwind utilities指令。
-4. 当构建生产版本时，网站系统应启用JIT模式和tree-shaking以移除未使用的CSS类。
-5. 当需要可复用组件样式时，网站系统应仅对多处重复且很少变动的样式使用@apply指令提取。
+### 术语表
 
-### 需求 2: 国际化（i18n）支持
+- **Geo_IP_Router**: 基于用户IP地址进行地理位置识别并执行语言路由的边缘计算组件
+- **Bot_Detector**: 通过User-Agent嗅探识别搜索引擎爬虫的检测模块
+- **Language_Preference_Manager**: 管理用户语言偏好Cookie的组件
+- **Hreflang_Generator**: 生成国际化SEO标签的组件
+- **Language_Banner**: 语言切换提示的非侵入式浮动横幅组件
+- **Schema_Generator**: 生成JSON-LD结构化数据的组件
+- **Bento_Grid**: 基于便当盒网格布局的响应式UI组件系统
+- **Accessibility_Layer**: 实现WCAG无障碍标准的UI增强层
+- **Edge_Middleware**: 在Cloudflare/Vercel边缘节点运行的中间件
+- **Locale**: 语言区域标识符（如 en, ja, de, zh-tw）
+- **x-default**: hreflang标签中表示默认/回退语言版本的特殊值
+- **CTA**: Call To Action，行动号召按钮
+- **E-E-A-T**: Experience, Expertise, Authoritativeness, Trustworthiness（Google质量评估标准）
 
-**用户故事:** 作为全球用户，我希望能够在中文和英文之间切换网站语言，以便用我熟悉的语言浏览内容。
+### Requirement 1: 多语言支持扩展
 
-#### 验收标准
+**User Story:** As a global visitor, I want to access the website in my native language, so that I can understand the content and make informed business decisions.
 
-1. 当网站加载时，网站系统应支持中文（zh）和英文（en）两种语言。
-2. 当用户点击语言切换按钮时，网站系统应立即切换页面所有文本内容到目标语言。
-3. 当语言切换时，网站系统应保持用户当前浏览位置不变。
-4. 当用户选择语言后，网站系统应将语言偏好存储在本地存储中，下次访问时自动应用。
-5. 当页面加载时，网站系统应根据浏览器语言设置或存储的偏好自动选择默认语言。
-6. 当语言文件组织时，网站系统应将中英文翻译内容分别存储在locales/zh.json和locales/en.json文件中。
+**Acceptance Criteria:**
+1. 系统支持10种语言: en, zh, ja, de, nl, fr, pt, es, zh-tw, ru
+2. 新语言从 `/locales/{locale}.json` 加载翻译文件
+3. 使用 `en` 作为默认语言 (x-default)
+4. 所有页面以当前活跃语言显示 UI 文本
+5. URL 结构为 `/{locale}/`（如 `/ja/`, `/de/`, `/zh-tw/`）
 
-### 需求 3: 单页滚动式布局与导航
+### Requirement 2: 爬虫识别与白名单机制
+
+**User Story:** As a search engine crawler, I want to access all language versions of the website without being redirected, so that I can properly index all content.
 
-**用户故事:** 作为访客，我希望通过滚动或点击导航来浏览网站的不同区块，以便获得流畅的海报式浏览体验。
+**Acceptance Criteria:**
+1. Bot_Detector 检查 User-Agent 头部
+2. 识别爬虫模式: Googlebot, Bingbot, YandexBot, Baiduspider, DuckDuckBot, Slurp, facebookexternalhit, Twitterbot, LinkedInBot, GPTBot, ClaudeBot, PerplexityBot
+3. 检测到爬虫时绕过所有 Geo-IP 重定向
+4. 爬虫请求直接返回 HTTP 200
+5. 记录爬虫请求用于监控
 
-#### 验收标准
+### Requirement 3: Geo-IP智能路由
 
-1. 当页面加载时，网站系统应将所有内容区块（首页、关于我们、特色、服务流程、常见问题、联系我们、博客）垂直排列在单个页面中。
-2. 当用户点击导航菜单中的链接时，网站系统应使用平滑滚动动画将视口移动到对应区块的位置。
-3. 当用户滚动页面时，网站系统应更新导航菜单中当前可见区块对应链接的激活状态。
-4. 当页面滚动时，网站系统应保持导航栏固定在视口顶部（sticky定位）。
-5. 当URL包含锚点哈希值时，网站系统应在页面加载后自动平滑滚动到对应区块。
+**User Story:** As a human visitor, I want to be automatically directed to my language version based on my location, so that I can immediately see content in my native language.
 
-### 需求 4: 全平台自适应字体与比例
-
-**用户故事:** 作为用户，我希望在任何设备上都能看到比例协调、字体大小适中的内容，以便获得最佳阅读体验。
-
-#### 验收标准
-
-1. 当页面渲染时，网站系统应使用CSS clamp()函数或视口单位实现标题字体大小随视口宽度流畅缩放。
-2. 当页面渲染时，网站系统应确保正文字体在移动端不小于14px，在桌面端不大于18px。
-3. 当全屏区块显示时，网站系统应使用100vh或100svh作为最小高度以适应不同设备视口。
-4. 当内容元素布局时，网站系统应使用相对单位（rem、em、%、vw）而非固定像素值来定义间距和尺寸。
-5. 当图片和媒体元素显示时，网站系统应保持其宽高比并根据容器宽度自适应缩放。
-
-### 需求 5: 固定导航栏组件
-
-**用户故事:** 作为用户，我希望随时能看到导航菜单，以便快速跳转到感兴趣的内容区块。
-
-#### 验收标准
-
-1. 当页面加载时，网站系统应在视口顶部显示包含公司Logo和导航链接的固定导航栏。
-2. 当导航栏显示时，网站系统应包含指向首页、关于我们、特色、服务流程、常见问题、联系我们和博客区块的锚点链接。
-3. 当导航栏显示时，网站系统应包含语言切换按钮，支持中英文切换。
-4. 当视口宽度小于768px时，网站系统应将导航菜单折叠为汉堡菜单按钮，点击后展开菜单。
-5. 当导航链接获得键盘焦点时，网站系统应显示符合WCAG AA对比度要求的可见焦点指示器。
-6. 当汉堡菜单展开时，网站系统应正确管理焦点并支持键盘导航。
-
-### 需求 6: 首页Banner区块
-
-**用户故事:** 作为访客，我希望首屏能立即展示公司的核心价值主张，以便快速了解Better Bags是一家什么样的公司。
-
-#### 验收标准
-
-1. 当首页Banner区块显示时，网站系统应占据整个视口高度（100vh/100svh）作为全屏海报效果。
-2. 当首页Banner区块显示时，网站系统应展示"Better Bags 始于2003"和"#缅甸第一梯队定制背包工厂"的主标语。
-3. 当首页Banner区块显示时，网站系统应展示一站式背包解决方案的描述文字，突出"一站式"关键词。
-4. 当首页Banner区块显示时，网站系统应展示公司服务超过20年的经验描述和竞争力优势。
-5. 当首页Banner区块显示时，网站系统应包含"获取报价"CTA按钮，点击后平滑滚动到联系我们区块。
-6. 当首页Banner区块显示时，网站系统应展示关键数据统计（800+专业员工、150件MOQ、7天打样、100%质检、24小时在线、50,000+月产量）。
-7. 当首页Banner区块显示时，网站系统应在底部显示向下滚动的视觉提示。
-
-### 需求 7: 关于我们区块
-
-**用户故事:** 作为潜在客户，我希望了解Better Bags的公司背景、使命愿景和核心价值观，以便建立对工厂的信任。
-
-#### 验收标准
-
-1. 当关于我们区块显示时，网站系统应展示公司使命："通过负责任的生产方式，以创新、高品质且高性价比的背包解决方案赋能全球品牌与合作伙伴"。
-2. 当关于我们区块显示时，网站系统应展示公司愿景："成为全球公认的最值得信赖和最具前瞻性的背包制造合作伙伴"。
-3. 当关于我们区块显示时，网站系统应展示六大核心价值观（诚信与透明、追求卓越、客户为先、创新与进步、可持续与负责任、合作与赋能）。
-4. 当关于我们区块显示时，网站系统应展示公司历史介绍，包括2003年成立、深圳起源、青岛基地和2023年缅甸仰光工厂。
-5. 当关于我们区块显示时，网站系统应提及与Anello、New Balance、Nike、Fila等全球知名品牌的合作经历。
-6. 当关于我们区块显示时，网站系统应包含Organization模式的JSON-LD结构化数据标记。
-
-### 需求 8: 特色区块
-
-**用户故事:** 作为潜在客户，我希望了解Better Bags的核心竞争优势和Jay的个人介绍，以便评估是否值得合作。
-
-#### 验收标准
-
-1. 当特色区块显示时，网站系统应展示Jay的个人介绍，包括其美国宾夕法尼亚州8年学习与职业经历。
-2. 当特色区块显示时，网站系统应展示四大核心优势：灵活性（双生产基地）、沟通交流（多元团队）、质量管控（严格QA流程）、价格竞争力（缅甸成本优势）。
-3. 当特色区块显示时，网站系统应为每个优势使用对应的品牌色（#81C3D7、#416788、#5a6d7c、#2f6690）。
-4. 当特色区块显示时，网站系统应展示定制选项介绍，包括多样背包款式、多尺寸容量、优质环保材料、专业色彩方案、定制印刷品牌、配件五金、功能增强和自有品牌定制。
-5. 当特色区块显示时，网站系统应包含"立即定制"CTA按钮。
-
-### 需求 9: 服务流程区块
-
-**用户故事:** 作为潜在客户，我希望了解与Better Bags合作的完整流程，以便清楚知道从询盘到交付的每个步骤。
-
-#### 验收标准
-
-1. 当服务流程区块显示时，网站系统应展示"优化过的面向量产的一站式服务"标题。
-2. 当服务流程区块显示时，网站系统应以步骤形式展示六个服务阶段：接收客户询盘、生产报价、样品开发、批量生产、质量控制、包装与运输。
-3. 当服务流程区块显示时，网站系统应为每个步骤提供详细描述说明。
-4. 当视口宽度变化时，网站系统应将流程步骤从移动端纵向排列调整为桌面端横向或网格布局。
-
-### 需求 10: 常见问题区块
-
-**用户故事:** 作为潜在客户，我希望快速找到常见问题的答案，以便减少沟通成本并做出决策。
-
-#### 验收标准
-
-1. 当常见问题区块显示时，网站系统应展示分类组织的FAQ内容，包括：常规及售前、订单打样与报价、样品开发、生产进度与运输、质量控制与售后支持五个分类。
-2. 当FAQ项目显示时，网站系统应以可展开/折叠的手风琴形式呈现问答内容。
-3. 当用户点击问题时，网站系统应展开显示对应答案，同时折叠其他已展开的答案。
-4. 当FAQ区块显示时，网站系统应包含FAQPage模式的JSON-LD结构化数据标记。
-5. 当FAQ内容加载时，网站系统应支持中英文内容切换。
-
-### 需求 11: 联系我们区块
-
-**用户故事:** 作为潜在客户，我希望方便地联系Better Bags进行询价或咨询，以便开始合作洽谈。
-
-#### 验收标准
-
-1. 当联系我们区块显示时，网站系统应展示公司联系信息：地址（Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai工业区，仰光，缅甸）、电话（+1 814.880.1463）、邮箱（jay@biteerbags.com）、WhatsApp（+1 814.880.1463）。
-2. 当联系我们区块显示时，网站系统应展示完整的询价表单，包含以下必填字段：First Name、Last Name、Email、Country/Region、Company/Brand Name、Phone Number、Subject、Your Message。
-3. 当询价表单显示时，网站系统应包含"Estimated order quantity (per design)"下拉选择字段，选项为：Less than 100 pcs、100-300 pcs、300-1000 pcs、More than 1000 pcs。
-4. 当询价表单显示时，网站系统应包含"Do you have a tech pack or reference sample?"下拉选择字段，选项为：Yes, I have a tech pack、I have a physical sample、I only have an idea/sketch。
-5. 当询价表单显示时，网站系统应包含文件上传字段，允许用户上传技术包、草图或样品照片。
-6. 当询价表单显示时，网站系统应包含"When do you plan to launch your collection?"可选文本字段。
-7. 当询价表单显示时，网站系统应包含"Any notes or special requests?"可选文本字段。
-8. 当询价表单显示时，网站系统应包含mCaptcha人机验证组件以防止垃圾提交。
-9. 当用户提交有效数据的询价表单时，网站系统应处理提交、发送通知邮件给管理员，并显示成功确认消息。
-10. 当用户提交无效或缺少必填数据的表单时，网站系统应显示清晰的错误提示，指明需要修正的字段。
-11. 如果配置了地图位置，网站系统应展示嵌入式地图或地图图片显示公司位置。
-
-### 需求 12: 博客区块
-
-**用户故事:** 作为访客，我希望浏览公司的博客文章，以便了解行业动态和公司新闻。
-
-#### 验收标准
-
-1. 当博客区块显示时，网站系统应展示博客文章列表或精选文章卡片。
-2. 当博客文章卡片显示时，网站系统应包含文章标题、摘要、发布日期和缩略图。
-3. 当用户点击博客文章卡片时，网站系统应导航到独立的博客文章详情页。
-4. 当博客区块显示时，网站系统应支持中英文内容切换。
-
-### 需求 13: 页脚区块
-
-**用户故事:** 作为用户，我希望在页面底部找到网站的补充信息和快捷链接，以便获取更多资源。
-
-#### 验收标准
-
-1. 当页脚区块显示时，网站系统应展示公司信息：Better Bags Myanmar Company Limited、地址、邮箱和电话/WhatsApp。
-2. 当页脚区块显示时，网站系统应展示快捷链接：首页、关于我们、特色、服务、流程、常见问题、联系我们、博客。
-3. 当页脚区块显示时，网站系统应展示工作时间：周一至周五 9:00 – 17:00。
-4. 当页脚区块显示时，网站系统应展示版权信息。
-5. 当页脚链接被点击时，网站系统应平滑滚动到对应区块。
-
-### 需求 14: SEO与元数据优化
-
-**用户故事:** 作为网站运营者，我希望网站在搜索引擎中有良好的可见性，以便吸引更多潜在客户。
-
-#### 验收标准
-
-1. 当任何页面加载时，网站系统应包含60字符以内的唯一标题标签，包含"Better Bags"、"背包OEM"等相关关键词。
-2. 当任何页面加载时，网站系统应包含150字符以内的meta描述，概括页面内容。
-3. 当任何页面加载时，网站系统应包含Open Graph元标签：og:url、og:title、og:description和og:image。
-4. 当任何页面加载时，网站系统应使用语义化HTML5元素，包括header、nav、main、article、section、aside和footer。
-5. 当任何页面加载时，网站系统应有且仅有一个h1标题描述该页面的主要内容。
-6. 当网站部署时，网站系统应提供XML站点地图，列出所有公开页面及最后修改日期。
-7. 当生成URL时，网站系统应使用SEO友好的URL结构，使用连字符分隔的描述性单词。
-8. 当多语言页面加载时，网站系统应包含hreflang标签指示中英文版本。
-
-### 需求 15: 性能优化
-
-**用户故事:** 作为用户，我希望网站加载快速流畅，以便获得良好的浏览体验。
-
-#### 验收标准
-
-1. 当图片显示在初始视口下方时，网站系统应使用loading="lazy"属性应用延迟加载。
-2. 当提供图片时，网站系统应提供WebP格式，并为旧浏览器提供JPEG/PNG后备格式。
-3. 当需要响应式图片时，网站系统应使用srcset和sizes属性根据视口提供适当尺寸的图片。
-4. 当部署CSS和JavaScript文件时，网站系统应压缩和最小化所有资源。
-5. 当创建生产构建时，网站系统应通过tree-shaking生成移除未使用样式的CSS文件。
-6. 当加载脚本时，网站系统应对非关键JavaScript使用defer或async属性以防止阻塞渲染。
-
-### 需求 16: 无障碍设计
-
-**用户故事:** 作为有视觉或运动障碍的用户，我希望能够无障碍地访问网站内容，以便获取产品信息。
-
-#### 验收标准
-
-1. 当显示非装饰性图片时，网站系统应包含描述图片内容或用途的alt文本。
-2. 当文字显示在背景上时，网站系统应保持符合WCAG AA标准的颜色对比度（普通文本4.5:1，大文本3:1）。
-3. 当交互元素获得键盘焦点时，网站系统应显示可见的焦点指示器。
-4. 当显示表单字段时，网站系统应使用for属性将每个输入框与可见的标签元素关联。
-5. 当使用自定义交互组件时，网站系统应包含适当的ARIA属性以向辅助技术传达状态和用途。
-6. 当用户使用键盘导航时，网站系统应支持通过Tab键在所有交互元素间移动焦点。
+**Acceptance Criteria:**
+1. 非爬虫用户访问根 URL `/` 时根据 IP 确定国家
+2. 国家到语言映射：JP→ja, DE/AT/CH→de, NL/BE→nl, FR→fr, PT/BR→pt, ES/拉美→es, TW/HK/MO→zh-tw, RU/CIS→ru, CN→zh, 其他→en
+3. 使用 HTTP 302 临时重定向
+4. 存在 `lang_pref` cookie 时尊重 cookie 值
+5. 比利时使用 Accept-Language 区分荷兰语/法语
+
+### Requirement 4: 语言偏好Cookie管理
+
+**User Story:** As a returning visitor, I want my language preference to be remembered, so that I don't need to switch languages every time I visit.
+
+**Acceptance Criteria:**
+1. 用户选择语言时设置 `lang_pref` cookie
+2. Cookie 过期时间 365 天
+3. Cookie 属性: SameSite=Lax, Secure
+4. 处理请求时先检查 cookie
+5. 点击"保持语言"或"切换到英文"时设置 cookie
+
+### Requirement 5: 非侵入式语言切换横幅
+
+**User Story:** As a user who was auto-redirected, I want to be informed about the language switch and have the option to change it, so that I can choose my preferred language.
+
+**Acceptance Criteria:**
+1. 自动重定向到非英语语言时显示底部浮动横幅
+2. 不使用模态框或全屏遮罩
+3. 显示目标语言的消息
+4. 提供"保持语言"和"切换到英文"按钮
+5. 10秒后自动消失
+
+### Requirement 6: Hreflang国际化SEO标签
+
+**User Story:** As a search engine, I want to understand the relationship between different language versions of pages, so that I can serve the correct version to users in search results.
+
+**Acceptance Criteria:**
+1. 每个页面 `<head>` 注入 hreflang 标签
+2. 为10种语言 + x-default 生成标签
+3. 使用正确的语言代码（zh-Hans, zh-Hant 等）
+4. 使用绝对 URL
+5. 标签自引用
+
+### Requirement 7: JSON-LD结构化数据
+
+**User Story:** As an AI search engine or knowledge graph, I want to understand the business entity and its attributes, so that I can provide accurate information about the company.
+
+**Acceptance Criteria:**
+1. 首页和关于页面嵌入 ManufacturingPlant schema
+2. 包含必需属性：name, url, logo, description, foundingDate, address, areaServed, knowsLanguage
+3. 包含认证信息 (ISO, SA8000)
+4. 包含 potentialAction 链接到联系页面
+5. 描述属性随语言变化
+6. Schema 通过 Google Rich Results Test
+
+### Requirement 8: Bento Grid首屏布局
+
+**User Story:** As a B2B buyer, I want to see all critical information on the first screen without scrolling, so that I can quickly assess if this supplier meets my needs.
+
+**Acceptance Criteria:**
+1. 遵循古腾堡图表四象限布局
+2. 左上：品牌Logo和核心价值主张
+3. 右上：动态数据看板
+4. 左下：信任徽章
+5. 右下：主CTA和聊天机器人入口
+6. 1920x1080 桌面分辨率完整可见
+
+### Requirement 9: 适老化无障碍设计
+
+**User Story:** As a senior procurement manager (50-65+), I want the website to be easy to read and interact with, so that I can use it comfortably despite age-related vision or motor challenges.
+
+**Acceptance Criteria:**
+1. 达到 WCAG 2.2 AA 合规，目标 AAA
+2. 正文字体 18pt (24px)
+3. 对比度至少 4.5:1
+4. 使用深灰 (#1A1A1A) 和米白 (#FAFAFA)
+5. 行高至少 1.6
+6. 交互元素最小 44x44 像素触控区域
+7. 使用无衬线字体 (Inter, Roboto, Noto Sans)
+
+### Requirement 10: 大热区点击与卡片拼接
+
+**Acceptance Criteria:**
+1. Bento Grid 卡片全区域可点击
+2. 使用 CSS ::after 伪元素实现
+3. 相邻元素合并点击区域
+4. 交互元素间距至少 8px
+5. 表单优先使用下拉选择
+6. 按钮焦点状态最小 2px 轮廓
+
+### Requirement 11-30: 详细需求
+
+（包含视觉反馈、导航、表单优化、图文结合、响应式布局、GEO优化、E-E-A-T权威度、视觉路径、语言切换器、锚点导航、引导动画、悬浮菜单、边缘计算、翻译管理、性能指标、数据看板、智能客服、次级内容、多语言字体、统一交互等详细需求）
+
+### 正确性属性（Property-Based Testing）
+
+需验证的15个属性：
+1. Locale Configuration Completeness
+2. Translation File Loading Round-Trip
+3. URL Structure Consistency
+4. Bot Detection Accuracy
+5. Bot Bypass Guarantee
+6. Country-to-Locale Mapping Correctness
+7. Cookie Priority Over Geo-IP
+8. Language Banner Visibility Logic
+9. Hreflang Tag Generation Correctness
+10. JSON-LD Schema Validity
+11. Localized Schema Description
+12. Touch Target Minimum Size
+13. Color Contrast Compliance
+14. Cookie Attribute Correctness
+15. Redirect Status Code Consistency

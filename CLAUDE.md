@@ -8,7 +8,7 @@ Official CLAUDE.md for Better Bags Myanmar OEM backpack factory website project.
 
 - Single-page scrolling design with multiple sections (Hero, About, Features, Services, FAQ, Contact, Blog)
 - Chinese/English internationalization (next-intl)
-- Property-based testing (fast-check) with 178 tests
+- Property-based testing (fast-check) with 158 tests
 - Responsive design with Tailwind CSS
 - Form handling with React Hook Form + Zod validation
 - SEO optimization with structured data (JSON-LD)
@@ -49,8 +49,8 @@ items.push(newItem)
 ### 3. Testing (TDD REQUIRED)
 
 - **TDD workflow**: RED (write failing test) → GREEN (implement) → REFACTOR
-- **80% minimum coverage** (currently 178 tests passing)
-- Property-based tests with fast-check (12 properties defined)
+- **80% minimum coverage** (currently 158 tests passing)
+- Property-based tests with fast-check (13 properties defined)
 - Unit tests for utilities and components
 - Integration tests for forms and validation
 - Mock external dependencies properly
@@ -239,7 +239,7 @@ Reusable skills in `skills/` folder provide best practices:
 - **Conventional commits**: `feat:`, `fix:`, `refactor:`, `docs:`, `test:`, `chore:`
 - Never commit to main directly
 - All commits include Co-Authored-By: Claude
-- **All tests must pass** before merge (178 tests minimum)
+- **All tests must pass** before merge (158 tests minimum)
 - Pre-commit hooks check for console.log and TypeScript errors
 - Use `/code-review` before committing
 
@@ -251,7 +251,7 @@ Reusable skills in `skills/` folder provide best practices:
 - Unit tests for utilities and components
 - Integration tests for API endpoints
 
-**Current Status**: 178 tests passing, 2 skipped (documented)
+**Current Status**: 158 tests passing, 2 skipped (documented)
 
 ## Performance Standards
 
@@ -277,6 +277,25 @@ Reusable skills in `skills/` folder provide best practices:
 - Use `useTranslations()` hook from next-intl
 - All user-facing text must be translatable
 - SEO metadata in both languages
+
+## Version 2.0 Planning (i18n-geo-routing)
+
+**Planned Features**:
+
+- Expand from 2 to 10 languages (zh, en, ja, ko, th, vi, de, fr, es, ar)
+- IP-based geo-routing for automatic language detection
+- Browser Accept-Language header detection
+- User language preference persistence (cookies)
+- Fallback chain: User preference > Geo-IP > Browser > Default (en)
+
+**Technical Approach**:
+
+- Next.js middleware for geo-routing logic
+- GeoLite2 database for IP-to-country mapping
+- Cookie-based preference storage
+- Structured translation workflow with namespaces
+
+See `requirements.md`, `design.md`, and `tasks.md` for detailed v2 specifications.
 
 ## Development Workflow
 
