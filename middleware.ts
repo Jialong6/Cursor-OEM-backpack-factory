@@ -1,46 +1,86 @@
+import { NextRequest, NextResponse } from 'next/server';
 import createMiddleware from 'next-intl/middleware';
-import { locales, defaultLocale } from './i18n';
+import { locales, defaultLocale, type Locale } from './i18n';
+import {
+  getLocaleFromPath,
+  getLocaleFromGeoIP,
+  buildRedirectUrl,
+} from './lib/geo-router';
 
 /**
- * next-intl 中间件配置
+ * next-intl middleware with Geo-IP routing
  *
- * 功能：
- * - 自动检测用户语言偏好（基于 Accept-Language 请求头）
- * - 重定向根路径到默认语言（/ -> /en）
- * - 处理语言路由（/en/*, /zh/*）
- * - 在 cookie 中保持语言选择（localePrefix: 'as-needed'）
+ * Priority chain:
+ * 1. URL path locale (e.g., /ja/about -> ja)
+ * 2. Cookie preference (implemented in Task 4)
+ * 3. Geo-IP detection (x-vercel-ip-country header)
+ * 4. Accept-Language header
+ * 5. Default locale (en)
  */
-export default createMiddleware({
-  // 支持的所有语言列表
+
+// Base next-intl middleware for locale handling
+const intlMiddleware = createMiddleware({
   locales,
-
-  // 默认语言（当无法检测用户偏好时使用）
   defaultLocale,
-
-  // 路径前缀策略：'always' = 总是显示语言前缀（/en, /zh）
   localePrefix: 'always',
-
-  // 自动检测用户浏览器语言
   localeDetection: true,
 });
 
 /**
- * 配置中间件匹配规则
+ * Get Geo-IP detected locale
+ * @param request - NextRequest object
+ */
+function getGeoLocale(request: NextRequest): Locale {
+  // Get country from Vercel's geo-IP header
+  const countryCode = request.headers.get('x-vercel-ip-country');
+
+  // Get Accept-Language header
+  const acceptLanguage = request.headers.get('accept-language');
+
+  return getLocaleFromGeoIP(countryCode, acceptLanguage);
+}
+
+/**
+ * Main middleware function
+ */
+export default function middleware(request: NextRequest): NextResponse {
+  const pathname = request.nextUrl.pathname;
+
+  // Check if path already has a locale
+  const pathLocale = getLocaleFromPath(pathname);
+
+  if (pathLocale) {
+    // Path has locale, let next-intl handle it
+    return intlMiddleware(request);
+  }
+
+  // No locale in path - determine locale via Geo-IP
+  const geoLocale = getGeoLocale(request);
+
+  // Build redirect URL with detected locale
+  const redirectUrl = buildRedirectUrl(request.url, geoLocale);
+
+  // Return 302 redirect
+  return NextResponse.redirect(redirectUrl, 302);
+}
+
+/**
+ * Middleware matcher configuration
  *
- * 匹配所有路径，除了：
- * - API 路由 (/api/*)
- * - Next.js 内部文件 (_next/*)
- * - 静态资源文件（图片、字体等）
+ * Matches all paths except:
+ * - API routes (/api/*)
+ * - Next.js internal files (_next/*)
+ * - Static assets (images, fonts, etc.)
  */
 export const config = {
   matcher: [
-    // 匹配所有路径
+    // Root path
     '/',
 
-    // 匹配所有带语言前缀的路径
-    '/(zh|en)/:path*',
+    // All locale-prefixed paths (10 languages)
+    '/(en|zh|ja|de|nl|fr|pt|es|zh-tw|ru)/:path*',
 
-    // 排除不需要国际化的路径
+    // All other paths except static assets and API
     '/((?!api|_next|_vercel|.*\\..*).*)',
   ],
 };
