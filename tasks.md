@@ -93,15 +93,16 @@
 
 采用渐进式实现策略：先完成核心路由逻辑，再扩展UI组件，最后优化性能和无障碍性。
 
-### Task 1: 扩展 i18n 配置支持10种语言 (串行 - 基础依赖)
+### Task 1: 扩展 i18n 配置支持10种语言 (串行 - 基础依赖) [已完成]
 
-- [ ] 1.1 更新 i18n.ts 添加新语言配置
+- [x] 1.1 更新 i18n.ts 添加新语言配置
   - 扩展 locales 数组为 ['en', 'zh', 'ja', 'de', 'nl', 'fr', 'pt', 'es', 'zh-tw', 'ru']
   - 添加 localeConfig 对象
   - 导出 Locale 类型定义
-- [ ] 1.2 编写属性测试 **Property 1: Locale Configuration Completeness**
-- [ ] 1.3 创建8个新语言的翻译文件骨架
+- [x] 1.2 编写属性测试 **Property 1: Locale Configuration Completeness** (19 tests)
+- [x] 1.3 创建8个新语言的翻译文件骨架 + **Property 2: Translation File Structure** (69 tests)
   - locales/ja.json, de.json, nl.json, fr.json, pt.json, es.json, zh-tw.json, ru.json
+  - **Checkpoint: 266 tests passed, 2 skipped**
 
 ### Task 2: 实现边缘中间件爬虫检测 (可并行)
 
