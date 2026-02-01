@@ -4,6 +4,7 @@ import { locales, defaultLocale, type Locale } from './i18n';
 import {
   getLangPrefFromCookie,
   setLangPrefCookie,
+  AUTO_REDIRECT_COOKIE_NAME,
 } from './lib/language-preference';
 import { detectBot } from './lib/bot-detector';
 import {
@@ -119,6 +120,15 @@ export default function middleware(request: NextRequest): NextResponse {
   // 7. Set cookie for future visits (if not already set)
   if (!cookieLocale) {
     setLangPrefCookie(response, targetLocale);
+
+    // 8. Mark as auto-redirected for language banner (non-English only)
+    if (targetLocale !== defaultLocale) {
+      response.cookies.set(AUTO_REDIRECT_COOKIE_NAME, 'true', {
+        path: '/',
+        sameSite: 'lax',
+        // Session cookie - no maxAge, expires when browser closes
+      });
+    }
   }
 
   return response;

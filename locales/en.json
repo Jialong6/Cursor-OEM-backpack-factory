@@ -585,5 +585,11 @@
       "subtitle": "Contact us for professional OEM/ODM solutions",
       "button": "Contact Us Now"
     }
+  },
+  "languageBanner": {
+    "message": "You have been automatically redirected to the {language} version",
+    "keep": "Keep {language}",
+    "switchToEnglish": "Switch to English",
+    "close": "Close"
   }
 }

@@ -8,6 +8,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { generateHomeMetadata } from '@/lib/metadata';
 import { ManufacturingPlantSchema } from '@/components/seo';
+import { LanguageBanner } from '@/components/i18n';
 import "../globals.css";
 
 const geistSans = Geist({
@@ -94,6 +95,7 @@ export default async function RootLayout({
             {locale === 'zh' ? '跳转到主要内容' : 'Skip to main content'}
           </a>
           <Navbar />
+          <LanguageBanner locale={locale as Locale} />
           <main id="main-content">
             {children}
           </main>

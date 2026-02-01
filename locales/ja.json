@@ -585,5 +585,11 @@
       "subtitle": "Contact us for professional OEM/ODM solutions",
       "button": "Contact Us Now"
     }
+  },
+  "languageBanner": {
+    "message": "{language}版に自動的にリダイレクトされました",
+    "keep": "{language}を維持",
+    "switchToEnglish": "英語に切り替え",
+    "close": "閉じる"
   }
 }
