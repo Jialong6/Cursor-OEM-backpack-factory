@@ -198,6 +198,7 @@ describe('Translation File Unit Tests', () => {
     expect(translations).not.toBeNull();
 
     const expectedSections = [
+      'bento',
       'nav',
       'banner',
       'about',

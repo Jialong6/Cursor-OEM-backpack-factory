@@ -1,4 +1,26 @@
 {
+  "bento": {
+    "brand": {
+      "title": "Better Bags since 2003",
+      "subtitle": "#Top Tier Custom Backpacks Factory in Myanmar",
+      "description": "One-stop solutions for your backpack needs"
+    },
+    "dashboard": {
+      "title": "Key Metrics"
+    },
+    "trust": {
+      "title": "Trusted By",
+      "certifications": "Certifications",
+      "partners": "Partner Brands",
+      "more": "+20 more"
+    },
+    "cta": {
+      "title": "Ready to Start Your Project?",
+      "subtitle": "Get a free quote within 24 hours",
+      "button": "Get A Quote",
+      "note": "No obligation, free consultation"
+    }
+  },
   "nav": {
     "banner": "Home",
     "about": "About Us",

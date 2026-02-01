@@ -1,4 +1,26 @@
 {
+  "bento": {
+    "brand": {
+      "title": "Better Bags 始于2003",
+      "subtitle": "#缅甸第一梯队定制背包工厂",
+      "description": "一站式背包解决方案"
+    },
+    "dashboard": {
+      "title": "核心指标"
+    },
+    "trust": {
+      "title": "信赖伙伴",
+      "certifications": "认证资质",
+      "partners": "合作品牌",
+      "more": "+20 家更多"
+    },
+    "cta": {
+      "title": "准备启动您的项目？",
+      "subtitle": "24小时内获取免费报价",
+      "button": "获取报价",
+      "note": "无需付费，免费咨询"
+    }
+  },
   "about": {
     "title": "关于我们",
     "mission": {
