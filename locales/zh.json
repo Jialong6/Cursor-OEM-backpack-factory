@@ -165,6 +165,10 @@
         "dragDrop": "或拖放文件到这里",
         "acceptedFormats": "支持格式：JPG, PNG, WebP, PDF, DOC, DOCX"
       },
+      "humanVerification": {
+        "label": "人机验证",
+        "placeholder": "mCaptcha 验证将在此集成"
+      },
       "submit": "提交询价",
       "submitting": "提交中...",
       "success": {

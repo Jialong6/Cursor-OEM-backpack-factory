@@ -495,6 +495,10 @@
         "dragDrop": "or drag and drop files here",
         "acceptedFormats": "Accepted formats: JPG, PNG, WebP, PDF, DOC, DOCX"
       },
+      "humanVerification": {
+        "label": "Human Verification",
+        "placeholder": "mCaptcha verification will be integrated here"
+      },
       "submit": "Submit Inquiry",
       "submitting": "Submitting...",
       "success": {

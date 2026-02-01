@@ -203,7 +203,7 @@ export default function Contact() {
                     />
                     {errors.firstName && (
                       <p id="firstName-error" className="mt-1 text-sm text-red-600" role="alert">
-                        {errors.firstName.message}
+                        {t('form.firstName.error')}
                       </p>
                     )}
                   </div>
@@ -227,7 +227,7 @@ export default function Contact() {
                     />
                     {errors.lastName && (
                       <p id="lastName-error" className="mt-1 text-sm text-red-600" role="alert">
-                        {errors.lastName.message}
+                        {t('form.lastName.error')}
                       </p>
                     )}
                   </div>
@@ -252,7 +252,7 @@ export default function Contact() {
                   />
                   {errors.email && (
                     <p id="email-error" className="mt-1 text-sm text-red-600" role="alert">
-                      {errors.email.message}
+                      {t('form.email.error')}
                     </p>
                   )}
                 </div>
@@ -278,7 +278,7 @@ export default function Contact() {
                     />
                     {errors.countryRegion && (
                       <p id="countryRegion-error" className="mt-1 text-sm text-red-600" role="alert">
-                        {errors.countryRegion.message}
+                        {t('form.countryRegion.error')}
                       </p>
                     )}
                   </div>
@@ -302,7 +302,7 @@ export default function Contact() {
                     />
                     {errors.companyBrandName && (
                       <p id="companyBrandName-error" className="mt-1 text-sm text-red-600" role="alert">
-                        {errors.companyBrandName.message}
+                        {t('form.companyBrandName.error')}
                       </p>
                     )}
                   </div>
@@ -327,7 +327,7 @@ export default function Contact() {
                   />
                   {errors.phoneNumber && (
                     <p id="phoneNumber-error" className="mt-1 text-sm text-red-600" role="alert">
-                      {errors.phoneNumber.message}
+                      {t('form.phoneNumber.error')}
                     </p>
                   )}
                 </div>
@@ -351,7 +351,7 @@ export default function Contact() {
                   />
                   {errors.subject && (
                     <p id="subject-error" className="mt-1 text-sm text-red-600" role="alert">
-                      {errors.subject.message}
+                      {t('form.subject.error')}
                     </p>
                   )}
                 </div>
@@ -383,7 +383,7 @@ export default function Contact() {
                   </select>
                   {errors.orderQuantity && (
                     <p id="orderQuantity-error" className="mt-1 text-sm text-red-600" role="alert">
-                      {errors.orderQuantity.message}
+                      {t('form.orderQuantity.error')}
                     </p>
                   )}
                 </div>
@@ -415,7 +415,7 @@ export default function Contact() {
                   </select>
                   {errors.techPackAvailability && (
                     <p id="techPackAvailability-error" className="mt-1 text-sm text-red-600" role="alert">
-                      {errors.techPackAvailability.message}
+                      {t('form.techPackAvailability.error')}
                     </p>
                   )}
                 </div>
@@ -453,7 +453,7 @@ export default function Contact() {
                   />
                   {errors.message && (
                     <p id="message-error" className="mt-1 text-sm text-red-600" role="alert">
-                      {errors.message.message}
+                      {t('form.message.error')}
                     </p>
                   )}
                 </div>
@@ -528,10 +528,12 @@ export default function Contact() {
 
                 {/* mCaptcha 占位符 */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Human Verification *</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    {t('form.humanVerification.label')} *
+                  </label>
                   <div className="bg-gray-100 border border-gray-300 rounded-lg p-4 text-center text-gray-500">
                     {/* TODO: 集成 mCaptcha */}
-                    <p className="text-sm">mCaptcha verification will be integrated here</p>
+                    <p className="text-sm">{t('form.humanVerification.placeholder')}</p>
                   </div>
                   <input {...register('mcaptchaToken')} type="hidden" value="test-token-placeholder" />
                 </div>
