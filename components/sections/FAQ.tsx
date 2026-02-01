@@ -2,6 +2,7 @@
 
 import { useTranslations, useLocale } from 'next-intl';
 import Accordion from '@/components/ui/Accordion';
+import { FAQPageSchema, type FAQSection } from '@/components/seo';
 
 /**
  * FAQ 常见问题区块组件
@@ -20,39 +21,12 @@ export default function FAQ() {
   const locale = useLocale();
 
   // 获取 FAQ 分类数据
-  const sections = t.raw('sections') as Array<{
-    title: string;
-    items: Array<{
-      q: string;
-      a: string;
-    }>;
-  }>;
-
-  // 构建 FAQPage JSON-LD 结构化数据
-  const faqJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: sections.flatMap((section) =>
-      section.items.map((item) => ({
-        '@type': 'Question',
-        name: item.q,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: item.a,
-        },
-      }))
-    ),
-  };
+  const sections = t.raw('sections') as FAQSection[];
 
   return (
     <>
-      {/* FAQPage JSON-LD 结构化数据 */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqJsonLd),
-        }}
-      />
+      {/* FAQPage JSON-LD 结构化数据 - 需求 10.5 */}
+      <FAQPageSchema sections={sections} />
 
       <section
         id="faq"

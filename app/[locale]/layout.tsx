@@ -7,6 +7,7 @@ import { locales, type Locale } from '@/i18n';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { generateHomeMetadata } from '@/lib/metadata';
+import { ManufacturingPlantSchema } from '@/components/seo';
 import "../globals.css";
 
 const geistSans = Geist({
@@ -86,6 +87,8 @@ export default async function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
+          {/* ManufacturingBusiness JSON-LD 结构化数据 - 需求 7.2 */}
+          <ManufacturingPlantSchema />
           {/* 跳过导航链接 - 需求 16.6: 支持键盘导航 */}
           <a href="#main-content" className="skip-to-content">
             {locale === 'zh' ? '跳转到主要内容' : 'Skip to main content'}
