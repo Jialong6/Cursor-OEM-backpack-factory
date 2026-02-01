@@ -73,6 +73,8 @@
 
 ## 已验证的属性（Property-Based Testing）
 
+### v1.0 属性 (13个)
+
 1. 语言切换一致性
 2. 语言偏好持久化往返
 3. 滚动位置保持
@@ -86,6 +88,15 @@
 11. 表单提交成功处理
 12. 键盘焦点可见性
 13. 页脚链接滚动
+
+### v2.0 属性 (新增 6个)
+
+14. Locale 配置完整性 (Property 1) - 19 tests
+15. 翻译文件结构一致性 (Property 2) - 69 tests
+16. 爬虫检测准确性 (Property 4) - 27 tests
+17. 国家到语言映射正确性 (Property 6)
+18. Cookie 优先级高于 Geo-IP (Property 7) - 7 tests
+19. Cookie 属性正确性 (Property 14) - 20 tests
 
 ## 第二版实现计划：国际化地理路由系统 (i18n-geo-routing)
 
@@ -104,38 +115,52 @@
   - locales/ja.json, de.json, nl.json, fr.json, pt.json, es.json, zh-tw.json, ru.json
   - **Checkpoint: 266 tests passed, 2 skipped**
 
-### Task 2: 实现边缘中间件爬虫检测 (可并行)
+### Task 2: 实现边缘中间件爬虫检测 (可并行) [已完成]
 
-- [ ] 2.1 创建 lib/bot-detector.ts
-  - 实现 BOT_PATTERNS 常量数组
+- [x] 2.1 创建 lib/bot-detector.ts
+  - 实现 BOT_PATTERNS 常量数组（覆盖主流搜索引擎和社交媒体爬虫）
   - 实现 detectBot(userAgent: string): boolean
-- [ ] 2.2 编写属性测试 **Property 4: Bot Detection Accuracy**
-- [ ] 2.3 集成爬虫检测到 middleware.ts
-- [ ] 2.4 编写属性测试 **Property 5: Bot Bypass Guarantee**
+- [x] 2.2 编写属性测试 **Property 4: Bot Detection Accuracy** (27 tests)
+- [x] 2.3 集成爬虫检测到 middleware.ts
+  - 爬虫请求使用 botMiddleware（禁用 locale 检测，无重定向）
+- [x] 2.4 编写属性测试 **Property 5: Bot Bypass Guarantee**
 
-### Task 3: 实现 Geo-IP 路由逻辑 (可并行)
+### Task 3: 实现 Geo-IP 路由逻辑 (可并行) [已完成]
 
-- [ ] 3.1 创建 lib/geo-router.ts
-  - 实现 COUNTRY_LOCALE_MAP
+- [x] 3.1 创建 lib/geo-router.ts (394 行)
+  - 实现 COUNTRY_LOCALE_MAP（覆盖 30+ 国家）
+  - 实现 AMBIGUOUS_COUNTRIES（处理比利时等多语言国家）
   - 实现 getLocaleFromCountry()
   - 实现 getLocaleFromAcceptLanguage()
-- [ ] 3.2 编写属性测试 **Property 6: Country-to-Locale Mapping Correctness**
-- [ ] 3.3 集成 Geo-IP 路由到 middleware.ts
-- [ ] 3.4 编写属性测试 **Property 15: Redirect Status Code Consistency**
+  - 实现 getLocaleFromGeoIP()（完整优先级链）
+  - 实现 buildRedirectUrl()
+  - 实现 getLocaleFromPath()
+- [x] 3.2 编写属性测试 **Property 6: Country-to-Locale Mapping Correctness**
+  - geo-router-country-mapping.test.ts
+- [x] 3.3 集成 Geo-IP 路由到 middleware.ts
+  - 优先级: Path > Cookie > Geo-IP > Default
+- [x] 3.4 编写属性测试 **Property 15: Redirect Status Code Consistency**
+  - geo-router-redirect.test.ts
 
-### Task 4: 实现语言偏好 Cookie 管理 (可并行)
+### Task 4: 实现语言偏好 Cookie 管理 (可并行) [已完成]
 
-- [ ] 4.1 创建 lib/language-preference.ts
+- [x] 4.1 创建 lib/language-preference.ts
   - 实现 getLangPrefFromCookie()
   - 实现 setLangPrefCookie()
-- [ ] 4.2 编写属性测试 **Property 14: Cookie Attribute Correctness**
-- [ ] 4.3 集成 Cookie 优先级到 middleware.ts
-- [ ] 4.4 编写属性测试 **Property 7: Cookie Priority Over Geo-IP**
+  - Cookie 配置: MaxAge=1年, SameSite=Lax, Secure, Path=/
+- [x] 4.2 编写属性测试 **Property 14: Cookie Attribute Correctness**
+  - cookie-preference.test.ts (20 tests)
+- [x] 4.3 集成 Cookie 优先级到 middleware.ts
+- [x] 4.4 编写属性测试 **Property 7: Cookie Priority Over Geo-IP**
+  - cookie-priority.test.ts (7 tests)
+  - locale-persistence.test.ts (7 tests)
 
-### Task 5: Checkpoint - 核心路由逻辑验证 (串行)
+### Task 5: Checkpoint - 核心路由逻辑验证 (串行) [已完成]
 
-- 确保所有路由相关测试通过
-- 验证爬虫绕过、Geo-IP 路由、Cookie 优先级
+- [x] 确保所有路由相关测试通过
+- [x] 验证爬虫绕过、Geo-IP 路由、Cookie 优先级
+- **Checkpoint: 380 tests passed, 2 skipped**
+- 生产构建成功：Middleware 92.8 kB
 
 ### Task 6: 实现 Hreflang SEO 标签生成 (可并行)
 
@@ -143,13 +168,26 @@
 - [ ] 6.2 编写属性测试 **Property 9: Hreflang Tag Generation Correctness**
 - [ ] 6.3 集成 HreflangTags 到根布局
 
-### Task 7: 实现 JSON-LD 结构化数据 (可并行)
+### Task 7: 实现 JSON-LD 结构化数据 (可并行) [已完成]
 
-- [ ] 7.1 创建 components/seo/ManufacturingPlantSchema.tsx
-- [ ] 7.2 编写属性测试 **Property 10: JSON-LD Schema Validity**
-- [ ] 7.3 编写属性测试 **Property 11: Localized Schema Description**
-- [ ] 7.4 创建 components/seo/FAQPageSchema.tsx
-- [ ] 7.5 集成 Schema 组件到相关页面
+- [x] 7.1 创建 components/seo/ManufacturingPlantSchema.tsx
+  - @type: ManufacturingBusiness（Organization 的子类型）
+  - 包含: name, url, logo, description, address, geo, contactPoint, numberOfEmployees, hasOfferCatalog, hasCredential
+  - 支持多语言描述（通过 useTranslations）
+  - inLanguage 自动匹配当前 locale
+- [x] 7.2 编写属性测试 **Property 10: JSON-LD Schema Validity** (17 tests)
+  - tests/properties/jsonld-schema-validity.test.ts
+  - 验证必需字段、URL/日期格式、嵌套结构
+- [x] 7.3 编写属性测试 **Property 11: Localized Schema Description** (19 tests)
+  - tests/properties/jsonld-localized-description.test.ts
+  - 验证翻译键存在、FAQ 数量一致、inLanguage 匹配
+- [x] 7.4 创建 components/seo/FAQPageSchema.tsx
+  - 从 FAQ.tsx 提取的独立组件
+  - 纯函数，接收 sections 生成 JSON-LD
+- [x] 7.5 创建 components/seo/index.ts 统一导出
+- [x] 7.6 集成 ManufacturingPlantSchema 到 app/[locale]/layout.tsx
+- [x] 7.7 重构 FAQ.tsx 使用 FAQPageSchema 组件
+- **新增测试: 36 tests passed**
 
 ### Task 8: 实现语言切换横幅组件 (可并行)
 
