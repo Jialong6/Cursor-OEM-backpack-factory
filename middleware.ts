@@ -1,30 +1,49 @@
-import createMiddleware from 'next-intl/middleware';
 import { NextRequest, NextResponse } from 'next/server';
-import { locales, defaultLocale, isValidLocale, type Locale } from './i18n';
+import createMiddleware from 'next-intl/middleware';
+import { locales, defaultLocale, type Locale } from './i18n';
 import {
   getLangPrefFromCookie,
   setLangPrefCookie,
 } from './lib/language-preference';
 import { detectBot } from './lib/bot-detector';
+import {
+  getLocaleFromPath,
+  getLocaleFromGeoIP,
+  buildRedirectUrl,
+} from './lib/geo-router';
 
 /**
- * next-intl 基础中间件配置（用于普通用户）
+ * next-intl middleware with full i18n-geo-routing support
+ *
+ * Priority chain (for regular users):
+ * 1. URL path locale (e.g., /ja/about -> ja)
+ * 2. Cookie preference (user's previous choice)
+ * 3. Geo-IP detection (x-vercel-ip-country header)
+ * 4. Accept-Language header (handled within Geo-IP)
+ * 5. Default locale (en)
+ *
+ * Special handling:
+ * - Bots: Use botMiddleware (no locale detection, no redirect)
+ */
+
+/**
+ * Base next-intl middleware for regular users
  */
 const intlMiddleware = createMiddleware({
   locales,
   defaultLocale,
   localePrefix: 'always',
-  // 禁用自动检测，我们会手动处理优先级
+  // Disable auto detection - we handle priority manually
   localeDetection: false,
 });
 
 /**
- * 爬虫专用中间件配置
+ * Bot middleware configuration
  *
- * 特点：
- * - 禁用 locale 检测，直接使用 defaultLocale
- * - 避免对爬虫进行不必要的重定向
- * - 确保 SEO 一致性
+ * Features:
+ * - Disabled locale detection
+ * - No redirects for SEO consistency
+ * - Always uses defaultLocale
  */
 const botMiddleware = createMiddleware({
   locales,
@@ -34,101 +53,94 @@ const botMiddleware = createMiddleware({
 });
 
 /**
- * 从 URL 路径中提取 locale
- * @param pathname - URL 路径
- * @returns 提取的 locale 或 null
+ * Get Geo-IP detected locale from request headers
+ * @param request - NextRequest object
+ * @returns Detected locale based on Geo-IP and Accept-Language
  */
-function getLocaleFromPath(pathname: string): Locale | null {
-  // 移除开头的斜杠
-  const path = pathname.startsWith('/') ? pathname.slice(1) : pathname;
+function getGeoLocale(request: NextRequest): Locale {
+  // Get country from Vercel's geo-IP header
+  const countryCode = request.headers.get('x-vercel-ip-country');
 
-  // 获取第一段路径
-  const firstSegment = path.split('/')[0];
+  // Get Accept-Language header
+  const acceptLanguage = request.headers.get('accept-language');
 
-  // 检查是否为有效 locale
-  if (isValidLocale(firstSegment)) {
-    return firstSegment;
-  }
-
-  return null;
+  return getLocaleFromGeoIP(countryCode, acceptLanguage);
 }
 
 /**
- * 主中间件函数
+ * Main middleware function
  *
- * 处理流程：
- * 1. 检测 User-Agent 是否为爬虫
- * 2. 爬虫 -> 使用 botMiddleware（禁用 locale 检测，无重定向）
- * 3. 普通用户 -> 使用自定义 locale 优先级逻辑
- *
- * 语言检测优先级（普通用户）：
- * 1. URL 路径中的 locale（用户明确请求）
- * 2. Cookie 中的语言偏好（用户之前的选择）
- * 3. Accept-Language 请求头（浏览器偏好，由 next-intl 处理）
- * 4. 默认语言（en）
+ * Processing flow:
+ * 1. Bot detection: Skip locale detection for bots
+ * 2. Path locale: If URL has locale, use it
+ * 3. Cookie locale: If user has preference, use it
+ * 4. Geo-IP locale: Detect from country/Accept-Language
+ * 5. Default locale: Fallback to 'en'
  */
 export default function middleware(request: NextRequest): NextResponse {
   const userAgent = request.headers.get('user-agent') || '';
 
-  // 1. 爬虫检测: 直接使用默认语言，跳过 locale 检测
+  // 1. Bot detection: use botMiddleware (no locale detection)
   if (detectBot(userAgent)) {
     return botMiddleware(request);
   }
 
-  // 2. 普通用户处理
-  const { pathname } = request.nextUrl;
-
-  // 3. 检查 URL 路径中是否有 locale
+  // 2. Check URL path for existing locale
+  const pathname = request.nextUrl.pathname;
   const pathLocale = getLocaleFromPath(pathname);
 
-  // 4. 读取 cookie 中的语言偏好
+  // 3. Read cookie preference
   const cookieLocale = getLangPrefFromCookie(request);
 
-  // 5. 调用 next-intl 中间件处理请求
-  const response = intlMiddleware(request);
-
-  // 6. 确定最终使用的 locale
-  let finalLocale: Locale;
-
+  // 4. If path has locale, handle normally
   if (pathLocale) {
-    // URL 路径中有 locale，使用它并更新 cookie
-    finalLocale = pathLocale;
-  } else if (cookieLocale) {
-    // 没有路径 locale，但有 cookie 偏好
-    finalLocale = cookieLocale;
-  } else {
-    // 都没有，使用默认 locale
-    finalLocale = defaultLocale;
+    // Call next-intl middleware
+    const response = intlMiddleware(request);
+    // Update cookie with path locale (user's explicit choice)
+    setLangPrefCookie(response, pathLocale);
+    return response;
   }
 
-  // 7. 更新 cookie（如果路径中有 locale，说明用户明确选择了语言）
-  if (pathLocale) {
-    setLangPrefCookie(response, finalLocale);
-  } else if (!cookieLocale) {
-    // 如果没有 cookie，设置默认 locale 到 cookie
-    setLangPrefCookie(response, finalLocale);
+  // 5. No path locale - determine best locale
+  let targetLocale: Locale;
+
+  if (cookieLocale) {
+    // Cookie preference takes priority
+    targetLocale = cookieLocale;
+  } else {
+    // Geo-IP detection as fallback
+    targetLocale = getGeoLocale(request);
+  }
+
+  // 6. Redirect to detected locale
+  const redirectUrl = buildRedirectUrl(request.url, targetLocale);
+  const response = NextResponse.redirect(redirectUrl, 302);
+
+  // 7. Set cookie for future visits (if not already set)
+  if (!cookieLocale) {
+    setLangPrefCookie(response, targetLocale);
   }
 
   return response;
 }
 
 /**
- * 配置中间件匹配规则
+ * Middleware matcher configuration
  *
- * 匹配所有路径，除了：
- * - API 路由 (/api/*)
- * - Next.js 内部文件 (_next/*)
- * - 静态资源文件（图片、字体等）
+ * Matches all paths except:
+ * - API routes (/api/*)
+ * - Next.js internal files (_next/*)
+ * - Static assets (images, fonts, etc.)
  */
 export const config = {
   matcher: [
-    // 匹配所有路径
+    // Root path
     '/',
 
-    // 匹配所有带语言前缀的路径（所有 10 种语言）
+    // All locale-prefixed paths (10 languages)
     '/(zh|en|ja|de|nl|fr|pt|es|zh-tw|ru)/:path*',
 
-    // 排除不需要国际化的路径
+    // All other paths except static assets and API
     '/((?!api|_next|_vercel|.*\\..*).*)',
   ],
 };
