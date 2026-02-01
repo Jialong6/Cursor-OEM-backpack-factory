@@ -4,13 +4,15 @@
  * 功能：
  * - 为每个页面配置唯一的标题和描述
  * - 配置 Open Graph 元标签
- * - 配置 hreflang 标签
- * - 支持中英文内容
+ * - 配置 hreflang 标签（支持 10 种语言）
+ * - 支持多语言内容
  *
  * 验证需求：14.1, 14.2, 14.3, 14.8
  */
 
 import type { Metadata } from 'next';
+import { type Locale } from '@/i18n';
+import { generateHreflangMetadata } from '@/components/seo/HreflangTags';
 
 /**
  * 网站基础 URL
@@ -60,14 +62,36 @@ export const blogListMetadata = {
 } as const;
 
 /**
+ * 获取 OpenGraph locale 代码
+ * @param locale 当前语言
+ * @returns OpenGraph locale 代码
+ */
+function getOgLocale(locale: Locale): string {
+  const ogLocaleMap: Record<Locale, string> = {
+    en: 'en_US',
+    zh: 'zh_CN',
+    'zh-tw': 'zh_TW',
+    ja: 'ja_JP',
+    de: 'de_DE',
+    nl: 'nl_NL',
+    fr: 'fr_FR',
+    pt: 'pt_PT',
+    es: 'es_ES',
+    ru: 'ru_RU',
+  };
+  return ogLocaleMap[locale] || 'en_US';
+}
+
+/**
  * 生成首页元数据
  *
  * @param locale 当前语言
  * @returns Metadata 对象
  */
-export function generateHomeMetadata(locale: 'en' | 'zh'): Metadata {
-  const meta = homeMetadata[locale];
-  const alternateLocale = locale === 'en' ? 'zh' : 'en';
+export function generateHomeMetadata(locale: Locale): Metadata {
+  // 对于没有翻译的语言，回退到英文
+  const metaLocale = (locale === 'en' || locale === 'zh') ? locale : 'en';
+  const meta = homeMetadata[metaLocale];
 
   return {
     title: meta.title,
@@ -85,7 +109,7 @@ export function generateHomeMetadata(locale: 'en' | 'zh'): Metadata {
           alt: meta.title,
         },
       ],
-      locale: locale === 'en' ? 'en_US' : 'zh_CN',
+      locale: getOgLocale(locale),
       type: 'website',
     },
     twitter: {
@@ -96,11 +120,7 @@ export function generateHomeMetadata(locale: 'en' | 'zh'): Metadata {
     },
     alternates: {
       canonical: `${BASE_URL}/${locale}`,
-      languages: {
-        'en': `${BASE_URL}/en`,
-        'zh': `${BASE_URL}/zh`,
-        'x-default': `${BASE_URL}/en`,
-      },
+      languages: generateHreflangMetadata(''),
     },
   };
 }
@@ -111,8 +131,10 @@ export function generateHomeMetadata(locale: 'en' | 'zh'): Metadata {
  * @param locale 当前语言
  * @returns Metadata 对象
  */
-export function generateBlogListMetadata(locale: 'en' | 'zh'): Metadata {
-  const meta = blogListMetadata[locale];
+export function generateBlogListMetadata(locale: Locale): Metadata {
+  // 对于没有翻译的语言，回退到英文
+  const metaLocale = (locale === 'en' || locale === 'zh') ? locale : 'en';
+  const meta = blogListMetadata[metaLocale];
 
   return {
     title: meta.title,
@@ -130,7 +152,7 @@ export function generateBlogListMetadata(locale: 'en' | 'zh'): Metadata {
           alt: meta.title,
         },
       ],
-      locale: locale === 'en' ? 'en_US' : 'zh_CN',
+      locale: getOgLocale(locale),
       type: 'website',
     },
     twitter: {
@@ -141,11 +163,7 @@ export function generateBlogListMetadata(locale: 'en' | 'zh'): Metadata {
     },
     alternates: {
       canonical: `${BASE_URL}/${locale}/blog`,
-      languages: {
-        'en': `${BASE_URL}/en/blog`,
-        'zh': `${BASE_URL}/zh/blog`,
-        'x-default': `${BASE_URL}/en/blog`,
-      },
+      languages: generateHreflangMetadata('/blog'),
     },
   };
 }
@@ -162,7 +180,7 @@ export function generateBlogListMetadata(locale: 'en' | 'zh'): Metadata {
  * @returns Metadata 对象
  */
 export function generateBlogDetailMetadata(
-  locale: 'en' | 'zh',
+  locale: Locale,
   slug: string,
   title: string,
   description: string,
@@ -205,7 +223,7 @@ export function generateBlogDetailMetadata(
           alt: title,
         },
       ],
-      locale: locale === 'en' ? 'en_US' : 'zh_CN',
+      locale: getOgLocale(locale),
       type: 'article',
       ...(publishedTime && {
         publishedTime,
@@ -219,11 +237,7 @@ export function generateBlogDetailMetadata(
     },
     alternates: {
       canonical: `${BASE_URL}/${locale}/blog/${slug}`,
-      languages: {
-        'en': `${BASE_URL}/en/blog/${slug}`,
-        'zh': `${BASE_URL}/zh/blog/${slug}`,
-        'x-default': `${BASE_URL}/en/blog/${slug}`,
-      },
+      languages: generateHreflangMetadata(`/blog/${slug}`),
     },
   };
 }
@@ -240,7 +254,7 @@ export function generateBlogDetailMetadata(
  * @returns Metadata 对象
  */
 export function generateGenericMetadata(
-  locale: 'en' | 'zh',
+  locale: Locale,
   title: string,
   description: string,
   path: string = '',
@@ -271,7 +285,7 @@ export function generateGenericMetadata(
           alt: title,
         },
       ],
-      locale: locale === 'en' ? 'en_US' : 'zh_CN',
+      locale: getOgLocale(locale),
       type: 'website',
     },
     twitter: {
@@ -282,11 +296,7 @@ export function generateGenericMetadata(
     },
     alternates: {
       canonical: `${BASE_URL}${fullPath}`,
-      languages: {
-        'en': `${BASE_URL}/en${path}`,
-        'zh': `${BASE_URL}/zh${path}`,
-        'x-default': `${BASE_URL}/en${path}`,
-      },
+      languages: generateHreflangMetadata(path),
     },
   };
 }

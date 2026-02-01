@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { locales } from '@/i18n';
+import { locales, type Locale } from '@/i18n';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { generateHomeMetadata } from '@/lib/metadata';
@@ -43,7 +43,7 @@ export async function generateMetadata({
   }
 
   return {
-    ...generateHomeMetadata(locale as 'en' | 'zh'),
+    ...generateHomeMetadata(locale as Locale),
     metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://betterbagsmyanmar.com'),
   };
 }

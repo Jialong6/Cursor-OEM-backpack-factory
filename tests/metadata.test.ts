@@ -132,8 +132,9 @@ describe('SEO 元数据配置', () => {
 
       expect(metadata.alternates).toBeDefined();
       expect(metadata.alternates?.languages).toBeDefined();
+      // 使用 ISO hreflang 代码: en 和 zh-Hans
       expect(metadata.alternates?.languages?.en).toBeDefined();
-      expect(metadata.alternates?.languages?.zh).toBeDefined();
+      expect(metadata.alternates?.languages?.['zh-Hans']).toBeDefined();
     });
 
     it('博客列表页应包含 hreflang 标签', () => {
@@ -141,8 +142,9 @@ describe('SEO 元数据配置', () => {
 
       expect(metadata.alternates).toBeDefined();
       expect(metadata.alternates?.languages).toBeDefined();
+      // 使用 ISO hreflang 代码: en 和 zh-Hans
       expect(metadata.alternates?.languages?.en).toBeDefined();
-      expect(metadata.alternates?.languages?.zh).toBeDefined();
+      expect(metadata.alternates?.languages?.['zh-Hans']).toBeDefined();
     });
 
     it('博客详情页应包含 hreflang 标签', () => {
@@ -150,8 +152,9 @@ describe('SEO 元数据配置', () => {
 
       expect(metadata.alternates).toBeDefined();
       expect(metadata.alternates?.languages).toBeDefined();
+      // 使用 ISO hreflang 代码: en 和 zh-Hans
       expect(metadata.alternates?.languages?.en).toBeDefined();
-      expect(metadata.alternates?.languages?.zh).toBeDefined();
+      expect(metadata.alternates?.languages?.['zh-Hans']).toBeDefined();
     });
 
     it('hreflang 应包含 x-default 回退', () => {
@@ -164,8 +167,9 @@ describe('SEO 元数据配置', () => {
       const metadata = generateHomeMetadata('en');
       const languages = metadata.alternates?.languages as Record<string, string>;
 
+      // 使用 ISO hreflang 代码
       expect(languages.en).toContain('/en');
-      expect(languages.zh).toContain('/zh');
+      expect(languages['zh-Hans']).toContain('/zh');
     });
   });
 
