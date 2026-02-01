@@ -4,23 +4,32 @@ import { locales, defaultLocale, isValidLocale, type Locale } from './i18n';
 import {
   getLangPrefFromCookie,
   setLangPrefCookie,
-  LANG_COOKIE_NAME,
 } from './lib/language-preference';
+import { detectBot } from './lib/bot-detector';
 
 /**
- * next-intl 基础中间件配置
+ * next-intl 基础中间件配置（用于普通用户）
  */
 const intlMiddleware = createMiddleware({
-  // 支持的所有语言列表
   locales,
-
-  // 默认语言（当无法检测用户偏好时使用）
   defaultLocale,
-
-  // 路径前缀策略：'always' = 总是显示语言前缀（/en, /zh）
   localePrefix: 'always',
-
   // 禁用自动检测，我们会手动处理优先级
+  localeDetection: false,
+});
+
+/**
+ * 爬虫专用中间件配置
+ *
+ * 特点：
+ * - 禁用 locale 检测，直接使用 defaultLocale
+ * - 避免对爬虫进行不必要的重定向
+ * - 确保 SEO 一致性
+ */
+const botMiddleware = createMiddleware({
+  locales,
+  defaultLocale,
+  localePrefix: 'always',
   localeDetection: false,
 });
 
@@ -45,33 +54,40 @@ function getLocaleFromPath(pathname: string): Locale | null {
 }
 
 /**
- * 自定义中间件
+ * 主中间件函数
  *
- * 语言检测优先级：
+ * 处理流程：
+ * 1. 检测 User-Agent 是否为爬虫
+ * 2. 爬虫 -> 使用 botMiddleware（禁用 locale 检测，无重定向）
+ * 3. 普通用户 -> 使用自定义 locale 优先级逻辑
+ *
+ * 语言检测优先级（普通用户）：
  * 1. URL 路径中的 locale（用户明确请求）
  * 2. Cookie 中的语言偏好（用户之前的选择）
- * 3. Accept-Language 请求头（浏览器偏好）
+ * 3. Accept-Language 请求头（浏览器偏好，由 next-intl 处理）
  * 4. 默认语言（en）
- *
- * 功能：
- * - 自动检测用户语言偏好
- * - 重定向根路径到检测到的语言（/ -> /en 或 /zh）
- * - 处理语言路由（/en/*, /zh/*）
- * - 在 cookie 中保持语言选择
  */
 export default function middleware(request: NextRequest): NextResponse {
+  const userAgent = request.headers.get('user-agent') || '';
+
+  // 1. 爬虫检测: 直接使用默认语言，跳过 locale 检测
+  if (detectBot(userAgent)) {
+    return botMiddleware(request);
+  }
+
+  // 2. 普通用户处理
   const { pathname } = request.nextUrl;
 
-  // 1. 首先检查 URL 路径中是否有 locale
+  // 3. 检查 URL 路径中是否有 locale
   const pathLocale = getLocaleFromPath(pathname);
 
-  // 2. 读取 cookie 中的语言偏好
+  // 4. 读取 cookie 中的语言偏好
   const cookieLocale = getLangPrefFromCookie(request);
 
-  // 3. 调用 next-intl 中间件处理请求
+  // 5. 调用 next-intl 中间件处理请求
   const response = intlMiddleware(request);
 
-  // 4. 确定最终使用的 locale
+  // 6. 确定最终使用的 locale
   let finalLocale: Locale;
 
   if (pathLocale) {
@@ -85,7 +101,7 @@ export default function middleware(request: NextRequest): NextResponse {
     finalLocale = defaultLocale;
   }
 
-  // 5. 更新 cookie（如果路径中有 locale，说明用户明确选择了语言）
+  // 7. 更新 cookie（如果路径中有 locale，说明用户明确选择了语言）
   if (pathLocale) {
     setLangPrefCookie(response, finalLocale);
   } else if (!cookieLocale) {
