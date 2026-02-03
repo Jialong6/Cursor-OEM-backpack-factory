@@ -2,6 +2,7 @@
 
 import { useTranslations, useLocale } from 'next-intl';
 import { useState, useEffect, useCallback } from 'react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import {
@@ -31,6 +32,9 @@ import { useGeoCountry } from '@/hooks/useGeoCountry';
 export default function Contact() {
   const t = useTranslations('contact');
   const locale = useLocale();
+
+  const titleAnim = useScrollAnimation({ variant: 'fade-up' });
+  const formAnim = useScrollAnimation({ variant: 'fade-up', delay: 100 });
   const [files, setFiles] = useState<File[]>([]);
   const [fileErrors, setFileErrors] = useState<string[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -168,13 +172,13 @@ export default function Contact() {
     <section id="contact" className="min-h-screen bg-white py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* 标题部分 */}
-        <div className="text-center mb-12">
+        <div ref={titleAnim.ref as React.RefObject<HTMLDivElement>} className={`text-center mb-12 ${titleAnim.animationClassName}`}>
           <h2 className="text-4xl md:text-5xl font-bold text-neutral-800 mb-4">{t('title')}</h2>
           <p className="text-xl md:text-2xl text-primary font-semibold mb-2">{t('subtitle')}</p>
           <p className="text-neutral-600 max-w-2xl mx-auto">{t('intro')}</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div ref={formAnim.ref as React.RefObject<HTMLDivElement>} className={`grid grid-cols-1 lg:grid-cols-3 gap-8 ${formAnim.animationClassName}`}>
           {/* 左侧：联系信息 */}
           <div className="lg:col-span-1 space-y-6">
             {/* 地址 */}

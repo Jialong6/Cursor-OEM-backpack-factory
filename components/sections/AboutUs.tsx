@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations, useLocale } from 'next-intl';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 /**
  * 关于我们区块组件
@@ -16,6 +17,10 @@ import { useTranslations, useLocale } from 'next-intl';
 export default function AboutUs() {
   const t = useTranslations('about');
   const locale = useLocale();
+
+  const titleAnim = useScrollAnimation({ variant: 'fade-up' });
+  const missionAnim = useScrollAnimation({ variant: 'fade-up', delay: 100 });
+  const valuesAnim = useScrollAnimation({ variant: 'fade-up', delay: 200 });
 
   // 获取六大核心价值观
   const values = t.raw('values') as Array<{
@@ -63,12 +68,12 @@ export default function AboutUs() {
       >
         <div className="mx-auto w-full max-w-7xl">
           {/* 标题 */}
-          <h2 className="mb-16 text-center text-3xl font-bold text-neutral-800 md:text-4xl lg:text-5xl">
+          <h2 ref={titleAnim.ref as React.RefObject<HTMLHeadingElement>} className={`mb-16 text-center text-3xl font-bold text-neutral-800 md:text-4xl lg:text-5xl ${titleAnim.animationClassName}`}>
             {t('title')}
           </h2>
 
           {/* 使命和愿景 */}
-          <div className="mb-16 grid gap-8 md:grid-cols-2">
+          <div ref={missionAnim.ref as React.RefObject<HTMLDivElement>} className={`mb-16 grid gap-8 md:grid-cols-2 ${missionAnim.animationClassName}`}>
             {/* 使命 */}
             <div className="rounded-xl bg-neutral-50 border border-neutral-200 p-8">
               <div className="mb-4 flex items-center gap-3">
@@ -133,7 +138,7 @@ export default function AboutUs() {
           </div>
 
           {/* 六大核心价值观 */}
-          <div className="mb-16">
+          <div ref={valuesAnim.ref as React.RefObject<HTMLDivElement>} className={`mb-16 ${valuesAnim.animationClassName}`}>
             <h3 className="mb-10 text-center text-2xl font-bold text-neutral-800 md:text-3xl">
               {t('valuesTitle')}
             </h3>

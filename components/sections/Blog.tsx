@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useParams } from 'next/navigation';
 import { getFeaturedBlogPosts } from '@/lib/blog-data';
 import OptimizedImage, { IMAGE_SIZES, ASPECT_RATIOS } from '@/components/ui/OptimizedImage';
@@ -21,6 +22,9 @@ import OptimizedImage, { IMAGE_SIZES, ASPECT_RATIOS } from '@/components/ui/Opti
 export default function Blog() {
   const t = useTranslations('blog');
   const params = useParams();
+
+  const titleAnim = useScrollAnimation({ variant: 'fade-up' });
+  const cardsAnim = useScrollAnimation({ variant: 'fade-up', delay: 100 });
   const locale = params.locale as 'en' | 'zh';
   const featuredPosts = getFeaturedBlogPosts(3);
 
@@ -41,13 +45,13 @@ export default function Blog() {
     <section id="blog" className="min-h-screen bg-neutral-50 py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* 标题部分 */}
-        <div className="text-center mb-12">
+        <div ref={titleAnim.ref as React.RefObject<HTMLDivElement>} className={`text-center mb-12 ${titleAnim.animationClassName}`}>
           <h2 className="text-4xl md:text-5xl font-bold text-neutral-800 mb-4">{t('title')}</h2>
           <p className="text-xl text-neutral-600 max-w-3xl mx-auto">{t('subtitle')}</p>
         </div>
 
         {/* 博客文章网格 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div ref={cardsAnim.ref as React.RefObject<HTMLDivElement>} className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 ${cardsAnim.animationClassName}`}>
           {featuredPosts.map((post) => (
             <Link
               key={post.id}

@@ -1,10 +1,16 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 export default function HeroBanner() {
   const t = useTranslations('banner');
   const tFeatures = useTranslations('features');
+
+  const titleAnim = useScrollAnimation({ variant: 'fade-in' });
+  const descAnim = useScrollAnimation({ variant: 'fade-up', delay: 100 });
+  const ctaAnim = useScrollAnimation({ variant: 'fade-up', delay: 200 });
+  const statsAnim = useScrollAnimation({ variant: 'fade-up', delay: 300 });
 
   const handleScrollToContact = () => {
     const contactSection = document.getElementById('contact');
@@ -33,15 +39,17 @@ export default function HeroBanner() {
     >
       <div className="mx-auto w-full max-w-5xl text-center">
         {/* 主标语 */}
-        <h1 className="mb-4 text-4xl font-bold leading-tight text-gray-900 md:text-5xl lg:text-6xl">
-          {t('line1')}
-        </h1>
-        <h2 className="mb-8 text-2xl font-semibold text-primary md:text-3xl lg:text-4xl">
-          {t('line2')}
-        </h2>
+        <div ref={titleAnim.ref as React.RefObject<HTMLDivElement>} className={titleAnim.animationClassName}>
+          <h1 className="mb-4 text-4xl font-bold leading-tight text-gray-900 md:text-5xl lg:text-6xl">
+            {t('line1')}
+          </h1>
+          <h2 className="mb-8 text-2xl font-semibold text-primary md:text-3xl lg:text-4xl">
+            {t('line2')}
+          </h2>
+        </div>
 
         {/* 描述文字 */}
-        <div className="mx-auto mb-8 max-w-3xl space-y-4 text-base leading-relaxed text-neutral-600 md:text-lg">
+        <div ref={descAnim.ref as React.RefObject<HTMLDivElement>} className={`mx-auto mb-8 max-w-3xl space-y-4 text-base leading-relaxed text-neutral-600 md:text-lg ${descAnim.animationClassName}`}>
           <p>
             {t('p1.pre')}
             <span className="font-bold text-primary">
@@ -54,15 +62,17 @@ export default function HeroBanner() {
         </div>
 
         {/* CTA 按钮 */}
-        <button
-          onClick={handleScrollToContact}
-          className="mb-12 rounded-lg bg-primary px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-primary-dark hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-primary/30"
-        >
-          {t('cta')}
-        </button>
+        <div ref={ctaAnim.ref as React.RefObject<HTMLDivElement>} className={ctaAnim.animationClassName}>
+          <button
+            onClick={handleScrollToContact}
+            className="mb-12 rounded-lg bg-primary px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-primary-dark hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-primary/30"
+          >
+            {t('cta')}
+          </button>
+        </div>
 
         {/* 统计数据 */}
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-6">
+        <div ref={statsAnim.ref as React.RefObject<HTMLDivElement>} className={`grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-6 ${statsAnim.animationClassName}`}>
           {stats.map((stat, index) => (
             <div
               key={index}
