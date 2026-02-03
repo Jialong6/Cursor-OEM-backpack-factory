@@ -42,6 +42,7 @@ const notoSans = Noto_Sans({
   subsets: ['latin', 'latin-ext', 'cyrillic'],
   display: 'swap',
   weight: ['400', '500', '600', '700'],
+  adjustFontFallback: true,
 });
 
 /**
@@ -52,6 +53,7 @@ const notoSansSC = Noto_Sans_SC({
   subsets: ['latin'],
   display: 'swap',
   weight: ['400', '500', '700'],
+  preload: true,
 });
 
 /**
@@ -62,6 +64,7 @@ const notoSansTC = Noto_Sans_TC({
   subsets: ['latin'],
   display: 'swap',
   weight: ['400', '500', '700'],
+  preload: true,
 });
 
 /**
@@ -72,6 +75,7 @@ const notoSansJP = Noto_Sans_JP({
   subsets: ['latin'],
   display: 'swap',
   weight: ['400', '500', '700'],
+  preload: true,
 });
 
 /**

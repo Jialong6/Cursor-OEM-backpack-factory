@@ -28,13 +28,19 @@ const nextConfig: NextConfig = {
     formats: ['image/webp', 'image/avif'], // 优先使用现代图片格式
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840], // 响应式图片尺寸
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384], // 小图标尺寸
-    minimumCacheTTL: 60, // 图片缓存时间（秒）
+    minimumCacheTTL: 31536000, // 图片缓存1年（静态资源长期缓存）
+    contentDispositionType: 'inline', // 优化图片内联显示
+    qualities: [25, 50, 70, 75, 85, 100], // 包含默认 quality 70
   },
 
   // 实验性功能
   experimental: {
     // 启用优化的包导入（减少包大小）
-    optimizePackageImports: ['react-hook-form', '@hookform/resolvers', 'zod'],
+    optimizePackageImports: ['react-hook-form', '@hookform/resolvers', 'zod', 'next-intl'],
+    staleTimes: {
+      dynamic: 30, // 动态页面缓存 30 秒
+      static: 180, // 静态页面缓存 3 分钟
+    },
   },
 };
 

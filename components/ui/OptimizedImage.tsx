@@ -36,7 +36,7 @@ export interface OptimizedImageProps {
   sizes?: string;
   /** 图片优先级（首屏图片设置为 true） */
   priority?: boolean;
-  /** 图片质量（1-100，默认 75） */
+  /** 图片质量（1-100，默认 70） */
   quality?: number;
   /** CSS 类名 */
   className?: string;
@@ -104,7 +104,7 @@ export default function OptimizedImage({
   aspectRatio,
   sizes,
   priority = false,
-  quality = 75,
+  quality = 70,
   className = '',
   objectFit = 'cover',
   objectPosition = 'center',
