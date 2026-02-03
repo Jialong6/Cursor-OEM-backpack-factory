@@ -125,8 +125,8 @@ describe('响应式汉堡菜单属性测试', () => {
             </NextIntlClientProvider>
           )
 
-          // 查找汉堡菜单按钮（通过 aria-label）
-          const hamburgerButton = container.querySelector('button[aria-label*="菜单"]')
+          // 查找汉堡菜单按钮（通过 aria-label 或 aria-expanded）
+          const hamburgerButton = container.querySelector('button.md\\:hidden, button[aria-label="Open menu"], button[aria-label="Close menu"]')
 
           // 验证：汉堡菜单按钮存在
           if (!hamburgerButton) {
@@ -162,8 +162,8 @@ describe('响应式汉堡菜单属性测试', () => {
             </NextIntlClientProvider>
           )
 
-          // 查找汉堡菜单按钮
-          const hamburgerButton = container.querySelector('button[aria-label*="菜单"]')
+          // 查找汉堡菜单按钮（通过 aria-label 或 aria-expanded）
+          const hamburgerButton = container.querySelector('button.md\\:hidden, button[aria-label="Open menu"], button[aria-label="Close menu"]')
 
           // 查找桌面端导航链接容器（包含 hidden md:flex 的 div）
           const desktopNav = container.querySelector('.hidden.md\\:flex')
@@ -197,7 +197,7 @@ describe('响应式汉堡菜单属性测试', () => {
       </NextIntlClientProvider>
     )
 
-    const hamburgerButton = container.querySelector('button[aria-label*="菜单"]')
+    const hamburgerButton = container.querySelector('button.md\\:hidden, button[aria-label="Open menu"], button[aria-label="Close menu"]')
     expect(hamburgerButton).toBeTruthy()
     expect(hamburgerButton?.className).toContain('md:hidden')
   })
@@ -224,7 +224,7 @@ describe('响应式汉堡菜单属性测试', () => {
       </NextIntlClientProvider>
     )
 
-    const hamburgerButton = container.querySelector('button[aria-label*="菜单"]')
+    const hamburgerButton = container.querySelector('button.md\\:hidden, button[aria-label="Open menu"], button[aria-label="Close menu"]')
     expect(hamburgerButton?.className).toContain('md:hidden')
   })
 })

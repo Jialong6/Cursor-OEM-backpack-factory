@@ -103,6 +103,26 @@ vi.mock('react-hook-form', () => ({
     },
     formState: { errors: {} },
     reset: vi.fn(),
+    watch: vi.fn().mockReturnValue({}),
+    setValue: vi.fn(),
+  }),
+}))
+
+// Mock useFormDraft hook
+vi.mock('@/hooks/useFormDraft', () => ({
+  useFormDraft: () => ({
+    restoreDraft: vi.fn().mockReturnValue(null),
+    saveDraft: vi.fn(),
+    clearDraft: vi.fn(),
+    hasDraft: false,
+  }),
+}))
+
+// Mock useGeoCountry hook
+vi.mock('@/hooks/useGeoCountry', () => ({
+  useGeoCountry: () => ({
+    countryCode: null,
+    isLoading: false,
   }),
 }))
 
@@ -270,7 +290,7 @@ describe('键盘焦点可见性属性测试 (Property 12)', () => {
         </NextIntlClientProvider>
       )
 
-      const hamburgerButton = container.querySelector('[aria-label*="菜单"], [aria-expanded]') as HTMLElement
+      const hamburgerButton = container.querySelector('[aria-label*="menu"], [aria-expanded]') as HTMLElement
       expect(hamburgerButton).toBeTruthy()
 
       if (hamburgerButton) {
