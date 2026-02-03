@@ -182,7 +182,7 @@ export default function AboutUs() {
                     key={brand}
                     className="flex h-16 w-32 items-center justify-center rounded-lg bg-white border border-neutral-200 px-4 py-2 transition-transform hover:scale-105"
                   >
-                    <span className="text-lg font-bold text-neutral-400">
+                    <span className="text-lg font-bold text-neutral-500">
                       {brand}
                     </span>
                   </div>

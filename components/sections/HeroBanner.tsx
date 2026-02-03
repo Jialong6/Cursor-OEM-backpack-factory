@@ -33,7 +33,7 @@ export default function HeroBanner() {
     >
       <div className="mx-auto w-full max-w-5xl text-center">
         {/* 主标语 */}
-        <h1 className="mb-4 text-4xl font-bold leading-tight text-gray-900 md:text-5xl lg:text-6xl">
+        <h1 className="mb-4 text-4xl font-bold leading-tight text-deep md:text-5xl lg:text-6xl">
           {t('line1')}
         </h1>
         <h2 className="mb-8 text-2xl font-semibold text-primary md:text-3xl lg:text-4xl">

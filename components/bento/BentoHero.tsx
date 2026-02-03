@@ -36,7 +36,7 @@ export function BentoHero() {
       >
         <div className="max-w-xl">
           {/* 主标语 */}
-          <h1 className="mb-3 text-3xl font-bold leading-tight text-gray-900 md:text-4xl lg:text-5xl">
+          <h1 className="mb-3 text-3xl font-bold leading-tight text-deep md:text-4xl lg:text-5xl">
             {t('line1')}
           </h1>
           <h2 className="mb-6 text-xl font-semibold text-primary md:text-2xl lg:text-3xl">

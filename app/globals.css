@@ -12,6 +12,9 @@ html {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 255, 255, 255;
   --background-end-rgb: 255, 255, 255;
+  --color-deep: #1A1A1A;
+  --color-milk: #FAFAFA;
+  --color-primary: #87A575;
 }
 
 @media (prefers-color-scheme: dark) {

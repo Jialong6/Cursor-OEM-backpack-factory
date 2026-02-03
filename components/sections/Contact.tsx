@@ -169,7 +169,7 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto">
         {/* 标题部分 */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-neutral-800 mb-4">{t('title')}</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-deep mb-4">{t('title')}</h2>
           <p className="text-xl md:text-2xl text-primary font-semibold mb-2">{t('subtitle')}</p>
           <p className="text-neutral-600 max-w-2xl mx-auto">{t('intro')}</p>
         </div>

@@ -44,7 +44,7 @@ export function CTASection() {
       "
     >
       {/* 标题 */}
-      <h3 className="mb-3 text-lg font-semibold text-neutral-800 md:text-xl lg:text-2xl">
+      <h3 className="mb-3 text-lg font-semibold text-deep md:text-xl lg:text-2xl">
         Ready to Start Your Project?
       </h3>
 

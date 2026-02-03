@@ -28,6 +28,9 @@ const config: Config = {
           800: "#262626",
           900: "#171717",
         },
+        // 语义化颜色令牌 - 无障碍对比度
+        'deep': '#1A1A1A',    // 深灰 - 无障碍正文/标题色 (WCAG AA)
+        'milk': '#FAFAFA',    // 米白 - 无障碍背景色
         // 添加品牌色别名，方便使用
         'brand-green': "#87A575",
         'brand-green-light': "#a3c293",

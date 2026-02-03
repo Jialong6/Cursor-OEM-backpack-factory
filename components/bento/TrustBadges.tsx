@@ -111,7 +111,7 @@ export function TrustBadges() {
             py-1.5
             text-xs
             font-medium
-            text-neutral-400
+            text-neutral-600
             md:text-sm
           ">
             +20 more
