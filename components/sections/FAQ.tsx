@@ -4,6 +4,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import Accordion from '@/components/ui/Accordion';
 import { FAQPageSchema, type FAQSection } from '@/components/seo';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 /**
  * FAQ section component
@@ -19,6 +20,10 @@ export default function FAQ() {
   const t = useTranslations('faq');
   const locale = useLocale();
 
+  const titleAnim = useScrollAnimation({ variant: 'fade-up' });
+  const sectionsAnim = useScrollAnimation({ variant: 'fade-up', delay: 100 });
+
+  // 获取 FAQ 分类数据
   const sections = t.raw('sections') as FAQSection[];
 
   return (
@@ -30,13 +35,13 @@ export default function FAQ() {
         className="relative bg-neutral-50 px-6 py-20 md:px-12 lg:py-28"
       >
         <div className="mx-auto w-full max-w-5xl">
-          {/* Title */}
-          <h2 className="mb-16 text-center text-3xl font-bold text-neutral-800 md:text-4xl lg:text-5xl">
+          {/* FAQ 标题 */}
+          <h2 ref={titleAnim.ref as React.RefObject<HTMLHeadingElement>} className={`mb-16 text-center text-3xl font-bold text-neutral-800 md:text-4xl lg:text-5xl ${titleAnim.animationClassName}`}>
             {t('title')}
           </h2>
 
-          {/* FAQ categories */}
-          <div className="space-y-12">
+          {/* FAQ 分类 */}
+          <div ref={sectionsAnim.ref as React.RefObject<HTMLDivElement>} className={`space-y-12 ${sectionsAnim.animationClassName}`}>
             {sections.map((section, sectionIndex) => (
               <div key={sectionIndex}>
                 <div className="mb-6 flex items-center gap-3">

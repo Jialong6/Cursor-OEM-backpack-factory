@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 /**
  * 服务流程区块组件
@@ -15,6 +16,9 @@ import { useTranslations } from 'next-intl';
  */
 export default function Services() {
   const t = useTranslations('services');
+
+  const titleAnim = useScrollAnimation({ variant: 'fade-up' });
+  const stepsAnim = useScrollAnimation({ variant: 'fade-up', delay: 100 });
 
   // 获取六个服务步骤
   const steps = t.raw('steps') as Array<{
@@ -57,12 +61,12 @@ export default function Services() {
     >
       <div className="mx-auto w-full max-w-7xl">
         {/* 标题 */}
-        <h2 className="mb-16 text-center text-3xl font-bold text-neutral-800 md:text-4xl lg:text-5xl">
+        <h2 ref={titleAnim.ref as React.RefObject<HTMLHeadingElement>} className={`mb-16 text-center text-3xl font-bold text-neutral-800 md:text-4xl lg:text-5xl ${titleAnim.animationClassName}`}>
           {t('title')}
         </h2>
 
         {/* 服务步骤网格 */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div ref={stepsAnim.ref as React.RefObject<HTMLDivElement>} className={`grid gap-8 md:grid-cols-2 lg:grid-cols-3 ${stepsAnim.animationClassName}`}>
           {steps.map((step, index) => (
             <div
               key={index}

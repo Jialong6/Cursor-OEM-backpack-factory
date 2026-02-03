@@ -165,3 +165,71 @@ body {
     top: 1rem;
   }
 }
+
+/**
+ * 滚动动画工具类
+ * 需求 17.2: 使用 CSS transition + IntersectionObserver 实现 fade-in 效果
+ * 只使用 opacity + transform，确保 GPU 加速无布局重排
+ */
+
+/* 基础动画状态 */
+.scroll-animate {
+  opacity: 0;
+  will-change: opacity, transform;
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+/* fade-up: 从下方淡入 */
+.scroll-animate-fade-up {
+  transform: translateY(24px);
+  transition-duration: 300ms;
+}
+
+/* fade-in: 原位淡入 */
+.scroll-animate-fade-in {
+  transform: none;
+  transition-duration: 300ms;
+}
+
+/* fade-left: 从右侧滑入 */
+.scroll-animate-fade-left {
+  transform: translateX(24px);
+  transition-duration: 300ms;
+}
+
+/* fade-right: 从左侧滑入 */
+.scroll-animate-fade-right {
+  transform: translateX(-24px);
+  transition-duration: 300ms;
+}
+
+/* 可见状态 - 动画完成 */
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateY(0) translateX(0);
+}
+
+/* 延迟类 */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+
+/**
+ * prefers-reduced-motion 支持
+ * 需求 17.3: 当用户系统设置"减少动画"时，禁用所有滚动动画
+ */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-animate,
+  .scroll-animate-fade-up,
+  .scroll-animate-fade-in,
+  .scroll-animate-fade-left,
+  .scroll-animate-fade-right {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}

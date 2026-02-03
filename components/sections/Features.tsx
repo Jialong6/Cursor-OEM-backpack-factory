@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 /**
  * 特色区块组件
@@ -16,6 +17,10 @@ import { useTranslations } from 'next-intl';
 export default function Features() {
   const t = useTranslations('features');
   const tCustom = useTranslations('customization');
+
+  const jayAnim = useScrollAnimation({ variant: 'fade-up' });
+  const advantagesAnim = useScrollAnimation({ variant: 'fade-up', delay: 100 });
+  const customAnim = useScrollAnimation({ variant: 'fade-up', delay: 200 });
 
   // 获取四大核心优势
   const advantages = t.raw('list') as Array<{
@@ -53,7 +58,7 @@ export default function Features() {
     >
       <div className="mx-auto w-full max-w-7xl">
         {/* Jay 个人介绍 */}
-        <div className="mb-20 text-center">
+        <div ref={jayAnim.ref as React.RefObject<HTMLDivElement>} className={`mb-20 text-center ${jayAnim.animationClassName}`}>
           <h2 className="mb-6 text-3xl font-bold text-neutral-800 md:text-4xl">
             {t('jay.title')}
           </h2>
@@ -73,7 +78,7 @@ export default function Features() {
         </div>
 
         {/* 为什么选择 Better Bags */}
-        <div className="mb-20">
+        <div ref={advantagesAnim.ref as React.RefObject<HTMLDivElement>} className={`mb-20 ${advantagesAnim.animationClassName}`}>
           <h2 className="mb-12 text-center text-3xl font-bold text-neutral-800 md:text-4xl lg:text-5xl">
             {t('title')}
           </h2>
@@ -101,7 +106,7 @@ export default function Features() {
         </div>
 
         {/* 定制选项 */}
-        <div className="rounded-2xl bg-white border border-neutral-200 p-8 md:p-12">
+        <div ref={customAnim.ref as React.RefObject<HTMLDivElement>} className={`rounded-2xl bg-white border border-neutral-200 p-8 md:p-12 ${customAnim.animationClassName}`}>
           <h2 className="mb-6 text-center text-3xl font-bold text-neutral-800 md:text-4xl">
             {tCustom('title')}
           </h2>
