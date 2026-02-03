@@ -4,8 +4,11 @@ import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { getBlogPostBySlug } from '@/lib/blog-data';
+import { getAuthorForPost } from '@/lib/author-data';
 import { notFound } from 'next/navigation';
 import OptimizedImage, { IMAGE_SIZES, ASPECT_RATIOS } from '@/components/ui/OptimizedImage';
+import AuthorByline from '@/components/content/AuthorByline';
+import { BlogPostingSchema } from '@/components/seo';
 
 /**
  * 博客详情页面
@@ -35,18 +38,8 @@ export default function BlogDetailPage() {
     notFound();
   }
 
-  /**
-   * 格式化日期显示
-   */
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    const options: Intl.DateTimeFormatOptions = {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    };
-    return date.toLocaleDateString(locale === 'zh' ? 'zh-CN' : 'en-US', options);
-  };
+  // 获取作者档案
+  const author = getAuthorForPost(post);
 
   /**
    * 渲染 Markdown 内容
@@ -131,6 +124,16 @@ export default function BlogDetailPage() {
 
   return (
     <main className="min-h-screen bg-white py-8 px-4 sm:px-6 lg:px-8">
+      {/* BlogPosting JSON-LD 结构化数据 */}
+      <BlogPostingSchema
+        headline={post.title[locale]}
+        description={post.excerpt[locale]}
+        image={post.thumbnail}
+        datePublished={post.date}
+        author={author}
+        locale={locale}
+      />
+
       <article className="max-w-4xl mx-auto">
         {/* 面包屑导航 */}
         <nav className="mb-8 text-sm">
@@ -186,37 +189,14 @@ export default function BlogDetailPage() {
           {/* 标题 */}
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">{post.title[locale]}</h1>
 
-          {/* 文章元信息 */}
-          <div className="flex flex-wrap items-center gap-4 text-gray-600 text-sm">
-            {/* 日期 */}
-            <div className="flex items-center">
-              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                <path
-                  fillRule="evenodd"
-                  d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              {formatDate(post.date)}
-            </div>
-
-            {/* 作者 */}
-            {post.author && (
-              <>
-                <span className="text-gray-400">•</span>
-                <div className="flex items-center">
-                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                    <path
-                      fillRule="evenodd"
-                      d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  {post.author}
-                </div>
-              </>
-            )}
-          </div>
+          {/* 作者署名 */}
+          <AuthorByline
+            author={author}
+            locale={locale}
+            publishDate={post.date}
+            content={post.content ? post.content[locale] : undefined}
+            variant="full"
+          />
 
           {/* 标签 */}
           {post.tags && post.tags.length > 0 && (
@@ -262,6 +242,16 @@ export default function BlogDetailPage() {
               <p>{t('noContent')}</p>
             </div>
           )}
+        </div>
+
+        {/* 文末作者署名 */}
+        <div className="mb-8">
+          <AuthorByline
+            author={author}
+            locale={locale}
+            publishDate={post.date}
+            variant="compact"
+          />
         </div>
 
         {/* 文章底部 */}

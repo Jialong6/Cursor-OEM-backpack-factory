@@ -80,6 +80,9 @@
         "desc": "We value teamwork, diverse perspectives, and empowering every team member—cultivating a culture where people, ideas, and partnerships flourish."
       }
     ],
+    "founder": {
+      "title": "創始人介紹"
+    },
     "company": {
       "title": "Better Bags Myanmar Company Limited",
       "p1": "Founded in 2003, Better Bags Myanmar specializes in the OEM/ODM manufacturing of premium backpacks, designed for a global clientele. Our comprehensive capabilities cover leisure, travel, climbing, and fashion bags, crafted from responsibly sourced polyester, cotton, and synthetic leather.",
@@ -436,6 +439,12 @@
       "label": "Whatsapp",
       "value": "+1 814.880.1463"
     },
+    "trust": {
+      "title": "為什麼信賴我們",
+      "responseTime": "24小時響應保證",
+      "experience": "20年以上製造經驗",
+      "certified": "ISO 9001、OEKO-TEX、GRS、GOTS 認證"
+    },
     "form": {
       "title": "Get A Quote",
       "firstName": {
@@ -753,5 +762,17 @@
         "rating": 5
       }
     ]
+  },
+  "author": {
+    "writtenBy": "作者",
+    "readingTime": "閱讀時間",
+    "minRead": "分鐘閱讀"
+  },
+  "certifications": {
+    "title": "認證資質",
+    "iso9001": "ISO 9001",
+    "oekoTex": "OEKO-TEX",
+    "grs": "GRS",
+    "gots": "GOTS"
   }
 }
