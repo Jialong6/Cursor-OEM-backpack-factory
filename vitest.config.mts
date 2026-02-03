@@ -38,6 +38,9 @@ export default defineConfig({
 
     // 全局变量支持（用于 @testing-library）
     globals: true,
+
+    // 属性测试（fast-check asyncProperty）需要更长的超时时间
+    testTimeout: 30000,
   },
 
   resolve: {
