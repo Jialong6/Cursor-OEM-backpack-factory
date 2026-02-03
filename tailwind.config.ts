@@ -8,6 +8,20 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        // Task 16: 多语言字体回退栈
+        // 使用 CSS 变量引用 next/font/google 加载的字体
+        sans: [
+          'var(--font-noto-sans)',
+          'var(--font-noto-sans-sc)',
+          'var(--font-noto-sans-tc)',
+          'var(--font-noto-sans-jp)',
+          'Arial',
+          'Helvetica Neue',
+          'system-ui',
+          'sans-serif',
+        ],
+      },
       colors: {
         // Better Bags Myanmar 品牌色 - 极简绿色主题
         primary: {

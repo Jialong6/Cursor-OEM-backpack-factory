@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -9,17 +8,8 @@ import Footer from '@/components/layout/Footer';
 import { generateHomeMetadata } from '@/lib/metadata';
 import { ManufacturingPlantSchema } from '@/components/seo';
 import { LanguageBanner } from '@/components/i18n';
+import { getFontVariables } from '@/app/fonts';
 import "../globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 /**
  * 生成页面元数据
@@ -82,10 +72,13 @@ export default async function RootLayout({
   // 获取当前语言的翻译消息（传入 locale 参数）
   const messages = await getMessages({ locale });
 
+  // Task 16: 按语言加载对应字体
+  const fontVariables = getFontVariables(locale as Locale);
+
   return (
     <html lang={locale}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${fontVariables} antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
           {/* ManufacturingBusiness JSON-LD 结构化数据 - 需求 7.2 */}
