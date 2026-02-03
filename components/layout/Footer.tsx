@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 
 /**
@@ -16,18 +16,22 @@ import Link from 'next/link';
  */
 export default function Footer() {
   const t = useTranslations('footer');
+  const locale = useLocale();
 
   /**
-   * 平滑滚动到目标区块
-   * 需求 13.5: 快捷链接平滑滚动
+   * Handle link clicks: smooth scroll for anchor links, normal navigation otherwise
    */
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (!href.startsWith('#')) {
+      return;
+    }
+
     e.preventDefault();
     const targetId = href.replace('#', '');
     const targetElement = document.getElementById(targetId);
 
     if (targetElement) {
-      const navbarHeight = 80; // 导航栏高度
+      const navbarHeight = 80;
       const targetPosition = targetElement.offsetTop - navbarHeight;
 
       window.scrollTo({
@@ -118,17 +122,22 @@ export default function Footer() {
           <div>
             <h3 className="text-white text-lg font-bold mb-4">{t('quickLinks')}</h3>
             <ul className="space-y-2">
-              {quickLinks.map((link, index) => (
-                <li key={index}>
-                  <Link
-                    href={link.href}
-                    onClick={(e) => handleLinkClick(e, link.href)}
-                    className="text-sm hover:text-primary transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
+              {quickLinks.map((link, index) => {
+                const href = link.href.startsWith('#')
+                  ? link.href
+                  : `/${locale}${link.href}`;
+                return (
+                  <li key={index}>
+                    <Link
+                      href={href}
+                      onClick={(e) => handleLinkClick(e, link.href)}
+                      className="text-sm hover:text-primary transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 

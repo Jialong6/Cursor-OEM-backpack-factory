@@ -88,7 +88,7 @@
       "p4": "Today, Better Bags stands at the intersection of tradition and innovation. By optimizing our dual-factory model, investing in people and systems, and adhering strictly to international standards, we meet the evolving needs of global customers with efficiency, flexibility, and future-oriented solutions. As we look ahead, our goal is to set new benchmarks in both client satisfaction and responsible manufacturing."
     }
   },
-    "features": {
+  "features": {
     "stats": [
       {
         "label": "Professional Employees",
@@ -406,7 +406,15 @@
           }
         ]
       }
-    ]
+    ],
+    "cta": {
+      "text": "Can't find what you're looking for?",
+      "highlight": "Feel free to contact us",
+      "suffix": "-- our team is here to help.",
+      "button": "Contact Us",
+      "glossaryLink": "Browse our Glossary for industry terms",
+      "blogLink": "Read our latest articles"
+    }
   },
   "contact": {
     "title": "Contact Us",
@@ -561,6 +569,10 @@
       {
         "name": "Blogs",
         "href": "#blogs"
+      },
+      {
+        "name": "Glossary",
+        "href": "/glossary"
       }
     ]
   },
@@ -568,7 +580,10 @@
     "title": "Latest Insights",
     "subtitle": "Stay updated with industry trends, customization tips, and company news",
     "readMore": "Read More",
-    "viewAll": "View All Articles"
+    "viewAll": "View All Articles",
+    "relatedLinks": {
+      "glossary": "Explore our Glossary"
+    }
   },
   "blogList": {
     "title": "Blog Articles",
@@ -577,7 +592,11 @@
     "totalArticles": "{count} Articles",
     "readMore": "Read More",
     "backToTop": "Back to Top",
-    "noArticles": "No articles available"
+    "noArticles": "No articles available",
+    "relatedLinks": {
+      "glossary": "Browse Manufacturing Glossary",
+      "faq": "Check our FAQ"
+    }
   },
   "blogDetail": {
     "home": "Home",
@@ -600,5 +619,105 @@
     "keep": "{language}を維持",
     "switchToEnglish": "英語に切り替え",
     "close": "閉じる"
+  },
+  "glossary": {
+    "title": "Backpack Manufacturing Glossary",
+    "subtitle": "Essential industry terms and definitions for OEM/ODM backpack production",
+    "description": "Learn the key terminology used in backpack manufacturing, from materials and production processes to quality control and logistics.",
+    "allCategories": "All",
+    "categories": {
+      "materials": "Materials",
+      "manufacturing": "Manufacturing",
+      "quality": "Quality Control",
+      "logistics": "Logistics",
+      "design": "Design"
+    },
+    "backToHome": "Back to Home",
+    "relatedLinks": {
+      "faq": "Have questions? Check our FAQ",
+      "blog": "Read our latest articles"
+    },
+    "terms": {
+      "oem": {
+        "term": "OEM (Original Equipment Manufacturer)",
+        "definition": "A company that manufactures products based on the buyer's specifications and designs. The buyer owns the brand and design, while the OEM handles production."
+      },
+      "odm": {
+        "term": "ODM (Original Design Manufacturer)",
+        "definition": "A manufacturer that designs and produces products which are then rebranded by the buyer. Unlike OEM, the ODM provides both design and manufacturing services."
+      },
+      "moq": {
+        "term": "MOQ (Minimum Order Quantity)",
+        "definition": "The smallest number of units a manufacturer is willing to produce in a single order. MOQ varies by product complexity and materials."
+      },
+      "tech-pack": {
+        "term": "Tech Pack",
+        "definition": "A detailed technical document containing all specifications needed to manufacture a product, including dimensions, materials, colors, hardware, and construction details."
+      },
+      "denier": {
+        "term": "Denier",
+        "definition": "A unit of measurement for the fiber thickness of individual threads used in fabric. Higher denier numbers indicate thicker, more durable fabric (e.g., 600D polyester)."
+      },
+      "ripstop": {
+        "term": "Ripstop",
+        "definition": "A fabric weaving technique using reinforcement threads in a crosshatch pattern to prevent tears from spreading. Commonly used in outdoor and tactical backpacks."
+      },
+      "cordura": {
+        "term": "Cordura",
+        "definition": "A brand name for a collection of high-performance fabrics known for exceptional durability, abrasion resistance, and tear strength. Widely used in premium backpacks."
+      },
+      "bartack": {
+        "term": "Bartack",
+        "definition": "A dense, reinforced stitching pattern used at stress points on bags, such as strap attachments and handle bases, to prevent seam failure under load."
+      },
+      "aql": {
+        "term": "AQL (Acceptable Quality Level)",
+        "definition": "A statistical sampling method used in quality inspection to determine the maximum acceptable number of defective items in a batch. Common standard is AQL 2.5 for bags."
+      },
+      "fob": {
+        "term": "FOB (Free On Board)",
+        "definition": "A shipping term indicating that the seller delivers goods to the port of shipment. The buyer assumes responsibility and cost once goods are loaded onto the vessel."
+      },
+      "bom": {
+        "term": "BOM (Bill of Materials)",
+        "definition": "A comprehensive list of all raw materials, components, and hardware needed to manufacture a product, including quantities and specifications."
+      },
+      "ykk": {
+        "term": "YKK",
+        "definition": "The world's largest zipper manufacturer, headquartered in Japan. YKK zippers are considered the industry standard for quality and reliability in bag manufacturing."
+      },
+      "pantone": {
+        "term": "Pantone (PMS)",
+        "definition": "A standardized color matching system used worldwide to ensure consistent color reproduction across different materials and production runs."
+      },
+      "grs": {
+        "term": "GRS (Global Recycled Standard)",
+        "definition": "An international certification that verifies recycled content in products and tracks the supply chain from recycled input to finished product."
+      },
+      "oeko-tex": {
+        "term": "OEKO-TEX Standard 100",
+        "definition": "An independent testing and certification system for textile products at all stages of production, ensuring they are free from harmful substances."
+      },
+      "cif": {
+        "term": "CIF (Cost, Insurance, and Freight)",
+        "definition": "A shipping term where the seller covers the cost of goods, insurance, and freight charges to deliver products to the buyer's designated port."
+      },
+      "exw": {
+        "term": "EXW (Ex Works)",
+        "definition": "A shipping term where the buyer is responsible for all transportation costs and risks from the manufacturer's facility to the final destination."
+      },
+      "pp-sample": {
+        "term": "PP Sample (Pre-Production Sample)",
+        "definition": "A sample produced before mass production begins to verify design, materials, and construction. Must be approved by the buyer before production starts."
+      },
+      "top-sample": {
+        "term": "TOP Sample (Top of Production Sample)",
+        "definition": "A sample pulled from the actual production line during manufacturing to verify that quality and specifications match the approved PP sample."
+      },
+      "tpu": {
+        "term": "TPU (Thermoplastic Polyurethane)",
+        "definition": "A flexible, durable plastic material used for waterproof coatings, labels, and patches on backpacks. Known for its excellent abrasion and weather resistance."
+      }
+    }
   }
 }

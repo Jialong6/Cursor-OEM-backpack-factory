@@ -102,7 +102,7 @@ export default function Blog() {
           ))}
         </div>
 
-        {/* 查看所有文章按钮 */}
+        {/* View all articles + cross-link */}
         <div className="text-center">
           <Link
             href={`/${locale}/blog`}
@@ -110,6 +110,14 @@ export default function Blog() {
           >
             {t('viewAll')}
           </Link>
+          <div className="mt-4">
+            <Link
+              href={`/${locale}/glossary`}
+              className="text-sm text-primary hover:text-primary-dark font-medium transition-colors"
+            >
+              {t('relatedLinks.glossary')}
+            </Link>
+          </div>
         </div>
       </div>
     </section>

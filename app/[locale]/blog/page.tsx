@@ -161,8 +161,26 @@ export default function BlogListPage() {
           </div>
         )}
 
-        {/* 返回顶部按钮 */}
-        <div className="mt-12 text-center">
+        {/* Cross-links to Glossary and FAQ */}
+        <div className="mt-12 rounded-xl bg-white border border-gray-200 p-6 text-center">
+          <div className="flex flex-col sm:flex-row justify-center gap-4 text-sm">
+            <Link
+              href={`/${locale}/glossary`}
+              className="text-primary hover:text-primary-dark font-medium transition-colors"
+            >
+              {t('relatedLinks.glossary')}
+            </Link>
+            <Link
+              href={`/${locale}/#faq`}
+              className="text-primary hover:text-primary-dark font-medium transition-colors"
+            >
+              {t('relatedLinks.faq')}
+            </Link>
+          </div>
+        </div>
+
+        {/* Back to top */}
+        <div className="mt-8 text-center">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="inline-flex items-center bg-primary hover:bg-primary-dark text-white font-bold py-3 px-6 rounded-lg transition-colors"

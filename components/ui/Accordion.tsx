@@ -19,11 +19,13 @@ interface AccordionItem {
 
 interface AccordionProps {
   items: AccordionItem[];
-  /** 可选：默认展开的项目索引 */
+  /** Optional: index of item to open by default */
   defaultOpenIndex?: number;
+  /** Optional: prefix for item IDs to enable URL anchor navigation */
+  idPrefix?: string;
 }
 
-export default function Accordion({ items, defaultOpenIndex }: AccordionProps) {
+export default function Accordion({ items, defaultOpenIndex, idPrefix }: AccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(
     defaultOpenIndex ?? null
   );
@@ -40,6 +42,7 @@ export default function Accordion({ items, defaultOpenIndex }: AccordionProps) {
         return (
           <div
             key={index}
+            id={idPrefix ? `${idPrefix}-${index}` : undefined}
             className="overflow-hidden rounded-lg border border-neutral-200 bg-white transition-all hover:border-primary/30"
           >
             {/* Question Button */}

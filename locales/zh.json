@@ -330,7 +330,15 @@
           }
         ]
       }
-    ]
+    ],
+    "cta": {
+      "text": "没找到您想要的答案？",
+      "highlight": "欢迎随时联系我们",
+      "suffix": "，我们的团队将竭诚为您解答。",
+      "button": "联系我们",
+      "glossaryLink": "浏览术语表了解行业术语",
+      "blogLink": "阅读最新文章"
+    }
   },
   "features": {
     "stats": [
@@ -434,6 +442,10 @@
       {
         "name": "博客",
         "href": "#blogs"
+      },
+      {
+        "name": "术语表",
+        "href": "/glossary"
       }
     ]
   },
@@ -568,7 +580,10 @@
     "title": "最新资讯",
     "subtitle": "了解行业动态、定制技巧和公司新闻",
     "readMore": "阅读更多",
-    "viewAll": "查看所有文章"
+    "viewAll": "查看所有文章",
+    "relatedLinks": {
+      "glossary": "浏览术语表"
+    }
   },
   "blogList": {
     "title": "博客文章",
@@ -577,7 +592,11 @@
     "totalArticles": "共 {count} 篇文章",
     "readMore": "阅读更多",
     "backToTop": "返回顶部",
-    "noArticles": "暂无文章"
+    "noArticles": "暂无文章",
+    "relatedLinks": {
+      "glossary": "浏览制造术语表",
+      "faq": "查看常见问题"
+    }
   },
   "blogDetail": {
     "home": "首页",
@@ -600,5 +619,105 @@
     "keep": "保持{language}",
     "switchToEnglish": "切换到英文",
     "close": "关闭"
+  },
+  "glossary": {
+    "title": "背包制造术语表",
+    "subtitle": "OEM/ODM 背包生产的核心行业术语与定义",
+    "description": "了解背包制造中使用的关键术语，涵盖材料、生产工艺、质量控制和物流等方面。",
+    "allCategories": "全部",
+    "categories": {
+      "materials": "材料",
+      "manufacturing": "生产制造",
+      "quality": "质量控制",
+      "logistics": "物流",
+      "design": "设计"
+    },
+    "backToHome": "返回首页",
+    "relatedLinks": {
+      "faq": "有疑问？查看常见问题",
+      "blog": "阅读最新文章"
+    },
+    "terms": {
+      "oem": {
+        "term": "OEM（原始设备制造商）",
+        "definition": "根据买方的规格和设计制造产品的公司。买方拥有品牌和设计，OEM 负责生产制造。"
+      },
+      "odm": {
+        "term": "ODM（原始设计制造商）",
+        "definition": "设计并生产产品，然后由买方贴牌销售的制造商。与 OEM 不同，ODM 同时提供设计和制造服务。"
+      },
+      "moq": {
+        "term": "MOQ（最小起订量）",
+        "definition": "制造商愿意在单次订单中生产的最小数量。MOQ 因产品复杂度和材料而异。"
+      },
+      "tech-pack": {
+        "term": "Tech Pack（技术包）",
+        "definition": "包含制造产品所需全部规格的详细技术文件，包括尺寸、材料、颜色、五金件和构造细节。"
+      },
+      "denier": {
+        "term": "Denier（旦尼尔）",
+        "definition": "用于衡量织物中单根纤维粗细的单位。旦数越高，面料越厚越耐用（如 600D 涤纶）。"
+      },
+      "ripstop": {
+        "term": "Ripstop（防撕裂）",
+        "definition": "一种使用加固线以十字交叉图案编织的技术，防止撕裂扩散。常用于户外和战术背包。"
+      },
+      "cordura": {
+        "term": "Cordura（考杜拉）",
+        "definition": "一系列高性能面料的品牌名称，以卓越的耐久性、耐磨性和抗撕裂强度著称。广泛用于高端背包。"
+      },
+      "bartack": {
+        "term": "Bartack（打枣）",
+        "definition": "在包袋受力点（如肩带连接处和提手底部）使用的密集加固缝合方式，防止在负重下缝合开裂。"
+      },
+      "aql": {
+        "term": "AQL（可接受质量水平）",
+        "definition": "质量检验中使用的统计抽样方法，用于确定一批产品中可接受的最大缺陷数量。箱包行业常用标准为 AQL 2.5。"
+      },
+      "fob": {
+        "term": "FOB（离岸价）",
+        "definition": "一种贸易术语，表示卖方将货物交至装运港。货物装上船后，买方承担责任和费用。"
+      },
+      "bom": {
+        "term": "BOM（物料清单）",
+        "definition": "制造产品所需的全部原材料、组件和五金件的详细清单，包括数量和规格。"
+      },
+      "ykk": {
+        "term": "YKK",
+        "definition": "全球最大的拉链制造商，总部位于日本。YKK 拉链被视为箱包制造中质量和可靠性的行业标准。"
+      },
+      "pantone": {
+        "term": "Pantone（潘通色卡）",
+        "definition": "全球通用的标准化颜色匹配系统，用于确保不同材料和生产批次间的颜色一致性。"
+      },
+      "grs": {
+        "term": "GRS（全球回收标准）",
+        "definition": "一项国际认证，验证产品中的再生成分含量，并追踪从回收原料到成品的供应链。"
+      },
+      "oeko-tex": {
+        "term": "OEKO-TEX Standard 100",
+        "definition": "针对各生产阶段纺织产品的独立检测认证体系，确保产品不含有害物质。"
+      },
+      "cif": {
+        "term": "CIF（到岸价）",
+        "definition": "一种贸易术语，卖方承担货物成本、保险和运费，将产品运送到买方指定港口。"
+      },
+      "exw": {
+        "term": "EXW（工厂价）",
+        "definition": "一种贸易术语，买方负责从制造商工厂到最终目的地的全部运输成本和风险。"
+      },
+      "pp-sample": {
+        "term": "PP Sample（产前样品）",
+        "definition": "在批量生产前制作的样品，用于验证设计、材料和构造。必须获得买方批准后才能开始生产。"
+      },
+      "top-sample": {
+        "term": "TOP Sample（产中样品）",
+        "definition": "在生产过程中从实际生产线上抽取的样品，用于验证质量和规格是否与批准的 PP 样品一致。"
+      },
+      "tpu": {
+        "term": "TPU（热塑性聚氨酯）",
+        "definition": "一种柔韧耐用的塑料材料，用于背包的防水涂层、标签和贴片。以出色的耐磨性和耐候性著称。"
+      }
+    }
   }
 }

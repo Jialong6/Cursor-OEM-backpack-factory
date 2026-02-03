@@ -1,111 +1,68 @@
 /**
- * 动态生成 sitemap.xml
+ * Dynamic sitemap.xml generation
  *
- * 功能：
- * - 列出所有公开页面（首页、博客列表、博客文章）
- * - 支持多语言（中英文）
- * - 包含最后修改日期
- * - 设置优先级和更新频率
- *
- * 验证需求：14.6, 14.7
+ * Features:
+ * - Lists all public pages (homepage, glossary, blog list, blog posts)
+ * - Supports all 10 languages with hreflang alternates
+ * - Includes last modified dates, priority, and change frequency
  */
 
 import { MetadataRoute } from 'next';
 import { getAllBlogPosts } from '@/lib/blog-data';
 import { BASE_URL } from '@/lib/metadata';
+import { locales } from '@/i18n';
+
+/**
+ * Generate language alternates for a given path across all locales
+ */
+function generateAlternates(path: string): Record<string, string> {
+  const alternates: Record<string, string> = {};
+  for (const locale of locales) {
+    alternates[locale] = `${BASE_URL}/${locale}${path}`;
+  }
+  return alternates;
+}
+
+/**
+ * Generate sitemap entries for a path across all locales
+ */
+function generateLocalizedEntries(
+  path: string,
+  lastModified: Date,
+  changeFrequency: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never',
+  priority: number
+): MetadataRoute.Sitemap {
+  const alternates = generateAlternates(path);
+
+  return locales.map((locale) => ({
+    url: `${BASE_URL}/${locale}${path}`,
+    lastModified,
+    changeFrequency,
+    priority,
+    alternates: {
+      languages: alternates,
+    },
+  }));
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date();
 
-  // 首页（中英文）
-  const homepages: MetadataRoute.Sitemap = [
-    {
-      url: `${BASE_URL}/en`,
-      lastModified: currentDate,
-      changeFrequency: 'daily',
-      priority: 1.0,
-      alternates: {
-        languages: {
-          en: `${BASE_URL}/en`,
-          zh: `${BASE_URL}/zh`,
-        },
-      },
-    },
-    {
-      url: `${BASE_URL}/zh`,
-      lastModified: currentDate,
-      changeFrequency: 'daily',
-      priority: 1.0,
-      alternates: {
-        languages: {
-          en: `${BASE_URL}/en`,
-          zh: `${BASE_URL}/zh`,
-        },
-      },
-    },
-  ];
+  // Homepage (all 10 languages)
+  const homepages = generateLocalizedEntries('', currentDate, 'daily', 1.0);
 
-  // 博客列表页（中英文）
-  const blogPages: MetadataRoute.Sitemap = [
-    {
-      url: `${BASE_URL}/en/blog`,
-      lastModified: currentDate,
-      changeFrequency: 'daily',
-      priority: 0.9,
-      alternates: {
-        languages: {
-          en: `${BASE_URL}/en/blog`,
-          zh: `${BASE_URL}/zh/blog`,
-        },
-      },
-    },
-    {
-      url: `${BASE_URL}/zh/blog`,
-      lastModified: currentDate,
-      changeFrequency: 'daily',
-      priority: 0.9,
-      alternates: {
-        languages: {
-          en: `${BASE_URL}/en/blog`,
-          zh: `${BASE_URL}/zh/blog`,
-        },
-      },
-    },
-  ];
+  // Glossary page (all 10 languages)
+  const glossaryPages = generateLocalizedEntries('/glossary', currentDate, 'weekly', 0.8);
 
-  // 博客文章页（中英文）
+  // Blog list page (all 10 languages)
+  const blogPages = generateLocalizedEntries('/blog', currentDate, 'daily', 0.9);
+
+  // Blog post pages (all 10 languages per post)
   const posts = getAllBlogPosts();
   const blogPosts: MetadataRoute.Sitemap = posts.flatMap((post) => {
-    // 将日期字符串转换为 Date 对象
     const postDate = new Date(post.date);
-
-    return [
-      {
-        url: `${BASE_URL}/en/blog/${post.slug}`,
-        lastModified: postDate,
-        changeFrequency: 'weekly' as const,
-        priority: 0.8,
-        alternates: {
-          languages: {
-            en: `${BASE_URL}/en/blog/${post.slug}`,
-            zh: `${BASE_URL}/zh/blog/${post.slug}`,
-          },
-        },
-      },
-      {
-        url: `${BASE_URL}/zh/blog/${post.slug}`,
-        lastModified: postDate,
-        changeFrequency: 'weekly' as const,
-        priority: 0.8,
-        alternates: {
-          languages: {
-            en: `${BASE_URL}/en/blog/${post.slug}`,
-            zh: `${BASE_URL}/zh/blog/${post.slug}`,
-          },
-        },
-      },
-    ];
+    return generateLocalizedEntries(`/blog/${post.slug}`, postDate, 'weekly', 0.8);
   });
 
-  return [...homepages, ...blogPages, ...blogPosts];
+  return [...homepages, ...glossaryPages, ...blogPages, ...blogPosts];
 }

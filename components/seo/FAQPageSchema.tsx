@@ -14,9 +14,13 @@ export interface FAQSection {
  */
 interface FAQPageSchemaProps {
   /**
-   * FAQ 分类数组，每个分类包含标题和问答列表
+   * FAQ section array with titles and Q&A items
    */
   sections: FAQSection[];
+  /**
+   * Base URL for generating @id and url fields (defaults to env variable)
+   */
+  baseUrl?: string;
 }
 
 /**
@@ -51,18 +55,21 @@ interface FAQPageSchemaProps {
  * <FAQPageSchema sections={sections} />
  * ```
  */
-export default function FAQPageSchema({ sections }: FAQPageSchemaProps) {
-  // 构建 FAQPage JSON-LD 结构
+export default function FAQPageSchema({ sections, baseUrl }: FAQPageSchemaProps) {
+  const resolvedBaseUrl = baseUrl || process.env.NEXT_PUBLIC_BASE_URL || 'https://betterbagsmyanmar.com';
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: sections.flatMap((section) =>
-      section.items.map((item) => ({
+    mainEntity: sections.flatMap((section, sIndex) =>
+      section.items.map((item, iIndex) => ({
         '@type': 'Question',
+        '@id': `${resolvedBaseUrl}/#faq-${sIndex}-${iIndex}`,
         name: item.q,
         acceptedAnswer: {
           '@type': 'Answer',
           text: item.a,
+          url: `${resolvedBaseUrl}/#faq`,
         },
       }))
     ),
