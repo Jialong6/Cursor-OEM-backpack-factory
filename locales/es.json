@@ -263,7 +263,8 @@
         "title": "Packaging & Shipping",
         "desc": "After quality confirmation, your products are carefully packaged and shipped in bulk to your designated warehouse, ensuring safe and efficient delivery."
       }
-    ]
+    ],
+    "processNote": "<highlight1>Desde la consulta hasta la entrega</highlight1>, nuestro equipo profesional le apoya durante todo el proceso, asegurando que cada paso sea <highlight2>eficiente y transparente</highlight2>, para que su proyecto personalizado se entregue sin problemas."
   },
   "faq": {
     "title": "Frequently Asked Questions (FAQ)",

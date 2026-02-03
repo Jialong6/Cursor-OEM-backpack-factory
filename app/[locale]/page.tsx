@@ -65,7 +65,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="relative">
+    <div className="relative">
       {/* Banner 区块 - 支持 Bento Grid 布局 */}
       {useBentoLayout ? <BentoHero /> : <HeroBanner />}
 
@@ -89,6 +89,6 @@ export default function Home() {
 
       {/* Blog 区块 */}
       <Blog />
-    </main>
+    </div>
   );
 }

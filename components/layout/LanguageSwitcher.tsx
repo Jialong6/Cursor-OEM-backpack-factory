@@ -144,7 +144,14 @@ export default function LanguageSwitcher() {
                 role="option"
                 aria-selected={isCurrent}
                 data-testid={`language-option-${localeOption}`}
+                tabIndex={0}
                 onClick={() => handleSelectLocale(localeOption)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    handleSelectLocale(localeOption);
+                  }
+                }}
                 className={`flex items-center gap-3 px-4 py-2 cursor-pointer transition-colors ${
                   isCurrent
                     ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 font-medium'

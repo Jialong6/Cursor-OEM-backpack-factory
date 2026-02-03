@@ -103,9 +103,10 @@ export default function Services() {
         {/* 流程说明 */}
         <div className="mt-16 rounded-xl bg-neutral-50 border border-neutral-200 p-8 text-center">
           <p className="text-lg text-neutral-600">
-            <span className="font-semibold text-primary">从询盘到交付</span>，我们的专业团队全程支持，
-            <span className="font-semibold text-primary">确保每个环节高效透明</span>，
-            让您的定制项目顺利落地。
+            {t.rich('processNote', {
+              highlight1: (chunks) => <span className="font-semibold text-primary">{chunks}</span>,
+              highlight2: (chunks) => <span className="font-semibold text-primary">{chunks}</span>,
+            })}
           </p>
         </div>
       </div>

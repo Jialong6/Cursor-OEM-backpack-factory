@@ -21,6 +21,12 @@ import axe from 'axe-core';
 vi.mock('next-intl', () => ({
   useTranslations: () => {
     const t = (key: string) => key;
+    t.rich = (key: string, tags?: Record<string, (chunks: unknown) => unknown>) => {
+      if (tags) {
+        return key;
+      }
+      return key;
+    };
     t.raw = (key: string) => {
       if (key === 'stats') {
         return [

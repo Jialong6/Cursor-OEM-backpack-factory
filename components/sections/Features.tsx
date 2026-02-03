@@ -112,7 +112,7 @@ export default function Features() {
           </h2>
           <div
             className="mb-10 text-center text-lg text-neutral-600"
-            dangerouslySetInnerHTML={{ __html: tCustom('intro') }}
+            dangerouslySetInnerHTML={{ __html: tCustom.raw('intro') }}
           />
 
           <div className="mb-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -155,7 +155,7 @@ export default function Features() {
           <div className="text-center">
             <div
               className="mb-6 text-lg text-neutral-600"
-              dangerouslySetInnerHTML={{ __html: tCustom('ready') }}
+              dangerouslySetInnerHTML={{ __html: tCustom.raw('ready') }}
             />
             <button
               onClick={handleScrollToContact}

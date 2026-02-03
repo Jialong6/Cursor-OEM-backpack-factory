@@ -67,7 +67,7 @@ export default function Blog() {
                 sizes={IMAGE_SIZES.BLOG_THUMBNAIL}
                 className="group-hover:scale-105 transition-transform duration-300"
                 objectFit="cover"
-                quality={80}
+                quality={75}
               />
 
               {/* 文章内容 */}
