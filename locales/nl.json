@@ -594,5 +594,11 @@
   "language": {
     "selectLanguage": "Taal selecteren",
     "currentLanguage": "Huidig: {language}"
+  },
+  "languageBanner": {
+    "message": "U bent automatisch doorgestuurd naar de {language} versie",
+    "keep": "{language} behouden",
+    "switchToEnglish": "Overschakelen naar Engels",
+    "close": "Sluiten"
   }
 }

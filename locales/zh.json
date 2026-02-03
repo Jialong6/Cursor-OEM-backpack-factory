@@ -594,5 +594,11 @@
   "language": {
     "selectLanguage": "选择语言",
     "currentLanguage": "当前: {language}"
+  },
+  "languageBanner": {
+    "message": "您已被自动重定向到{language}版本",
+    "keep": "保持{language}",
+    "switchToEnglish": "切换到英文",
+    "close": "关闭"
   }
 }

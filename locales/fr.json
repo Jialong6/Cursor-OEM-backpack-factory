@@ -594,5 +594,11 @@
   "language": {
     "selectLanguage": "Choisir la langue",
     "currentLanguage": "Actuel: {language}"
+  },
+  "languageBanner": {
+    "message": "Vous avez ete automatiquement redirige vers la version {language}",
+    "keep": "Garder {language}",
+    "switchToEnglish": "Passer a l'anglais",
+    "close": "Fermer"
   }
 }

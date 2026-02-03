@@ -16,6 +16,13 @@ import { locales, type Locale, isValidLocale } from '@/i18n';
 export const LANG_COOKIE_NAME = 'NEXT_LOCALE';
 
 /**
+ * Cookie name for marking auto-redirect (for language banner)
+ * This is a session cookie that indicates the user was auto-redirected
+ * and should see the language confirmation banner
+ */
+export const AUTO_REDIRECT_COOKIE_NAME = 'lang_auto_redirect';
+
+/**
  * Cookie max age in seconds (1 year)
  * 365 days * 24 hours * 60 minutes * 60 seconds = 31,536,000 seconds
  */

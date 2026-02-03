@@ -594,5 +594,11 @@
   "language": {
     "selectLanguage": "Выбрать язык",
     "currentLanguage": "Текущий: {language}"
+  },
+  "languageBanner": {
+    "message": "Vy byli avtomaticheski perenapravleny na versiyu {language}",
+    "keep": "Ostavit {language}",
+    "switchToEnglish": "Pereklyuchit na angliyskiy",
+    "close": "Zakryt"
   }
 }

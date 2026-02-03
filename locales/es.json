@@ -594,5 +594,11 @@
   "language": {
     "selectLanguage": "Seleccionar idioma",
     "currentLanguage": "Actual: {language}"
+  },
+  "languageBanner": {
+    "message": "Ha sido redirigido automaticamente a la version en {language}",
+    "keep": "Mantener {language}",
+    "switchToEnglish": "Cambiar a ingles",
+    "close": "Cerrar"
   }
 }
