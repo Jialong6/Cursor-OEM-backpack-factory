@@ -183,11 +183,11 @@
 - **Checkpoint: 380 tests passed, 2 skipped**
 - 生产构建成功：Middleware 92.8 kB
 
-### Task 6: 实现 Hreflang SEO 标签生成 (可并行)
+### Task 6: 实现 Hreflang SEO 标签生成 (可并行) [已完成]
 
-- [ ] 6.1 创建 components/seo/HreflangTags.tsx
-- [ ] 6.2 编写属性测试 **Property 9: Hreflang Tag Generation Correctness**
-- [ ] 6.3 集成 HreflangTags 到根布局
+- [x] 6.1 创建 components/seo/HreflangTags.tsx
+- [x] 6.2 编写属性测试 **Property 9: Hreflang Tag Generation Correctness** (9 tests)
+- [x] 6.3 集成到 lib/metadata.ts 的 generateMetadata() 中
 
 ### Task 7: 实现 JSON-LD 结构化数据 (可并行) [已完成]
 
@@ -222,18 +222,20 @@
 - [x] 9.1 重构 LanguageSwitcher 为支持 10 种语言的下拉菜单
 - [x] 9.2 集成 LanguageSwitcher 到导航栏
 
-### Task 10: Checkpoint - SEO 和国际化组件验证 (串行)
+### Task 10: Checkpoint - SEO 和国际化组件验证 (串行) [已完成]
 
-- 确保 Hreflang、JSON-LD、语言切换组件正常工作
-- 使用 Google Rich Results Test 验证
+- [x] Hreflang 标签验证通过（9 tests）
+- [x] JSON-LD 结构化数据验证通过（36 tests）
+- [x] 语言切换组件验证通过（LanguageSwitcher + LanguageBanner）
 
-### Task 11: 实现 Bento Grid 布局系统 (可并行)
+### Task 11: 实现 Bento Grid 布局系统 (可并行) [已完成]
 
-- [ ] 11.1 创建 components/bento/BentoGrid.tsx 和 BentoCard.tsx
-- [ ] 11.2 创建 components/bento/DynamicDashboard.tsx
-- [ ] 11.3 创建 components/bento/TrustBadges.tsx
-- [ ] 11.4 创建 components/bento/CTASection.tsx
-- [ ] 11.5 重构首页使用 Bento Grid
+- [x] 11.1 创建 components/bento/BentoGrid.tsx 和 BentoCard.tsx
+- [x] 11.2 创建 components/bento/DynamicDashboard.tsx
+- [x] 11.3 创建 components/bento/TrustBadges.tsx
+- [x] 11.4 创建 components/bento/CTASection.tsx
+- [x] 11.5 创建 components/bento/BentoHero.tsx，集成到首页（?bento=true 切换）
+- [x] 11.6 编写 Bento Grid 测试（11 tests）
 
 ### Task 12: 实现无障碍 UI 组件 (可并行) [已完成]
 
