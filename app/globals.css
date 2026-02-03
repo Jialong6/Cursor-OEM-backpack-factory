@@ -34,6 +34,8 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  /* Task 16: 多语言字体回退栈 */
+  font-family: var(--font-noto-sans), var(--font-noto-sans-sc), var(--font-noto-sans-tc), var(--font-noto-sans-jp), 'Arial', 'Helvetica Neue', system-ui, sans-serif;
   font-size: clamp(0.875rem, 0.75rem + 0.5vw, 1.125rem); /* 14px-18px */
   line-height: 1.75;
 }
