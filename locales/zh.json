@@ -600,5 +600,39 @@
     "keep": "保持{language}",
     "switchToEnglish": "切换到英文",
     "close": "关闭"
+  },
+  "testimonials": {
+    "title": "客户评价",
+    "subtitle": "全球品牌信赖的优质OEM背包制造商",
+    "items": [
+      {
+        "name": "Sarah Chen",
+        "role": "采购总监",
+        "company": "Pacific Outdoor Co.",
+        "quote": "Better Bags 在我们的定制背包产品线上展现了卓越的品质。他们对细节的关注和对交期的承诺超出了我们的期望。",
+        "rating": 5
+      },
+      {
+        "name": "Michael Torres",
+        "role": "产品经理",
+        "company": "EuroTrail Gear",
+        "quote": "与 Better Bags 的合作改变了我们的产品开发流程。他们的工程团队提供了宝贵的设计建议，提升了我们的最终产品。",
+        "rating": 5
+      },
+      {
+        "name": "Yuki Tanaka",
+        "role": "品牌总监",
+        "company": "Nomad Supply",
+        "quote": "从打样到量产，Better Bags 始终保持一致的品质。他们在整个过程中的沟通非常出色。",
+        "rating": 5
+      },
+      {
+        "name": "David Muller",
+        "role": "运营负责人",
+        "company": "Summit Brands GmbH",
+        "quote": "我们与 Better Bags 合作已超过3年。他们具有竞争力的价格和可靠的交付使他们成为我们的首选制造商。",
+        "rating": 5
+      }
+    ]
   }
 }

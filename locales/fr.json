@@ -88,7 +88,7 @@
       "p4": "Today, Better Bags stands at the intersection of tradition and innovation. By optimizing our dual-factory model, investing in people and systems, and adhering strictly to international standards, we meet the evolving needs of global customers with efficiency, flexibility, and future-oriented solutions. As we look ahead, our goal is to set new benchmarks in both client satisfaction and responsible manufacturing."
     }
   },
-    "features": {
+  "features": {
     "stats": [
       {
         "label": "Professional Employees",
@@ -600,5 +600,39 @@
     "keep": "Garder {language}",
     "switchToEnglish": "Passer a l'anglais",
     "close": "Fermer"
+  },
+  "testimonials": {
+    "title": "Ce que disent nos clients",
+    "subtitle": "Fait confiance par des marques du monde entier pour la fabrication de sacs a dos OEM",
+    "items": [
+      {
+        "name": "Sarah Chen",
+        "role": "Sourcing Director",
+        "company": "Pacific Outdoor Co.",
+        "quote": "Better Bags delivered exceptional quality on our custom backpack line. Their attention to detail and commitment to deadlines exceeded our expectations.",
+        "rating": 5
+      },
+      {
+        "name": "Michael Torres",
+        "role": "Product Manager",
+        "company": "EuroTrail Gear",
+        "quote": "Working with Better Bags transformed our product development process. Their engineering team provided valuable design input that improved our final product.",
+        "rating": 5
+      },
+      {
+        "name": "Yuki Tanaka",
+        "role": "Brand Director",
+        "company": "Nomad Supply",
+        "quote": "From sampling to bulk production, Better Bags maintained consistent quality. Their communication throughout the process was outstanding.",
+        "rating": 5
+      },
+      {
+        "name": "David Muller",
+        "role": "Operations Head",
+        "company": "Summit Brands GmbH",
+        "quote": "We have been partnering with Better Bags for over 3 years. Their competitive pricing and reliable delivery make them our go-to manufacturer.",
+        "rating": 5
+      }
+    ]
   }
 }

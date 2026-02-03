@@ -8,6 +8,7 @@ import Features from '@/components/sections/Features';
 import Services from '@/components/sections/Services';
 import FAQ from '@/components/sections/FAQ';
 import Contact from '@/components/sections/Contact';
+import Testimonials from '@/components/sections/Testimonials';
 import Blog from '@/components/sections/Blog';
 
 /**
@@ -76,6 +77,9 @@ export default function Home() {
 
       {/* Services 区块 */}
       <Services />
+
+      {/* Testimonials 客户评价区块 */}
+      <Testimonials />
 
       {/* FAQ 区块 */}
       <FAQ />
