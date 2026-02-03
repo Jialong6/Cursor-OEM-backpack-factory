@@ -211,6 +211,7 @@ describe('Translation File Unit Tests', () => {
       'blog',
       'blogList',
       'blogDetail',
+      'language',
     ];
 
     const actualSections = Object.keys(translations!).sort();

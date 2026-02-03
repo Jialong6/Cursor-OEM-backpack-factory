@@ -448,7 +448,8 @@
       "countryRegion": {
         "label": "Country/Region",
         "placeholder": "United States",
-        "error": "Please enter your country/region"
+        "error": "Please enter your country/region",
+        "loading": "Detection de l'emplacement..."
       },
       "companyBrandName": {
         "label": "Company/Brand Name",
@@ -508,6 +509,10 @@
       "error": {
         "title": "Submission Failed",
         "message": "Sorry, there was an error submitting your form. Please try again later or contact us directly."
+      },
+      "draft": {
+        "restored": "Votre brouillon precedent a ete restaure",
+        "discard": "Supprimer le brouillon"
       }
     }
   },
@@ -585,5 +590,9 @@
       "subtitle": "Contact us for professional OEM/ODM solutions",
       "button": "Contact Us Now"
     }
+  },
+  "language": {
+    "selectLanguage": "Choisir la langue",
+    "currentLanguage": "Actuel: {language}"
   }
 }

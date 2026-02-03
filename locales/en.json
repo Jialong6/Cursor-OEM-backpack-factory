@@ -447,8 +447,9 @@
       },
       "countryRegion": {
         "label": "Country/Region",
-        "placeholder": "United States",
-        "error": "Please enter your country/region"
+        "placeholder": "Select a country/region",
+        "loading": "Detecting location...",
+        "error": "Please select your country/region"
       },
       "companyBrandName": {
         "label": "Company/Brand Name",
@@ -508,6 +509,10 @@
       "error": {
         "title": "Submission Failed",
         "message": "Sorry, there was an error submitting your form. Please try again later or contact us directly."
+      },
+      "draft": {
+        "restored": "Your previous draft has been restored",
+        "discard": "Discard draft"
       }
     }
   },
@@ -585,5 +590,9 @@
       "subtitle": "Contact us for professional OEM/ODM solutions",
       "button": "Contact Us Now"
     }
+  },
+  "language": {
+    "selectLanguage": "Select Language",
+    "currentLanguage": "Current: {language}"
   }
 }

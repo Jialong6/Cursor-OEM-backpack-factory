@@ -117,8 +117,9 @@
       },
       "countryRegion": {
         "label": "国家/地区",
-        "placeholder": "中国",
-        "error": "请输入国家/地区"
+        "placeholder": "请选择国家/地区",
+        "loading": "正在检测位置...",
+        "error": "请选择国家/地区"
       },
       "companyBrandName": {
         "label": "公司/品牌名称",
@@ -178,6 +179,10 @@
       "error": {
         "title": "提交失败",
         "message": "抱歉，提交时出现错误。请稍后再试或直接联系我们。"
+      },
+      "draft": {
+        "restored": "已恢复您之前的草稿",
+        "discard": "放弃草稿"
       }
     }
   },
@@ -585,5 +590,9 @@
       "subtitle": "联系我们获取专业的 OEM/ODM 解决方案",
       "button": "立即咨询"
     }
+  },
+  "language": {
+    "selectLanguage": "选择语言",
+    "currentLanguage": "当前: {language}"
   }
 }
