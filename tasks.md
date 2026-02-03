@@ -71,6 +71,13 @@
   - 生产构建成功：22 个静态页面
   - 性能指标：首页 185 kB
 
+- [x] Phase 17: v2.0 Task 8/9/13/14 合并
+  - 修复 8 个失败测试（responsive-menu + keyboard-focus-visibility）
+  - 合并 task-13-nav-components（含 Task 9/13/14）到 main
+  - 合并 task-8-language-banner 到 main，解决 11 个翻译文件冲突
+  - **633 tests passed, 2 skipped**
+  - 生产构建成功：Middleware 96.5 kB
+
 ## 已验证的属性（Property-Based Testing）
 
 ### v1.0 属性 (13个)
@@ -89,7 +96,7 @@
 12. 键盘焦点可见性
 13. 页脚链接滚动
 
-### v2.0 属性 (新增 6个)
+### v2.0 属性 (新增 6+)
 
 14. Locale 配置完整性 (Property 1) - 19 tests
 15. 翻译文件结构一致性 (Property 2) - 69 tests
@@ -97,6 +104,20 @@
 17. 国家到语言映射正确性 (Property 6)
 18. Cookie 优先级高于 Geo-IP (Property 7) - 7 tests
 19. Cookie 属性正确性 (Property 14) - 20 tests
+
+### v2.0 新增测试覆盖 (Task 8/9/13/14)
+
+- Language Switcher 测试 - 语言切换器下拉菜单
+- Language Banner 测试 - 语言横幅可见性逻辑
+- DesktopNav / MobileNav 测试 - 拆分导航组件
+- Breadcrumb / FloatingMenu / ScrollIndicator / AnchorNav 测试
+- useNavigation hook 测试
+- CountrySelect 组件测试
+- useFormDraft hook 测试 - 草稿持久化
+- useGeoCountry hook 测试 - Geo-IP 检测
+- Geo API 端点测试
+- Countries 工具库测试
+- Form draft persistence 属性测试
 
 ## 第二版实现计划：国际化地理路由系统 (i18n-geo-routing)
 
@@ -189,17 +210,17 @@
 - [x] 7.7 重构 FAQ.tsx 使用 FAQPageSchema 组件
 - **新增测试: 36 tests passed**
 
-### Task 8: 实现语言切换横幅组件 (可并行)
+### Task 8: 实现语言切换横幅组件 (可并行) [已完成]
 
-- [ ] 8.1 创建 components/i18n/LanguageBanner.tsx
-- [ ] 8.2 编写属性测试 **Property 8: Language Banner Visibility Logic**
-- [ ] 8.3 添加横幅翻译文本到所有语言文件
-- [ ] 8.4 集成 LanguageBanner 到根布局
+- [x] 8.1 创建 components/i18n/LanguageBanner.tsx
+- [x] 8.2 编写属性测试 **Property 8: Language Banner Visibility Logic**
+- [x] 8.3 添加横幅翻译文本到所有语言文件（languageBanner 命名空间）
+- [x] 8.4 集成 LanguageBanner 到根布局
 
-### Task 9: 实现语言切换器组件 (可并行)
+### Task 9: 实现语言切换器组件 (可并行) [已完成]
 
-- [ ] 9.1 创建 components/i18n/LanguageSwitcher.tsx
-- [ ] 9.2 集成 LanguageSwitcher 到导航栏
+- [x] 9.1 重构 LanguageSwitcher 为支持 10 种语言的下拉菜单
+- [x] 9.2 集成 LanguageSwitcher 到导航栏
 
 ### Task 10: Checkpoint - SEO 和国际化组件验证 (串行)
 
@@ -214,32 +235,39 @@
 - [ ] 11.4 创建 components/bento/CTASection.tsx
 - [ ] 11.5 重构首页使用 Bento Grid
 
-### Task 12: 实现无障碍 UI 组件 (可并行)
+### Task 12: 实现无障碍 UI 组件 (可并行) [已完成]
 
-- [ ] 12.1 创建 components/ui/Button.tsx (44x44px 触控区域)
-- [ ] 12.2 编写属性测试 **Property 12: Touch Target Minimum Size**
-- [ ] 12.3 创建 components/feedback/Toast.tsx
-- [ ] 12.4 创建 components/feedback/Loading.tsx
+- [x] 12.1 创建 components/ui/Button.tsx (44x44px 触控区域)
+- [x] 12.2 编写属性测试 **Property 12: Touch Target Minimum Size**
+- [x] 12.3 创建 components/feedback/Toast.tsx
+- [x] 12.4 创建 components/feedback/Loading.tsx
 
-### Task 13: 实现导航和布局组件 (可并行)
+### Task 13: 实现导航和布局组件 (可并行) [已完成]
 
-- [ ] 13.1 创建 components/layout/DesktopNav.tsx
-- [ ] 13.2 创建 components/layout/MobileNav.tsx
-- [ ] 13.3 创建 components/layout/Breadcrumb.tsx
-- [ ] 13.4 创建 components/layout/FloatingMenu.tsx
-- [ ] 13.5 创建 components/layout/ScrollIndicator.tsx
-- [ ] 13.6 创建 components/layout/AnchorNav.tsx
+- [x] 13.1 创建 components/layout/DesktopNav.tsx
+- [x] 13.2 创建 components/layout/MobileNav.tsx
+- [x] 13.3 创建 components/layout/Breadcrumb.tsx
+- [x] 13.4 创建 components/layout/FloatingMenu.tsx
+- [x] 13.5 创建 components/layout/ScrollIndicator.tsx
+- [x] 13.6 创建 components/layout/AnchorNav.tsx
+- [x] 13.7 重构 Navbar.tsx 使用子组件（DesktopNav + MobileNav）
+- [x] 13.8 提取导航 hooks 到 hooks/useNavigation.ts
 
-### Task 14: 实现表单优化 (可并行)
+### Task 14: 实现表单优化 (可并行) [已完成]
 
-- [ ] 14.1 优化联系表单（下拉选择、IP 预填国家）
-- [ ] 14.2 添加表单验证和反馈
-- [ ] 14.3 添加表单数据持久化 (sessionStorage)
+- [x] 14.1 优化联系表单（CountrySelect 下拉选择、Geo-IP 预填国家）
+- [x] 14.2 添加表单验证和反馈（watch/setValue 集成）
+- [x] 14.3 添加表单草稿持久化（useFormDraft hook, localStorage）
+- [x] 14.4 创建 hooks/useGeoCountry.ts（Geo-IP 国家自动检测）
+- [x] 14.5 创建 app/api/geo/route.ts（Geo-IP API 端点）
+- [x] 14.6 创建 lib/countries.ts（国家代码数据）
 
-### Task 15: Checkpoint - UI 组件验证 (串行)
+### Task 15: Checkpoint - UI 组件验证 (串行) [已完成]
 
-- 确保所有 UI 组件正常工作
-- 运行无障碍测试 (axe-core)
+- [x] Task 8/9/12/13/14 全部合并到 main
+- [x] 所有测试通过：**633 tests passed, 2 skipped**
+- [x] 生产构建成功
+- [x] worktree 和分支已清理
 
 ### Task 15.5: 实现次级内容展示组件 (可并行)
 
