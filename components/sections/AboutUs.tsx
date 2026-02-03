@@ -1,6 +1,8 @@
 'use client';
 
 import { useTranslations, useLocale } from 'next-intl';
+import { getAuthorById } from '@/lib/author-data';
+import CertificationBadges from '@/components/content/CertificationBadges';
 
 /**
  * 关于我们区块组件
@@ -15,7 +17,9 @@ import { useTranslations, useLocale } from 'next-intl';
  */
 export default function AboutUs() {
   const t = useTranslations('about');
+  const tFounder = useTranslations('about.founder');
   const locale = useLocale();
+  const founder = getAuthorById('jay');
 
   // 获取六大核心价值观
   const values = t.raw('values') as Array<{
@@ -52,7 +56,10 @@ export default function AboutUs() {
             founder: {
               '@type': 'Person',
               name: 'Li Guangtong',
+              jobTitle: 'Founder & CEO',
+              description: founder?.bio.en || '',
             },
+            hasCredential: ['ISO 9001', 'OEKO-TEX', 'GRS', 'GOTS'],
           }),
         }}
       />
@@ -189,7 +196,54 @@ export default function AboutUs() {
                 ))}
               </div>
             </div>
+
+            {/* 认证徽章 */}
+            <div className="mt-10 border-t border-neutral-200 pt-8">
+              <CertificationBadges variant="grid" showLabels />
+            </div>
           </div>
+
+          {/* 创始人介绍卡片 */}
+          {founder && (
+            <div className="mt-12 rounded-xl bg-neutral-50 border border-neutral-200 p-8 md:p-12">
+              <h3 className="mb-6 text-center text-2xl font-bold text-neutral-800 md:text-3xl">
+                {tFounder('title')}
+              </h3>
+              <div className="mx-auto max-w-3xl">
+                <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-start">
+                  {/* 头像占位 */}
+                  <div
+                    className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-primary text-2xl font-bold text-white"
+                    aria-hidden="true"
+                  >
+                    JL
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-neutral-800">
+                      {locale === 'zh' || locale === 'zh-tw' ? founder.name.zh : founder.name.en}
+                    </h4>
+                    <p className="mt-1 text-sm font-medium text-primary">
+                      {locale === 'zh' || locale === 'zh-tw' ? founder.role.zh : founder.role.en}
+                    </p>
+                    <p className="mt-3 leading-relaxed text-neutral-600">
+                      {locale === 'zh' || locale === 'zh-tw' ? founder.bio.zh : founder.bio.en}
+                    </p>
+                    {/* 资质列表 */}
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {founder.credentials.map((credential) => (
+                        <span
+                          key={credential}
+                          className="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
+                        >
+                          {credential}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </section>
     </>

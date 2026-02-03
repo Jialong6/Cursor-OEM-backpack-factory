@@ -198,6 +198,7 @@ describe('Translation File Unit Tests', () => {
     expect(translations).not.toBeNull();
 
     const expectedSections = [
+      'author',
       'bento',
       'nav',
       'banner',
@@ -211,6 +212,7 @@ describe('Translation File Unit Tests', () => {
       'blog',
       'blogList',
       'blogDetail',
+      'certifications',
       'language',
       'languageBanner',
     ];

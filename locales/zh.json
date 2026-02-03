@@ -58,6 +58,9 @@
         "desc": "我们重视团队协作、多元视角，赋能每一位团队成员，营造人、想法与合作共荣的文化。"
       }
     ],
+    "founder": {
+      "title": "创始人介绍"
+    },
     "company": {
       "title": "Better Bags Myanmar Company Limited",
       "p1": "Better Bags Myanmar成立于2003年，专注为全球客户提供OEM/ODM高端背包制造服务。我们具备全面的生产能力，涵盖休闲、旅行、登山及时尚背包，采用负责任采购的聚酯、棉及合成皮革材料。",
@@ -97,6 +100,12 @@
     "whatsapp": {
       "label": "WhatsApp",
       "value": "+1 814.880.1463"
+    },
+    "trust": {
+      "title": "为什么信赖我们",
+      "responseTime": "24小时响应保证",
+      "experience": "20年以上制造经验",
+      "certified": "ISO 9001、OEKO-TEX、GRS、GOTS 认证"
     },
     "form": {
       "title": "获取报价",
@@ -600,5 +609,17 @@
     "keep": "保持{language}",
     "switchToEnglish": "切换到英文",
     "close": "关闭"
+  },
+  "author": {
+    "writtenBy": "作者",
+    "readingTime": "阅读时间",
+    "minRead": "分钟阅读"
+  },
+  "certifications": {
+    "title": "认证资质",
+    "iso9001": "ISO 9001",
+    "oekoTex": "OEKO-TEX",
+    "grs": "GRS",
+    "gots": "GOTS"
   }
 }

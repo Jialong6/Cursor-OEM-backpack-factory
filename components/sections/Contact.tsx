@@ -14,6 +14,7 @@ import {
 import CountrySelect from '@/components/ui/CountrySelect';
 import { useFormDraft } from '@/hooks/useFormDraft';
 import { useGeoCountry } from '@/hooks/useGeoCountry';
+import TrustSignals from '@/components/content/TrustSignals';
 
 /**
  * 联系我们区块组件
@@ -211,6 +212,9 @@ export default function Contact() {
                 {t('whatsapp.value')}
               </a>
             </div>
+
+            {/* 信任信号 */}
+            <TrustSignals />
           </div>
 
           {/* 右侧：表单 */}

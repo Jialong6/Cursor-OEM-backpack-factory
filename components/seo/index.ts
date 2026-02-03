@@ -7,3 +7,4 @@
 export { default as ManufacturingPlantSchema, FACTORY_INFO } from './ManufacturingPlantSchema';
 export { default as FAQPageSchema } from './FAQPageSchema';
 export type { FAQSection } from './FAQPageSchema';
+export { default as BlogPostingSchema } from './BlogPostingSchema';

@@ -27,6 +27,7 @@ export interface BlogPost {
   thumbnail: string;
   category: string;
   author?: string;
+  authorId?: string;
   tags?: string[];
 }
 
@@ -261,6 +262,7 @@ Better Bags offers both OEM and ODM services to meet different customer needs.
     thumbnail: '/images/blog/oem-vs-odm.jpg',
     category: 'Business',
     author: 'Better Bags Team',
+    authorId: 'jay',
     tags: ['OEM', 'ODM', '商业'],
   },
   {
@@ -278,6 +280,7 @@ Better Bags offers both OEM and ODM services to meet different customer needs.
     thumbnail: '/images/blog/quality-control.jpg',
     category: 'Quality',
     author: 'Better Bags Team',
+    authorId: 'jay',
     tags: ['质量', 'QC', '生产'],
   },
   {
