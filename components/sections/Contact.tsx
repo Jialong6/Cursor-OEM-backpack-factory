@@ -1,7 +1,7 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
-import { useState } from 'react';
+import { useTranslations, useLocale } from 'next-intl';
+import { useState, useEffect, useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import {
@@ -11,6 +11,9 @@ import {
   validateFiles,
   type ContactFormData,
 } from '@/lib/validations';
+import CountrySelect from '@/components/ui/CountrySelect';
+import { useFormDraft } from '@/hooks/useFormDraft';
+import { useGeoCountry } from '@/hooks/useGeoCountry';
 
 /**
  * 联系我们区块组件
@@ -27,10 +30,22 @@ import {
  */
 export default function Contact() {
   const t = useTranslations('contact');
+  const locale = useLocale();
   const [files, setFiles] = useState<File[]>([]);
   const [fileErrors, setFileErrors] = useState<string[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [showDraftNotice, setShowDraftNotice] = useState(false);
+
+  // Geo-IP 国家检测
+  const { countryCode: geoCountryCode, isLoading: isGeoLoading } = useGeoCountry();
+
+  // 表单草稿持久化
+  const { restoreDraft, saveDraft, clearDraft, hasDraft } = useFormDraft<ContactFormData>({
+    key: 'contact-form-draft',
+    excludeFields: ['mcaptchaToken'],
+    debounceMs: 500,
+  });
 
   // 表单配置：使用 react-hook-form + Zod 验证
   const {
@@ -38,9 +53,53 @@ export default function Contact() {
     handleSubmit,
     formState: { errors },
     reset,
+    watch,
+    setValue,
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
   });
+
+  // 恢复草稿
+  useEffect(() => {
+    const draft = restoreDraft();
+    if (draft && hasDraft) {
+      Object.entries(draft).forEach(([key, value]) => {
+        if (value && key !== 'mcaptchaToken') {
+          setValue(key as keyof ContactFormData, value as string);
+        }
+      });
+      setShowDraftNotice(true);
+    }
+  }, [restoreDraft, hasDraft, setValue]);
+
+  // Geo-IP 自动填充国家
+  useEffect(() => {
+    if (geoCountryCode && !watch('countryRegion')) {
+      setValue('countryRegion', geoCountryCode);
+    }
+  }, [geoCountryCode, watch, setValue]);
+
+  // 监听表单变化，自动保存草稿
+  const watchedValues = watch();
+  const saveDraftCallback = useCallback(() => {
+    const hasValues = Object.entries(watchedValues).some(
+      ([key, value]) => value && value !== '' && key !== 'mcaptchaToken'
+    );
+    if (hasValues) {
+      saveDraft(watchedValues);
+    }
+  }, [watchedValues, saveDraft]);
+
+  useEffect(() => {
+    saveDraftCallback();
+  }, [saveDraftCallback]);
+
+  // 放弃草稿
+  const handleDiscardDraft = () => {
+    clearDraft();
+    reset();
+    setShowDraftNotice(false);
+  };
 
   // 处理文件选择
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -89,6 +148,8 @@ export default function Contact() {
 
       if (result.success) {
         setSubmitStatus('success');
+        clearDraft();
+        setShowDraftNotice(false);
         reset();
         setFiles([]);
       } else {
@@ -181,6 +242,24 @@ export default function Contact() {
                 </div>
               )}
 
+              {/* 草稿恢复提示 */}
+              {showDraftNotice && (
+                <div
+                  className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg flex items-center justify-between"
+                  role="status"
+                  aria-live="polite"
+                >
+                  <p className="text-blue-700">{t('form.draft.restored')}</p>
+                  <button
+                    type="button"
+                    onClick={handleDiscardDraft}
+                    className="text-blue-600 hover:text-blue-800 text-sm font-medium underline"
+                  >
+                    {t('form.draft.discard')}
+                  </button>
+                </div>
+              )}
+
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 {/* 名字 & 姓氏 */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -264,18 +343,19 @@ export default function Contact() {
                     <label htmlFor="countryRegion" className="block text-sm font-medium text-gray-700 mb-2">
                       {t('form.countryRegion.label')} *
                     </label>
-                    <input
-                      {...register('countryRegion')}
+                    <CountrySelect
                       id="countryRegion"
-                      type="text"
+                      value={watch('countryRegion') || ''}
+                      onChange={(value) => setValue('countryRegion', value)}
                       placeholder={t('form.countryRegion.placeholder')}
-                      aria-required="true"
-                      aria-invalid={errors.countryRegion ? 'true' : 'false'}
-                      aria-describedby={errors.countryRegion ? 'countryRegion-error' : undefined}
-                      className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent ${
-                        errors.countryRegion ? 'border-red-500' : 'border-gray-300'
-                      }`}
+                      hasError={!!errors.countryRegion}
+                      errorId="countryRegion-error"
+                      isLoading={isGeoLoading}
+                      loadingText={t('form.countryRegion.loading')}
+                      locale={locale}
+                      required
                     />
+                    <input type="hidden" {...register('countryRegion')} />
                     {errors.countryRegion && (
                       <p id="countryRegion-error" className="mt-1 text-sm text-red-600" role="alert">
                         {t('form.countryRegion.error')}
