@@ -719,5 +719,39 @@
         "definition": "A flexible, durable plastic material used for waterproof coatings, labels, and patches on backpacks. Known for its excellent abrasion and weather resistance."
       }
     }
+  },
+  "testimonials": {
+    "title": "お客様の声",
+    "subtitle": "世界中のブランドに信頼されるOEMバックパック製造",
+    "items": [
+      {
+        "name": "Sarah Chen",
+        "role": "調達ディレクター",
+        "company": "Pacific Outdoor Co.",
+        "quote": "Better Bagsはカスタムバックパックラインで卓越した品質を提供してくれました。細部へのこだわりと納期への取り組みは期待以上でした。",
+        "rating": 5
+      },
+      {
+        "name": "Michael Torres",
+        "role": "プロダクトマネージャー",
+        "company": "EuroTrail Gear",
+        "quote": "Better Bagsとの協力により、製品開発プロセスが変わりました。エンジニアリングチームは最終製品を改善する貴重な設計提案をしてくれました。",
+        "rating": 5
+      },
+      {
+        "name": "Yuki Tanaka",
+        "role": "ブランドディレクター",
+        "company": "Nomad Supply",
+        "quote": "サンプリングから量産まで、Better Bagsは一貫した品質を維持しました。プロセス全体を通じたコミュニケーションは素晴らしかったです。",
+        "rating": 5
+      },
+      {
+        "name": "David Muller",
+        "role": "運営責任者",
+        "company": "Summit Brands GmbH",
+        "quote": "3年以上Better Bagsと提携しています。競争力のある価格と信頼性の高い納品により、私たちの主要メーカーとなっています。",
+        "rating": 5
+      }
+    ]
   }
 }
