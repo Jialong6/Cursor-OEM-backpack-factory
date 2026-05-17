@@ -17,7 +17,6 @@ import {
   contactFormSchema,
   ORDER_QUANTITY_OPTIONS,
   TECH_PACK_OPTIONS,
-  type ContactFormData,
   type ContactFormResponse,
 } from '@/lib/validations';
 
@@ -76,18 +75,15 @@ const simpleEmailArbitrary = fc
 
 // 生成有效的表单数据
 const validFormDataArbitrary = fc.record({
-  firstName: nameArbitrary,
-  lastName: nameArbitrary,
+  name: nameArbitrary,
   email: simpleEmailArbitrary,
   countryRegion: nonEmptyString(2, 100),
   companyBrandName: nonEmptyString(2, 100),
-  phoneNumber: phoneArbitrary,
+  phoneNumber: fc.oneof(fc.constant(''), phoneArbitrary),
   subject: nonEmptyString(5, 200),
   message: nonEmptyString(20, 2000),
   orderQuantity: fc.constantFrom(...ORDER_QUANTITY_OPTIONS),
   techPackAvailability: fc.constantFrom(...TECH_PACK_OPTIONS),
-  launchTimeline: fc.oneof(fc.constant(''), fc.string({ maxLength: 200 })),
-  specialRequests: fc.oneof(fc.constant(''), fc.string({ maxLength: 1000 })),
   mcaptchaToken: nonEmptyString(10, 100),
 });
 
@@ -221,7 +217,7 @@ describe('表单提交成功处理 (Property 11)', () => {
       success: false,
       message: 'Validation failed. Please check your input.',
       errors: {
-        firstName: ['First name is required'],
+        name: ['Name is required'],
         email: ['Please enter a valid email address'],
         message: ['Message must be at least 20 characters'],
       },
@@ -243,7 +239,7 @@ describe('表单提交成功处理 (Property 11)', () => {
     expect(result.success).toBe(false);
     expect(result.errors).toBeDefined();
     expect(Object.keys(result.errors || {}).length).toBeGreaterThan(0);
-    expect(result.errors?.firstName).toBeDefined();
+    expect(result.errors?.name).toBeDefined();
     expect(result.errors?.email).toBeDefined();
     expect(result.errors?.message).toBeDefined();
   });

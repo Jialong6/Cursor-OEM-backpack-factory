@@ -16,8 +16,6 @@ import {
   TECH_PACK_OPTIONS,
   validateFile,
   validateFiles,
-  formatZodErrors,
-  type ContactFormData,
 } from '@/lib/validations';
 
 // **Feature: backpack-oem-website, Property 10: 表单验证完整性**
@@ -27,7 +25,7 @@ import {
  * 优化性能：使用自定义 arbitrary 直接生成有效数据，避免使用 filter
  */
 
-// 生成有效的名字（只包含字母、空格、连字符、撇号）
+// 生成有效的姓名（只包含字母、空格、连字符、撇号）
 // 确保至少包含一些字母，避免全是空格
 const nameArbitrary = fc
   .tuple(
@@ -45,7 +43,7 @@ const nameArbitrary = fc
         'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
         ' ', '-', "'"
       ),
-      { minLength: 1, maxLength: 49 }
+      { minLength: 1, maxLength: 99 }
     )
   )
   .map(([first, rest]) => first + rest.join(''));
@@ -78,18 +76,15 @@ const simpleEmailArbitrary = fc
   .map(([local, domain]) => `${local}@${domain}`);
 
 const validFormDataArbitrary = fc.record({
-  firstName: nameArbitrary,
-  lastName: nameArbitrary,
+  name: nameArbitrary,
   email: simpleEmailArbitrary,
   countryRegion: nonEmptyString(2, 100),
   companyBrandName: nonEmptyString(2, 100),
-  phoneNumber: phoneArbitrary,
+  phoneNumber: fc.oneof(fc.constant(''), phoneArbitrary),
   subject: nonEmptyString(5, 200),
   message: nonEmptyString(20, 2000),
   orderQuantity: fc.constantFrom(...ORDER_QUANTITY_OPTIONS),
   techPackAvailability: fc.constantFrom(...TECH_PACK_OPTIONS),
-  launchTimeline: fc.oneof(fc.constant(''), fc.string({ maxLength: 200 })),
-  specialRequests: fc.oneof(fc.constant(''), fc.string({ maxLength: 1000 })),
   mcaptchaToken: nonEmptyString(10, 100),
 });
 
@@ -97,12 +92,10 @@ const validFormDataArbitrary = fc.record({
  * 必填字段列表
  */
 const requiredFields = [
-  'firstName',
-  'lastName',
+  'name',
   'email',
   'countryRegion',
   'companyBrandName',
-  'phoneNumber',
   'subject',
   'message',
   'orderQuantity',
@@ -117,7 +110,7 @@ describe('Property 10: 表单验证完整性', () => {
         fc.property(validFormDataArbitrary, fc.constantFrom(...requiredFields), (validData, fieldToRemove) => {
           // 创建一个副本并删除指定字段
           const invalidData = { ...validData };
-          delete (invalidData as any)[fieldToRemove];
+          delete (invalidData as Record<string, unknown>)[fieldToRemove];
 
           // 验证应该失败
           const result = contactFormSchema.safeParse(invalidData);
@@ -162,7 +155,7 @@ describe('Property 10: 表单验证完整性', () => {
   });
 
   describe('属性测试：电话号码格式验证', () => {
-    it('任意包含非法字符的电话号码应被拒绝', () => {
+    it('提供电话号码但包含非法字符时应被拒绝', () => {
       fc.assert(
         fc.property(
           validFormDataArbitrary,
@@ -183,7 +176,7 @@ describe('Property 10: 表单验证完整性', () => {
       );
     });
 
-    it('任意长度小于10的电话号码应被拒绝', () => {
+    it('提供长度 1-9 的非空电话号码时应被拒绝（少于 10 字符）', () => {
       fc.assert(
         fc.property(
           validFormDataArbitrary,
@@ -192,7 +185,8 @@ describe('Property 10: 表单验证完整性', () => {
               minLength: 1,
               maxLength: 9,
             })
-            .map((chars) => chars.join('')),
+            .map((chars) => chars.join(''))
+            .filter((s) => s.length > 0),
           (validData, shortPhone) => {
             const invalidData = { ...validData, phoneNumber: shortPhone };
             const result = contactFormSchema.safeParse(invalidData);
@@ -205,7 +199,7 @@ describe('Property 10: 表单验证完整性', () => {
   });
 
   describe('属性测试：字符串长度限制', () => {
-    it('firstName 超过最大长度时应被拒绝', () => {
+    it('name 超过最大长度（100）时应被拒绝', () => {
       fc.assert(
         fc.property(
           validFormDataArbitrary,
@@ -220,11 +214,11 @@ describe('Property 10: 表单验证完整性', () => {
                   ' ', '-', "'"
                 )
               ),
-              { minLength: 51, maxLength: 100 }
+              { minLength: 101, maxLength: 200 }
             )
             .map((chars) => chars.join('')),
-          (validData, longFirstName) => {
-            const invalidData = { ...validData, firstName: longFirstName };
+          (validData, longName) => {
+            const invalidData = { ...validData, name: longName };
             const result = contactFormSchema.safeParse(invalidData);
             return !result.success;
           }
@@ -273,7 +267,7 @@ describe('Property 10: 表单验证完整性', () => {
             fc.constant('invalid option'),
             fc.constant('999 pcs'),
             fc.string({ minLength: 1, maxLength: 50 })
-          ).map((s) => (ORDER_QUANTITY_OPTIONS.includes(s as any) ? s + '_invalid' : s)),
+          ).map((s) => (ORDER_QUANTITY_OPTIONS.includes(s as typeof ORDER_QUANTITY_OPTIONS[number]) ? s + '_invalid' : s)),
           (validData, invalidQuantity) => {
             const invalidData = { ...validData, orderQuantity: invalidQuantity };
             const result = contactFormSchema.safeParse(invalidData);
@@ -292,7 +286,7 @@ describe('Property 10: 表单验证完整性', () => {
             fc.constant('invalid option'),
             fc.constant('Maybe I have it'),
             fc.string({ minLength: 1, maxLength: 50 })
-          ).map((s) => (TECH_PACK_OPTIONS.includes(s as any) ? s + '_invalid' : s)),
+          ).map((s) => (TECH_PACK_OPTIONS.includes(s as typeof TECH_PACK_OPTIONS[number]) ? s + '_invalid' : s)),
           (validData, invalidTechPack) => {
             const invalidData = { ...validData, techPackAvailability: invalidTechPack };
             const result = contactFormSchema.safeParse(invalidData);
@@ -305,22 +299,11 @@ describe('Property 10: 表单验证完整性', () => {
   });
 
   describe('属性测试：可选字段不应阻止验证', () => {
-    it('launchTimeline 为空或缺失时，其他字段有效则验证应成功', () => {
+    it('phoneNumber 为空或缺失时，其他字段有效则验证应成功', () => {
       fc.assert(
         fc.property(validFormDataArbitrary, fc.constantFrom('', undefined), (validData, emptyValue) => {
-          const dataWithEmptyLaunch = { ...validData, launchTimeline: emptyValue };
-          const result = contactFormSchema.safeParse(dataWithEmptyLaunch);
-          return result.success;
-        }),
-        { numRuns: 100 }
-      );
-    });
-
-    it('specialRequests 为空或缺失时，其他字段有效则验证应成功', () => {
-      fc.assert(
-        fc.property(validFormDataArbitrary, fc.constantFrom('', undefined), (validData, emptyValue) => {
-          const dataWithEmptyRequests = { ...validData, specialRequests: emptyValue };
-          const result = contactFormSchema.safeParse(dataWithEmptyRequests);
+          const dataWithEmptyPhone = { ...validData, phoneNumber: emptyValue };
+          const result = contactFormSchema.safeParse(dataWithEmptyPhone);
           return result.success;
         }),
         { numRuns: 100 }
@@ -418,10 +401,9 @@ describe('Property 10: 表单验证完整性', () => {
 
 describe('Property 10: 表单验证完整性 - 单元测试补充', () => {
   describe('必填字段验证', () => {
-    it('firstName 为空字符串时应失败', () => {
+    it('name 为空字符串时应失败', () => {
       const data = {
-        firstName: '',
-        lastName: 'Doe',
+        name: '',
         email: 'john@example.com',
         countryRegion: 'USA',
         companyBrandName: 'Test Company',
@@ -439,8 +421,7 @@ describe('Property 10: 表单验证完整性 - 单元测试补充', () => {
 
     it('email 为无效格式时应失败', () => {
       const data = {
-        firstName: 'John',
-        lastName: 'Doe',
+        name: 'John Doe',
         email: 'invalid-email',
         countryRegion: 'USA',
         companyBrandName: 'Test Company',
@@ -456,10 +437,9 @@ describe('Property 10: 表单验证完整性 - 单元测试补充', () => {
       expect(result.success).toBe(false);
     });
 
-    it('phoneNumber 包含字母时应失败', () => {
+    it('提供的 phoneNumber 包含字母时应失败', () => {
       const data = {
-        firstName: 'John',
-        lastName: 'Doe',
+        name: 'John Doe',
         email: 'john@example.com',
         countryRegion: 'USA',
         companyBrandName: 'Test Company',
@@ -477,8 +457,7 @@ describe('Property 10: 表单验证完整性 - 单元测试补充', () => {
 
     it('message 少于 20 个字符时应失败', () => {
       const data = {
-        firstName: 'John',
-        lastName: 'Doe',
+        name: 'John Doe',
         email: 'john@example.com',
         countryRegion: 'USA',
         companyBrandName: 'Test Company',
@@ -494,10 +473,9 @@ describe('Property 10: 表单验证完整性 - 单元测试补充', () => {
       expect(result.success).toBe(false);
     });
 
-    it('所有必填字段有效时应成功', () => {
+    it('所有必填字段有效时应成功（含 phoneNumber）', () => {
       const data = {
-        firstName: 'John',
-        lastName: 'Doe',
+        name: 'John Doe',
         email: 'john@example.com',
         countryRegion: 'USA',
         companyBrandName: 'Test Company',
@@ -511,6 +489,23 @@ describe('Property 10: 表单验证完整性 - 单元测试补充', () => {
 
       const result = contactFormSchema.safeParse(data);
       expect(result.success).toBe(true);
+    });
+
+    it('合并后的 name 接受 "John Doe" 和 "张三"', () => {
+      const baseData = {
+        email: 'john@example.com',
+        countryRegion: 'USA',
+        companyBrandName: 'Test Company',
+        phoneNumber: '+1 555-123-4567',
+        subject: 'Test inquiry',
+        message: 'This is a test message with more than 20 characters',
+        orderQuantity: 'Less than 100 pcs' as const,
+        techPackAvailability: 'Yes, I have a tech pack' as const,
+        mcaptchaToken: 'test-token-123',
+      };
+
+      expect(contactFormSchema.safeParse({ ...baseData, name: 'John Doe' }).success).toBe(true);
+      expect(contactFormSchema.safeParse({ ...baseData, name: '张三' }).success).toBe(true);
     });
   });
 
@@ -573,40 +568,35 @@ describe('Property 10: 表单验证完整性 - 单元测试补充', () => {
   });
 
   describe('可选字段验证', () => {
-    it('launchTimeline 为空字符串时不应影响验证', () => {
+    it('phoneNumber 为空字符串时不应影响验证', () => {
       const data = {
-        firstName: 'John',
-        lastName: 'Doe',
+        name: 'John Doe',
         email: 'john@example.com',
         countryRegion: 'USA',
         companyBrandName: 'Test Company',
-        phoneNumber: '+1 555-123-4567',
+        phoneNumber: '',
         subject: 'Test inquiry',
         message: 'This is a test message with more than 20 characters',
         orderQuantity: 'Less than 100 pcs' as const,
         techPackAvailability: 'Yes, I have a tech pack' as const,
         mcaptchaToken: 'test-token-123',
-        launchTimeline: '',
       };
 
       const result = contactFormSchema.safeParse(data);
       expect(result.success).toBe(true);
     });
 
-    it('specialRequests 为空字符串时不应影响验证', () => {
+    it('phoneNumber 字段缺失时不应影响验证', () => {
       const data = {
-        firstName: 'John',
-        lastName: 'Doe',
+        name: 'John Doe',
         email: 'john@example.com',
         countryRegion: 'USA',
         companyBrandName: 'Test Company',
-        phoneNumber: '+1 555-123-4567',
         subject: 'Test inquiry',
         message: 'This is a test message with more than 20 characters',
         orderQuantity: 'Less than 100 pcs' as const,
         techPackAvailability: 'Yes, I have a tech pack' as const,
         mcaptchaToken: 'test-token-123',
-        specialRequests: '',
       };
 
       const result = contactFormSchema.safeParse(data);

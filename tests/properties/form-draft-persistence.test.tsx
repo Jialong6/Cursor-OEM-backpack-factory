@@ -30,8 +30,7 @@ describe('Property: Form Draft Persistence', () => {
     fc.assert(
       fc.property(
         fc.record({
-          firstName: fc.string({ minLength: 1, maxLength: 50 }),
-          lastName: fc.string({ minLength: 1, maxLength: 50 }),
+          name: fc.string({ minLength: 1, maxLength: 100 }),
           email: fc.emailAddress(),
           countryRegion: fc.constantFrom('CN', 'US', 'JP', 'DE', 'GB', 'FR', 'KR', 'MM'),
           message: fc.string({ minLength: 10, maxLength: 500 }),

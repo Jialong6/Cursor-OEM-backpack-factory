@@ -43,19 +43,12 @@ const ACCEPTED_FILE_TYPES = [
  */
 export const contactFormSchema = z.object({
   // 必填字段（需求 11.2）
-  firstName: z
+  name: z
     .string()
-    .min(1, 'First name is required')
-    .min(2, 'First name must be at least 2 characters')
-    .max(50, 'First name must be less than 50 characters')
-    .regex(/^[\p{L}\s'-]+$/u, 'First name can only contain letters, spaces, hyphens, and apostrophes'),
-
-  lastName: z
-    .string()
-    .min(1, 'Last name is required')
-    .min(2, 'Last name must be at least 2 characters')
-    .max(50, 'Last name must be less than 50 characters')
-    .regex(/^[\p{L}\s'-]+$/u, 'Last name can only contain letters, spaces, hyphens, and apostrophes'),
+    .min(1, 'Name is required')
+    .min(2, 'Name must be at least 2 characters')
+    .max(100, 'Name must be less than 100 characters')
+    .regex(/^[\p{L}\s'-]+$/u, 'Name can only contain letters, spaces, hyphens, and apostrophes'),
 
   email: z
     .string()
@@ -75,15 +68,17 @@ export const contactFormSchema = z.object({
     .min(2, 'Company/Brand name must be at least 2 characters')
     .max(100, 'Company/Brand name must be less than 100 characters'),
 
+  // 可选字段：电话号码
   phoneNumber: z
     .string()
-    .min(1, 'Phone number is required')
     .regex(
       /^[\d\s()+-]+$/,
       'Phone number can only contain numbers, spaces, parentheses, plus, and hyphen'
     )
     .min(10, 'Phone number must be at least 10 characters')
-    .max(20, 'Phone number must be less than 20 characters'),
+    .max(20, 'Phone number must be less than 20 characters')
+    .optional()
+    .or(z.literal('')),
 
   subject: z
     .string()
@@ -102,21 +97,8 @@ export const contactFormSchema = z.object({
 
   techPackAvailability: z.enum(TECH_PACK_OPTIONS),
 
-  // 可选字段（需求 11.6, 11.7）
-  launchTimeline: z
-    .string()
-    .max(200, 'Launch timeline must be less than 200 characters')
-    .optional()
-    .or(z.literal('')),
-
-  specialRequests: z
-    .string()
-    .max(1000, 'Special requests must be less than 1000 characters')
-    .optional()
-    .or(z.literal('')),
-
   // mCaptcha token（需求 11.8）
-  mcaptchaToken: z.string().min(1, 'Please complete the verification'),
+  mcaptchaToken: z.string().min(1, 'Please complete the verification before submitting'),
 });
 
 /**

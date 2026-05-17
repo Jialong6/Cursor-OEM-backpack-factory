@@ -109,15 +109,10 @@
     },
     "form": {
       "title": "获取报价",
-      "firstName": {
-        "label": "名字",
-        "placeholder": "张",
-        "error": "请输入名字"
-      },
-      "lastName": {
-        "label": "姓氏",
-        "placeholder": "三",
-        "error": "请输入姓氏"
+      "name": {
+        "label": "姓名",
+        "placeholder": "张三",
+        "error": "请输入姓名"
       },
       "email": {
         "label": "邮箱地址",
@@ -136,7 +131,7 @@
         "error": "请输入公司/品牌名称"
       },
       "phoneNumber": {
-        "label": "电话号码",
+        "label": "电话号码（可选）",
         "placeholder": "+86 138 0000 0000",
         "error": "请输入有效的电话号码"
       },
@@ -160,14 +155,6 @@
         "placeholder": "选择一个选项",
         "error": "请选择一个选项"
       },
-      "launchTimeline": {
-        "label": "您计划何时推出您的系列？（可选）",
-        "placeholder": "如：2024年第二季度"
-      },
-      "specialRequests": {
-        "label": "有任何备注或特殊要求吗？（可选）",
-        "placeholder": "请告诉我们任何额外信息..."
-      },
       "fileUpload": {
         "label": "上传文件（可选）",
         "description": "上传技术包、草图或样品照片。最多5个文件，每个最大10MB。",
@@ -177,7 +164,9 @@
       },
       "humanVerification": {
         "label": "人机验证",
-        "placeholder": "mCaptcha 验证将在此集成"
+        "placeholder": "正在加载验证...",
+        "error": "请先完成人机验证再提交",
+        "notConfigured": "未配置人机验证。仅在开发环境下可提交。"
       },
       "submit": "提交询价",
       "submitting": "提交中...",

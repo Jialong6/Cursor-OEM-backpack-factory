@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations, useLocale } from 'next-intl';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -13,9 +13,13 @@ import {
   type ContactFormData,
 } from '@/lib/validations';
 import CountrySelect from '@/components/ui/CountrySelect';
+import MCaptchaWidget from '@/components/ui/MCaptchaWidget';
 import { useFormDraft } from '@/hooks/useFormDraft';
 import { useGeoCountry } from '@/hooks/useGeoCountry';
 import TrustSignals from '@/components/content/TrustSignals';
+
+const MCAPTCHA_INSTANCE_URL = process.env.NEXT_PUBLIC_MCAPTCHA_INSTANCE_URL || '';
+const MCAPTCHA_SITEKEY = process.env.NEXT_PUBLIC_MCAPTCHA_SITEKEY || '';
 
 /**
  * 联系我们区块组件
@@ -41,6 +45,7 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [showDraftNotice, setShowDraftNotice] = useState(false);
+  const [captchaResetSignal, setCaptchaResetSignal] = useState(0);
 
   // Geo-IP 国家检测
   const { countryCode: geoCountryCode, isLoading: isGeoLoading } = useGeoCountry();
@@ -68,8 +73,20 @@ export default function Contact() {
   useEffect(() => {
     const draft = restoreDraft();
     if (draft && hasDraft) {
+      // 仅恢复当前 schema 中存在的字段，过滤掉历史版本里被移除的字段（firstName/lastName/launchTimeline/specialRequests 等）
+      const allowedKeys = new Set<keyof ContactFormData>([
+        'name',
+        'email',
+        'countryRegion',
+        'companyBrandName',
+        'phoneNumber',
+        'subject',
+        'message',
+        'orderQuantity',
+        'techPackAvailability',
+      ]);
       Object.entries(draft).forEach(([key, value]) => {
-        if (value && key !== 'mcaptchaToken') {
+        if (value && allowedKeys.has(key as keyof ContactFormData)) {
           setValue(key as keyof ContactFormData, value as string);
         }
       });
@@ -83,6 +100,16 @@ export default function Contact() {
       setValue('countryRegion', geoCountryCode);
     }
   }, [geoCountryCode, watch, setValue]);
+
+  // message 自动撑高：在草稿恢复 / reset 等 setValue 路径下同步调整高度（onInput 仅响应键盘输入）
+  const messageTextareaRef = useRef<HTMLTextAreaElement | null>(null);
+  const watchedMessage = watch('message');
+  useEffect(() => {
+    const el = messageTextareaRef.current;
+    if (!el) return;
+    el.style.height = 'auto';
+    el.style.height = `${el.scrollHeight}px`;
+  }, [watchedMessage]);
 
   // 监听表单变化，自动保存草稿
   const watchedValues = watch();
@@ -157,6 +184,7 @@ export default function Contact() {
         setShowDraftNotice(false);
         reset();
         setFiles([]);
+        setCaptchaResetSignal((n) => n + 1);
       } else {
         console.error('Form submission failed:', result.message, result.errors);
         setSubmitStatus('error');
@@ -269,55 +297,28 @@ export default function Contact() {
               )}
 
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                {/* 名字 & 姓氏 */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* 名字 */}
-                  <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
-                      {t('form.firstName.label')} *
-                    </label>
-                    <input
-                      {...register('firstName')}
-                      id="firstName"
-                      type="text"
-                      placeholder={t('form.firstName.placeholder')}
-                      aria-required="true"
-                      aria-invalid={errors.firstName ? 'true' : 'false'}
-                      aria-describedby={errors.firstName ? 'firstName-error' : undefined}
-                      className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent ${
-                        errors.firstName ? 'border-red-500' : 'border-gray-300'
-                      }`}
-                    />
-                    {errors.firstName && (
-                      <p id="firstName-error" className="mt-1 text-sm text-red-600" role="alert">
-                        {t('form.firstName.error')}
-                      </p>
-                    )}
-                  </div>
-
-                  {/* 姓氏 */}
-                  <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
-                      {t('form.lastName.label')} *
-                    </label>
-                    <input
-                      {...register('lastName')}
-                      id="lastName"
-                      type="text"
-                      placeholder={t('form.lastName.placeholder')}
-                      aria-required="true"
-                      aria-invalid={errors.lastName ? 'true' : 'false'}
-                      aria-describedby={errors.lastName ? 'lastName-error' : undefined}
-                      className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent ${
-                        errors.lastName ? 'border-red-500' : 'border-gray-300'
-                      }`}
-                    />
-                    {errors.lastName && (
-                      <p id="lastName-error" className="mt-1 text-sm text-red-600" role="alert">
-                        {t('form.lastName.error')}
-                      </p>
-                    )}
-                  </div>
+                {/* 姓名 */}
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    {t('form.name.label')} *
+                  </label>
+                  <input
+                    {...register('name')}
+                    id="name"
+                    type="text"
+                    placeholder={t('form.name.placeholder')}
+                    aria-required="true"
+                    aria-invalid={errors.name ? 'true' : 'false'}
+                    aria-describedby={errors.name ? 'name-error' : undefined}
+                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent ${
+                      errors.name ? 'border-red-500' : 'border-gray-300'
+                    }`}
+                  />
+                  {errors.name && (
+                    <p id="name-error" className="mt-1 text-sm text-red-600" role="alert">
+                      {t('form.name.error')}
+                    </p>
+                  )}
                 </div>
 
                 {/* 邮箱 */}
@@ -396,17 +397,16 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* 电话号码 */}
+                {/* 电话号码（可选） */}
                 <div>
                   <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700 mb-2">
-                    {t('form.phoneNumber.label')} *
+                    {t('form.phoneNumber.label')}
                   </label>
                   <input
                     {...register('phoneNumber')}
                     id="phoneNumber"
                     type="tel"
                     placeholder={t('form.phoneNumber.placeholder')}
-                    aria-required="true"
                     aria-invalid={errors.phoneNumber ? 'true' : 'false'}
                     aria-describedby={errors.phoneNumber ? 'phoneNumber-error' : undefined}
                     className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent ${
@@ -508,56 +508,43 @@ export default function Contact() {
                   )}
                 </div>
 
-                {/* 推出时间表（可选） */}
-                <div>
-                  <label htmlFor="launchTimeline" className="block text-sm font-medium text-gray-700 mb-2">
-                    {t('form.launchTimeline.label')}
-                  </label>
-                  <input
-                    {...register('launchTimeline')}
-                    id="launchTimeline"
-                    type="text"
-                    placeholder={t('form.launchTimeline.placeholder')}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                  />
-                </div>
-
                 {/* 您的消息 */}
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                     {t('form.message.label')} *
                   </label>
-                  <textarea
-                    {...register('message')}
-                    id="message"
-                    rows={6}
-                    placeholder={t('form.message.placeholder')}
-                    aria-required="true"
-                    aria-invalid={errors.message ? 'true' : 'false'}
-                    aria-describedby={errors.message ? 'message-error' : undefined}
-                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent resize-none ${
-                      errors.message ? 'border-red-500' : 'border-gray-300'
-                    }`}
-                  />
+                  {(() => {
+                    const { ref: rhfMessageRef, ...rhfMessageRest } = register('message');
+                    return (
+                      <textarea
+                        {...rhfMessageRest}
+                        ref={(el) => {
+                          rhfMessageRef(el);
+                          messageTextareaRef.current = el;
+                        }}
+                        id="message"
+                        rows={2}
+                        placeholder={t('form.message.placeholder')}
+                        aria-required="true"
+                        aria-invalid={errors.message ? 'true' : 'false'}
+                        aria-describedby={errors.message ? 'message-error' : undefined}
+                        onInput={(e) => {
+                          // 自动撑高：先重置高度，再依据 scrollHeight 计算；max-h 限制超出后由 overflow-y-auto 接管
+                          const el = e.currentTarget;
+                          el.style.height = 'auto';
+                          el.style.height = `${el.scrollHeight}px`;
+                        }}
+                        className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent resize-none overflow-y-auto max-h-64 ${
+                          errors.message ? 'border-red-500' : 'border-gray-300'
+                        }`}
+                      />
+                    );
+                  })()}
                   {errors.message && (
                     <p id="message-error" className="mt-1 text-sm text-red-600" role="alert">
                       {t('form.message.error')}
                     </p>
                   )}
-                </div>
-
-                {/* 特殊要求（可选） */}
-                <div>
-                  <label htmlFor="specialRequests" className="block text-sm font-medium text-gray-700 mb-2">
-                    {t('form.specialRequests.label')}
-                  </label>
-                  <textarea
-                    {...register('specialRequests')}
-                    id="specialRequests"
-                    rows={3}
-                    placeholder={t('form.specialRequests.placeholder')}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
-                  />
                 </div>
 
                 {/* 文件上传 - 需求 16.6: 支持键盘操作 */}
@@ -614,16 +601,24 @@ export default function Contact() {
                   )}
                 </div>
 
-                {/* mCaptcha 占位符 */}
+                {/* 人机验证 */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     {t('form.humanVerification.label')} *
                   </label>
-                  <div className="bg-gray-100 border border-gray-300 rounded-lg p-4 text-center text-gray-500">
-                    {/* TODO: 集成 mCaptcha */}
-                    <p className="text-sm">{t('form.humanVerification.placeholder')}</p>
-                  </div>
-                  <input {...register('mcaptchaToken')} type="hidden" value="test-token-placeholder" />
+                  <MCaptchaWidget
+                    instanceUrl={MCAPTCHA_INSTANCE_URL}
+                    siteKey={MCAPTCHA_SITEKEY}
+                    resetSignal={captchaResetSignal}
+                    onVerify={(token) => setValue('mcaptchaToken', token, { shouldValidate: true })}
+                    onError={() => setValue('mcaptchaToken', '', { shouldValidate: true })}
+                  />
+                  <input type="hidden" {...register('mcaptchaToken')} />
+                  {errors.mcaptchaToken && (
+                    <p id="mcaptchaToken-error" className="mt-1 text-sm text-red-600" role="alert">
+                      {t('form.humanVerification.error')}
+                    </p>
+                  )}
                 </div>
 
                 {/* 提交按钮 - 需求 16.5: ARIA 状态 */}

@@ -17,37 +17,44 @@ import { z } from 'zod';
 
 /**
  * 验证 mCaptcha token
+ *
+ * - Dev：直接放行，避免本地开发依赖真实实例
+ * - Prod：必须配齐 NEXT_PUBLIC_MCAPTCHA_INSTANCE_URL + NEXT_PUBLIC_MCAPTCHA_SITEKEY + MCAPTCHA_SECRET
+ *   缺任意一项即拒绝（fail-closed）；调用 verify 端点带 5s 超时，网络异常一律视为失败
  */
 async function verifyMCaptchaToken(token: string): Promise<boolean> {
-  // TODO: 实现实际的 mCaptcha 验证
-  // 需要配置 mCaptcha 实例和验证密钥
-  //
-  // 示例实现：
-  // const response = await fetch('https://your-mcaptcha-instance.com/api/v1/pow/verify', {
-  //   method: 'POST',
-  //   headers: { 'Content-Type': 'application/json' },
-  //   body: JSON.stringify({
-  //     token,
-  //     key: process.env.MCAPTCHA_SITE_KEY,
-  //   }),
-  // });
-  // const data = await response.json();
-  // return data.valid === true;
-
-  // 临时实现：在开发环境中跳过验证
   if (process.env.NODE_ENV === 'development') {
-    console.log('[DEV] mCaptcha verification skipped in development mode');
     return true;
   }
 
-  // 生产环境：检查 token 是否存在
-  if (!token || token.length === 0) {
+  const instanceUrl = process.env.NEXT_PUBLIC_MCAPTCHA_INSTANCE_URL;
+  const siteKey = process.env.NEXT_PUBLIC_MCAPTCHA_SITEKEY;
+  const secret = process.env.MCAPTCHA_SECRET;
+
+  if (!instanceUrl || !siteKey || !secret) {
+    console.error('[mCaptcha] Missing configuration in production');
     return false;
   }
 
-  // TODO: 在生产环境中实现真实的验证逻辑
-  console.warn('[WARN] mCaptcha verification not fully implemented');
-  return true;
+  if (!token) return false;
+
+  try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 5000);
+    const response = await fetch(`${instanceUrl.replace(/\/$/, '')}/api/v1/pow/siteverify`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ token, key: siteKey, secret }),
+      signal: controller.signal,
+    });
+    clearTimeout(timeout);
+    if (!response.ok) return false;
+    const data = (await response.json()) as { valid?: boolean };
+    return data.valid === true;
+  } catch (error) {
+    console.error('[mCaptcha] Verify request failed:', error);
+    return false;
+  }
 }
 
 /**
@@ -108,8 +115,7 @@ export async function POST(request: NextRequest) {
 
     // 提取表单字段
     const data = {
-      firstName: formData.get('firstName') as string,
-      lastName: formData.get('lastName') as string,
+      name: formData.get('name') as string,
       email: formData.get('email') as string,
       countryRegion: formData.get('countryRegion') as string,
       companyBrandName: formData.get('companyBrandName') as string,
@@ -118,8 +124,6 @@ export async function POST(request: NextRequest) {
       message: formData.get('message') as string,
       orderQuantity: formData.get('orderQuantity') as string,
       techPackAvailability: formData.get('techPackAvailability') as string,
-      launchTimeline: formData.get('launchTimeline') as string,
-      specialRequests: formData.get('specialRequests') as string,
       mcaptchaToken: formData.get('mcaptchaToken') as string,
     };
 

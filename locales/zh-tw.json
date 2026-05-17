@@ -448,15 +448,10 @@
     },
     "form": {
       "title": "Get A Quote",
-      "firstName": {
-        "label": "First Name",
-        "placeholder": "John",
-        "error": "Please enter your first name"
-      },
-      "lastName": {
-        "label": "Last Name",
-        "placeholder": "Doe",
-        "error": "Please enter your last name"
+      "name": {
+        "label": "Name",
+        "placeholder": "John Doe",
+        "error": "Please enter your name"
       },
       "email": {
         "label": "Email Address",
@@ -475,7 +470,7 @@
         "error": "Please enter your company/brand name"
       },
       "phoneNumber": {
-        "label": "Phone Number",
+        "label": "Phone Number (Optional)",
         "placeholder": "+1 555-123-4567",
         "error": "Please enter a valid phone number"
       },
@@ -499,14 +494,6 @@
         "placeholder": "Select an option",
         "error": "Please select an option"
       },
-      "launchTimeline": {
-        "label": "When do you plan to launch your collection? (Optional)",
-        "placeholder": "e.g. Q2 2024"
-      },
-      "specialRequests": {
-        "label": "Any notes or special requests? (Optional)",
-        "placeholder": "Let us know any additional information..."
-      },
       "fileUpload": {
         "label": "Upload Files (Optional)",
         "description": "Upload tech packs, sketches, or sample photos. Max 5 files, 10MB each.",
@@ -516,7 +503,9 @@
       },
       "humanVerification": {
         "label": "Human Verification",
-        "placeholder": "mCaptcha verification will be integrated here"
+        "placeholder": "Loading verification...",
+        "error": "Please complete the verification before submitting",
+        "notConfigured": "Verification is not configured. Form submissions will be accepted in development mode only."
       },
       "submit": "Submit Inquiry",
       "submitting": "Submitting...",
