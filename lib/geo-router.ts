@@ -10,7 +10,7 @@ import { locales, defaultLocale, type Locale } from '../i18n';
  * Direct country to locale mapping
  * Based on primary language of each country
  */
-export const COUNTRY_LOCALE_MAP: Record<string, Locale> = {
+export const COUNTRY_LOCALE_MAP: Record<string, Locale> = Object.assign(Object.create(null) as Record<string, Locale>, {
   // Japanese
   JP: 'ja',
 
@@ -51,16 +51,16 @@ export const COUNTRY_LOCALE_MAP: Record<string, Locale> = {
 
   // Simplified Chinese
   CN: 'zh',
-};
+});
 
 /**
  * Ambiguous countries that require Accept-Language for disambiguation
  * Key: country code, Value: array of possible locales
  */
-export const AMBIGUOUS_COUNTRIES: Record<string, Locale[]> = {
+export const AMBIGUOUS_COUNTRIES: Record<string, Locale[]> = Object.assign(Object.create(null) as Record<string, Locale[]>, {
   // Belgium: Dutch in Flanders, French in Wallonia
   BE: ['nl', 'fr'],
-};
+});
 
 /**
  * Get locale from country code (direct mapping only)
@@ -162,7 +162,7 @@ export function parseAcceptLanguage(header: string): AcceptLanguageEntry[] {
 /**
  * Language code to locale mapping for Accept-Language matching
  */
-const LANGUAGE_LOCALE_MAP: Record<string, Locale> = {
+const LANGUAGE_LOCALE_MAP: Record<string, Locale> = Object.assign(Object.create(null) as Record<string, Locale>, {
   // Base languages
   en: 'en',
   zh: 'zh',
@@ -184,7 +184,7 @@ const LANGUAGE_LOCALE_MAP: Record<string, Locale> = {
   'zh-cn': 'zh',
   'zh-hans': 'zh',
   'zh-sg': 'zh',
-};
+});
 
 /**
  * Match a language code to a supported locale

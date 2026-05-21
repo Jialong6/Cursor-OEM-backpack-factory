@@ -51,3 +51,7 @@ mcp-config.json
 # But keep the template version
 !mcp-config.json.template
 .claude/
+
+# Reference photos / raw assets (kept locally, not in repo)
+image/
+BetterBagsLogo_透明底压缩.png

@@ -62,8 +62,8 @@ export const AUTHORS: ReadonlyArray<AuthorProfile> = [
       zh: '编辑团队',
     },
     bio: {
-      en: 'The Better Bags Myanmar editorial team shares industry insights and manufacturing expertise from our ISO 9001 certified factory with 800+ professional employees.',
-      zh: 'Better Bags Myanmar 编辑团队分享来自我们 ISO 9001 认证工厂的行业见解和制造专业知识，拥有800多名专业员工。',
+      en: 'The Better Bags Myanmar editorial team shares industry insights and manufacturing expertise from our ISO 9001 certified factory with 600+ professional employees.',
+      zh: 'Better Bags Myanmar 编辑团队分享来自我们 ISO 9001 认证工厂的行业见解和制造专业知识，拥有600多名专业员工。',
     },
     credentials: [
       'ISO 9001 Certified Factory',

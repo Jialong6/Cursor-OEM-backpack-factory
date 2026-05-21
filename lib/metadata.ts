@@ -39,11 +39,11 @@ interface PageMetadata {
 export const homeMetadata = {
   en: {
     title: 'Better Bags Myanmar - Premium OEM Backpack Factory',
-    description: 'Top-tier custom backpack manufacturer in Myanmar. 20+ years experience, 800+ employees, serving global brands with sustainable production.',
+    description: 'Top-tier custom backpack manufacturer in Myanmar. 20+ years of experience, 600+ employees, primarily serving Japanese brands.',
   },
   zh: {
     title: 'Better Bags 缅甸 - 高端背包OEM工厂',
-    description: '缅甸顶级定制背包制造商。20+年经验，800+专业员工，为全球品牌提供可持续生产服务。',
+    description: '缅甸顶级定制背包制造商。20+年经验，600+专业员工，长期服务日本及多国品牌。',
   },
 } as const;
 

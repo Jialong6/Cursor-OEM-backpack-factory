@@ -4,6 +4,9 @@ import { useEffect, useState } from 'react';
 import HeroBanner from '@/components/sections/HeroBanner';
 import { BentoHero } from '@/components/bento';
 import AboutUs from '@/components/sections/AboutUs';
+import CostAdvantage from '@/components/sections/CostAdvantage';
+import WhatSetsUsApart from '@/components/sections/WhatSetsUsApart';
+import MarketPositioning from '@/components/sections/MarketPositioning';
 import Features from '@/components/sections/Features';
 import Services from '@/components/sections/Services';
 import FAQ from '@/components/sections/FAQ';
@@ -68,6 +71,15 @@ export default function Home() {
     <div className="relative">
       {/* Banner 区块 - 支持 Bento Grid 布局 */}
       {useBentoLayout ? <BentoHero /> : <HeroBanner />}
+
+      {/* 成本优势对比区块 */}
+      <CostAdvantage />
+
+      {/* 差异化卖点区块 */}
+      <WhatSetsUsApart />
+
+      {/* 市场定位 2x2 矩阵区块 */}
+      <MarketPositioning />
 
       {/* About 区块 */}
       <AboutUs />
