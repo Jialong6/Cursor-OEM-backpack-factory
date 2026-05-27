@@ -17,7 +17,7 @@ import PhonePrefixSelect from '@/components/ui/PhonePrefixSelect';
 import MCaptchaWidget from '@/components/ui/MCaptchaWidget';
 import { useFormDraft } from '@/hooks/useFormDraft';
 import { useGeoCountry } from '@/hooks/useGeoCountry';
-import { getDialCodeByCountry } from '@/lib/countries';
+import { getDialCodeByCountry, getCountryByCode } from '@/lib/countries';
 import TrustSignals from '@/components/content/TrustSignals';
 
 const MCAPTCHA_INSTANCE_URL = process.env.NEXT_PUBLIC_MCAPTCHA_INSTANCE_URL || '';
@@ -111,14 +111,16 @@ export default function Contact() {
     }
   }, [geoCountryCode, watch, setValue]);
 
-  // 国家变化时联动电话区号(用户未手动改过时)
+  // 国家变化时联动电话所属国家(用户未手动改过时)
+  // 注意:phoneCountryCode 存的是 ISO country code(与 countryRegion 同语义),
+  // 避免 +1 等多国共享 dial code 引起 select 显示成另一个国家
   const watchedCountry = watch('countryRegion');
   useEffect(() => {
     if (!watchedCountry) return;
     if (phoneCodeManuallySet.current) return;
-    const dial = getDialCodeByCountry(watchedCountry);
-    if (dial) {
-      setValue('phoneCountryCode', dial, { shouldValidate: false });
+    // 只有数据表里真存在的 ISO code 才设置,避免脏值
+    if (getCountryByCode(watchedCountry)) {
+      setValue('phoneCountryCode', watchedCountry, { shouldValidate: false });
     }
   }, [watchedCountry, setValue]);
 
@@ -152,6 +154,8 @@ export default function Contact() {
     clearDraft();
     reset();
     setShowDraftNotice(false);
+    // Discard 后允许国家联动重新生效
+    phoneCodeManuallySet.current = false;
   };
 
   // 处理文件选择
@@ -181,8 +185,14 @@ export default function Contact() {
       // 创建 FormData 对象
       const formData = new FormData();
 
+      // phoneCountryCode 在内部存 ISO code,提交时还原为 dial code 字符串,保持后端/邮件模板兼容
+      const submitData: Record<string, string | undefined> = { ...data };
+      if (submitData.phoneCountryCode) {
+        submitData.phoneCountryCode = getDialCodeByCountry(submitData.phoneCountryCode) || '';
+      }
+
       // 添加所有表单字段
-      Object.entries(data).forEach(([key, value]) => {
+      Object.entries(submitData).forEach(([key, value]) => {
         formData.append(key, value || '');
       });
 

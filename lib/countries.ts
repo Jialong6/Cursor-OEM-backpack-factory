@@ -329,6 +329,8 @@ export function getDialCodeByCountry(code: string): string | undefined {
 export function getFlagEmoji(code: string): string {
   if (!code || code.length !== 2) return '';
   const upper = code.toUpperCase();
+  // 业务诉求:TW 显示与 CN 一致的国旗
+  if (upper === 'TW') return getFlagEmoji('CN');
   const A = 0x1f1e6;
   const codePoints = [...upper].map((c) => A + (c.charCodeAt(0) - 65));
   return String.fromCodePoint(...codePoints);

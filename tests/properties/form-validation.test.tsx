@@ -59,8 +59,8 @@ const phoneArbitrary = fc
   )
   .map(([first, rest]) => first + rest.join(''));
 
-// 生成有效的国际电话区号("+1" / "+86" 等)
-const dialCodeArbitrary = fc.constantFrom('+1', '+86', '+81', '+44', '+49', '+33', '+95', '+852', '+886');
+// 生成有效的电话所属国家 ISO code(与 countryRegion 同字段族)
+const phoneCountryCodeArbitrary = fc.constantFrom('US', 'CA', 'CN', 'JP', 'GB', 'DE', 'FR', 'TW', 'MM');
 
 // 生成非空字符串（包含至少一个非空格字符）
 const nonEmptyString = (minLength: number, maxLength: number) =>
@@ -80,7 +80,7 @@ const simpleEmailArbitrary = fc
 // 电话区号 + 号码:要么同时为空,要么同时非空(满足 schema 联合校验)
 const phonePairArbitrary = fc.oneof(
   fc.record({ phoneCountryCode: fc.constant(''), phoneNumber: fc.constant('') }),
-  fc.record({ phoneCountryCode: dialCodeArbitrary, phoneNumber: phoneArbitrary })
+  fc.record({ phoneCountryCode: phoneCountryCodeArbitrary, phoneNumber: phoneArbitrary })
 );
 
 const validFormDataArbitrary = fc
@@ -416,7 +416,7 @@ describe('Property 10: 表单验证完整性 - 单元测试补充', () => {
         email: 'john@example.com',
         countryRegion: 'USA',
         companyBrandName: 'Test Company',
-        phoneCountryCode: '+1',
+        phoneCountryCode: 'US',
         phoneNumber: '555-123-4567',
         subject: 'Test inquiry',
         message: 'This is a test message with more than 20 characters',
@@ -435,7 +435,7 @@ describe('Property 10: 表单验证完整性 - 单元测试补充', () => {
         email: 'invalid-email',
         countryRegion: 'USA',
         companyBrandName: 'Test Company',
-        phoneCountryCode: '+1',
+        phoneCountryCode: 'US',
         phoneNumber: '555-123-4567',
         subject: 'Test inquiry',
         message: 'This is a test message with more than 20 characters',
@@ -472,7 +472,7 @@ describe('Property 10: 表单验证完整性 - 单元测试补充', () => {
         email: 'john@example.com',
         countryRegion: 'USA',
         companyBrandName: 'Test Company',
-        phoneCountryCode: '+1',
+        phoneCountryCode: 'US',
         phoneNumber: '555-123-4567',
         subject: 'Test inquiry',
         message: 'Short message',
@@ -491,7 +491,7 @@ describe('Property 10: 表单验证完整性 - 单元测试补充', () => {
         email: 'john@example.com',
         countryRegion: 'USA',
         companyBrandName: 'Test Company',
-        phoneCountryCode: '+1',
+        phoneCountryCode: 'US',
         phoneNumber: '555-123-4567',
         subject: 'Test inquiry',
         message: 'This is a test message with more than 20 characters',
@@ -509,7 +509,7 @@ describe('Property 10: 表单验证完整性 - 单元测试补充', () => {
         email: 'john@example.com',
         countryRegion: 'USA',
         companyBrandName: 'Test Company',
-        phoneCountryCode: '+1',
+        phoneCountryCode: 'US',
         phoneNumber: '555-123-4567',
         subject: 'Test inquiry',
         message: 'This is a test message with more than 20 characters',

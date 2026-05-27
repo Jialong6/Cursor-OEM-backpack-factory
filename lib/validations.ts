@@ -68,10 +68,11 @@ export const contactFormSchema = z.object({
     .min(2, 'Company/Brand name must be at least 2 characters')
     .max(100, 'Company/Brand name must be less than 100 characters'),
 
-  // 可选字段:国际电话区号("+86" 等),与 phoneNumber 配对
+  // 可选字段:电话所属国家 ISO 3166-1 alpha-2 代码(如 "CN" / "US"),与 phoneNumber 配对
+  // 选用 country code 而非 dial code,避免 +1 等多国共享区号导致的歧义
   phoneCountryCode: z
     .string()
-    .regex(/^\+\d{1,4}$/, 'Invalid dial code')
+    .regex(/^[A-Z]{2}$/, 'Invalid country code')
     .optional()
     .or(z.literal('')),
 

@@ -9,9 +9,9 @@ import {
 } from '@/lib/countries';
 
 export interface PhonePrefixSelectProps {
-  /** 当前选中的国际区号("+86" 等),空字符串 = 未选 */
+  /** 当前选中国家的 ISO 3166-1 alpha-2 代码("CN"/"US"/"CA" 等),空字符串 = 未选 */
   value: string;
-  onChange: (dialCode: string) => void;
+  onChange: (countryCode: string) => void;
   id: string;
   locale: string;
   disabled?: boolean;
@@ -89,7 +89,7 @@ export default function PhonePrefixSelect({
   const listboxId = `${id}-listbox`;
 
   const selected = useMemo(
-    () => (value ? sorted.all.find((c) => c.dialCode === value) : undefined),
+    () => (value ? sorted.all.find((c) => c.code === value) : undefined),
     [value, sorted.all]
   );
 
@@ -133,7 +133,7 @@ export default function PhonePrefixSelect({
   }, [activeIndex, isOpen, reactId]);
 
   const handleSelect = (c: LocalizedCountry) => {
-    onChange(c.dialCode);
+    onChange(c.code);
     setIsOpen(false);
     window.setTimeout(() => triggerRef.current?.focus(), 0);
   };
@@ -311,6 +311,7 @@ function PrefixOption({ country, index, isActive, isSelected, reactId, onSelect 
       id={`${reactId}-opt-${index}`}
       role="option"
       aria-selected={isSelected}
+      data-code={country.code}
       data-dial={country.dialCode}
       onMouseDown={(e) => {
         e.preventDefault();
