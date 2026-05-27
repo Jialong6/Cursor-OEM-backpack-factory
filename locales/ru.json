@@ -855,32 +855,11 @@
     "subtitle": "Doveriye brendov po vsemu miru dlya kachestvennogo proizvodstva ryukzakov OEM",
     "items": [
       {
-        "name": "Sarah Chen",
-        "role": "Sourcing Director",
-        "company": "Pacific Outdoor Co.",
-        "quote": "Better Bags delivered exceptional quality on our custom backpack line. Their attention to detail and commitment to deadlines exceeded our expectations.",
-        "rating": 5
-      },
-      {
-        "name": "Michael Torres",
-        "role": "Product Manager",
-        "company": "EuroTrail Gear",
-        "quote": "Working with Better Bags transformed our product development process. Their engineering team provided valuable design input that improved our final product.",
-        "rating": 5
-      },
-      {
-        "name": "Yuki Tanaka",
-        "role": "Brand Director",
-        "company": "Nomad Supply",
-        "quote": "From sampling to bulk production, Better Bags maintained consistent quality. Their communication throughout the process was outstanding.",
-        "rating": 5
-      },
-      {
-        "name": "David Muller",
-        "role": "Operations Head",
-        "company": "Summit Brands GmbH",
-        "quote": "We have been partnering with Better Bags for over 3 years. Their competitive pricing and reliable delivery make them our go-to manufacturer.",
-        "rating": 5
+        "name": "Шимидзу Кота",
+        "role": "Начальник отдела управления товарами",
+        "company": "Carrot Company",
+        "rating": 4.5,
+        "quote": "Если оценивать по 10-балльной шкале, я бы поставил 9. Во время моего второго визита на фабрику в Мьянме я заметил небольшой нюанс, но в остальном всё очень хорошо — более чем достаточно для наших текущих задач. На производственной линии были некоторые сложности, но это бывает на любом заводе; кроме этого никаких проблем. В целом, они делают добротную и надёжную работу."
       }
     ]
   },
