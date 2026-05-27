@@ -220,6 +220,7 @@ describe('Translation File Unit Tests', () => {
       'languageBanner',
       'glossary',
       'testimonials',
+      'quoteWidget',
     ];
 
     const actualSections = Object.keys(translations!).sort();

@@ -31,6 +31,7 @@ export const HOME_NAMESPACES = [
   'bento',
   'author',
   'certifications',
+  'quoteWidget',
 ] as const;
 
 /**

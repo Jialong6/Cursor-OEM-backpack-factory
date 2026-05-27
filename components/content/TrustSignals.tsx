@@ -1,16 +1,16 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import CertificationBadges from './CertificationBadges';
 
 /**
  * 信任信号组件
  *
  * 用于联系页左栏，展示 E-E-A-T 信任信号：
- * - 国际认证徽章
  * - 24 小时响应承诺
  * - 20+ 年制造经验
  * - 专业资质简介
+ *
+ * 注：拿到正式资质证书前，不展示 CertificationBadges。
  */
 export default function TrustSignals() {
   const t = useTranslations('contact.trust');
@@ -77,9 +77,6 @@ export default function TrustSignals() {
           <span className="text-sm text-neutral-600">{t('certified')}</span>
         </div>
       </div>
-
-      {/* 认证徽章 */}
-      <CertificationBadges variant="horizontal" />
     </div>
   );
 }

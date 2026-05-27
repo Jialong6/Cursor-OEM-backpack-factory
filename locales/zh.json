@@ -184,15 +184,42 @@
     "intro": "填写下方表单，我们会在24小时内回复。如需紧急咨询，请直接拨打电话或通过WhatsApp联系。",
     "address": {
       "label": "地址",
-      "value": "Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai工业区，仰光，缅甸"
+      "value": "Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai工业区，仰光，缅甸",
+      "viewOnMap": "在 Google 地图上查看"
     },
     "phone": {
       "label": "电话",
-      "value": "+1 814.880.1463"
+      "fallback": "其他语言请通过邮件联系",
+      "lines": [
+        {
+          "lang": "中文",
+          "number": "+86 (532) 8856-2277",
+          "hours": "北京时间 8:00-17:00 · 周一至周五",
+          "person": ""
+        },
+        {
+          "lang": "日本語 / 한국어",
+          "number": "+86 152 5320 6760",
+          "hours": "北京时间 8:00-17:00 · 周一至周五",
+          "person": "崔小姐"
+        },
+        {
+          "lang": "English",
+          "number": "+86 130 6139 1463",
+          "hours": "缅甸时间 7:30-18:00 · 周一至周六",
+          "person": "Mr. Jay"
+        },
+        {
+          "lang": "မြန်မာ",
+          "number": "+95 9 9856 70999",
+          "hours": "缅甸时间 7:30-18:00 · 周一至周六",
+          "person": ""
+        }
+      ]
     },
     "email": {
       "label": "邮箱",
-      "value": "jay@biteerbags.com"
+      "value": "jay@betterbagsmm.com"
     },
     "whatsapp": {
       "label": "WhatsApp",
@@ -202,7 +229,7 @@
       "title": "为什么信赖我们",
       "responseTime": "24小时响应保证",
       "experience": "20年以上制造经验",
-      "certified": "ISO 9001、OEKO-TEX、GRS、GOTS 认证"
+      "certified": "专业团队 · 工厂直营 · 可追溯生产"
     },
     "form": {
       "title": "获取报价",
@@ -233,7 +260,7 @@
       },
       "phoneNumber": {
         "label": "电话号码（可选）",
-        "placeholder": "138 0000 0000",
+        "placeholder": "电话号码",
         "error": "请输入有效的电话号码",
         "codeLabel": "电话国家区号",
         "codePlaceholder": "区号",
@@ -868,5 +895,11 @@
     "oekoTex": "OEKO-TEX",
     "grs": "GRS",
     "gots": "GOTS"
+  },
+  "quoteWidget": {
+    "openLabel": "获取报价",
+    "minimize": "最小化",
+    "dragHandle": "拖动以移动",
+    "mobileJumpLabel": "前往报价表单"
   }
 }

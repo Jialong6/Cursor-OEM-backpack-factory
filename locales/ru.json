@@ -523,11 +523,38 @@
     "intro": "Fill out the form below and we'll get back to you within 24 hours. For urgent inquiries, call or WhatsApp us directly.",
     "address": {
       "label": "Address",
-      "value": "Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai Industrial Zone, Yangon, Myanmar"
+      "value": "Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai Industrial Zone, Yangon, Myanmar",
+      "viewOnMap": "View on Google Maps"
     },
     "phone": {
       "label": "Phone Number",
-      "value": "+1 814.880.1463"
+      "fallback": "For other languages, please contact us via email",
+      "lines": [
+        {
+          "lang": "中文",
+          "number": "+86 (532) 8856-2277",
+          "hours": "Beijing Time 8:00-17:00 · Mon-Fri",
+          "person": ""
+        },
+        {
+          "lang": "日本語 / 한국어",
+          "number": "+86 152 5320 6760",
+          "hours": "Beijing Time 8:00-17:00 · Mon-Fri",
+          "person": "Ms. Cui"
+        },
+        {
+          "lang": "English",
+          "number": "+86 130 6139 1463",
+          "hours": "Myanmar Time 7:30-18:00 · Mon-Sat",
+          "person": "Mr. Jay"
+        },
+        {
+          "lang": "မြန်မာ",
+          "number": "+95 9 9856 70999",
+          "hours": "Myanmar Time 7:30-18:00 · Mon-Sat",
+          "person": ""
+        }
+      ]
     },
     "email": {
       "label": "Email Address",
@@ -572,7 +599,7 @@
       },
       "phoneNumber": {
         "label": "Phone Number (Optional)",
-        "placeholder": "138 0000 0000",
+        "placeholder": "Номер телефона",
         "error": "Please enter a valid phone number",
         "codeLabel": "Phone country code",
         "codePlaceholder": "Code",
@@ -868,5 +895,11 @@
     "oekoTex": "OEKO-TEX",
     "grs": "GRS",
     "gots": "GOTS"
+  },
+  "quoteWidget": {
+    "openLabel": "Get A Quote",
+    "minimize": "Minimize",
+    "dragHandle": "Drag to move",
+    "mobileJumpLabel": "Jump to quote form"
   }
 }

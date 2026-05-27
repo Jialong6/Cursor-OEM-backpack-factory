@@ -13,6 +13,8 @@ import FAQ from '@/components/sections/FAQ';
 import Contact from '@/components/sections/Contact';
 import Testimonials from '@/components/sections/Testimonials';
 import Blog from '@/components/sections/Blog';
+import { QuoteFormProvider } from '@/components/quote/QuoteFormContext';
+import FloatingQuoteWidget from '@/components/quote/FloatingQuoteWidget';
 
 /**
  * 首页组件 - 单页滚动式网站
@@ -96,8 +98,11 @@ export default function Home() {
       {/* FAQ 区块 */}
       <FAQ />
 
-      {/* Contact 区块 */}
-      <Contact />
+      {/* Contact 区块 + 可拖动 Get A Quote 浮窗（共享同一 form state） */}
+      <QuoteFormProvider>
+        <Contact />
+        <FloatingQuoteWidget />
+      </QuoteFormProvider>
 
       {/* Blog 区块 */}
       <Blog />
