@@ -68,12 +68,19 @@ export const contactFormSchema = z.object({
     .min(2, 'Company/Brand name must be at least 2 characters')
     .max(100, 'Company/Brand name must be less than 100 characters'),
 
-  // 可选字段：电话号码
+  // 可选字段:国际电话区号("+86" 等),与 phoneNumber 配对
+  phoneCountryCode: z
+    .string()
+    .regex(/^\+\d{1,4}$/, 'Invalid dial code')
+    .optional()
+    .or(z.literal('')),
+
+  // 可选字段：电话号码(不含区号本体)
   phoneNumber: z
     .string()
     .regex(
-      /^[\d\s()+-]+$/,
-      'Phone number can only contain numbers, spaces, parentheses, plus, and hyphen'
+      /^[\d\s()-]+$/,
+      'Phone number can only contain numbers, spaces, parentheses, and hyphen'
     )
     .min(10, 'Phone number must be at least 10 characters')
     .max(20, 'Phone number must be less than 20 characters')
@@ -99,6 +106,15 @@ export const contactFormSchema = z.object({
 
   // mCaptcha token（需求 11.8）
   mcaptchaToken: z.string().min(1, 'Please complete the verification before submitting'),
+}).superRefine((data, ctx) => {
+  // 联合校验:phoneNumber 非空时,必须有 phoneCountryCode
+  if (data.phoneNumber && !data.phoneCountryCode) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      message: 'Please select a dial code',
+      path: ['phoneCountryCode'],
+    });
+  }
 });
 
 /**

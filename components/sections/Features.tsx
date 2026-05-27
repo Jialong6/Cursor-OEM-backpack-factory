@@ -18,7 +18,6 @@ export default function Features() {
   const t = useTranslations('features');
   const tCustom = useTranslations('customization');
 
-  const jayAnim = useScrollAnimation({ variant: 'fade-up' });
   const advantagesAnim = useScrollAnimation({ variant: 'fade-up', delay: 100 });
   const customAnim = useScrollAnimation({ variant: 'fade-up', delay: 200 });
 
@@ -57,26 +56,6 @@ export default function Features() {
       className="relative bg-neutral-50 px-6 py-20 md:px-12 lg:py-28"
     >
       <div className="mx-auto w-full max-w-7xl">
-        {/* Jay 个人介绍 */}
-        <div ref={jayAnim.ref as React.RefObject<HTMLDivElement>} className={`mb-20 text-center ${jayAnim.animationClassName}`}>
-          <h2 className="mb-6 text-3xl font-bold text-neutral-800 md:text-4xl">
-            {t('jay.title')}
-          </h2>
-          <div className="mx-auto max-w-3xl text-lg leading-relaxed text-neutral-600">
-            <p>
-              {t('jay.desc1')}
-              <span className="font-semibold text-primary">
-                Penn State University
-              </span>
-              {t('jay.and')}
-              <span className="font-semibold text-primary">
-                Harrisburg University of Science and Technology
-              </span>
-              {t('jay.desc2')}
-            </p>
-          </div>
-        </div>
-
         {/* 为什么选择 Better Bags */}
         <div ref={advantagesAnim.ref as React.RefObject<HTMLDivElement>} className={`mb-20 ${advantagesAnim.animationClassName}`}>
           <h2 className="mb-12 text-center text-3xl font-bold text-neutral-800 md:text-4xl lg:text-5xl">

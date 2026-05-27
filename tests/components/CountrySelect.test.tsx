@@ -1,152 +1,197 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import CountrySelect from '@/components/ui/CountrySelect';
-import { COUNTRIES, POPULAR_COUNTRY_CODES } from '@/lib/countries';
+import { POPULAR_COUNTRY_CODES } from '@/lib/countries';
 
-describe('CountrySelect', () => {
+/**
+ * 新版 CountrySelect 是一个自实现 ARIA combobox:
+ * - 触发按钮 role="combobox",关闭态不渲染 options
+ * - 点击按钮打开弹层,内部含搜索框 + listbox + role=option 列表
+ * - 通过 click 选项触发 onChange(传国家 ISO code)
+ */
+describe('CountrySelect (combobox)', () => {
   const defaultProps = {
     value: '',
     onChange: vi.fn(),
     id: 'country-select',
     locale: 'en',
+    placeholder: 'Select a country',
   };
 
-  describe('rendering', () => {
-    it('should render a select element', () => {
+  describe('trigger button', () => {
+    it('renders a combobox trigger with given placeholder when no value', () => {
       render(<CountrySelect {...defaultProps} />);
-      const select = screen.getByRole('combobox');
-      expect(select).toBeInTheDocument();
+      const trigger = screen.getByRole('combobox');
+      expect(trigger).toBeInTheDocument();
+      expect(trigger).toHaveTextContent('Select a country');
+      expect(trigger).toHaveAttribute('aria-expanded', 'false');
     });
 
-    it('should render all country options', () => {
-      render(<CountrySelect {...defaultProps} />);
-      const options = screen.getAllByRole('option');
-      // +1 for placeholder option, +1 for separator
-      expect(options.length).toBeGreaterThanOrEqual(COUNTRIES.length + 1);
+    it('shows localized country label when value is set (en)', () => {
+      render(<CountrySelect {...defaultProps} value="CN" />);
+      const trigger = screen.getByRole('combobox');
+      expect(trigger.textContent).toContain('China');
+      expect(trigger.textContent).toContain('+86');
     });
 
-    it('should display placeholder text', () => {
-      render(<CountrySelect {...defaultProps} placeholder="Select a country" />);
-      const placeholder = screen.getByText('Select a country');
-      expect(placeholder).toBeInTheDocument();
-    });
-
-    it('should show Chinese names for zh locale', () => {
-      render(<CountrySelect {...defaultProps} locale="zh" />);
-      const chinaOption = screen.getByText('中国');
-      expect(chinaOption).toBeInTheDocument();
-    });
-
-    it('should show English names for en locale', () => {
-      render(<CountrySelect {...defaultProps} locale="en" />);
-      const chinaOption = screen.getByText('China');
-      expect(chinaOption).toBeInTheDocument();
+    it('shows Chinese label when locale=zh', () => {
+      render(<CountrySelect {...defaultProps} value="CN" locale="zh" />);
+      const trigger = screen.getByRole('combobox');
+      expect(trigger.textContent).toContain('中国');
     });
   });
 
-  describe('popular countries', () => {
-    it('should display popular countries before other countries', () => {
-      render(<CountrySelect {...defaultProps} locale="en" />);
-      const options = screen.getAllByRole('option');
-
-      // Find China (popular) and Australia (not popular, but comes first alphabetically)
-      const chinaIndex = options.findIndex((opt) => opt.textContent === 'China');
-      const australiaIndex = options.findIndex((opt) => opt.textContent === 'Australia');
-
-      // China should come before Australia since China is popular
-      expect(chinaIndex).toBeLessThan(australiaIndex);
+  describe('open state and options', () => {
+    it('does not render listbox when closed', () => {
+      render(<CountrySelect {...defaultProps} />);
+      expect(screen.queryByRole('listbox')).toBeNull();
     });
 
-    it('should include all popular countries in options', () => {
-      render(<CountrySelect {...defaultProps} locale="en" />);
+    it('opens the listbox on trigger click and renders options', () => {
+      render(<CountrySelect {...defaultProps} />);
+      fireEvent.click(screen.getByRole('combobox'));
+      expect(screen.getByRole('listbox')).toBeInTheDocument();
+      const options = screen.getAllByRole('option');
+      expect(options.length).toBeGreaterThanOrEqual(POPULAR_COUNTRY_CODES.length);
+    });
 
-      const optionsText = screen
+    it('lists every popular country code as an option when open', () => {
+      render(<CountrySelect {...defaultProps} />);
+      fireEvent.click(screen.getByRole('combobox'));
+      const dataValues = screen
         .getAllByRole('option')
-        .map((opt) => (opt as HTMLOptionElement).value);
-
+        .map((opt) => opt.getAttribute('data-value'));
       POPULAR_COUNTRY_CODES.forEach((code) => {
-        expect(optionsText).toContain(code);
+        expect(dataValues).toContain(code);
       });
+    });
+
+    it('places popular countries before alphabetical ones', () => {
+      render(<CountrySelect {...defaultProps} />);
+      fireEvent.click(screen.getByRole('combobox'));
+      const options = screen.getAllByRole('option');
+      const chinaIdx = options.findIndex((o) => o.getAttribute('data-value') === 'CN');
+      const argentinaIdx = options.findIndex((o) => o.getAttribute('data-value') === 'AR');
+      expect(chinaIdx).toBeGreaterThanOrEqual(0);
+      expect(argentinaIdx).toBeGreaterThanOrEqual(0);
+      expect(chinaIdx).toBeLessThan(argentinaIdx);
+    });
+  });
+
+  describe('search filtering', () => {
+    it('filters options by name substring (en)', () => {
+      render(<CountrySelect {...defaultProps} />);
+      fireEvent.click(screen.getByRole('combobox'));
+      const search = screen.getByRole('searchbox') as HTMLInputElement;
+      fireEvent.change(search, { target: { value: 'japa' } });
+      const dataValues = screen
+        .getAllByRole('option')
+        .map((opt) => opt.getAttribute('data-value'));
+      expect(dataValues).toContain('JP');
+      expect(dataValues).not.toContain('AR');
+    });
+
+    it('filters options by dial code', () => {
+      render(<CountrySelect {...defaultProps} />);
+      fireEvent.click(screen.getByRole('combobox'));
+      const search = screen.getByRole('searchbox') as HTMLInputElement;
+      fireEvent.change(search, { target: { value: '+44' } });
+      const dataValues = screen
+        .getAllByRole('option')
+        .map((opt) => opt.getAttribute('data-value'));
+      expect(dataValues).toContain('GB');
+    });
+
+    it('shows noResults text when nothing matches', () => {
+      render(<CountrySelect {...defaultProps} noResultsText="Nothing found" />);
+      fireEvent.click(screen.getByRole('combobox'));
+      const search = screen.getByRole('searchbox') as HTMLInputElement;
+      fireEvent.change(search, { target: { value: 'qzqzqz' } });
+      expect(screen.getByText('Nothing found')).toBeInTheDocument();
     });
   });
 
   describe('interaction', () => {
-    it('should call onChange when selection changes', () => {
+    it('calls onChange with country code when an option is clicked', () => {
       const onChange = vi.fn();
       render(<CountrySelect {...defaultProps} onChange={onChange} />);
-
-      const select = screen.getByRole('combobox');
-      fireEvent.change(select, { target: { value: 'CN' } });
-
+      fireEvent.click(screen.getByRole('combobox'));
+      const option = screen.getAllByRole('option').find(
+        (o) => o.getAttribute('data-value') === 'CN'
+      );
+      expect(option).toBeDefined();
+      fireEvent.mouseDown(option!);
       expect(onChange).toHaveBeenCalledWith('CN');
-    });
-
-    it('should display selected value', () => {
-      render(<CountrySelect {...defaultProps} value="US" />);
-      const select = screen.getByRole('combobox') as HTMLSelectElement;
-      expect(select.value).toBe('US');
     });
   });
 
   describe('loading state', () => {
-    it('should show loading text when isLoading is true', () => {
+    it('shows loading text on the trigger when isLoading', () => {
       render(<CountrySelect {...defaultProps} isLoading loadingText="Detecting..." />);
-      const loadingOption = screen.getByText('Detecting...');
-      expect(loadingOption).toBeInTheDocument();
+      const trigger = screen.getByRole('combobox');
+      expect(trigger).toHaveTextContent('Detecting...');
     });
 
-    it('should disable select when loading', () => {
+    it('disables the trigger when loading', () => {
       render(<CountrySelect {...defaultProps} isLoading />);
-      const select = screen.getByRole('combobox');
-      expect(select).toBeDisabled();
+      const trigger = screen.getByRole('combobox');
+      expect(trigger).toBeDisabled();
     });
   });
 
   describe('error state', () => {
-    it('should apply error styles when hasError is true', () => {
+    it('applies error border class when hasError', () => {
       render(<CountrySelect {...defaultProps} hasError />);
-      const select = screen.getByRole('combobox');
-      expect(select).toHaveClass('border-red-500');
+      const trigger = screen.getByRole('combobox');
+      expect(trigger).toHaveClass('border-red-500');
     });
 
-    it('should have aria-invalid when hasError is true', () => {
+    it('sets aria-invalid="true" when hasError', () => {
       render(<CountrySelect {...defaultProps} hasError />);
-      const select = screen.getByRole('combobox');
-      expect(select).toHaveAttribute('aria-invalid', 'true');
+      const trigger = screen.getByRole('combobox');
+      expect(trigger).toHaveAttribute('aria-invalid', 'true');
     });
 
-    it('should reference error message via aria-describedby', () => {
+    it('sets aria-describedby when hasError and errorId provided', () => {
       render(<CountrySelect {...defaultProps} hasError errorId="country-error" />);
-      const select = screen.getByRole('combobox');
-      expect(select).toHaveAttribute('aria-describedby', 'country-error');
+      const trigger = screen.getByRole('combobox');
+      expect(trigger).toHaveAttribute('aria-describedby', 'country-error');
     });
   });
 
   describe('disabled state', () => {
-    it('should be disabled when disabled prop is true', () => {
+    it('is disabled when disabled prop is true', () => {
       render(<CountrySelect {...defaultProps} disabled />);
-      const select = screen.getByRole('combobox');
-      expect(select).toBeDisabled();
+      const trigger = screen.getByRole('combobox');
+      expect(trigger).toBeDisabled();
     });
   });
 
   describe('accessibility', () => {
-    it('should have aria-required when required', () => {
+    it('marks aria-required="true" when required', () => {
       render(<CountrySelect {...defaultProps} required />);
-      const select = screen.getByRole('combobox');
-      expect(select).toHaveAttribute('aria-required', 'true');
+      const trigger = screen.getByRole('combobox');
+      expect(trigger).toHaveAttribute('aria-required', 'true');
     });
 
-    it('should have correct id attribute', () => {
+    it('uses the given id on the trigger', () => {
       render(<CountrySelect {...defaultProps} id="test-country" />);
-      const select = screen.getByRole('combobox');
-      expect(select).toHaveAttribute('id', 'test-country');
+      const trigger = screen.getByRole('combobox');
+      expect(trigger).toHaveAttribute('id', 'test-country');
     });
 
-    it('should not have aria-describedby when no error', () => {
-      render(<CountrySelect {...defaultProps} hasError={false} />);
-      const select = screen.getByRole('combobox');
-      expect(select).not.toHaveAttribute('aria-describedby');
+    it('exposes aria-haspopup="listbox"', () => {
+      render(<CountrySelect {...defaultProps} />);
+      const trigger = screen.getByRole('combobox');
+      expect(trigger).toHaveAttribute('aria-haspopup', 'listbox');
+    });
+
+    it('reflects open state via aria-expanded', () => {
+      render(<CountrySelect {...defaultProps} />);
+      const trigger = screen.getByRole('combobox');
+      expect(trigger).toHaveAttribute('aria-expanded', 'false');
+      fireEvent.click(trigger);
+      expect(trigger).toHaveAttribute('aria-expanded', 'true');
     });
   });
 });

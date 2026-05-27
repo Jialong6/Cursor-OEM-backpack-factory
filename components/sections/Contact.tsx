@@ -13,9 +13,11 @@ import {
   type ContactFormData,
 } from '@/lib/validations';
 import CountrySelect from '@/components/ui/CountrySelect';
+import PhonePrefixSelect from '@/components/ui/PhonePrefixSelect';
 import MCaptchaWidget from '@/components/ui/MCaptchaWidget';
 import { useFormDraft } from '@/hooks/useFormDraft';
 import { useGeoCountry } from '@/hooks/useGeoCountry';
+import { getDialCodeByCountry } from '@/lib/countries';
 import TrustSignals from '@/components/content/TrustSignals';
 
 const MCAPTCHA_INSTANCE_URL = process.env.NEXT_PUBLIC_MCAPTCHA_INSTANCE_URL || '';
@@ -69,6 +71,9 @@ export default function Contact() {
     resolver: zodResolver(contactFormSchema),
   });
 
+  // 用户是否手动改过电话区号(被改过后,选国家不再联动覆盖)
+  const phoneCodeManuallySet = useRef(false);
+
   // 恢复草稿
   useEffect(() => {
     const draft = restoreDraft();
@@ -79,6 +84,7 @@ export default function Contact() {
         'email',
         'countryRegion',
         'companyBrandName',
+        'phoneCountryCode',
         'phoneNumber',
         'subject',
         'message',
@@ -90,6 +96,10 @@ export default function Contact() {
           setValue(key as keyof ContactFormData, value as string);
         }
       });
+      // 草稿里若已存有 phoneCountryCode,视为用户先前选择,避免被国家联动覆盖
+      if (draft.phoneCountryCode) {
+        phoneCodeManuallySet.current = true;
+      }
       setShowDraftNotice(true);
     }
   }, [restoreDraft, hasDraft, setValue]);
@@ -100,6 +110,17 @@ export default function Contact() {
       setValue('countryRegion', geoCountryCode);
     }
   }, [geoCountryCode, watch, setValue]);
+
+  // 国家变化时联动电话区号(用户未手动改过时)
+  const watchedCountry = watch('countryRegion');
+  useEffect(() => {
+    if (!watchedCountry) return;
+    if (phoneCodeManuallySet.current) return;
+    const dial = getDialCodeByCountry(watchedCountry);
+    if (dial) {
+      setValue('phoneCountryCode', dial, { shouldValidate: false });
+    }
+  }, [watchedCountry, setValue]);
 
   // message 自动撑高：在草稿恢复 / reset 等 setValue 路径下同步调整高度（onInput 仅响应键盘输入）
   const messageTextareaRef = useRef<HTMLTextAreaElement | null>(null);
@@ -355,13 +376,17 @@ export default function Contact() {
                     <CountrySelect
                       id="countryRegion"
                       value={watch('countryRegion') || ''}
-                      onChange={(value) => setValue('countryRegion', value)}
+                      onChange={(value) => setValue('countryRegion', value, { shouldValidate: true })}
                       placeholder={t('form.countryRegion.placeholder')}
                       hasError={!!errors.countryRegion}
                       errorId="countryRegion-error"
                       isLoading={isGeoLoading}
                       loadingText={t('form.countryRegion.loading')}
                       locale={locale}
+                      searchPlaceholder={t('form.countryRegion.searchPlaceholder')}
+                      noResultsText={t('form.countryRegion.noResults')}
+                      popularLabel={t('form.countryRegion.popularLabel')}
+                      allLabel={t('form.countryRegion.allLabel')}
                       required
                     />
                     <input type="hidden" {...register('countryRegion')} />
@@ -397,22 +422,49 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* 电话号码（可选） */}
+                {/* 电话号码(可选):前缀 + 号码 */}
                 <div>
                   <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700 mb-2">
                     {t('form.phoneNumber.label')}
                   </label>
-                  <input
-                    {...register('phoneNumber')}
-                    id="phoneNumber"
-                    type="tel"
-                    placeholder={t('form.phoneNumber.placeholder')}
-                    aria-invalid={errors.phoneNumber ? 'true' : 'false'}
-                    aria-describedby={errors.phoneNumber ? 'phoneNumber-error' : undefined}
-                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent ${
-                      errors.phoneNumber ? 'border-red-500' : 'border-gray-300'
-                    }`}
-                  />
+                  <div className="flex items-stretch gap-2">
+                    <div className="w-32 shrink-0">
+                      <PhonePrefixSelect
+                        id="phoneCountryCode"
+                        value={watch('phoneCountryCode') || ''}
+                        onChange={(dial) => {
+                          phoneCodeManuallySet.current = true;
+                          setValue('phoneCountryCode', dial, { shouldValidate: true });
+                        }}
+                        locale={locale}
+                        hasError={!!errors.phoneCountryCode}
+                        errorId="phoneCountryCode-error"
+                        ariaLabel={t('form.phoneNumber.codeLabel')}
+                        placeholder={t('form.phoneNumber.codePlaceholder')}
+                        searchPlaceholder={t('form.countryRegion.searchPlaceholder')}
+                        noResultsText={t('form.countryRegion.noResults')}
+                        popularLabel={t('form.countryRegion.popularLabel')}
+                        allLabel={t('form.countryRegion.allLabel')}
+                      />
+                      <input type="hidden" {...register('phoneCountryCode')} />
+                    </div>
+                    <input
+                      {...register('phoneNumber')}
+                      id="phoneNumber"
+                      type="tel"
+                      placeholder={t('form.phoneNumber.placeholder')}
+                      aria-invalid={errors.phoneNumber ? 'true' : 'false'}
+                      aria-describedby={errors.phoneNumber ? 'phoneNumber-error' : undefined}
+                      className={`flex-1 min-w-0 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent ${
+                        errors.phoneNumber ? 'border-red-500' : 'border-gray-300'
+                      }`}
+                    />
+                  </div>
+                  {errors.phoneCountryCode && (
+                    <p id="phoneCountryCode-error" className="mt-1 text-sm text-red-600" role="alert">
+                      {t('form.phoneNumber.codeError')}
+                    </p>
+                  )}
                   {errors.phoneNumber && (
                     <p id="phoneNumber-error" className="mt-1 text-sm text-red-600" role="alert">
                       {t('form.phoneNumber.error')}

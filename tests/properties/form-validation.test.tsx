@@ -48,17 +48,19 @@ const nameArbitrary = fc
   )
   .map(([first, rest]) => first + rest.join(''));
 
-// 生成有效的电话号码（只包含数字、空格、括号、加号、连字符）
-// 确保至少包含一些数字
+// 生成有效的电话号码本体（不含国际区号，只允许数字、空格、括号、连字符）
 const phoneArbitrary = fc
   .tuple(
     fc.constantFrom('0', '1', '2', '3', '4', '5', '6', '7', '8', '9'),
     fc.array(
-      fc.constantFrom('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ' ', '(', ')', '+', '-'),
+      fc.constantFrom('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ' ', '(', ')', '-'),
       { minLength: 9, maxLength: 19 }
     )
   )
   .map(([first, rest]) => first + rest.join(''));
+
+// 生成有效的国际电话区号("+1" / "+86" 等)
+const dialCodeArbitrary = fc.constantFrom('+1', '+86', '+81', '+44', '+49', '+33', '+95', '+852', '+886');
 
 // 生成非空字符串（包含至少一个非空格字符）
 const nonEmptyString = (minLength: number, maxLength: number) =>
@@ -75,18 +77,25 @@ const simpleEmailArbitrary = fc
   )
   .map(([local, domain]) => `${local}@${domain}`);
 
-const validFormDataArbitrary = fc.record({
-  name: nameArbitrary,
-  email: simpleEmailArbitrary,
-  countryRegion: nonEmptyString(2, 100),
-  companyBrandName: nonEmptyString(2, 100),
-  phoneNumber: fc.oneof(fc.constant(''), phoneArbitrary),
-  subject: nonEmptyString(5, 200),
-  message: nonEmptyString(20, 2000),
-  orderQuantity: fc.constantFrom(...ORDER_QUANTITY_OPTIONS),
-  techPackAvailability: fc.constantFrom(...TECH_PACK_OPTIONS),
-  mcaptchaToken: nonEmptyString(10, 100),
-});
+// 电话区号 + 号码:要么同时为空,要么同时非空(满足 schema 联合校验)
+const phonePairArbitrary = fc.oneof(
+  fc.record({ phoneCountryCode: fc.constant(''), phoneNumber: fc.constant('') }),
+  fc.record({ phoneCountryCode: dialCodeArbitrary, phoneNumber: phoneArbitrary })
+);
+
+const validFormDataArbitrary = fc
+  .record({
+    name: nameArbitrary,
+    email: simpleEmailArbitrary,
+    countryRegion: nonEmptyString(2, 100),
+    companyBrandName: nonEmptyString(2, 100),
+    subject: nonEmptyString(5, 200),
+    message: nonEmptyString(20, 2000),
+    orderQuantity: fc.constantFrom(...ORDER_QUANTITY_OPTIONS),
+    techPackAvailability: fc.constantFrom(...TECH_PACK_OPTIONS),
+    mcaptchaToken: nonEmptyString(10, 100),
+  })
+  .chain((base) => phonePairArbitrary.map((phone) => ({ ...base, ...phone })));
 
 /**
  * 必填字段列表
@@ -407,7 +416,8 @@ describe('Property 10: 表单验证完整性 - 单元测试补充', () => {
         email: 'john@example.com',
         countryRegion: 'USA',
         companyBrandName: 'Test Company',
-        phoneNumber: '+1 555-123-4567',
+        phoneCountryCode: '+1',
+        phoneNumber: '555-123-4567',
         subject: 'Test inquiry',
         message: 'This is a test message with more than 20 characters',
         orderQuantity: 'Less than 100 pcs' as const,
@@ -425,7 +435,8 @@ describe('Property 10: 表单验证完整性 - 单元测试补充', () => {
         email: 'invalid-email',
         countryRegion: 'USA',
         companyBrandName: 'Test Company',
-        phoneNumber: '+1 555-123-4567',
+        phoneCountryCode: '+1',
+        phoneNumber: '555-123-4567',
         subject: 'Test inquiry',
         message: 'This is a test message with more than 20 characters',
         orderQuantity: 'Less than 100 pcs' as const,
@@ -461,7 +472,8 @@ describe('Property 10: 表单验证完整性 - 单元测试补充', () => {
         email: 'john@example.com',
         countryRegion: 'USA',
         companyBrandName: 'Test Company',
-        phoneNumber: '+1 555-123-4567',
+        phoneCountryCode: '+1',
+        phoneNumber: '555-123-4567',
         subject: 'Test inquiry',
         message: 'Short message',
         orderQuantity: 'Less than 100 pcs' as const,
@@ -479,7 +491,8 @@ describe('Property 10: 表单验证完整性 - 单元测试补充', () => {
         email: 'john@example.com',
         countryRegion: 'USA',
         companyBrandName: 'Test Company',
-        phoneNumber: '+1 555-123-4567',
+        phoneCountryCode: '+1',
+        phoneNumber: '555-123-4567',
         subject: 'Test inquiry',
         message: 'This is a test message with more than 20 characters',
         orderQuantity: 'Less than 100 pcs' as const,
@@ -496,7 +509,8 @@ describe('Property 10: 表单验证完整性 - 单元测试补充', () => {
         email: 'john@example.com',
         countryRegion: 'USA',
         companyBrandName: 'Test Company',
-        phoneNumber: '+1 555-123-4567',
+        phoneCountryCode: '+1',
+        phoneNumber: '555-123-4567',
         subject: 'Test inquiry',
         message: 'This is a test message with more than 20 characters',
         orderQuantity: 'Less than 100 pcs' as const,

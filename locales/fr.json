@@ -85,7 +85,7 @@
     },
     "company": {
       "title": "Better Bags Myanmar Company Limited",
-      "p1": "Founded in 2003, Better Bags Myanmar specializes in the OEM/ODM manufacturing of premium backpacks, designed for a global clientele. Our comprehensive capabilities cover leisure, travel, climbing, and fashion bags, crafted from responsibly sourced polyester, cotton, and synthetic leather.",
+      "p1": "Founded in 2003, Better Bags Myanmar specializes in the OEM/ODM manufacturing of premium backpacks, designed for a global client. Our comprehensive capabilities cover leisure, travel, climbing, and fashion bags, crafted from responsibly sourced polyester, cotton, and synthetic leather.",
       "p2": "Our story began in Shenzhen, China, where our founder, Mr. Li Guangtong, gained deep expertise working with top international brands. Driven by a vision of global excellence, we later established our main production base in Shandong (Rizhao) — paired with a dedicated sampling and development center in Qingdao — and, following thorough research, launched our state-of-the-art production base in Yangon, Myanmar in 2023.",
       "p3": "Over the past two decades, our primary focus has been the Japanese market, and we have proudly partnered with multiple Japanese brands — including Anello — alongside selected global brands such as New Balance, Nike, and Fila. Our unwavering commitment to quality, reliability, and proactive service has enabled us to maintain long-term partnerships, with many leading Japanese brands working with us for over 15 years.",
       "p4": "Today, Better Bags stands at the intersection of tradition and innovation. By optimizing our dual-factory model, investing in people and systems, and adhering strictly to international standards, we meet the evolving needs of global customers with efficiency, flexibility, and future-oriented solutions. As we look ahead, our goal is to set new benchmarks in both client satisfaction and responsible manufacturing."
@@ -387,7 +387,7 @@
           },
           {
             "q": "Do I get a dedicated project manager or team?",
-            "a": "Yes, every project is assigned to a dedicated account manager and project team for smooth, timely and personalized service."
+            "a": "Yes, every project is assigned to a dedicated project manager and project team for smooth, timely and personalized service."
           },
           {
             "q": "How will I know the timeline for my project?",
@@ -559,7 +559,11 @@
         "label": "Country/Region",
         "placeholder": "United States",
         "error": "Please enter your country/region",
-        "loading": "Detection de l'emplacement..."
+        "loading": "Detection de l'emplacement...",
+        "searchPlaceholder": "Search country or dial code",
+        "noResults": "No matching country",
+        "popularLabel": "Popular",
+        "allLabel": "All countries"
       },
       "companyBrandName": {
         "label": "Company/Brand Name",
@@ -568,8 +572,11 @@
       },
       "phoneNumber": {
         "label": "Phone Number (Optional)",
-        "placeholder": "+1 555-123-4567",
-        "error": "Please enter a valid phone number"
+        "placeholder": "138 0000 0000",
+        "error": "Please enter a valid phone number",
+        "codeLabel": "Phone country code",
+        "codePlaceholder": "Code",
+        "codeError": "Please select a dial code"
       },
       "subject": {
         "label": "Subject",

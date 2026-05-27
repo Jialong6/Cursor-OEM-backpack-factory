@@ -2,8 +2,8 @@
 
 import { useTranslations, useLocale } from 'next-intl';
 import { getAuthorById } from '@/lib/author-data';
-import CertificationBadges from '@/components/content/CertificationBadges';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { TRUSTED_BRANDS } from '@/lib/brand-logos';
 
 /**
  * 关于我们区块组件
@@ -18,7 +18,6 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
  */
 export default function AboutUs() {
   const t = useTranslations('about');
-  const tFounder = useTranslations('about.founder');
   const locale = useLocale();
   const founder = getAuthorById('jay');
 
@@ -188,67 +187,25 @@ export default function AboutUs() {
               <p className="mb-6 text-center text-sm font-semibold uppercase tracking-wide text-neutral-500">
                 {locale === 'en' ? 'Trusted by Global Brands' : '与全球知名品牌合作'}
               </p>
-              <div className="flex flex-wrap items-center justify-center gap-8">
-                {['Anello', 'New Balance', 'Nike', 'Fila'].map((brand) => (
+              <div className="grid grid-cols-2 items-center gap-6 sm:grid-cols-3 md:grid-cols-6 md:gap-8">
+                {TRUSTED_BRANDS.map((brand) => (
                   <div
-                    key={brand}
-                    className="flex h-16 w-32 items-center justify-center rounded-lg bg-white border border-neutral-200 px-4 py-2 transition-transform hover:scale-105"
+                    key={brand.slug}
+                    className="flex h-16 items-center justify-center rounded-lg bg-white border border-neutral-200 px-3 py-2 transition-transform hover:scale-105"
                   >
-                    <span className="text-lg font-bold text-neutral-500">
-                      {brand}
-                    </span>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={brand.src}
+                      alt={brand.alt}
+                      className="max-h-10 w-auto object-contain"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
                 ))}
               </div>
             </div>
-
-            {/* 认证徽章 */}
-            <div className="mt-10 border-t border-neutral-200 pt-8">
-              <CertificationBadges variant="grid" showLabels />
-            </div>
           </div>
-
-          {/* 创始人介绍卡片 */}
-          {founder && (
-            <div className="mt-12 rounded-xl bg-neutral-50 border border-neutral-200 p-8 md:p-12">
-              <h3 className="mb-6 text-center text-2xl font-bold text-neutral-800 md:text-3xl">
-                {tFounder('title')}
-              </h3>
-              <div className="mx-auto max-w-3xl">
-                <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-start">
-                  {/* 头像占位 */}
-                  <div
-                    className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-primary text-2xl font-bold text-white"
-                    aria-hidden="true"
-                  >
-                    JL
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold text-neutral-800">
-                      {locale === 'zh' || locale === 'zh-tw' ? founder.name.zh : founder.name.en}
-                    </h4>
-                    <p className="mt-1 text-sm font-medium text-primary">
-                      {locale === 'zh' || locale === 'zh-tw' ? founder.role.zh : founder.role.en}
-                    </p>
-                    <p className="mt-3 leading-relaxed text-neutral-600">
-                      {locale === 'zh' || locale === 'zh-tw' ? founder.bio.zh : founder.bio.en}
-                    </p>
-                    {/* 资质列表 */}
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {founder.credentials.map((credential) => (
-                        <span
-                          key={credential}
-                          className="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
-                        >
-                          {credential}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
         </div>
       </section>
     </>

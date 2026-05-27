@@ -72,13 +72,10 @@ export default function Services() {
               key={index}
               className="group relative rounded-xl bg-white border border-neutral-200 p-8 shadow-sm transition-all hover:shadow-md hover:border-primary/30"
             >
-              {/* 步骤编号和图标 */}
-              <div className="mb-6 flex items-center gap-4">
+              {/* 步骤图标 */}
+              <div className="mb-6 flex items-center">
                 <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-primary text-white shadow-sm">
                   {stepIcons[index]}
-                </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-2xl font-bold text-primary">
-                  {index + 1}
                 </div>
               </div>
 
