@@ -424,196 +424,196 @@ const zh = `# 缅甸仰光工厂的「1 天」── 从 7:30 上班到 18:00 �
 - **【Vol.02】** [让第三方的眼睛再看一遍 ── 与 I-pack 合作实现的「日本品质 100%」](/blog/ipack-third-party-inspection-myanmar)
 `;
 
-const en = `# One Day at Our Yangon Factory in Myanmar ── From the 7:30 Start to the 18:00 Close, a Virtual Tour in Photos
+const en = `# One Day at Our Yangon Factory in Myanmar — From the 7:30 Start to the 6:00 Close, a Virtual Tour in Photos
 
-### "I'd love to tour the factory, but Yangon is just so far ──" Four scenes from the floor, starting with what our clients really feel
+### "I'd love to tour the factory, but Yangon is such a long way…" — four scenes from the floor, beginning with what clients really tell us
 
-> "I want to go to Yangon and see it with my own eyes. But realistically, I can never quite find the time ──"
+> "I'd love to go to Yangon and see it with my own eyes. But realistically, I can never quite find the time…"
 >
-> This is one of the honest things we hear most often in a first meeting with a Japanese client.
+> It's one of the most honest things we hear in a first meeting with a Japanese client.
 >
-> That is exactly why we put so much weight on first **showing you in photos**.
+> And it's exactly why we put so much into **showing you in photos first.**
 
 ---
 
-## Before We Begin ── "I want to see it, but it's hard to get there." We close that gap with photos first
+## Where We Begin — Closing the Gap Between "I Want to See It" and "It's Hard to Get There"
 
-Visiting a factory in Myanmar is not something you can casually arrange. Direct flights from Japan are limited, and visa procedures, on-the-ground scheduling, safety checks ── for a single visit, there is no small amount for a client to prepare.
+Visiting a factory in Myanmar isn't something you arrange on a whim. Direct flights from Japan are few, and between visa paperwork, on-the-ground scheduling, and safety checks, a single visit asks a great deal of a client to put in place.
 
-But we also know this clearly:
+But we understand something.
 
-**For a Japanese client, entrusting the production of your own products to a place you have never seen with your own eyes ── even after 20 years, this is never something to take lightly.**
+**For any client, handing the production of your own products to a place you have never seen with your own eyes is never a small thing — not even after twenty years.**
 
-So we want to first show you in photos. Of course, photos cannot convey the sense of presence that an in-person visit does. But we do our best to make **what you see through these photos as close, and as honest, as possible to what you would see if you came in person** ── that is the intent behind this article.
+So we start with photos. They can't match the presence of standing on the floor yourself — but our aim is simple: **to show you, as honestly and as closely as we can, what you would actually see if you came.** That is what this article is for.
 
-In what follows, we will walk you through "a day" at the Better Bags Myanmar factory in Yangon, in four scenes. It should take you about **8 minutes**.
-
----
-
-## 7:15 a.m. ── 15 Minutes Before the Start
-
-The factory's morning begins gently.
-
-Yangon's NGWE PIN LAI Industrial Zone. Staff pass through the factory gate and head to their stations. At the Better Bags Myanmar factory, **around 370 sewing operators**, plus **more than 100 support staff** handling cutting, preparation, packing, and shipping, together with the management, QC, and logistics teams, add up to **around 600 people** making bags here every day<sup>※1</sup>.
-
-At 7:15, the line leaders give each line a brief rundown of the day's SKUs, quantities, and priorities. Hand-over items from the previous day ── for example, "yesterday's lot changed the way the zipper pull is fixed to △△, so keep to the same procedure today" ── are shared at this point.
-
-There is no grand ritual. But sharing the understanding that **"today, too, we make it with the same quality and the same procedure"** is our morning routine.
+Over the next four scenes, we'll walk you through **a single day** at the Better Bags Myanmar factory in Yangon. It should take about **eight minutes** to read.
 
 ---
 
-## 7:30 a.m. ── The World of Cutting and Preparation
+## 7:15 a.m. — Fifteen Minutes Before the Start
+
+Mornings at the factory begin gently.
+
+In Yangon's NGWE PIN LAI Industrial Zone, staff come through the gate and head to their stations. The Better Bags Myanmar factory is home to **around 370 sewing operators**, **more than 100 support staff** in cutting, preparation, packing, and shipping, and the management, QC, and logistics teams on top of that — **about 600 people in all**, making bags here every day<sup>※1</sup>.
+
+At 7:15, the line leaders give each line a quick rundown of the day's SKUs, quantities, and priorities. This is also when notes carried over from the day before get passed along — say, "yesterday's lot switched the zipper-pull fastening to △△, so stay with that same method today."
+
+There's no grand ritual to any of it. But that shared understanding — **same quality, same procedure, today as every day** — is our morning routine.
+
+---
+
+## 7:30 a.m. — The World of Cutting and Preparation
 
 ![Another floor, one step "upstream" of the sewing line.](/images/blog/cutting-blog.png)
 
-At 7:30 sharp, the factory powers up. The first to start moving are the **cutting room and the preparation room**.
+At 7:30 sharp, the factory powers up. The first rooms to come alive are the **cutting room and the preparation room.**
 
-When people hear "sewing factory," most picture a workshop lined with rows of sewing machines. But in reality, before a single bag takes shape, **there are quite a few steps that come before the sewing**.
+Say "sewing factory" and most people picture rows of sewing machines. But in truth, **a great deal happens before any sewing begins** — well before a single bag takes shape.
 
-- A **cutting machine** cuts the shell fabric, lining, and pocket parts to the pattern
-- **EVA backing material** is cut panel by panel
-- **Heat bonding** fixes reinforcement parts onto the base
-- A **riveting / eyelet machine** prepares zipper rails and hardware seats
-- Each part is assembled into a "material set" by SKU
-- The sets are loaded onto carts and fed to the sewing lines
+- A **cutting machine** cuts the shell fabric, lining, and pocket pieces to the pattern
+- **EVA backing material** is cut, panel by panel
+- **Heat bonding** fixes the reinforcement pieces onto the base material
+- A **riveting / eyelet machine** prepares the zipper rails and hardware mounts
+- Every piece is gathered into a per-SKU "material set"
+- Those sets are loaded onto carts and fed to the sewing lines
 
-The photo shows the preparation room on a given day. The workbenches are numbered **1 through 10**, each responsible for a different processing step. The gray rolls stacked in the foreground are the EVA material used for the bags' back padding.
+The photo shows the preparation room on an ordinary day. The workbenches are numbered **1 through 10**, each handling its own processing step. The gray rolls stacked in the foreground are the EVA material that goes into the back padding of the bags.
 
-> When clients come to visit, many stop right here. "**I never imagined there were this many steps before the sewing**" ── it's something we hear quite often.
+> Many visiting clients stop right here. "**I had no idea there was this much work before the sewing even starts**" — we hear it again and again.
 
 ---
 
-## 9:30 a.m. ── The Sewing Lines in Full Swing
+## 9:30 a.m. — The Sewing Lines in Full Swing
 
 ![The Better Bags Myanmar sewing line, with around 420 MAQI sewing machines in rows.](/images/blog/maqi-blog.jpg)
 
-The "material sets" supplied from the preparation room arrive at each sewing line. By around 9:30, the whole line is in full operation.
+The material sets prepared upstream now reach each sewing line, and by around 9:30 the floor is running at full tilt.
 
-The photo shows the main floor of the Yangon factory. Most of the roughly 370 sewing operators work here every day. The equipment is built around **MAQI industrial sewing machines**, used by purpose as follows:
+The photo shows the main floor of the Yangon factory, where most of our roughly 370 sewing operators work each day. The lineup is built around **MAQI industrial sewing machines**, chosen by the job at hand:
 
 - Flatbed machines: 420
 - Computerized machines: 48
 - Post-bed machines: 60
 - Twin-needle machines: 12
 
-There is one thing visitors often say: "**It's noisier than I expected.**" Indeed, a workshop where more than 300 sewing machines run at once is not a quiet place. The "clatter-clatter" of the machines spreads across the whole floor like a low hum.
+Visitors almost always say the same thing: it's louder than they expected. And it's true — a floor with more than 300 machines running at once is no quiet place. The steady clatter of the needles carries across the room like a low, constant hum.
 
-But if you look closely, you'll notice that within that rhythm a **certain regularity** is forming. One operator, one step, repeated all day long. Those rhythms gather into the "operating sound" of the entire floor ── this is not chaos, but the sound of **a layered order**.
+But listen closely and you'll hear a **certain order** inside the rhythm. One operator, one step, repeated all day long; those individual rhythms gather into the sound of the whole floor at work. It isn't chaos — it's the sound of layered order.
 
 ---
 
-## 11:00 a.m. ── Hands That Focus on Every Single Stitch
+## 11:00 a.m. — Hands That Stay With Every Stitch
 
 ![The side-pocket section of a backpack, sewn while checking one stitch at a time.](/images/blog/high-post-sewing-blog.png)
 
-Around 11:00, each line settles into stable operation.
+By around eleven, every line has settled into a steady rhythm.
 
-Let's move the view in a little closer and look at the hands of one operator. This is the step of sewing a **mesh-fabric pocket** onto the body panel. The base of the curve is especially prone to uneven stitching, so the operator advances slowly, **checking each stitch one at a time**.
+Let's move in closer, to the hands of a single operator. Here, a **mesh pocket** is being sewn onto the body panel. The stitching tends to wander where the curve meets its base, so the operator works slowly, **checking each stitch as it goes down.**
 
-After completing the onboarding training, this operator now **specializes in the side-pocket step for backpacks**. By staying with the same step for a year, then two, an intuition for the fabric's slight stretch and for how a stitch "settles" steadily takes root in the body.
+With initial training behind them, this operator now **specializes in the side-pocket step for backpacks.** Stay with the same step for a year, then two, and a feel for the fabric's slight give — for how a stitch will sit — becomes second nature.
 
-This is something we often say to our Japanese clients ──
+It's something we often tell our clients:
 
-> **"A hybrid of the cell method and line specialization."**
+> **A hybrid of the cell method and line specialization.**
 >
-> One person specializing in one step raises speed and precision; meanwhile, for complex-structure products like backpacks, we bring in the **cell-method thinking** we have shared with I-pack<sup>※2</sup> over many years to switch between product types quickly.
+> Having one person own a single step lifts both speed and precision. Meanwhile, for complex builds like backpacks, we draw on the **cell-method approach** we've shared with I-pack<sup>※2</sup> for years, letting us switch between styles quickly.
 
-We have spent 20 years refining this balance.
+It's a balance we've spent twenty years refining.
 
-[Related: Our collaboration with third-party inspection partner I-pack →](/blog/ipack-third-party-inspection-myanmar)
+[Related: how we work with our third-party inspection partner, I-pack →](/blog/ipack-third-party-inspection-myanmar)
 
 ---
 
-## 2:00 p.m. ── Another Set of Eyes Watching Over the Whole
+## 2:00 p.m. — Another Set of Eyes on the Whole Floor
 
 ![Looking down on the main sewing floor from above. The preparation group is in the foreground; the sewing lines are behind.](/images/blog/woking-blog.jpg)
 
-2:00 p.m. The **production control staff** and the **line leaders** make their regular round of the floor.
+Two in the afternoon. The **production-control team** and the **line leaders** make their regular round of the floor.
 
-In this time slot, the "material sets" assembled in the morning are moving along each line as sewing work, entering the second half. The line leaders check each line's **progress board** and look at the gap against the day's target. Where a line is behind, they bring in support; where a line is ahead, they get a head start on preparing the next day's sets.
+By now the morning's material sets are well into sewing, and the day is into its second half. The line leaders check each **progress board** against the day's target. A line that's behind gets extra hands; a line that's ahead gets a head start on tomorrow's sets.
 
-The photo looks down on the main floor from above. The **preparation group** is in the foreground, with the sewing lines spread out behind it.
+The photo looks down over the main floor: the **preparation group** in front, the sewing lines spreading out behind.
 
-There are things we are particular about in this floor's layout.
+We're particular about how this floor is laid out:
 
-- **The ceiling is kept high**: for summer ventilation and for natural light. In the rainy season, on the other hand, it becomes a battle against humidity.
-- **The lines are spaced widely apart**: separate paths are secured for people to move, for carts to pass, and for emergency evacuation.
-- **The packing and sorting area is placed "in front of" the sewing lines**: sewing line → inspection → packing → shipping runs in a straight line, geographically as well as logically.
+- **High ceilings** — for summer airflow and natural light (though in the rainy season they turn into a running fight with humidity).
+- **Wide aisles between the lines** — separate paths for people on foot, for carts, and for emergency evacuation.
+- **Packing and sorting set ahead of the sewing lines** — so that sewing → inspection → packing → shipping runs in a straight line, physically as much as logically.
 
-> "**It's not a flashy factory. But it's a factory that has been thought through carefully.**" ── this is something we have heard several times from Japanese quality-control managers who have visited. It is one of our quiet points of pride.
-
----
-
-## 4:00 p.m. ── Inspection Prep, and the Hand-Off to I-pack
-
-Around 4:00 p.m., part of the day's output enters the **inspection process**.
-
-Products that have passed in-house inspection (IPQC → FQC → 100% screening on the Fjade SECUT-5030D X-ray needle detector<sup>※3</sup>) are handed over to the **I-pack Myanmar on-site inspection office**. Having a third party look over everything once more ── this is the final stage of our **three-layer defense system**.
-
-The details of the inspection process are introduced separately, as the "sister pieces" of this series, in our Quality Series.
-
-- The in-house "we don't let a single needle slip" needle control → [**Quality Series Vol.01**](/blog/danshin-needle-control-myanmar)
-- The collaboration with third-party inspector I-pack → [**Quality Series Vol.02**](/blog/ipack-third-party-inspection-myanmar)
+> "**Not a flashy factory — but one that's clearly been thought through.**" We've heard that more than once from the quality managers who visit us, and it's a quiet point of pride.
 
 ---
 
-## 5:30 p.m. ── End-of-Day Reconciliation and Prep for Tomorrow
+## 4:00 p.m. — Getting Ready for Inspection, and the Hand-Off to I-pack
 
-5:30 p.m. The whole line begins getting ready to close for the day.
+Toward four o'clock, part of the day's output moves into **inspection.**
 
-- **End-of-day reconciliation**: matching the count of needles used and broken that day (the needle-control ledger)
-- **Handling of defects**: correcting, or isolating, the minor defects found during the day
-- **Confirming tomorrow's material sets**: handing over to the next morning's preparation room
+Once a product clears in-house inspection (IPQC → FQC → 100% screening on the Fjade SECUT-5030D X-ray needle detector<sup>※3</sup>), it goes to the **I-pack on-site inspection office in Myanmar** — a third party to look over everything one more time. This is the last of our **three layers of defense.**
 
-> "**Until the books reconcile, the day doesn't end.**" ── we wrote about this in detail in [Vol.01](/blog/danshin-needle-control-myanmar), the sister piece of this series. It is the one rule we value most, unchanged in 20 years.
+We cover what inspection actually involves in the companion pieces to this article, over in our Quality Series:
 
-The line leader and the manager add the final signatures.
-
----
-
-## 6:00 p.m. ── Closing
-
-At 6:00 p.m., the factory lighting switches from the main work lights to the security lights.
-
-The sewing operators tidy their own stations, return products to their designated places, and head home.
-
-The Yangon evening sky turns the gray of a squall in the rainy season, and a soft orange in the dry season. And so the heart of our manufacturing carries on, into the next morning's 7:45.
+- Our in-house "not a single needle gets past us" needle control → [**Quality Series Vol.01**](/blog/danshin-needle-control-myanmar)
+- Working with our third-party inspector, I-pack → [**Quality Series Vol.02**](/blog/ipack-third-party-inspection-myanmar)
 
 ---
 
-## Five Questions Our Clients Often Ask (About Factory Visits)
+## 5:30 p.m. — End-of-Day Reconciliation and Prep for Tomorrow
 
-For clients who, after seeing the "one day" we've shown in photos, are thinking of actually visiting, we've gathered the five questions we hear most often.
+Half past five. Across the floor, the lines begin settling up for the day.
 
-| Your question | Our answer |
+- **End-of-day reconciliation** — matching the count of needles used and broken against the needle-control ledger
+- **Defect handling** — repairing or setting aside any minor defects found during the day
+- **Confirming tomorrow's material sets** — to hand over to the preparation room first thing in the morning
+
+> **The day doesn't end until the books reconcile.** We go into this in detail in [Vol.01](/blog/danshin-needle-control-myanmar), the companion to this piece — it's the one rule we hold above all others, unchanged in twenty years.
+
+The line leader and the manager sign off.
+
+---
+
+## 6:00 p.m. — Closing
+
+At six, the factory lights switch over from the work lamps to the night security lighting.
+
+The sewing operators tidy their stations, return their work to its proper place, and head home.
+
+The evening sky over Yangon turns squall-gray in the rainy season and soft orange in the dry. And so the work carries on, picking up again at 7:45 the next morning.
+
+---
+
+## Five Questions Clients Often Ask About Visiting
+
+For clients who've followed this day in photos and are now thinking of coming in person, here are the five questions we hear most often.
+
+| The question | Our answer |
 | --- | --- |
-| **"Is an online tour (a live stream over a web meeting) possible?"** | Yes. We support real-time streaming over ZOOM / Microsoft Teams / WeChat and the like. A session usually runs 30 to 60 minutes; we align the agenda with you in advance. |
-| **"For an in-person visit, what's the time required and the schedule?"** | A half day (morning or afternoon) is the most common format. Airport pickup, accommodation recommendations, and interpreter arrangements ── our staff can support all of these. |
-| **"Is there support for visas and safety?"** | Yes. Before departure, we guide you through how to obtain an e-visa, local transport arrangements, recommended hotels, and airport pickup. We share the latest safety information. |
-| **"Can we take photos and video inside the factory?"** | General areas are, in principle, fine. However, there may be zones we ask you to refrain from photographing ── such as areas where a competitor's project is running in parallel. We mark out the zones in advance. |
-| **"Besides the buyer, can others come along?"** | We welcome third-party audit bodies, designers, and trading-company representatives. If you let us know the number of people and their titles in advance, we'll reflect it in the visit plan. |
+| **"Can we do an online tour — a live video walk-through?"** | Yes. We can stream live over ZOOM, Microsoft Teams, WeChat, and similar tools. A session usually runs 30 to 60 minutes, and we agree on what you'd like to see beforehand. |
+| **"For an in-person visit, how long does it take, and what's the schedule?"** | A half day, morning or afternoon, is the most common. Our staff can help with airport pickup, hotel recommendations, and interpreters. |
+| **"Do you help with visas and safety?"** | Yes. Before you travel, we walk you through the e-visa process, local transport, recommended hotels, and airport pickup — and we share the latest safety information. |
+| **"Can we take photos and video inside the factory?"** | In general areas, yes. There may be spots we ask you to avoid — for instance, where another client's project happens to be running alongside yours — and we'll point those out in advance. |
+| **"Besides the buyer, can others come along?"** | We're glad to host third-party auditors, designers, and trading-company representatives. Just let us know the headcount and roles in advance, and we'll build them into the visit plan. |
 
 ---
 
-## In Closing ── Photos Are Not a "Substitute" for Visiting
+## In Closing — Photos Are Not a Substitute for Visiting
 
-Up to here, we have shown you "a day" at the Better Bags Myanmar factory in four scenes.
+We've now walked through a single day at the Better Bags Myanmar factory, in four scenes.
 
-> From the cutting room at 7:30 in the morning to the close at 6:00 in the evening.
+> From the cutting room at 7:30 in the morning to the close of work at 6:00 at night.
 
-What we believe is this:
+Here is what we believe.
 
-Photos are not a "**substitute**" for an in-person visit. They are a "**prelude**." We hope they give you a rough feel for this place. And if they spark your interest, **please do make the time to come to Yangon in person.** **Walk the floor with your own eyes, your own hands, and the sound of your own footsteps.**
+Photos are not a **substitute** for visiting in person. They are a **prelude.** We hope they give you a feel for the place — and if they spark your curiosity, **please make the time to come to Yangon yourself.** **Walk the floor with your own eyes and your own hands, to the sound of your own footsteps.**
 
-And for that visit, we will prepare everything we can, and wait for you.
+And we'll have everything ready for that visit, waiting for you.
 
 ---
 
-## To Get in Touch About a Consultation or a Visit
+## Get in Touch About a Consultation or a Visit
 
-For any question ── a consultation, a factory visit, a sample request ── please **don't hesitate** to reach out anytime.
+Whatever your question — a consultation, a factory visit, a sample request — please **don't hesitate** to reach out anytime.
 
-We also accept scheduling for online tours at any time.
+We're always happy to schedule an online tour as well.
 
 - [Contact us →](#contact)
 - [Request a factory visit →](#contact)
@@ -622,9 +622,9 @@ We also accept scheduling for online tours at any time.
 
 ### Sources
 
-- <sup>※1</sup> Factory staff composition: Better Bags Myanmar factory (as of May 2026) ── **around 370 sewing operators** + **more than 100 support staff** for cutting, preparation, packing, shipping, and the like + management, QC, and logistics teams, for **around 600 people in total**.
-- <sup>※2</sup> I-pack Co., Ltd.: our long-standing third-party inspection partner. Detailed in [Quality Series Vol.02](/blog/ipack-third-party-inspection-myanmar).
-- <sup>※3</sup> 100% screening on the Fjade SECUT-5030D X-ray needle detector: detailed in [Quality Series Vol.01](/blog/danshin-needle-control-myanmar).
+- <sup>※1</sup> Factory staffing, Better Bags Myanmar (as of May 2026): **around 370 sewing operators**, **more than 100 support staff** in cutting, preparation, packing, and shipping, plus management, QC, and logistics teams — **about 600 people in total.**
+- <sup>※2</sup> I-pack Co., Ltd.: our long-standing third-party inspection partner. Covered in detail in [Quality Series Vol.02](/blog/ipack-third-party-inspection-myanmar).
+- <sup>※3</sup> 100% screening on the Fjade SECUT-5030D X-ray needle detector: covered in detail in [Quality Series Vol.01](/blog/danshin-needle-control-myanmar).
 
 ---
 
@@ -632,8 +632,8 @@ We also accept scheduling for online tours at any time.
 
 #### 【Quality Series】Sister Pieces
 
-- **【Vol.01】** [We Don't Let a Single Needle Slip ── The Needle-Control System at the Better Bags Myanmar Factory](/blog/danshin-needle-control-myanmar)
-- **【Vol.02】** [A Second Look, Through Third-Party Eyes ── Delivering "100% Japanese Quality" on Myanmar Shipments Through Our Collaboration with I-pack](/blog/ipack-third-party-inspection-myanmar)
+- **【Vol.01】** [We Don't Let a Single Needle Slip — The Needle-Control System at the Better Bags Myanmar Factory](/blog/danshin-needle-control-myanmar)
+- **【Vol.02】** [A Second Look Through Third-Party Eyes — Delivering "100% Japanese Quality" on Myanmar Shipments with I-pack](/blog/ipack-third-party-inspection-myanmar)
 `;
 
 const post: BlogPost = {
@@ -642,12 +642,12 @@ const post: BlogPost = {
   title: {
     ja: '緬甸ヤンゴン工場の「1 日」をご案内します ── 7:30 始業から 18:00 終業まで、写真で巡るバーチャル工場見学',
     zh: '缅甸仰光工厂的「1 天」── 从 7:30 上班到 18:00 下班，照片陪您走完一趟虚拟参访',
-    en: 'One Day at Our Yangon Factory in Myanmar ── From the 7:30 Start to the 18:00 Close, a Virtual Tour in Photos',
+    en: 'One Day at Our Yangon Factory in Myanmar — From the 7:30 Start to the 6:00 Close, a Virtual Tour in Photos',
   },
   excerpt: {
     ja: '「ヤンゴンまで工場見学に行きたいけれど、なかなか…」というお客様の本音にお応えして、Better Bags Myanmar 工場の「1 日」を 4 つの場面で巡るバーチャル見学。始業から終業まで、合計約 600 名（縫製 + 補助スタッフ）の現場を公開します。',
     zh: '「想去仰光参观工厂，但实在抽不出时间…」面对客户的真实心声，我们用 4 个场景带您走一趟 Better Bags Myanmar 工厂的「1 天」虚拟参访。从开工到收工，合计约 600 名（缝纫工 + 辅助人员）的现场全公开。',
-    en: '"I\'d love to visit the factory in Yangon, but I just can\'t find the time…" In answer to what our clients honestly tell us, we walk you through one day at the Better Bags Myanmar factory in four scenes. From clock-in to clock-out, we open up a shop floor of around 600 people (sewing operators plus support staff).',
+    en: '"We\'d love to visit the factory in Yangon, but we just can\'t find the time…" In answer to what clients so often tell us, we walk you through one day at the Better Bags Myanmar factory, in four scenes — from clock-in to clock-out, across a shop floor of around 600 people (sewing operators and support staff).',
   },
   content: { ja, zh, en },
   date: '2026-05-20',

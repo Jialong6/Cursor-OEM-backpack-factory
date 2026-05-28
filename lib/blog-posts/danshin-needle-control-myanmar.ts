@@ -514,104 +514,104 @@ X 光检针不是「保险」，而是**和台账并列的「另一个正本」*
 - **【Vol.01】** [缅甸仰光工厂的「1 天」── 从开工到收工的虚拟参访](/blog/factory-tour-one-day-myanmar)
 `;
 
-const en = `# We Don't Let a Single Needle Slip ── The Needle-Control System at the Better Bags Myanmar Factory
+const en = `# We Don't Let a Single Needle Slip — The Needle-Control System at the Better Bags Myanmar Factory
 
-### "What is needle control?" ── A complete guide to our Myanmar factory's two-layer defense, from the needle-inventory ledger to the X-ray detector to record retention
+### "What is needle control?" — a complete guide to our Myanmar factory's two-layer defense, from the needle-inventory ledger to the X-ray detector to record retention
 
-> "If a fragment of a needle ever ended up in the seams of our product ──"
+> "What if a sliver of a broken needle ended up in the seam of one of our products…"
 >
-> Anyone who buys bags has probably felt that chill down their spine at least once.
+> Anyone who buys bags for a living has probably felt that chill run down their spine at least once.
 >
-> To push that "if" as close to zero as possible, Better Bags Myanmar has spent more than 20 years refining one and the same system.
+> To push that "what if" as close to zero as it can go, we at Better Bags Myanmar have spent more than twenty years refining a single system.
 
 ---
 
-## Before We Begin ── Why "Needle Control" Matters So Much
+## Where We Begin — Why Needle Control Matters So Much
 
-Hundreds of sewing needles are used every day in a sewing factory. If one of these normally-invisible needles breaks, and a fragment finds its way into the seam of a finished product ──
+A sewing factory goes through hundreds of needles a day. Should one of those easily overlooked needles break, and a fragment work its way into the seam of a finished product, the consequences are real.
 
-An accident that cuts an end user's finger or skin.
-A collapse of brand trust from recalls and disposal.
-**The liability risk under Japan's Product Liability Act (the PL Act).**<sup>※1</sup>
+An injury to an end user's finger or skin.
+The loss of brand trust that a recall and disposal bring.
+**And, under Japan's Product Liability Act (the PL Act), real liability.**<sup>※1</sup>
 
-For Japanese brands dealing in bags, children's school satchels, and school backpacks, "zero foreign-object contamination" is a bottom line that cannot be compromised.
+For Japanese brands that make bags, children's satchels, and school backpacks, zero foreign-object contamination isn't a goal — it's the non-negotiable floor.
 
-In fact, the Japan Toy Association's ST standards<sup>※2</sup>, as well as the delivery specifications of various retail chains, often spell out "retention of a needle-control ledger" and "100% X-ray needle screening" as conditions of doing business.
+In fact, the Japan Toy Association's ST standards<sup>※2</sup> and the delivery specifications of many retail chains spell it out plainly: keeping a needle-control ledger and screening 100% of pieces by X-ray are written in as conditions of doing business.
 
-As a factory that has walked alongside the Japanese market for more than 20 years since its founding, Better Bags Myanmar keeps working to **physically push this "invisible risk" toward zero, on both the systems side and the records side.**
+For more than twenty years, we've grown alongside the Japanese market — and the whole time, we've worked to drive this invisible risk physically toward zero, **in both our systems and our records.**
 
 ---
 
-## Five Concerns Our Clients Often Raise
+## Five Concerns We Hear Most Often From Clients
 
-We've gathered five representative examples of the **questions and concerns about needles and foreign-object contamination** that we most often hear from Japanese clients in a first meeting, each with our answer.
+Here are five of the **questions and concerns about needles and foreign-object contamination** we hear most often from clients in a first meeting — each with our answer.
 
-| Your concern | Our answer |
+| The concern | Our answer |
 | --- | --- |
-| **"Can a factory in China or Myanmar really manage things in this much detail?"** | The needle-inventory ledger is a specification we spent 20 years refining together with Japanese clients. The Myanmar factory runs on exactly the same format. |
-| **"If a needle breaks, can you really recover every last fragment?"** | The whole line searches that day, and we don't close until every fragment is accounted for. We strictly hold to the rule that "any discrepancy in the books must be resolved that same day." |
-| **"Is X-ray screening done on every piece, or by sampling?"** | **100%, every piece.** Two machines at the Myanmar factory (one of them a Fjade SECUT-5030D) plus one at our Shandong factory in China ── every shipped item must pass through them. |
-| **"How many years do you keep the management records?"** | Linked by lot, **5 years or more.** We keep them in a state where a third-party audit or a market-claim traceback can be reconstructed from documents alone. |
-| **"Do you handle BSCI / SEDEX / each company's own audits?"** | Yes. Reviewing records, touring the site, additional verification drills ── all are available by prior arrangement. |
+| **"Can a factory in China or Myanmar really manage things in this much detail?"** | The needle-inventory ledger is a format we spent twenty years refining alongside our Japanese clients, and the Myanmar factory runs on exactly that same format. |
+| **"If a needle breaks, can you really recover every last fragment?"** | The entire line stops to search that day, and we don't close until every fragment is accounted for. The rule is firm: any discrepancy in the books has to be resolved the same day. |
+| **"Is X-ray screening done on every piece, or by sampling?"** | **Every piece — 100%.** Two machines at the Myanmar factory (one a Fjade SECUT-5030D) and one at our Shandong factory in China; nothing ships without passing through them. |
+| **"How many years do you keep the management records?"** | Linked by lot, for **five years or more.** They're kept so that a third-party audit — or a traceback after a market claim — can be reconstructed from the documents alone. |
+| **"Do you handle BSCI / SEDEX / each company's own audits?"** | Yes. Records review, a site tour, additional verification drills — all available by prior arrangement. |
 
-If you have other questions, please read on, and feel free to reach out from the link at the end.
+If you have other questions, read on — and feel free to reach out using the link at the end.
 
-[On a similar theme: our double-check system with third-party inspection →](/blog/ipack-third-party-inspection-myanmar)
-
----
-
-## Our Two-Layer Defense ── "The Ledger" and "The X-ray"
-
-There are broadly two ways to prevent foreign-object contamination by needles:
-
-1. **Don't let it happen**: rigorously manage every needle in use, and "always recover the fragments of a broken needle on the floor."
-2. **Don't let it slip through**: even if it somehow happens, run a 100% final check with an X-ray needle detector before shipping.
-
-We operate these two as a two-layer system: "the ledger" and "the X-ray."
-
-### Why "Two Layers"
-
-No inspection system in the world can be declared "zero." But by checking independently with **two methods that work on different principles**, the probability of an oversight drops not additively but **multiplicatively**. That is the point of making it two layers.
+[On a related note: our double-check system with third-party inspection →](/blog/ipack-third-party-inspection-myanmar)
 
 ---
 
-## Layer One: The Needle-Inventory Ledger ── One Line a Day, Not a Single Needle Off
+## Our Two-Layer Defense: the Ledger and the X-ray
+
+There are, broadly, two ways to keep a stray needle out of a product:
+
+1. **Stop it from happening** — account for every needle in use, and recover the fragments of any broken needle right there on the floor.
+2. **Catch it if it does** — even if it somehow happens, run a 100% final check on an X-ray needle detector before anything ships.
+
+We run these two as a single two-layer system: the ledger and the X-ray.
+
+### Why Two Layers
+
+No inspection system on earth can honestly call itself zero-risk. But check independently with **two methods built on different principles**, and the odds of something slipping through fall not by addition but by **multiplication.** That is the whole point of two layers.
+
+---
+
+## Layer One: The Needle-Inventory Ledger — One Line a Day, Not a Needle Out of Place
 
 ![Hand-written records in the needle-control ledger, plus a box of DOTEC NEEDLE](/images/blog/needle-ledger.png)
 
-Each line in the factory has a dedicated ledger by machine type and needle type. The photo shows the record of an assembly line on a given day.
+Every line in the factory keeps its own ledger, broken out by machine type and needle type. The photo shows one assembly line's record on an ordinary day.
 
 ### The Ledger Format
 
-The ledger format is one we have refined over the years together with long-standing Japanese clients. The fields are as follows:
+The format is one we've refined over the years with long-standing Japanese clients. Its fields are:
 
 | Field | Meaning |
 | --- | --- |
 | Factory name | MYANMAR BETTER BAGS COMPANY |
 | Needle type | DPx17 18/110 (DOTEC NEEDLE, made in Japan) |
-| Date / Day | The day |
-| Start count | The number of needles supplied to the line at the start of work |
-| Used | The number of needles used that day (including broken needles; the fragments of a broken needle are recovered and stuck directly onto that day's ledger) |
-| End count | The number of needles remaining on the line at the close of work |
+| Date / day | That day |
+| Start count | Needles issued to the line at the start of the day |
+| Used | Needles used that day, broken ones included — and the fragments of any broken needle are recovered and stuck straight onto that day's ledger |
+| End count | Needles left on the line at the close of the day |
 | Operator signature | The operator on that line |
-| Manager signature | A double-check by the line leader / QC staff |
+| Manager signature | A second check by the line leader / QC |
 
 ### The One Rule
 
-> **Unless "Start count = Used + End count" holds, AND every fragment of every broken needle is stuck onto that day's ledger ── until both conditions are met, the day cannot end.**
+> **Two conditions must hold before the day can end: "Start = Used + End" must balance, and every fragment of every broken needle must be stuck onto that day's ledger. Until both are met, no one goes home.**
 
-A broken needle must be recovered, fragments and all, on the workshop floor, and **stuck directly onto that day's ledger**. If even one fragment cannot be found, the whole line is re-checked ── and if it comes to it, we won't hesitate to re-inspect every piece produced that day.
+When a needle breaks, every fragment is recovered on the floor and **stuck directly onto that day's ledger.** If even one fragment can't be found, the whole line is re-checked — and if that's what it takes, we'll re-inspect every piece made that day without a second thought.
 
-"Physically sticking the fragments onto the ledger" ── this simple practice gives us both **① the visibility that "anyone can confirm at a glance just by counting"** and **② the traceability of having the paper record and the physical evidence in the same place** when tracing back through past lot records.
+Sticking the fragments physically onto the page is a simple habit, but it buys us two things: **(1) visibility** — anyone can confirm the count at a glance — and **(2) traceability**, since the paper record and the physical evidence sit in the very same place when we go back through old lot records.
 
-### A Day of Needle Control: Timeline
+### A Day of Needle Control: The Timeline
 
 <div class="my-8 not-prose">
   <div class="flex gap-3 items-start">
     <span class="shrink-0 inline-flex items-center justify-center w-[72px] h-8 bg-neutral-900 text-white rounded-full text-sm font-bold">07:30</span>
     <div class="flex-1 pt-0.5">
       <div class="font-bold text-neutral-900">Start of work</div>
-      <div class="text-sm text-neutral-600 mt-1"><strong>Start count</strong>: enter the needle count into the ledger (operator + line leader double signature)</div>
+      <div class="text-sm text-neutral-600 mt-1"><strong>Start count</strong>: the needle count is entered into the ledger (operator + line leader, double signature)</div>
     </div>
   </div>
   <div class="ml-9 my-2 h-5 border-l-2 border-dashed border-neutral-300"></div>
@@ -622,32 +622,32 @@ A broken needle must be recovered, fragments and all, on the workshop floor, and
       <span class="px-2 py-0.5 bg-white border border-amber-300 text-amber-700 text-xs font-bold rounded">15:00</span>
       <span class="px-2 py-0.5 bg-white border border-amber-300 text-amber-700 text-xs font-bold rounded">17:00</span>
     </div>
-    <div class="text-sm text-neutral-700">When a needle breaks, <strong>recover every fragment</strong> on the spot and <strong>stick them directly onto that day's ledger</strong>. The line leader confirms on site → records it in the "Used" column.</div>
+    <div class="text-sm text-neutral-700">If a needle breaks, <strong>recover every fragment</strong> on the spot and <strong>stick it straight onto that day's ledger</strong>. The line leader confirms on the floor, then logs it in the "Used" column.</div>
   </div>
   <div class="ml-9 my-2 h-5 border-l-2 border-dashed border-neutral-300"></div>
   <div class="flex gap-3 items-start">
     <span class="shrink-0 inline-flex items-center justify-center w-[72px] h-8 bg-neutral-900 text-white rounded-full text-sm font-bold">17:30</span>
     <div class="flex-1 pt-0.5">
       <div class="font-bold text-neutral-900">Pre-close reconciliation</div>
-      <div class="inline-block mt-2 bg-neutral-900 text-white px-3 py-1.5 rounded font-mono text-sm">Start ＝ Used ＋ End</div>
-      <div class="text-sm text-neutral-600 mt-2">Also confirm that every broken-needle fragment is stuck onto the ledger</div>
+      <div class="inline-block mt-2 bg-neutral-900 text-white px-3 py-1.5 rounded font-mono text-sm">Start = Used + End</div>
+      <div class="text-sm text-neutral-600 mt-2">Then confirm that every broken-needle fragment is stuck onto the ledger</div>
     </div>
   </div>
   <div class="ml-9 mt-3 grid grid-cols-1 md:grid-cols-2 gap-3">
     <div class="bg-emerald-50 border border-emerald-300 rounded-lg p-3">
       <div class="font-bold text-emerald-700 text-sm flex items-center gap-2"><span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-emerald-500 text-white text-xs">✓</span>Both OK</div>
-      <div class="text-sm text-neutral-700 mt-1">Line ends → manager's final signature → on to the next day</div>
+      <div class="text-sm text-neutral-700 mt-1">Line closes → manager's final signature → on to the next day</div>
     </div>
     <div class="bg-rose-50 border border-rose-300 rounded-lg p-3">
-      <div class="font-bold text-rose-700 text-sm flex items-center gap-2"><span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-rose-500 text-white text-xs">!</span>Either one NG</div>
-      <div class="text-sm text-neutral-700 mt-1">Everyone searches for the fragment → if needed, re-inspect every piece produced that day → <strong>no one closes until it's cleared</strong></div>
+      <div class="font-bold text-rose-700 text-sm flex items-center gap-2"><span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-rose-500 text-white text-xs">!</span>Either one fails</div>
+      <div class="text-sm text-neutral-700 mt-1">Everyone searches for the missing fragment → if needed, re-inspect every piece made that day → <strong>no one closes until it's cleared</strong></div>
     </div>
   </div>
 </div>
 
-On the right-hand page of the ledger in the photo are one operator's daily records for a month. 493, 476, 463, 458, 461… one needle at a time, every day.
+The right-hand page of the ledger in the photo holds one operator's daily entries for a month: 493, 476, 463, 458, 461… one needle at a time, every single day.
 
-It is not a flashy system. But the 20 years we've spent building up **"one line a day, not a single needle off"** is, we ourselves believe, the biggest reason we've been able to keep doing long-term business with Japanese brands.
+It's not a flashy system. But twenty years of **one line a day, not a single needle out of place** is, we're convinced, the single biggest reason Japanese brands have kept working with us for the long haul.
 
 ---
 
@@ -655,95 +655,95 @@ It is not a flashy system. But the 20 years we've spent building up **"one line 
 
 ![Inspection in progress on the Fjade SECUT-5030D X-ray needle detector](/images/blog/needle-xray.png)
 
-However accurate the ledger is, as long as humans run it, the risk cannot be declared "zero." That is exactly why we have prepared another line of defense for the "what if."
+However accurate the ledger, it's run by people — and that alone means we can never call the risk truly zero. So for the "what if," we keep a second line of defense.
 
-That is the pre-shipment 100% screening by the **two X-ray needle detectors** (one of them a Fjade SECUT-5030D) installed at our Yangon factory in Myanmar.
+It's the pre-shipment screening — 100% of pieces — on the **two X-ray needle detectors** (one of them a Fjade SECUT-5030D) installed at our Yangon factory.
 
-### The Flow of 100% Screening
+### How 100% Screening Works
 
 1. **The finished product reaches the pre-packing line**
 2. **A worker passes each piece, one by one, through the X-ray machine**
-3. **Dual monitors immediately confirm whether any metal fragment is present**
-   - Legitimate parts such as hardware and zippers are databased in advance
-   - If there is an unexpected metal reaction, the line stops immediately
-4. **Response to an anomaly**
-   - The product in question is put on hold
-   - The cause is traced back along the line
-   - Every piece of the same lot is re-inspected
-5. **Only OK products are packed and shipped**
+3. **Dual monitors show instantly whether any metal is present**
+   - Legitimate parts — hardware, zippers, and so on — are logged in a database beforehand
+   - Any unexpected metal reading stops the line at once
+4. **If something's off**
+   - the piece in question is put on hold
+   - the cause is traced back along the line
+   - every piece in the same lot is re-inspected
+5. **Only cleared pieces are packed and shipped**
 
-X-ray screening is deployed with a total of **two machines** at the Myanmar factory and **one** at the Shandong factory in China, run so that **"every shipped item must pass through."**
+In all, X-ray screening runs on **two machines** at the Myanmar factory and **one** at our Shandong factory in China — set up so that **everything we ship has to pass through it.**
 
-### "The X-ray Is Not Insurance" ── It Is "Another Original Record"
+### The X-ray Isn't Insurance — It's a Second Master Record
 
-X-ray screening is not "insurance"; it is **"another original record," standing alongside the ledger.** Even if the numbers in the ledger add up, if the X-ray raises even one alert, the shipment stops. Conversely, even with zero hits on the X-ray, if the ledger doesn't reconcile, the shipment stops all the same. **Only what clears both at once reaches our clients.**
+The X-ray isn't a safety net; it's **a second master record, standing right alongside the ledger.** If the ledger's numbers add up but the X-ray throws even one alert, the shipment stops. And if the X-ray is clean but the ledger won't reconcile, the shipment stops just the same. **Only what clears both, at the same time, reaches our clients.**
 
 ---
 
-## How a Typical Factory and We Differ
+## How We Differ From a Typical Factory
 
-Even so, "where exactly are you stricter than other factories?" is a question we hear often in meetings. We've put it into a single table.
+Even so, "where exactly are you stricter than other factories?" comes up often in meetings. Here's the answer in a single table.
 
 | Management item | A typical sewing factory | Better Bags Myanmar |
 | --- | --- | --- |
-| Where needles are bought | Cost first (origin not considered) | **Centered on Japanese-made DOTEC NEEDLE** (with lot control) |
-| Daily ledger | Weekly / monthly tallies are common | **One line a day + double signature** (daily reconciliation) |
-| Response on breakage | Done once fragments are recovered | **No closing until every fragment is recovered** (fragments stuck directly onto that day's ledger) |
-| Pre-shipment screening | Sampling inspection / partial | **100% X-ray screening of every piece** (two machines in Myanmar, including the Fjade SECUT-5030D, + one in Shandong, China) |
-| Record retention | About 1 year | **By lot, 5 years or more** |
-| Third-party audit response | Prepared each time / not possible | Immediate response by prior arrangement |
+| Needle sourcing | Lowest cost, origin aside | **Mainly Japanese-made DOTEC NEEDLE** (with lot control) |
+| Daily ledger | Usually tallied weekly or monthly | **One line a day, double signature** (reconciled daily) |
+| When a needle breaks | Done once the fragments turn up | **No closing until every fragment is recovered** (stuck straight onto that day's ledger) |
+| Pre-shipment screening | Sample-based or partial | **100% X-ray screening, every piece** (two machines in Myanmar, one the Fjade SECUT-5030D, plus one in Shandong, China) |
+| Record retention | About a year | **By lot, five years or more** |
+| Third-party audits | Scrambled together each time, or not possible | Handled promptly, by prior arrangement |
 
-"Keeping up a plain ledger for 20 years is harder than buying a flashy machine" ── this is the evaluation we most often receive from our Japanese clients.
+"Keeping a plain ledger going for twenty years is harder than buying a flashy machine." That's the compliment we hear most often from our Japanese clients.
 
 ---
 
-## Records Kept 5 Years or More ── "It Can Always Be Traced Later"
+## Records Kept Five Years or More — So It Can Always Be Traced
 
-The ledger and the X-ray screening logs are linked by manufacturing lot and kept for 5 years or more.
+The ledger and the X-ray logs are linked by manufacturing lot and kept for five years or more.
 
-This is so we can respond to all of the following:
+That way, we're ready for any of these:
 
-- when a client asks, "that lot ── I'd like to double-check it, just in case,"
-- during a third-party audit (BSCI / SEDEX / each brand's own audit),
-- when a market claim, however unlikely, requires tracing back the cause.
+- a client who says, "that lot — I'd just like to double-check it, to be safe";
+- a third-party audit (BSCI / SEDEX / a brand's own audit);
+- a market claim, however unlikely, that means tracing a cause back to its source.
 
-"When, on which line, by whom, which needle was used, which product was made, when, through which X-ray machine it passed, and at what time it shipped" ── keeping this whole chain in a state that can be reconstructed from documents alone. This is the substance of what we call **"Japanese quality."**
+When, on which line, and by whom; which needle was used and which product made; when and through which X-ray machine it passed; and the hour it shipped — keeping that entire chain reconstructable from the paperwork alone. That is what we mean by **Japanese quality.**
 
 ---
 
 ## Why We Go This Far
 
-To be honest, needle control this rigorous does drive up manufacturing cost ── the time to fill in the ledger, the line leaders' double-checks, the maintenance cost of the X-ray detectors, the risk of stopping the line.
+Honestly, needle control this strict does push our manufacturing cost up: the time spent filling in ledgers, the line leaders' double-checks, the upkeep on the X-ray detectors, the risk of halting a line.
 
-We still maintain this system because, **for more than 20 years, our Japanese clients ── long-term partners led by Anello<sup>※3</sup> and others ── have kept expecting this level "as a matter of course."**
+We keep it up anyway, because **for more than twenty years, our Japanese clients — long-term partners such as Anello<sup>※3</sup> — have expected this standard as simply a given.**
 
-And it's because we ourselves understand best of all that only by continuing to meet our clients' "matter of course" can a relationship last 20 years.
+And because we know better than anyone that a relationship only lasts twenty years if you keep meeting what the client takes for granted.
 
-Even after we moved the heart of our manufacturing to Yangon, Myanmar in 2023, one thing has not changed: the stance we've held since our founding ── **"to turn our strictest eyes on what happens where the client cannot see."**
+When we moved the heart of our manufacturing to Yangon in 2023, one thing didn't change — the stance we've held since day one: **to keep our sharpest eyes on what happens where the client can't see.**
 
 ---
 
-## Summary
+## In Summary
 
 | Item | What we do |
 | --- | --- |
 | Needle purchasing | DOTEC NEEDLE (made in Japan, with lot control) |
-| Daily management | The needle-inventory ledger ── per line, one line a day, double signature |
-| Response to a broken needle | No closing until every fragment is recovered, **fragments stuck directly onto that day's ledger** (paper × physical evidence, managed as one) |
-| Pre-shipment inspection | **100% X-ray screening of every piece** (two machines in Myanmar, one a Fjade SECUT-5030D, + one in Shandong, China) |
-| Record retention | By lot, 5 years or more |
-| Scope | Every shipped item from the Myanmar factory, every shipped item from the China factory |
-| Third-party audits | BSCI / SEDEX / each brand's own audit ── all supported |
+| Daily management | The needle-inventory ledger — per line, one line a day, double signature |
+| A broken needle | No closing until every fragment is recovered, **stuck straight onto that day's ledger** (paper and physical evidence kept as one) |
+| Pre-shipment inspection | **100% X-ray screening, every piece** (two machines in Myanmar, one a Fjade SECUT-5030D, plus one in Shandong, China) |
+| Record retention | By lot, five years or more |
+| Scope | Everything shipped from the Myanmar factory, and everything from the China factory |
+| Third-party audits | BSCI / SEDEX / a brand's own audit — all supported |
 
 ---
 
-## Protecting Our Clients' Front Line Is Our Most Important Job
+## Protecting Our Clients' Front Line Is the Most Important Work We Do
 
-Nothing strips a brand of its trust in an instant like having "something that should never be there" mixed into a product.
+Nothing destroys a brand's trust faster than something that should never be there turning up inside a product.
 
-We will keep building up **"we don't let a single needle slip,"** day after day, while taking in new equipment, new standards, and new client feedback.
+We'll keep at it — taking in new equipment, new standards, and new feedback from clients — and building up **"not a single needle gets past us,"** day after day.
 
-For any question ── a consultation, a factory visit, a sample request ── please **don't hesitate** to reach out anytime.
+Whatever your question — a consultation, a factory visit, a sample request — please **don't hesitate** to reach out anytime.
 
 - [Contact us →](#contact)
 - [Request a factory visit →](#contact)
@@ -752,9 +752,9 @@ For any question ── a consultation, a factory visit, a sample request ──
 
 ### Sources
 
-- <sup>※1</sup> The Product Liability Act (the PL Act, Act No. 85 of 1994). A law defining a manufacturer's liability for damages when a defect in a product causes harm to life, body, or property.
-- <sup>※2</sup> Toy safety standards established by the Japan Toy Association. Children's bags, school satchels, and the like may fall under them.
-- <sup>※3</sup> Anello Co., Ltd. is one of our long-term partner companies. The use of the name in this article is published with prior confirmation.
+- <sup>※1</sup> The Product Liability Act (the PL Act, Act No. 85 of 1994): the law setting out a manufacturer's liability for damages when a product defect causes harm to life, body, or property.
+- <sup>※2</sup> Toy safety standards set by the Japan Toy Association. Children's bags, satchels, and the like can fall under them.
+- <sup>※3</sup> Anello Co., Ltd. is one of our long-term partners. Its name appears here with prior permission.
 
 ---
 
@@ -762,11 +762,11 @@ For any question ── a consultation, a factory visit, a sample request ──
 
 #### 【Quality Series】Sister Piece
 
-- **【Vol.02】** [A Second Look, Through Third-Party Eyes ── Delivering "100% Japanese Quality" on Myanmar Shipments Through Our Collaboration with I-pack](/blog/ipack-third-party-inspection-myanmar) ── Another layer of third-party inspection on top of in-house inspection.
+- **【Vol.02】** [A Second Look Through Third-Party Eyes — Delivering "100% Japanese Quality" on Myanmar Shipments with I-pack](/blog/ipack-third-party-inspection-myanmar) — another layer of third-party inspection on top of our own.
 
 #### 【Factory Series】
 
-- **【Vol.01】** [One Day at Our Yangon Factory in Myanmar ── A Virtual Tour from the Start of Work to the Close](/blog/factory-tour-one-day-myanmar)
+- **【Vol.01】** [One Day at Our Yangon Factory in Myanmar — A Virtual Tour from Open to Close](/blog/factory-tour-one-day-myanmar)
 `;
 
 const post: BlogPost = {
@@ -775,12 +775,12 @@ const post: BlogPost = {
   title: {
     ja: '1 本の針も逃さない ── Better Bags Myanmar 工場の断針管理体制',
     zh: '1 根针也不漏 ── Better Bags Myanmar 工厂的断针管理体制',
-    en: "We Don't Let a Single Needle Slip ── The Needle-Control System at the Better Bags Myanmar Factory",
+    en: "We Don't Let a Single Needle Slip — The Needle-Control System at the Better Bags Myanmar Factory",
   },
   excerpt: {
     ja: 'バッグ製造で最も恐ろしい「断針による異物混入」のリスクを 0 に近づける、Better Bags Myanmar 工場の断針管理体制を完全公開。在庫針管理台帳、Fjade X 線検針機、5 年記録保管まで、日本品質を支える仕組みを解説します。',
     zh: '把包袋制造中最可怕的「断针异物混入」风险逼近零 ── Better Bags Myanmar 工厂断针管理体制全公开。库存针管理台账、Fjade X 光检针机、5 年记录保管，撑起「日本品质」的机制完整解读。',
-    en: 'Pushing the most dreaded risk in bag-making ── foreign-object contamination from a broken needle ── as close to zero as possible. A complete look at the needle-control system at the Better Bags Myanmar factory: the needle-inventory ledger, the Fjade X-ray needle detector, and 5-year record retention ── the mechanisms behind "Japanese quality."',
+    en: 'Driving the most dreaded risk in bag-making — foreign-object contamination from a broken needle — as close to zero as it can go. A complete look at the needle-control system at the Better Bags Myanmar factory: the needle-inventory ledger, the Fjade X-ray needle detector, and five-year record retention — the machinery behind "Japanese quality."',
   },
   content: { ja, zh, en },
   date: '2026-05-15',
