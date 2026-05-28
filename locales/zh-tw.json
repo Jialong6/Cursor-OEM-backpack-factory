@@ -29,7 +29,8 @@
     "process": "Process",
     "faq": "FAQ",
     "contact": "Contact Us",
-    "blog": "Blog"
+    "blog": "Blog",
+    "skipToContent": "跳轉到主要內容"
   },
   "banner": {
     "line1": "Better Bags since 2003",
@@ -89,7 +90,8 @@
       "p2": "Our story began in Shenzhen, China, where our founder, Mr. Li Guangtong, gained deep expertise working with top international brands. Driven by a vision of global excellence, we later established our main production base in Shandong (Rizhao) — paired with a dedicated sampling and development center in Qingdao — and, following thorough research, launched our state-of-the-art production base in Yangon, Myanmar in 2023.",
       "p3": "Over the past two decades, our primary focus has been the Japanese market, and we have proudly partnered with multiple Japanese brands — including Anello — alongside selected global brands such as New Balance, Nike, and Fila. Our unwavering commitment to quality, reliability, and proactive service has enabled us to maintain long-term partnerships, with many leading Japanese brands working with us for over 15 years.",
       "p4": "Today, Better Bags stands at the intersection of tradition and innovation. By optimizing our dual-factory model, investing in people and systems, and adhering strictly to international standards, we meet the evolving needs of global customers with efficiency, flexibility, and future-oriented solutions. As we look ahead, our goal is to set new benchmarks in both client satisfaction and responsible manufacturing."
-    }
+    },
+    "trustedBrands": "與全球知名品牌合作"
   },
   "costAdvantage": {
     "title": "Why Myanmar: The Cost-vs-Lead-Time Sweet Spot",
@@ -618,12 +620,23 @@
       "orderQuantity": {
         "label": "Estimated Order Quantity (per design)",
         "placeholder": "Select quantity range",
-        "error": "Please select an order quantity"
+        "error": "Please select an order quantity",
+        "optionLabels": [
+          "少於 100 件",
+          "100-300 件",
+          "300-1000 件",
+          "超過 1000 件"
+        ]
       },
       "techPackAvailability": {
         "label": "Do you have a tech pack or reference sample?",
         "placeholder": "Select an option",
-        "error": "Please select an option"
+        "error": "Please select an option",
+        "optionLabels": [
+          "是，我有技術包",
+          "我有實物樣品",
+          "我只有想法/草圖"
+        ]
       },
       "fileUpload": {
         "label": "Upload Files (Optional)",
@@ -861,12 +874,19 @@
         "rating": 4.5,
         "quote": "如果用 10 分制來打分的話，我會給 9 分。第二次到緬甸工廠視察的時候有一點點讓我在意的地方，但除此之外都非常好——以現在的情況來說已經完全足夠了。生產線上確實碰到過一些課題，但這是任何工廠都會遇到的，除此之外沒有什麼問題。整體來說，我評價你們做得很扎實。"
       }
-    ]
+    ],
+    "carousel": {
+      "previous": "上一張",
+      "next": "下一張",
+      "goTo": "跳轉到第 {index} 張",
+      "status": "第 {current} 張，共 {total} 張"
+    }
   },
   "author": {
     "writtenBy": "作者",
     "readingTime": "閱讀時間",
-    "minRead": "分鐘閱讀"
+    "minRead": "分鐘閱讀",
+    "aboutAuthor": "關於作者"
   },
   "certifications": {
     "title": "認證資質",

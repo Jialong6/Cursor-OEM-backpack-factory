@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { type Locale } from '@/i18n';
 import { generateBlogListMetadata } from '@/lib/metadata';
 
 /**
@@ -26,7 +27,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  return generateBlogListMetadata(locale as 'en' | 'zh');
+  return generateBlogListMetadata(locale as Locale);
 }
 
 /**

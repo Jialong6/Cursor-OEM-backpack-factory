@@ -106,6 +106,10 @@ export default function Testimonials() {
             autoPlay
             autoPlayInterval={6000}
             label={t('title')}
+            previousSlideLabel={t('carousel.previous')}
+            nextSlideLabel={t('carousel.next')}
+            goToSlideLabel={(index) => t('carousel.goTo', { index })}
+            slideStatusLabel={(current, total) => t('carousel.status', { current, total })}
           />
         </div>
       </div>

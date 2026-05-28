@@ -45,6 +45,10 @@ export const homeMetadata = {
     title: 'Better Bags 缅甸 - 高端背包OEM工厂',
     description: '缅甸顶级定制背包制造商。20+年经验，600+专业员工，长期服务日本及多国品牌。',
   },
+  ja: {
+    title: 'Better Bags Myanmar - 高品質OEMバックパック工場',
+    description: 'ミャンマーのトップクラスのカスタムバックパックメーカー。20年以上の経験、600名以上のスタッフを擁し、主に日本ブランド向けに製造しています。',
+  },
 } as const;
 
 /**
@@ -58,6 +62,10 @@ export const blogListMetadata = {
   zh: {
     title: '博客 - Better Bags 缅甸 | 行业洞察',
     description: '探索来自 Better Bags 缅甸的背包制造洞察、行业趋势和可持续发展实践。',
+  },
+  ja: {
+    title: 'ブログ - Better Bags Myanmar | 業界インサイト',
+    description: 'Better Bags Myanmar による、バックパック製造のインサイト、業界トレンド、サステナビリティへの取り組みをご紹介します。',
   },
 } as const;
 
@@ -90,7 +98,7 @@ function getOgLocale(locale: Locale): string {
  */
 export function generateHomeMetadata(locale: Locale): Metadata {
   // 对于没有翻译的语言，回退到英文
-  const metaLocale = (locale === 'en' || locale === 'zh') ? locale : 'en';
+  const metaLocale = (locale === 'en' || locale === 'zh' || locale === 'ja') ? locale : 'en';
   const meta = homeMetadata[metaLocale];
 
   return {
@@ -133,7 +141,7 @@ export function generateHomeMetadata(locale: Locale): Metadata {
  */
 export function generateBlogListMetadata(locale: Locale): Metadata {
   // 对于没有翻译的语言，回退到英文
-  const metaLocale = (locale === 'en' || locale === 'zh') ? locale : 'en';
+  const metaLocale = (locale === 'en' || locale === 'zh' || locale === 'ja') ? locale : 'en';
   const meta = blogListMetadata[metaLocale];
 
   return {

@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { getAuthorById } from '@/lib/author-data';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { TRUSTED_BRANDS } from '@/lib/brand-logos';
@@ -18,7 +18,6 @@ import { TRUSTED_BRANDS } from '@/lib/brand-logos';
  */
 export default function AboutUs() {
   const t = useTranslations('about');
-  const locale = useLocale();
   const founder = getAuthorById('jay');
 
   const titleAnim = useScrollAnimation({ variant: 'fade-up' });
@@ -185,7 +184,7 @@ export default function AboutUs() {
             {/* 合作品牌展示 */}
             <div className="mt-10 border-t border-neutral-200 pt-8">
               <p className="mb-6 text-center text-sm font-semibold uppercase tracking-wide text-neutral-500">
-                {locale === 'en' ? 'Trusted by Global Brands' : '与全球知名品牌合作'}
+                {t('trustedBrands')}
               </p>
               <div className="grid grid-cols-2 items-center gap-6 sm:grid-cols-3 md:grid-cols-6 md:gap-8">
                 {TRUSTED_BRANDS.map((brand) => (

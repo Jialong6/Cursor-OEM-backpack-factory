@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { locales, type Locale } from '@/i18n';
 import Navbar from '@/components/layout/Navbar';
@@ -71,6 +71,7 @@ export default async function RootLayout({
 
   // 获取当前语言的翻译消息（传入 locale 参数）
   const messages = await getMessages({ locale });
+  const tNav = await getTranslations({ locale, namespace: 'nav' });
 
   // Task 16: 按语言加载对应字体
   const fontVariables = getFontVariables(locale as Locale);
@@ -85,7 +86,7 @@ export default async function RootLayout({
           <ManufacturingPlantSchema />
           {/* 跳过导航链接 - 需求 16.6: 支持键盘导航 */}
           <a href="#main-content" className="skip-to-content">
-            {locale === 'zh' ? '跳转到主要内容' : 'Skip to main content'}
+            {tNav('skipToContent')}
           </a>
           <Navbar />
           <LanguageBanner locale={locale as Locale} />

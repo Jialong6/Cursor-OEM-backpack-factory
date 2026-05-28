@@ -29,7 +29,8 @@
     "process": "Process",
     "faq": "FAQ",
     "contact": "Contact Us",
-    "blog": "Blog"
+    "blog": "Blog",
+    "skipToContent": "Skip to main content"
   },
   "banner": {
     "line1": "Better Bags since 2003",
@@ -89,7 +90,8 @@
       "p2": "Our story began in Shenzhen, China, where our founder, Mr. Li Guangtong, gained deep expertise working with top international brands. Driven by a vision of global excellence, we later established our main production base in Shandong (Rizhao) — paired with a dedicated sampling and development center in Qingdao — and, following thorough research, launched our state-of-the-art production base in Yangon, Myanmar in 2023.",
       "p3": "Over the past two decades, our primary focus has been the Japanese market, and we have proudly partnered with multiple Japanese brands — including Anello — alongside selected global brands such as New Balance, Nike, and Fila. Our unwavering commitment to quality, reliability, and proactive service has enabled us to maintain long-term partnerships, with many leading Japanese brands working with us for over 15 years.",
       "p4": "Today, Better Bags stands at the intersection of tradition and innovation. By optimizing our dual-factory model, investing in people and systems, and adhering strictly to international standards, we meet the evolving needs of global customers with efficiency, flexibility, and future-oriented solutions. As we look ahead, our goal is to set new benchmarks in both client satisfaction and responsible manufacturing."
-    }
+    },
+    "trustedBrands": "Trusted by Global Brands"
   },
   "costAdvantage": {
     "title": "Why Myanmar: The Cost-vs-Lead-Time Sweet Spot",
@@ -618,12 +620,23 @@
       "orderQuantity": {
         "label": "Estimated Order Quantity (per design)",
         "placeholder": "Select quantity range",
-        "error": "Please select an order quantity"
+        "error": "Please select an order quantity",
+        "optionLabels": [
+          "Less than 100 pcs",
+          "100-300 pcs",
+          "300-1000 pcs",
+          "More than 1000 pcs"
+        ]
       },
       "techPackAvailability": {
         "label": "Do you have a tech pack or reference sample?",
         "placeholder": "Select an option",
-        "error": "Please select an option"
+        "error": "Please select an option",
+        "optionLabels": [
+          "Yes, I have a tech pack",
+          "I have a physical sample",
+          "I only have an idea/sketch"
+        ]
       },
       "fileUpload": {
         "label": "Upload Files (Optional)",
@@ -861,12 +874,19 @@
         "rating": 4.5,
         "quote": "Auf einer 10-Punkte-Skala würde ich ihnen eine 9 geben. Bei meinem zweiten Besuch in der Fabrik in Myanmar ist mir eine Kleinigkeit aufgefallen, ansonsten läuft alles sehr gut — für unsere aktuellen Anforderungen mehr als ausreichend. In der Produktion gab es ein paar Herausforderungen, aber das hat jede Fabrik; abgesehen davon keinerlei Probleme. Insgesamt machen sie wirklich solide, verlässliche Arbeit."
       }
-    ]
+    ],
+    "carousel": {
+      "previous": "Previous slide",
+      "next": "Next slide",
+      "goTo": "Go to slide {index}",
+      "status": "Slide {current} of {total}"
+    }
   },
   "author": {
     "writtenBy": "Written by",
     "readingTime": "Reading time",
-    "minRead": "min read"
+    "minRead": "min read",
+    "aboutAuthor": "About the Author"
   },
   "certifications": {
     "title": "Certifications",

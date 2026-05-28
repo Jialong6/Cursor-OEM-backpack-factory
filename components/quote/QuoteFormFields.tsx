@@ -301,9 +301,9 @@ export default function QuoteFormFields({
             <option value="" disabled>
               {t('form.orderQuantity.placeholder')}
             </option>
-            {ORDER_QUANTITY_OPTIONS.map((option) => (
+            {ORDER_QUANTITY_OPTIONS.map((option, i) => (
               <option key={option} value={option}>
-                {option}
+                {(t.raw('form.orderQuantity.optionLabels') as string[])[i] ?? option}
               </option>
             ))}
           </select>
@@ -333,9 +333,9 @@ export default function QuoteFormFields({
             <option value="" disabled>
               {t('form.techPackAvailability.placeholder')}
             </option>
-            {TECH_PACK_OPTIONS.map((option) => (
+            {TECH_PACK_OPTIONS.map((option, i) => (
               <option key={option} value={option}>
-                {option}
+                {(t.raw('form.techPackAvailability.optionLabels') as string[])[i] ?? option}
               </option>
             ))}
           </select>

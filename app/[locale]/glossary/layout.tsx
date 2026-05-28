@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
+import { type Locale } from '@/i18n';
 import { generateGenericMetadata } from '@/lib/metadata';
 
 /**
  * Glossary page Layout
  *
- * Configures SEO metadata for the glossary page.
+ * Configures SEO metadata for the glossary page (localized per locale).
  */
 export async function generateMetadata({
   params,
@@ -12,10 +14,11 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'glossary' });
   return generateGenericMetadata(
-    locale as 'en' | 'zh',
-    'Backpack Manufacturing Glossary | Better Bags Myanmar',
-    'Essential industry terms and definitions for OEM/ODM backpack production. Learn about materials, manufacturing processes, quality control, and logistics.',
+    locale as Locale,
+    `${t('title')} | Better Bags Myanmar`,
+    t('description'),
     '/glossary'
   );
 }

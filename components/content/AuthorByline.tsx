@@ -38,10 +38,13 @@ function formatDate(dateString: string, locale: string): string {
     month: 'long',
     day: 'numeric',
   };
-  return date.toLocaleDateString(
-    locale === 'zh' || locale === 'zh-tw' ? 'zh-CN' : 'en-US',
-    options
-  );
+  const dateLocale =
+    locale === 'ja'
+      ? 'ja-JP'
+      : locale === 'zh' || locale === 'zh-tw'
+        ? 'zh-CN'
+        : 'en-US';
+  return date.toLocaleDateString(dateLocale, options);
 }
 
 /**
@@ -107,10 +110,19 @@ export default function AuthorByline({
 }: AuthorBylineProps) {
   const t = useTranslations('author');
 
-  const isChinese = locale === 'zh' || locale === 'zh-tw';
-  const authorName = isChinese ? author.name.zh : author.name.en;
-  const authorRole = isChinese ? author.role.zh : author.role.en;
-  const authorBio = isChinese ? author.bio.zh : author.bio.en;
+  const pickLocalized = (field: {
+    readonly en: string;
+    readonly zh: string;
+    readonly ja: string;
+  }) =>
+    locale === 'ja'
+      ? field.ja
+      : locale === 'zh' || locale === 'zh-tw'
+        ? field.zh
+        : field.en;
+  const authorName = pickLocalized(author.name);
+  const authorRole = pickLocalized(author.role);
+  const authorBio = pickLocalized(author.bio);
   const readingTime = content ? estimateReadingTime(content) : undefined;
   const formattedDate = formatDate(publishDate, locale);
   const initials = getInitials(author.name.en);
@@ -130,7 +142,7 @@ export default function AuthorByline({
   }
 
   if (variant === 'card') {
-    const aboutLabel = isChinese ? '关于作者' : 'About the Author';
+    const aboutLabel = t('aboutAuthor');
     return (
       <section
         className="rounded-lg bg-neutral-50 border border-neutral-200 p-5"
