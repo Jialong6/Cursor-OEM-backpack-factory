@@ -5,6 +5,9 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    // 博客正文（含时间轴 HTML）的 Tailwind class 写在 lib/blog-posts 的字符串里，
+    // 必须纳入扫描，否则这些 class 不会生成 CSS 规则。
+    "./lib/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     screens: {

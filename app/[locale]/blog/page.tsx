@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { getAllBlogPosts } from '@/lib/blog-data';
+import { getLocalizedField } from '@/lib/blog-utils';
 import OptimizedImage, { IMAGE_SIZES, ASPECT_RATIOS } from '@/components/ui/OptimizedImage';
 
 /**
@@ -22,7 +23,7 @@ import OptimizedImage, { IMAGE_SIZES, ASPECT_RATIOS } from '@/components/ui/Opti
 export default function BlogListPage() {
   const t = useTranslations('blogList');
   const params = useParams();
-  const locale = params.locale as 'en' | 'zh';
+  const locale = params.locale as string;
   const allPosts = getAllBlogPosts();
 
   /**
@@ -35,7 +36,18 @@ export default function BlogListPage() {
       month: 'long',
       day: 'numeric',
     };
-    return date.toLocaleDateString(locale === 'zh' ? 'zh-CN' : 'en-US', options);
+    const dateLocaleMap: Record<string, string> = {
+      ja: 'ja-JP',
+      zh: 'zh-CN',
+      'zh-tw': 'zh-TW',
+      de: 'de-DE',
+      nl: 'nl-NL',
+      fr: 'fr-FR',
+      pt: 'pt-PT',
+      es: 'es-ES',
+      ru: 'ru-RU',
+    };
+    return date.toLocaleDateString(dateLocaleMap[locale] ?? 'en-US', options);
   };
 
   return (
@@ -83,7 +95,7 @@ export default function BlogListPage() {
               <div className="relative">
                 <OptimizedImage
                   src={post.thumbnail}
-                  alt={post.title[locale]}
+                  alt={getLocalizedField(post.title, locale) ?? ''}
                   fill
                   aspectRatio={ASPECT_RATIOS.WIDE}
                   sizes={IMAGE_SIZES.BLOG_THUMBNAIL}
@@ -116,11 +128,11 @@ export default function BlogListPage() {
 
                 {/* 标题 */}
                 <h2 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors line-clamp-2">
-                  {post.title[locale]}
+                  {getLocalizedField(post.title, locale)}
                 </h2>
 
                 {/* 摘要 */}
-                <p className="text-gray-600 text-sm line-clamp-3 mb-4">{post.excerpt[locale]}</p>
+                <p className="text-gray-600 text-sm line-clamp-3 mb-4">{getLocalizedField(post.excerpt, locale)}</p>
 
                 {/* 标签 */}
                 {post.tags && post.tags.length > 0 && (

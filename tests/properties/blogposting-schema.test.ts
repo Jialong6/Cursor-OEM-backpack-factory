@@ -17,7 +17,7 @@ import { FACTORY_INFO } from '@/components/seo/ManufacturingPlantSchema';
  * - inLanguage 匹配 locale
  */
 
-const supportedLocales = ['en', 'zh'] as const;
+const supportedLocales = ['ja', 'zh'] as const;
 
 /**
  * 模拟 BlogPostingSchema 组件的 JSON-LD 生成逻辑
@@ -199,12 +199,12 @@ describe('Property: BlogPosting Schema Validity', () => {
       const post = BLOG_POSTS[0];
       const author = getAuthorForPost(post);
       const schema = generateBlogPostingJsonLd(
-        post.title.en,
-        post.excerpt.en,
+        post.title.zh,
+        post.excerpt.zh,
         '/images/blog/test.jpg',
         post.date,
         author,
-        'en'
+        'zh'
       );
 
       expect(schema.image).toBe(`${FACTORY_INFO.url}/images/blog/test.jpg`);
@@ -215,12 +215,12 @@ describe('Property: BlogPosting Schema Validity', () => {
       const author = getAuthorForPost(post);
       const absoluteUrl = 'https://example.com/image.jpg';
       const schema = generateBlogPostingJsonLd(
-        post.title.en,
-        post.excerpt.en,
+        post.title.zh,
+        post.excerpt.zh,
         absoluteUrl,
         post.date,
         author,
-        'en'
+        'zh'
       );
 
       expect(schema.image).toBe(absoluteUrl);
@@ -232,12 +232,12 @@ describe('Property: BlogPosting Schema Validity', () => {
       const post = BLOG_POSTS[0];
       const author = getAuthorForPost(post);
       const schema = generateBlogPostingJsonLd(
-        post.title.en,
-        post.excerpt.en,
+        post.title.zh,
+        post.excerpt.zh,
         post.thumbnail,
         post.date,
         author,
-        'en'
+        'zh'
       );
 
       expect(() => JSON.stringify(schema)).not.toThrow();

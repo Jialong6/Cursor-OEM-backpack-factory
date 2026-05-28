@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { getBlogPostBySlug, getAllBlogPosts } from '@/lib/blog-data';
+import { getLocalizedField } from '@/lib/blog-utils';
 import { generateBlogDetailMetadata, BASE_URL } from '@/lib/metadata';
+import { locales, isValidLocale, defaultLocale } from '@/i18n';
 
 /**
  * 博客详情页 Layout
@@ -40,18 +42,19 @@ export async function generateMetadata({
     };
   }
 
-  // 获取当前语言的标题和摘要
-  const lang = locale as 'en' | 'zh';
-  const title = post.title[lang];
-  const description = post.excerpt[lang];
+  // 多语言回退：当前 locale → ja/zh，最终兜底中文
+  const title = getLocalizedField(post.title, locale) ?? post.title.zh;
+  const description = getLocalizedField(post.excerpt, locale) ?? post.excerpt.zh;
 
   // 构建图片 URL（如果是相对路径，转换为绝对路径）
   const imageUrl = post.thumbnail.startsWith('http')
     ? post.thumbnail
     : `${BASE_URL}${post.thumbnail}`;
 
+  const validLocale = isValidLocale(locale) ? locale : defaultLocale;
+
   return generateBlogDetailMetadata(
-    lang,
+    validLocale,
     slug,
     title,
     description,
@@ -67,11 +70,10 @@ export async function generateMetadata({
 export async function generateStaticParams() {
   const posts = getAllBlogPosts();
 
-  // 为每个文章生成 en 和 zh 两个版本
-  return posts.flatMap((post) => [
-    { locale: 'en', slug: post.slug },
-    { locale: 'zh', slug: post.slug },
-  ]);
+  // 为每个文章在所有支持的 locale 下都生成静态路由
+  return posts.flatMap((post) =>
+    locales.map((locale) => ({ locale, slug: post.slug }))
+  );
 }
 
 /**
