@@ -554,23 +554,306 @@ I-pack 检品报告中指出的不良倾向，我们带回厂内，作为工序�
 - **【Vol.01】** [缅甸仰光工厂的「1 天」── 从开工到收工的虚拟参访](/blog/factory-tour-one-day-myanmar)
 `;
 
+const en = `# A Second Look, Through Third-Party Eyes ── Delivering "100% Japanese Quality" on Myanmar Shipments Through Our Collaboration with I-pack
+
+### "What is third-party inspection?" ── A complete look at our three-layer defense system, supported in Myanmar by industry-specialist inspection professionals
+
+> "At the end of the day, you made it yourselves and you checked it yourselves ──"
+>
+> The honest feeling of a Japanese procurement manager probably lies right here.
+>
+> So, for more than 20 years, we have always added one more layer on top of in-house inspection: a third party's eyes, without exception. The one carrying that third-party role is the bag-industry inspection specialist, **I-pack Co., Ltd.**
+
+---
+
+## Before We Begin ── There Are Places "Self-Inspection" Alone Cannot Reach
+
+As we introduced in our previous article, "[We Don't Let a Single Needle Slip ── The Needle-Control System at the Better Bags Myanmar Factory](/blog/danshin-needle-control-myanmar)" (Quality Series Vol.01), we run a two-layer quality system in-house:
+
+- Layer one: the needle-inventory ledger (one line a day, not a single needle off)
+- Layer two: **100% screening of every piece** by **two X-ray needle detectors** (one of them a Fjade SECUT-5030D)
+
+This alone is a fairly rigorous setup by industry-average standards. But we ourselves always add "one more."
+
+That is ── **pre-shipment inspection by a third party.**
+
+Why are a third party's eyes necessary? There is just one reason:
+
+> **"You can't see your own habits in the things you make yourself."**
+
+An operator who runs the same step every day; a QC member who checks the same products every day. However well-trained, an organization inevitably develops its own "way of seeing." Our clients see differently from us. So we need someone, standing on the client's side, to look the finished product over once more.
+
+For more than 10 years ── in our Qingdao days and still now that we have come to Myanmar ── the one filling that role is **I-pack Co., Ltd. (hereafter, I-pack).**
+
+---
+
+## Five Concerns Our Clients Often Raise
+
+We've gathered the five questions about the third-party inspection system that we most often hear from Japanese clients in a first meeting.
+
+| Your concern | Our answer |
+| --- | --- |
+| **"Why is third-party inspection necessary? Isn't in-house inspection enough?"** | Because self-inspection alone makes it hard to see through an "organization's own way of seeing." By passing the work independently through two organizations with differently-oriented eyes, the probability of an oversight drops not additively but **multiplicatively.** |
+| **"How is I-pack's inspection different from in-house inspection?"** | I-pack is a **bag-industry inspection specialist**, with a depth that general-purpose inspection firms lack. Their method is not the "line method" but the "**cell method** (the workbench method)."<sup>※1</sup> While our in-house X-ray detectors (two units) reliably catch metal foreign objects, I-pack re-checks the "areas metal can't catch" ── appearance, sewing, packaging ── with the **eyes of an industry specialist.** |
+| **"Does the Myanmar on-site inspection office run to the same standard as Japan (Toyooka and the like)?"** | Yes. I-pack's inspector training / manuals / AQL are operated at the Yangon on-site inspection office to the same standard as in the Qingdao era and at the Toyooka base. |
+| **"Can we (the buyer) also view the inspection reports?"** | Yes, by prior arrangement. We'll share the per-lot report format with you. |
+| **"How much does it affect cost and lead time?"** | It depends on lot size and inspection level (AQL). Please discuss it with us during our meeting. |
+
+[On a similar theme: the mechanism that achieves "not letting a single needle slip" on the in-house side →](/blog/danshin-needle-control-myanmar)
+
+---
+
+## What I-pack Is ── The Inspection Professionals Trusted by Japan's Bag Industry
+
+I-pack is a Japanese specialist company focused on a specific set of industries ── **bags, cases, wallets, and leather goods** ── providing total quality-management services spanning inspection, needle detection, distribution processing, shipping storage, and factory guidance ([official site](https://www.i-pack-solution.asia/)<sup>※2</sup>).
+
+What matters here is that I-pack is **not a general-purpose inspection firm.**
+
+There are countless companies in the world offering inspection services. But since its founding, I-pack has never once lowered the banner of "bag-industry specialist," staying deeply rooted in the same industry the whole time ── a rare specialist company.
+
+One expression of that specialization is its **network of bases.**
+
+### A Global Network of More Than 13 Bases
+
+I-pack's inspection and service bases are deployed across more than 13 locations in Asia and Europe.
+
+| Country | Bases |
+| --- | --- |
+| Japan | Tokyo / Okayama / **Toyooka**, Hyogo Prefecture |
+| China | Guangzhou / Qingdao / Laizhou / Rizhao / Yiwu / Lu'an, Anhui / Juye, Heze, Shandong |
+| Vietnam | Hanoi / Haiphong / Ho Chi Minh City |
+| Myanmar | Yangon |
+| Italy | (base present) |
+
+Especially noteworthy is that **"Toyooka" is among the Japanese bases.**
+
+As you may know, Toyooka City has 1,200 years of history going back to the era of willow-wicker trunks, and is **Japan's largest bag-producing region.** Setting up a base close to the "heart" of Japan's bag industry, and carrying that perspective into manufacturing sites across Asia ── this is a feat a general-purpose inspection firm cannot pull off.
+
+---
+
+## Why We Keep Choosing I-pack
+
+Our relationship with I-pack goes back to **the era when the center of our production was still in Qingdao, China.**
+
+From that time, whenever a Japanese client requested it, we built a system of passing the work through third-party inspection after in-house QC. I-pack is one of the partners who have carried that third-party inspection for us over many years ── a long relationship, and a well-attuned one.
+
+In 2023, from a long-term perspective, we moved our main mass-production base to Myanmar (Yangon). "If all you want is to cut costs, you can cut them as much as you like. But the places where you can cut costs while maintaining Japanese quality are limited" ── that was the judgment behind the decision.
+
+At that point, the very first thing we confirmed was a single question: "**Can I-pack support us in Myanmar to the same quality standard?**"
+
+The answer was **Yes.**
+
+At almost the same time, I-pack established a **Myanmar on-site inspection office**, and they inspect our Myanmar factory's shipments to exactly the same standard as in the Qingdao era.
+
+> "We went to Myanmar, so I-pack came to Myanmar too" ── it isn't that simple a story. It happened to coincide with the time when Japan's bag industry as a whole, seeking to respond to changes in cost structure and to optimize lead times, began turning its eyes toward Myanmar.
+>
+> What was fortunate for us was that **an inspection partner with whom we had built a trusting relationship over more than 10 years set up a base in the same country, at the same time as us.**
+
+---
+
+## Three Inspection Systems ── Seeing "Three-Layer Defense" Through Comparison
+
+Why is "make it yourself and check it yourself" not enough on its own? And how exactly do "in-house + third-party inspection" and "two in-house layers + third-party inspection (= three-layer defense)" differ? We've organized the answers to the questions we get during consultations into a comparison of three typical scenarios.
+
+| Inspection-system item | A. In-house inspection only (industry-typical) | B. In-house + general inspection firm (a standard measure) | C. Our three-layer defense: Better Bags × I-pack |
+| --- | --- | --- | --- |
+| Who does it | One organization inside the factory | Inside the factory + one general inspection org | Inside the factory (two layers) + I-pack (industry specialist) |
+| Bag-industry specialization | In-house only | Weak | **Strong** (I-pack specializes in the bag industry) |
+| Needle-detection system | X-ray sampling | X-ray sampling | **Two in-house X-ray detectors, 100% of every piece** |
+| Depth of appearance inspection | In-house standard only | General standard | **An industry specialist's perspective** (I-pack, the human eye) |
+| Inspection method | Line method | Line method | **Cell method (the workbench method)**<sup>※1</sup> |
+| "Sales-floor perspective" | × | × | **◎** (I-pack's philosophy, "the salesperson's eye"<sup>※2</sup>) |
+| Third-party audit response | Prepared each time / not possible | Partial | **Immediate response possible** |
+| Record traceability | About 1 year | 1–2 years | **5 years or more, reproducible by lot** |
+
+It is not as simple as "three layers, so 1.5 times better." **Passing the work independently, through differently-principled eyes, by people in different organizations** ── this combination, we believe, is the only path to reducing oversights multiplicatively.
+
+---
+
+## From One Product to Shipment ── The Three-Layer Defense Timeline
+
+What kind of inspection journey does a single bag, completed on the sewing line of our Myanmar factory, actually travel before it reaches the client? Laid out in time order, it looks like this:
+
+<div class="my-8 space-y-2 not-prose">
+  <div class="bg-neutral-100 border border-neutral-300 rounded-lg px-5 py-2.5 text-center font-semibold text-neutral-700">Sewing line complete</div>
+  <div class="flex justify-center text-neutral-400 text-lg leading-none">▼</div>
+  <div class="bg-amber-50 border-2 border-amber-300 rounded-lg p-5">
+    <div class="text-amber-800 font-bold mb-3">In-house inspection (Better Bags Myanmar)</div>
+    <div class="space-y-2">
+      <div class="flex gap-3 items-start"><span class="shrink-0 w-7 h-7 rounded-full bg-amber-700 text-white flex items-center justify-center font-bold text-xs">1</span><span class="text-sm text-neutral-800 pt-0.5"><strong>IPQC (in-process inspection)</strong> ── sewing, parts, dimensions</span></div>
+      <div class="flex gap-3 items-start"><span class="shrink-0 w-7 h-7 rounded-full bg-amber-700 text-white flex items-center justify-center font-bold text-xs">2</span><span class="text-sm text-neutral-800 pt-0.5"><strong>FQC (final inspection)</strong> ── appearance, function, accessories</span></div>
+      <div class="flex gap-3 items-start"><span class="shrink-0 w-7 h-7 rounded-full bg-amber-700 text-white flex items-center justify-center font-bold text-xs">3</span><span class="text-sm text-neutral-800 pt-0.5"><strong>Two in-house X-ray needle detectors</strong> ── 100% of every piece</span></div>
+    </div>
+  </div>
+  <div class="flex justify-center items-center gap-2 text-neutral-400"><span class="text-lg leading-none">▼</span><span class="text-xs text-neutral-500 italic">moved to the third layer</span></div>
+  <div class="bg-sky-50 border-2 border-sky-300 rounded-lg p-5">
+    <div class="text-sky-800 font-bold mb-3">Third-party inspection (I-pack on-site inspection office)</div>
+    <div class="space-y-2">
+      <div class="flex gap-3 items-start"><span class="shrink-0 w-7 h-7 rounded-full bg-sky-700 text-white flex items-center justify-center font-bold text-xs">1</span><span class="text-sm text-neutral-800 pt-0.5"><strong>Cell-method appearance inspection</strong> ── re-checked with industry-specialist eyes</span></div>
+      <div class="flex gap-3 items-start"><span class="shrink-0 w-7 h-7 rounded-full bg-sky-700 text-white flex items-center justify-center font-bold text-xs">2</span><span class="text-sm text-neutral-800 pt-0.5"><strong>Final lot judgment</strong> ── inspection report issued</span></div>
+    </div>
+  </div>
+  <div class="flex justify-center text-neutral-400 text-lg leading-none">▼</div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+    <div class="bg-emerald-50 border border-emerald-300 rounded-lg p-4">
+      <div class="text-emerald-800 font-bold mb-2 flex items-center gap-2"><span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-500 text-white text-sm">✓</span>All passed</div>
+      <div class="text-sm text-neutral-700">Shipment-OK label → packing → departure → <strong>client</strong></div>
+    </div>
+    <div class="bg-rose-50 border border-rose-300 rounded-lg p-4">
+      <div class="text-rose-800 font-bold mb-2 flex items-center gap-2"><span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-rose-500 text-white text-sm">!</span>Even one piece fails</div>
+      <div class="text-sm text-neutral-700">Shipment stopped → cause investigation → <strong>re-inspect every piece of the same lot</strong></div>
+    </div>
+  </div>
+</div>
+
+If an alert is raised at any of the three layers, the shipment stops. Only lots that have passed all three layers head to the client.
+
+This is the basis on which we say "**Shipments from the Myanmar factory can 100% meet the expectations of Japanese clients.**" It is not that "**we say so ourselves**," but that "**specialists in Japan's bag industry look at every lot, too**" ── that fact is the substance of the claim.
+
+---
+
+## How I-pack's Inspection Differs from Ordinary Inspection
+
+There are several distinctive features in I-pack's inspection methods that make us feel, "it really has to be them."
+
+### 1. Not the Line Method, but the "Cell Method (the Workbench Method)"
+
+A typical inspection firm inspects with a "line method," like a conveyor belt ── an assembly-line type in which one person endlessly repeats a single step. This suits high-volume, single-product inspection, but **does not suit the small-lot, multi-SKU, short-cycle** orders aimed at the Japanese market.
+
+I-pack's inspection lines adopt the **cell method (the workbench method).**<sup>※1</sup>
+
+- One inspector handles **almost the entire inspection process for one product**
+- Because it's self-contained within one cell, setup switching is fast even when the product changes
+- Each inspector's "scope of responsibility" is clear, making oversights less likely
+- Even for the "tens-to-hundreds-of-units" small lots aimed at Japan, productivity and quality stay stable
+
+This is **"an inspection method optimized for the Japanese market's ordering patterns,"** and for an OEM factory like us, responding to the diverse small-volume orders of Japanese clients, it is an extremely well-suited mechanism.
+
+### 2. Another "Eye" ── Industry-Specialist Appearance Inspection (What the X-ray Cannot Find)
+
+X-ray needle detection is a powerful mechanism for preventing metal foreign-object contamination. But most of the defects that damage a client's trust actually happen **in places that have nothing to do with metal.**
+
+- Wavy seams, slight deviations in stitch density
+- Within the color-match standard, yet subtle color differences between lots
+- Packaging that's hard to open, quirks in how it's folded
+- The feel of a zipper pull, confirmation of hardware action
+- The position and orientation of label printing
+
+These can never be found by an X-ray. They are an area that can only be caught by **the human eye, the human hand, and human sense.**
+
+We pay the utmost attention to this area in our in-house inspection, but precisely because we are an organization that has made the same things for 20 years, it becomes hard to notice the possibility that **"our standard is drifting, little by little, from the standard of the wider world."**
+
+This is where I-pack's **industry-specialist eyes** come into play. People rooted in Japan's bag industry ── who watch hundreds of brands' products every month, from Toyooka to Qingdao to Myanmar ── look at our products once more, by the standard of "**would this finish look out of place if it went on a shelf in the Japanese market today?**"
+
+The X-ray detectors (in-house, two units) handle **metal foreign objects**, and I-pack (external) handles **everything other than metal** ── that's the division. **Different eyes, different angles, independent organizations.** By this, the probability of an oversight drops not additively but multiplicatively.
+
+### 3. Looking at Quality with "the Salesperson's Eye"
+
+There is a striking passage on I-pack's official site.
+
+> "We manage the manufacturing process and quality with the salesperson's eye, provide sales support, and secure Japanese quality through 13 bases in Asia and bases in Europe."<sup>※2</sup>
+
+What does this mean?
+
+An ordinary inspection firm's axis of judgment is "does it meet the contractual acceptance standard ── yes or no." This isn't wrong, but the judgment tends to become **mechanical.**
+
+I-pack adds "the salesperson's eye" here ── that is, the perspective of "will this actually sell, finished like this, in Japan's stores and e-commerce?"
+
+For example, even when it passes the contractual AQL,
+
+- the seams wave just slightly, and there's a sense of something off to the naked eye
+- the color match is within standard, but it looks subtly different from lot to lot
+- the packaging's difficulty to open / quirks in folding come across to the end user
+
+I-pack properly stops things at the level of "**OK on the contract, but out of place once it's on the shelf**," and gives us the feedback. This is a depth you can hardly expect from a general-purpose inspection firm ── one that only industry specialization brings.
+
+---
+
+## The Value of Working with "Someone Who Sees Through Your Own Habits"
+
+Over the years of working with I-pack, we ourselves have learned a great deal.
+
+We bring the trends in defects pointed out in I-pack's inspection reports back in-house and use them as input for process improvement. We work them into line training so the same issue doesn't recur in the next lot. The very impetus for introducing the X-ray needle detectors, if you trace it back, began more than once from an awareness on I-pack's floor that "we should have been able to catch this in-house, earlier."
+
+Seen as a cost, third-party inspection is certainly an increment. But **continuing to work with "someone who sees through your own habits" makes the in-house quality system itself evolve** ── this, we believe, is the greatest value, however hard it is to quantify.
+
+---
+
+## Summary: Why We Can Say "100%"
+
+| Item | Content |
+| --- | --- |
+| In-house inspection | IPQC + FQC + **two X-ray needle detectors** (Myanmar, including a Fjade SECUT-5030D) + one in Shandong, China ── 100% of every piece |
+| Third-party inspection (partner) | **I-pack Co., Ltd.** (bag-industry specialist, 13 bases across Asia and Europe) |
+| Inspection base in Myanmar | The Myanmar on-site inspection office (same standard as the Qingdao era) |
+| Inspection method | **Cell method (the workbench method)** |
+| Division of inspection | Metal foreign objects: X-ray detectors (in-house, two in Myanmar + one in China) / appearance, sewing, function: I-pack's **industry-specialist eyes** (external) |
+| Inspection-judgment philosophy | Contractual AQL + **"the salesperson's eye"** (the sales-floor perspective) |
+| Shipment judgment | **Only lots that pass all three layers** |
+| Partnership | **More than 10 years** since the Qingdao era, continued to the same standard in Myanmar |
+
+---
+
+We don't say this to boast about ourselves. Having done this for more than 20 years, we think we understand better than anyone that **"there are things you cannot see through with your own eyes alone."**
+
+That is exactly why we keep borrowing a third party's eyes. That is exactly why we keep that third party limited to "an industry-specialist professional."
+
+This is the one and only basis on which we can say, with our heads held high, that shipments from the Myanmar factory are "100% Japanese quality."
+
+---
+
+## Protecting Our Clients' Front Line Is Our Most Important Job
+
+For any question ── a consultation, a factory visit, a sample request ── please **don't hesitate** to reach out anytime.
+
+When you visit the Myanmar factory, in addition to our in-house inspection process, we'll arrange ── as far as possible ── for you to also see the **process on the I-pack on-site inspection office side** (by prior arrangement / depending on I-pack's operating situation).
+
+- [Contact us →](#contact)
+- [Request a factory visit →](#contact)
+
+---
+
+### Sources
+
+- <sup>※1</sup> Specification of the cell method: [I-pack Co., Ltd. official site, "Inspection"](https://www.i-pack-solution.asia/) (accessed May 2026)
+- <sup>※2</sup> "The salesperson's eye": quoted from the [I-pack Co., Ltd. official site](https://www.i-pack-solution.asia/) (accessed May 2026)
+
+---
+
+### Related Articles
+
+#### 【Quality Series】Sister Piece
+
+- **【Vol.01】** [We Don't Let a Single Needle Slip ── The Needle-Control System at the Better Bags Myanmar Factory](/blog/danshin-needle-control-myanmar) ── A full look at the in-house "self-inspection."
+
+#### 【Factory Series】
+
+- **【Vol.01】** [One Day at Our Yangon Factory in Myanmar ── A Virtual Tour from the Start of Work to the Close](/blog/factory-tour-one-day-myanmar)
+`;
+
 const post: BlogPost = {
   id: 'ipack-third-party-inspection-myanmar',
   slug: 'ipack-third-party-inspection-myanmar',
   title: {
     ja: '第三者の目で、もう一度。── I-pack 社との連携で実現する、緬甸出荷の「日本品質 100%」',
     zh: '让第三方的眼睛再看一遍 ── 与 I-pack 合作实现的、缅甸出货「日本品质 100%」',
+    en: 'A Second Look, Through Third-Party Eyes ── Delivering "100% Japanese Quality" on Myanmar Shipments Through Our Collaboration with I-pack',
   },
   excerpt: {
     ja: 'バッグ業界専門の検品プロフェッショナル「株式会社 I-pack」と Better Bags Myanmar の 10 年以上のパートナーシップ。社内検品の上に、もう一段「日本人による日本基準」の目を重ねた三段防衛体制で、出荷品の 100% が日本のお客様の期待に応えます。',
     zh: '包袋行业专精的检品专家「株式会社 I-pack」与 Better Bags Myanmar 超过 10 年的合作关系。在厂内检品之上，再叠一层「以日本标准、由日本人」复核的眼睛，三段防卫体制让出货品 100% 满足日本客户的期望。',
+    en: 'A partnership of more than 10 years between Better Bags Myanmar and "I-pack Co., Ltd.," a bag-industry inspection specialist. On top of in-house inspection, we add another layer of eyes ── re-checking to Japanese standards, by Japanese inspectors ── in a three-layer defense system that lets 100% of our shipments meet the expectations of Japanese clients.',
   },
-  content: { ja, zh },
+  content: { ja, zh, en },
   date: '2026-05-10',
   thumbnail: '/images/blog/placeholder-ipack.svg',
-  category: '品質管理',
+  category: { ja: '品質管理', zh: '品质管理', en: 'Quality Control' },
   authorId: 'jay',
-  tags: ['第三者検品', 'I-pack', 'セル方式', '三段防衛', '緬甸工場', '日本品質', '品質シリーズ Vol.02'],
+  tags: {
+    ja: ['第三者検品', 'I-pack', 'セル方式', '三段防衛', '緬甸工場', '日本品質', '品質シリーズ Vol.02'],
+    zh: ['第三方检品', 'I-pack', '单元方式', '三段防卫', '缅甸工厂', '日本品质', '品质系列 Vol.02'],
+    en: ['Third-Party Inspection', 'I-pack', 'Cell Method', 'Three-Layer Defense', 'Myanmar Factory', 'Japanese Quality', 'Quality Series Vol.02'],
+  },
 };
 
 export default post;

@@ -57,7 +57,7 @@ export function TrustBadges() {
       {/* 认证徽章 */}
       <div className="mb-4">
         <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-neutral-500">
-          Certifications
+          {t('trust.certifications')}
         </h3>
         <div className="flex flex-wrap gap-2">
           {certifications.map((cert) => (
@@ -84,7 +84,7 @@ export function TrustBadges() {
       {/* 合作品牌 */}
       <div>
         <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-neutral-500">
-          Trusted By
+          {t('trust.title')}
         </h3>
         <div className="flex flex-wrap gap-2">
           {partnerBrands.map((brand, index) => (
@@ -114,7 +114,7 @@ export function TrustBadges() {
             text-neutral-600
             md:text-sm
           ">
-            +20 more
+            {t('trust.more')}
           </span>
         </div>
       </div>

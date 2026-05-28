@@ -15,6 +15,7 @@ import { useTranslations } from 'next-intl';
  */
 export function CTASection() {
   const t = useTranslations('banner');
+  const tb = useTranslations('bento');
 
   const handleScrollToContact = () => {
     const contactSection = document.getElementById('contact');
@@ -45,12 +46,12 @@ export function CTASection() {
     >
       {/* 标题 */}
       <h3 className="mb-3 text-lg font-semibold text-deep md:text-xl lg:text-2xl">
-        Ready to Start Your Project?
+        {tb('cta.title')}
       </h3>
 
       {/* 副标题 */}
       <p className="mb-6 max-w-sm text-sm text-neutral-600 md:text-base">
-        Get a free quote within 24 hours
+        {tb('cta.subtitle')}
       </p>
 
       {/* CTA 按钮 */}
@@ -81,7 +82,7 @@ export function CTASection() {
 
       {/* 次要链接 */}
       <p className="mt-4 text-xs text-neutral-500 md:text-sm">
-        No obligation, free consultation
+        {tb('cta.note')}
       </p>
     </div>
   );

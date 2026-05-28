@@ -85,7 +85,10 @@ export default function BlogListPage() {
 
         {/* 博客文章网格 */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {allPosts.map((post) => (
+          {allPosts.map((post) => {
+            const category = getLocalizedField(post.category, locale);
+            const tags = getLocalizedField(post.tags, locale);
+            return (
             <Link
               key={post.id}
               href={`/${locale}/blog/${post.slug}`}
@@ -107,7 +110,7 @@ export default function BlogListPage() {
                 {/* 分类标签 */}
                 <div className="absolute top-4 left-4 z-10">
                   <span className="bg-white text-primary px-3 py-1 rounded-full text-xs font-semibold uppercase shadow-md">
-                    {post.category}
+                    {category}
                   </span>
                 </div>
               </div>
@@ -135,9 +138,9 @@ export default function BlogListPage() {
                 <p className="text-gray-600 text-sm line-clamp-3 mb-4">{getLocalizedField(post.excerpt, locale)}</p>
 
                 {/* 标签 */}
-                {post.tags && post.tags.length > 0 && (
+                {tags && tags.length > 0 && (
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {post.tags.slice(0, 3).map((tag, index) => (
+                    {tags.slice(0, 3).map((tag, index) => (
                       <span
                         key={index}
                         className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs"
@@ -163,7 +166,8 @@ export default function BlogListPage() {
                 </div>
               </div>
             </Link>
-          ))}
+            );
+          })}
         </div>
 
         {/* 如果没有文章 */}

@@ -87,7 +87,7 @@ export default function Blog() {
                 {/* 分类和日期 */}
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-xs font-semibold text-primary uppercase tracking-wide">
-                    {post.category}
+                    {getLocalizedField(post.category, locale)}
                   </span>
                   <span className="text-xs text-neutral-500">{formatDate(post.date)}</span>
                 </div>

@@ -31,6 +31,8 @@ export default function BlogDetailPage() {
   const title = getLocalizedField(post.title, locale) ?? '';
   const excerpt = getLocalizedField(post.excerpt, locale) ?? '';
   const content = getLocalizedField(post.content, locale);
+  const category = getLocalizedField(post.category, locale);
+  const tags = getLocalizedField(post.tags, locale);
 
   return (
     <main className="min-h-screen bg-white py-8 px-4 sm:px-6 lg:px-8">
@@ -87,7 +89,7 @@ export default function BlogDetailPage() {
         <header className="mb-8 pb-8 border-b border-gray-200">
           <div className="mb-4">
             <span className="inline-block bg-primary text-white px-4 py-1 rounded-full text-sm font-semibold uppercase">
-              {post.category}
+              {category}
             </span>
           </div>
 
@@ -101,9 +103,9 @@ export default function BlogDetailPage() {
             variant="full"
           />
 
-          {post.tags && post.tags.length > 0 && (
+          {tags && tags.length > 0 && (
             <div className="flex flex-wrap gap-2 mt-4">
-              {post.tags.map((tag, index) => (
+              {tags.map((tag, index) => (
                 <span
                   key={index}
                   className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs font-medium"

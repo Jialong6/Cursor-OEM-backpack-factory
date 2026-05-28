@@ -82,7 +82,7 @@ describe('Author Data', () => {
         excerpt: { ja: 'Test', en: 'Test', zh: 'Test' },
         date: '2024-01-01',
         thumbnail: '/test.jpg',
-        category: 'Test',
+        category: { ja: 'Test', zh: 'Test', en: 'Test' },
         authorId: 'jay',
       };
       const author = getAuthorForPost(post);
@@ -97,7 +97,7 @@ describe('Author Data', () => {
         excerpt: { ja: 'Test', en: 'Test', zh: 'Test' },
         date: '2024-01-01',
         thumbnail: '/test.jpg',
-        category: 'Test',
+        category: { ja: 'Test', zh: 'Test', en: 'Test' },
       };
       const author = getAuthorForPost(post);
       expect(author.id).toBe('better-bags-team');
@@ -111,7 +111,7 @@ describe('Author Data', () => {
         excerpt: { ja: 'Test', en: 'Test', zh: 'Test' },
         date: '2024-01-01',
         thumbnail: '/test.jpg',
-        category: 'Test',
+        category: { ja: 'Test', zh: 'Test', en: 'Test' },
         authorId: 'nonexistent',
       };
       const author = getAuthorForPost(post);

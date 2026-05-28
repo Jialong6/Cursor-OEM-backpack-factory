@@ -20,6 +20,7 @@ interface StatItem {
  */
 export function DynamicDashboard() {
   const tFeatures = useTranslations('features');
+  const t = useTranslations('bento');
 
   const stats = tFeatures.raw('stats') as StatItem[];
 
@@ -30,7 +31,7 @@ export function DynamicDashboard() {
     >
       {/* 标题 */}
       <h3 className="mb-4 text-lg font-semibold text-neutral-700 md:text-xl">
-        Key Metrics
+        {t('dashboard.title')}
       </h3>
 
       {/* 统计卡片网格 */}
