@@ -147,7 +147,7 @@ export default function BlogDetailPage() {
             author={author}
             locale={locale}
             publishDate={post.date}
-            variant="compact"
+            variant="card"
           />
         </div>
 

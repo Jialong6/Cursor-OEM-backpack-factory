@@ -529,7 +529,7 @@ const post: BlogPost = {
   date: '2026-05-15',
   thumbnail: '/images/blog/placeholder-danshin.svg',
   category: '品質管理',
-  author: 'Better Bags Myanmar 品質管理室',
+  authorId: 'jay',
   tags: ['断針管理', 'X 線検針', '異物混入', '緬甸工場', '日本品質', '在庫針管理台帳', '品質シリーズ Vol.01'],
 };
 

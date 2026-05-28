@@ -569,7 +569,7 @@ const post: BlogPost = {
   date: '2026-05-10',
   thumbnail: '/images/blog/placeholder-ipack.svg',
   category: '品質管理',
-  author: 'Better Bags Myanmar 品質管理室',
+  authorId: 'jay',
   tags: ['第三者検品', 'I-pack', 'セル方式', '三段防衛', '緬甸工場', '日本品質', '品質シリーズ Vol.02'],
 };
 

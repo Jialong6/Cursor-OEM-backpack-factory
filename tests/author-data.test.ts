@@ -118,11 +118,11 @@ describe('Author Data', () => {
       expect(author.id).toBe('better-bags-team');
     });
 
-    it('BLOG_POSTS 中无 authorId 的文章应 fallback 到 team', () => {
+    it('BLOG_POSTS 中 factory-tour 文章作者应为 jay', () => {
       const post = BLOG_POSTS.find((p) => p.slug === 'factory-tour-one-day-myanmar');
       expect(post).toBeDefined();
       const author = getAuthorForPost(post!);
-      expect(author.id).toBe('better-bags-team');
+      expect(author.id).toBe('jay');
     });
   });
 

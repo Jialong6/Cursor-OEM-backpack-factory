@@ -34,17 +34,15 @@ export const AUTHORS: ReadonlyArray<AuthorProfile> = [
       zh: 'Jay Li',
     },
     role: {
-      en: 'Founder & CEO',
-      zh: '创始人兼首席执行官',
+      en: 'Business Development Manager',
+      zh: '业务发展经理',
     },
     bio: {
-      en: 'Jay Li leads Better Bags Myanmar with 20+ years of backpack manufacturing expertise. A graduate of Penn State University and Harrisburg University of Science and Technology, he brings proven international experience and cross-cultural communication skills to every partnership.',
-      zh: 'Jay Li 以超过20年的背包制造专业经验领导 Better Bags Myanmar。毕业于宾夕法尼亚州立大学和哈里斯堡科技大学，为每一个合作伙伴带来经过验证的国际经验和跨文化沟通能力。',
+      en: 'As the next-generation leader of Better Bags — a family-owned manufacturer with global vision — I draw upon more than 8 years of study and professional experience in Pennsylvania, United States. Being an alumnus of Penn State University and Carnegie Mellon University, I am proud to bring proven international expertise as well as cross-cultural communication skills to our clients and partners. My mission is to bridge the best of East and West, ensuring every partner enjoys premium products, seamless project communication, and reliable after-sales support — no matter where you are in the world.',
+      zh: '作为 Better Bags 新一代的领航者——一家兼具全球视野的家族制造企业——我汲取了在美国宾夕法尼亚州逾 8 年的求学与职业经验。身为宾夕法尼亚州立大学与卡内基梅隆大学的校友，我很自豪能为客户与合作伙伴带来经过验证的国际专业能力与跨文化沟通能力。我的使命是融汇东西方之长，让每一位伙伴无论身在世界何处，都能享有优质的产品、顺畅的项目沟通与可靠的售后支持。',
     },
     credentials: [
-      'Penn State University',
-      'Harrisburg University of Science and Technology',
-      '20+ Years Manufacturing Experience',
+      '8+ Years in the U.S.',
     ],
     avatar: '/images/team/jay-li.jpg',
     social: {

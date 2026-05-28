@@ -439,7 +439,7 @@ const post: BlogPost = {
   date: '2026-05-20',
   thumbnail: '/images/blog/placeholder-factory-tour.svg',
   category: '工場見学',
-  author: 'Better Bags Myanmar 工場運営',
+  authorId: 'jay',
   tags: ['工場見学', 'バーチャル見学', 'ヤンゴン', 'Better Bags Myanmar', '工場シリーズ Vol.01'],
 };
 
