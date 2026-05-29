@@ -613,9 +613,9 @@
         "error": "Please enter a subject"
       },
       "message": {
-        "label": "Your Message",
+        "label": "Your Message (Optional)",
         "placeholder": "Please describe your project needs, target quantity, timeline, and any special requirements...",
-        "error": "Please enter a message with at least 20 characters"
+        "error": "Message must be less than 2000 characters"
       },
       "orderQuantity": {
         "label": "Estimated Order Quantity (per design)",
@@ -643,7 +643,7 @@
         "description": "Upload tech packs, sketches, or sample photos. Max 5 files, 10MB each.",
         "button": "Choose Files",
         "dragDrop": "or drag and drop files here",
-        "acceptedFormats": "Accepted formats: JPG, PNG, WebP, PDF, DOC, DOCX"
+        "acceptedFormats": "Accepted formats: JPG, PNG, WebP, PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX"
       },
       "humanVerification": {
         "label": "Verificacao Humana",

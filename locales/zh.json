@@ -273,9 +273,9 @@
         "error": "请输入主题"
       },
       "message": {
-        "label": "您的消息",
+        "label": "您的消息（可选）",
         "placeholder": "请描述您的项目需求、目标数量、时间表及任何特殊要求...",
-        "error": "请输入至少20个字符的消息"
+        "error": "消息不能超过 2000 个字符"
       },
       "orderQuantity": {
         "label": "预计订单数量（每个设计）",
@@ -303,7 +303,7 @@
         "description": "上传技术包、草图或样品照片。最多5个文件，每个最大10MB。",
         "button": "选择文件",
         "dragDrop": "或拖放文件到这里",
-        "acceptedFormats": "支持格式：JPG, PNG, WebP, PDF, DOC, DOCX"
+        "acceptedFormats": "支持格式：JPG, PNG, WebP, PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX"
       },
       "humanVerification": {
         "label": "人机验证",

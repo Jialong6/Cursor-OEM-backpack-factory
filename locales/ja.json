@@ -613,9 +613,9 @@
         "error": "件名をご入力ください"
       },
       "message": {
-        "label": "お問い合わせ内容",
+        "label": "お問い合わせ内容（任意）",
         "placeholder": "プロジェクトのご要望、ご希望数量、スケジュール、特別なご要望などをご記入ください...",
-        "error": "20 文字以上でご入力ください"
+        "error": "2000 文字以内でご入力ください"
       },
       "orderQuantity": {
         "label": "想定ご発注数量（デザインごと）",
@@ -643,7 +643,7 @@
         "description": "Tech Pack・デザイン画・サンプル写真などをアップロードできます。最大 5 ファイル、各 10MB まで。",
         "button": "ファイルを選択",
         "dragDrop": "またはファイルをここにドラッグ＆ドロップ",
-        "acceptedFormats": "対応形式：JPG、PNG、WebP、PDF、DOC、DOCX"
+        "acceptedFormats": "対応形式：JPG、PNG、WebP、PDF、DOC、DOCX、XLS、XLSX、PPT、PPTX"
       },
       "humanVerification": {
         "label": "本人確認（人間であることの確認）",
