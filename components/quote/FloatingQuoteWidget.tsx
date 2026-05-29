@@ -185,7 +185,7 @@ export default function FloatingQuoteWidget() {
         {...buttonDrag.handleProps}
         onClick={handleOpenClick}
         aria-label={isDesktop ? t('openLabel') : t('mobileJumpLabel')}
-        title={t('dragHandleHint')}
+        title={t('dragHandle')}
         className="fixed z-40 flex items-center gap-2 rounded-full bg-primary text-white px-5 py-3 shadow-lg hover:bg-primary-dark hover:shadow-xl transition-shadow focus:outline-none focus:ring-4 focus:ring-primary/30 select-none"
         style={{
           ...buttonDrag.handleProps.style,
