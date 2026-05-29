@@ -30,13 +30,13 @@ export async function generateMetadata({
   if (!locales.includes(locale as any)) {
     return {
       ...generateHomeMetadata('en'),
-      metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://betterbagsmyanmar.com'),
+      metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://betterbagsmm.com'),
     };
   }
 
   return {
     ...generateHomeMetadata(locale as Locale),
-    metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://betterbagsmyanmar.com'),
+    metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://betterbagsmm.com'),
   };
 }
 

@@ -1,38 +1,45 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { contactFormSchema, formatZodErrors, validateFiles, type ContactFormResponse } from '@/lib/validations';
+import {
+  contactFormSchema,
+  formatZodErrors,
+  validateFileRefs,
+  type ContactFormResponse,
+  type UploadedFileRef,
+} from '@/lib/validations';
 import { sendInquiryEmail } from '@/lib/email';
 
 /**
  * Contact Form API Route
  *
  * 功能：
- * - 接收并验证联系表单数据
- * - 验证 mCaptcha token
- * - 处理文件上传
- * - 发送邮件通知给管理员
+ * - 接收并验证联系表单数据（JSON）
+ * - 验证 Cloudflare Turnstile token
+ * - 校验已直传 Vercel Blob 的文件引用（URL 来源/大小/类型）
+ * - 发送邮件通知给管理员（文件以 Resend path 附件远程抓取）
  * - 返回成功/失败响应
+ *
+ * 注：文件经浏览器直传 Blob，请求体只含字段 + 文件 URL（小 JSON），
+ * 绕开 Vercel 函数 4.5MB 请求体限制。
  *
  * 验证需求：11.9, 11.10
  */
 
 /**
- * 验证 mCaptcha token
+ * 验证 Cloudflare Turnstile token
  *
- * - Dev：直接放行，避免本地开发依赖真实实例
- * - Prod：必须配齐 NEXT_PUBLIC_MCAPTCHA_INSTANCE_URL + NEXT_PUBLIC_MCAPTCHA_SITEKEY + MCAPTCHA_SECRET
- *   缺任意一项即拒绝（fail-closed）；调用 verify 端点带 5s 超时，网络异常一律视为失败
+ * - Dev：直接放行，避免本地开发依赖真实密钥
+ * - Prod：必须配置 TURNSTILE_SECRET_KEY；缺失即拒绝（fail-closed）。
+ *   调用 siteverify 带 5s 超时，网络异常一律视为失败。
  */
-async function verifyMCaptchaToken(token: string): Promise<boolean> {
+async function verifyTurnstileToken(token: string): Promise<boolean> {
   if (process.env.NODE_ENV === 'development') {
     return true;
   }
 
-  const instanceUrl = process.env.NEXT_PUBLIC_MCAPTCHA_INSTANCE_URL;
-  const siteKey = process.env.NEXT_PUBLIC_MCAPTCHA_SITEKEY;
-  const secret = process.env.MCAPTCHA_SECRET;
+  const secret = process.env.TURNSTILE_SECRET_KEY;
 
-  if (!instanceUrl || !siteKey || !secret) {
-    console.error('[mCaptcha] Missing configuration in production');
+  if (!secret) {
+    console.error('[Turnstile] Missing TURNSTILE_SECRET_KEY in production');
     return false;
   }
 
@@ -41,20 +48,40 @@ async function verifyMCaptchaToken(token: string): Promise<boolean> {
   try {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 5000);
-    const response = await fetch(`${instanceUrl.replace(/\/$/, '')}/api/v1/pow/siteverify`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ token, key: siteKey, secret }),
-      signal: controller.signal,
-    });
+    const response = await fetch(
+      'https://challenges.cloudflare.com/turnstile/v0/siteverify',
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ secret, response: token }),
+        signal: controller.signal,
+      }
+    );
     clearTimeout(timeout);
     if (!response.ok) return false;
-    const data = (await response.json()) as { valid?: boolean };
-    return data.valid === true;
+    const data = (await response.json()) as { success?: boolean };
+    return data.success === true;
   } catch (error) {
-    console.error('[mCaptcha] Verify request failed:', error);
+    console.error('[Turnstile] Verify request failed:', error);
     return false;
   }
+}
+
+/**
+ * 从请求体中安全提取文件引用数组（防御非法 shape）
+ */
+function extractFileRefs(body: unknown): UploadedFileRef[] {
+  const raw = (body as { files?: unknown })?.files;
+  if (!Array.isArray(raw)) return [];
+  return raw.filter(
+    (f): f is UploadedFileRef =>
+      !!f &&
+      typeof f === 'object' &&
+      typeof (f as UploadedFileRef).name === 'string' &&
+      typeof (f as UploadedFileRef).url === 'string' &&
+      typeof (f as UploadedFileRef).size === 'number' &&
+      typeof (f as UploadedFileRef).type === 'string'
+  );
 }
 
 /**
@@ -63,15 +90,13 @@ async function verifyMCaptchaToken(token: string): Promise<boolean> {
  */
 export async function POST(request: NextRequest) {
   try {
-    // 解析表单数据 (multipart/form-data)
-    const formData = await request.formData();
+    // 解析 JSON 请求体（字段 + 已直传文件的 URL 引用）
+    const body = (await request.json()) as Record<string, unknown>;
 
-    // 提取表单字段
-    // formData.get() 对缺失字段返回 null、对文件返回 File；统一归一为字符串，
-    // 避免可选字段(phone/message)缺失时 null 触发 schema 校验失败，
-    // 不依赖前端一定把空字段发成空串
+    // 统一把缺失/非字符串字段归一为空串，
+    // 避免可选字段(phone/message)缺失时 undefined 触发 schema 校验失败
     const field = (key: string): string => {
-      const value = formData.get(key);
+      const value = body[key];
       return typeof value === 'string' ? value : '';
     };
 
@@ -86,7 +111,7 @@ export async function POST(request: NextRequest) {
       message: field('message'),
       orderQuantity: field('orderQuantity'),
       techPackAvailability: field('techPackAvailability'),
-      mcaptchaToken: field('mcaptchaToken'),
+      turnstileToken: field('turnstileToken'),
     };
 
     // 验证表单数据
@@ -105,8 +130,8 @@ export async function POST(request: NextRequest) {
 
     const validatedData = validationResult.data;
 
-    // 验证 mCaptcha token
-    const isCaptchaValid = await verifyMCaptchaToken(validatedData.mcaptchaToken);
+    // 验证 Turnstile token
+    const isCaptchaValid = await verifyTurnstileToken(validatedData.turnstileToken);
 
     if (!isCaptchaValid) {
       return NextResponse.json(
@@ -114,26 +139,18 @@ export async function POST(request: NextRequest) {
           success: false,
           message: 'Verification failed. Please try again.',
           errors: {
-            mcaptchaToken: ['Verification failed. Please complete the challenge again.'],
+            turnstileToken: ['Verification failed. Please complete the challenge again.'],
           },
         } satisfies ContactFormResponse,
         { status: 400 }
       );
     }
 
-    // 处理文件上传
-    const uploadedFiles: File[] = [];
-    const fileEntries = formData.getAll('files');
+    // 校验已上传文件引用（数量/URL 来源/大小/类型）
+    const fileRefs = extractFileRefs(body);
 
-    for (const entry of fileEntries) {
-      if (entry instanceof File && entry.size > 0) {
-        uploadedFiles.push(entry);
-      }
-    }
-
-    // 验证上传的文件
-    if (uploadedFiles.length > 0) {
-      const fileValidation = validateFiles(uploadedFiles);
+    if (fileRefs.length > 0) {
+      const fileValidation = validateFileRefs(fileRefs);
 
       if (!fileValidation.valid) {
         return NextResponse.json(
@@ -150,7 +167,7 @@ export async function POST(request: NextRequest) {
     }
 
     // 发送询盘通知邮件给管理员
-    const emailResult = await sendInquiryEmail(validatedData, uploadedFiles);
+    const emailResult = await sendInquiryEmail(validatedData, fileRefs);
 
     if (!emailResult.success) {
       // 邮件发送失败：返回 500，避免询盘被静默丢弃（前端会提示用户直接联系我们）

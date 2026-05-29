@@ -274,7 +274,7 @@ describe('Checkpoint 3: Bot Bypass & Geo-IP Routing Integration', () => {
 // ---------------------------------------------------------------------------
 
 describe('Checkpoint 4: SEO Structured Data Completeness', () => {
-  const baseUrl = 'https://betterbagsmyanmar.com';
+  const baseUrl = 'https://betterbagsmm.com';
 
   it('Property: any locale generates exactly 11 hreflang tags (10 locales + x-default)', () => {
     fc.assert(

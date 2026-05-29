@@ -18,7 +18,7 @@ import { generateHreflangMetadata } from '@/components/seo/HreflangTags';
  * 网站基础 URL
  * 生产环境应该从环境变量读取
  */
-export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://betterbagsmyanmar.com';
+export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://betterbagsmm.com';
 
 /**
  * 默认 OG 图片

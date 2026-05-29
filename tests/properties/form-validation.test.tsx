@@ -93,7 +93,7 @@ const validFormDataArbitrary = fc
     message: nonEmptyString(1, 2000),
     orderQuantity: fc.constantFrom(...ORDER_QUANTITY_OPTIONS),
     techPackAvailability: fc.constantFrom(...TECH_PACK_OPTIONS),
-    mcaptchaToken: nonEmptyString(10, 100),
+    turnstileToken: nonEmptyString(10, 100),
   })
   .chain((base) => phonePairArbitrary.map((phone) => ({ ...base, ...phone })));
 
@@ -108,7 +108,7 @@ const requiredFields = [
   'subject',
   'orderQuantity',
   'techPackAvailability',
-  'mcaptchaToken',
+  'turnstileToken',
 ] as const;
 
 describe('Property 10: 表单验证完整性', () => {
@@ -448,7 +448,7 @@ describe('Property 10: 表单验证完整性 - 单元测试补充', () => {
         message: 'This is a test message with more than 20 characters',
         orderQuantity: 'Less than 100 pcs' as const,
         techPackAvailability: 'Yes, I have a tech pack' as const,
-        mcaptchaToken: 'test-token-123',
+        turnstileToken: 'test-token-123',
       };
 
       const result = contactFormSchema.safeParse(data);
@@ -467,7 +467,7 @@ describe('Property 10: 表单验证完整性 - 单元测试补充', () => {
         message: 'This is a test message with more than 20 characters',
         orderQuantity: 'Less than 100 pcs' as const,
         techPackAvailability: 'Yes, I have a tech pack' as const,
-        mcaptchaToken: 'test-token-123',
+        turnstileToken: 'test-token-123',
       };
 
       const result = contactFormSchema.safeParse(data);
@@ -485,7 +485,7 @@ describe('Property 10: 表单验证完整性 - 单元测试补充', () => {
         message: 'This is a test message with more than 20 characters',
         orderQuantity: 'Less than 100 pcs' as const,
         techPackAvailability: 'Yes, I have a tech pack' as const,
-        mcaptchaToken: 'test-token-123',
+        turnstileToken: 'test-token-123',
       };
 
       const result = contactFormSchema.safeParse(data);
@@ -504,7 +504,7 @@ describe('Property 10: 表单验证完整性 - 单元测试补充', () => {
         message: 'Short message',
         orderQuantity: 'Less than 100 pcs' as const,
         techPackAvailability: 'Yes, I have a tech pack' as const,
-        mcaptchaToken: 'test-token-123',
+        turnstileToken: 'test-token-123',
       };
 
       const result = contactFormSchema.safeParse(data);
@@ -523,7 +523,7 @@ describe('Property 10: 表单验证完整性 - 单元测试补充', () => {
         message: '',
         orderQuantity: 'Less than 100 pcs' as const,
         techPackAvailability: 'Yes, I have a tech pack' as const,
-        mcaptchaToken: 'test-token-123',
+        turnstileToken: 'test-token-123',
       };
 
       const result = contactFormSchema.safeParse(data);
@@ -542,7 +542,7 @@ describe('Property 10: 表单验证完整性 - 单元测试补充', () => {
         message: 'This is a test message with more than 20 characters',
         orderQuantity: 'Less than 100 pcs' as const,
         techPackAvailability: 'Yes, I have a tech pack' as const,
-        mcaptchaToken: 'test-token-123',
+        turnstileToken: 'test-token-123',
       };
 
       const result = contactFormSchema.safeParse(data);
@@ -560,7 +560,7 @@ describe('Property 10: 表单验证完整性 - 单元测试补充', () => {
         message: 'This is a test message with more than 20 characters',
         orderQuantity: 'Less than 100 pcs' as const,
         techPackAvailability: 'Yes, I have a tech pack' as const,
-        mcaptchaToken: 'test-token-123',
+        turnstileToken: 'test-token-123',
       };
 
       expect(contactFormSchema.safeParse({ ...baseData, name: 'John Doe' }).success).toBe(true);
@@ -638,7 +638,7 @@ describe('Property 10: 表单验证完整性 - 单元测试补充', () => {
         message: 'This is a test message with more than 20 characters',
         orderQuantity: 'Less than 100 pcs' as const,
         techPackAvailability: 'Yes, I have a tech pack' as const,
-        mcaptchaToken: 'test-token-123',
+        turnstileToken: 'test-token-123',
       };
 
       const result = contactFormSchema.safeParse(data);
@@ -655,7 +655,7 @@ describe('Property 10: 表单验证完整性 - 单元测试补充', () => {
         message: 'This is a test message with more than 20 characters',
         orderQuantity: 'Less than 100 pcs' as const,
         techPackAvailability: 'Yes, I have a tech pack' as const,
-        mcaptchaToken: 'test-token-123',
+        turnstileToken: 'test-token-123',
       };
 
       const result = contactFormSchema.safeParse(data);

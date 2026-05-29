@@ -40,8 +40,8 @@ export default function AboutUs() {
             '@context': 'https://schema.org',
             '@type': 'Organization',
             name: 'Better Bags Myanmar Company Limited',
-            url: 'https://betterbagsmyanmar.com',
-            logo: 'https://betterbagsmyanmar.com/logo.png',
+            url: 'https://betterbagsmm.com',
+            logo: 'https://betterbagsmm.com/logo.png',
             description: t('mission.desc'),
             address: {
               '@type': 'PostalAddress',

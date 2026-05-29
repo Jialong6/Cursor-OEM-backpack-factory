@@ -84,7 +84,7 @@ const validFormDataArbitrary = fc.record({
   message: nonEmptyString(1, 2000),
   orderQuantity: fc.constantFrom(...ORDER_QUANTITY_OPTIONS),
   techPackAvailability: fc.constantFrom(...TECH_PACK_OPTIONS),
-  mcaptchaToken: nonEmptyString(10, 100),
+  turnstileToken: nonEmptyString(10, 100),
 });
 
 describe('表单提交成功处理 (Property 11)', () => {
@@ -244,12 +244,12 @@ describe('表单提交成功处理 (Property 11)', () => {
     expect(result.errors?.subject).toBeDefined();
   });
 
-  it('单元测试：mCaptcha 验证失败应返回相应错误', async () => {
+  it('单元测试：Turnstile 验证失败应返回相应错误', async () => {
     const mockResponse: ContactFormResponse = {
       success: false,
       message: 'Verification failed. Please try again.',
       errors: {
-        mcaptchaToken: ['Verification failed. Please complete the challenge again.'],
+        turnstileToken: ['Verification failed. Please complete the challenge again.'],
       },
     };
 
@@ -267,8 +267,8 @@ describe('表单提交成功处理 (Property 11)', () => {
     const result = await response.json();
 
     expect(result.success).toBe(false);
-    expect(result.errors?.mcaptchaToken).toBeDefined();
-    expect(result.errors?.mcaptchaToken?.[0]).toContain('Verification failed');
+    expect(result.errors?.turnstileToken).toBeDefined();
+    expect(result.errors?.turnstileToken?.[0]).toContain('Verification failed');
   });
 
   it('单元测试：文件验证失败应返回文件错误', async () => {

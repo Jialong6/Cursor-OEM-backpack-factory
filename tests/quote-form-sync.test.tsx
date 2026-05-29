@@ -27,7 +27,7 @@ vi.mock('@/components/ui/CountrySelect', () => ({
 vi.mock('@/components/ui/PhonePrefixSelect', () => ({
   default: () => null,
 }));
-vi.mock('@/components/ui/MCaptchaWidget', () => ({
+vi.mock('@/components/ui/TurnstileWidget', () => ({
   default: () => null,
 }));
 vi.mock('@/hooks/useGeoCountry', () => ({

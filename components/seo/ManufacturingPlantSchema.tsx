@@ -8,8 +8,8 @@ import { useTranslations, useLocale } from 'next-intl';
  */
 export const FACTORY_INFO = {
   name: 'Better Bags Myanmar Company Limited',
-  url: 'https://betterbagsmyanmar.com',
-  logo: 'https://betterbagsmyanmar.com/logo.png',
+  url: 'https://betterbagsmm.com',
+  logo: 'https://betterbagsmm.com/logo.png',
   foundingDate: '2003',
   telephone: '+1-814-880-1463',
   email: 'jay@biteerbags.com',

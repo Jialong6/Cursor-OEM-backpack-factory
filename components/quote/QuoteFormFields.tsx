@@ -8,13 +8,12 @@ import {
 } from '@/lib/validations';
 import CountrySelect from '@/components/ui/CountrySelect';
 import PhonePrefixSelect from '@/components/ui/PhonePrefixSelect';
-import MCaptchaWidget from '@/components/ui/MCaptchaWidget';
+import TurnstileWidget from '@/components/ui/TurnstileWidget';
 import UploadProgressBar from '@/components/ui/UploadProgress';
 import { useQuoteForm } from './QuoteFormContext';
 import { getLocalExampleNumber } from '@/lib/phone-examples';
 
-const MCAPTCHA_INSTANCE_URL = process.env.NEXT_PUBLIC_MCAPTCHA_INSTANCE_URL || '';
-const MCAPTCHA_SITEKEY = process.env.NEXT_PUBLIC_MCAPTCHA_SITEKEY || '';
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || '';
 
 interface QuoteFormFieldsProps {
   /**
@@ -448,16 +447,15 @@ export default function QuoteFormFields({
           <label className="block text-sm font-medium text-gray-700 mb-2">
             {t('form.humanVerification.label')} *
           </label>
-          <MCaptchaWidget
-            instanceUrl={MCAPTCHA_INSTANCE_URL}
-            siteKey={MCAPTCHA_SITEKEY}
+          <TurnstileWidget
+            siteKey={TURNSTILE_SITE_KEY}
             resetSignal={captchaResetSignal}
-            onVerify={(token) => setValue('mcaptchaToken', token, { shouldValidate: true })}
-            onError={() => setValue('mcaptchaToken', '', { shouldValidate: true })}
+            onVerify={(token) => setValue('turnstileToken', token, { shouldValidate: true })}
+            onError={() => setValue('turnstileToken', '', { shouldValidate: true })}
           />
-          <input type="hidden" {...register('mcaptchaToken')} />
-          {errors.mcaptchaToken && (
-            <p id={`${id('mcaptchaToken')}-error`} className="mt-1 text-sm text-red-600" role="alert">
+          <input type="hidden" {...register('turnstileToken')} />
+          {errors.turnstileToken && (
+            <p id={`${id('turnstileToken')}-error`} className="mt-1 text-sm text-red-600" role="alert">
               {t('form.humanVerification.error')}
             </p>
           )}

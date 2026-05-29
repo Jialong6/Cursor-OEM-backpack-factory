@@ -3,13 +3,14 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 /**
  * Contact API 路由测试
  *
- * 重点回归：phoneCountryCode 必须被后端提取并通过 schema 校验
- * （历史 bug：route 漏读该字段 + 前端把 ISO 码转成拨号码，导致填了电话就 400）。
+ * 回归与新增：
+ * - phoneCountryCode 必须被后端提取并通过 schema 校验（历史 bug）
+ * - 请求体改为 JSON：文件直传 Vercel Blob 后只回传 URL 引用，绕开 4.5MB 限制
+ * - Turnstile 服务端校验：NODE_ENV 在 vitest 下恒为 'test'（vite 内联），走生产分支，
+ *   配齐 TURNSTILE_SECRET_KEY 并把 siteverify fetch 打桩为 success:true 让其通过
+ * - 文件引用 URL 必须落在 *.public.blob.vercel-storage.com（防注入）
  *
- * 说明：用真实 NextResponse（同 tests/api/geo.test.ts），仅 mock 邮件发送。
- * 测试数据模拟前端真实提交 —— 所有字段都发送，可选项为空串
- * （QuoteFormContext 用 formData.append(key, value ?? '')），因为
- * 后端 formData.get() 对缺失字段返回 null，而 null 不被可选字段 schema 接受。
+ * 说明：用真实 NextResponse，仅 mock 邮件发送。
  */
 
 const { sendInquiryEmailMock } = vi.hoisted(() => ({
@@ -21,14 +22,13 @@ vi.mock('@/lib/email', () => ({
 
 import { POST } from '@/app/api/contact/route';
 
-function createFormRequest(
+type FileRef = { name: string; url: string; size: number; type: string };
+
+function createJsonRequest(
   fields: Record<string, string>,
-  files: File[] = []
+  files: FileRef[] = []
 ): Request {
-  const fd = new FormData();
-  Object.entries(fields).forEach(([k, v]) => fd.append(k, v));
-  files.forEach((f) => fd.append('files', f));
-  return { formData: async () => fd } as unknown as Request;
+  return { json: async () => ({ ...fields, files }) } as unknown as Request;
 }
 
 const validFields: Record<string, string> = {
@@ -42,21 +42,19 @@ const validFields: Record<string, string> = {
   message: '',
   orderQuantity: '100-300 pcs',
   techPackAvailability: 'Yes, I have a tech pack',
-  mcaptchaToken: 'dev-skip-token',
+  turnstileToken: 'dev-skip-token',
 };
+
+const BLOB_URL = 'https://store.public.blob.vercel-storage.com/spec-abc.pdf';
 
 describe('Contact API Route', () => {
   beforeEach(() => {
     sendInquiryEmailMock.mockReset();
     sendInquiryEmailMock.mockResolvedValue({ success: true });
-    // 服务端 mCaptcha：NODE_ENV 在 vitest 下恒为 'test'（vite 内联），故走生产分支。
-    // 配齐 env 并把 verify 端点 fetch 打桩为 valid:true 让其通过。
-    vi.stubEnv('NEXT_PUBLIC_MCAPTCHA_INSTANCE_URL', 'https://captcha.test');
-    vi.stubEnv('NEXT_PUBLIC_MCAPTCHA_SITEKEY', 'site-key');
-    vi.stubEnv('MCAPTCHA_SECRET', 'secret');
+    vi.stubEnv('TURNSTILE_SECRET_KEY', 'secret');
     vi.stubGlobal(
       'fetch',
-      vi.fn().mockResolvedValue({ ok: true, json: async () => ({ valid: true }) })
+      vi.fn().mockResolvedValue({ ok: true, json: async () => ({ success: true }) })
     );
   });
 
@@ -67,7 +65,7 @@ describe('Contact API Route', () => {
   });
 
   it('accepts a full submission with phone + ISO phoneCountryCode (regression)', async () => {
-    const req = createFormRequest({
+    const req = createJsonRequest({
       ...validFields,
       phoneNumber: '13800138000',
       phoneCountryCode: 'CN',
@@ -82,7 +80,7 @@ describe('Contact API Route', () => {
   });
 
   it('rejects when phoneNumber is provided without a phoneCountryCode', async () => {
-    const req = createFormRequest({
+    const req = createJsonRequest({
       ...validFields,
       phoneNumber: '13800138000', // phoneCountryCode 保持空串 → superRefine 触发
     });
@@ -96,7 +94,7 @@ describe('Contact API Route', () => {
   });
 
   it('accepts a valid submission without phone', async () => {
-    const req = createFormRequest(validFields);
+    const req = createJsonRequest(validFields);
     const res = await POST(req as never);
     const body = await res.json();
 
@@ -105,9 +103,51 @@ describe('Contact API Route', () => {
     expect(sendInquiryEmailMock).toHaveBeenCalledTimes(1);
   });
 
+  it('rejects when Turnstile verification fails', async () => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({ ok: true, json: async () => ({ success: false }) })
+    );
+    const req = createJsonRequest(validFields);
+    const res = await POST(req as never);
+    const body = await res.json();
+
+    expect(res.status).toBe(400);
+    expect(body.success).toBe(false);
+    expect(body.errors?.turnstileToken).toBeTruthy();
+    expect(sendInquiryEmailMock).not.toHaveBeenCalled();
+  });
+
+  it('accepts valid Vercel Blob file refs and forwards them to email', async () => {
+    const req = createJsonRequest(validFields, [
+      { name: 'spec.pdf', url: BLOB_URL, size: 1234, type: 'application/pdf' },
+    ]);
+    const res = await POST(req as never);
+    const body = await res.json();
+
+    expect(res.status).toBe(200);
+    expect(body.success).toBe(true);
+    const files = sendInquiryEmailMock.mock.calls[0][1];
+    expect(files).toHaveLength(1);
+    expect(files[0].url).toBe(BLOB_URL);
+  });
+
+  it('rejects file refs whose URL is not a Vercel Blob URL (anti-injection)', async () => {
+    const req = createJsonRequest(validFields, [
+      { name: 'evil.pdf', url: 'https://evil.example.com/x.pdf', size: 1234, type: 'application/pdf' },
+    ]);
+    const res = await POST(req as never);
+    const body = await res.json();
+
+    expect(res.status).toBe(400);
+    expect(body.success).toBe(false);
+    expect(body.errors?.files).toBeTruthy();
+    expect(sendInquiryEmailMock).not.toHaveBeenCalled();
+  });
+
   it('returns 500 when the inquiry email fails to send', async () => {
     sendInquiryEmailMock.mockResolvedValue({ success: false, error: 'smtp down' });
-    const req = createFormRequest(validFields);
+    const req = createJsonRequest(validFields);
     const res = await POST(req as never);
     const body = await res.json();
 
@@ -117,8 +157,7 @@ describe('Contact API Route', () => {
 
   it('accepts a submission that omits optional fields entirely (null-safe extraction)', async () => {
     // 只发必填字段，完全不带 phoneCountryCode/phoneNumber/message
-    // → 后端把缺失字段归一为空串，可选项 schema 接受 → 200
-    const req = createFormRequest({
+    const req = createJsonRequest({
       name: 'Jane Doe',
       email: 'jane@example.com',
       countryRegion: 'US',
@@ -126,7 +165,7 @@ describe('Contact API Route', () => {
       subject: 'Inquiry',
       orderQuantity: '100-300 pcs',
       techPackAvailability: 'I only have an idea/sketch',
-      mcaptchaToken: 'dev-skip-token',
+      turnstileToken: 'dev-skip-token',
     });
     const res = await POST(req as never);
     const body = await res.json();
@@ -136,7 +175,7 @@ describe('Contact API Route', () => {
   });
 
   it('rejects submission with missing/invalid required fields', async () => {
-    const req = createFormRequest({ name: 'A', email: 'bad', mcaptchaToken: 't' });
+    const req = createJsonRequest({ name: 'A', email: 'bad', turnstileToken: 't' });
     const res = await POST(req as never);
     const body = await res.json();
 

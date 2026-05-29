@@ -1,5 +1,5 @@
 import { Resend } from 'resend';
-import type { ContactFormData } from '@/lib/validations';
+import type { ContactFormData, UploadedFileRef } from '@/lib/validations';
 import { buildInquiryEmailHtml, buildInquiryEmailSubject } from '@/lib/email-template';
 
 /**
@@ -22,25 +22,14 @@ export interface SendEmailResult {
 }
 
 /**
- * 把上传文件转成 Resend 附件格式
- */
-async function toAttachments(
-  files: File[]
-): Promise<Array<{ filename: string; content: Buffer }>> {
-  return Promise.all(
-    files.map(async (file) => ({
-      filename: file.name,
-      content: Buffer.from(await file.arrayBuffer()),
-    }))
-  );
-}
-
-/**
  * 发送询盘通知邮件给管理员
+ *
+ * files 为直传 Vercel Blob 后的引用（name + url）；用 Resend 的 path 附件，
+ * 由 Resend 远程抓取文件，内容不经过本函数（绕开 Vercel 4.5MB 请求体限制）。
  */
 export async function sendInquiryEmail(
   data: ContactFormData,
-  files: File[] = []
+  files: UploadedFileRef[] = []
 ): Promise<SendEmailResult> {
   const apiKey = process.env.RESEND_API_KEY;
 
@@ -54,7 +43,8 @@ export async function sendInquiryEmail(
 
   try {
     const resend = new Resend(apiKey);
-    const attachments = files.length > 0 ? await toAttachments(files) : undefined;
+    const attachments =
+      files.length > 0 ? files.map((f) => ({ filename: f.name, path: f.url })) : undefined;
 
     const { error } = await resend.emails.send({
       from,

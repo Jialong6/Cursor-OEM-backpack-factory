@@ -1,121 +1,88 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { uploadFormData } from '@/lib/upload';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 
 /**
  * lib/upload.ts 单元测试
  *
- * 用 fake XMLHttpRequest 驱动 upload.onprogress / onload / onerror，
- * 验证进度回调、响应解析与错误处理。
+ * 文件改为浏览器直传 Vercel Blob，这里 mock @vercel/blob/client 的 upload，
+ * 覆盖：返回引用、传参（public + handleUploadUrl）、聚合进度、空文件。
  */
 
-type ProgressHandler = (e: { lengthComputable: boolean; loaded: number; total: number }) => void;
+const { uploadMock } = vi.hoisted(() => ({ uploadMock: vi.fn() }));
+vi.mock('@vercel/blob/client', () => ({
+  upload: uploadMock,
+}));
 
-class FakeXHR {
-  static instances: FakeXHR[] = [];
-  upload: { onprogress: ProgressHandler | null } = { onprogress: null };
-  onload: (() => void) | null = null;
-  onerror: (() => void) | null = null;
-  onabort: (() => void) | null = null;
-  ontimeout: (() => void) | null = null;
-  timeout = 0;
-  status = 0;
-  responseText = '';
-  method = '';
-  url = '';
-  open(method: string, url: string) {
-    this.method = method;
-    this.url = url;
-  }
-  send() {
-    FakeXHR.instances.push(this);
-  }
+import { uploadFilesToBlob } from '@/lib/upload';
+
+function makeFile(name: string, size: number, type = 'application/pdf'): File {
+  const file = new File(['x'], name, { type });
+  Object.defineProperty(file, 'size', { value: size });
+  return file;
 }
 
-describe('uploadFormData', () => {
+describe('uploadFilesToBlob', () => {
   beforeEach(() => {
-    FakeXHR.instances = [];
-    vi.stubGlobal('XMLHttpRequest', FakeXHR as unknown as typeof XMLHttpRequest);
+    uploadMock.mockReset();
   });
 
-  afterEach(() => {
-    vi.unstubAllGlobals();
+  it('uploads each file and returns refs with blob urls', async () => {
+    uploadMock.mockImplementation(async (name: string) => ({
+      url: `https://store.public.blob.vercel-storage.com/${name}-rand`,
+    }));
+
+    const files = [makeFile('a.pdf', 100), makeFile('b.png', 200, 'image/png')];
+    const refs = await uploadFilesToBlob(files);
+
+    expect(uploadMock).toHaveBeenCalledTimes(2);
+    expect(refs).toEqual([
+      {
+        name: 'a.pdf',
+        url: 'https://store.public.blob.vercel-storage.com/a.pdf-rand',
+        size: 100,
+        type: 'application/pdf',
+      },
+      {
+        name: 'b.png',
+        url: 'https://store.public.blob.vercel-storage.com/b.png-rand',
+        size: 200,
+        type: 'image/png',
+      },
+    ]);
   });
 
-  it('reports progress and resolves with parsed body on success', async () => {
+  it('uploads with public access via the /api/upload handler route', async () => {
+    uploadMock.mockResolvedValue({ url: 'https://store.public.blob.vercel-storage.com/x' });
+    await uploadFilesToBlob([makeFile('a.pdf', 100)]);
+    const opts = uploadMock.mock.calls[0][2];
+    expect(opts.access).toBe('public');
+    expect(opts.handleUploadUrl).toBe('/api/upload');
+  });
+
+  it('reports aggregate progress reaching 100% across files', async () => {
+    uploadMock.mockImplementation(
+      async (
+        name: string,
+        _file: File,
+        opts: { onUploadProgress?: (e: { percentage: number }) => void }
+      ) => {
+        opts.onUploadProgress?.({ percentage: 100 });
+        return { url: `https://store.public.blob.vercel-storage.com/${name}` };
+      }
+    );
+
     const onProgress = vi.fn();
-    const promise = uploadFormData('/api/contact', new FormData(), onProgress);
-    const xhr = FakeXHR.instances[0];
+    const files = [makeFile('a.pdf', 100), makeFile('b.pdf', 300)]; // total 400
+    await uploadFilesToBlob(files, onProgress);
 
-    expect(xhr.method).toBe('POST');
-    expect(xhr.url).toBe('/api/contact');
-
-    xhr.upload.onprogress!({ lengthComputable: true, loaded: 25, total: 100 });
-    xhr.upload.onprogress!({ lengthComputable: true, loaded: 100, total: 100 });
-
-    xhr.status = 200;
-    xhr.responseText = JSON.stringify({ success: true });
-    xhr.onload!();
-
-    const result = await promise;
-    expect(onProgress).toHaveBeenNthCalledWith(1, { loaded: 25, total: 100, percent: 25 });
-    expect(onProgress).toHaveBeenLastCalledWith({ loaded: 100, total: 100, percent: 100 });
-    expect(result).toEqual({ ok: true, status: 200, body: { success: true } });
+    expect(onProgress).toHaveBeenCalled();
+    const lastCall = onProgress.mock.calls.at(-1)?.[0];
+    expect(lastCall.total).toBe(400);
+    expect(lastCall.percent).toBe(100);
   });
 
-  it('ignores progress events that are not lengthComputable', async () => {
-    const onProgress = vi.fn();
-    const promise = uploadFormData('/x', new FormData(), onProgress);
-    const xhr = FakeXHR.instances[0];
-
-    xhr.upload.onprogress!({ lengthComputable: false, loaded: 0, total: 0 });
-    expect(onProgress).not.toHaveBeenCalled();
-
-    xhr.status = 200;
-    xhr.responseText = '{}';
-    xhr.onload!();
-    await promise;
-  });
-
-  it('resolves ok:false on 4xx/5xx', async () => {
-    const promise = uploadFormData('/x', new FormData());
-    const xhr = FakeXHR.instances[0];
-
-    xhr.status = 400;
-    xhr.responseText = JSON.stringify({ success: false });
-    xhr.onload!();
-
-    const result = await promise;
-    expect(result.ok).toBe(false);
-    expect(result.status).toBe(400);
-    expect(result.body).toEqual({ success: false });
-  });
-
-  it('treats a non-JSON response body as null', async () => {
-    const promise = uploadFormData('/x', new FormData());
-    const xhr = FakeXHR.instances[0];
-
-    xhr.status = 200;
-    xhr.responseText = '<html>oops</html>';
-    xhr.onload!();
-
-    const result = await promise;
-    expect(result.body).toBeNull();
-  });
-
-  it('rejects on network error', async () => {
-    const promise = uploadFormData('/x', new FormData());
-    const xhr = FakeXHR.instances[0];
-
-    xhr.onerror!();
-    await expect(promise).rejects.toThrow('Network error');
-  });
-
-  it('sets a timeout and rejects when it fires', async () => {
-    const promise = uploadFormData('/x', new FormData());
-    const xhr = FakeXHR.instances[0];
-
-    expect(xhr.timeout).toBe(60000);
-    xhr.ontimeout!();
-    await expect(promise).rejects.toThrow('timed out');
+  it('returns an empty array and skips upload when there are no files', async () => {
+    const refs = await uploadFilesToBlob([]);
+    expect(refs).toEqual([]);
+    expect(uploadMock).not.toHaveBeenCalled();
   });
 });

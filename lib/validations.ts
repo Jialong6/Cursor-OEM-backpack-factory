@@ -27,8 +27,9 @@ export const TECH_PACK_OPTIONS = [
 export type TechPackAvailability = (typeof TECH_PACK_OPTIONS)[number];
 
 // 文件上传验证辅助函数
-const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
-const ACCEPTED_FILE_TYPES = [
+export const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
+export const MAX_FILE_COUNT = 5;
+export const ACCEPTED_FILE_TYPES = [
   'image/jpeg',
   'image/jpg',
   'image/png',
@@ -44,7 +45,7 @@ const ACCEPTED_FILE_TYPES = [
 
 // 扩展名兜底白名单:部分浏览器对老 Office 格式(.xls/.ppt)给出空 MIME 或
 // application/octet-stream,仅靠 MIME 会误拒,故按文件名后缀二次放行
-const ACCEPTED_FILE_EXTENSIONS = [
+export const ACCEPTED_FILE_EXTENSIONS = [
   'jpg',
   'jpeg',
   'png',
@@ -129,8 +130,8 @@ export const contactFormSchema = z.object({
 
   techPackAvailability: z.enum(TECH_PACK_OPTIONS),
 
-  // mCaptcha token（需求 11.8）
-  mcaptchaToken: z.string().min(1, 'Please complete the verification before submitting'),
+  // Turnstile token（需求 11.8）
+  turnstileToken: z.string().min(1, 'Please complete the verification before submitting'),
 }).superRefine((data, ctx) => {
   // 联合校验:phoneNumber 非空时,必须有 phoneCountryCode
   if (data.phoneNumber && !data.phoneCountryCode) {
@@ -227,6 +228,60 @@ export function validateFiles(files: File[]): { valid: boolean; errors: string[]
     valid: errors.length === 0,
     errors,
   };
+}
+
+/**
+ * 已上传文件的引用（直传 Vercel Blob 后，前端只把元数据 + URL 发给后端）
+ */
+export interface UploadedFileRef {
+  name: string;
+  url: string;
+  size: number;
+  type: string;
+}
+
+// Vercel Blob 公开 URL 的主机后缀；校验 URL 必须落在该域，
+// 防止客户端注入任意 URL（该 URL 会被 Resend 当作附件 path 抓取）
+const BLOB_HOST_SUFFIX = '.public.blob.vercel-storage.com';
+
+function isValidBlobUrl(url: string): boolean {
+  try {
+    const parsed = new URL(url);
+    return parsed.protocol === 'https:' && parsed.hostname.endsWith(BLOB_HOST_SUFFIX);
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * 校验直传后回传的文件引用：数量、URL 来源、大小、类型
+ */
+export function validateFileRefs(files: UploadedFileRef[]): { valid: boolean; errors: string[] } {
+  const errors: string[] = [];
+
+  if (files.length > MAX_FILE_COUNT) {
+    errors.push(`Maximum ${MAX_FILE_COUNT} files allowed`);
+    return { valid: false, errors };
+  }
+
+  files.forEach((file) => {
+    if (!isValidBlobUrl(file.url)) {
+      errors.push(`File "${file.name}" has an invalid upload URL.`);
+      return;
+    }
+    if (file.size > MAX_FILE_SIZE) {
+      errors.push(
+        `File "${file.name}" is too large. Maximum size is ${MAX_FILE_SIZE / 1024 / 1024}MB`
+      );
+    }
+    if (!ACCEPTED_FILE_TYPES.includes(file.type) && !hasAcceptedExtension(file.name)) {
+      errors.push(
+        `File "${file.name}" has an unsupported type. Please upload images or documents.`
+      );
+    }
+  });
+
+  return { valid: errors.length === 0, errors };
 }
 
 /**

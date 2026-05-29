@@ -20,7 +20,7 @@ import {
 import { useFormDraft } from '@/hooks/useFormDraft';
 import { useGeoCountry } from '@/hooks/useGeoCountry';
 import { getCountryByCode } from '@/lib/countries';
-import { uploadFormData, type UploadProgress } from '@/lib/upload';
+import { uploadFilesToBlob, type UploadProgress } from '@/lib/upload';
 
 /**
  * Get A Quote 表单的全局 Context
@@ -57,7 +57,7 @@ export interface QuoteFormContextValue {
   showDraftNotice: boolean;
   handleDiscardDraft: () => void;
 
-  // mCaptcha
+  // Turnstile
   captchaResetSignal: number;
 
   // Geo
@@ -93,7 +93,7 @@ export function QuoteFormProvider({ children }: { children: ReactNode }) {
 
   const { restoreDraft, saveDraft, clearDraft, hasDraft } = useFormDraft<ContactFormData>({
     key: 'contact-form-draft',
-    excludeFields: ['mcaptchaToken'],
+    excludeFields: ['turnstileToken'],
     debounceMs: 500,
   });
 
@@ -153,7 +153,7 @@ export function QuoteFormProvider({ children }: { children: ReactNode }) {
   const watchedValues = watch();
   const saveDraftCallback = useCallback(() => {
     const hasValues = Object.entries(watchedValues).some(
-      ([key, value]) => value && value !== '' && key !== 'mcaptchaToken'
+      ([key, value]) => value && value !== '' && key !== 'turnstileToken'
     );
     if (hasValues) {
       saveDraft(watchedValues);
@@ -191,22 +191,23 @@ export function QuoteFormProvider({ children }: { children: ReactNode }) {
       setIsSubmitting(true);
       setSubmitStatus('idle');
       setSubmittingVariant(variant);
-      setUploadProgress({ loaded: 0, total: 0, percent: 0 });
+      setUploadProgress(files.length > 0 ? { loaded: 0, total: 0, percent: 0 } : null);
 
       try {
-        // phoneCountryCode 以 ISO 码("CN")原样发送 —— 与后端 schema 的
-        // /^[A-Z]{2}$/ 校验一致;拨号码("+86")的展示转换在服务端发邮件时再做
-        const formData = new FormData();
-        Object.entries(data).forEach(([key, value]) => {
-          formData.append(key, value ?? '');
-        });
-        files.forEach((file) => {
-          formData.append('files', file);
-        });
+        // 1) 先把文件直传 Vercel Blob（带聚合进度），拿到公开 URL 引用；
+        //    文件不经过 /api/contact，绕开 Vercel 4.5MB 请求体限制
+        const fileRefs =
+          files.length > 0 ? await uploadFilesToBlob(files, setUploadProgress) : [];
 
-        // 用 XHR(经 uploadFormData)提交以获取真实上传进度;fetch 无法监听上传进度
-        const result = await uploadFormData('/api/contact', formData, setUploadProgress);
-        const body = result.body as { success?: boolean } | null;
+        // 2) 再把表单字段 + 文件 URL 以小 JSON 提交。
+        //    phoneCountryCode 以 ISO 码("CN")原样发送 —— 与后端 schema 的
+        //    /^[A-Z]{2}$/ 校验一致;拨号码("+86")的展示转换在服务端发邮件时再做
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ...data, files: fileRefs }),
+        });
+        const body = (await response.json().catch(() => null)) as { success?: boolean } | null;
 
         if (body?.success) {
           setSubmitStatus('success');

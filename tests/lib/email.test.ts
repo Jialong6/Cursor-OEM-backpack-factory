@@ -31,7 +31,7 @@ const baseData: ContactFormData = {
   message: 'Hello there',
   orderQuantity: '100-300 pcs',
   techPackAvailability: 'Yes, I have a tech pack',
-  mcaptchaToken: 'token',
+  turnstileToken: 'token',
 };
 
 describe('sendInquiryEmail', () => {
@@ -71,6 +71,25 @@ describe('sendInquiryEmail', () => {
     expect(payload.replyTo).toBe('john@example.com');
     expect(payload.subject).toContain('Custom backpack');
     expect(payload.html).toContain('+86 13800138000'); // ISO→dial 在模板内完成
+  });
+
+  it('passes uploaded blob files as Resend path attachments', async () => {
+    process.env.RESEND_API_KEY = 're_test';
+    sendMock.mockResolvedValue({ data: { id: 'abc' }, error: null });
+
+    await sendInquiryEmail(baseData, [
+      {
+        name: 'spec.pdf',
+        url: 'https://store.public.blob.vercel-storage.com/spec-abc.pdf',
+        size: 1234,
+        type: 'application/pdf',
+      },
+    ]);
+
+    const payload = sendMock.mock.calls[0][0];
+    expect(payload.attachments).toEqual([
+      { filename: 'spec.pdf', path: 'https://store.public.blob.vercel-storage.com/spec-abc.pdf' },
+    ]);
   });
 
   it('returns failure when Resend responds with an error', async () => {

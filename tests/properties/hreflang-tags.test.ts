@@ -19,7 +19,7 @@ import {
 import { locales, localeConfig, type Locale } from '@/i18n';
 
 describe('Hreflang Tags - Property Tests', () => {
-  const baseUrl = 'https://betterbagsmyanmar.com';
+  const baseUrl = 'https://betterbagsmm.com';
 
   describe('Property 9: Any locale + path generates correct hreflang tags', () => {
     it('should generate exactly 11 hreflang tags (10 languages + x-default)', () => {
@@ -85,7 +85,7 @@ describe('Hreflang Tags - Property Tests', () => {
 
             // All hrefs should be absolute URLs starting with baseUrl
             for (const tag of tags) {
-              expect(tag.href).toMatch(/^https:\/\/betterbagsmyanmar\.com\//);
+              expect(tag.href).toMatch(/^https:\/\/betterbagsmm\.com\//);
             }
           }
         ),
