@@ -1,43 +1,62 @@
-import { handleUpload, type HandleUploadBody } from '@vercel/blob/client';
 import { NextResponse } from 'next/server';
-import { ACCEPTED_FILE_TYPES, MAX_FILE_SIZE } from '@/lib/validations';
+import { presignPutUrl, isR2Configured } from '@/lib/r2';
+import {
+  ACCEPTED_FILE_TYPES,
+  ACCEPTED_FILE_EXTENSIONS,
+  MAX_FILE_SIZE,
+  UPLOAD_KEY_PREFIX,
+} from '@/lib/validations';
 
 /**
- * Vercel Blob 客户端直传的 token 签发路由
+ * 签发 Cloudflare R2 上传用的 presigned PUT URL
  *
- * 浏览器经 @vercel/blob/client 的 upload() 把文件直传到 Blob，文件本体不经过
- * 本服务函数（绕开 Vercel 4.5MB 请求体限制）。这里只负责签发受限上传 token：
- * - 限制 content-type 与单文件大小
- * - addRandomSuffix 让公开 URL 不可猜测
- *
- * 注：放行 application/octet-stream 是为兼容部分浏览器对老 Office 格式(.xls/.ppt)
- * 给出的空/通用 MIME；最终的扩展名+类型核验在 /api/contact 的 validateFileRefs 完成。
+ * 浏览器经此拿到限时 PUT URL 后，把文件直传 R2（不经过本函数，绕开 Vercel 4.5MB 限制，
+ * 且 R2 bucket CORS 可控，避开 Vercel Blob 客户端直传的 CORS 死路）。
+ * 这里负责：校验类型/大小、生成唯一 key。bucket 私有；邮件附件由 /api/contact 另签 GET URL。
  */
 export async function POST(request: Request): Promise<NextResponse> {
-  const body = (await request.json()) as HandleUploadBody;
-
   try {
-    const jsonResponse = await handleUpload({
-      body,
-      request,
-      onBeforeGenerateToken: async () => ({
-        // image/* 通配，兼容个别设备给 JPEG 报非标准 MIME；外加文档类型与 octet-stream 兜底。
-        // 最终的扩展名+类型核验在 /api/contact 的 validateFileRefs 完成。
-        allowedContentTypes: [
-          'image/*',
-          ...ACCEPTED_FILE_TYPES.filter((t) => !t.startsWith('image/')),
-          'application/octet-stream',
-        ],
-        maximumSizeInBytes: MAX_FILE_SIZE,
-        addRandomSuffix: true,
-      }),
-      // 不设 onUploadCompleted：当前无需落库；省去 Blob 上传完成回 webhook 这一步，
-      // 减少回调/签名相关的潜在卡顿
-    });
+    if (!isR2Configured()) {
+      return NextResponse.json({ error: 'Upload storage is not configured.' }, { status: 503 });
+    }
 
-    return NextResponse.json(jsonResponse);
+    const body = (await request.json()) as {
+      filename?: unknown;
+      contentType?: unknown;
+      size?: unknown;
+    };
+    const filename = typeof body.filename === 'string' ? body.filename : '';
+    const contentType =
+      typeof body.contentType === 'string' && body.contentType
+        ? body.contentType
+        : 'application/octet-stream';
+    const size = typeof body.size === 'number' ? body.size : 0;
+
+    if (!filename) {
+      return NextResponse.json({ error: 'Missing filename.' }, { status: 400 });
+    }
+    const ext = filename.split('.').pop()?.toLowerCase() ?? '';
+    const typeAllowed =
+      ACCEPTED_FILE_TYPES.includes(contentType) || ACCEPTED_FILE_EXTENSIONS.includes(ext);
+    if (!typeAllowed) {
+      return NextResponse.json({ error: 'Unsupported file type.' }, { status: 400 });
+    }
+    if (size > MAX_FILE_SIZE) {
+      return NextResponse.json(
+        { error: `File too large. Max ${MAX_FILE_SIZE / 1024 / 1024}MB.` },
+        { status: 400 }
+      );
+    }
+
+    // 唯一 key：前缀 + 随机 UUID + 安全化文件名
+    const safeName = filename.replace(/[^a-zA-Z0-9._-]/g, '_').slice(-100);
+    const key = `${UPLOAD_KEY_PREFIX}${crypto.randomUUID()}-${safeName}`;
+    const uploadUrl = await presignPutUrl(key, contentType);
+
+    return NextResponse.json({ uploadUrl, key });
   } catch (error) {
-    const message = error instanceof Error ? error.message : 'Upload authorization failed';
-    return NextResponse.json({ error: message }, { status: 400 });
+    const message = error instanceof Error ? error.message : 'Failed to create upload URL';
+    console.error('[upload] presign failed:', message);
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }

@@ -5,12 +5,12 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
  *
  * 回归与新增：
  * - phoneCountryCode 必须被后端提取并通过 schema 校验（历史 bug）
- * - 请求体改为 JSON：文件直传 Vercel Blob 后只回传 URL 引用，绕开 4.5MB 限制
- * - Turnstile 服务端校验：NODE_ENV 在 vitest 下恒为 'test'（vite 内联），走生产分支，
- *   配齐 TURNSTILE_SECRET_KEY 并把 siteverify fetch 打桩为 success:true 让其通过
- * - 文件引用 URL 必须落在 *.public.blob.vercel-storage.com（防注入）
+ * - 请求体为 JSON：文件经 R2 presigned 直传后只回传 {name,key,size,type}
+ * - Turnstile 服务端校验：NODE_ENV 在 vitest 下恒为 'test'，走生产分支；
+ *   配齐 TURNSTILE_SECRET_KEY 并把 siteverify fetch 打桩为 success:true
+ * - 文件 key 必须以 inquiries/ 开头（防注入）；合法 key 会经 presignGetUrl 转成附件 URL
  *
- * 说明：用真实 NextResponse，仅 mock 邮件发送。
+ * mock：@/lib/email（发送）与 @/lib/r2（presignGetUrl）。
  */
 
 const { sendInquiryEmailMock } = vi.hoisted(() => ({
@@ -19,15 +19,15 @@ const { sendInquiryEmailMock } = vi.hoisted(() => ({
 vi.mock('@/lib/email', () => ({
   sendInquiryEmail: sendInquiryEmailMock,
 }));
+vi.mock('@/lib/r2', () => ({
+  presignGetUrl: vi.fn(async (key: string) => `https://r2-get.example/${key}?sig=1`),
+}));
 
 import { POST } from '@/app/api/contact/route';
 
-type FileRef = { name: string; url: string; size: number; type: string };
+type FileRef = { name: string; key: string; size: number; type: string };
 
-function createJsonRequest(
-  fields: Record<string, string>,
-  files: FileRef[] = []
-): Request {
+function createJsonRequest(fields: Record<string, string>, files: FileRef[] = []): Request {
   return { json: async () => ({ ...fields, files }) } as unknown as Request;
 }
 
@@ -44,8 +44,6 @@ const validFields: Record<string, string> = {
   techPackAvailability: 'Yes, I have a tech pack',
   turnstileToken: 'dev-skip-token',
 };
-
-const BLOB_URL = 'https://store.public.blob.vercel-storage.com/spec-abc.pdf';
 
 describe('Contact API Route', () => {
   beforeEach(() => {
@@ -80,10 +78,7 @@ describe('Contact API Route', () => {
   });
 
   it('rejects when phoneNumber is provided without a phoneCountryCode', async () => {
-    const req = createJsonRequest({
-      ...validFields,
-      phoneNumber: '13800138000', // phoneCountryCode 保持空串 → superRefine 触发
-    });
+    const req = createJsonRequest({ ...validFields, phoneNumber: '13800138000' });
     const res = await POST(req as never);
     const body = await res.json();
 
@@ -118,23 +113,24 @@ describe('Contact API Route', () => {
     expect(sendInquiryEmailMock).not.toHaveBeenCalled();
   });
 
-  it('accepts valid Vercel Blob file refs and forwards them to email', async () => {
+  it('accepts valid R2 file refs and forwards presigned URLs to email', async () => {
     const req = createJsonRequest(validFields, [
-      { name: 'spec.pdf', url: BLOB_URL, size: 1234, type: 'application/pdf' },
+      { name: 'spec.pdf', key: 'inquiries/uuid-spec.pdf', size: 1234, type: 'application/pdf' },
     ]);
     const res = await POST(req as never);
     const body = await res.json();
 
     expect(res.status).toBe(200);
     expect(body.success).toBe(true);
-    const files = sendInquiryEmailMock.mock.calls[0][1];
-    expect(files).toHaveLength(1);
-    expect(files[0].url).toBe(BLOB_URL);
+    const attachments = sendInquiryEmailMock.mock.calls[0][1];
+    expect(attachments).toHaveLength(1);
+    expect(attachments[0].name).toBe('spec.pdf');
+    expect(attachments[0].url).toContain('inquiries/uuid-spec.pdf');
   });
 
-  it('rejects file refs whose URL is not a Vercel Blob URL (anti-injection)', async () => {
+  it('rejects file refs whose key is not under inquiries/ (anti-injection)', async () => {
     const req = createJsonRequest(validFields, [
-      { name: 'evil.pdf', url: 'https://evil.example.com/x.pdf', size: 1234, type: 'application/pdf' },
+      { name: 'evil.pdf', key: 'secrets/private.pdf', size: 1234, type: 'application/pdf' },
     ]);
     const res = await POST(req as never);
     const body = await res.json();
@@ -156,7 +152,6 @@ describe('Contact API Route', () => {
   });
 
   it('accepts a submission that omits optional fields entirely (null-safe extraction)', async () => {
-    // 只发必填字段，完全不带 phoneCountryCode/phoneNumber/message
     const req = createJsonRequest({
       name: 'Jane Doe',
       email: 'jane@example.com',

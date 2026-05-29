@@ -1,12 +1,11 @@
 /**
- * 文件直传 Vercel Blob 工具
+ * 文件经 Cloudflare R2 presigned PUT 直传工具
  *
- * Vercel 函数有 4.5MB 请求体硬上限，无法承载大文件上传，故文件改为浏览器经
- * @vercel/blob/client 直传到 Blob，拿到公开 URL 后再随表单 JSON 提交给 /api/contact。
- * 直传天然带进度事件，按所有文件总字节聚合，沿用 UploadProgress 形状供进度条复用。
+ * Vercel 函数有 4.5MB 请求体上限，且 Vercel Blob 客户端直传有 CORS 死路；
+ * 故文件改为：先向 /api/upload 取 R2 presigned PUT URL，再用 XHR 直传 R2（带进度），
+ * 拿到 key 后随表单 JSON 提交给 /api/contact。R2 bucket CORS 允许 PUT，无跨域问题。
  */
 
-import { upload } from '@vercel/blob/client';
 import type { UploadedFileRef } from '@/lib/validations';
 
 export interface UploadProgress {
@@ -19,13 +18,10 @@ export interface UploadProgress {
 }
 
 /**
- * 顺序直传多个文件到 Vercel Blob，并回调聚合上传进度。
- *
- * @param files 待上传文件
- * @param onProgress 上传过程中持续回调；percent 达到 100 表示全部文件已传完
- * @returns 每个文件的引用（name + 公开 url + size + type），用于提交与邮件附件
+ * 顺序直传多个文件到 R2，回调聚合进度。
+ * @returns 每个文件的引用 {name, key, size, type}
  */
-export async function uploadFilesToBlob(
+export async function uploadFilesToR2(
   files: File[],
   onProgress?: (progress: UploadProgress) => void
 ): Promise<UploadedFileRef[]> {
@@ -34,32 +30,60 @@ export async function uploadFilesToBlob(
   const refs: UploadedFileRef[] = [];
 
   for (const file of files) {
-    // 60s 超时兜底：直传若长时间不返回（网络/配置异常），主动中断并抛错，
-    // 避免表单永久卡在 loading（进度条一直转）
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 60_000);
-    try {
-      const blob = await upload(file.name, file, {
-        access: 'public',
-        handleUploadUrl: '/api/upload',
-        abortSignal: controller.signal,
-        onUploadProgress: (event) => {
-          // 防御：个别情况下 percentage 可能缺失，避免算出 NaN 让进度条看似卡住
-          const pct = typeof event.percentage === 'number' ? event.percentage : 0;
-          const loaded = completedBytes + (pct / 100) * file.size;
-          onProgress?.({
-            loaded,
-            total,
-            percent: total > 0 ? Math.round((loaded / total) * 100) : 0,
-          });
-        },
-      });
-      refs.push({ name: file.name, url: blob.url, size: file.size, type: file.type });
-      completedBytes += file.size;
-    } finally {
-      clearTimeout(timeout);
+    const contentType = file.type || 'application/octet-stream';
+
+    // 1) 取 presigned PUT URL + key
+    const res = await fetch('/api/upload', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ filename: file.name, contentType, size: file.size }),
+    });
+    if (!res.ok) {
+      const data = (await res.json().catch(() => null)) as { error?: string } | null;
+      throw new Error(`获取上传链接失败: ${data?.error || res.status}`);
     }
+    const { uploadUrl, key } = (await res.json()) as { uploadUrl: string; key: string };
+
+    // 2) XHR PUT 直传 R2（进度 + 60s 超时兜底）
+    await putToR2(uploadUrl, file, contentType, (loaded) => {
+      const aggregated = completedBytes + loaded;
+      onProgress?.({
+        loaded: aggregated,
+        total,
+        percent: total > 0 ? Math.round((aggregated / total) * 100) : 0,
+      });
+    });
+
+    completedBytes += file.size;
+    refs.push({ name: file.name, key, size: file.size, type: file.type });
   }
 
   return refs;
+}
+
+/** 用 XHR PUT 把文件传到 presigned URL，回调已上传字节数；带 60s 超时，绝不无限卡住。 */
+function putToR2(
+  url: string,
+  file: File,
+  contentType: string,
+  onLoaded: (loaded: number) => void
+): Promise<void> {
+  return new Promise<void>((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open('PUT', url);
+    // 必须与 /api/upload 签名时的 Content-Type 一致，否则 R2 返回 403
+    xhr.setRequestHeader('Content-Type', contentType);
+    xhr.timeout = 60_000;
+    xhr.upload.onprogress = (event: ProgressEvent) => {
+      if (event.lengthComputable) onLoaded(event.loaded);
+    };
+    xhr.onload = () => {
+      if (xhr.status >= 200 && xhr.status < 300) resolve();
+      else reject(new Error(`上传失败 (HTTP ${xhr.status})`));
+    };
+    xhr.onerror = () => reject(new Error('上传网络错误'));
+    xhr.ontimeout = () => reject(new Error('上传超时'));
+    xhr.onabort = () => reject(new Error('上传被取消'));
+    xhr.send(file);
+  });
 }

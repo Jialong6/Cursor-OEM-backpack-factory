@@ -73,22 +73,20 @@ describe('sendInquiryEmail', () => {
     expect(payload.html).toContain('+86 13800138000'); // ISO→dial 在模板内完成
   });
 
-  it('passes uploaded blob files as Resend path attachments', async () => {
+  it('passes attachments to Resend as path (presigned URL)', async () => {
     process.env.RESEND_API_KEY = 're_test';
     sendMock.mockResolvedValue({ data: { id: 'abc' }, error: null });
 
     await sendInquiryEmail(baseData, [
-      {
-        name: 'spec.pdf',
-        url: 'https://store.public.blob.vercel-storage.com/spec-abc.pdf',
-        size: 1234,
-        type: 'application/pdf',
-      },
+      { name: 'spec.pdf', url: 'https://acc.r2.cloudflarestorage.com/betterbags/inquiries/x-spec.pdf?sig=1' },
     ]);
 
     const payload = sendMock.mock.calls[0][0];
     expect(payload.attachments).toEqual([
-      { filename: 'spec.pdf', path: 'https://store.public.blob.vercel-storage.com/spec-abc.pdf' },
+      {
+        filename: 'spec.pdf',
+        path: 'https://acc.r2.cloudflarestorage.com/betterbags/inquiries/x-spec.pdf?sig=1',
+      },
     ]);
   });
 

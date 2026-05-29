@@ -7,6 +7,7 @@ import {
   type UploadedFileRef,
 } from '@/lib/validations';
 import { sendInquiryEmail } from '@/lib/email';
+import { presignGetUrl } from '@/lib/r2';
 
 /**
  * Contact Form API Route
@@ -78,7 +79,7 @@ function extractFileRefs(body: unknown): UploadedFileRef[] {
       !!f &&
       typeof f === 'object' &&
       typeof (f as UploadedFileRef).name === 'string' &&
-      typeof (f as UploadedFileRef).url === 'string' &&
+      typeof (f as UploadedFileRef).key === 'string' &&
       typeof (f as UploadedFileRef).size === 'number' &&
       typeof (f as UploadedFileRef).type === 'string'
   );
@@ -166,8 +167,21 @@ export async function POST(request: NextRequest) {
       }
     }
 
+    // 为每个文件签发限时 presigned GET URL，供 Resend 发信时抓取作附件
+    let emailAttachments: Array<{ name: string; url: string }> = [];
+    if (fileRefs.length > 0) {
+      try {
+        emailAttachments = await Promise.all(
+          fileRefs.map(async (f) => ({ name: f.name, url: await presignGetUrl(f.key) }))
+        );
+      } catch (err) {
+        // 签发失败不阻断询盘：照常发邮件，仅记录（避免因附件问题丢询盘）
+        console.error('[API Error] presign GET for attachments failed:', err);
+      }
+    }
+
     // 发送询盘通知邮件给管理员
-    const emailResult = await sendInquiryEmail(validatedData, fileRefs);
+    const emailResult = await sendInquiryEmail(validatedData, emailAttachments);
 
     if (!emailResult.success) {
       // 邮件发送失败：返回 500，避免询盘被静默丢弃（前端会提示用户直接联系我们）

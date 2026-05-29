@@ -20,7 +20,7 @@ import {
 import { useFormDraft } from '@/hooks/useFormDraft';
 import { useGeoCountry } from '@/hooks/useGeoCountry';
 import { getCountryByCode } from '@/lib/countries';
-import { uploadFilesToBlob, type UploadProgress } from '@/lib/upload';
+import { uploadFilesToR2, type UploadProgress } from '@/lib/upload';
 
 /**
  * Get A Quote 表单的全局 Context
@@ -197,7 +197,7 @@ export function QuoteFormProvider({ children }: { children: ReactNode }) {
         // 1) 先把文件直传 Vercel Blob（带聚合进度），拿到公开 URL 引用；
         //    文件不经过 /api/contact，绕开 Vercel 4.5MB 请求体限制
         const fileRefs =
-          files.length > 0 ? await uploadFilesToBlob(files, setUploadProgress) : [];
+          files.length > 0 ? await uploadFilesToR2(files, setUploadProgress) : [];
 
         // 2) 再把表单字段 + 文件 URL 以小 JSON 提交。
         //    phoneCountryCode 以 ISO 码("CN")原样发送 —— 与后端 schema 的

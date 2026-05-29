@@ -235,26 +235,18 @@ export function validateFiles(files: File[]): { valid: boolean; errors: string[]
  */
 export interface UploadedFileRef {
   name: string;
-  url: string;
+  /** R2 对象 key（由 /api/upload 生成并回传） */
+  key: string;
   size: number;
   type: string;
 }
 
-// Vercel Blob 公开 URL 的主机后缀；校验 URL 必须落在该域，
-// 防止客户端注入任意 URL（该 URL 会被 Resend 当作附件 path 抓取）
-const BLOB_HOST_SUFFIX = '.public.blob.vercel-storage.com';
-
-function isValidBlobUrl(url: string): boolean {
-  try {
-    const parsed = new URL(url);
-    return parsed.protocol === 'https:' && parsed.hostname.endsWith(BLOB_HOST_SUFFIX);
-  } catch {
-    return false;
-  }
-}
+// 上传对象 key 的前缀（由 /api/upload 统一生成）；校验客户端回传的 key 形态，
+// 防止注入任意 key（key 仅在服务端用于签发 presigned GET，故只需限定前缀 + 禁止路径穿越）
+export const UPLOAD_KEY_PREFIX = 'inquiries/';
 
 /**
- * 校验直传后回传的文件引用：数量、URL 来源、大小、类型
+ * 校验直传后回传的文件引用：数量、key 形态、大小、类型
  */
 export function validateFileRefs(files: UploadedFileRef[]): { valid: boolean; errors: string[] } {
   const errors: string[] = [];
@@ -265,8 +257,12 @@ export function validateFileRefs(files: UploadedFileRef[]): { valid: boolean; er
   }
 
   files.forEach((file) => {
-    if (!isValidBlobUrl(file.url)) {
-      errors.push(`File "${file.name}" has an invalid upload URL.`);
+    if (
+      typeof file.key !== 'string' ||
+      !file.key.startsWith(UPLOAD_KEY_PREFIX) ||
+      file.key.includes('..')
+    ) {
+      errors.push(`File "${file.name}" has an invalid upload reference.`);
       return;
     }
     if (file.size > MAX_FILE_SIZE) {
