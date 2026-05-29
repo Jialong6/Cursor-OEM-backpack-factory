@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import QuoteFormFields from './QuoteFormFields';
+import { useQuoteForm } from './QuoteFormContext';
 import { useDraggable } from '@/hooks/useDraggable';
 
 /**
@@ -54,6 +55,7 @@ function readStoredButtonY(): number | null {
 
 export default function FloatingQuoteWidget() {
   const t = useTranslations('quoteWidget');
+  const { isSubmitting } = useQuoteForm();
 
   const [mounted, setMounted] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
@@ -169,8 +171,9 @@ export default function FloatingQuoteWidget() {
   );
 
   const handleMinimize = useCallback(() => {
+    if (isSubmitting) return; // 上传/提交进行中不允许最小化，避免丢失进度反馈
     setState('collapsed');
-  }, []);
+  }, [isSubmitting]);
 
   if (!mounted) return null;
 
@@ -235,8 +238,10 @@ export default function FloatingQuoteWidget() {
           onClick={handleMinimize}
           onPointerDown={(e) => e.stopPropagation()}
           aria-label={t('minimize')}
-          className="text-white/80 hover:text-white p-1 rounded hover:bg-white/10 transition-colors"
-          style={{ cursor: 'pointer' }}
+          disabled={isSubmitting}
+          aria-disabled={isSubmitting}
+          className="text-white/80 hover:text-white p-1 rounded hover:bg-white/10 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+          style={{ cursor: isSubmitting ? 'not-allowed' : 'pointer' }}
         >
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />

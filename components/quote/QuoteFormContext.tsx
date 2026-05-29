@@ -20,6 +20,7 @@ import {
 import { useFormDraft } from '@/hooks/useFormDraft';
 import { useGeoCountry } from '@/hooks/useGeoCountry';
 import { getCountryByCode } from '@/lib/countries';
+import { uploadFormData, type UploadProgress } from '@/lib/upload';
 
 /**
  * Get A Quote 表单的全局 Context
@@ -30,6 +31,9 @@ import { getCountryByCode } from '@/lib/countries';
  */
 
 type SubmitStatus = 'idle' | 'success' | 'error';
+
+/** 发起提交的表单实例（页底 inline / 浮窗 floating），用于把提交反馈只显示在发起方 */
+export type SubmitVariant = 'inline' | 'floating';
 
 export interface QuoteFormContextValue {
   form: UseFormReturn<ContactFormData>;
@@ -44,7 +48,10 @@ export interface QuoteFormContextValue {
   // 提交状态
   isSubmitting: boolean;
   submitStatus: SubmitStatus;
-  onSubmit: (data: ContactFormData) => Promise<void>;
+  uploadProgress: UploadProgress | null;
+  /** 本次提交由哪个表单实例发起；进度条只在该实例渲染，避免双实例重复 */
+  submittingVariant: SubmitVariant | null;
+  onSubmit: (data: ContactFormData, variant?: SubmitVariant) => Promise<void>;
 
   // 草稿
   showDraftNotice: boolean;
@@ -77,6 +84,8 @@ export function QuoteFormProvider({ children }: { children: ReactNode }) {
   const [fileErrors, setFileErrors] = useState<string[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus>('idle');
+  const [uploadProgress, setUploadProgress] = useState<UploadProgress | null>(null);
+  const [submittingVariant, setSubmittingVariant] = useState<SubmitVariant | null>(null);
   const [showDraftNotice, setShowDraftNotice] = useState(false);
   const [captchaResetSignal, setCaptchaResetSignal] = useState(0);
 
@@ -178,9 +187,11 @@ export function QuoteFormProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const onSubmit = useCallback(
-    async (data: ContactFormData) => {
+    async (data: ContactFormData, variant: SubmitVariant = 'inline') => {
       setIsSubmitting(true);
       setSubmitStatus('idle');
+      setSubmittingVariant(variant);
+      setUploadProgress({ loaded: 0, total: 0, percent: 0 });
 
       try {
         // phoneCountryCode 以 ISO 码("CN")原样发送 —— 与后端 schema 的
@@ -193,13 +204,11 @@ export function QuoteFormProvider({ children }: { children: ReactNode }) {
           formData.append('files', file);
         });
 
-        const response = await fetch('/api/contact', {
-          method: 'POST',
-          body: formData,
-        });
-        const result = await response.json();
+        // 用 XHR(经 uploadFormData)提交以获取真实上传进度;fetch 无法监听上传进度
+        const result = await uploadFormData('/api/contact', formData, setUploadProgress);
+        const body = result.body as { success?: boolean } | null;
 
-        if (result.success) {
+        if (body?.success) {
           setSubmitStatus('success');
           clearDraft();
           setShowDraftNotice(false);
@@ -213,6 +222,8 @@ export function QuoteFormProvider({ children }: { children: ReactNode }) {
         setSubmitStatus('error');
       } finally {
         setIsSubmitting(false);
+        setUploadProgress(null);
+        setSubmittingVariant(null);
       }
     },
     [files, clearDraft, reset]
@@ -227,6 +238,8 @@ export function QuoteFormProvider({ children }: { children: ReactNode }) {
     removeFile,
     isSubmitting,
     submitStatus,
+    uploadProgress,
+    submittingVariant,
     onSubmit,
     showDraftNotice,
     handleDiscardDraft,

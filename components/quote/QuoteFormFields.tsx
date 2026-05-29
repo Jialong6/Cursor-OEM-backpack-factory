@@ -9,6 +9,7 @@ import {
 import CountrySelect from '@/components/ui/CountrySelect';
 import PhonePrefixSelect from '@/components/ui/PhonePrefixSelect';
 import MCaptchaWidget from '@/components/ui/MCaptchaWidget';
+import UploadProgressBar from '@/components/ui/UploadProgress';
 import { useQuoteForm } from './QuoteFormContext';
 import { getLocalExampleNumber } from '@/lib/phone-examples';
 
@@ -39,6 +40,8 @@ export default function QuoteFormFields({
     removeFile,
     isSubmitting,
     submitStatus,
+    uploadProgress,
+    submittingVariant,
     onSubmit,
     showDraftNotice,
     handleDiscardDraft,
@@ -105,7 +108,7 @@ export default function QuoteFormFields({
         </div>
       )}
 
-      <form onSubmit={handleSubmit(onSubmit)} className={spacing}>
+      <form onSubmit={handleSubmit((data) => onSubmit(data, variant))} className={spacing}>
         {/* 姓名 */}
         <div>
           <label htmlFor={id('name')} className="block text-sm font-medium text-gray-700 mb-2">
@@ -433,6 +436,10 @@ export default function QuoteFormFields({
                 </p>
               ))}
             </div>
+          )}
+
+          {submittingVariant === variant && isSubmitting && uploadProgress && files.length > 0 && (
+            <UploadProgressBar progress={uploadProgress} label={t('form.fileUpload.label')} />
           )}
         </div>
 
