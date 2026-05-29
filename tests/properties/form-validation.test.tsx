@@ -89,8 +89,8 @@ const validFormDataArbitrary = fc
     email: simpleEmailArbitrary,
     countryRegion: nonEmptyString(2, 100),
     companyBrandName: nonEmptyString(2, 100),
-    subject: nonEmptyString(5, 200),
-    message: nonEmptyString(20, 2000),
+    subject: nonEmptyString(1, 200),
+    message: nonEmptyString(1, 2000),
     orderQuantity: fc.constantFrom(...ORDER_QUANTITY_OPTIONS),
     techPackAvailability: fc.constantFrom(...TECH_PACK_OPTIONS),
     mcaptchaToken: nonEmptyString(10, 100),
@@ -106,7 +106,6 @@ const requiredFields = [
   'countryRegion',
   'companyBrandName',
   'subject',
-  'message',
   'orderQuantity',
   'techPackAvailability',
   'mcaptchaToken',
@@ -236,30 +235,30 @@ describe('Property 10: 表单验证完整性', () => {
       );
     });
 
-    it('message 长度小于 20 时应被拒绝', () => {
+    it('message 为空或短文本时应通过（可选字段）', () => {
       fc.assert(
         fc.property(
           validFormDataArbitrary,
-          fc.string({ minLength: 1, maxLength: 19 }),
+          fc.string({ minLength: 0, maxLength: 19 }),
           (validData, shortMessage) => {
-            const invalidData = { ...validData, message: shortMessage };
-            const result = contactFormSchema.safeParse(invalidData);
-            return !result.success;
+            const data = { ...validData, message: shortMessage };
+            const result = contactFormSchema.safeParse(data);
+            return result.success;
           }
         ),
         { numRuns: 100 }
       );
     });
 
-    it('subject 长度小于 5 时应被拒绝', () => {
+    it('subject 为单个短词时应通过', () => {
       fc.assert(
         fc.property(
           validFormDataArbitrary,
           fc.string({ minLength: 1, maxLength: 4 }),
           (validData, shortSubject) => {
-            const invalidData = { ...validData, subject: shortSubject };
-            const result = contactFormSchema.safeParse(invalidData);
-            return !result.success;
+            const data = { ...validData, subject: shortSubject };
+            const result = contactFormSchema.safeParse(data);
+            return result.success;
           }
         ),
         { numRuns: 100 }
@@ -343,7 +342,8 @@ describe('Property 10: 表单验证完整性', () => {
     it('任意不支持的文件类型应被 validateFile 拒绝', () => {
       fc.assert(
         fc.property(
-          fc.string({ minLength: 1, maxLength: 50 }),
+          // 强制以不支持的后缀结尾,避免随机文件名恰好命中扩展名兜底白名单
+          fc.string({ minLength: 1, maxLength: 50 }).map((s) => `${s}.bin`),
           fc.constantFrom('text/plain', 'application/zip', 'video/mp4', 'audio/mpeg'),
           (fileName, fileType) => {
             const mockFile = new File(['test content'], fileName, {
@@ -369,7 +369,12 @@ describe('Property 10: 表单验证完整性', () => {
             'image/png',
             'image/webp',
             'application/pdf',
-            'application/msword'
+            'application/msword',
+            'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+            'application/vnd.ms-excel',
+            'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+            'application/vnd.ms-powerpoint',
+            'application/vnd.openxmlformats-officedocument.presentationml.presentation'
           ),
           fc.integer({ min: 1, max: 10 * 1024 * 1024 - 1 }),
           (fileName, fileType, fileSize) => {
@@ -377,6 +382,27 @@ describe('Property 10: 表单验证完整性', () => {
               type: fileType,
             });
             Object.defineProperty(mockFile, 'size', { value: fileSize });
+
+            const result = validateFile(mockFile);
+            return result.valid && result.error === undefined;
+          }
+        ),
+        { numRuns: 100 }
+      );
+    });
+
+    it('Office 文件 MIME 缺失时应按扩展名兜底接受', () => {
+      fc.assert(
+        fc.property(
+          fc.string({ minLength: 1, maxLength: 30 }),
+          fc.constantFrom('xls', 'xlsx', 'ppt', 'pptx', 'doc', 'docx'),
+          // 部分浏览器对老 Office 格式给出空 MIME 或 octet-stream
+          fc.constantFrom('', 'application/octet-stream'),
+          (baseName, ext, mime) => {
+            const mockFile = new File(['content'], `${baseName}.${ext}`, {
+              type: mime,
+            });
+            Object.defineProperty(mockFile, 'size', { value: 1024 });
 
             const result = validateFile(mockFile);
             return result.valid && result.error === undefined;
@@ -466,7 +492,7 @@ describe('Property 10: 表单验证完整性 - 单元测试补充', () => {
       expect(result.success).toBe(false);
     });
 
-    it('message 少于 20 个字符时应失败', () => {
+    it('message 为短文本时应通过（可选字段）', () => {
       const data = {
         name: 'John Doe',
         email: 'john@example.com',
@@ -482,7 +508,26 @@ describe('Property 10: 表单验证完整性 - 单元测试补充', () => {
       };
 
       const result = contactFormSchema.safeParse(data);
-      expect(result.success).toBe(false);
+      expect(result.success).toBe(true);
+    });
+
+    it('message 为空时应通过（可选字段）', () => {
+      const data = {
+        name: 'John Doe',
+        email: 'john@example.com',
+        countryRegion: 'USA',
+        companyBrandName: 'Test Company',
+        phoneCountryCode: 'US',
+        phoneNumber: '555-123-4567',
+        subject: 'bag',
+        message: '',
+        orderQuantity: 'Less than 100 pcs' as const,
+        techPackAvailability: 'Yes, I have a tech pack' as const,
+        mcaptchaToken: 'test-token-123',
+      };
+
+      const result = contactFormSchema.safeParse(data);
+      expect(result.success).toBe(true);
     });
 
     it('所有必填字段有效时应成功（含 phoneNumber）', () => {

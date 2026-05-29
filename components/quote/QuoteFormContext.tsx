@@ -19,7 +19,7 @@ import {
 } from '@/lib/validations';
 import { useFormDraft } from '@/hooks/useFormDraft';
 import { useGeoCountry } from '@/hooks/useGeoCountry';
-import { getCountryByCode, getDialCodeByCountry } from '@/lib/countries';
+import { getCountryByCode } from '@/lib/countries';
 
 /**
  * Get A Quote 表单的全局 Context
@@ -183,13 +183,11 @@ export function QuoteFormProvider({ children }: { children: ReactNode }) {
       setSubmitStatus('idle');
 
       try {
+        // phoneCountryCode 以 ISO 码("CN")原样发送 —— 与后端 schema 的
+        // /^[A-Z]{2}$/ 校验一致;拨号码("+86")的展示转换在服务端发邮件时再做
         const formData = new FormData();
-        const submitData: Record<string, string | undefined> = { ...data };
-        if (submitData.phoneCountryCode) {
-          submitData.phoneCountryCode = getDialCodeByCountry(submitData.phoneCountryCode) || '';
-        }
-        Object.entries(submitData).forEach(([key, value]) => {
-          formData.append(key, value || '');
+        Object.entries(data).forEach(([key, value]) => {
+          formData.append(key, value ?? '');
         });
         files.forEach((file) => {
           formData.append('files', file);

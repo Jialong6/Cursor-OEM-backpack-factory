@@ -36,7 +36,32 @@ const ACCEPTED_FILE_TYPES = [
   'application/pdf',
   'application/msword',
   'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+  'application/vnd.ms-excel', // .xls
+  'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', // .xlsx
+  'application/vnd.ms-powerpoint', // .ppt
+  'application/vnd.openxmlformats-officedocument.presentationml.presentation', // .pptx
 ];
+
+// 扩展名兜底白名单:部分浏览器对老 Office 格式(.xls/.ppt)给出空 MIME 或
+// application/octet-stream,仅靠 MIME 会误拒,故按文件名后缀二次放行
+const ACCEPTED_FILE_EXTENSIONS = [
+  'jpg',
+  'jpeg',
+  'png',
+  'webp',
+  'pdf',
+  'doc',
+  'docx',
+  'xls',
+  'xlsx',
+  'ppt',
+  'pptx',
+];
+
+function hasAcceptedExtension(fileName: string): boolean {
+  const ext = fileName.split('.').pop()?.toLowerCase() ?? '';
+  return ACCEPTED_FILE_EXTENSIONS.includes(ext);
+}
 
 /**
  * 联系表单 Schema
@@ -91,14 +116,13 @@ export const contactFormSchema = z.object({
   subject: z
     .string()
     .min(1, 'Subject is required')
-    .min(5, 'Subject must be at least 5 characters')
     .max(200, 'Subject must be less than 200 characters'),
 
   message: z
     .string()
-    .min(1, 'Message is required')
-    .min(20, 'Message must be at least 20 characters')
-    .max(2000, 'Message must be less than 2000 characters'),
+    .max(2000, 'Message must be less than 2000 characters')
+    .optional()
+    .or(z.literal('')),
 
   // 下拉选择字段（需求 11.3, 11.4）
   orderQuantity: z.enum(ORDER_QUANTITY_OPTIONS),
@@ -171,7 +195,7 @@ export function validateFile(file: File): { valid: boolean; error?: string } {
     };
   }
 
-  if (!ACCEPTED_FILE_TYPES.includes(file.type)) {
+  if (!ACCEPTED_FILE_TYPES.includes(file.type) && !hasAcceptedExtension(file.name)) {
     return {
       valid: false,
       error: `File "${file.name}" has an unsupported type. Please upload images or documents.`,

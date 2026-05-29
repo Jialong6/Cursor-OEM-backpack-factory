@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { contactFormSchema, formatZodErrors, validateFiles, type ContactFormResponse } from '@/lib/validations';
-import { z } from 'zod';
+import { sendInquiryEmail } from '@/lib/email';
 
 /**
  * Contact Form API Route
@@ -58,53 +58,6 @@ async function verifyMCaptchaToken(token: string): Promise<boolean> {
 }
 
 /**
- * 发送邮件通知给管理员
- */
-async function sendEmailNotification(formData: z.infer<typeof contactFormSchema>, files?: File[]) {
-  // TODO: 实现邮件发送功能
-  // 需要配置 SMTP 服务器或使用邮件服务 (nodemailer, sendgrid, resend 等)
-  //
-  // 示例实现：
-  // const transporter = nodemailer.createTransport({
-  //   host: process.env.SMTP_HOST,
-  //   port: parseInt(process.env.SMTP_PORT || '587'),
-  //   secure: false,
-  //   auth: {
-  //     user: process.env.SMTP_USER,
-  //     pass: process.env.SMTP_PASS,
-  //   },
-  // });
-  //
-  // await transporter.sendMail({
-  //   from: process.env.SMTP_FROM,
-  //   to: 'jay@biteerbags.com',
-  //   subject: `New Inquiry: ${formData.subject}`,
-  //   html: generateEmailHTML(formData),
-  //   attachments: files?.map(file => ({
-  //     filename: file.name,
-  //     content: Buffer.from(await file.arrayBuffer()),
-  //   })),
-  // });
-
-  console.log('[EMAIL] Notification would be sent to admin:', {
-    to: 'jay@biteerbags.com',
-    subject: formData.subject,
-    from: formData.email,
-    filesCount: files?.length || 0,
-  });
-
-  // 在开发环境中，仅记录日志
-  if (process.env.NODE_ENV === 'development') {
-    console.log('[DEV] Email notification skipped in development mode');
-    console.log('[DEV] Form data:', JSON.stringify(formData, null, 2));
-    return;
-  }
-
-  // TODO: 在生产环境中实现真实的邮件发送
-  console.warn('[WARN] Email notification not fully implemented');
-}
-
-/**
  * POST /api/contact
  * 处理联系表单提交
  */
@@ -114,17 +67,26 @@ export async function POST(request: NextRequest) {
     const formData = await request.formData();
 
     // 提取表单字段
+    // formData.get() 对缺失字段返回 null、对文件返回 File；统一归一为字符串，
+    // 避免可选字段(phone/message)缺失时 null 触发 schema 校验失败，
+    // 不依赖前端一定把空字段发成空串
+    const field = (key: string): string => {
+      const value = formData.get(key);
+      return typeof value === 'string' ? value : '';
+    };
+
     const data = {
-      name: formData.get('name') as string,
-      email: formData.get('email') as string,
-      countryRegion: formData.get('countryRegion') as string,
-      companyBrandName: formData.get('companyBrandName') as string,
-      phoneNumber: formData.get('phoneNumber') as string,
-      subject: formData.get('subject') as string,
-      message: formData.get('message') as string,
-      orderQuantity: formData.get('orderQuantity') as string,
-      techPackAvailability: formData.get('techPackAvailability') as string,
-      mcaptchaToken: formData.get('mcaptchaToken') as string,
+      name: field('name'),
+      email: field('email'),
+      countryRegion: field('countryRegion'),
+      companyBrandName: field('companyBrandName'),
+      phoneCountryCode: field('phoneCountryCode'),
+      phoneNumber: field('phoneNumber'),
+      subject: field('subject'),
+      message: field('message'),
+      orderQuantity: field('orderQuantity'),
+      techPackAvailability: field('techPackAvailability'),
+      mcaptchaToken: field('mcaptchaToken'),
     };
 
     // 验证表单数据
@@ -187,8 +149,20 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // 发送邮件通知给管理员
-    await sendEmailNotification(validatedData, uploadedFiles);
+    // 发送询盘通知邮件给管理员
+    const emailResult = await sendInquiryEmail(validatedData, uploadedFiles);
+
+    if (!emailResult.success) {
+      // 邮件发送失败：返回 500，避免询盘被静默丢弃（前端会提示用户直接联系我们）
+      console.error('[API Error] Inquiry email failed to send:', emailResult.error);
+      return NextResponse.json(
+        {
+          success: false,
+          message: 'An unexpected error occurred. Please try again later.',
+        } satisfies ContactFormResponse,
+        { status: 500 }
+      );
+    }
 
     // 返回成功响应
     return NextResponse.json(

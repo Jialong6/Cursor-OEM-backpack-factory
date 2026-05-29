@@ -80,8 +80,8 @@ const validFormDataArbitrary = fc.record({
   countryRegion: nonEmptyString(2, 100),
   companyBrandName: nonEmptyString(2, 100),
   phoneNumber: fc.oneof(fc.constant(''), phoneArbitrary),
-  subject: nonEmptyString(5, 200),
-  message: nonEmptyString(20, 2000),
+  subject: nonEmptyString(1, 200),
+  message: nonEmptyString(1, 2000),
   orderQuantity: fc.constantFrom(...ORDER_QUANTITY_OPTIONS),
   techPackAvailability: fc.constantFrom(...TECH_PACK_OPTIONS),
   mcaptchaToken: nonEmptyString(10, 100),
@@ -219,7 +219,7 @@ describe('表单提交成功处理 (Property 11)', () => {
       errors: {
         name: ['Name is required'],
         email: ['Please enter a valid email address'],
-        message: ['Message must be at least 20 characters'],
+        subject: ['Subject is required'],
       },
     };
 
@@ -241,7 +241,7 @@ describe('表单提交成功处理 (Property 11)', () => {
     expect(Object.keys(result.errors || {}).length).toBeGreaterThan(0);
     expect(result.errors?.name).toBeDefined();
     expect(result.errors?.email).toBeDefined();
-    expect(result.errors?.message).toBeDefined();
+    expect(result.errors?.subject).toBeDefined();
   });
 
   it('单元测试：mCaptcha 验证失败应返回相应错误', async () => {

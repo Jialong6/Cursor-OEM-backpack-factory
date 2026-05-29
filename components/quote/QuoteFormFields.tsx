@@ -349,7 +349,7 @@ export default function QuoteFormFields({
         {/* 您的消息 */}
         <div>
           <label htmlFor={id('message')} className="block text-sm font-medium text-gray-700 mb-2">
-            {t('form.message.label')} *
+            {t('form.message.label')}
           </label>
           {(() => {
             const { ref: rhfRef, ...rest } = register('message');
@@ -363,7 +363,7 @@ export default function QuoteFormFields({
                 id={id('message')}
                 rows={2}
                 placeholder={t('form.message.placeholder')}
-                aria-required="true"
+                aria-required="false"
                 aria-invalid={errors.message ? 'true' : 'false'}
                 aria-describedby={errors.message ? `${id('message')}-error` : undefined}
                 onInput={(e) => {
@@ -395,7 +395,7 @@ export default function QuoteFormFields({
               id={id('fileUpload')}
               type="file"
               multiple
-              accept=".jpg,.jpeg,.png,.webp,.pdf,.doc,.docx"
+              accept=".jpg,.jpeg,.png,.webp,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx"
               onChange={handleFileChange}
               className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
               aria-label={t('form.fileUpload.label')}
