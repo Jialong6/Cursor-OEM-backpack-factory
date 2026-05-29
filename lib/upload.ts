@@ -34,21 +34,31 @@ export async function uploadFilesToBlob(
   const refs: UploadedFileRef[] = [];
 
   for (const file of files) {
-    const blob = await upload(file.name, file, {
-      access: 'public',
-      handleUploadUrl: '/api/upload',
-      onUploadProgress: ({ percentage }) => {
-        const loaded = completedBytes + (percentage / 100) * file.size;
-        onProgress?.({
-          loaded,
-          total,
-          percent: total > 0 ? Math.round((loaded / total) * 100) : 0,
-        });
-      },
-    });
-
-    completedBytes += file.size;
-    refs.push({ name: file.name, url: blob.url, size: file.size, type: file.type });
+    // 60s 超时兜底：直传若长时间不返回（网络/配置异常），主动中断并抛错，
+    // 避免表单永久卡在 loading（进度条一直转）
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 60_000);
+    try {
+      const blob = await upload(file.name, file, {
+        access: 'public',
+        handleUploadUrl: '/api/upload',
+        abortSignal: controller.signal,
+        onUploadProgress: (event) => {
+          // 防御：个别情况下 percentage 可能缺失，避免算出 NaN 让进度条看似卡住
+          const pct = typeof event.percentage === 'number' ? event.percentage : 0;
+          const loaded = completedBytes + (pct / 100) * file.size;
+          onProgress?.({
+            loaded,
+            total,
+            percent: total > 0 ? Math.round((loaded / total) * 100) : 0,
+          });
+        },
+      });
+      refs.push({ name: file.name, url: blob.url, size: file.size, type: file.type });
+      completedBytes += file.size;
+    } finally {
+      clearTimeout(timeout);
+    }
   }
 
   return refs;

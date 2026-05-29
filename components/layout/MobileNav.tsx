@@ -97,21 +97,21 @@ export default function MobileNav({
           }
         `}
       >
-        {/* Backdrop */}
+        {/* Backdrop
+            移动端注意：不使用 backdrop-blur（backdrop-filter）。在 iOS Safari 上，
+            position:fixed + opacity 过渡的容器内若含 backdrop-filter / transform 子元素，
+            会触发合成 bug 导致背景层不绘制（菜单看起来透明）。用实心半透明黑即可。 */}
         <div
-          className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+          className="absolute inset-0 bg-black/50"
           onClick={onClose}
           aria-hidden="true"
         />
 
-        {/* Menu content */}
+        {/* Menu content
+            同理移除面板的 transform/translate-x：transform 会让面板单独成为合成层，
+            与外层 opacity 过渡叠加时在移动端不绘制白色背景。整屉靠外层 opacity 淡入淡出。 */}
         <div
-          className={`
-            absolute right-0 top-0 bottom-0 w-64
-            bg-white shadow-2xl
-            transform transition-transform duration-300 ease-in-out
-            ${isOpen ? 'translate-x-0' : 'translate-x-full'}
-          `}
+          className="absolute right-0 top-0 bottom-0 w-64 bg-white shadow-2xl"
         >
           <nav className="flex flex-col p-4 space-y-2">
             {NAV_ITEMS.map(({ id, href, key }) => (

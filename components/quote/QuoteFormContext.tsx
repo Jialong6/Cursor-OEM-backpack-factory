@@ -219,7 +219,9 @@ export function QuoteFormProvider({ children }: { children: ReactNode }) {
         } else {
           setSubmitStatus('error');
         }
-      } catch {
+      } catch (err) {
+        // 暴露真实错误便于诊断（上传超时/网络/配置等），不再静默吞掉
+        console.error('[QuoteForm] 提交或文件上传失败:', err);
         setSubmitStatus('error');
       } finally {
         setIsSubmitting(false);

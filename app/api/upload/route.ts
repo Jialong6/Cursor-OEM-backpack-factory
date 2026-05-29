@@ -21,12 +21,18 @@ export async function POST(request: Request): Promise<NextResponse> {
       body,
       request,
       onBeforeGenerateToken: async () => ({
-        allowedContentTypes: [...ACCEPTED_FILE_TYPES, 'application/octet-stream'],
+        // image/* 通配，兼容个别设备给 JPEG 报非标准 MIME；外加文档类型与 octet-stream 兜底。
+        // 最终的扩展名+类型核验在 /api/contact 的 validateFileRefs 完成。
+        allowedContentTypes: [
+          'image/*',
+          ...ACCEPTED_FILE_TYPES.filter((t) => !t.startsWith('image/')),
+          'application/octet-stream',
+        ],
         maximumSizeInBytes: MAX_FILE_SIZE,
         addRandomSuffix: true,
       }),
-      // 直传完成回调：当前无需落库
-      onUploadCompleted: async () => {},
+      // 不设 onUploadCompleted：当前无需落库；省去 Blob 上传完成回 webhook 这一步，
+      // 减少回调/签名相关的潜在卡顿
     });
 
     return NextResponse.json(jsonResponse);
