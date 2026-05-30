@@ -1,9 +1,12 @@
 /**
- * 文件经 Cloudflare R2 presigned PUT 直传工具
+ * 文件「同源中转」上传工具
  *
- * Vercel 函数有 4.5MB 请求体上限，且 Vercel Blob 客户端直传有 CORS 死路；
- * 故文件改为：先向 /api/upload 取 R2 presigned PUT URL，再用 XHR 直传 R2（带进度），
- * 拿到 key 后随表单 JSON 提交给 /api/contact。R2 bucket CORS 允许 PUT，无跨域问题。
+ * 浏览器把文件 POST 到本站自己的 /api/upload（同源，无跨域、无预检），由服务器转存
+ * Cloudflare R2。不再让浏览器跨域直连 R2 —— 跨域直传在 iOS Safari 上会被系统中断
+ * （NSURLError -1005「网络连接已中断 / access control checks」）。
+ *
+ * 受 Vercel 单请求体 4.5MB 限制：≤4MB 文件单请求直传；>4MB 文件切成 ≤4MB 分片逐片上传，
+ * 最后 complete 请求由服务端拼接。拿到 key 后随表单 JSON 提交给 /api/contact。
  */
 
 import type { UploadedFileRef } from '@/lib/validations';
@@ -17,8 +20,11 @@ export interface UploadProgress {
   percent: number;
 }
 
+/** 单分片/单请求大小：4MB，给 Vercel 4.5MB/请求 留足余量 */
+const CHUNK_SIZE = 4 * 1024 * 1024;
+
 /**
- * 顺序直传多个文件到 R2，回调聚合进度。
+ * 顺序上传多个文件（同源中转到 R2），回调聚合进度。
  * @returns 每个文件的引用 {name, key, size, type}
  */
 export async function uploadFilesToR2(
@@ -31,28 +37,19 @@ export async function uploadFilesToR2(
 
   for (const file of files) {
     const contentType = file.type || 'application/octet-stream';
-
-    // 1) 取 presigned PUT URL + key
-    const res = await fetch('/api/upload', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ filename: file.name, contentType, size: file.size }),
-    });
-    if (!res.ok) {
-      const data = (await res.json().catch(() => null)) as { error?: string } | null;
-      throw new Error(`获取上传链接失败: ${data?.error || res.status}`);
-    }
-    const { uploadUrl, key } = (await res.json()) as { uploadUrl: string; key: string };
-
-    // 2) XHR PUT 直传 R2（进度 + 60s 超时兜底）
-    await putToR2(uploadUrl, file, contentType, (loaded) => {
-      const aggregated = completedBytes + loaded;
+    const report = (loadedInFile: number) => {
+      const aggregated = completedBytes + loadedInFile;
       onProgress?.({
         loaded: aggregated,
         total,
         percent: total > 0 ? Math.round((aggregated / total) * 100) : 0,
       });
-    });
+    };
+
+    const key =
+      file.size <= CHUNK_SIZE
+        ? await uploadSingle(file, contentType, report)
+        : await uploadChunked(file, contentType, report);
 
     completedBytes += file.size;
     refs.push({ name: file.name, key, size: file.size, type: file.type });
@@ -61,29 +58,81 @@ export async function uploadFilesToR2(
   return refs;
 }
 
-/** 用 XHR PUT 把文件传到 presigned URL，回调已上传字节数；带 60s 超时，绝不无限卡住。 */
-function putToR2(
-  url: string,
+/** 小文件：单次同源 POST 整个文件，进度用 upload.onprogress。 */
+async function uploadSingle(
   file: File,
   contentType: string,
-  onLoaded: (loaded: number) => void
-): Promise<void> {
-  return new Promise<void>((resolve, reject) => {
+  report: (loaded: number) => void
+): Promise<string> {
+  const url = `/api/upload?filename=${encodeURIComponent(file.name)}&contentType=${encodeURIComponent(contentType)}`;
+  const res = await xhrPost(url, file, report);
+  if (!res.key) throw new Error(res.error || '上传失败：服务端未返回 key');
+  return res.key;
+}
+
+/** 大文件：切成 ≤4MB 分片逐片同源 POST，最后 complete 由服务端拼接。 */
+async function uploadChunked(
+  file: File,
+  contentType: string,
+  report: (loaded: number) => void
+): Promise<string> {
+  const uploadId = crypto.randomUUID();
+  const parts = Math.ceil(file.size / CHUNK_SIZE);
+  let baseLoaded = 0; // 本文件已完成分片的累计字节
+
+  for (let i = 0; i < parts; i++) {
+    const start = i * CHUNK_SIZE;
+    const blob = file.slice(start, Math.min(start + CHUNK_SIZE, file.size));
+    const partNo = i + 1;
+    const url = `/api/upload?uploadId=${uploadId}&part=${partNo}&parts=${parts}&size=${file.size}`;
+    await xhrPost(url, blob, (loaded) => report(baseLoaded + loaded));
+    baseLoaded += blob.size;
+    report(baseLoaded);
+  }
+
+  const completeUrl =
+    `/api/upload?uploadId=${uploadId}&complete=1` +
+    `&filename=${encodeURIComponent(file.name)}&contentType=${encodeURIComponent(contentType)}` +
+    `&parts=${parts}&size=${file.size}`;
+  const res = await xhrPost(completeUrl, null);
+  if (!res.key) throw new Error(res.error || '上传失败：拼接未返回 key');
+  return res.key;
+}
+
+interface UploadResponse {
+  key?: string;
+  ok?: boolean;
+  error?: string;
+}
+
+/** 用 XHR POST 上传 body 到同源 url，回调已上传字节数；带 60s 超时，绝不无限卡住。 */
+function xhrPost(
+  url: string,
+  body: Blob | null,
+  onLoaded?: (loaded: number) => void
+): Promise<UploadResponse> {
+  return new Promise<UploadResponse>((resolve, reject) => {
     const xhr = new XMLHttpRequest();
-    xhr.open('PUT', url);
-    // 必须与 /api/upload 签名时的 Content-Type 一致，否则 R2 返回 403
-    xhr.setRequestHeader('Content-Type', contentType);
+    xhr.open('POST', url);
     xhr.timeout = 60_000;
-    xhr.upload.onprogress = (event: ProgressEvent) => {
-      if (event.lengthComputable) onLoaded(event.loaded);
-    };
+    if (onLoaded) {
+      xhr.upload.onprogress = (event: ProgressEvent) => {
+        if (event.lengthComputable) onLoaded(event.loaded);
+      };
+    }
     xhr.onload = () => {
-      if (xhr.status >= 200 && xhr.status < 300) resolve();
-      else reject(new Error(`上传失败 (HTTP ${xhr.status})`));
+      let data: UploadResponse = {};
+      try {
+        data = JSON.parse(xhr.responseText) as UploadResponse;
+      } catch {
+        // 非 JSON 响应：保持空对象，由状态码决定成败
+      }
+      if (xhr.status >= 200 && xhr.status < 300) resolve(data);
+      else reject(new Error(data.error || `上传失败 (HTTP ${xhr.status})`));
     };
     xhr.onerror = () => reject(new Error('上传网络错误'));
     xhr.ontimeout = () => reject(new Error('上传超时'));
     xhr.onabort = () => reject(new Error('上传被取消'));
-    xhr.send(file);
+    xhr.send(body);
   });
 }

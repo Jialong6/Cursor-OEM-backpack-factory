@@ -1,12 +1,20 @@
-import { S3Client, PutObjectCommand, GetObjectCommand } from '@aws-sdk/client-s3';
+import {
+  S3Client,
+  PutObjectCommand,
+  GetObjectCommand,
+  DeleteObjectCommand,
+} from '@aws-sdk/client-s3';
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 
 /**
- * Cloudflare R2（S3 兼容）presigned URL 工具
+ * Cloudflare R2（S3 兼容）服务端读写工具
  *
- * 私有 bucket 方案：
- * - 浏览器直传用 presigned PUT URL（绕开 Vercel 4.5MB 函数体限制 + 无 Vercel Blob 的 CORS 死路）
- * - 邮件附件用限时 presigned GET URL（Resend 发信时抓取，URL 只需发信瞬间有效）
+ * 同源中转方案：浏览器把文件「同源」上传到 /api/upload，由服务器经此模块转存 R2。
+ * 浏览器不再跨域直连 R2 —— 跨域直传在 iOS Safari 上会被系统中断
+ * （NSURLError -1005「网络连接已中断 / access control checks」）。
+ *
+ * - putObject / getObjectBytes / deleteObject：服务端←→R2（出网不受 Vercel 4.5MB 请求体限制）
+ * - presignGetUrl：限时下载 URL，供 Resend 发信时远程抓取附件（URL 只需发信瞬间有效）
  *
  * 凭据来自运行时环境变量；未配置时 isR2Configured() 返回 false。
  */
@@ -32,32 +40,44 @@ function getClient(cfg: NonNullable<ReturnType<typeof getConfig>>): S3Client {
       accessKeyId: cfg.accessKeyId,
       secretAccessKey: cfg.secretAccessKey,
     },
-    // 路径风格 URL（<account>.r2.../<bucket>/<key>）而非虚拟主机子域
-    // （<bucket>.<account>.r2...）。iOS Safari 对 bucket 子域的跨域 PUT 会出现
-    // 「网络连接已中断 / access control checks」（2026-05-30 真机踩到）；路径风格回到
-    // 单层 host，规避该问题，且邮件用的 presigned GET 同样适用。
+    // 路径风格 URL（<account>.r2.../<bucket>/<key>），presignGetUrl 也用它；对服务端读写无影响。
     forcePathStyle: true,
-    // 关掉 AWS SDK v3.730+ 默认的自动 CRC32 校验和。否则 presigned PUT URL 会带上
-    // x-amz-checksum-crc32 / x-amz-sdk-checksum-algorithm 查询参数，告诉 R2「期待一个
-    // 校验和」，而浏览器直传不会提供 —— curl/桌面 Chrome 能容忍，但 iOS Safari 会在
-    // 实际 PUT 时被 R2 中断连接（「网络连接已中断 / access control checks」）。
-    // 设为 WHEN_REQUIRED 后签出干净 URL，跨浏览器（含 iOS Safari）直传才稳定。
+    // 关掉 AWS SDK v3.730+ 默认的自动 CRC32 校验和，签出干净 URL（服务端读写亦无害）。
     requestChecksumCalculation: 'WHEN_REQUIRED',
     responseChecksumValidation: 'WHEN_REQUIRED',
   });
 }
 
-/** 签发上传用 presigned PUT URL（默认 10 分钟有效）。客户端 PUT 时须带相同 Content-Type。 */
-export async function presignPutUrl(
+/** 服务端写入对象到 R2（同源中转 / 分片拼接落库）。 */
+export async function putObject(
   key: string,
-  contentType: string,
-  expiresIn = 600
-): Promise<string> {
+  body: Buffer | Uint8Array,
+  contentType: string
+): Promise<void> {
   const cfg = getConfig();
   if (!cfg) throw new Error('R2 is not configured');
   const client = getClient(cfg);
-  const cmd = new PutObjectCommand({ Bucket: cfg.bucket, Key: key, ContentType: contentType });
-  return getSignedUrl(client, cmd, { expiresIn });
+  await client.send(
+    new PutObjectCommand({ Bucket: cfg.bucket, Key: key, Body: body, ContentType: contentType })
+  );
+}
+
+/** 服务端读取对象字节（用于拼接临时分片）。 */
+export async function getObjectBytes(key: string): Promise<Uint8Array> {
+  const cfg = getConfig();
+  if (!cfg) throw new Error('R2 is not configured');
+  const client = getClient(cfg);
+  const res = await client.send(new GetObjectCommand({ Bucket: cfg.bucket, Key: key }));
+  if (!res.Body) throw new Error(`R2 object has no body: ${key}`);
+  return res.Body.transformToByteArray();
+}
+
+/** 服务端删除对象（清理临时分片）。 */
+export async function deleteObject(key: string): Promise<void> {
+  const cfg = getConfig();
+  if (!cfg) throw new Error('R2 is not configured');
+  const client = getClient(cfg);
+  await client.send(new DeleteObjectCommand({ Bucket: cfg.bucket, Key: key }));
 }
 
 /** 签发下载用 presigned GET URL（默认 1 小时有效，供 Resend 发信时抓取附件）。 */
