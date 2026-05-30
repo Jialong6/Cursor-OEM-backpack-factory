@@ -32,6 +32,13 @@ function getClient(cfg: NonNullable<ReturnType<typeof getConfig>>): S3Client {
       accessKeyId: cfg.accessKeyId,
       secretAccessKey: cfg.secretAccessKey,
     },
+    // 关掉 AWS SDK v3.730+ 默认的自动 CRC32 校验和。否则 presigned PUT URL 会带上
+    // x-amz-checksum-crc32 / x-amz-sdk-checksum-algorithm 查询参数，告诉 R2「期待一个
+    // 校验和」，而浏览器直传不会提供 —— curl/桌面 Chrome 能容忍，但 iOS Safari 会在
+    // 实际 PUT 时被 R2 中断连接（「网络连接已中断 / access control checks」）。
+    // 设为 WHEN_REQUIRED 后签出干净 URL，跨浏览器（含 iOS Safari）直传才稳定。
+    requestChecksumCalculation: 'WHEN_REQUIRED',
+    responseChecksumValidation: 'WHEN_REQUIRED',
   });
 }
 
