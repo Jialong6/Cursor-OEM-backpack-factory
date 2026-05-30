@@ -18,7 +18,7 @@ vi.mock('resend', () => ({
   },
 }));
 
-import { sendInquiryEmail } from '@/lib/email';
+import { sendInquiryEmail, sendCustomerAcknowledgment } from '@/lib/email';
 
 const baseData: ContactFormData = {
   name: 'John Doe',
@@ -104,5 +104,65 @@ describe('sendInquiryEmail', () => {
     const result = await sendInquiryEmail(baseData);
     expect(result.success).toBe(false);
     expect(result.error).toBe('network down');
+  });
+});
+
+describe('sendCustomerAcknowledgment', () => {
+  let originalEnv: NodeJS.ProcessEnv;
+
+  beforeEach(() => {
+    originalEnv = { ...process.env };
+    sendMock.mockReset();
+  });
+
+  afterEach(() => {
+    process.env = originalEnv;
+    vi.clearAllMocks();
+  });
+
+  it('soft-skips when RESEND_API_KEY is missing', async () => {
+    delete process.env.RESEND_API_KEY;
+    const result = await sendCustomerAcknowledgment(baseData, 'en');
+    expect(result.success).toBe(true);
+    expect(result.skipped).toBe(true);
+    expect(sendMock).not.toHaveBeenCalled();
+  });
+
+  it('sends to the customer from no-reply@betterbagsmm.com (default) with localized content', async () => {
+    process.env.RESEND_API_KEY = 're_test';
+    delete process.env.CONTACT_ACK_FROM;
+    sendMock.mockResolvedValue({ data: { id: 'x' }, error: null });
+
+    const result = await sendCustomerAcknowledgment(baseData, 'en');
+
+    expect(result.success).toBe(true);
+    const payload = sendMock.mock.calls[0][0];
+    expect(payload.to).toBe('john@example.com'); // 发给客户本人
+    expect(payload.from).toBe('no-reply@betterbagsmm.com');
+    expect(payload.subject).toContain('Better Bags Myanmar');
+    expect(payload.html).toContain('John Doe'); // 问候语含客户名
+  });
+
+  it('localizes subject by submission locale (zh)', async () => {
+    process.env.RESEND_API_KEY = 're_test';
+    sendMock.mockResolvedValue({ data: { id: 'x' }, error: null });
+    await sendCustomerAcknowledgment(baseData, 'zh');
+    expect(sendMock.mock.calls[0][0].subject).toContain('已收到');
+  });
+
+  it('honors CONTACT_ACK_FROM override', async () => {
+    process.env.RESEND_API_KEY = 're_test';
+    process.env.CONTACT_ACK_FROM = 'hello@betterbagsmm.com';
+    sendMock.mockResolvedValue({ data: { id: 'x' }, error: null });
+    await sendCustomerAcknowledgment(baseData, 'en');
+    expect(sendMock.mock.calls[0][0].from).toBe('hello@betterbagsmm.com');
+  });
+
+  it('returns failure when Resend responds with an error', async () => {
+    process.env.RESEND_API_KEY = 're_test';
+    sendMock.mockResolvedValue({ data: null, error: { message: 'domain not verified' } });
+    const result = await sendCustomerAcknowledgment(baseData, 'en');
+    expect(result.success).toBe(false);
+    expect(result.error).toBe('domain not verified');
   });
 });

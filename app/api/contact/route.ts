@@ -6,7 +6,7 @@ import {
   type ContactFormResponse,
   type UploadedFileRef,
 } from '@/lib/validations';
-import { sendInquiryEmail } from '@/lib/email';
+import { sendInquiryEmail, sendCustomerAcknowledgment } from '@/lib/email';
 import { presignGetUrl } from '@/lib/r2';
 
 /**
@@ -115,6 +115,9 @@ export async function POST(request: NextRequest) {
       turnstileToken: field('turnstileToken'),
     };
 
+    // 客户提交时的界面语言（用于回执邮件本地化;不参与表单 schema 校验）
+    const locale = typeof body.locale === 'string' ? body.locale : 'en';
+
     // 验证表单数据
     const validationResult = contactFormSchema.safeParse(data);
 
@@ -193,6 +196,16 @@ export async function POST(request: NextRequest) {
         } satisfies ContactFormResponse,
         { status: 500 }
       );
+    }
+
+    // 给客户本人发「已收到询盘」回执（best-effort：失败不影响询盘已成功捕获）
+    try {
+      const ackResult = await sendCustomerAcknowledgment(validatedData, locale);
+      if (!ackResult.success) {
+        console.error('[API] Customer acknowledgment email failed:', ackResult.error);
+      }
+    } catch (err) {
+      console.error('[API] Customer acknowledgment email threw:', err);
     }
 
     // 返回成功响应

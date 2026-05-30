@@ -1,6 +1,7 @@
 import { Resend } from 'resend';
 import type { ContactFormData } from '@/lib/validations';
 import { buildInquiryEmailHtml, buildInquiryEmailSubject } from '@/lib/email-template';
+import { buildAckEmailHtml, buildAckEmailSubject } from '@/lib/email-ack-template';
 
 /**
  * 询盘邮件发送(封装 Resend)
@@ -13,6 +14,8 @@ import { buildInquiryEmailHtml, buildInquiryEmailSubject } from '@/lib/email-tem
 
 const DEFAULT_TO = 'jay@biteerbags.com';
 const DEFAULT_FROM = 'onboarding@resend.dev';
+/** 客户回执发件地址（已验证域名 → 可投递任意收件人） */
+const DEFAULT_ACK_FROM = 'no-reply@betterbagsmm.com';
 
 export interface SendEmailResult {
   success: boolean;
@@ -59,6 +62,42 @@ export async function sendInquiryEmail(
       return { success: false, error: error.message };
     }
 
+    return { success: true };
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'Unknown email error';
+    return { success: false, error: message };
+  }
+}
+
+/**
+ * 给填表客户本人发一封「已收到询盘」回执（按其提交语言本地化）。
+ *
+ * 发件用已验证域名地址（no-reply@betterbagsmm.com,可投递任意收件人）。
+ * best-effort：未配置 key 软跳过;失败仅返回 success:false 供路由记录,不阻断主流程。
+ */
+export async function sendCustomerAcknowledgment(
+  data: ContactFormData,
+  locale = 'en'
+): Promise<SendEmailResult> {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    return { success: true, skipped: true };
+  }
+
+  const from = process.env.CONTACT_ACK_FROM || DEFAULT_ACK_FROM;
+
+  try {
+    const resend = new Resend(apiKey);
+    const { error } = await resend.emails.send({
+      from,
+      to: data.email,
+      subject: buildAckEmailSubject(locale),
+      html: buildAckEmailHtml(data.name, locale),
+    });
+
+    if (error) {
+      return { success: false, error: error.message };
+    }
     return { success: true };
   } catch (err) {
     const message = err instanceof Error ? err.message : 'Unknown email error';

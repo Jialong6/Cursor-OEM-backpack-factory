@@ -292,7 +292,7 @@ export function QuoteFormProvider({ children }: { children: ReactNode }) {
         const response = await fetch('/api/contact', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ ...data, files: fileRefs }),
+          body: JSON.stringify({ ...data, files: fileRefs, locale }),
         });
         const body = (await response.json().catch(() => null)) as { success?: boolean } | null;
 
@@ -319,7 +319,7 @@ export function QuoteFormProvider({ children }: { children: ReactNode }) {
         setSubmittingVariant(null);
       }
     },
-    [clearDraft, reset]
+    [clearDraft, reset, locale]
   );
 
   const value: QuoteFormContextValue = {
