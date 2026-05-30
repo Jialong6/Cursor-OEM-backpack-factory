@@ -32,6 +32,11 @@ function getClient(cfg: NonNullable<ReturnType<typeof getConfig>>): S3Client {
       accessKeyId: cfg.accessKeyId,
       secretAccessKey: cfg.secretAccessKey,
     },
+    // 路径风格 URL（<account>.r2.../<bucket>/<key>）而非虚拟主机子域
+    // （<bucket>.<account>.r2...）。iOS Safari 对 bucket 子域的跨域 PUT 会出现
+    // 「网络连接已中断 / access control checks」（2026-05-30 真机踩到）；路径风格回到
+    // 单层 host，规避该问题，且邮件用的 presigned GET 同样适用。
+    forcePathStyle: true,
     // 关掉 AWS SDK v3.730+ 默认的自动 CRC32 校验和。否则 presigned PUT URL 会带上
     // x-amz-checksum-crc32 / x-amz-sdk-checksum-algorithm 查询参数，告诉 R2「期待一个
     // 校验和」，而浏览器直传不会提供 —— curl/桌面 Chrome 能容忍，但 iOS Safari 会在
