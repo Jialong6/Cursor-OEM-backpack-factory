@@ -1,10 +1,10 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 
 /**
- * lib/upload.ts 单元测试（同源中转上传）
+ * lib/upload.ts 单元测试（同源中转 · 单文件 uploadOneFile）
  *
- * uploadFilesToR2 现在把文件「同源」POST 到 /api/upload（≤4MB 单请求；>4MB 切片 + complete），
- * 不再跨域直传 R2。这里用 FakeXHR 拦截 POST,驱动 onload/onprogress 验证流程与进度。
+ * uploadOneFile 把单个文件「同源」POST 到 /api/upload（≤4MB 单请求;>4MB 切片 + complete）,
+ * 支持进度回调与 AbortSignal 取消。用 FakeXHR 拦截 POST,驱动 onload/onprogress/onabort。
  */
 
 type ProgressHandler = (e: { lengthComputable: boolean; loaded: number }) => void;
@@ -30,6 +30,9 @@ class FakeXHR {
     this.body = body;
     FakeXHR.instances.push(this);
   }
+  abort() {
+    this.onabort?.();
+  }
   /** 测试辅助:模拟服务端 2xx + JSON 响应 */
   succeed(json: unknown) {
     this.status = 200;
@@ -38,14 +41,14 @@ class FakeXHR {
   }
 }
 
-import { uploadFilesToR2 } from '@/lib/upload';
+import { uploadOneFile } from '@/lib/upload';
 
 function makeFile(name: string, size: number, type = 'application/pdf'): File {
   // 真实字节,保证 file.slice 在分片测试中可用
   return new File([new Uint8Array(size)], name, { type });
 }
 
-describe('uploadFilesToR2 (同源中转)', () => {
+describe('uploadOneFile (同源中转)', () => {
   beforeEach(() => {
     FakeXHR.instances = [];
     vi.stubGlobal('XMLHttpRequest', FakeXHR as unknown as typeof XMLHttpRequest);
@@ -56,7 +59,7 @@ describe('uploadFilesToR2 (同源中转)', () => {
   });
 
   it('小文件单请求 POST 到 /api/upload,返回 {name,key,size,type}', async () => {
-    const promise = uploadFilesToR2([makeFile('a.pdf', 100)]);
+    const promise = uploadOneFile(makeFile('a.pdf', 100));
     await vi.waitFor(() => expect(FakeXHR.instances.length).toBe(1));
 
     const xhr = FakeXHR.instances[0];
@@ -66,30 +69,26 @@ describe('uploadFilesToR2 (同源中转)', () => {
 
     xhr.succeed({ key: 'inquiries/uuid-a.pdf' });
 
-    const refs = await promise;
-    expect(refs).toEqual([
-      { name: 'a.pdf', key: 'inquiries/uuid-a.pdf', size: 100, type: 'application/pdf' },
-    ]);
+    const ref = await promise;
+    expect(ref).toEqual({ name: 'a.pdf', key: 'inquiries/uuid-a.pdf', size: 100, type: 'application/pdf' });
   });
 
-  it('进度聚合到 100%', async () => {
+  it('进度回调返回本文件已传字节数', async () => {
     const onProgress = vi.fn();
-    const promise = uploadFilesToR2([makeFile('a.pdf', 200)], onProgress);
+    const promise = uploadOneFile(makeFile('a.pdf', 200), onProgress);
     await vi.waitFor(() => expect(FakeXHR.instances.length).toBe(1));
 
     const xhr = FakeXHR.instances[0];
-    xhr.upload.onprogress!({ lengthComputable: true, loaded: 200 });
+    xhr.upload.onprogress!({ lengthComputable: true, loaded: 120 });
     xhr.succeed({ key: 'inquiries/uuid-a.pdf' });
     await promise;
 
-    const last = onProgress.mock.calls.at(-1)?.[0];
-    expect(last.total).toBe(200);
-    expect(last.percent).toBe(100);
+    expect(onProgress).toHaveBeenCalledWith(120);
   });
 
   it('大文件(>4MB)切分片逐片上传 + complete 拼接', async () => {
     const big = makeFile('big.jpg', 5 * 1024 * 1024, 'image/jpeg'); // 5MB -> 2 片
-    const promise = uploadFilesToR2([big]);
+    const promise = uploadOneFile(big);
 
     await vi.waitFor(() => expect(FakeXHR.instances.length).toBe(1));
     const c1 = FakeXHR.instances[0];
@@ -108,14 +107,17 @@ describe('uploadFilesToR2 (同源中转)', () => {
     expect(done.url).toContain('parts=2');
     done.succeed({ key: 'inquiries/uuid-big.jpg' });
 
-    const refs = await promise;
-    expect(refs).toEqual([
-      { name: 'big.jpg', key: 'inquiries/uuid-big.jpg', size: 5 * 1024 * 1024, type: 'image/jpeg' },
-    ]);
+    const ref = await promise;
+    expect(ref).toEqual({
+      name: 'big.jpg',
+      key: 'inquiries/uuid-big.jpg',
+      size: 5 * 1024 * 1024,
+      type: 'image/jpeg',
+    });
   });
 
   it('POST 返回非 2xx 时拒绝(带服务端错误信息)', async () => {
-    const promise = uploadFilesToR2([makeFile('a.pdf', 100)]);
+    const promise = uploadOneFile(makeFile('a.pdf', 100));
     await vi.waitFor(() => expect(FakeXHR.instances.length).toBe(1));
     const xhr = FakeXHR.instances[0];
     xhr.status = 400;
@@ -125,15 +127,22 @@ describe('uploadFilesToR2 (同源中转)', () => {
   });
 
   it('网络错误时拒绝', async () => {
-    const promise = uploadFilesToR2([makeFile('a.pdf', 100)]);
+    const promise = uploadOneFile(makeFile('a.pdf', 100));
     await vi.waitFor(() => expect(FakeXHR.instances.length).toBe(1));
     FakeXHR.instances[0].onerror!();
     await expect(promise).rejects.toThrow(/网络错误/);
   });
 
-  it('空文件数组直接返回 []', async () => {
-    const refs = await uploadFilesToR2([]);
-    expect(refs).toEqual([]);
-    expect(FakeXHR.instances.length).toBe(0);
+  it('abort 取消上传 → 请求被中止、Promise 拒绝', async () => {
+    const controller = new AbortController();
+    const promise = uploadOneFile(makeFile('a.pdf', 100), undefined, controller.signal);
+    await vi.waitFor(() => expect(FakeXHR.instances.length).toBe(1));
+
+    let rejected = false;
+    promise.catch(() => {
+      rejected = true;
+    });
+    controller.abort(); // 触发 signal → xhr.abort() → onabort → reject
+    await vi.waitFor(() => expect(rejected).toBe(true));
   });
 });

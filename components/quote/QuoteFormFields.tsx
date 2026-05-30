@@ -9,7 +9,6 @@ import {
 import CountrySelect from '@/components/ui/CountrySelect';
 import PhonePrefixSelect from '@/components/ui/PhonePrefixSelect';
 import TurnstileWidget from '@/components/ui/TurnstileWidget';
-import UploadProgressBar from '@/components/ui/UploadProgress';
 import { useQuoteForm } from './QuoteFormContext';
 import { getLocalExampleNumber } from '@/lib/phone-examples';
 
@@ -33,14 +32,12 @@ export default function QuoteFormFields({
   const {
     form,
     locale,
-    files,
+    uploads,
     fileErrors,
     handleFileChange,
     removeFile,
     isSubmitting,
     submitStatus,
-    uploadProgress,
-    submittingVariant,
     onSubmit,
     showDraftNotice,
     handleDiscardDraft,
@@ -409,16 +406,37 @@ export default function QuoteFormFields({
             </div>
           </div>
 
-          {files.length > 0 && (
+          {uploads.length > 0 && (
             <div className="mt-3 space-y-2" role="list" aria-label="Uploaded files">
-              {files.map((file, index) => (
-                <div key={`${file.name}-${index}`} className="flex items-center justify-between bg-gray-50 p-2 rounded" role="listitem">
-                  <span className="text-sm text-gray-700 truncate">{file.name}</span>
+              {uploads.map((item) => (
+                <div
+                  key={item.id}
+                  className="flex items-center justify-between bg-gray-50 p-2 rounded"
+                  role="listitem"
+                >
+                  <span className="text-sm text-gray-700 truncate flex-1 min-w-0">
+                    {item.file.name}
+                  </span>
+                  <span className="text-xs mx-2 whitespace-nowrap" aria-live="polite">
+                    {item.status === 'uploading' && (
+                      <span className="text-gray-500">{item.progress}%</span>
+                    )}
+                    {item.status === 'success' && (
+                      <span className="text-green-600" aria-label="Uploaded" title="Uploaded">
+                        &#10003;
+                      </span>
+                    )}
+                    {item.status === 'error' && (
+                      <span className="text-red-600" aria-label="Upload failed" title="Upload failed">
+                        !
+                      </span>
+                    )}
+                  </span>
                   <button
                     type="button"
-                    onClick={() => removeFile(index)}
-                    className="text-red-600 hover:text-red-800 ml-2"
-                    aria-label={`Remove file ${file.name}`}
+                    onClick={() => removeFile(item.id)}
+                    className="text-red-600 hover:text-red-800 ml-1"
+                    aria-label={`Remove file ${item.file.name}`}
                   >
                     X
                   </button>
@@ -435,10 +453,6 @@ export default function QuoteFormFields({
                 </p>
               ))}
             </div>
-          )}
-
-          {submittingVariant === variant && isSubmitting && uploadProgress && files.length > 0 && (
-            <UploadProgressBar progress={uploadProgress} label={t('form.fileUpload.label')} />
           )}
         </div>
 
