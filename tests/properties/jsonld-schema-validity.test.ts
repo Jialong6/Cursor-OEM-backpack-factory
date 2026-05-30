@@ -23,7 +23,7 @@ export const FACTORY_INFO = {
   logo: 'https://betterbagsmm.com/logo.png',
   foundingDate: '2003',
   telephone: '+1-814-880-1463',
-  email: 'jay@biteerbags.com',
+  email: 'jay@betterbagsmm.com',
   address: {
     streetAddress: 'Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai Industrial Zone',
     addressLocality: 'Yangon',

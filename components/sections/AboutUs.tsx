@@ -53,7 +53,7 @@ export default function AboutUs() {
               '@type': 'ContactPoint',
               telephone: '+1-814-880-1463',
               contactType: 'Customer Service',
-              email: 'jay@biteerbags.com',
+              email: 'jay@betterbagsmm.com',
             },
             foundingDate: '2003',
             founder: {

@@ -49,7 +49,7 @@ export const AUTHORS: ReadonlyArray<AuthorProfile> = [
     ],
     avatar: '/images/team/jay-li.jpg',
     social: {
-      email: 'jay@biteerbags.com',
+      email: 'jay@betterbagsmm.com',
     },
   },
   {

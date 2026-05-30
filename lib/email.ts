@@ -12,7 +12,7 @@ import { buildAckEmailHtml, buildAckEmailSubject } from '@/lib/email-ack-templat
  * - 配置后真实调用 Resend;失败返回 success:false 供路由层决定是否回 500
  */
 
-const DEFAULT_TO = 'jay@biteerbags.com';
+const DEFAULT_TO = 'jay@betterbagsmm.com';
 const DEFAULT_FROM = 'onboarding@resend.dev';
 /** 客户回执发件地址（已验证域名 → 可投递任意收件人） */
 const DEFAULT_ACK_FROM = 'no-reply@betterbagsmm.com';
