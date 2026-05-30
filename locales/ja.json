@@ -2,520 +2,664 @@
   "bento": {
     "brand": {
       "title": "Better Bags since 2003",
-      "subtitle": "#Top Tier Custom Backpacks Factory in Myanmar",
-      "description": "One-stop solutions for your backpack needs"
+      "subtitle": "#ミャンマートップクラスのカスタムバックパック工場",
+      "description": "あなたのバックパックづくりをワンストップでサポート"
     },
     "dashboard": {
-      "title": "Key Metrics"
+      "title": "主要指標"
     },
     "trust": {
-      "title": "Trusted By",
-      "certifications": "Certifications",
-      "partners": "Partner Brands",
-      "more": "+20 more"
+      "title": "信頼いただいている企業",
+      "certifications": "認証",
+      "partners": "パートナーブランド",
+      "more": "他 20 社以上"
     },
     "cta": {
-      "title": "Ready to Start Your Project?",
-      "subtitle": "Get a free quote within 24 hours",
-      "button": "Get A Quote",
-      "note": "No obligation, free consultation"
+      "title": "プロジェクトを始めませんか？",
+      "subtitle": "24 時間以内に無料お見積もりをご返信します",
+      "button": "お見積もり依頼",
+      "note": "ご相談・お見積もりは無料です"
     }
   },
   "nav": {
-    "banner": "Home",
-    "about": "About Us",
-    "features": "Features",
-    "services": "Services",
-    "process": "Process",
+    "banner": "ホーム",
+    "about": "会社概要",
+    "features": "特長",
+    "services": "サービス",
+    "process": "プロセス",
     "faq": "FAQ",
-    "contact": "Contact Us",
-    "blog": "Blog"
+    "contact": "お問い合わせ",
+    "blog": "ブログ",
+    "skipToContent": "メインコンテンツへスキップ"
   },
   "banner": {
     "line1": "Better Bags since 2003",
-    "line2": "#Top Tier Custom Backpacks Factory in Myanmar",
+    "line2": "#ミャンマートップクラスのカスタムバックパック工場",
     "p1": {
-      "pre": "At Better Bags, we provide a ",
-      "highlight": "one-stop",
-      "post": " solutions for your backpack needs—including material sourcing, sampling, mass production, strict quality control, and global delivery."
+      "pre": "Better Bags は、素材調達・サンプル製作・量産・厳格な品質管理・世界各国への配送までを",
+      "highlight": "ワンストップ",
+      "post": "でご提供し、お客様のバックパックづくりを支えます。"
     },
-    "p2": "With more than 20 years of experience serving international brands from Japan, South Korea, the United States, and Europe, we manufacture a wide variety of bags: travel bags, backpacks, shoulder bags, tote bags, and more—tailored to your exact requirements.",
-    "p3": "Our competitive pricing and sustainable production options make us the perfect partner for businesses, organizations, and events of any scale.",
-    "cta": "Get A Quote"
+    "p2": "20 年以上の経験を持ち、日本市場を主軸としてまいりました。Anello をはじめとする日本の有力ブランドとは 15 年以上にわたる長期的なパートナーシップを築き、さらに韓国・米国・欧州の一部のお客様にもご対応しています。トラベルバッグ、バックパック、ショルダーバッグ、トートバッグなど多彩なバッグを、お客様のご要望に合わせて製造いたします。",
+    "p3": "競争力のある価格とサステナブルな生産体制により、あらゆる規模の企業・団体・イベントにとって最適なパートナーとなります。",
+    "cta": "お見積もり依頼"
   },
   "about": {
-    "title": "About Us",
+    "title": "会社概要",
     "mission": {
-      "title": "Our Mission",
-      "desc": "To empower global brands and partners by delivering innovative, high-quality, and cost-effective backpack solutions—manufactured responsibly and guided by integrity, craftsmanship, and customer-centric service at every step."
+      "title": "ミッション",
+      "desc": "革新的で高品質、かつコスト効率に優れたバックパックソリューションをお届けし、世界中のブランドとパートナーの成長を後押しすること。私たちは責任ある生産を行い、誠実さ・確かな技術・お客様第一のサービスを、あらゆる工程で貫きます。"
     },
     "vision": {
-      "title": "Our Vision",
-      "desc": "To be recognized worldwide as the most trusted and forward-thinking backpack manufacturing partner—setting industry benchmarks in quality, innovation, sustainability, and operational excellence, while creating lasting value for our clients, employees, communities, and the environment."
+      "title": "ビジョン",
+      "desc": "品質・革新・サステナビリティ・卓越したオペレーションで業界の基準を打ち立て、最も信頼され先進的なバックパック製造パートナーとして世界に認められること。そして、お客様・従業員・地域社会・環境に対し、永続的な価値を創造し続けます。"
     },
-    "valuesTitle": "Our Core Values",
+    "valuesTitle": "私たちのコアバリュー",
     "values": [
       {
-        "title": "Integrity & Transparency",
-        "desc": "We conduct our business with honesty, accountability, and the highest ethical standards—building trust with every commitment to our customers, employees, and partners."
+        "title": "誠実さと透明性",
+        "desc": "私たちは誠実さ・責任感・最高水準の倫理観をもって事業に取り組みます。お客様・従業員・パートナーへのあらゆる約束を通じて、信頼を築きます。"
       },
       {
-        "title": "Pursuit of Excellence",
-        "desc": "We are dedicated to quality, precision, and continuous improvement—striving to exceed expectations across every order, partnership, and interaction."
+        "title": "卓越性の追求",
+        "desc": "品質・精度・継続的な改善に徹し、すべての受注・パートナーシップ・対応において期待を超えることを目指します。"
       },
       {
-        "title": "Customer Focus",
-        "desc": "Our clients' needs drive every decision. We anticipate challenges, act responsively, and tailor solutions to ensure our customers' enduring success."
+        "title": "お客様志向",
+        "desc": "お客様のニーズが、すべての意思決定の起点です。課題を先読みし、迅速に対応し、お客様の永続的な成功のために最適なソリューションをご提案します。"
       },
       {
-        "title": "Innovation & Progress",
-        "desc": "We embrace change and bring creativity to all aspects of design, production, and problem-solving—enabling us to offer cutting-edge products and manufacturing processes."
+        "title": "革新と進歩",
+        "desc": "私たちは変化を歓迎し、デザイン・生産・課題解決のあらゆる場面に創造性を取り入れます。それにより、最先端の製品と製造プロセスをご提供します。"
       },
       {
-        "title": "Sustainability & Responsibility",
-        "desc": "We are committed to sustainable sourcing, minimizing our environmental impact, and fostering safe, fair, and respectful working conditions for all."
+        "title": "サステナビリティと責任",
+        "desc": "サステナブルな調達に取り組み、環境負荷を最小限に抑えるとともに、すべての人にとって安全・公正で敬意ある労働環境づくりを推進します。"
       },
       {
-        "title": "Collaboration & Empowerment",
-        "desc": "We value teamwork, diverse perspectives, and empowering every team member—cultivating a culture where people, ideas, and partnerships flourish."
+        "title": "協働とエンパワーメント",
+        "desc": "私たちはチームワーク・多様な視点・一人ひとりのエンパワーメントを大切にし、人・アイデア・パートナーシップが花開く文化を育みます。"
       }
     ],
     "founder": {
-      "title": "Meet Our Founder"
+      "title": "創業者のご紹介"
     },
+    "trustedBrands": "世界の有名ブランドに信頼されています",
     "company": {
       "title": "Better Bags Myanmar Company Limited",
-      "p1": "Founded in 2003, Better Bags Myanmar specializes in the OEM/ODM manufacturing of premium backpacks, designed for a global clientele. Our comprehensive capabilities cover leisure, travel, climbing, and fashion bags, crafted from responsibly sourced polyester, cotton, and synthetic leather.",
-      "p2": "Our story began in Shenzhen, China, where our founder, Mr. Li Guangtong, gained deep expertise working with top international brands. Driven by a vision of global excellence, we later established a major facility in Qingdao and, following thorough research, launched our state-of-the-art production base in Yangon, Myanmar in 2023.",
-      "p3": "Over the past two decades, we have proudly partnered with world-renowned brands such as Anello, New Balance, Nike, Fila, and more. Our unwavering commitment to quality, reliability, and proactive service has enabled us to maintain long-term partnerships—especially with leading Japanese brands for over 15 years.",
-      "p4": "Today, Better Bags stands at the intersection of tradition and innovation. By optimizing our dual-factory model, investing in people and systems, and adhering strictly to international standards, we meet the evolving needs of global customers with efficiency, flexibility, and future-oriented solutions. As we look ahead, our goal is to set new benchmarks in both client satisfaction and responsible manufacturing."
+      "p1": "2003 年創業の Better Bags Myanmar は、世界中のお客様に向けた高品質バックパックの OEM/ODM 製造を専門としています。レジャー・トラベル・クライミング・ファッション系のバッグまで幅広く手がけ、責任をもって調達したポリエステル・コットン・合成皮革を用いて製作します。",
+      "p2": "私たちの歩みは中国・深圳から始まりました。創業者の李光通は、世界トップクラスのブランドとの取引を通じて深い専門知識を培いました。グローバルな卓越性を目指し、その後、山東省（日照）に主力生産拠点を、青島に専用のサンプル・開発センターを設立。さらに綿密な調査を経て、2023 年にはミャンマー・ヤンゴンに最新鋭の生産拠点を開設しました。",
+      "p3": "過去 20 年にわたり、私たちは日本市場を主軸としてまいりました。Anello をはじめとする複数の日本ブランドに加え、New Balance、Nike、Fila といった世界的ブランドともお取引をいただいております。品質・信頼性・先回りのサービスへの揺るぎない姿勢により長期的なパートナーシップを実現し、多くの有力な日本ブランドには 15 年以上にわたりご愛顧いただいています。",
+      "p4": "今日、Better Bags は伝統と革新が交わる地点に立っています。二拠点体制を最適化し、人材とシステムに投資し、国際基準を厳格に遵守することで、効率性・柔軟性・未来志向のソリューションをもって世界中のお客様の変化するニーズにお応えします。これからも、お客様満足と責任ある製造の両面で、新たな基準を打ち立ててまいります。"
     }
+  },
+  "costAdvantage": {
+    "title": "なぜミャンマーなのか：コストと納期のスイートスポット",
+    "subtitle": "同じ製品、同じ仕向地（日本）。異なるのはトレードオフです。ミャンマー生産が中国・ベトナムとどう比較されるのか、ぜひご覧ください。",
+    "countries": [
+      {
+        "code": "CN",
+        "name": "中国",
+        "priceLabel": "価格",
+        "priceValue": "基準",
+        "pricePercent": 100,
+        "leadTimeLabel": "リードタイム",
+        "leadTimeValue": "基準",
+        "leadTimePercent": 33
+      },
+      {
+        "code": "VN",
+        "name": "ベトナム",
+        "priceLabel": "価格",
+        "priceValue": "中国と同等",
+        "pricePercent": 100,
+        "leadTimeLabel": "リードタイム",
+        "leadTimeValue": "+1 か月",
+        "leadTimePercent": 66
+      },
+      {
+        "code": "MM",
+        "name": "ミャンマー（Better Bags）",
+        "priceLabel": "価格",
+        "priceValue": "中国・ベトナム比 −10%",
+        "pricePercent": 90,
+        "leadTimeLabel": "リードタイム",
+        "leadTimeValue": "+2 か月",
+        "leadTimePercent": 100,
+        "badge": "ベストバリュー"
+      }
+    ],
+    "takeaway": "2 か月の追加リードタイムと引き換えに、コストを 10% 削減。これが OEM バイヤーの皆さまへの、私たちの価値提案です。",
+    "cta": "お見積もり依頼"
+  },
+  "whatSetsUsApart": {
+    "title": "私たちの強み",
+    "subtitle": "Better Bags を一般的な OEM 工場と分かつ、3 つの運営上の規律です。",
+    "items": [
+      {
+        "key": "qc",
+        "title": "日本品質の品質管理",
+        "description": "厳格な折れ針の交換記録と 100% の X 線検査により、お客様からのクレームにつながるリスクを、事後ではなく生産ライン上で物理的に取り除きます。"
+      },
+      {
+        "key": "cost",
+        "title": "中国 × ミャンマーのコスト設計",
+        "description": "中国のサプライチェーン構築力と、ヤンゴンの人件費水準を組み合わせることで、品質を損なうことなく大量受注の単価を圧縮します。"
+      },
+      {
+        "key": "leadTime",
+        "title": "生産枠を確保した 4 か月のリードタイム",
+        "description": "私たちは過剰受注をしません。すべての受注で 4 か月の生産・納品枠を確保するため、発売日の見通しが立てやすくなります。"
+      }
+    ]
+  },
+  "marketPositioning": {
+    "title": "OEM 市場における Better Bags の立ち位置",
+    "subtitle": "すべての OEM 工場を「利益 × 品質」のマトリクスに配置し、どの工場がどの象限に位置するのかをご覧ください。",
+    "axes": {
+      "profit": {
+        "low": "薄い利益率",
+        "high": "健全な利益率"
+      },
+      "quality": {
+        "low": "品質が不安定でリスクが高い",
+        "high": "安定した品質と納期遵守"
+      }
+    },
+    "quadrants": [
+      {
+        "position": "topRight",
+        "title": "Better Bags",
+        "description": "コスト効率の高いミャンマー生産と日本品質の QC を両立。高い利益率・低リスク・スケール可能な大量受注を実現します。",
+        "badge": "ベストポジション"
+      },
+      {
+        "position": "topLeft",
+        "title": "大規模な中国工場",
+        "description": "納品品質はおおむね安定していますが、中国の人件費上昇と政策リスクが利益率を圧迫します。"
+      },
+      {
+        "position": "bottomRight",
+        "title": "低価格帯の東南アジア工場",
+        "description": "価格は魅力的に見えますが、QC 体制が整っていないため、契約不履行やクレームのリスクに常にさらされます。"
+      },
+      {
+        "position": "bottomLeft",
+        "title": "リソース不足の小規模工房",
+        "description": "コスト面で規模の経済が働かず、本格的なお客様が求める量産監査にも対応できません。"
+      }
+    ]
   },
   "features": {
     "stats": [
       {
-        "label": "Professional Employees",
-        "value": "800+"
+        "label": "専門スタッフ",
+        "value": "600+"
       },
       {
-        "label": "Low MOQ",
-        "value": "150 PCS"
+        "label": "低い最小ロット",
+        "value": "1,500 個〜"
       },
       {
-        "label": "Proofing Time",
-        "value": "7 Days"
+        "label": "サンプル制作期間",
+        "value": "7 日"
       },
       {
-        "label": "Quality Inspection",
+        "label": "品質検査",
         "value": "100%"
       },
       {
-        "label": "Online Support",
-        "value": "24 Hrs"
+        "label": "オンラインサポート",
+        "value": "24 時間"
       },
       {
-        "label": "Monthly Production",
-        "value": "50,000+ PCS"
+        "label": "月間生産量",
+        "value": "50,000 個以上"
       }
     ],
     "jay": {
-      "title": "Welcome, I'm Jay.",
-      "desc1": "As the next-generation leader of Better Bags — a family-owned manufacturer with global vision—I draw upon more than 8 years of study and professional experience in Pennsylvania, United States. Being an alumnus of ",
-      "and": " and ",
-      "desc2": " I am proud to bring proven international expertise as well as cross-cultural communication skills to our clients and partners. My mission is to bridge the best of East and West, ensuring every partner enjoys premium products, seamless project communication, and reliable after-sales support—no matter where you are in the world."
+      "title": "ようこそ、Jay と申します。",
+      "desc1": "グローバルな視野を持つ家族経営メーカー、Better Bags の次世代を担う者として、私は米国ペンシルベニア州での 8 年以上にわたる学業と実務経験を礎としてきました。そして、",
+      "and": " と ",
+      "desc2": " の卒業生として、実証された国際的な専門性と異文化コミュニケーション力をお客様やパートナーの皆さまにお届けできることを誇りに思います。私の使命は、東洋と西洋それぞれの強みを結びつけ、世界のどこにいらっしゃるお客様にも、優れた製品・スムーズなプロジェクト進行・確かなアフターサポートをお届けすることです。"
     },
-    "title": "Why Better Bags",
+    "title": "Better Bags が選ばれる理由",
     "list": [
       {
-        "title": "Flexibility",
+        "title": "柔軟性",
         "color": "#81C3D7",
-        "desc": "With manufacturing centers in both Qingdao, China and Yangon, Myanmar, we offer unparalleled flexibility to meet our customers' diverse needs. Our Myanmar factory is fully equipped to handle large-volume production with speed and efficiency, while our long-established Qingdao facility (20+ years of expertise) excels in design, sampling, sourcing, and personalized project management. Whether you need rapid prototyping, small custom batches, or are scaling up to large bulk orders, our dual-factory model ensures your requirements are fulfilled with agility and precision."
+        "desc": "中国・山東省（日照）とミャンマー・ヤンゴンに生産拠点を構え、青島の専用サンプル・開発センターがこれを支えることで、お客様の多様なニーズに比類のない柔軟性でお応えします。ミャンマー工場は大量生産をスピーディかつ効率的に行う体制を整え、20 年以上の経験を持つ山東拠点はデザイン・サンプル製作・調達・きめ細かなプロジェクト管理を得意としています。短納期の試作、小ロットのカスタム生産から大量受注へのスケールアップまで、二拠点体制によりお客様のご要望を機敏かつ的確に実現します。"
       },
       {
-        "title": "Communication",
+        "title": "コミュニケーション",
         "color": "#416788",
-        "desc": "At Better Bags, effective communication is the foundation of all our partnerships. Our founder, Mr. Li Guangtong, built our business on the trust and high standards of Japanese clients—reflecting a deep understanding of international requirements. Drawing on our multicultural team—including professionals with extensive study and work experience in the United States—we seamlessly connect with global customers. We are especially adept at bridging cultural and language gaps, ensuring clarity, transparency, and a smooth cooperation experience from start to finish."
+        "desc": "Better Bags にとって、円滑なコミュニケーションはすべてのパートナーシップの土台です。創業者の李光通は、日本のお客様の信頼と高い基準のもとで事業を築き上げ、国際的な要求事項を深く理解しています。米国での豊富な留学・就業経験を持つメンバーを含む多文化チームを活かし、世界中のお客様とシームレスにつながります。とりわけ文化や言語の壁を越えることを得意とし、最初から最後まで明確で透明性が高く、スムーズなご協業体験をお約束します。"
       },
       {
-        "title": "Quality Control",
+        "title": "品質管理",
         "color": "#5a6d7c",
-        "desc": "The backbone of our reputation is unwavering quality control. Years of collaboration with demanding markets like Japan have forged a meticulous approach at every stage of production, from sourcing to final inspection. Our experienced QA teams ensure that every order not only meets but often exceeds international standards for craftsmanship, durability, and reliability—guaranteeing peace of mind with every delivery."
+        "desc": "私たちの評判を支える柱は、揺るぎない品質管理です。日本をはじめとする厳しい市場との長年の協業を通じて、調達から最終検査まであらゆる工程に細部までこだわる姿勢を培ってきました。経験豊富な QA チームが、すべての受注について、技術・耐久性・信頼性の国際基準を満たすだけでなく、しばしばそれを上回ることを徹底します。これにより、どのお届けにも安心をお約束します。"
       },
       {
-        "title": "Competitive Pricing",
+        "title": "競争力のある価格",
         "color": "#2f6690",
-        "desc": "Our primary production base in Myanmar gives us a significant cost advantage—production costs here are much lower than in China, and even compared to other Southeast Asian countries such as Vietnam and Thailand, we are able to offer more competitive prices under the same quality standards. This means our clients receive high-quality products at a better value, without compromise.\n\nMyanmar's cost efficiency perfectly complements our Qingdao hub, which specializes in design, sampling, and sourcing. By combining Myanmar's unbeatable production pricing and Qingdao's strong development capabilities, we achieve the \"sweet spot\" in global manufacturing—offering clients both outstanding quality and truly competitive pricing."
+        "desc": "ミャンマーの主力生産拠点は、大きなコスト優位性をもたらします。ここでの生産コストは中国より大幅に低く、ベトナムやタイなど他の東南アジア諸国と比べても、同等の品質基準のもとでより競争力のある価格をご提供できます。これにより、お客様は妥協することなく、優れた品質の製品をより高いコストパフォーマンスで手にされます。\n\nミャンマーのコスト効率は、当社の中国オペレーション――デザイン・サンプル製作・調達を担う山東省（日照）の生産拠点と青島のサンプル・開発センター――と見事に補完し合います。ミャンマーの圧倒的な生産価格と中国の高い開発力を組み合わせることで、私たちはグローバル製造における「スイートスポット」を実現し、卓越した品質と真に競争力のある価格の両方をお客様にご提供します。"
       }
     ]
   },
   "customization": {
-    "title": "Customization Options",
-    "intro": "As an experienced backpack manufacturer, we provide a comprehensive range of tailor-made solutions for clients worldwide. From <span style='font-weight:800'>initial concept to production and delivery</span>, every detail is customizable to ensure your products stand out in the market.",
+    "title": "カスタマイズオプション",
+    "intro": "経験豊富なバックパックメーカーとして、私たちは世界中のお客様にオーダーメイドのソリューションを幅広くご提供します。<span style='font-weight:800'>最初のコンセプトから生産・納品まで</span>、あらゆるディテールをカスタマイズでき、お客様の製品が市場で際立つようサポートします。",
     "features": [
       {
-        "title": "Extensive Backpack Styles",
-        "desc": "No matter the style you need, our experienced R&D team can guide you through the selection process to ensure you find the ideal fit for your project.",
+        "title": "豊富なバックパックのスタイル",
+        "desc": "どのようなスタイルをお求めでも、経験豊富な R&D チームが選定プロセスをご案内し、プロジェクトに最適な一品を見つけられるようサポートします。",
         "highlights": [
-          "Casual, Travel, Hiking, Business",
-          "Camera, Sports, Tote, Anti-theft",
-          "Tactical, Sling, School, Rolling",
-          "Multi-functional, Eco-friendly, Fishing, Accessories"
+          "カジュアル / トラベル / ハイキング / ビジネス",
+          "カメラ / スポーツ / トート / 盗難防止",
+          "タクティカル / スリング / スクール / キャリー",
+          "多機能 / エコ / フィッシング / アクセサリー"
         ]
       },
       {
-        "title": "Multiple Sizes and Capacities",
-        "desc": "Flexible size configurations to fit any scenario, all customizable with smart compartments and layouts.",
+        "title": "多様なサイズと容量",
+        "desc": "あらゆるシーンに合わせた柔軟なサイズ設定。スマートな収納と内部レイアウトもすべてカスタマイズ可能です。",
         "highlights": [
-          "Small (10L–20L): Daily/Children/Light Essentials",
-          "Medium (20L–40L): Commute/Trip/Students",
-          "Large (40L–60L): Travel/Outdoor/More Space",
-          "Extra Large (60L+): Long Trip/Pro Use/Special Needs"
+          "スモール（10〜20L）：デイリー / お子さま / 軽量の必需品",
+          "ミディアム（20〜40L）：通勤通学 / 小旅行 / 学生",
+          "ラージ（40〜60L）：トラベル / アウトドア / 大容量",
+          "エクストラ L（60L 以上）：長期旅行 / プロ用途 / 特殊ニーズ"
         ]
       },
       {
-        "title": "Superior & Eco-friendly Materials",
-        "desc": "Premium global materials, responsibly sourced. All can be custom colored, processed, or finished to match your vision!",
+        "title": "上質でエコな素材",
+        "desc": "世界中から責任をもって調達した上質な素材。すべて、お客様のイメージに合わせてカラー・加工・仕上げをカスタマイズできます。",
         "highlights": [
-          "Polyester, Nylon, Canvas, Leather",
-          "Jute, Tyvek, Neoprene, PVC, TPU",
-          "Recycled & Eco Options",
-          "Any custom color, print, or finish"
+          "ポリエステル / ナイロン / キャンバス / レザー",
+          "ジュート / Tyvek / ネオプレン / PVC / TPU",
+          "リサイクル・エコ素材のオプション",
+          "カラー・プリント・仕上げを自由にカスタマイズ"
         ]
       },
       {
-        "title": "Professional Color Solutions",
-        "desc": "Achieve flawless color consistency and bring your brand vision to life with our comprehensive color services.",
+        "title": "プロ仕様のカラーソリューション",
+        "desc": "充実したカラーサービスで、完璧な色の再現性を実現し、ブランドのビジョンをかたちにします。",
         "highlights": [
-          "Pantone-matched custom dyes",
-          "Color sample proofing",
-          "Strict colorfastness testing"
+          "Pantone 対応のカスタム染色",
+          "カラーサンプルの校正",
+          "厳格な色落ち（堅牢度）試験"
         ]
       },
       {
-        "title": "Custom Imprint & Branding",
-        "desc": "Your brand, your way. Multiple logo and graphic application methods for a lasting impression.",
+        "title": "カスタムプリントとブランディング",
+        "desc": "ブランドを、思いのままに。記憶に残る仕上がりのため、ロゴやグラフィックを多彩な手法で施します。",
         "highlights": [
-          "Embroidery / Silk Screen / Heat Transfer",
-          "Embossing / Debossing / TPU Labels",
-          "Rubber patches / Metal badges",
-          "Graphics, taglines, custom artwork"
+          "刺繍 / シルクスクリーン / 熱転写",
+          "型押し（凸）/ 型押し（凹）/ TPU ラベル",
+          "ラバーパッチ / メタルバッジ",
+          "グラフィック / タグライン / オリジナルアートワーク"
         ]
       },
       {
-        "title": "Accessories & Hardware",
-        "desc": "Upgrade every detail—premium zippers, buckles, trims. Each part can be color- and function-customized.",
+        "title": "付属品とハードウェア",
+        "desc": "上質なファスナー・バックル・トリムで、細部までグレードアップ。各パーツはカラーも機能もカスタマイズできます。",
         "highlights": [
-          "Zippers: Waterproof, Two-way, Invisible, etc.",
-          "Buckles: Plastic, Metal, Magnetic, Quick-release, D-rings",
-          "Loops, pulls, trims—all configurable",
-          "Match finishes & color"
+          "ファスナー：止水 / 両開き / コンシールなど",
+          "バックル：プラスチック / メタル / マグネット / クイックリリース / D カン",
+          "ループ・引き手・トリムもすべて設定可能",
+          "仕上げとカラーを統一"
         ]
       },
       {
-        "title": "Enhanced Functional Features",
-        "desc": "Tailored features for safety, tech, travel, or specialist needs—because every use case is unique.",
+        "title": "充実した機能性",
+        "desc": "安全性・テクノロジー・トラベル・専門用途まで、あらゆるユースケースに合わせた機能をお仕立てします。",
         "highlights": [
-          "Expansion: Roll-top, Zippers, Drawstring",
-          "Weatherproofing: Coated fabrics, Rain covers, Ventilated backs",
-          "Security: Anti-theft locks, RFID shields",
-          "Tech: USB ports, cable routing, reflective details, LED integration",
-          "Travel: TSA-friendly, Trolley sleeves"
+          "拡張：ロールトップ / ファスナー / 巾着",
+          "防水・防滴：コーティング生地 / レインカバー / 通気性バックパネル",
+          "セキュリティ：盗難防止ロック / RFID シールド",
+          "テック：USB ポート / 配線ルート / リフレクター / LED 内蔵",
+          "トラベル：TSA 対応 / キャリーオン用スリーブ"
         ]
       },
       {
-        "title": "Private Label & Logo Customization",
-        "desc": "Fully customizable branding—even for private label requirements.",
+        "title": "プライベートラベルとロゴのカスタマイズ",
+        "desc": "プライベートラベルのご要望にも対応する、フルカスタマイズ可能なブランディング。",
         "highlights": [
-          "Woven & Fabric Labels",
-          "TPU/PU Badges",
-          "Metal Patches",
-          "Showcase your unique identity"
+          "織りネーム・布ラベル",
+          "TPU/PU バッジ",
+          "メタルパッチ",
+          "唯一無二のブランドアイデンティティを表現"
         ]
       }
     ],
-    "ready": "Ready to bring your vision to life? <br />Contact us for a tailor-made solution—and discover why top brands worldwide trust us as their manufacturing partner.",
-    "cta": "Customize Now"
+    "ready": "ビジョンをかたちにしませんか？<br />オーダーメイドのソリューションについては、お気軽にお問い合わせください。世界中のトップブランドが製造パートナーとして当社を信頼する理由を、ぜひご体感ください。",
+    "cta": "今すぐカスタマイズ"
   },
   "services": {
-    "title": "Optimized All-in-One Service for Mass Production",
+    "title": "量産を支える、最適化されたワンストップサービス",
     "steps": [
       {
-        "title": "Handle Customer Inquiry",
-        "desc": "Send us an inquiry and share the details of your project. Our dedicated team will quickly respond to understand your needs and expectations."
+        "title": "お問い合わせ対応",
+        "desc": "お問い合わせいただき、プロジェクトの詳細をお聞かせください。専任チームが迅速に対応し、お客様のニーズとご期待を正確に把握します。"
       },
       {
-        "title": "Manufacture Quotation",
-        "desc": "If your project fits our standard MOQ and production capabilities, we will promptly provide an initial quotation based on your tech pack, selected fabric quality, and requested quantity."
+        "title": "お見積もりのご提示",
+        "desc": "プロジェクトが当社の標準 MOQ と生産能力に合致する場合、Tech Pack・ご指定の生地グレード・ご希望数量をもとに、速やかに初回のお見積もりをご提示します。"
       },
       {
-        "title": "Sample Development",
-        "desc": "Once the quotation is approved, we move forward with sample development. This ensures that quality and specifications are confirmed before bulk production begins."
+        "title": "サンプル開発",
+        "desc": "お見積もりのご承認後、サンプル開発に進みます。量産開始前に、品質と仕様を確実に確認するための工程です。"
       },
       {
-        "title": "Bulk Production",
-        "desc": "After you confirm the order and provide a deposit, we commence bulk production—strictly following all agreed specifications with careful attention to detail."
+        "title": "量産",
+        "desc": "ご発注とお手付金のご入金を確認後、量産を開始します。合意したすべての仕様を厳守し、細部まで丁寧に作り込みます。"
       },
       {
-        "title": "Quality Control",
-        "desc": "Our rigorous QC procedures include 100% end-line inspections and application of AQL 2.5 standards for final checks. We also welcome third-party QC to further guarantee quality and transparency."
+        "title": "品質管理",
+        "desc": "厳格な QC では、ライン終端での 100% 検査と、最終チェックにおける AQL 2.5 基準の適用を行います。品質と透明性をさらに高めるため、第三者検査も歓迎いたします。"
       },
       {
-        "title": "Packaging & Shipping",
-        "desc": "After quality confirmation, your products are carefully packaged and shipped in bulk to your designated warehouse, ensuring safe and efficient delivery."
+        "title": "梱包・出荷",
+        "desc": "品質確認後、製品を丁寧に梱包し、ご指定の倉庫へまとめて出荷します。安全かつ効率的なお届けを徹底します。"
       }
     ],
     "processNote": "<highlight1>お問い合わせから納品まで</highlight1>、専門チームが全工程をサポートし、各ステップの<highlight2>効率性と透明性を確保</highlight2>して、カスタムプロジェクトをスムーズに実現します。"
   },
   "faq": {
-    "title": "Frequently Asked Questions (FAQ)",
+    "title": "よくあるご質問（FAQ）",
     "sections": [
       {
-        "title": "General & Pre-Sale",
+        "title": "全般・ご検討段階",
         "items": [
           {
-            "q": "What should I prepare before contacting you?",
-            "a": "Please have your tech pack (or clear design sketches), estimated order quantity, preferred materials, and any special requirements ready. The more specific your brief, the faster and more accurate our quotation and recommendations."
+            "q": "お問い合わせ前に、何を準備すればよいですか？",
+            "a": "Tech Pack（または分かりやすいデザイン画）、想定ご発注数量、ご希望の素材、特別なご要望をご用意ください。内容が具体的であるほど、お見積もりとご提案を迅速かつ正確にお出しできます。"
           },
           {
-            "q": "Do you provide a catalogue of your products?",
-            "a": "No, we are a pure OEM/ODM manufacturer and do not have our own product catalogue. All products are custom-made to client specifications."
+            "q": "製品カタログはありますか？",
+            "a": "いいえ。当社は純粋な OEM/ODM メーカーであり、自社製品のカタログはございません。すべての製品は、お客様の仕様に基づくオーダーメイドです。"
           },
           {
-            "q": "Can you share samples or images of previous work for reference?",
-            "a": "Due to strict NDAs with our clients, we cannot share images of previous products. However, we highly recommend ordering a sample or arranging a factory tour to assess our craftsmanship and quality for yourself."
+            "q": "参考に、過去の制作サンプルや画像を見せていただけますか？",
+            "a": "お客様との厳格な秘密保持契約により、過去製品の画像を共有することはできません。一方で、サンプルのご注文や工場見学を通じて、当社の技術力と品質をぜひご自身でお確かめいただくことを強くお勧めします。"
           },
           {
-            "q": "Can you provide references from existing clients?",
-            "a": "While we cannot share client contacts due to confidentiality, we welcome video calls, sample reviews, and factory tours for your assurance."
+            "q": "既存のお客様の紹介（リファレンス）をいただけますか？",
+            "a": "守秘義務によりお客様の連絡先を共有することはできませんが、ご安心いただけるよう、ビデオ通話・サンプル確認・工場見学を歓迎しております。"
           },
           {
-            "q": "Do I get a dedicated project manager or team?",
-            "a": "Yes, every project is assigned to a dedicated account manager and project team for smooth, timely and personalized service."
+            "q": "専任のプロジェクトマネージャーやチームは付きますか？",
+            "a": "はい。すべてのプロジェクトに専任のプロジェクトマネージャーとチームを配置し、スムーズで迅速、きめ細かなサービスをご提供します。"
           },
           {
-            "q": "How will I know the timeline for my project?",
-            "a": "After confirmation, we provide a detailed production schedule covering sampling, production, and shipment milestones, keeping you informed at every stage."
+            "q": "プロジェクトのスケジュールはどのように分かりますか？",
+            "a": "ご確定後、サンプル・生産・出荷の各マイルストーンを網羅した詳細な生産スケジュールをお渡しし、各段階で進捗をご報告します。"
           }
         ]
       },
       {
-        "title": "Orders, Sampling & Quotation",
+        "title": "ご発注・サンプル・お見積もり",
         "items": [
           {
-            "q": "Do you accept OEM and ODM orders?",
-            "a": "Yes, we only accept OEM/ODM orders. We do not manufacture or sell our own branded products."
+            "q": "OEM・ODM の受注は可能ですか？",
+            "a": "はい。当社は OEM/ODM のみを承っております。自社ブランド製品の製造・販売は行っておりません。"
           },
           {
-            "q": "What is your typical Minimum Order Quantity (MOQ)?",
-            "a": "Our general MOQ is 150 pieces per design and color. Lower quantities may be considered upon request."
+            "q": "標準的な最小発注数量（MOQ）はどのくらいですか？",
+            "a": "ミャンマーでの量産は、デザイン・カラーごとに MOQ 1,500 個です。中国（山東）拠点では、これに加えてサンプルや特急の受注も承っており、デザインごとに数百個から数万個まで対応可能です。具体的なご要望は、お気軽にご相談ください。"
           },
           {
-            "q": "How is your quotation process structured?",
-            "a": "We first provide an estimated quotation based on your tech pack and details. A final binding quote is issued after prototype/sample approval. Prices are quoted FOB (Yangon) or Ex-Works, excluding additional surcharges from suppliers."
+            "q": "お見積もりのプロセスはどのような流れですか？",
+            "a": "まず Tech Pack と詳細をもとに、概算のお見積もりをご提示します。最終的な確定見積もりは、試作・サンプルのご承認後にお出しします。価格は、ミャンマー量産の場合は FOB ヤンゴン、山東拠点からのサンプル・特急注文の場合は FOB 青島でのご提示となります。CIF でのお見積もりも、ご依頼に応じて対応いたします。"
           },
           {
-            "q": "What are your payment terms?",
-            "a": "Standard terms are 50% deposit with purchase order (PO), and the balance before shipment. LC for the balance is possible for qualified clients."
+            "q": "お支払い条件を教えてください。",
+            "a": "お支払い条件は段階的です。新規のお客様は、PO とともに 30% を T/T でお手付金としてお支払いいただき、検査合格後に残り 70% を T/T でご清算いただきます。長期のお客様には与信枠を設け、B/L コピーまたは引き取りから 1 週間以内の T/T とします。大口・特殊な受注については、双方の安全のため L/C も承ります。"
           },
           {
-            "q": "Can you provide materials with special certifications (e.g., OEKO-TEX, GRS, GOTS)?",
-            "a": "Yes, we can source and certify materials to various international standards. Let us know your compliance requirements in advance."
+            "q": "特別な認証（OEKO-TEX、GRS、GOTS など）取得済みの素材をご用意いただけますか？",
+            "a": "はい。各種国際基準に適合する素材の調達・認証取得が可能です。コンプライアンス上のご要件を、事前にお知らせください。"
           }
         ]
       },
       {
-        "title": "Sample Development",
+        "title": "サンプル開発",
         "items": [
           {
-            "q": "How many rounds of sample revisions are allowed?",
-            "a": "Sample revisions are case by case. Most orders include at least one revision; we can offer additional revision packages as needed."
+            "q": "サンプルの修正は何回まで可能ですか？",
+            "a": "多くの受注では、PP サンプルのご承認・量産日程の確定までに 1〜2 回（2nd / 3rd サンプルなど）の修正を行います。必要に応じて、追加の修正パッケージもご用意できます。"
           },
           {
-            "q": "What is your lead time for sample/prototype production?",
-            "a": "Samples are generally ready in 1–2 weeks, depending on material availability and scheduling."
+            "q": "サンプル・試作の制作リードタイムはどのくらいですか？",
+            "a": "サンプルは通常 1〜2 週間で仕上がります。素材の在庫状況やスケジュールにより前後します。"
           },
           {
-            "q": "What materials will you use if the specified ones are unavailable?",
-            "a": "We will use the closest available substitute for development, and inform you of any differences before proceeding."
+            "q": "指定の素材が入手できない場合、どの素材を使いますか？",
+            "a": "最も近い代替素材を用いて開発を進め、進行前に相違点をお知らせします。"
           },
           {
-            "q": "Does the sample fee include shipping?",
-            "a": "No, the sample fee does not cover shipping or potential third-party costs (e.g. molds, plates). Express shipping (e.g. FedEx, DHL) can be arranged at additional cost."
+            "q": "サンプル代に送料は含まれますか？",
+            "a": "いいえ。サンプル代には、送料や、場合により発生する第三者費用（金型・版代など）は含まれません。速達便（FedEx、DHL など）は、別途費用で手配可能です。"
           },
           {
-            "q": "Do you provide pre-production samples (PP) for approval?",
-            "a": "Yes, a PP sample must be formally approved by you before mass production begins."
+            "q": "量産前の確認用サンプル（PP サンプル）はご用意いただけますか？",
+            "a": "はい。量産開始前に、PP サンプルをお客様に正式にご承認いただく必要があります。"
           }
         ]
       },
       {
-        "title": "Production, Progress & Shipping",
+        "title": "生産・進捗・出荷",
         "items": [
           {
-            "q": "Can we make changes after bulk production begins?",
-            "a": "Usually not, as materials are ordered and production started. We may accept small changes if timing and resources allow, but this could affect delivery and cost."
+            "q": "量産開始後に変更はできますか？",
+            "a": "通常はできません。素材の発注と生産がすでに始まっているためです。タイミングとリソースに余裕がある場合は軽微な変更を承ることもありますが、納期やコストに影響する可能性があります。"
           },
           {
-            "q": "How do I receive production progress updates?",
-            "a": "We provide milestone-based progress updates, and can share photos or videos from your order upon request."
+            "q": "生産の進捗報告はどのように受け取れますか？",
+            "a": "マイルストーンごとに進捗をご報告し、ご依頼に応じて、お客様の受注分の写真や動画も共有いたします。"
           },
           {
-            "q": "How do you ensure production efficiency and flexibility?",
-            "a": "We implement LEAN methodologies and continuous improvement, optimizing lines for cost, efficiency, and order size flexibility."
+            "q": "生産の効率性と柔軟性は、どのように確保していますか？",
+            "a": "LEAN 手法と継続的な改善を導入し、コスト・効率・受注規模への柔軟性の観点からラインを最適化しています。"
           },
           {
-            "q": "What is your standard production lead time?",
-            "a": "Typical lead time from PO to completion is 13–15 weeks, but may vary with product complexity and volume."
+            "q": "標準的な生産リードタイムはどのくらいですか？",
+            "a": "標準的な量産リードタイムは、PP サンプルのご承認から工場完成まで約 3 か月です（海外からの素材調達とミャンマー生産の日程調整を含みます）。混載の遅延や生産待ちの状況により、案件ごとに延びる場合があります。"
           },
           {
-            "q": "What's your main port of loading?",
-            "a": "All orders ship FOB Yangon Port, Yangon, Myanmar, unless otherwise arranged."
+            "q": "主な船積み港はどこですか？",
+            "a": "ミャンマーの量産注文は、FOB ミャンマー・ヤンゴン港での船積みです。山東拠点から出荷するサンプルや特急注文は、標準で FOB 青島となります。"
           },
           {
-            "q": "Can you customize packaging/handling for my orders?",
-            "a": "Yes, we offer packaging customization and can help with labeling, bundling, carton specifications and even special shipping needs."
+            "q": "受注に合わせて、梱包やハンドリングをカスタマイズできますか？",
+            "a": "はい。梱包のカスタマイズに対応しており、ラベリング・アソート・カートン仕様、さらには特別な配送のご要望もサポートいたします。"
           },
           {
-            "q": "Are you able to help with export documentation and compliance?",
-            "a": "Yes, we will provide all necessary export documents (e.g., invoice, packing list, COO, Form E) and can support any special certifications required."
+            "q": "輸出書類やコンプライアンスの対応も手伝ってもらえますか？",
+            "a": "はい。必要な輸出書類（インボイス、パッキングリスト、COO、Form E など）をすべてご用意し、必要となる各種認証にも対応いたします。"
           }
         ]
       },
       {
-        "title": "Quality Control & After-Sale Support",
+        "title": "品質管理・アフターサポート",
         "items": [
           {
-            "q": "How do you ensure quality and material consistency?",
-            "a": "Incoming materials are strictly inspected and verified. QC stations at every major step catch deviations early. All orders undergo 100% end-of-line inspection, and we welcome third-party QC upon client request."
+            "q": "品質と素材の一貫性は、どのように確保していますか？",
+            "a": "入荷素材は厳格に検査・確認します。主要工程ごとに QC ステーションを設け、ばらつきを早期に発見します。すべての受注でライン終端の 100% 検査を実施し、ご依頼に応じて第三者検査も歓迎いたします。"
           },
           {
-            "q": "Do you provide independent audit or inspection support?",
-            "a": "Absolutely. We welcome third-party audits, remote factory visits, and client inspections at any step."
+            "q": "第三者監査や検査の受け入れには対応していますか？",
+            "a": "もちろんです。第三者監査、リモートでの工場視察、お客様による検査を、どの工程でも歓迎しております。"
           },
           {
-            "q": "How do you handle defective products or production complaints?",
-            "a": "We investigate all reports thoroughly and, depending on the situation, provide repair, replacement or negotiated settlement."
+            "q": "不良品や生産に関するクレームには、どう対応しますか？",
+            "a": "すべてのご報告を徹底的に調査し、状況に応じて修理・交換、または協議による解決をご提案します。"
           },
           {
-            "q": "Do you offer any warranty or after-sales guarantee?",
-            "a": "We require clients to inspect all shipments within 14 days. As we manufacture to your specifications, we do not offer extended warranties."
+            "q": "保証やアフターサービスの保証はありますか？",
+            "a": "お客様には、すべての出荷分を 14 日以内にご検品いただくようお願いしております。お客様の仕様に基づいて製造するため、長期保証はご提供しておりません。"
           },
           {
-            "q": "Can you provide technical support for bag pattern or hardware development?",
-            "a": "Yes, our experienced team can advise on feasibility, cost, construction methods, and component selection."
+            "q": "バッグのパターンや金具の開発について、技術サポートはありますか？",
+            "a": "はい。経験豊富なチームが、実現可能性・コスト・縫製構造・部材選定についてアドバイスいたします。"
           },
           {
-            "q": "Don't see your question here?",
-            "a": "Please contact us directly – our team is always ready to assist with anything you need."
+            "q": "お探しの質問が見つかりませんか？",
+            "a": "お気軽に直接お問い合わせください。私たちのチームが、必要なことは何でも喜んでサポートいたします。"
           }
         ]
       }
     ],
     "cta": {
-      "text": "Can't find what you're looking for?",
-      "highlight": "Feel free to contact us",
-      "suffix": "-- our team is here to help.",
-      "button": "Contact Us",
-      "glossaryLink": "Browse our Glossary for industry terms",
-      "blogLink": "Read our latest articles"
+      "text": "お探しの情報が見つかりませんか？",
+      "highlight": "お気軽にお問い合わせください",
+      "suffix": "――私たちのチームがサポートいたします。",
+      "button": "お問い合わせ",
+      "glossaryLink": "業界用語は用語集をご覧ください",
+      "blogLink": "最新記事を読む"
     }
   },
   "contact": {
-    "title": "Contact Us",
-    "subtitle": "Ready to Start Your Backpack Project?",
-    "intro": "Fill out the form below and we'll get back to you within 24 hours. For urgent inquiries, call or WhatsApp us directly.",
+    "title": "お問い合わせ",
+    "subtitle": "バックパックのプロジェクトを始めませんか？",
+    "intro": "下記フォームにご記入ください。24 時間以内にご返信いたします。お急ぎの場合は、お電話または WhatsApp で直接ご連絡ください。",
     "address": {
-      "label": "Address",
-      "value": "Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai Industrial Zone, Yangon, Myanmar"
+      "label": "所在地",
+      "value": "Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai Industrial Zone, Yangon, Myanmar",
+      "viewOnMap": "Google マップで見る"
     },
     "phone": {
-      "label": "Phone Number",
-      "value": "+1 814.880.1463"
+      "label": "電話番号",
+      "fallback": "その他の言語については、メールにてお問い合わせください",
+      "lines": [
+        {
+          "lang": "中国語",
+          "number": "+86 (532) 8856-2277",
+          "hours": "北京時間 8:00–17:00 ・ 月〜金",
+          "person": ""
+        },
+        {
+          "lang": "日本語・韓国語",
+          "number": "+86 152 5320 6760",
+          "hours": "北京時間 8:00–17:00 ・ 月〜金",
+          "person": "崔さん"
+        },
+        {
+          "lang": "英語",
+          "number": "+86 130 6139 1463",
+          "hours": "ミャンマー時間 7:30–18:00 ・ 月〜土",
+          "person": "Jay"
+        },
+        {
+          "lang": "ミャンマー語",
+          "number": "+95 9 9856 70999",
+          "hours": "ミャンマー時間 7:30–18:00 ・ 月〜土",
+          "person": ""
+        }
+      ]
     },
     "email": {
-      "label": "Email Address",
-      "value": "jay@biteerbags.com"
+      "label": "メールアドレス",
+      "value": "jay@betterbagsmm.com"
     },
     "whatsapp": {
-      "label": "Whatsapp",
+      "label": "WhatsApp",
       "value": "+1 814.880.1463"
     },
     "trust": {
-      "title": "Why Trust Us",
-      "responseTime": "24-hour response guarantee",
-      "experience": "20+ years manufacturing experience",
-      "certified": "ISO 9001, OEKO-TEX, GRS, GOTS certified"
+      "title": "選ばれる理由",
+      "responseTime": "24 時間以内のご返信をお約束",
+      "experience": "20 年以上の製造実績",
+      "certified": "ISO 9001・OEKO-TEX・GRS・GOTS 認証取得"
     },
     "form": {
-      "title": "Get A Quote",
+      "title": "お見積もり依頼",
       "name": {
-        "label": "Name",
-        "placeholder": "John Doe",
-        "error": "Please enter your name"
+        "label": "お名前",
+        "placeholder": "山田 太郎",
+        "error": "お名前をご入力ください"
       },
       "email": {
-        "label": "Email Address",
+        "label": "メールアドレス",
         "placeholder": "example@company.com",
-        "error": "Please enter a valid email address"
+        "error": "有効なメールアドレスをご入力ください"
       },
       "countryRegion": {
-        "label": "Country/Region",
-        "placeholder": "United States",
-        "error": "Please enter your country/region",
-        "loading": "位置を検出中..."
+        "label": "国・地域",
+        "placeholder": "日本",
+        "error": "国・地域をご入力ください",
+        "loading": "位置を検出中...",
+        "searchPlaceholder": "国名または国番号で検索",
+        "noResults": "該当する国がありません",
+        "popularLabel": "よく使われる国",
+        "allLabel": "すべての国"
       },
       "companyBrandName": {
-        "label": "Company/Brand Name",
-        "placeholder": "Your Company Name",
-        "error": "Please enter your company/brand name"
+        "label": "会社名・ブランド名",
+        "placeholder": "貴社名",
+        "error": "会社名・ブランド名をご入力ください"
       },
       "phoneNumber": {
-        "label": "Phone Number (Optional)",
-        "placeholder": "+1 555-123-4567",
-        "error": "Please enter a valid phone number"
+        "label": "電話番号（任意）",
+        "placeholder": "電話番号",
+        "error": "有効な電話番号をご入力ください",
+        "codeLabel": "電話の国番号",
+        "codePlaceholder": "国番号",
+        "codeError": "国番号を選択してください"
       },
       "subject": {
-        "label": "Subject",
-        "placeholder": "e.g. Custom Travel Backpack Inquiry",
-        "error": "Please enter a subject"
+        "label": "件名",
+        "placeholder": "例：トラベルバックパックの製作についてのお問い合わせ",
+        "error": "件名をご入力ください"
       },
       "message": {
-        "label": "Your Message",
-        "placeholder": "Please describe your project needs, target quantity, timeline, and any special requirements...",
-        "error": "Please enter a message with at least 20 characters"
+        "label": "お問い合わせ内容（任意）",
+        "placeholder": "プロジェクトのご要望、ご希望数量、スケジュール、特別なご要望などをご記入ください...",
+        "error": "2000 文字以内でご入力ください"
       },
       "orderQuantity": {
-        "label": "Estimated Order Quantity (per design)",
-        "placeholder": "Select quantity range",
-        "error": "Please select an order quantity"
+        "label": "想定ご発注数量（デザインごと）",
+        "placeholder": "数量の範囲を選択",
+        "error": "ご発注数量を選択してください",
+        "optionLabels": [
+          "100個未満",
+          "100〜300個",
+          "300〜1,000個",
+          "1,000個以上"
+        ]
       },
       "techPackAvailability": {
-        "label": "Do you have a tech pack or reference sample?",
-        "placeholder": "Select an option",
-        "error": "Please select an option"
+        "label": "Tech Pack または参考サンプルはお持ちですか？",
+        "placeholder": "選択してください",
+        "error": "項目を選択してください",
+        "optionLabels": [
+          "はい、Tech Pack があります",
+          "現物サンプルがあります",
+          "アイデア・スケッチのみです"
+        ]
       },
       "fileUpload": {
-        "label": "Upload Files (Optional)",
-        "description": "Upload tech packs, sketches, or sample photos. Max 5 files, 10MB each.",
-        "button": "Choose Files",
-        "dragDrop": "or drag and drop files here",
-        "acceptedFormats": "Accepted formats: JPG, PNG, WebP, PDF, DOC, DOCX"
+        "label": "ファイルのアップロード（任意）",
+        "description": "Tech Pack・デザイン画・サンプル写真などをアップロードできます。最大 5 ファイル、各 10MB まで。",
+        "button": "ファイルを選択",
+        "dragDrop": "またはファイルをここにドラッグ＆ドロップ",
+        "acceptedFormats": "対応形式：JPG、PNG、WebP、PDF、DOC、DOCX、XLS、XLSX、PPT、PPTX"
       },
       "humanVerification": {
-        "label": "Human Verification",
-        "placeholder": "Loading verification...",
-        "error": "Please complete the verification before submitting",
-        "notConfigured": "Verification is not configured. Form submissions will be accepted in development mode only."
+        "label": "本人確認（人間であることの確認）",
+        "placeholder": "認証を読み込み中...",
+        "error": "送信前に認証を完了してください",
+        "notConfigured": "認証が設定されていません。フォームの送信は、開発モードでのみ受け付けられます。"
       },
-      "submit": "Submit Inquiry",
-      "submitting": "Submitting...",
+      "submit": "問い合わせを送信",
+      "submitting": "送信中...",
       "success": {
-        "title": "Thank You for Your Inquiry!",
-        "message": "We've received your message and will respond within 24 hours."
+        "title": "お問い合わせありがとうございます！",
+        "message": "メッセージを受け付けました。24 時間以内にご返信いたします。"
       },
       "error": {
-        "title": "Submission Failed",
-        "message": "Sorry, there was an error submitting your form. Please try again later or contact us directly."
+        "title": "送信に失敗しました",
+        "message": "申し訳ございません。フォームの送信中にエラーが発生しました。時間をおいて再度お試しいただくか、直接お問い合わせください。"
       },
       "draft": {
         "restored": "以前の下書きが復元されました",
@@ -527,34 +671,34 @@
     "companyInfo": {
       "name": "Better Bags Myanmar Company Limited",
       "address": "Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai Industrial Zone, Yangon, Myanmar",
-      "email": "jay@biteerbags.com",
+      "email": "jay@betterbagsmm.com",
       "phone": "+1 814.880.1463"
     },
-    "email": "Email",
-    "tel": "Tel/WhatsApp",
-    "quickLinks": "Quick Links",
-    "hours": "Hours",
-    "hoursTime": "Mon-Fri 9:00am – 5:00pm",
-    "copyright": "All rights reserved | Powered by OEM Backpack Factory",
+    "email": "メール",
+    "tel": "電話 / WhatsApp",
+    "quickLinks": "クイックリンク",
+    "hours": "営業時間",
+    "hoursTime": "月〜金 9:00–17:00",
+    "copyright": "無断複製・転載を禁じます | Powered by OEM Backpack Factory",
     "links": [
       {
-        "name": "Home",
+        "name": "ホーム",
         "href": "#home"
       },
       {
-        "name": "About Us",
+        "name": "会社概要",
         "href": "#about"
       },
       {
-        "name": "Features",
+        "name": "特長",
         "href": "#features"
       },
       {
-        "name": "Services",
+        "name": "サービス",
         "href": "#services"
       },
       {
-        "name": "Process",
+        "name": "プロセス",
         "href": "#process"
       },
       {
@@ -562,51 +706,51 @@
         "href": "#faq"
       },
       {
-        "name": "Contact Us",
+        "name": "お問い合わせ",
         "href": "#contact"
       },
       {
-        "name": "Blogs",
+        "name": "ブログ",
         "href": "#blogs"
       },
       {
-        "name": "Glossary",
+        "name": "用語集",
         "href": "/glossary"
       }
     ]
   },
   "blog": {
-    "title": "Latest Insights",
-    "subtitle": "Stay updated with industry trends, customization tips, and company news",
-    "readMore": "Read More",
-    "viewAll": "View All Articles",
+    "title": "最新のインサイト",
+    "subtitle": "業界トレンド、カスタマイズのヒント、会社からのお知らせをお届けします",
+    "readMore": "続きを読む",
+    "viewAll": "すべての記事を見る",
     "relatedLinks": {
-      "glossary": "Explore our Glossary"
+      "glossary": "用語集を見る"
     }
   },
   "blogList": {
-    "title": "Blog Articles",
-    "subtitle": "In-depth insights, trends, and best practices in the backpack manufacturing industry",
-    "backToHome": "Back to Home",
-    "totalArticles": "{count} Articles",
-    "readMore": "Read More",
-    "backToTop": "Back to Top",
-    "noArticles": "No articles available",
+    "title": "ブログ記事",
+    "subtitle": "バックパック製造業界の、深いインサイト・トレンド・ベストプラクティス",
+    "backToHome": "ホームに戻る",
+    "totalArticles": "{count} 件の記事",
+    "readMore": "続きを読む",
+    "backToTop": "トップに戻る",
+    "noArticles": "記事がありません",
     "relatedLinks": {
-      "glossary": "Browse Manufacturing Glossary",
-      "faq": "Check our FAQ"
+      "glossary": "製造用語集を見る",
+      "faq": "よくあるご質問を見る"
     }
   },
   "blogDetail": {
-    "home": "Home",
-    "blog": "Blog",
-    "backToList": "Back to Articles",
-    "backToTop": "Back to Top",
-    "noContent": "Article content not available",
+    "home": "ホーム",
+    "blog": "ブログ",
+    "backToList": "記事一覧に戻る",
+    "backToTop": "トップに戻る",
+    "noContent": "記事の内容がありません",
     "cta": {
-      "title": "Ready to Start Your Custom Backpack Project?",
-      "subtitle": "Contact us for professional OEM/ODM solutions",
-      "button": "Contact Us Now"
+      "title": "カスタムバックパックのプロジェクトを始めませんか？",
+      "subtitle": "プロフェッショナルな OEM/ODM ソリューションは、お気軽にお問い合わせください",
+      "button": "今すぐお問い合わせ"
     }
   },
   "language": {
@@ -620,102 +764,102 @@
     "close": "閉じる"
   },
   "glossary": {
-    "title": "Backpack Manufacturing Glossary",
-    "subtitle": "Essential industry terms and definitions for OEM/ODM backpack production",
-    "description": "Learn the key terminology used in backpack manufacturing, from materials and production processes to quality control and logistics.",
-    "allCategories": "All",
+    "title": "バックパック製造 用語集",
+    "subtitle": "OEM/ODM バックパック生産に欠かせない業界用語と定義",
+    "description": "素材・生産工程から品質管理・物流まで、バックパック製造で使われる重要用語を解説します。",
+    "allCategories": "すべて",
     "categories": {
-      "materials": "Materials",
-      "manufacturing": "Manufacturing",
-      "quality": "Quality Control",
-      "logistics": "Logistics",
-      "design": "Design"
+      "materials": "素材",
+      "manufacturing": "製造",
+      "quality": "品質管理",
+      "logistics": "物流",
+      "design": "デザイン"
     },
-    "backToHome": "Back to Home",
+    "backToHome": "ホームに戻る",
     "relatedLinks": {
-      "faq": "Have questions? Check our FAQ",
-      "blog": "Read our latest articles"
+      "faq": "ご質問がありますか？よくあるご質問をご覧ください",
+      "blog": "最新記事を読む"
     },
     "terms": {
       "oem": {
-        "term": "OEM (Original Equipment Manufacturer)",
-        "definition": "A company that manufactures products based on the buyer's specifications and designs. The buyer owns the brand and design, while the OEM handles production."
+        "term": "OEM（相手先ブランド名製造）",
+        "definition": "バイヤーの仕様とデザインに基づいて製品を製造する企業のこと。ブランドとデザインはバイヤーが保有し、OEM は製造を担当します。"
       },
       "odm": {
-        "term": "ODM (Original Design Manufacturer)",
-        "definition": "A manufacturer that designs and produces products which are then rebranded by the buyer. Unlike OEM, the ODM provides both design and manufacturing services."
+        "term": "ODM（相手先ブランドによる設計製造）",
+        "definition": "製品の設計から製造までを行い、その後バイヤーのブランドとして販売される製品を手がけるメーカー。OEM と異なり、ODM は設計と製造の両方を提供します。"
       },
       "moq": {
-        "term": "MOQ (Minimum Order Quantity)",
-        "definition": "The smallest number of units a manufacturer is willing to produce in a single order. MOQ varies by product complexity and materials."
+        "term": "MOQ（最小発注数量）",
+        "definition": "メーカーが 1 回の受注で生産を引き受ける最小の数量。MOQ は、製品の複雑さや素材によって変わります。"
       },
       "tech-pack": {
-        "term": "Tech Pack",
-        "definition": "A detailed technical document containing all specifications needed to manufacture a product, including dimensions, materials, colors, hardware, and construction details."
+        "term": "Tech Pack（テックパック）",
+        "definition": "寸法・素材・カラー・金具・縫製構造など、製品の製造に必要なすべての仕様をまとめた、詳細な技術資料。"
       },
       "denier": {
-        "term": "Denier",
-        "definition": "A unit of measurement for the fiber thickness of individual threads used in fabric. Higher denier numbers indicate thicker, more durable fabric (e.g., 600D polyester)."
+        "term": "デニール（Denier）",
+        "definition": "生地に使われる糸 1 本の太さを表す単位。数値が大きいほど糸が太く、より丈夫な生地になります（例：600D ポリエステル）。"
       },
       "ripstop": {
-        "term": "Ripstop",
-        "definition": "A fabric weaving technique using reinforcement threads in a crosshatch pattern to prevent tears from spreading. Commonly used in outdoor and tactical backpacks."
+        "term": "リップストップ（Ripstop）",
+        "definition": "補強糸を格子状に織り込み、裂け目が広がるのを防ぐ織り方。アウトドアやタクティカル系のバックパックでよく使われます。"
       },
       "cordura": {
-        "term": "Cordura",
-        "definition": "A brand name for a collection of high-performance fabrics known for exceptional durability, abrasion resistance, and tear strength. Widely used in premium backpacks."
+        "term": "Cordura（コーデュラ）",
+        "definition": "卓越した耐久性・耐摩耗性・引き裂き強度で知られる高機能生地のブランド名。高級バックパックに広く採用されています。"
       },
       "bartack": {
-        "term": "Bartack",
-        "definition": "A dense, reinforced stitching pattern used at stress points on bags, such as strap attachments and handle bases, to prevent seam failure under load."
+        "term": "カンヌキ（Bartack）",
+        "definition": "ストラップの付け根やハンドルの根元など、負荷のかかる箇所に施す高密度の補強縫製。荷重による縫い目の破損を防ぎます。"
       },
       "aql": {
-        "term": "AQL (Acceptable Quality Level)",
-        "definition": "A statistical sampling method used in quality inspection to determine the maximum acceptable number of defective items in a batch. Common standard is AQL 2.5 for bags."
+        "term": "AQL（合格品質水準）",
+        "definition": "ロット内で許容できる不良品の最大数を判定するために用いる、品質検査の統計的サンプリング手法。バッグでは AQL 2.5 が一般的な基準です。"
       },
       "fob": {
-        "term": "FOB (Free On Board)",
-        "definition": "A shipping term indicating that the seller delivers goods to the port of shipment. The buyer assumes responsibility and cost once goods are loaded onto the vessel."
+        "term": "FOB（本船渡し）",
+        "definition": "売主が船積み港で貨物を引き渡すことを示す貿易条件。貨物が本船に積み込まれた時点で、責任と費用は買主に移ります。"
       },
       "bom": {
-        "term": "BOM (Bill of Materials)",
-        "definition": "A comprehensive list of all raw materials, components, and hardware needed to manufacture a product, including quantities and specifications."
+        "term": "BOM（部品表）",
+        "definition": "製品の製造に必要なすべての原材料・部品・金具を、数量や仕様とともに一覧化したもの。"
       },
       "ykk": {
         "term": "YKK",
-        "definition": "The world's largest zipper manufacturer, headquartered in Japan. YKK zippers are considered the industry standard for quality and reliability in bag manufacturing."
+        "definition": "日本に本社を置く、世界最大のファスナーメーカー。YKK のファスナーは、バッグ製造における品質と信頼性の業界標準とされています。"
       },
       "pantone": {
-        "term": "Pantone (PMS)",
-        "definition": "A standardized color matching system used worldwide to ensure consistent color reproduction across different materials and production runs."
+        "term": "Pantone（PMS）",
+        "definition": "異なる素材や生産ロット間でも色を一貫して再現するために、世界中で使われている標準的なカラーマッチングシステム。"
       },
       "grs": {
-        "term": "GRS (Global Recycled Standard)",
-        "definition": "An international certification that verifies recycled content in products and tracks the supply chain from recycled input to finished product."
+        "term": "GRS（グローバル・リサイクル・スタンダード）",
+        "definition": "製品中のリサイクル素材の含有率を検証し、リサイクル原料から完成品までのサプライチェーンを追跡する国際認証。"
       },
       "oeko-tex": {
         "term": "OEKO-TEX Standard 100",
-        "definition": "An independent testing and certification system for textile products at all stages of production, ensuring they are free from harmful substances."
+        "definition": "繊維製品を生産のあらゆる段階で検査・認証する独立した制度で、有害物質を含まないことを保証します。"
       },
       "cif": {
-        "term": "CIF (Cost, Insurance, and Freight)",
-        "definition": "A shipping term where the seller covers the cost of goods, insurance, and freight charges to deliver products to the buyer's designated port."
+        "term": "CIF（運賃・保険料込み）",
+        "definition": "売主が、買主の指定港まで製品を届けるための商品代金・保険料・運賃を負担する貿易条件。"
       },
       "exw": {
-        "term": "EXW (Ex Works)",
-        "definition": "A shipping term where the buyer is responsible for all transportation costs and risks from the manufacturer's facility to the final destination."
+        "term": "EXW（工場渡し）",
+        "definition": "メーカーの施設から最終仕向地までの、すべての輸送費とリスクを買主が負担する貿易条件。"
       },
       "pp-sample": {
-        "term": "PP Sample (Pre-Production Sample)",
-        "definition": "A sample produced before mass production begins to verify design, materials, and construction. Must be approved by the buyer before production starts."
+        "term": "PP サンプル（量産前サンプル）",
+        "definition": "量産開始前に、デザイン・素材・縫製構造を確認するために作るサンプル。生産開始前に、バイヤーの承認が必要です。"
       },
       "top-sample": {
-        "term": "TOP Sample (Top of Production Sample)",
-        "definition": "A sample pulled from the actual production line during manufacturing to verify that quality and specifications match the approved PP sample."
+        "term": "TOP サンプル（量産ラインサンプル）",
+        "definition": "製造中に実際の生産ラインから抜き取るサンプルで、品質と仕様が、承認済みの PP サンプルと一致するかを確認します。"
       },
       "tpu": {
-        "term": "TPU (Thermoplastic Polyurethane)",
-        "definition": "A flexible, durable plastic material used for waterproof coatings, labels, and patches on backpacks. Known for its excellent abrasion and weather resistance."
+        "term": "TPU（熱可塑性ポリウレタン）",
+        "definition": "防水コーティングやラベル、パッチに使われる、柔軟で耐久性の高いプラスチック素材。優れた耐摩耗性と耐候性で知られます。"
       }
     }
   },
@@ -724,45 +868,37 @@
     "subtitle": "世界中のブランドに信頼されるOEMバックパック製造",
     "items": [
       {
-        "name": "Sarah Chen",
-        "role": "調達ディレクター",
-        "company": "Pacific Outdoor Co.",
-        "quote": "Better Bagsはカスタムバックパックラインで卓越した品質を提供してくれました。細部へのこだわりと納期への取り組みは期待以上でした。",
-        "rating": 5
-      },
-      {
-        "name": "Michael Torres",
-        "role": "プロダクトマネージャー",
-        "company": "EuroTrail Gear",
-        "quote": "Better Bagsとの協力により、製品開発プロセスが変わりました。エンジニアリングチームは最終製品を改善する貴重な設計提案をしてくれました。",
-        "rating": 5
-      },
-      {
-        "name": "Yuki Tanaka",
-        "role": "ブランドディレクター",
-        "company": "Nomad Supply",
-        "quote": "サンプリングから量産まで、Better Bagsは一貫した品質を維持しました。プロセス全体を通じたコミュニケーションは素晴らしかったです。",
-        "rating": 5
-      },
-      {
-        "name": "David Muller",
-        "role": "運営責任者",
-        "company": "Summit Brands GmbH",
-        "quote": "3年以上Better Bagsと提携しています。競争力のある価格と信頼性の高い納品により、私たちの主要メーカーとなっています。",
-        "rating": 5
+        "name": "清水 幸太",
+        "role": "商品管理部 部長",
+        "company": "キャロットカンパニー",
+        "rating": 4.5,
+        "quote": "10点満点で評価するなら、9点ですね。2回目の時に少し気になるところはありましたが、それ以外はすごくいいですよ。今の状況だったら十分ですね。生産ラインの中で少し課題はありましたが、それはどの工場にもあることですし、それ以外は特に問題ありませんでした。全体として、ちゃんとやってくれていると評価しています。"
       }
-    ]
+    ],
+    "carousel": {
+      "previous": "前のスライド",
+      "next": "次のスライド",
+      "goTo": "スライド {index} へ移動",
+      "status": "スライド {current} / {total}"
+    }
   },
   "author": {
-    "writtenBy": "Written by",
-    "readingTime": "Reading time",
-    "minRead": "min read"
+    "writtenBy": "執筆者",
+    "readingTime": "読了時間",
+    "minRead": "分で読めます",
+    "aboutAuthor": "著者について"
   },
   "certifications": {
-    "title": "Certifications",
+    "title": "認証",
     "iso9001": "ISO 9001",
     "oekoTex": "OEKO-TEX",
     "grs": "GRS",
     "gots": "GOTS"
+  },
+  "quoteWidget": {
+    "openLabel": "お見積もり依頼",
+    "minimize": "最小化",
+    "dragHandle": "ドラッグで移動",
+    "mobileJumpLabel": "見積もりフォームへ移動"
   }
 }

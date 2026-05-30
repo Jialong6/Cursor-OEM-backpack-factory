@@ -4,12 +4,17 @@ import { useEffect, useState } from 'react';
 import HeroBanner from '@/components/sections/HeroBanner';
 import { BentoHero } from '@/components/bento';
 import AboutUs from '@/components/sections/AboutUs';
+import CostAdvantage from '@/components/sections/CostAdvantage';
+import WhatSetsUsApart from '@/components/sections/WhatSetsUsApart';
+import MarketPositioning from '@/components/sections/MarketPositioning';
 import Features from '@/components/sections/Features';
 import Services from '@/components/sections/Services';
 import FAQ from '@/components/sections/FAQ';
 import Contact from '@/components/sections/Contact';
 import Testimonials from '@/components/sections/Testimonials';
 import Blog from '@/components/sections/Blog';
+import { QuoteFormProvider } from '@/components/quote/QuoteFormContext';
+import FloatingQuoteWidget from '@/components/quote/FloatingQuoteWidget';
 
 /**
  * 首页组件 - 单页滚动式网站
@@ -69,6 +74,15 @@ export default function Home() {
       {/* Banner 区块 - 支持 Bento Grid 布局 */}
       {useBentoLayout ? <BentoHero /> : <HeroBanner />}
 
+      {/* 成本优势对比区块 */}
+      <CostAdvantage />
+
+      {/* 差异化卖点区块 */}
+      <WhatSetsUsApart />
+
+      {/* 市场定位 2x2 矩阵区块 */}
+      <MarketPositioning />
+
       {/* About 区块 */}
       <AboutUs />
 
@@ -84,8 +98,11 @@ export default function Home() {
       {/* FAQ 区块 */}
       <FAQ />
 
-      {/* Contact 区块 */}
-      <Contact />
+      {/* Contact 区块 + 可拖动 Get A Quote 浮窗（共享同一 form state） */}
+      <QuoteFormProvider>
+        <Contact />
+        <FloatingQuoteWidget />
+      </QuoteFormProvider>
 
       {/* Blog 区块 */}
       <Blog />

@@ -56,7 +56,7 @@ interface FAQPageSchemaProps {
  * ```
  */
 export default function FAQPageSchema({ sections, baseUrl }: FAQPageSchemaProps) {
-  const resolvedBaseUrl = baseUrl || process.env.NEXT_PUBLIC_BASE_URL || 'https://betterbagsmyanmar.com';
+  const resolvedBaseUrl = baseUrl || process.env.NEXT_PUBLIC_BASE_URL || 'https://betterbagsmm.com';
 
   const jsonLd = {
     '@context': 'https://schema.org',

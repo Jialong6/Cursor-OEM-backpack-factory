@@ -157,7 +157,7 @@
 
 #### 验收标准
 
-1. 当联系我们区块显示时，网站系统应展示公司联系信息：地址（Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai工业区，仰光，缅甸）、电话（+1 814.880.1463）、邮箱（jay@biteerbags.com）、WhatsApp（+1 814.880.1463）。
+1. 当联系我们区块显示时，网站系统应展示公司联系信息：地址（Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai工业区，仰光，缅甸）、电话（+1 814.880.1463）、邮箱（jay@betterbagsmm.com）、WhatsApp（+1 814.880.1463）。
 2. 当联系我们区块显示时，网站系统应展示完整的询价表单，包含以下必填字段：First Name、Last Name、Email、Country/Region、Company/Brand Name、Phone Number、Subject、Your Message。
 3. 当询价表单显示时，网站系统应包含"Estimated order quantity (per design)"下拉选择字段，选项为：Less than 100 pcs、100-300 pcs、300-1000 pcs、More than 1000 pcs。
 4. 当询价表单显示时，网站系统应包含"Do you have a tech pack or reference sample?"下拉选择字段，选项为：Yes, I have a tech pack、I have a physical sample、I only have an idea/sketch。

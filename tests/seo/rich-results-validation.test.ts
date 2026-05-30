@@ -72,7 +72,7 @@ function generateManufacturingBusinessJsonLd(locale: string, description: string
  */
 function generateFAQPageJsonLd(
   sections: Array<{ title: string; items: Array<{ q: string; a: string }> }>,
-  baseUrl = 'https://betterbagsmyanmar.com'
+  baseUrl = 'https://betterbagsmm.com'
 ) {
   return {
     '@context': 'https://schema.org',
@@ -414,7 +414,7 @@ describe('Google Rich Results 结构验证', () => {
         locale: 'en',
       });
 
-      expect(schema.image).toBe('https://betterbagsmyanmar.com/images/blog/test.jpg');
+      expect(schema.image).toBe('https://betterbagsmm.com/images/blog/test.jpg');
       expect(() => new URL(schema.image)).not.toThrow();
     });
 

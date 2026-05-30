@@ -29,7 +29,8 @@
     "process": "Process",
     "faq": "FAQ",
     "contact": "Contact Us",
-    "blog": "Blog"
+    "blog": "Blog",
+    "skipToContent": "跳轉到主要內容"
   },
   "banner": {
     "line1": "Better Bags since 2003",
@@ -39,7 +40,7 @@
       "highlight": "one-stop",
       "post": " solutions for your backpack needs—including material sourcing, sampling, mass production, strict quality control, and global delivery."
     },
-    "p2": "With more than 20 years of experience serving international brands from Japan, South Korea, the United States, and Europe, we manufacture a wide variety of bags: travel bags, backpacks, shoulder bags, tote bags, and more—tailored to your exact requirements.",
+    "p2": "With more than 20 years of experience and a primary focus on the Japanese market—including 15+ years of long-term partnerships with leading Japanese brands such as Anello—we also support select clients from Korea, the U.S., and Europe. We manufacture a wide variety of bags: travel bags, backpacks, shoulder bags, tote bags, and more—tailored to your exact requirements.",
     "p3": "Our competitive pricing and sustainable production options make us the perfect partner for businesses, organizations, and events of any scale.",
     "cta": "Get A Quote"
   },
@@ -85,21 +86,119 @@
     },
     "company": {
       "title": "Better Bags Myanmar Company Limited",
-      "p1": "Founded in 2003, Better Bags Myanmar specializes in the OEM/ODM manufacturing of premium backpacks, designed for a global clientele. Our comprehensive capabilities cover leisure, travel, climbing, and fashion bags, crafted from responsibly sourced polyester, cotton, and synthetic leather.",
-      "p2": "Our story began in Shenzhen, China, where our founder, Mr. Li Guangtong, gained deep expertise working with top international brands. Driven by a vision of global excellence, we later established a major facility in Qingdao and, following thorough research, launched our state-of-the-art production base in Yangon, Myanmar in 2023.",
-      "p3": "Over the past two decades, we have proudly partnered with world-renowned brands such as Anello, New Balance, Nike, Fila, and more. Our unwavering commitment to quality, reliability, and proactive service has enabled us to maintain long-term partnerships—especially with leading Japanese brands for over 15 years.",
+      "p1": "Founded in 2003, Better Bags Myanmar specializes in the OEM/ODM manufacturing of premium backpacks, designed for a global client. Our comprehensive capabilities cover leisure, travel, climbing, and fashion bags, crafted from responsibly sourced polyester, cotton, and synthetic leather.",
+      "p2": "Our story began in Shenzhen, China, where our founder, Mr. Li Guangtong, gained deep expertise working with top international brands. Driven by a vision of global excellence, we later established our main production base in Shandong (Rizhao) — paired with a dedicated sampling and development center in Qingdao — and, following thorough research, launched our state-of-the-art production base in Yangon, Myanmar in 2023.",
+      "p3": "Over the past two decades, our primary focus has been the Japanese market, and we have proudly partnered with multiple Japanese brands — including Anello — alongside selected global brands such as New Balance, Nike, and Fila. Our unwavering commitment to quality, reliability, and proactive service has enabled us to maintain long-term partnerships, with many leading Japanese brands working with us for over 15 years.",
       "p4": "Today, Better Bags stands at the intersection of tradition and innovation. By optimizing our dual-factory model, investing in people and systems, and adhering strictly to international standards, we meet the evolving needs of global customers with efficiency, flexibility, and future-oriented solutions. As we look ahead, our goal is to set new benchmarks in both client satisfaction and responsible manufacturing."
-    }
+    },
+    "trustedBrands": "與全球知名品牌合作"
+  },
+  "costAdvantage": {
+    "title": "Why Myanmar: The Cost-vs-Lead-Time Sweet Spot",
+    "subtitle": "Same product, same destination (Japan). Different trade-offs. See how our Myanmar production stacks up against China and Vietnam.",
+    "countries": [
+      {
+        "code": "CN",
+        "name": "China",
+        "priceLabel": "Price",
+        "priceValue": "Baseline",
+        "pricePercent": 100,
+        "leadTimeLabel": "Lead Time",
+        "leadTimeValue": "Baseline",
+        "leadTimePercent": 33
+      },
+      {
+        "code": "VN",
+        "name": "Vietnam",
+        "priceLabel": "Price",
+        "priceValue": "Same as China",
+        "pricePercent": 100,
+        "leadTimeLabel": "Lead Time",
+        "leadTimeValue": "+1 month",
+        "leadTimePercent": 66
+      },
+      {
+        "code": "MM",
+        "name": "Myanmar (Better Bags)",
+        "priceLabel": "Price",
+        "priceValue": "-10% vs China & Vietnam",
+        "pricePercent": 90,
+        "leadTimeLabel": "Lead Time",
+        "leadTimeValue": "+2 months",
+        "leadTimePercent": 100,
+        "badge": "Best Value"
+      }
+    ],
+    "takeaway": "Trade 2 months of extra lead time for 10% lower cost — that's our value proposition for OEM buyers.",
+    "cta": "Get A Quote"
+  },
+  "whatSetsUsApart": {
+    "title": "What Sets Us Apart",
+    "subtitle": "Three operational disciplines that separate Better Bags from typical OEM factories.",
+    "items": [
+      {
+        "key": "qc",
+        "title": "Japanese-Grade Quality Control",
+        "description": "Strict broken-needle replacement logs and 100% X-ray screening — we physically eliminate customer-complaint risk at the production line, not after the fact."
+      },
+      {
+        "key": "cost",
+        "title": "China-Myanmar Cost Engineering",
+        "description": "Chinese supply-chain orchestration paired with Yangon-based labor settlement compresses unit cost on bulk orders without compromising quality."
+      },
+      {
+        "key": "leadTime",
+        "title": "Capacity-Locked 4-Month Lead Time",
+        "description": "We never over-book. Every order locks in a 4-month production and delivery window so your launch dates stay predictable."
+      }
+    ]
+  },
+  "marketPositioning": {
+    "title": "Where Better Bags Stands in the OEM Market",
+    "subtitle": "Map every OEM factory onto a profit × quality grid — and see who lives in which corner.",
+    "axes": {
+      "profit": {
+        "low": "Thin margins",
+        "high": "Healthy margins"
+      },
+      "quality": {
+        "low": "Unstable quality & high risk",
+        "high": "Reliable quality & on-time delivery"
+      }
+    },
+    "quadrants": [
+      {
+        "position": "topRight",
+        "title": "Better Bags",
+        "description": "Cost-efficient Myanmar production paired with Japanese-grade QC — high margins, low risk, scalable bulk orders.",
+        "badge": "Best Position"
+      },
+      {
+        "position": "topLeft",
+        "title": "Large-Scale Chinese Factories",
+        "description": "Delivery quality is generally stable, but rising Chinese labor costs and policy risk squeeze your margins thin."
+      },
+      {
+        "position": "bottomRight",
+        "title": "Low-End Southeast Asian Shops",
+        "description": "Pricing looks attractive, but the absence of a QC system exposes you to breach-of-contract and claim risk at any moment."
+      },
+      {
+        "position": "bottomLeft",
+        "title": "Under-Resourced Workshops",
+        "description": "No economies of scale on cost, and unable to pass the bulk-production audits that serious clients require."
+      }
+    ]
   },
   "features": {
     "stats": [
       {
         "label": "Professional Employees",
-        "value": "800+"
+        "value": "600+"
       },
       {
         "label": "Low MOQ",
-        "value": "150 PCS"
+        "value": "From 1,500 PCS"
       },
       {
         "label": "Proofing Time",
@@ -129,7 +228,7 @@
       {
         "title": "Flexibility",
         "color": "#81C3D7",
-        "desc": "With manufacturing centers in both Qingdao, China and Yangon, Myanmar, we offer unparalleled flexibility to meet our customers' diverse needs. Our Myanmar factory is fully equipped to handle large-volume production with speed and efficiency, while our long-established Qingdao facility (20+ years of expertise) excels in design, sampling, sourcing, and personalized project management. Whether you need rapid prototyping, small custom batches, or are scaling up to large bulk orders, our dual-factory model ensures your requirements are fulfilled with agility and precision."
+        "desc": "With production bases in both Shandong (Rizhao), China and Yangon, Myanmar — supported by a dedicated sampling and development center in Qingdao — we offer unparalleled flexibility to meet our customers' diverse needs. Our Myanmar factory is fully equipped to handle large-volume production with speed and efficiency, while our long-established Shandong operation (20+ years of expertise) excels at design, sampling, sourcing, and personalized project management. Whether you need rapid prototyping, small custom batches, or are scaling up to large bulk orders, our dual-factory model ensures your requirements are fulfilled with agility and precision."
       },
       {
         "title": "Communication",
@@ -144,7 +243,7 @@
       {
         "title": "Competitive Pricing",
         "color": "#2f6690",
-        "desc": "Our primary production base in Myanmar gives us a significant cost advantage—production costs here are much lower than in China, and even compared to other Southeast Asian countries such as Vietnam and Thailand, we are able to offer more competitive prices under the same quality standards. This means our clients receive high-quality products at a better value, without compromise.\n\nMyanmar's cost efficiency perfectly complements our Qingdao hub, which specializes in design, sampling, and sourcing. By combining Myanmar's unbeatable production pricing and Qingdao's strong development capabilities, we achieve the \"sweet spot\" in global manufacturing—offering clients both outstanding quality and truly competitive pricing."
+        "desc": "Our primary production base in Myanmar gives us a significant cost advantage—production costs here are much lower than in China, and even compared to other Southeast Asian countries such as Vietnam and Thailand, we are able to offer more competitive prices under the same quality standards. This means our clients receive high-quality products at a better value, without compromise.\n\nMyanmar's cost efficiency perfectly complements our China operation — our Shandong (Rizhao) production base together with our Qingdao sampling and development center, which specialize in design, sampling, and sourcing. By combining Myanmar's unbeatable production pricing with China's strong development capabilities, we achieve the \"sweet spot\" in global manufacturing—offering clients both outstanding quality and truly competitive pricing."
       }
     ]
   },
@@ -290,7 +389,7 @@
           },
           {
             "q": "Do I get a dedicated project manager or team?",
-            "a": "Yes, every project is assigned to a dedicated account manager and project team for smooth, timely and personalized service."
+            "a": "Yes, every project is assigned to a dedicated project manager and project team for smooth, timely and personalized service."
           },
           {
             "q": "How will I know the timeline for my project?",
@@ -307,15 +406,15 @@
           },
           {
             "q": "What is your typical Minimum Order Quantity (MOQ)?",
-            "a": "Our general MOQ is 150 pieces per design and color. Lower quantities may be considered upon request."
+            "a": "For Myanmar bulk production our MOQ is 1,500 pcs per design and color. Our China (Shandong) facility additionally accepts sample and rush orders, ranging from a few hundred up to tens of thousands of pcs per design — get in touch to discuss your specific needs."
           },
           {
             "q": "How is your quotation process structured?",
-            "a": "We first provide an estimated quotation based on your tech pack and details. A final binding quote is issued after prototype/sample approval. Prices are quoted FOB (Yangon) or Ex-Works, excluding additional surcharges from suppliers."
+            "a": "We first provide an estimated quotation based on your tech pack and details. A final binding quote is issued after prototype/sample approval. Prices are quoted FOB Yangon for Myanmar bulk orders, or FOB Qingdao for sample and rush orders from our Shandong facility. CIF quotes are available on request."
           },
           {
             "q": "What are your payment terms?",
-            "a": "Standard terms are 50% deposit with purchase order (PO), and the balance before shipment. LC for the balance is possible for qualified clients."
+            "a": "Payment terms are tiered: New clients pay 30% T/T deposit with the PO, with the 70% balance T/T after inspection passes. Long-term clients enjoy a credit line — T/T within 1 week of the B/L copy or pickup. For large or special orders we also accept L/C to safeguard both sides."
           },
           {
             "q": "Can you provide materials with special certifications (e.g., OEKO-TEX, GRS, GOTS)?",
@@ -328,7 +427,7 @@
         "items": [
           {
             "q": "How many rounds of sample revisions are allowed?",
-            "a": "Sample revisions are case by case. Most orders include at least one revision; we can offer additional revision packages as needed."
+            "a": "Most orders go through 1–2 sample revisions (e.g. 2nd / 3rd sample) before the PP sample is approved and bulk production is scheduled; additional revision packages can be arranged as needed."
           },
           {
             "q": "What is your lead time for sample/prototype production?",
@@ -365,11 +464,11 @@
           },
           {
             "q": "What is your standard production lead time?",
-            "a": "Typical lead time from PO to completion is 13–15 weeks, but may vary with product complexity and volume."
+            "a": "Standard bulk lead time is about 3 months from PP sample approval to factory completion, including overseas material sourcing and Myanmar production scheduling. Consolidation delays and production-queue timing may extend this on a per-project basis."
           },
           {
             "q": "What's your main port of loading?",
-            "a": "All orders ship FOB Yangon Port, Yangon, Myanmar, unless otherwise arranged."
+            "a": "Myanmar bulk orders ship FOB Yangon Port, Yangon, Myanmar. For samples and rush orders shipped from our Shandong facility, the default is FOB Qingdao."
           },
           {
             "q": "Can you customize packaging/handling for my orders?",
@@ -426,15 +525,42 @@
     "intro": "Fill out the form below and we'll get back to you within 24 hours. For urgent inquiries, call or WhatsApp us directly.",
     "address": {
       "label": "Address",
-      "value": "Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai Industrial Zone, Yangon, Myanmar"
+      "value": "Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai Industrial Zone, Yangon, Myanmar",
+      "viewOnMap": "View on Google Maps"
     },
     "phone": {
       "label": "Phone Number",
-      "value": "+1 814.880.1463"
+      "fallback": "For other languages, please contact us via email",
+      "lines": [
+        {
+          "lang": "中文",
+          "number": "+86 (532) 8856-2277",
+          "hours": "Beijing Time 8:00-17:00 · Mon-Fri",
+          "person": ""
+        },
+        {
+          "lang": "日本語 / 한국어",
+          "number": "+86 152 5320 6760",
+          "hours": "Beijing Time 8:00-17:00 · Mon-Fri",
+          "person": "Ms. Cui"
+        },
+        {
+          "lang": "English",
+          "number": "+86 130 6139 1463",
+          "hours": "Myanmar Time 7:30-18:00 · Mon-Sat",
+          "person": "Mr. Jay"
+        },
+        {
+          "lang": "မြန်မာ",
+          "number": "+95 9 9856 70999",
+          "hours": "Myanmar Time 7:30-18:00 · Mon-Sat",
+          "person": ""
+        }
+      ]
     },
     "email": {
       "label": "Email Address",
-      "value": "jay@biteerbags.com"
+      "value": "jay@betterbagsmm.com"
     },
     "whatsapp": {
       "label": "Whatsapp",
@@ -462,7 +588,11 @@
         "label": "Country/Region",
         "placeholder": "United States",
         "error": "Please enter your country/region",
-        "loading": "正在偵測位置..."
+        "loading": "正在偵測位置...",
+        "searchPlaceholder": "Search country or dial code",
+        "noResults": "No matching country",
+        "popularLabel": "Popular",
+        "allLabel": "All countries"
       },
       "companyBrandName": {
         "label": "Company/Brand Name",
@@ -471,8 +601,11 @@
       },
       "phoneNumber": {
         "label": "Phone Number (Optional)",
-        "placeholder": "+1 555-123-4567",
-        "error": "Please enter a valid phone number"
+        "placeholder": "電話號碼",
+        "error": "Please enter a valid phone number",
+        "codeLabel": "Phone country code",
+        "codePlaceholder": "Code",
+        "codeError": "Please select a dial code"
       },
       "subject": {
         "label": "Subject",
@@ -480,26 +613,37 @@
         "error": "Please enter a subject"
       },
       "message": {
-        "label": "Your Message",
+        "label": "Your Message (Optional)",
         "placeholder": "Please describe your project needs, target quantity, timeline, and any special requirements...",
-        "error": "Please enter a message with at least 20 characters"
+        "error": "Message must be less than 2000 characters"
       },
       "orderQuantity": {
         "label": "Estimated Order Quantity (per design)",
         "placeholder": "Select quantity range",
-        "error": "Please select an order quantity"
+        "error": "Please select an order quantity",
+        "optionLabels": [
+          "少於 100 件",
+          "100-300 件",
+          "300-1000 件",
+          "超過 1000 件"
+        ]
       },
       "techPackAvailability": {
         "label": "Do you have a tech pack or reference sample?",
         "placeholder": "Select an option",
-        "error": "Please select an option"
+        "error": "Please select an option",
+        "optionLabels": [
+          "是，我有技術包",
+          "我有實物樣品",
+          "我只有想法/草圖"
+        ]
       },
       "fileUpload": {
         "label": "Upload Files (Optional)",
         "description": "Upload tech packs, sketches, or sample photos. Max 5 files, 10MB each.",
         "button": "Choose Files",
         "dragDrop": "or drag and drop files here",
-        "acceptedFormats": "Accepted formats: JPG, PNG, WebP, PDF, DOC, DOCX"
+        "acceptedFormats": "Accepted formats: JPG, PNG, WebP, PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX"
       },
       "humanVerification": {
         "label": "Human Verification",
@@ -527,7 +671,7 @@
     "companyInfo": {
       "name": "Better Bags Myanmar Company Limited",
       "address": "Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai Industrial Zone, Yangon, Myanmar",
-      "email": "jay@biteerbags.com",
+      "email": "jay@betterbagsmm.com",
       "phone": "+1 814.880.1463"
     },
     "email": "Email",
@@ -724,39 +868,25 @@
     "subtitle": "全球品牌信賴的優質OEM背包製造商",
     "items": [
       {
-        "name": "Sarah Chen",
-        "role": "Sourcing Director",
-        "company": "Pacific Outdoor Co.",
-        "quote": "Better Bags delivered exceptional quality on our custom backpack line. Their attention to detail and commitment to deadlines exceeded our expectations.",
-        "rating": 5
-      },
-      {
-        "name": "Michael Torres",
-        "role": "Product Manager",
-        "company": "EuroTrail Gear",
-        "quote": "Working with Better Bags transformed our product development process. Their engineering team provided valuable design input that improved our final product.",
-        "rating": 5
-      },
-      {
-        "name": "Yuki Tanaka",
-        "role": "Brand Director",
-        "company": "Nomad Supply",
-        "quote": "From sampling to bulk production, Better Bags maintained consistent quality. Their communication throughout the process was outstanding.",
-        "rating": 5
-      },
-      {
-        "name": "David Muller",
-        "role": "Operations Head",
-        "company": "Summit Brands GmbH",
-        "quote": "We have been partnering with Better Bags for over 3 years. Their competitive pricing and reliable delivery make them our go-to manufacturer.",
-        "rating": 5
+        "name": "清水幸太",
+        "role": "商品管理部 部長",
+        "company": "Carrot Company",
+        "rating": 4.5,
+        "quote": "如果用 10 分制來打分的話，我會給 9 分。第二次到緬甸工廠視察的時候有一點點讓我在意的地方，但除此之外都非常好——以現在的情況來說已經完全足夠了。生產線上確實碰到過一些課題，但這是任何工廠都會遇到的，除此之外沒有什麼問題。整體來說，我評價你們做得很扎實。"
       }
-    ]
+    ],
+    "carousel": {
+      "previous": "上一張",
+      "next": "下一張",
+      "goTo": "跳轉到第 {index} 張",
+      "status": "第 {current} 張，共 {total} 張"
+    }
   },
   "author": {
     "writtenBy": "作者",
     "readingTime": "閱讀時間",
-    "minRead": "分鐘閱讀"
+    "minRead": "分鐘閱讀",
+    "aboutAuthor": "關於作者"
   },
   "certifications": {
     "title": "認證資質",
@@ -764,5 +894,11 @@
     "oekoTex": "OEKO-TEX",
     "grs": "GRS",
     "gots": "GOTS"
+  },
+  "quoteWidget": {
+    "openLabel": "Get A Quote",
+    "minimize": "Minimize",
+    "dragHandle": "Drag to move",
+    "mobileJumpLabel": "Jump to quote form"
   }
 }

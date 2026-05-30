@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useParams } from 'next/navigation';
 import { getFeaturedBlogPosts } from '@/lib/blog-data';
+import { getLocalizedField } from '@/lib/blog-utils';
 import OptimizedImage, { IMAGE_SIZES, ASPECT_RATIOS } from '@/components/ui/OptimizedImage';
 
 /**
@@ -25,7 +26,7 @@ export default function Blog() {
 
   const titleAnim = useScrollAnimation({ variant: 'fade-up' });
   const cardsAnim = useScrollAnimation({ variant: 'fade-up', delay: 100 });
-  const locale = params.locale as 'en' | 'zh';
+  const locale = params.locale as string;
   const featuredPosts = getFeaturedBlogPosts(3);
 
   /**
@@ -38,7 +39,18 @@ export default function Blog() {
       month: 'long',
       day: 'numeric',
     };
-    return date.toLocaleDateString(locale === 'zh' ? 'zh-CN' : 'en-US', options);
+    const dateLocaleMap: Record<string, string> = {
+      ja: 'ja-JP',
+      zh: 'zh-CN',
+      'zh-tw': 'zh-TW',
+      de: 'de-DE',
+      nl: 'nl-NL',
+      fr: 'fr-FR',
+      pt: 'pt-PT',
+      es: 'es-ES',
+      ru: 'ru-RU',
+    };
+    return date.toLocaleDateString(dateLocaleMap[locale] ?? 'en-US', options);
   };
 
   return (
@@ -61,7 +73,7 @@ export default function Blog() {
               {/* 文章缩略图 - 使用优化的图片组件 */}
               <OptimizedImage
                 src={post.thumbnail}
-                alt={post.title[locale]}
+                alt={getLocalizedField(post.title, locale) ?? ''}
                 fill
                 aspectRatio={ASPECT_RATIOS.WIDE}
                 sizes={IMAGE_SIZES.BLOG_THUMBNAIL}
@@ -75,18 +87,18 @@ export default function Blog() {
                 {/* 分类和日期 */}
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-xs font-semibold text-primary uppercase tracking-wide">
-                    {post.category}
+                    {getLocalizedField(post.category, locale)}
                   </span>
                   <span className="text-xs text-neutral-500">{formatDate(post.date)}</span>
                 </div>
 
                 {/* 标题 */}
                 <h3 className="text-xl font-bold text-neutral-800 mb-2 group-hover:text-primary transition-colors line-clamp-2">
-                  {post.title[locale]}
+                  {getLocalizedField(post.title, locale)}
                 </h3>
 
                 {/* 摘要 */}
-                <p className="text-neutral-600 text-sm line-clamp-3 mb-4">{post.excerpt[locale]}</p>
+                <p className="text-neutral-600 text-sm line-clamp-3 mb-4">{getLocalizedField(post.excerpt, locale)}</p>
 
                 {/* 阅读更多 */}
                 <div className="flex items-center text-primary font-semibold text-sm group-hover:underline">

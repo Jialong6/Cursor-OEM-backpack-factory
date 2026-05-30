@@ -9,6 +9,11 @@ import {
 } from '@/hooks/useNavigation'
 import { NAVBAR_HEIGHT, SCROLL_THRESHOLD, SECTION_IDS } from '@/lib/navigation'
 
+// useSmoothScroll 依赖 next/navigation 的 usePathname 判断当前路由
+vi.mock('next/navigation', () => ({
+  usePathname: () => '/en',
+}))
+
 /**
  * Navigation Hooks property tests
  *
@@ -302,7 +307,15 @@ describe('useSmoothScroll', () => {
     expect(scrollOptions.behavior).toBe('smooth')
   })
 
-  it('should not scroll if target element does not exist', () => {
+  it('should not smooth-scroll when target is absent; navigates to home section instead', () => {
+    // 当前页（/en）不存在该 section 时，不滚动，而是整页跳转到 /en#section
+    const originalLocation = window.location
+    const hrefSetter = vi.fn()
+    Object.defineProperty(window, 'location', {
+      configurable: true,
+      value: { ...originalLocation, set href(v: string) { hrefSetter(v) } },
+    })
+
     const { result } = renderHook(() => useSmoothScroll())
 
     const mockEvent = {
@@ -313,6 +326,28 @@ describe('useSmoothScroll', () => {
       result.current(mockEvent, '#nonexistent')
     })
 
+    expect(mockScrollTo).not.toHaveBeenCalled()
+    expect(hrefSetter).toHaveBeenCalledWith('/en#nonexistent')
+
+    Object.defineProperty(window, 'location', {
+      configurable: true,
+      value: originalLocation,
+    })
+  })
+
+  it('should not intercept non-anchor (path) hrefs', () => {
+    const { result } = renderHook(() => useSmoothScroll())
+
+    const mockEvent = {
+      preventDefault: vi.fn(),
+    } as unknown as React.MouseEvent<HTMLAnchorElement>
+
+    act(() => {
+      result.current(mockEvent, '/en/blog')
+    })
+
+    // 路径式 href 交给 next/Link，不 preventDefault、不滚动
+    expect(mockEvent.preventDefault).not.toHaveBeenCalled()
     expect(mockScrollTo).not.toHaveBeenCalled()
   })
 })

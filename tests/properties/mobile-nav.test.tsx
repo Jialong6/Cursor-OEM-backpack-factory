@@ -9,10 +9,10 @@ import React from 'react'
 /**
  * MobileNav property tests
  *
- * Key properties:
- * - Focus trap completeness: tab cycling within menu
- * - ESC key closes menu
- * - Active state uniqueness
+ * 注意：抽屉通过 createPortal 渲染到 document.body（脱离 navbar 的 backdrop-filter
+ * 包含块）。因此抽屉/遮罩/导航项用 document.querySelector 查询；汉堡按钮仍在
+ * render 的 container 内，用 container 查询。tests/setup.ts 的 afterEach(cleanup)
+ * 保证每个测试后 DOM 清理，document 查询互不串扰。
  */
 
 // Mock translations
@@ -71,8 +71,8 @@ describe('MobileNav', () => {
     expect(button?.getAttribute('aria-label')).toBeTruthy()
   })
 
-  it('should show menu drawer when open', () => {
-    const { container } = renderWithIntl(
+  it('should render the drawer (portaled to body) when open', () => {
+    renderWithIntl(
       <MobileNav
         isOpen={true}
         onToggle={mockOnToggle}
@@ -84,14 +84,13 @@ describe('MobileNav', () => {
       />
     )
 
-    // Menu should be visible (not pointer-events-none)
-    const drawer = container.querySelector('[class*="fixed inset-0"]')
-    expect(drawer?.className).toContain('opacity-100')
-    expect(drawer?.className).toContain('pointer-events-auto')
+    // 抽屉 portal 到 document.body：开启时应存在
+    const drawer = document.querySelector('[class*="fixed inset-0"]')
+    expect(drawer).toBeTruthy()
   })
 
-  it('should hide menu drawer when closed', () => {
-    const { container } = renderWithIntl(
+  it('should NOT render the drawer when closed (conditional render)', () => {
+    renderWithIntl(
       <MobileNav
         isOpen={false}
         onToggle={mockOnToggle}
@@ -103,14 +102,13 @@ describe('MobileNav', () => {
       />
     )
 
-    // Menu should be hidden (pointer-events-none)
-    const drawer = container.querySelector('[class*="fixed inset-0"]')
-    expect(drawer?.className).toContain('opacity-0')
-    expect(drawer?.className).toContain('pointer-events-none')
+    // 条件渲染：关闭时抽屉不在 DOM 中
+    const drawer = document.querySelector('[class*="fixed inset-0"]')
+    expect(drawer).toBeFalsy()
   })
 
   it('should render all navigation items when open', () => {
-    const { container } = renderWithIntl(
+    renderWithIntl(
       <MobileNav
         isOpen={true}
         onToggle={mockOnToggle}
@@ -123,7 +121,7 @@ describe('MobileNav', () => {
     )
 
     NAV_ITEMS.forEach(({ href }) => {
-      const link = container.querySelector(`a[href="${href}"]`)
+      const link = document.querySelector(`a[href="${href}"]`)
       expect(link).toBeTruthy()
     })
   })
@@ -148,7 +146,7 @@ describe('MobileNav', () => {
   })
 
   it('should call onClose when backdrop is clicked', () => {
-    const { container } = renderWithIntl(
+    renderWithIntl(
       <MobileNav
         isOpen={true}
         onToggle={mockOnToggle}
@@ -160,8 +158,8 @@ describe('MobileNav', () => {
       />
     )
 
-    // Click the backdrop (the first div with bg-black/50)
-    const backdrop = container.querySelector('[class*="bg-black/50"]')
+    // Click the backdrop (the div with bg-black/50)
+    const backdrop = document.querySelector('[class*="bg-black/50"]')
     fireEvent.click(backdrop!)
 
     expect(mockOnClose).toHaveBeenCalledTimes(1)
@@ -173,7 +171,7 @@ describe('MobileNav', () => {
         fc.constantFrom(...SECTION_IDS),
         fc.boolean(),
         (activeSection, isScrolled) => {
-          const { container, unmount } = renderWithIntl(
+          const { unmount } = renderWithIntl(
             <MobileNav
               isOpen={true}
               onToggle={mockOnToggle}
@@ -185,8 +183,8 @@ describe('MobileNav', () => {
             />
           )
 
-          // Find all links in the menu drawer
-          const menuDrawer = container.querySelector('nav')
+          // Find all links in the menu drawer (portaled to body)
+          const menuDrawer = document.querySelector('nav')
           if (!menuDrawer) {
             unmount()
             return false
@@ -217,7 +215,7 @@ describe('MobileNav', () => {
       fc.property(
         fc.constantFrom(...SECTION_IDS),
         (activeSection) => {
-          const { container, unmount } = renderWithIntl(
+          const { unmount } = renderWithIntl(
             <MobileNav
               isOpen={true}
               onToggle={mockOnToggle}
@@ -229,7 +227,7 @@ describe('MobileNav', () => {
             />
           )
 
-          const activeLink = container.querySelector(`a[href="#${activeSection}"]`)
+          const activeLink = document.querySelector(`a[href="#${activeSection}"]`)
 
           if (!activeLink) {
             unmount()
@@ -254,7 +252,7 @@ describe('MobileNav', () => {
         (navItem) => {
           mockOnNavClick.mockClear()
 
-          const { container, unmount } = renderWithIntl(
+          const { unmount } = renderWithIntl(
             <MobileNav
               isOpen={true}
               onToggle={mockOnToggle}
@@ -266,7 +264,7 @@ describe('MobileNav', () => {
             />
           )
 
-          const link = container.querySelector(`a[href="${navItem.href}"]`)
+          const link = document.querySelector(`a[href="${navItem.href}"]`)
 
           if (!link) {
             unmount()

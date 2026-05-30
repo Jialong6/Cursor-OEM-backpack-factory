@@ -96,7 +96,8 @@ export const localeConfig: Record<Locale, LocaleConfigItem> = {
   'zh-tw': {
     name: 'Chinese (Traditional)',
     nativeName: '\u4E2D\u6587\u7E41\u9AD4',
-    flag: '\u{1F1F9}\u{1F1FC}',
+    // \u4E1A\u52A1\u8BC9\u6C42:\u7E41\u4F53\u4E0E\u7B80\u4F53\u5171\u7528\u4E2D\u56FD\u65D7(\u53F0\u6E7E\u65D7 emoji \u5728\u90E8\u5206\u7CFB\u7EDF/\u5B57\u4F53\u4E0B\u6E32\u67D3\u4E3A\u4E71\u7801)
+    flag: '\u{1F1E8}\u{1F1F3}',
     hreflang: 'zh-Hant',
   },
   ru: {

@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState, useRef, useCallback } from 'react'
+import { usePathname } from 'next/navigation'
 import { NAVBAR_HEIGHT, SCROLL_THRESHOLD, SECTION_IDS } from '@/lib/navigation'
 
 /**
@@ -78,22 +79,36 @@ export function useActiveSection(sectionIds: readonly string[] = SECTION_IDS): s
 export function useSmoothScroll(
   navbarHeight: number = NAVBAR_HEIGHT
 ): (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void {
+  const pathname = usePathname()
+
   const handleNavClick = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-      e.preventDefault()
-      const targetId = href.replace('#', '')
+      // 非锚点（路径式）href 交给 next/Link 自行处理
+      if (!href.startsWith('#')) return
+
+      const targetId = href.slice(1)
       const targetElement = document.getElementById(targetId)
 
       if (targetElement) {
+        // 当前页面存在该 section（首页）→ 平滑滚动
+        e.preventDefault()
         const targetPosition = targetElement.offsetTop - navbarHeight
 
         window.scrollTo({
           top: targetPosition,
           behavior: 'smooth',
         })
+        return
       }
+
+      // 当前页面没有该 section（如 blog / glossary 子路由）
+      // → 跳到首页对应 section。用整页跳转让浏览器原生处理 hash 滚动
+      // （App Router 的 router.push 切路由后不会自动滚到 hash）
+      e.preventDefault()
+      const locale = pathname.split('/')[1] || 'en'
+      window.location.href = `/${locale}${href}`
     },
-    [navbarHeight]
+    [navbarHeight, pathname]
   )
 
   return handleNavClick

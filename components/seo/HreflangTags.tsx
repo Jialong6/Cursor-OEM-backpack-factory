@@ -17,7 +17,7 @@ import { locales, localeConfig, type Locale } from '@/i18n';
  * Base URL for generating absolute URLs
  */
 const DEFAULT_BASE_URL =
-  process.env.NEXT_PUBLIC_BASE_URL || 'https://betterbagsmyanmar.com';
+  process.env.NEXT_PUBLIC_BASE_URL || 'https://betterbagsmm.com';
 
 /**
  * Hreflang tag data structure

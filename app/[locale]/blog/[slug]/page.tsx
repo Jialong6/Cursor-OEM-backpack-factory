@@ -5,129 +5,40 @@ import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { getBlogPostBySlug } from '@/lib/blog-data';
 import { getAuthorForPost } from '@/lib/author-data';
+import { getLocalizedField } from '@/lib/blog-utils';
 import { notFound } from 'next/navigation';
 import OptimizedImage, { IMAGE_SIZES, ASPECT_RATIOS } from '@/components/ui/OptimizedImage';
 import AuthorByline from '@/components/content/AuthorByline';
 import { BlogPostingSchema } from '@/components/seo';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
+import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 
-/**
- * 博客详情页面
- *
- * 功能：
- * - 展示博客文章完整内容
- * - 显示文章元信息（标题、日期、作者、分类、标签）
- * - 支持中英文内容切换
- * - 返回列表链接
- * - 面包屑导航
- * - Markdown 样式渲染
- * - 使用优化的图片组件（响应式、懒加载、保持宽高比）
- *
- * 验证需求：12.3, 4.5, 15.1, 15.2, 15.3
- */
 export default function BlogDetailPage() {
   const t = useTranslations('blogDetail');
   const params = useParams();
-  const locale = params.locale as 'en' | 'zh';
+  const locale = params.locale as string;
   const slug = params.slug as string;
 
-  // 获取文章数据
   const post = getBlogPostBySlug(slug);
 
-  // 如果文章不存在，显示 404
   if (!post) {
     notFound();
   }
 
-  // 获取作者档案
   const author = getAuthorForPost(post);
-
-  /**
-   * 渲染 Markdown 内容
-   * 这是一个简单的实现，将 Markdown 转换为基本的 HTML
-   * 在生产环境中，建议使用专业的 Markdown 渲染库如 react-markdown
-   */
-  const renderMarkdown = (markdown: string) => {
-    if (!markdown) return null;
-
-    // 简单的 Markdown 解析（仅用于演示）
-    const lines = markdown.trim().split('\n');
-    const elements: React.ReactElement[] = [];
-    let key = 0;
-
-    lines.forEach((line, index) => {
-      // 标题
-      // 注意：Markdown 中的 # 渲染为 h2，因为页面已经有一个 h1（文章标题）
-      // 符合 SEO 最佳实践：每个页面只有一个 h1（需求 14.5）
-      if (line.startsWith('### ')) {
-        elements.push(
-          <h4 key={key++} className="text-lg font-bold text-gray-900 mb-2 mt-4">
-            {line.substring(4)}
-          </h4>
-        );
-      } else if (line.startsWith('## ')) {
-        elements.push(
-          <h3 key={key++} className="text-xl font-bold text-gray-900 mb-3 mt-5">
-            {line.substring(3)}
-          </h3>
-        );
-      } else if (line.startsWith('# ')) {
-        elements.push(
-          <h2 key={key++} className="text-2xl font-bold text-gray-900 mb-4 mt-6">
-            {line.substring(2)}
-          </h2>
-        );
-      }
-      // 列表
-      else if (line.startsWith('- ')) {
-        elements.push(
-          <li key={key++} className="ml-6 mb-2 text-gray-700 list-disc">
-            {line.substring(2)}
-          </li>
-        );
-      }
-      // 有序列表
-      else if (/^\d+\.\s/.test(line)) {
-        const match = line.match(/^\d+\.\s(.*)$/);
-        if (match) {
-          elements.push(
-            <li key={key++} className="ml-6 mb-2 text-gray-700 list-decimal">
-              {match[1]}
-            </li>
-          );
-        }
-      }
-      // 粗体文本
-      else if (line.includes('**')) {
-        const parts = line.split('**');
-        elements.push(
-          <p key={key++} className="text-gray-700 leading-relaxed mb-4">
-            {parts.map((part, i) => (i % 2 === 1 ? <strong key={i}>{part}</strong> : part))}
-          </p>
-        );
-      }
-      // 空行
-      else if (line.trim() === '') {
-        // 跳过空行
-      }
-      // 普通段落
-      else if (line.trim()) {
-        elements.push(
-          <p key={key++} className="text-gray-700 leading-relaxed mb-4">
-            {line}
-          </p>
-        );
-      }
-    });
-
-    return elements;
-  };
+  const title = getLocalizedField(post.title, locale) ?? '';
+  const excerpt = getLocalizedField(post.excerpt, locale) ?? '';
+  const content = getLocalizedField(post.content, locale);
+  const category = getLocalizedField(post.category, locale);
+  const tags = getLocalizedField(post.tags, locale);
 
   return (
     <main className="min-h-screen bg-white py-8 px-4 sm:px-6 lg:px-8">
-      {/* BlogPosting JSON-LD 结构化数据 */}
       <BlogPostingSchema
-        headline={post.title[locale]}
-        description={post.excerpt[locale]}
+        headline={title}
+        description={excerpt}
         image={post.thumbnail}
         datePublished={post.date}
         author={author}
@@ -135,7 +46,6 @@ export default function BlogDetailPage() {
       />
 
       <article className="max-w-4xl mx-auto">
-        {/* 面包屑导航 */}
         <nav className="mb-8 text-sm">
           <ol className="flex items-center space-x-2 text-gray-500">
             <li>
@@ -154,11 +64,10 @@ export default function BlogDetailPage() {
             <li>
               <span className="mx-2">/</span>
             </li>
-            <li className="text-gray-900 font-medium truncate">{post.title[locale]}</li>
+            <li className="text-gray-900 font-medium truncate">{title}</li>
           </ol>
         </nav>
 
-        {/* 返回按钮 */}
         <div className="mb-8">
           <Link
             href={`/${locale}/blog`}
@@ -177,31 +86,26 @@ export default function BlogDetailPage() {
           </Link>
         </div>
 
-        {/* 文章头部 */}
         <header className="mb-8 pb-8 border-b border-gray-200">
-          {/* 分类标签 */}
           <div className="mb-4">
             <span className="inline-block bg-primary text-white px-4 py-1 rounded-full text-sm font-semibold uppercase">
-              {post.category}
+              {category}
             </span>
           </div>
 
-          {/* 标题 */}
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">{post.title[locale]}</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">{title}</h1>
 
-          {/* 作者署名 */}
           <AuthorByline
             author={author}
             locale={locale}
             publishDate={post.date}
-            content={post.content ? post.content[locale] : undefined}
+            content={content}
             variant="full"
           />
 
-          {/* 标签 */}
-          {post.tags && post.tags.length > 0 && (
+          {tags && tags.length > 0 && (
             <div className="flex flex-wrap gap-2 mt-4">
-              {post.tags.map((tag, index) => (
+              {tags.map((tag, index) => (
                 <span
                   key={index}
                   className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs font-medium"
@@ -213,12 +117,10 @@ export default function BlogDetailPage() {
           )}
         </header>
 
-        {/* 文章缩略图 */}
-        {/* 文章封面图片 - 使用优化的图片组件 */}
         <div className="mb-8 rounded-lg overflow-hidden">
           <OptimizedImage
             src={post.thumbnail}
-            alt={post.title[locale]}
+            alt={title}
             fill
             aspectRatio={ASPECT_RATIOS.WIDE}
             sizes={IMAGE_SIZES.CONTENT}
@@ -228,15 +130,13 @@ export default function BlogDetailPage() {
           />
         </div>
 
-        {/* 文章摘要 */}
         <div className="mb-8 p-6 bg-gray-50 border-l-4 border-primary rounded-r-lg">
-          <p className="text-lg text-gray-700 italic">{post.excerpt[locale]}</p>
+          <p className="text-lg text-gray-700 italic">{excerpt}</p>
         </div>
 
-        {/* 文章内容 */}
-        <div className="prose prose-lg max-w-none mb-12">
-          {post.content ? (
-            renderMarkdown(post.content[locale])
+        <div className="prose prose-lg max-w-none mb-12 blog-content">
+          {content ? (
+            <MarkdownContent markdown={content} locale={locale} />
           ) : (
             <div className="text-gray-500 text-center py-8">
               <p>{t('noContent')}</p>
@@ -244,19 +144,16 @@ export default function BlogDetailPage() {
           )}
         </div>
 
-        {/* 文末作者署名 */}
         <div className="mb-8">
           <AuthorByline
             author={author}
             locale={locale}
             publishDate={post.date}
-            variant="compact"
+            variant="card"
           />
         </div>
 
-        {/* 文章底部 */}
         <footer className="pt-8 border-t border-gray-200">
-          {/* 分享和返回按钮 */}
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <Link
               href={`/${locale}/blog`}
@@ -273,7 +170,6 @@ export default function BlogDetailPage() {
               {t('backToList')}
             </Link>
 
-            {/* 返回顶部 */}
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className="inline-flex items-center text-gray-600 hover:text-primary font-semibold transition-colors"
@@ -285,7 +181,6 @@ export default function BlogDetailPage() {
             </button>
           </div>
 
-          {/* CTA 区块 */}
           <div className="mt-12 p-8 bg-gradient-to-r from-primary to-primary-dark rounded-lg text-center">
             <h3 className="text-2xl font-bold text-white mb-3">{t('cta.title')}</h3>
             <p className="text-white text-lg mb-6 opacity-90">{t('cta.subtitle')}</p>
@@ -299,5 +194,145 @@ export default function BlogDetailPage() {
         </footer>
       </article>
     </main>
+  );
+}
+
+function MarkdownContent({ markdown, locale }: { markdown: string; locale: string }) {
+  // CommonMark 的 emphasis flanking 规则在 CJK 文本 + 全角标点旁会失效，
+  // 导致 **粗体** 被当作字面星号输出。先转成 <strong>，由 rehype-raw 渲染。
+  const normalized = markdown.replace(/\*\*([^*\n]+?)\*\*/g, '<strong>$1</strong>');
+  return (
+    <ReactMarkdown
+      remarkPlugins={[remarkGfm]}
+      rehypePlugins={[rehypeRaw]}
+      components={{
+        h1: ({ children }) => (
+          <h2 className="text-3xl font-bold text-gray-900 mb-4 mt-8">{children}</h2>
+        ),
+        h2: ({ children }) => (
+          <h3 className="text-2xl font-bold text-gray-900 mb-3 mt-7">{children}</h3>
+        ),
+        h3: ({ children }) => (
+          <h4 className="text-xl font-bold text-gray-900 mb-3 mt-6">{children}</h4>
+        ),
+        h4: ({ children }) => (
+          <h5 className="text-lg font-bold text-gray-900 mb-2 mt-5">{children}</h5>
+        ),
+        p: ({ node, children }) => {
+          // 独占一行的图片会被包进 <p>，而 <figure> 是块级元素，
+          // 嵌套在 <p> 内是无效 HTML，这里去掉外层 <p>。
+          const onlyChild = node?.children?.length === 1 ? node.children[0] : undefined;
+          if (onlyChild?.type === 'element' && onlyChild.tagName === 'img') {
+            return <>{children}</>;
+          }
+          return <p className="text-gray-700 leading-relaxed mb-4">{children}</p>;
+        },
+        img: ({ src, alt }: ComponentPropsWithoutRef<'img'>) => (
+          <figure className="my-6">
+            <div className="rounded-lg overflow-hidden ring-1 ring-black/5 shadow-sm">
+              <OptimizedImage
+                src={typeof src === 'string' ? src : ''}
+                alt={alt ?? ''}
+                fill
+                aspectRatio={ASPECT_RATIOS.WIDE}
+                sizes={IMAGE_SIZES.CONTENT}
+                objectFit="cover"
+                quality={85}
+              />
+            </div>
+            {alt ? (
+              <figcaption className="mt-2 text-center text-sm text-gray-500">{alt}</figcaption>
+            ) : null}
+          </figure>
+        ),
+        ul: ({ children }) => (
+          <ul className="list-disc ml-6 mb-4 space-y-2 text-gray-700">{children}</ul>
+        ),
+        ol: ({ children }) => (
+          <ol className="list-decimal ml-6 mb-4 space-y-2 text-gray-700">{children}</ol>
+        ),
+        li: ({ children }) => <li className="leading-relaxed">{children}</li>,
+        blockquote: ({ children }) => (
+          <blockquote className="border-l-4 border-primary/60 bg-gray-50 px-6 py-3 my-5 text-gray-700 italic rounded-r">
+            {children}
+          </blockquote>
+        ),
+        a: ({ href, children }: ComponentPropsWithoutRef<'a'>) => {
+          const url = href ?? '#';
+          const isExternal = /^https?:\/\//.test(url);
+          if (isExternal) {
+            return (
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:text-primary-dark underline underline-offset-2"
+              >
+                {children}
+              </a>
+            );
+          }
+          const internalHref = url.startsWith('/blog/')
+            ? `/${locale}${url}`
+            : url.startsWith('#')
+              ? `/${locale}${url}`
+              : url;
+          return (
+            <Link
+              href={internalHref}
+              className="text-primary hover:text-primary-dark underline underline-offset-2"
+            >
+              {children}
+            </Link>
+          );
+        },
+        table: ({ children }) => (
+          <div className="overflow-x-auto my-6 -mx-2 sm:mx-0">
+            <table className="min-w-full text-sm border-collapse border border-gray-200">
+              {children}
+            </table>
+          </div>
+        ),
+        thead: ({ children }) => <thead className="bg-gray-100">{children}</thead>,
+        tbody: ({ children }) => <tbody>{children}</tbody>,
+        tr: ({ children }) => <tr className="border-b border-gray-200">{children}</tr>,
+        th: ({ children }) => (
+          <th className="border border-gray-200 px-4 py-2 text-left font-semibold text-gray-800 bg-gray-50">
+            {children}
+          </th>
+        ),
+        td: ({ children }) => (
+          <td className="border border-gray-200 px-4 py-2 align-top text-gray-700">
+            {children}
+          </td>
+        ),
+        code: ({ className, children, ...props }: ComponentPropsWithoutRef<'code'> & { children?: ReactNode }) => {
+          const isBlock = typeof className === 'string' && /^language-/.test(className);
+          if (isBlock) {
+            return (
+              <code className={`${className} font-mono whitespace-pre`} {...props}>
+                {children}
+              </code>
+            );
+          }
+          return (
+            <code className="bg-gray-100 text-primary px-1.5 py-0.5 rounded text-sm font-mono" {...props}>
+              {children}
+            </code>
+          );
+        },
+        pre: ({ children }) => (
+          <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto my-6 text-xs leading-relaxed font-mono">
+            {children}
+          </pre>
+        ),
+        hr: () => <hr className="my-8 border-gray-200" />,
+        strong: ({ children }) => <strong className="font-bold text-gray-900">{children}</strong>,
+        em: ({ children }) => <em className="italic">{children}</em>,
+        sup: ({ children }) => <sup className="text-xs text-primary">{children}</sup>,
+      }}
+    >
+      {normalized}
+    </ReactMarkdown>
   );
 }

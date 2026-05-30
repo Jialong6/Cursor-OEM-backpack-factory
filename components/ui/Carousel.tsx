@@ -31,6 +31,14 @@ interface CarouselProps {
   onSlideChange?: (index: number) => void;
   /** 无障碍标签 */
   label?: string;
+  /** 上一张按钮的无障碍标签 */
+  previousSlideLabel?: string;
+  /** 下一张按钮的无障碍标签 */
+  nextSlideLabel?: string;
+  /** 跳转到指定幻灯片的无障碍标签 */
+  goToSlideLabel?: (index: number) => string;
+  /** 当前进度的无障碍标签 */
+  slideStatusLabel?: (current: number, total: number) => string;
 }
 
 export default function Carousel({
@@ -40,6 +48,10 @@ export default function Carousel({
   autoPlayInterval = 5000,
   onSlideChange,
   label = 'Carousel',
+  previousSlideLabel = 'Previous slide',
+  nextSlideLabel = 'Next slide',
+  goToSlideLabel = (index) => `Go to slide ${index}`,
+  slideStatusLabel = (current, total) => `Slide ${current} of ${total}`,
 }: CarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -123,7 +135,7 @@ export default function Carousel({
               key={item.id}
               data-testid="carousel-slide"
               aria-roledescription="slide"
-              aria-label={`${index + 1} of ${items.length}`}
+              aria-label={slideStatusLabel(index + 1, items.length)}
               className="w-full flex-shrink-0"
             >
               {typeof item.content === 'string' ? (
@@ -142,7 +154,7 @@ export default function Carousel({
           <button
             onClick={goPrev}
             disabled={!loop && isAtStart}
-            aria-label="Previous slide"
+            aria-label={previousSlideLabel}
             className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 shadow-md transition-all hover:bg-white disabled:cursor-not-allowed disabled:opacity-40 focus:outline-none focus:ring-2 focus:ring-primary"
           >
             <svg
@@ -164,7 +176,7 @@ export default function Carousel({
           <button
             onClick={goNext}
             disabled={!loop && isAtEnd}
-            aria-label="Next slide"
+            aria-label={nextSlideLabel}
             className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 shadow-md transition-all hover:bg-white disabled:cursor-not-allowed disabled:opacity-40 focus:outline-none focus:ring-2 focus:ring-primary"
           >
             <svg
@@ -197,7 +209,7 @@ export default function Carousel({
               onClick={() => goTo(index)}
               role="tab"
               aria-selected={index === currentIndex}
-              aria-label={`Go to slide ${index + 1}`}
+              aria-label={goToSlideLabel(index + 1)}
               className={`h-2.5 w-2.5 rounded-full transition-all ${
                 index === currentIndex
                   ? 'bg-primary scale-125'
@@ -210,7 +222,7 @@ export default function Carousel({
 
       {/* Live region for screen readers */}
       <div aria-live="polite" aria-atomic="true" className="sr-only">
-        Slide {currentIndex + 1} of {items.length}
+        {slideStatusLabel(currentIndex + 1, items.length)}
       </div>
     </div>
   );

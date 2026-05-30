@@ -197,8 +197,12 @@ describe('Locale Configuration Completeness', () => {
       expect(uniqueNativeNames.size).toBe(nativeNames.length);
     });
 
-    test('Flags are unique', () => {
-      const flags = Object.values(localeConfig).map((c) => c.flag);
+    test('Flags are unique (中文简繁共用中国旗除外)', () => {
+      // 业务诉求:中文繁体与简体共用同一面中国旗(台湾旗 emoji 在部分系统渲染为乱码)
+      expect(localeConfig['zh-tw'].flag).toBe(localeConfig.zh.flag);
+      const flags = Object.entries(localeConfig)
+        .filter(([loc]) => loc !== 'zh-tw')
+        .map(([, c]) => c.flag);
       const uniqueFlags = new Set(flags);
       expect(uniqueFlags.size).toBe(flags.length);
     });

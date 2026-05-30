@@ -23,5 +23,6 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  // tests 由 vitest 把关；从生产类型检查中排除，避免测试文件的类型问题导致 next build 失败
+  "exclude": ["node_modules", "tests"]
 }

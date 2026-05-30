@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Quality Vol.01 needle control placeholder">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2a1f24"/>
+      <stop offset="100%" stop-color="#14090c"/>
+    </linearGradient>
+    <pattern id="grid3" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M60 0 L0 0 0 60" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg3)"/>
+  <rect width="1200" height="675" fill="url(#grid3)"/>
+  <g font-family="-apple-system, 'Helvetica Neue', 'Hiragino Sans', sans-serif" fill="#f4eae2">
+    <text x="80" y="180" font-size="22" letter-spacing="6" opacity="0.65">BETTER BAGS MYANMAR</text>
+    <text x="80" y="240" font-size="20" letter-spacing="4" opacity="0.9" fill="#d97070">品質シリーズ  Vol.01</text>
+    <text x="80" y="330" font-size="56" font-weight="700">1 本の針も逃さない</text>
+    <text x="80" y="395" font-size="30" opacity="0.85">断針管理 / X 線検針 / 5 年記録保管</text>
+    <text x="80" y="550" font-size="20" opacity="0.55">毎日 1 行、1 本も狂わせない ── 20 年の体制</text>
+  </g>
+  <line x1="80" y1="430" x2="240" y2="430" stroke="#d97070" stroke-width="3"/>
+</svg>

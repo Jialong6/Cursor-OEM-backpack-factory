@@ -203,6 +203,9 @@ describe('Translation File Unit Tests', () => {
       'nav',
       'banner',
       'about',
+      'costAdvantage',
+      'whatSetsUsApart',
+      'marketPositioning',
       'features',
       'customization',
       'services',
@@ -217,6 +220,7 @@ describe('Translation File Unit Tests', () => {
       'languageBanner',
       'glossary',
       'testimonials',
+      'quoteWidget',
     ];
 
     const actualSections = Object.keys(translations!).sort();

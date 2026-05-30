@@ -27,16 +27,46 @@ export const TECH_PACK_OPTIONS = [
 export type TechPackAvailability = (typeof TECH_PACK_OPTIONS)[number];
 
 // 文件上传验证辅助函数
-const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
-const ACCEPTED_FILE_TYPES = [
+export const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
+export const MAX_FILE_COUNT = 5;
+export const ACCEPTED_FILE_TYPES = [
   'image/jpeg',
   'image/jpg',
   'image/png',
   'image/webp',
+  'image/heic',
+  'image/heif',
   'application/pdf',
   'application/msword',
   'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+  'application/vnd.ms-excel', // .xls
+  'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', // .xlsx
+  'application/vnd.ms-powerpoint', // .ppt
+  'application/vnd.openxmlformats-officedocument.presentationml.presentation', // .pptx
 ];
+
+// 扩展名兜底白名单:部分浏览器对老 Office 格式(.xls/.ppt)给出空 MIME 或
+// application/octet-stream,仅靠 MIME 会误拒,故按文件名后缀二次放行
+export const ACCEPTED_FILE_EXTENSIONS = [
+  'jpg',
+  'jpeg',
+  'png',
+  'webp',
+  'heic',
+  'heif',
+  'pdf',
+  'doc',
+  'docx',
+  'xls',
+  'xlsx',
+  'ppt',
+  'pptx',
+];
+
+function hasAcceptedExtension(fileName: string): boolean {
+  const ext = fileName.split('.').pop()?.toLowerCase() ?? '';
+  return ACCEPTED_FILE_EXTENSIONS.includes(ext);
+}
 
 /**
  * 联系表单 Schema
@@ -68,12 +98,20 @@ export const contactFormSchema = z.object({
     .min(2, 'Company/Brand name must be at least 2 characters')
     .max(100, 'Company/Brand name must be less than 100 characters'),
 
-  // 可选字段：电话号码
+  // 可选字段:电话所属国家 ISO 3166-1 alpha-2 代码(如 "CN" / "US"),与 phoneNumber 配对
+  // 选用 country code 而非 dial code,避免 +1 等多国共享区号导致的歧义
+  phoneCountryCode: z
+    .string()
+    .regex(/^[A-Z]{2}$/, 'Invalid country code')
+    .optional()
+    .or(z.literal('')),
+
+  // 可选字段：电话号码(不含区号本体)
   phoneNumber: z
     .string()
     .regex(
-      /^[\d\s()+-]+$/,
-      'Phone number can only contain numbers, spaces, parentheses, plus, and hyphen'
+      /^[\d\s()-]+$/,
+      'Phone number can only contain numbers, spaces, parentheses, and hyphen'
     )
     .min(10, 'Phone number must be at least 10 characters')
     .max(20, 'Phone number must be less than 20 characters')
@@ -83,22 +121,30 @@ export const contactFormSchema = z.object({
   subject: z
     .string()
     .min(1, 'Subject is required')
-    .min(5, 'Subject must be at least 5 characters')
     .max(200, 'Subject must be less than 200 characters'),
 
   message: z
     .string()
-    .min(1, 'Message is required')
-    .min(20, 'Message must be at least 20 characters')
-    .max(2000, 'Message must be less than 2000 characters'),
+    .max(2000, 'Message must be less than 2000 characters')
+    .optional()
+    .or(z.literal('')),
 
   // 下拉选择字段（需求 11.3, 11.4）
   orderQuantity: z.enum(ORDER_QUANTITY_OPTIONS),
 
   techPackAvailability: z.enum(TECH_PACK_OPTIONS),
 
-  // mCaptcha token（需求 11.8）
-  mcaptchaToken: z.string().min(1, 'Please complete the verification before submitting'),
+  // Turnstile token（需求 11.8）
+  turnstileToken: z.string().min(1, 'Please complete the verification before submitting'),
+}).superRefine((data, ctx) => {
+  // 联合校验:phoneNumber 非空时,必须有 phoneCountryCode
+  if (data.phoneNumber && !data.phoneCountryCode) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      message: 'Please select a dial code',
+      path: ['phoneCountryCode'],
+    });
+  }
 });
 
 /**
@@ -154,7 +200,7 @@ export function validateFile(file: File): { valid: boolean; error?: string } {
     };
   }
 
-  if (!ACCEPTED_FILE_TYPES.includes(file.type)) {
+  if (!ACCEPTED_FILE_TYPES.includes(file.type) && !hasAcceptedExtension(file.name)) {
     return {
       valid: false,
       error: `File "${file.name}" has an unsupported type. Please upload images or documents.`,
@@ -186,6 +232,56 @@ export function validateFiles(files: File[]): { valid: boolean; errors: string[]
     valid: errors.length === 0,
     errors,
   };
+}
+
+/**
+ * 已上传文件的引用（直传 Vercel Blob 后，前端只把元数据 + URL 发给后端）
+ */
+export interface UploadedFileRef {
+  name: string;
+  /** R2 对象 key（由 /api/upload 生成并回传） */
+  key: string;
+  size: number;
+  type: string;
+}
+
+// 上传对象 key 的前缀（由 /api/upload 统一生成）；校验客户端回传的 key 形态，
+// 防止注入任意 key（key 仅在服务端用于签发 presigned GET，故只需限定前缀 + 禁止路径穿越）
+export const UPLOAD_KEY_PREFIX = 'inquiries/';
+
+/**
+ * 校验直传后回传的文件引用：数量、key 形态、大小、类型
+ */
+export function validateFileRefs(files: UploadedFileRef[]): { valid: boolean; errors: string[] } {
+  const errors: string[] = [];
+
+  if (files.length > MAX_FILE_COUNT) {
+    errors.push(`Maximum ${MAX_FILE_COUNT} files allowed`);
+    return { valid: false, errors };
+  }
+
+  files.forEach((file) => {
+    if (
+      typeof file.key !== 'string' ||
+      !file.key.startsWith(UPLOAD_KEY_PREFIX) ||
+      file.key.includes('..')
+    ) {
+      errors.push(`File "${file.name}" has an invalid upload reference.`);
+      return;
+    }
+    if (file.size > MAX_FILE_SIZE) {
+      errors.push(
+        `File "${file.name}" is too large. Maximum size is ${MAX_FILE_SIZE / 1024 / 1024}MB`
+      );
+    }
+    if (!ACCEPTED_FILE_TYPES.includes(file.type) && !hasAcceptedExtension(file.name)) {
+      errors.push(
+        `File "${file.name}" has an unsupported type. Please upload images or documents.`
+      );
+    }
+  });
+
+  return { valid: errors.length === 0, errors };
 }
 
 /**

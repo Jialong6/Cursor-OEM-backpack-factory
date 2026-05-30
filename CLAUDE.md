@@ -199,7 +199,7 @@ MCAPTCHA_SITE_KEY=***
 
 # Optional
 NODE_ENV=development
-NEXT_PUBLIC_SITE_URL=https://betterbagsmyanmar.com
+NEXT_PUBLIC_SITE_URL=https://betterbagsmm.com
 ```
 
 **Note**: Never commit `.env` files. Use `.env.example` as template.

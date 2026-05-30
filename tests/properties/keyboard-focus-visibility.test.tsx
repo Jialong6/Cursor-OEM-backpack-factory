@@ -5,6 +5,7 @@ import { NextIntlClientProvider } from 'next-intl'
 import Contact from '@/components/sections/Contact'
 import Navbar from '@/components/layout/Navbar'
 import HeroBanner from '@/components/sections/HeroBanner'
+import { QuoteFormProvider } from '@/components/quote/QuoteFormContext'
 
 /**
  * 属性测试：键盘焦点可见性
@@ -68,6 +69,11 @@ vi.mock('next-intl', async () => {
             { label: '20', value: 'years' },
             { label: '50', value: 'brands' },
             { label: '10', value: 'capacity' },
+          ]
+        }
+        if (key === 'phone.lines') {
+          return [
+            { lang: '中文', number: '+86 123', hours: 'Mon-Fri', person: '' },
           ]
         }
         return key
@@ -221,7 +227,9 @@ describe('键盘焦点可见性属性测试 (Property 12)', () => {
             } else {
               const { container: c } = render(
                 <NextIntlClientProvider locale="zh" messages={mockMessages}>
-                  <Contact />
+                  <QuoteFormProvider>
+                    <Contact />
+                  </QuoteFormProvider>
                 </NextIntlClientProvider>
               )
               container = c
@@ -318,7 +326,9 @@ describe('键盘焦点可见性属性测试 (Property 12)', () => {
     it('Contact 表单的所有输入框应该可以获得焦点', () => {
       const { container } = render(
         <NextIntlClientProvider locale="zh" messages={mockMessages}>
-          <Contact />
+          <QuoteFormProvider>
+            <Contact />
+          </QuoteFormProvider>
         </NextIntlClientProvider>
       )
 
@@ -336,7 +346,9 @@ describe('键盘焦点可见性属性测试 (Property 12)', () => {
     it('Contact 表单的提交按钮应该可以获得焦点', () => {
       const { container } = render(
         <NextIntlClientProvider locale="zh" messages={mockMessages}>
-          <Contact />
+          <QuoteFormProvider>
+            <Contact />
+          </QuoteFormProvider>
         </NextIntlClientProvider>
       )
 
@@ -353,7 +365,9 @@ describe('键盘焦点可见性属性测试 (Property 12)', () => {
     it('文件上传输入框应该可以通过键盘访问', () => {
       const { container } = render(
         <NextIntlClientProvider locale="zh" messages={mockMessages}>
-          <Contact />
+          <QuoteFormProvider>
+            <Contact />
+          </QuoteFormProvider>
         </NextIntlClientProvider>
       )
 
@@ -413,7 +427,9 @@ describe('键盘焦点可见性属性测试 (Property 12)', () => {
     it('Contact 表单中的元素应该按表单字段顺序可通过 Tab 键访问', () => {
       const { container } = render(
         <NextIntlClientProvider locale="zh" messages={mockMessages}>
-          <Contact />
+          <QuoteFormProvider>
+            <Contact />
+          </QuoteFormProvider>
         </NextIntlClientProvider>
       )
 

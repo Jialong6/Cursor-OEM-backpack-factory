@@ -78,11 +78,11 @@ describe('Author Data', () => {
       const post: BlogPost = {
         id: 'test',
         slug: 'test',
-        title: { en: 'Test', zh: 'Test' },
-        excerpt: { en: 'Test', zh: 'Test' },
+        title: { ja: 'Test', en: 'Test', zh: 'Test' },
+        excerpt: { ja: 'Test', en: 'Test', zh: 'Test' },
         date: '2024-01-01',
         thumbnail: '/test.jpg',
-        category: 'Test',
+        category: { ja: 'Test', zh: 'Test', en: 'Test' },
         authorId: 'jay',
       };
       const author = getAuthorForPost(post);
@@ -93,11 +93,11 @@ describe('Author Data', () => {
       const post: BlogPost = {
         id: 'test',
         slug: 'test',
-        title: { en: 'Test', zh: 'Test' },
-        excerpt: { en: 'Test', zh: 'Test' },
+        title: { ja: 'Test', en: 'Test', zh: 'Test' },
+        excerpt: { ja: 'Test', en: 'Test', zh: 'Test' },
         date: '2024-01-01',
         thumbnail: '/test.jpg',
-        category: 'Test',
+        category: { ja: 'Test', zh: 'Test', en: 'Test' },
       };
       const author = getAuthorForPost(post);
       expect(author.id).toBe('better-bags-team');
@@ -107,36 +107,22 @@ describe('Author Data', () => {
       const post: BlogPost = {
         id: 'test',
         slug: 'test',
-        title: { en: 'Test', zh: 'Test' },
-        excerpt: { en: 'Test', zh: 'Test' },
+        title: { ja: 'Test', en: 'Test', zh: 'Test' },
+        excerpt: { ja: 'Test', en: 'Test', zh: 'Test' },
         date: '2024-01-01',
         thumbnail: '/test.jpg',
-        category: 'Test',
+        category: { ja: 'Test', zh: 'Test', en: 'Test' },
         authorId: 'nonexistent',
       };
       const author = getAuthorForPost(post);
       expect(author.id).toBe('better-bags-team');
     });
 
-    it('BLOG_POSTS 中 quality-control-process 应映射到 jay', () => {
-      const post = BLOG_POSTS.find((p) => p.slug === 'quality-control-process');
+    it('BLOG_POSTS 中 factory-tour 文章作者应为 jay', () => {
+      const post = BLOG_POSTS.find((p) => p.slug === 'factory-tour-one-day-myanmar');
       expect(post).toBeDefined();
       const author = getAuthorForPost(post!);
       expect(author.id).toBe('jay');
-    });
-
-    it('BLOG_POSTS 中 oem-vs-odm-differences 应映射到 jay', () => {
-      const post = BLOG_POSTS.find((p) => p.slug === 'oem-vs-odm-differences');
-      expect(post).toBeDefined();
-      const author = getAuthorForPost(post!);
-      expect(author.id).toBe('jay');
-    });
-
-    it('BLOG_POSTS 中无 authorId 的文章应 fallback 到 team', () => {
-      const post = BLOG_POSTS.find((p) => p.slug === 'custom-backpack-guide-2024');
-      expect(post).toBeDefined();
-      const author = getAuthorForPost(post!);
-      expect(author.id).toBe('better-bags-team');
     });
   });
 

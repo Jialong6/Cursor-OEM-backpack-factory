@@ -1,5 +1,7 @@
 'use client'
 
+import { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { NAV_ITEMS } from '@/lib/navigation'
@@ -29,12 +31,11 @@ export interface MobileNavProps {
  *
  * Displays hamburger menu button and slide-out drawer for screens < 768px.
  *
- * Features:
- * - Animated hamburger icon
- * - Slide-out drawer with backdrop
- * - Active section highlighting
- * - Click outside to close
- * - Accessible (aria-expanded, aria-label)
+ * 关键：抽屉通过 createPortal 渲染到 document.body。
+ * 原因：滚动后 Navbar 会加 backdrop-blur（backdrop-filter）。按 CSS 规范，
+ * backdrop-filter 会为 position:fixed 后代创建"包含块"——若抽屉留在 navbar 内，
+ * 滚动后它会被困在 80px 高的导航条里，新版 iOS Safari 上背景层错乱不绘制（菜单透明）。
+ * Portal 到 body 让抽屉真正相对视口 fixed，彻底规避该问题。
  */
 export default function MobileNav({
   isOpen,
@@ -47,9 +48,13 @@ export default function MobileNav({
 }: MobileNavProps) {
   const t = useTranslations('nav')
 
+  // 仅客户端挂载后才用 createPortal（服务端无 document）
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => setMounted(true), [])
+
   return (
     <>
-      {/* Hamburger menu button */}
+      {/* Hamburger menu button（留在 navbar 内） */}
       <button
         onClick={onToggle}
         className="md:hidden p-2 rounded-lg transition-colors hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-primary"
@@ -84,57 +89,46 @@ export default function MobileNav({
         </div>
       </button>
 
-      {/* Mobile menu drawer */}
-      <div
-        ref={menuRef}
-        className={`
-          md:hidden fixed inset-0 top-20 z-40
-          transition-all duration-300 ease-in-out
-          ${
-            isOpen
-              ? 'opacity-100 pointer-events-auto'
-              : 'opacity-0 pointer-events-none'
-          }
-        `}
-      >
-        {/* Backdrop */}
-        <div
-          className="absolute inset-0 bg-black/50 backdrop-blur-sm"
-          onClick={onClose}
-          aria-hidden="true"
-        />
+      {/* Mobile menu drawer —— Portal 到 body，脱离 navbar 的 backdrop-filter 包含块。
+          条件渲染（开才挂载），实心 bg-white 面板 + 实心 bg-black/50 遮罩，
+          不用 backdrop-filter / transform / opacity 过渡，移动端绘制可靠。 */}
+      {mounted &&
+        isOpen &&
+        createPortal(
+          <div ref={menuRef} className="md:hidden fixed inset-0 top-20 z-40">
+            {/* Backdrop：实心半透明黑 */}
+            <div
+              className="absolute inset-0 bg-black/50"
+              onClick={onClose}
+              aria-hidden="true"
+            />
 
-        {/* Menu content */}
-        <div
-          className={`
-            absolute right-0 top-0 bottom-0 w-64
-            bg-white shadow-2xl
-            transform transition-transform duration-300 ease-in-out
-            ${isOpen ? 'translate-x-0' : 'translate-x-full'}
-          `}
-        >
-          <nav className="flex flex-col p-4 space-y-2">
-            {NAV_ITEMS.map(({ id, href, key }) => (
-              <Link
-                key={id}
-                href={href}
-                onClick={(e) => onNavClick(e, href)}
-                className={`
-                  px-4 py-3 rounded-lg text-base font-medium
-                  transition-all duration-200
-                  ${
-                    activeSection === id
-                      ? 'bg-primary/10 text-primary'
-                      : 'text-neutral-700 hover:bg-neutral-100'
-                  }
-                `}
-              >
-                {t(key)}
-              </Link>
-            ))}
-          </nav>
-        </div>
-      </div>
+            {/* Menu content：实心白色面板 */}
+            <div className="absolute right-0 top-0 bottom-0 w-64 bg-white shadow-2xl">
+              <nav className="flex flex-col p-4 space-y-2">
+                {NAV_ITEMS.map(({ id, href, key }) => (
+                  <Link
+                    key={id}
+                    href={href}
+                    onClick={(e) => onNavClick(e, href)}
+                    className={`
+                      px-4 py-3 rounded-lg text-base font-medium
+                      transition-colors duration-200
+                      ${
+                        activeSection === id
+                          ? 'bg-primary/10 text-primary'
+                          : 'text-neutral-700 hover:bg-neutral-100'
+                      }
+                    `}
+                  >
+                    {t(key)}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+          </div>,
+          document.body
+        )}
     </>
   )
 }

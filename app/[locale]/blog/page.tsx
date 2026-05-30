@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { getAllBlogPosts } from '@/lib/blog-data';
+import { getLocalizedField } from '@/lib/blog-utils';
 import OptimizedImage, { IMAGE_SIZES, ASPECT_RATIOS } from '@/components/ui/OptimizedImage';
 
 /**
@@ -22,7 +23,7 @@ import OptimizedImage, { IMAGE_SIZES, ASPECT_RATIOS } from '@/components/ui/Opti
 export default function BlogListPage() {
   const t = useTranslations('blogList');
   const params = useParams();
-  const locale = params.locale as 'en' | 'zh';
+  const locale = params.locale as string;
   const allPosts = getAllBlogPosts();
 
   /**
@@ -35,7 +36,18 @@ export default function BlogListPage() {
       month: 'long',
       day: 'numeric',
     };
-    return date.toLocaleDateString(locale === 'zh' ? 'zh-CN' : 'en-US', options);
+    const dateLocaleMap: Record<string, string> = {
+      ja: 'ja-JP',
+      zh: 'zh-CN',
+      'zh-tw': 'zh-TW',
+      de: 'de-DE',
+      nl: 'nl-NL',
+      fr: 'fr-FR',
+      pt: 'pt-PT',
+      es: 'es-ES',
+      ru: 'ru-RU',
+    };
+    return date.toLocaleDateString(dateLocaleMap[locale] ?? 'en-US', options);
   };
 
   return (
@@ -73,7 +85,10 @@ export default function BlogListPage() {
 
         {/* 博客文章网格 */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {allPosts.map((post) => (
+          {allPosts.map((post) => {
+            const category = getLocalizedField(post.category, locale);
+            const tags = getLocalizedField(post.tags, locale);
+            return (
             <Link
               key={post.id}
               href={`/${locale}/blog/${post.slug}`}
@@ -83,7 +98,7 @@ export default function BlogListPage() {
               <div className="relative">
                 <OptimizedImage
                   src={post.thumbnail}
-                  alt={post.title[locale]}
+                  alt={getLocalizedField(post.title, locale) ?? ''}
                   fill
                   aspectRatio={ASPECT_RATIOS.WIDE}
                   sizes={IMAGE_SIZES.BLOG_THUMBNAIL}
@@ -95,7 +110,7 @@ export default function BlogListPage() {
                 {/* 分类标签 */}
                 <div className="absolute top-4 left-4 z-10">
                   <span className="bg-white text-primary px-3 py-1 rounded-full text-xs font-semibold uppercase shadow-md">
-                    {post.category}
+                    {category}
                   </span>
                 </div>
               </div>
@@ -116,16 +131,16 @@ export default function BlogListPage() {
 
                 {/* 标题 */}
                 <h2 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors line-clamp-2">
-                  {post.title[locale]}
+                  {getLocalizedField(post.title, locale)}
                 </h2>
 
                 {/* 摘要 */}
-                <p className="text-gray-600 text-sm line-clamp-3 mb-4">{post.excerpt[locale]}</p>
+                <p className="text-gray-600 text-sm line-clamp-3 mb-4">{getLocalizedField(post.excerpt, locale)}</p>
 
                 {/* 标签 */}
-                {post.tags && post.tags.length > 0 && (
+                {tags && tags.length > 0 && (
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {post.tags.slice(0, 3).map((tag, index) => (
+                    {tags.slice(0, 3).map((tag, index) => (
                       <span
                         key={index}
                         className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs"
@@ -151,7 +166,8 @@ export default function BlogListPage() {
                 </div>
               </div>
             </Link>
-          ))}
+            );
+          })}
         </div>
 
         {/* 如果没有文章 */}

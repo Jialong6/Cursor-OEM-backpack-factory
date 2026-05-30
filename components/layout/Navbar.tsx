@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import LanguageSwitcher from './LanguageSwitcher'
 import DesktopNav from './DesktopNav'
 import MobileNav from './MobileNav'
@@ -57,21 +58,24 @@ export default function Navbar() {
           <Link
             href="#banner"
             onClick={(e) => handleNavClick(e, '#banner')}
-            className="flex items-center space-x-2 group z-50"
+            aria-label="Better Bags Myanmar"
+            className="flex items-center group z-50 py-1"
           >
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center transition-transform group-hover:scale-110">
-              <span className="text-white font-bold text-xl">BB</span>
-            </div>
-            <div className="hidden sm:block">
-              <span
-                className={`
-                  text-xl font-bold transition-colors
-                  ${isScrolled ? 'text-neutral-800' : 'text-white'}
-                `}
-              >
-                Better Bags
-              </span>
-            </div>
+            <span
+              className={`
+                inline-flex items-center transition-all
+                ${isScrolled ? '' : 'bg-white rounded-lg px-2.5 py-1.5 shadow-sm'}
+              `}
+            >
+              <Image
+                src="/logo.png"
+                alt="Better Bags Myanmar"
+                width={2481}
+                height={1038}
+                priority
+                className="h-9 w-auto md:h-10 transition-transform group-hover:scale-105"
+              />
+            </span>
           </Link>
 
           {/* Desktop navigation */}
