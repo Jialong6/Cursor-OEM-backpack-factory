@@ -394,7 +394,7 @@ export default function QuoteFormFields({
               id={id('fileUpload')}
               type="file"
               multiple
-              accept=".jpg,.jpeg,.png,.webp,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx"
+              accept=".jpg,.jpeg,.png,.webp,.heic,.heif,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx"
               onChange={handleFileChange}
               className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
               aria-label={t('form.fileUpload.label')}
