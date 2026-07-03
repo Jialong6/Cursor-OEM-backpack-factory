@@ -1,565 +1,565 @@
 {
   "bento": {
     "brand": {
-      "title": "Better Bags since 2003",
-      "subtitle": "#Top Tier Custom Backpacks Factory in Myanmar",
-      "description": "One-stop solutions for your backpack needs"
+      "title": "2003년부터 이어온 Better Bags",
+      "subtitle": "#미얀마 최고 수준의 커스텀 백팩 공장",
+      "description": "백팩 생산을 위한 원스톱 솔루션"
     },
     "dashboard": {
-      "title": "Key Metrics"
+      "title": "핵심 지표"
     },
     "trust": {
-      "title": "Trusted By",
-      "certifications": "Certifications",
-      "partners": "Partner Brands",
-      "more": "+20 more"
+      "title": "신뢰받는 파트너",
+      "certifications": "보유 인증",
+      "partners": "파트너 브랜드",
+      "more": "외 20개 이상"
     },
     "cta": {
-      "title": "Ready to Start Your Project?",
-      "subtitle": "Get a free quote within 24 hours",
-      "button": "Get A Quote",
-      "note": "No obligation, free consultation"
+      "title": "프로젝트를 시작할 준비가 되셨습니까?",
+      "subtitle": "24시간 이내에 무료 견적을 제공합니다",
+      "button": "견적 요청",
+      "note": "구매 의무가 없는 무료 상담입니다"
     }
   },
   "nav": {
-    "banner": "Home",
-    "about": "About Us",
-    "features": "Features",
-    "services": "Services",
-    "process": "Process",
+    "banner": "홈",
+    "about": "회사 소개",
+    "features": "핵심 강점",
+    "services": "서비스",
+    "process": "생산 공정",
     "faq": "FAQ",
-    "contact": "Contact Us",
-    "blog": "Blog",
-    "skipToContent": "Skip to main content"
+    "contact": "문의하기",
+    "blog": "블로그",
+    "skipToContent": "본문 바로가기"
   },
   "banner": {
-    "line1": "Better Bags since 2003",
-    "line2": "#Top Tier Custom Backpacks Factory in Myanmar",
+    "line1": "Better Bags, 2003년 설립",
+    "line2": "#미얀마 최상급 커스텀 백팩 전문 공장",
     "p1": {
-      "pre": "At Better Bags, we provide a ",
-      "highlight": "one-stop",
-      "post": " solutions for your backpack needs—including material sourcing, sampling, mass production, strict quality control, and global delivery."
+      "pre": "Better Bags는 원단·부자재 소싱부터 샘플 제작, 양산, 엄격한 품질 관리(QC), 글로벌 선적까지 백팩 생산 전 과정을 ",
+      "highlight": "원스톱",
+      "post": "으로 지원합니다."
     },
-    "p2": "With more than 20 years of experience and a primary focus on the Japanese market—including 15+ years of long-term partnerships with leading Japanese brands such as Anello—we also support select clients from Korea, the U.S., and Europe. We manufacture a wide variety of bags: travel bags, backpacks, shoulder bags, tote bags, and more—tailored to your exact requirements.",
-    "p3": "Our competitive pricing and sustainable production options make us the perfect partner for businesses, organizations, and events of any scale.",
-    "cta": "Get A Quote"
+    "p2": "20년 이상의 제조 경험을 바탕으로 일본 시장에 주력해 왔으며, Anello를 비롯한 일본 유수 브랜드와 15년 이상 장기 파트너십을 이어오고 있습니다. 현재 한국, 미국, 유럽의 선별된 고객사와도 협력하고 있으며, 여행용 가방, 백팩, 숄더백, 토트백 등 다양한 가방을 고객 사양에 맞춰 제조합니다.",
+    "p3": "경쟁력 있는 단가와 지속가능한 생산 옵션을 갖추고 있어, 규모와 관계없이 기업, 단체, 이벤트 프로젝트에 최적의 파트너입니다.",
+    "cta": "견적 요청"
   },
   "about": {
-    "title": "About Us",
+    "title": "회사 소개",
     "mission": {
-      "title": "Our Mission",
-      "desc": "To empower global brands and partners by delivering innovative, high-quality, and cost-effective backpack solutions—manufactured responsibly and guided by integrity, craftsmanship, and customer-centric service at every step."
+      "title": "우리의 미션",
+      "desc": "글로벌 브랜드와 파트너에게 혁신적이고 품질과 비용 경쟁력을 두루 갖춘 백팩 솔루션을 제공하는 것입니다. 모든 과정에서 책임 있는 생산과 정직, 장인 정신, 고객 중심 서비스를 원칙으로 삼습니다."
     },
     "vision": {
-      "title": "Our Vision",
-      "desc": "To be recognized worldwide as the most trusted and forward-thinking backpack manufacturing partner—setting industry benchmarks in quality, innovation, sustainability, and operational excellence, while creating lasting value for our clients, employees, communities, and the environment."
+      "title": "우리의 비전",
+      "desc": "품질, 혁신, 지속가능성, 운영 효율에서 업계 기준을 제시하고 고객, 임직원, 지역사회, 환경에 지속적인 가치를 창출하며, 세계에서 가장 신뢰받는 미래지향적 백팩 제조 파트너로 인정받는 것입니다."
     },
-    "valuesTitle": "Our Core Values",
+    "valuesTitle": "핵심 가치",
     "values": [
       {
-        "title": "Integrity & Transparency",
-        "desc": "We conduct our business with honesty, accountability, and the highest ethical standards—building trust with every commitment to our customers, employees, and partners."
+        "title": "정직과 투명성",
+        "desc": "정직과 책임, 최고 수준의 윤리 기준으로 사업을 운영하며, 고객, 임직원, 파트너와의 모든 약속을 지키는 것으로 신뢰를 쌓아 갑니다."
       },
       {
-        "title": "Pursuit of Excellence",
-        "desc": "We are dedicated to quality, precision, and continuous improvement—striving to exceed expectations across every order, partnership, and interaction."
+        "title": "탁월함의 추구",
+        "desc": "품질과 정밀함, 지속적인 개선에 전념하며, 모든 주문과 파트너십, 소통에서 기대 이상의 결과를 지향합니다."
       },
       {
-        "title": "Customer Focus",
-        "desc": "Our clients' needs drive every decision. We anticipate challenges, act responsively, and tailor solutions to ensure our customers' enduring success."
+        "title": "고객 중심",
+        "desc": "모든 의사결정의 기준은 고객의 니즈입니다. 문제를 사전에 예측하고 신속하게 대응하며, 고객의 지속적인 성공을 뒷받침하는 맞춤형 솔루션을 제공합니다."
       },
       {
-        "title": "Innovation & Progress",
-        "desc": "We embrace change and bring creativity to all aspects of design, production, and problem-solving—enabling us to offer cutting-edge products and manufacturing processes."
+        "title": "혁신과 발전",
+        "desc": "변화를 적극 수용하고 디자인, 생산, 문제 해결 전 과정에 창의성을 더하여, 앞선 제품과 생산 공정을 제공합니다."
       },
       {
-        "title": "Sustainability & Responsibility",
-        "desc": "We are committed to sustainable sourcing, minimizing our environmental impact, and fostering safe, fair, and respectful working conditions for all."
+        "title": "지속가능성과 책임",
+        "desc": "책임 있는 원단·부자재 소싱과 환경 영향 최소화에 힘쓰며, 모든 구성원에게 안전하고 공정하며 존중받는 근무 환경을 보장합니다."
       },
       {
-        "title": "Collaboration & Empowerment",
-        "desc": "We value teamwork, diverse perspectives, and empowering every team member—cultivating a culture where people, ideas, and partnerships flourish."
+        "title": "협업과 권한 부여",
+        "desc": "팀워크와 다양한 관점을 존중하고 모든 구성원에게 권한을 부여하여, 사람과 아이디어, 파트너십이 함께 성장하는 문화를 만들어 갑니다."
       }
     ],
     "founder": {
-      "title": "Meet Our Founder"
+      "title": "창업자 소개"
     },
     "company": {
       "title": "Better Bags Myanmar Company Limited",
-      "p1": "Founded in 2003, Better Bags Myanmar specializes in the OEM/ODM manufacturing of premium backpacks, designed for a global client. Our comprehensive capabilities cover leisure, travel, climbing, and fashion bags, crafted from responsibly sourced polyester, cotton, and synthetic leather.",
-      "p2": "Our story began in Shenzhen, China, where our founder, Mr. Li Guangtong, gained deep expertise working with top international brands. Driven by a vision of global excellence, we later established our main production base in Shandong (Rizhao) — paired with a dedicated sampling and development center in Qingdao — and, following thorough research, launched our state-of-the-art production base in Yangon, Myanmar in 2023.",
-      "p3": "Over the past two decades, our primary focus has been the Japanese market, and we have proudly partnered with multiple Japanese brands — including Anello — alongside selected global brands such as New Balance, Nike, and Fila. Our unwavering commitment to quality, reliability, and proactive service has enabled us to maintain long-term partnerships, with many leading Japanese brands working with us for over 15 years.",
-      "p4": "Today, Better Bags stands at the intersection of tradition and innovation. By optimizing our dual-factory model, investing in people and systems, and adhering strictly to international standards, we meet the evolving needs of global customers with efficiency, flexibility, and future-oriented solutions. As we look ahead, our goal is to set new benchmarks in both client satisfaction and responsible manufacturing."
+      "p1": "2003년에 설립된 Better Bags Myanmar는 글로벌 고객을 위한 프리미엄 백팩 OEM/ODM 제조를 전문으로 합니다. 레저, 여행, 등산, 패션 가방 전 영역을 아우르며, 책임 있게 조달한 폴리에스터, 면, 합성피혁 소재로 제작합니다.",
+      "p2": "당사의 출발점은 중국 선전입니다. 창업자 리광퉁(Li Guangtong) 대표는 이곳에서 세계 유수 브랜드와 협업하며 깊은 전문성을 쌓았습니다. 이후 산둥(르자오)에 주력 생산기지를, 칭다오에 전담 샘플 개발 센터를 구축하였으며, 면밀한 사전 검토를 거쳐 2023년 미얀마 양곤에 최신 설비의 생산기지를 가동하였습니다.",
+      "p3": "지난 20여 년간 당사의 주력 시장은 일본이었습니다. Anello를 비롯한 다수의 일본 브랜드, 그리고 New Balance, Nike, Fila 등 엄선된 글로벌 브랜드와 협력해 왔습니다. 품질과 납기, 선제적 대응에 대한 일관된 원칙을 바탕으로, 주요 일본 브랜드 다수와 15년 이상 장기 파트너십을 이어가고 있습니다.",
+      "p4": "오늘날 Better Bags는 전통과 혁신이 만나는 지점에 서 있습니다. 중국·미얀마 듀얼 팩토리 체계를 최적화하고 인력과 시스템에 투자하며 국제 표준을 엄격히 준수함으로써, 효율성과 유연성, 미래지향적 솔루션으로 글로벌 고객의 변화하는 요구에 대응합니다. 앞으로도 고객 만족과 책임 있는 제조 양면에서 새로운 기준을 제시하는 것이 당사의 목표입니다."
     },
-    "trustedBrands": "Trusted by Global Brands"
+    "trustedBrands": "글로벌 브랜드가 신뢰하는 파트너"
   },
   "costAdvantage": {
-    "title": "Why Myanmar: The Cost-vs-Lead-Time Sweet Spot",
-    "subtitle": "Same product, same destination (Japan). Different trade-offs. See how our Myanmar production stacks up against China and Vietnam.",
+    "title": "왜 미얀마인가: 원가와 납기의 최적 균형점",
+    "subtitle": "동일 제품, 동일 수출처(일본) 기준의 비교입니다. 당사 미얀마 생산이 중국·베트남 대비 어떤 조건을 제공하는지 확인해 보시기 바랍니다.",
     "countries": [
       {
         "code": "CN",
-        "name": "China",
-        "priceLabel": "Price",
-        "priceValue": "Baseline",
+        "name": "중국",
+        "priceLabel": "가격",
+        "priceValue": "기준",
         "pricePercent": 100,
-        "leadTimeLabel": "Lead Time",
-        "leadTimeValue": "Baseline",
+        "leadTimeLabel": "납기",
+        "leadTimeValue": "기준",
         "leadTimePercent": 33
       },
       {
         "code": "VN",
-        "name": "Vietnam",
-        "priceLabel": "Price",
-        "priceValue": "Same as China",
+        "name": "베트남",
+        "priceLabel": "가격",
+        "priceValue": "중국과 동일",
         "pricePercent": 100,
-        "leadTimeLabel": "Lead Time",
-        "leadTimeValue": "+1 month",
+        "leadTimeLabel": "납기",
+        "leadTimeValue": "+1개월",
         "leadTimePercent": 66
       },
       {
         "code": "MM",
-        "name": "Myanmar (Better Bags)",
-        "priceLabel": "Price",
-        "priceValue": "-10% vs China & Vietnam",
+        "name": "미얀마 (Better Bags)",
+        "priceLabel": "가격",
+        "priceValue": "중국·베트남 대비 -10%",
         "pricePercent": 90,
-        "leadTimeLabel": "Lead Time",
-        "leadTimeValue": "+2 months",
+        "leadTimeLabel": "납기",
+        "leadTimeValue": "+2개월",
         "leadTimePercent": 100,
-        "badge": "Best Value"
+        "badge": "최고 가성비"
       }
     ],
-    "takeaway": "Trade 2 months of extra lead time for 10% lower cost — that's our value proposition for OEM buyers.",
-    "cta": "Get A Quote"
+    "takeaway": "납기 2개월을 추가로 확보해 주시면 원가를 10% 절감할 수 있습니다. 이것이 당사가 OEM 바이어에게 제안하는 가치입니다.",
+    "cta": "견적 요청"
   },
   "whatSetsUsApart": {
-    "title": "What Sets Us Apart",
-    "subtitle": "Three operational disciplines that separate Better Bags from typical OEM factories.",
+    "title": "Better Bags만의 차별점",
+    "subtitle": "일반 OEM 공장과 Better Bags를 구분 짓는 세 가지 운영 원칙입니다.",
     "items": [
       {
         "key": "qc",
-        "title": "Japanese-Grade Quality Control",
-        "description": "Strict broken-needle replacement logs and 100% X-ray screening — we physically eliminate customer-complaint risk at the production line, not after the fact."
+        "title": "일본 기준 품질 관리(QC)",
+        "description": "엄격한 절침(부러진 바늘) 교체 기록 관리와 100% X-ray 검침을 통해, 사후 대응이 아닌 생산 라인 단계에서 고객 클레임 리스크를 원천 차단합니다."
       },
       {
         "key": "cost",
-        "title": "China-Myanmar Cost Engineering",
-        "description": "Chinese supply-chain orchestration paired with Yangon-based labor settlement compresses unit cost on bulk orders without compromising quality."
+        "title": "중국·미얀마 연계 원가 경쟁력",
+        "description": "중국의 공급망 운영 역량과 양곤(Yangon) 현지의 인건비 구조를 결합하여, 품질 저하 없이 대량 발주의 단가를 낮춥니다."
       },
       {
         "key": "leadTime",
-        "title": "Capacity-Locked 4-Month Lead Time",
-        "description": "We never over-book. Every order locks in a 4-month production and delivery window so your launch dates stay predictable."
+        "title": "캐파 확보 기반 4개월 납기 확정",
+        "description": "무리한 오버부킹은 하지 않습니다. 모든 발주에 대해 생산부터 납품까지 4개월 일정을 확정하므로, 브랜드의 출시 일정을 안정적으로 관리하실 수 있습니다."
       }
     ]
   },
   "marketPositioning": {
-    "title": "Where Better Bags Stands in the OEM Market",
-    "subtitle": "Map every OEM factory onto a profit × quality grid — and see who lives in which corner.",
+    "title": "OEM 시장에서 Better Bags의 포지션",
+    "subtitle": "OEM 공장을 '마진 × 품질' 두 축 위에 놓고 보면, 각 공장이 어느 위치에 있는지 한눈에 드러납니다.",
     "axes": {
       "profit": {
-        "low": "Thin margins",
-        "high": "Healthy margins"
+        "low": "낮은 마진",
+        "high": "안정적인 마진"
       },
       "quality": {
-        "low": "Unstable quality & high risk",
-        "high": "Reliable quality & on-time delivery"
+        "low": "불안정한 품질과 높은 리스크",
+        "high": "안정적인 품질과 정확한 납기"
       }
     },
     "quadrants": [
       {
         "position": "topRight",
         "title": "Better Bags",
-        "description": "Cost-efficient Myanmar production paired with Japanese-grade QC — high margins, low risk, scalable bulk orders.",
-        "badge": "Best Position"
+        "description": "미얀마의 원가 경쟁력에 일본 브랜드 기준의 QC를 결합하여, 높은 마진과 낮은 리스크로 대량 발주까지 안정적으로 대응합니다.",
+        "badge": "최적 포지션"
       },
       {
         "position": "topLeft",
-        "title": "Large-Scale Chinese Factories",
-        "description": "Delivery quality is generally stable, but rising Chinese labor costs and policy risk squeeze your margins thin."
+        "title": "중국 대형 공장",
+        "description": "납품 품질은 대체로 안정적이지만, 중국 인건비 상승과 정책 리스크로 인해 확보할 수 있는 마진이 갈수록 얇아집니다."
       },
       {
         "position": "bottomRight",
-        "title": "Low-End Southeast Asian Shops",
-        "description": "Pricing looks attractive, but the absence of a QC system exposes you to breach-of-contract and claim risk at any moment."
+        "title": "동남아 저가 공장",
+        "description": "단가는 매력적으로 보이지만, QC 체계가 없어 계약 불이행과 클레임 리스크에 상시 노출됩니다."
       },
       {
         "position": "bottomLeft",
-        "title": "Under-Resourced Workshops",
-        "description": "No economies of scale on cost, and unable to pass the bulk-production audits that serious clients require."
+        "title": "영세 소규모 작업장",
+        "description": "규모의 경제에 따른 원가 우위가 없고, 주요 바이어가 요구하는 양산 공장 실사도 통과하기 어렵습니다."
       }
     ]
   },
   "features": {
     "stats": [
       {
-        "label": "Professional Employees",
+        "label": "전문 인력",
         "value": "600+"
       },
       {
-        "label": "Low MOQ",
-        "value": "From 1,500 PCS"
+        "label": "낮은 MOQ",
+        "value": "1,500 PCS부터"
       },
       {
-        "label": "Proofing Time",
-        "value": "2 Weeks"
+        "label": "샘플 제작 기간",
+        "value": "2주"
       },
       {
-        "label": "Quality Inspection",
+        "label": "품질 검품",
         "value": "100%"
       },
       {
-        "label": "Online Support",
-        "value": "24 Hrs"
+        "label": "온라인 지원",
+        "value": "24시간"
       },
       {
-        "label": "Monthly Production",
+        "label": "월 생산량",
         "value": "50,000+ PCS"
       }
     ],
     "jay": {
-      "title": "Welcome, I'm Jay.",
-      "desc1": "As the next-generation leader of Better Bags — a family-owned manufacturer with global vision—I draw upon more than 8 years of study and professional experience in Pennsylvania, United States. Being an alumnus of ",
-      "and": " and ",
-      "desc2": " I am proud to bring proven international expertise as well as cross-cultural communication skills to our clients and partners. My mission is to bridge the best of East and West, ensuring every partner enjoys premium products, seamless project communication, and reliable after-sales support—no matter where you are in the world."
+      "title": "안녕하십니까, Jay입니다.",
+      "desc1": "글로벌 비전을 갖춘 가족 경영 제조업체 Better Bags의 차세대 리더로서, 저는 미국 펜실베이니아에서 8년 이상 수학하며 실무 경험을 쌓았습니다. ",
+      "and": " 및 ",
+      "desc2": " 동문으로서, 검증된 국제 비즈니스 전문성과 문화 간 커뮤니케이션 역량을 고객과 파트너 여러분께 제공합니다. 동서양의 강점을 잇는 가교가 되어, 전 세계 어디에 계시든 모든 파트너가 프리미엄 제품, 원활한 프로젝트 커뮤니케이션, 신뢰할 수 있는 사후 지원을 누리실 수 있도록 하는 것이 저의 사명입니다."
     },
-    "title": "Why Better Bags",
+    "title": "Better Bags를 선택하는 이유",
     "list": [
       {
-        "title": "Flexibility",
+        "title": "유연성",
         "color": "#81C3D7",
-        "desc": "With production bases in both Shandong (Rizhao), China and Yangon, Myanmar — supported by a dedicated sampling and development center in Qingdao — we offer unparalleled flexibility to meet our customers' diverse needs. Our Myanmar factory is fully equipped to handle large-volume production with speed and efficiency, while our long-established Shandong operation (20+ years of expertise) excels at design, sampling, sourcing, and personalized project management. Whether you need rapid prototyping, small custom batches, or are scaling up to large bulk orders, our dual-factory model ensures your requirements are fulfilled with agility and precision."
+        "desc": "중국 산둥(르자오)과 미얀마 Yangon 두 곳의 생산 기지, 그리고 칭다오의 전담 샘플 개발 센터를 기반으로 고객의 다양한 요구에 유연하게 대응합니다. 미얀마 공장은 대량 양산을 신속하고 효율적으로 처리할 수 있는 설비를 갖추고 있으며, 20년 이상의 노하우를 축적한 산둥 거점은 디자인, 샘플 제작, 소싱, 맞춤형 프로젝트 관리에 강점을 보유하고 있습니다. 신속한 프로토타입 제작, 소량 맞춤 생산, 대량 발주 확대 등 어떤 단계에서도 듀얼 팩토리 체제를 통해 민첩하고 정확하게 대응합니다."
       },
       {
-        "title": "Communication",
+        "title": "커뮤니케이션",
         "color": "#416788",
-        "desc": "At Better Bags, effective communication is the foundation of all our partnerships. Our founder, Mr. Li Guangtong, built our business on the trust and high standards of Japanese clients—reflecting a deep understanding of international requirements. Drawing on our multicultural team—including professionals with extensive study and work experience in the United States—we seamlessly connect with global customers. We are especially adept at bridging cultural and language gaps, ensuring clarity, transparency, and a smooth cooperation experience from start to finish."
+        "desc": "Better Bags는 원활한 커뮤니케이션을 모든 파트너십의 기반으로 삼고 있습니다. 창업자 Li Guangtong 대표는 일본 고객사의 신뢰와 높은 요구 수준 위에서 사업을 일구었으며, 이는 국제 기준에 대한 깊은 이해로 이어졌습니다. 미국에서 장기간 수학하고 실무 경험을 쌓은 전문 인력을 포함한 다문화 팀을 통해 전 세계 고객과 긴밀하게 소통하며, 문화와 언어의 간극을 메워 프로젝트 시작부터 마무리까지 명확하고 투명한 협업 경험을 제공합니다."
       },
       {
-        "title": "Quality Control",
+        "title": "품질 관리 (QC)",
         "color": "#5a6d7c",
-        "desc": "The backbone of our reputation is unwavering quality control. Years of collaboration with demanding markets like Japan have forged a meticulous approach at every stage of production, from sourcing to final inspection. Our experienced QA teams ensure that every order not only meets but often exceeds international standards for craftsmanship, durability, and reliability—guaranteeing peace of mind with every delivery."
+        "desc": "당사 평판의 근간은 흔들림 없는 품질 관리입니다. 일본과 같이 기준이 까다로운 시장과 다년간 협업하며 소싱부터 최종 검품까지 전 생산 단계에 걸친 치밀한 품질 관리 체계를 구축했습니다. 숙련된 QA 팀이 모든 발주 건에 대해 봉제 완성도, 내구성, 신뢰성 측면에서 국제 기준을 충족하는 것은 물론 이를 상회하는 수준을 목표로 관리하여, 매 납품마다 안심하고 받아 보실 수 있도록 합니다."
       },
       {
-        "title": "Competitive Pricing",
+        "title": "경쟁력 있는 가격",
         "color": "#2f6690",
-        "desc": "Our primary production base in Myanmar gives us a significant cost advantage—production costs here are much lower than in China, and even compared to other Southeast Asian countries such as Vietnam and Thailand, we are able to offer more competitive prices under the same quality standards. This means our clients receive high-quality products at a better value, without compromise.\n\nMyanmar's cost efficiency perfectly complements our China operation — our Shandong (Rizhao) production base together with our Qingdao sampling and development center, which specialize in design, sampling, and sourcing. By combining Myanmar's unbeatable production pricing with China's strong development capabilities, we achieve the \"sweet spot\" in global manufacturing—offering clients both outstanding quality and truly competitive pricing."
+        "desc": "주력 생산 기지인 미얀마는 뚜렷한 원가 경쟁력을 제공합니다. 생산 비용이 중국보다 크게 낮은 것은 물론, 베트남·태국 등 다른 동남아시아 국가와 비교해도 동일한 품질 기준에서 더 경쟁력 있는 가격을 제시할 수 있습니다. 이는 고객이 품질 타협 없이 더 나은 가치로 고품질 제품을 확보하실 수 있다는 의미입니다.\n\n미얀마의 원가 효율은 디자인·샘플 제작·소싱에 특화된 산둥(르자오) 생산 기지와 칭다오 샘플 개발 센터, 즉 중국 거점의 역량과 정확히 맞물립니다. 미얀마의 압도적인 생산 단가와 중국의 탄탄한 개발 역량을 결합해 글로벌 제조의 \"최적 균형점\"을 구현하며, 고객에게 뛰어난 품질과 실질적인 가격 경쟁력을 동시에 제공합니다."
       }
     ]
   },
   "customization": {
-    "title": "Customization Options",
-    "intro": "As an experienced backpack manufacturer, we provide a comprehensive range of tailor-made solutions for clients worldwide. From <span style='font-weight:800'>initial concept to production and delivery</span>, every detail is customizable to ensure your products stand out in the market.",
+    "title": "커스터마이징 옵션",
+    "intro": "풍부한 경험을 갖춘 백팩 제조업체로서 전 세계 고객에게 폭넓은 맞춤 제작 솔루션을 제공합니다. <span style='font-weight:800'>초기 기획부터 양산, 납품까지</span> 모든 디테일을 커스터마이징할 수 있어 귀사 제품이 시장에서 확실한 차별성을 갖추도록 지원합니다.",
     "features": [
       {
-        "title": "Extensive Backpack Styles",
-        "desc": "No matter the style you need, our experienced R&D team can guide you through the selection process to ensure you find the ideal fit for your project.",
+        "title": "다양한 백팩 스타일",
+        "desc": "필요한 스타일이 무엇이든, 경험이 풍부한 R&D 팀이 스타일 선정 과정을 함께하며 프로젝트에 가장 적합한 사양을 제안합니다.",
         "highlights": [
-          "Casual, Travel, Hiking, Business",
-          "Camera, Sports, Tote, Anti-theft",
-          "Tactical, Sling, School, Rolling",
-          "Multi-functional, Eco-friendly, Fishing, Accessories"
+          "캐주얼, 여행용, 하이킹, 비즈니스",
+          "카메라, 스포츠, 토트, 도난 방지",
+          "택티컬, 슬링, 스쿨, 캐리어형(롤링)",
+          "다기능, 친환경, 낚시용, 액세서리"
         ]
       },
       {
-        "title": "Multiple Sizes and Capacities",
-        "desc": "Flexible size configurations to fit any scenario, all customizable with smart compartments and layouts.",
+        "title": "다양한 사이즈와 용량",
+        "desc": "어떤 사용 시나리오에도 대응하는 유연한 사이즈 구성을 제공하며, 수납 구조와 레이아웃까지 모두 커스터마이징이 가능합니다.",
         "highlights": [
-          "Small (10L–20L): Daily/Children/Light Essentials",
-          "Medium (20L–40L): Commute/Trip/Students",
-          "Large (40L–60L): Travel/Outdoor/More Space",
-          "Extra Large (60L+): Long Trip/Pro Use/Special Needs"
+          "소형(10L–20L): 데일리/아동용/경량 휴대품",
+          "중형(20L–40L): 통근/단기 여행/학생용",
+          "대형(40L–60L): 여행/아웃도어/넉넉한 수납",
+          "특대형(60L+): 장기 여행/전문가용/특수 용도"
         ]
       },
       {
-        "title": "Superior & Eco-friendly Materials",
-        "desc": "Premium global materials, responsibly sourced. All can be custom colored, processed, or finished to match your vision!",
+        "title": "고품질 친환경 소재",
+        "desc": "전 세계에서 책임 있게 조달한 프리미엄 원단과 소재를 사용합니다. 모든 소재는 귀사의 기획 의도에 맞춰 컬러, 가공, 마감을 커스터마이징할 수 있습니다.",
         "highlights": [
-          "Polyester, Nylon, Canvas, Leather",
-          "Jute, Tyvek, Neoprene, PVC, TPU",
-          "Recycled & Eco Options",
-          "Any custom color, print, or finish"
+          "폴리에스터, 나일론, 캔버스, 가죽",
+          "주트, Tyvek, 네오프렌, PVC, TPU",
+          "리사이클 및 친환경 옵션",
+          "원하는 컬러, 프린트, 마감 모두 대응"
         ]
       },
       {
-        "title": "Professional Color Solutions",
-        "desc": "Achieve flawless color consistency and bring your brand vision to life with our comprehensive color services.",
+        "title": "전문 컬러 솔루션",
+        "desc": "체계적인 컬러 서비스로 완벽한 색상 일관성을 확보하고 브랜드 아이덴티티를 정확하게 구현합니다.",
         "highlights": [
-          "Pantone-matched custom dyes",
-          "Color sample proofing",
-          "Strict colorfastness testing"
+          "Pantone 기준 맞춤 염색",
+          "컬러 샘플 제작 및 승인",
+          "엄격한 염색 견뢰도 테스트"
         ]
       },
       {
-        "title": "Custom Imprint & Branding",
-        "desc": "Your brand, your way. Multiple logo and graphic application methods for a lasting impression.",
+        "title": "맞춤 로고 및 브랜딩",
+        "desc": "귀사 브랜드에 맞는 방식으로 로고와 그래픽을 다양한 기법으로 적용하여 오래 지속되는 브랜드 인상을 만듭니다.",
         "highlights": [
-          "Embroidery / Silk Screen / Heat Transfer",
-          "Embossing / Debossing / TPU Labels",
-          "Rubber patches / Metal badges",
-          "Graphics, taglines, custom artwork"
+          "자수 / 실크스크린 인쇄 / 열전사",
+          "엠보싱 / 디보싱 / TPU 라벨",
+          "러버 패치 / 메탈 배지",
+          "그래픽, 슬로건, 맞춤 아트워크"
         ]
       },
       {
-        "title": "Accessories & Hardware",
-        "desc": "Upgrade every detail—premium zippers, buckles, trims. Each part can be color- and function-customized.",
+        "title": "액세서리 및 부자재",
+        "desc": "지퍼, 버클, 트림까지 모든 디테일을 프리미엄 부자재로 구성하며, 각 부품의 컬러와 기능을 개별적으로 커스터마이징할 수 있습니다.",
         "highlights": [
-          "Zippers: Waterproof, Two-way, Invisible, etc.",
-          "Buckles: Plastic, Metal, Magnetic, Quick-release, D-rings",
-          "Loops, pulls, trims—all configurable",
-          "Match finishes & color"
+          "지퍼: 방수, 양방향, 콘실(비노출) 등",
+          "버클: 플라스틱, 메탈, 마그네틱, 퀵릴리즈, D링",
+          "루프, 지퍼 풀러, 트림까지 모두 선택 가능",
+          "마감과 컬러의 통일된 매칭"
         ]
       },
       {
-        "title": "Enhanced Functional Features",
-        "desc": "Tailored features for safety, tech, travel, or specialist needs—because every use case is unique.",
+        "title": "기능성 강화 옵션",
+        "desc": "사용 시나리오는 저마다 다르기 때문에, 안전·테크·여행·특수 용도 등 목적에 맞춘 기능을 설계하여 적용합니다.",
         "highlights": [
-          "Expansion: Roll-top, Zippers, Drawstring",
-          "Weatherproofing: Coated fabrics, Rain covers, Ventilated backs",
-          "Security: Anti-theft locks, RFID shields",
-          "Tech: USB ports, cable routing, reflective details, LED integration",
-          "Travel: TSA-friendly, Trolley sleeves"
+          "확장 구조: 롤탑, 지퍼 확장, 드로스트링",
+          "방수 대응: 코팅 원단, 레인 커버, 통기성 등판",
+          "보안: 도난 방지 잠금장치, RFID 차단",
+          "테크: USB 포트, 케이블 라우팅, 반사 디테일, LED 적용",
+          "여행: TSA 대응, 캐리어 결합 슬리브"
         ]
       },
       {
-        "title": "Private Label & Logo Customization",
-        "desc": "Fully customizable branding—even for private label requirements.",
+        "title": "프라이빗 라벨 및 로고 커스터마이징",
+        "desc": "프라이빗 라벨 요건을 포함하여 브랜딩 전반을 완전하게 커스터마이징할 수 있습니다.",
         "highlights": [
-          "Woven & Fabric Labels",
-          "TPU/PU Badges",
-          "Metal Patches",
-          "Showcase your unique identity"
+          "우븐 라벨 및 패브릭 라벨",
+          "TPU/PU 배지",
+          "메탈 패치",
+          "브랜드 고유의 아이덴티티 구현"
         ]
       }
     ],
-    "ready": "Ready to bring your vision to life? <br />Contact us for a tailor-made solution—and discover why top brands worldwide trust us as their manufacturing partner.",
-    "cta": "Customize Now"
+    "ready": "귀사의 기획을 제품으로 구현할 준비가 되셨습니까? <br />맞춤 제작 솔루션이 필요하시면 문의해 주시기 바랍니다. 전 세계 유수 브랜드들이 왜 당사를 생산 파트너로 신뢰하는지 직접 확인해 보시기 바랍니다.",
+    "cta": "커스터마이징 문의"
   },
   "services": {
-    "title": "Optimized All-in-One Service for Mass Production",
+    "title": "양산에 최적화된 원스톱 서비스",
     "steps": [
       {
-        "title": "Handle Customer Inquiry",
-        "desc": "Send us an inquiry and share the details of your project. Our dedicated team will quickly respond to understand your needs and expectations."
+        "title": "문의 접수",
+        "desc": "문의를 보내 주시고 프로젝트의 세부 사항을 공유해 주십시오. 전담 팀이 신속하게 회신하여 귀사의 요구 사항과 기대치를 정확히 파악합니다."
       },
       {
-        "title": "Manufacture Quotation",
-        "desc": "If your project fits our standard MOQ and production capabilities, we will promptly provide an initial quotation based on your tech pack, selected fabric quality, and requested quantity."
+        "title": "제조 견적",
+        "desc": "프로젝트가 당사의 표준 MOQ 및 생산 역량에 부합하는 경우, 테크팩과 선택하신 원단 품질, 요청 수량을 기준으로 초기 견적을 신속히 제공합니다."
       },
       {
-        "title": "Sample Development",
-        "desc": "Once the quotation is approved, we move forward with sample development. This ensures that quality and specifications are confirmed before bulk production begins."
+        "title": "샘플 개발",
+        "desc": "견적이 승인되면 샘플 개발을 진행합니다. 양산 착수 전에 품질과 사양을 확정하는 단계입니다."
       },
       {
-        "title": "Bulk Production",
-        "desc": "After you confirm the order and provide a deposit, we commence bulk production—strictly following all agreed specifications with careful attention to detail."
+        "title": "양산",
+        "desc": "발주 확정 및 선급금 입금 후 양산에 착수하며, 합의된 모든 사양을 엄격히 준수하고 세부 사항까지 꼼꼼하게 관리합니다."
       },
       {
-        "title": "Quality Control",
-        "desc": "Our rigorous QC procedures include 100% end-line inspections and application of AQL 2.5 standards for final checks. We also welcome third-party QC to further guarantee quality and transparency."
+        "title": "품질 관리 (QC)",
+        "desc": "엄격한 QC 절차에 따라 라인 최종 단계에서 100% 전수 검품을 실시하고, AQL 2.5 기준으로 최종 검사를 진행합니다. 품질과 투명성을 한층 더 보장하기 위해 제3자 검품도 환영합니다."
       },
       {
-        "title": "Packaging & Shipping",
-        "desc": "After quality confirmation, your products are carefully packaged and shipped in bulk to your designated warehouse, ensuring safe and efficient delivery."
+        "title": "포장 및 선적",
+        "desc": "품질 확인 후 제품을 안전하게 포장하여 지정 창고까지 일괄 선적하며, 안전하고 효율적인 납품을 보장합니다."
       }
     ],
-    "processNote": "<highlight1>From inquiry to delivery</highlight1>, our professional team supports you throughout the entire process, ensuring every step is <highlight2>efficient and transparent</highlight2>, so your custom project is delivered smoothly."
+    "processNote": "<highlight1>문의부터 납품까지</highlight1> 전문 팀이 전 과정을 지원하며, 모든 단계를 <highlight2>효율적이고 투명하게</highlight2> 관리하여 귀사의 커스터마이징 프로젝트를 차질 없이 완수합니다."
   },
   "faq": {
-    "title": "Frequently Asked Questions (FAQ)",
+    "title": "자주 묻는 질문 (FAQ)",
     "sections": [
       {
-        "title": "General & Pre-Sale",
+        "title": "일반 및 사전 문의",
         "items": [
           {
-            "q": "What should I prepare before contacting you?",
-            "a": "Please have your tech pack (or clear design sketches), estimated order quantity, preferred materials, and any special requirements ready. The more specific your brief, the faster and more accurate our quotation and recommendations."
+            "q": "문의 전에 어떤 자료를 준비해야 합니까?",
+            "a": "테크팩(또는 명확한 디자인 스케치), 예상 발주 수량, 희망 원단 및 소재, 특수 요구 사항을 준비해 주시기 바랍니다. 요청 내용이 구체적일수록 견적과 제안을 더 빠르고 정확하게 드릴 수 있습니다."
           },
           {
-            "q": "Do you provide a catalogue of your products?",
-            "a": "No, we are a pure OEM/ODM manufacturer and do not have our own product catalogue. All products are custom-made to client specifications."
+            "q": "제품 카탈로그를 제공합니까?",
+            "a": "아니요. 당사는 순수 OEM/ODM 제조업체로 자체 제품 카탈로그를 보유하고 있지 않습니다. 모든 제품은 고객 사양에 맞춰 맞춤 제작합니다."
           },
           {
-            "q": "Can you share samples or images of previous work for reference?",
-            "a": "Due to strict NDAs with our clients, we cannot share images of previous products. However, we highly recommend ordering a sample or arranging a factory tour to assess our craftsmanship and quality for yourself."
+            "q": "기존 작업물의 샘플이나 이미지를 참고용으로 공유해 줄 수 있습니까?",
+            "a": "고객사와의 엄격한 NDA(기밀유지협약)로 인해 기존 제품 이미지는 공유할 수 없습니다. 대신 샘플 발주나 공장 방문을 통해 당사의 봉제 기술력과 품질을 직접 확인해 보시기를 권장합니다."
           },
           {
-            "q": "Can you provide references from existing clients?",
-            "a": "While we cannot share client contacts due to confidentiality, we welcome video calls, sample reviews, and factory tours for your assurance."
+            "q": "기존 고객사의 레퍼런스를 제공할 수 있습니까?",
+            "a": "기밀 유지 의무로 고객사 연락처는 공유할 수 없으나, 화상 미팅, 샘플 검토, 공장 방문을 통해 충분히 확인하실 수 있도록 지원합니다."
           },
           {
-            "q": "Do I get a dedicated project manager or team?",
-            "a": "Yes, every project is assigned to a dedicated project manager and project team for smooth, timely and personalized service."
+            "q": "전담 프로젝트 매니저나 팀이 배정됩니까?",
+            "a": "예. 모든 프로젝트에 전담 프로젝트 매니저와 프로젝트 팀을 배정하여 원활하고 신속한 맞춤형 서비스를 제공합니다."
           },
           {
-            "q": "How will I know the timeline for my project?",
-            "a": "After confirmation, we provide a detailed production schedule covering sampling, production, and shipment milestones, keeping you informed at every stage."
+            "q": "프로젝트 일정은 어떻게 확인할 수 있습니까?",
+            "a": "발주 확정 후 샘플 제작, 양산, 선적 마일스톤을 포함한 상세 생산 일정을 제공하며, 각 단계마다 진행 상황을 안내해 드립니다."
           }
         ]
       },
       {
-        "title": "Orders, Sampling & Quotation",
+        "title": "발주, 샘플 제작 및 견적",
         "items": [
           {
-            "q": "Do you accept OEM and ODM orders?",
-            "a": "Yes, we only accept OEM/ODM orders. We do not manufacture or sell our own branded products."
+            "q": "OEM 및 ODM 발주를 받습니까?",
+            "a": "예. 당사는 OEM/ODM 발주만 받습니다. 자체 브랜드 제품은 생산하거나 판매하지 않습니다."
           },
           {
-            "q": "What is your typical Minimum Order Quantity (MOQ)?",
-            "a": "For Myanmar bulk production our MOQ is 1,500 pcs per design and color. Our China (Shandong) facility additionally accepts sample and rush orders, ranging from a few hundred up to tens of thousands of pcs per design — get in touch to discuss your specific needs."
+            "q": "일반적인 최소 발주 수량(MOQ)은 얼마입니까?",
+            "a": "미얀마 양산 기준 MOQ는 디자인·컬러당 1,500pcs입니다. 중국 산둥 공장에서는 샘플 및 긴급 발주도 추가로 대응하며, 디자인당 수백 pcs부터 수만 pcs까지 가능합니다. 구체적인 조건은 문의해 주시기 바랍니다."
           },
           {
-            "q": "How is your quotation process structured?",
-            "a": "We first provide an estimated quotation based on your tech pack and details. A final binding quote is issued after prototype/sample approval. Prices are quoted FOB Yangon for Myanmar bulk orders, or FOB Qingdao for sample and rush orders from our Shandong facility. CIF quotes are available on request."
+            "q": "견적 프로세스는 어떻게 진행됩니까?",
+            "a": "먼저 테크팩과 상세 정보를 바탕으로 예상 견적을 제공하며, 프로토타입/샘플 승인 후 최종 확정 견적을 발행합니다. 미얀마 양산 발주는 FOB Yangon, 산둥 공장 출고 샘플 및 긴급 발주는 FOB Qingdao 기준으로 견적하며, 요청 시 CIF 견적도 가능합니다."
           },
           {
-            "q": "What are your payment terms?",
-            "a": "Payment terms are tiered: New clients pay 30% T/T deposit with the PO, with the 70% balance T/T after inspection passes. Long-term clients enjoy a credit line — T/T within 1 week of the B/L copy or pickup. For large or special orders we also accept L/C to safeguard both sides."
+            "q": "결제 조건은 어떻게 됩니까?",
+            "a": "결제 조건은 단계별로 운영합니다. 신규 고객은 PO와 함께 30% T/T 선금을 결제하고, 검품 통과 후 잔금 70%를 T/T로 결제합니다. 장기 거래 고객에게는 여신 한도를 제공하여 B/L 사본 수령 또는 화물 인수 후 1주일 이내 T/T 결제가 가능합니다. 대량 또는 특수 발주의 경우 양측의 안전을 위해 L/C도 수용합니다."
           },
           {
-            "q": "Can you provide materials with special certifications (e.g., OEKO-TEX, GRS, GOTS)?",
-            "a": "Yes, we can source and certify materials to various international standards. Let us know your compliance requirements in advance."
+            "q": "특수 인증 소재(예: OEKO-TEX, GRS, GOTS)를 공급할 수 있습니까?",
+            "a": "예. 다양한 국제 표준에 부합하는 인증 소재를 소싱하고 인증을 확보할 수 있습니다. 컴플라이언스 요구 사항을 사전에 알려 주시기 바랍니다."
           }
         ]
       },
       {
-        "title": "Sample Development",
+        "title": "샘플 개발",
         "items": [
           {
-            "q": "How many rounds of sample revisions are allowed?",
-            "a": "Most orders go through 1–2 sample revisions (e.g. 2nd / 3rd sample) before the PP sample is approved and bulk production is scheduled; additional revision packages can be arranged as needed."
+            "q": "샘플 수정은 몇 회까지 가능합니까?",
+            "a": "대부분의 발주는 PP 샘플 승인 및 양산 일정 확정 전까지 1~2회의 샘플 수정(예: 2차/3차 샘플)을 거치며, 필요 시 추가 수정 패키지도 협의할 수 있습니다."
           },
           {
-            "q": "What is your lead time for sample/prototype production?",
-            "a": "Samples are generally ready in about 2 weeks, depending on material availability and scheduling."
+            "q": "샘플/프로토타입 제작 납기는 얼마나 걸립니까?",
+            "a": "샘플은 소재 수급 및 생산 일정 상황에 따라 일반적으로 약 2주 이내에 완성됩니다."
           },
           {
-            "q": "What materials will you use if the specified ones are unavailable?",
-            "a": "We will use the closest available substitute for development, and inform you of any differences before proceeding."
+            "q": "지정한 소재를 구할 수 없는 경우 어떤 소재를 사용합니까?",
+            "a": "개발 단계에서는 가장 유사한 대체 소재를 사용하며, 진행 전에 차이점을 사전에 안내해 드립니다."
           },
           {
-            "q": "Does the sample fee include shipping?",
-            "a": "No, the sample fee does not cover shipping or potential third-party costs (e.g. molds, plates). Express shipping (e.g. FedEx, DHL) can be arranged at additional cost."
+            "q": "샘플 비용에 배송비가 포함됩니까?",
+            "a": "아니요. 샘플 비용에는 배송비나 제3자 비용(예: 금형, 판 제작)이 포함되지 않습니다. 특송 배송(예: FedEx, DHL)은 추가 비용으로 이용하실 수 있습니다."
           },
           {
-            "q": "Do you provide pre-production samples (PP) for approval?",
-            "a": "Yes, a PP sample must be formally approved by you before mass production begins."
+            "q": "양산 전 승인용 PP 샘플을 제공합니까?",
+            "a": "예. 양산 착수 전 반드시 고객의 PP 샘플 정식 승인 절차를 거칩니다."
           }
         ]
       },
       {
-        "title": "Production, Progress & Shipping",
+        "title": "양산, 진행 관리 및 선적",
         "items": [
           {
-            "q": "Can we make changes after bulk production begins?",
-            "a": "Usually not, as materials are ordered and production started. We may accept small changes if timing and resources allow, but this could affect delivery and cost."
+            "q": "양산 시작 후 사양 변경이 가능합니까?",
+            "a": "소재 발주와 생산이 이미 진행된 상태이므로 원칙적으로 어렵습니다. 일정과 자원이 허용하는 범위에서 소폭 변경은 검토할 수 있으나, 납기와 비용에 영향을 줄 수 있습니다."
           },
           {
-            "q": "How do I receive production progress updates?",
-            "a": "We provide milestone-based progress updates, and can share photos or videos from your order upon request."
+            "q": "생산 진행 상황은 어떻게 전달받습니까?",
+            "a": "마일스톤 기준으로 진행 상황을 업데이트하며, 요청 시 해당 발주 건의 사진이나 영상도 공유해 드립니다."
           },
           {
-            "q": "How do you ensure production efficiency and flexibility?",
-            "a": "We implement LEAN methodologies and continuous improvement, optimizing lines for cost, efficiency, and order size flexibility."
+            "q": "생산 효율성과 유연성은 어떻게 확보합니까?",
+            "a": "LEAN 생산 방식과 지속적인 개선 활동을 통해 원가, 효율, 발주 수량 유연성에 최적화된 생산 라인을 운영합니다."
           },
           {
-            "q": "What is your standard production lead time?",
-            "a": "Standard bulk lead time is about 3 months from PP sample approval to factory completion, including overseas material sourcing and Myanmar production scheduling. Consolidation delays and production-queue timing may extend this on a per-project basis."
+            "q": "표준 양산 납기는 얼마나 됩니까?",
+            "a": "표준 양산 납기는 PP 샘플 승인부터 공장 출고 완료까지 약 3개월이며, 해외 소재 조달과 미얀마 생산 일정 편성이 포함됩니다. 화물 통합 지연이나 생산 대기 상황에 따라 프로젝트별로 연장될 수 있습니다."
           },
           {
-            "q": "What's your main port of loading?",
-            "a": "Myanmar bulk orders ship FOB Yangon Port, Yangon, Myanmar. For samples and rush orders shipped from our Shandong facility, the default is FOB Qingdao."
+            "q": "주요 선적항은 어디입니까?",
+            "a": "미얀마 양산 발주는 FOB Yangon Port(Yangon, Myanmar) 조건으로 선적합니다. 산둥 공장에서 출고되는 샘플 및 긴급 발주는 기본적으로 FOB Qingdao 조건입니다."
           },
           {
-            "q": "Can you customize packaging/handling for my orders?",
-            "a": "Yes, we offer packaging customization and can help with labeling, bundling, carton specifications and even special shipping needs."
+            "q": "발주 건에 맞춘 포장/취급 커스터마이징이 가능합니까?",
+            "a": "예. 포장 커스터마이징이 가능하며, 라벨링, 번들 포장, 카톤 사양은 물론 특수 운송 요구 사항까지 지원합니다."
           },
           {
-            "q": "Are you able to help with export documentation and compliance?",
-            "a": "Yes, we will provide all necessary export documents (e.g., invoice, packing list, COO, Form E) and can support any special certifications required."
+            "q": "수출 서류 및 컴플라이언스 지원이 가능합니까?",
+            "a": "예. 필요한 수출 서류(예: 인보이스, 패킹 리스트, 원산지증명서(COO), Form E)를 모두 제공하며, 요구되는 특수 인증도 지원합니다."
           }
         ]
       },
       {
-        "title": "Quality Control & After-Sale Support",
+        "title": "품질 관리(QC) 및 사후 지원",
         "items": [
           {
-            "q": "How do you ensure quality and material consistency?",
-            "a": "Incoming materials are strictly inspected and verified. QC stations at every major step catch deviations early. All orders undergo 100% end-of-line inspection, and we welcome third-party QC upon client request."
+            "q": "품질과 소재 일관성은 어떻게 보장합니까?",
+            "a": "입고 소재는 엄격한 검사와 확인 절차를 거칩니다. 주요 공정마다 QC 스테이션을 두어 이상을 조기에 발견하며, 전 발주 물량에 대해 100% 전수 검품을 실시합니다. 고객 요청 시 제3자 QC도 환영합니다."
           },
           {
-            "q": "Do you provide independent audit or inspection support?",
-            "a": "Absolutely. We welcome third-party audits, remote factory visits, and client inspections at any step."
+            "q": "독립 감사나 검품 지원을 제공합니까?",
+            "a": "물론입니다. 제3자 감사, 원격 공장 실사, 공정별 고객 검품을 모두 환영합니다."
           },
           {
-            "q": "How do you handle defective products or production complaints?",
-            "a": "We investigate all reports thoroughly and, depending on the situation, provide repair, replacement or negotiated settlement."
+            "q": "불량품이나 생산 관련 클레임은 어떻게 처리합니까?",
+            "a": "접수된 모든 사안을 철저히 조사하며, 상황에 따라 수선, 교체 또는 협의를 통한 보상을 제공합니다."
           },
           {
-            "q": "Do you offer any warranty or after-sales guarantee?",
-            "a": "We require clients to inspect all shipments within 14 days. As we manufacture to your specifications, we do not offer extended warranties."
+            "q": "보증 또는 사후 품질 보장을 제공합니까?",
+            "a": "모든 선적 물량은 수령 후 14일 이내에 검수해 주시기 바랍니다. 고객 사양에 따라 제조하는 특성상 별도의 연장 보증은 제공하지 않습니다."
           },
           {
-            "q": "Can you provide technical support for bag pattern or hardware development?",
-            "a": "Yes, our experienced team can advise on feasibility, cost, construction methods, and component selection."
+            "q": "가방 패턴이나 부자재 개발에 대한 기술 지원이 가능합니까?",
+            "a": "예. 경험이 풍부한 당사 팀이 실현 가능성, 원가, 봉제 구조, 부자재 선정에 대해 자문해 드립니다."
           },
           {
-            "q": "Don't see your question here?",
-            "a": "Please contact us directly – our team is always ready to assist with anything you need."
+            "q": "찾으시는 질문이 없습니까?",
+            "a": "직접 문의해 주시기 바랍니다. 당사 팀이 필요하신 모든 사항을 신속히 지원해 드립니다."
           }
         ]
       }
     ],
     "cta": {
-      "text": "Can't find what you're looking for?",
-      "highlight": "Feel free to contact us",
-      "suffix": "-- our team is here to help.",
-      "button": "Contact Us",
-      "glossaryLink": "Browse our Glossary for industry terms",
-      "blogLink": "Read our latest articles"
+      "text": "원하시는 내용을 찾지 못하셨습니까?",
+      "highlight": "부담 없이 문의해 주시기 바랍니다",
+      "suffix": "— 당사 팀이 도와드리겠습니다.",
+      "button": "문의하기",
+      "glossaryLink": "업계 용어집 보기",
+      "blogLink": "최신 아티클 읽기"
     }
   },
   "contact": {
-    "title": "Contact Us",
-    "subtitle": "Ready to Start Your Backpack Project?",
-    "intro": "Fill out the form below and we'll get back to you within 24 hours. For urgent inquiries, call or WhatsApp us directly.",
+    "title": "문의하기",
+    "subtitle": "백팩 프로젝트를 시작할 준비가 되셨습니까?",
+    "intro": "아래 양식을 작성해 주시면 24시간 이내에 회신드립니다. 급한 문의는 전화 또는 WhatsApp으로 직접 연락해 주시기 바랍니다.",
     "address": {
-      "label": "Address",
+      "label": "주소",
       "value": "Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai Industrial Zone, Yangon, Myanmar",
-      "viewOnMap": "View on Google Maps"
+      "viewOnMap": "Google 지도에서 보기"
     },
     "phone": {
-      "label": "Phone Number",
-      "fallback": "For other languages, please contact us via email",
+      "label": "전화번호",
+      "fallback": "기타 언어는 이메일로 문의해 주시기 바랍니다",
       "lines": [
         {
           "lang": "中文",
           "number": "+86 (532) 8856-2277",
-          "hours": "Beijing Time 8:00-17:00 · Mon-Fri",
+          "hours": "베이징 시간 8:00-17:00 · 월-금",
           "person": ""
         },
         {
           "lang": "日本語 / 한국어",
           "number": "+86 152 5320 6760",
-          "hours": "Beijing Time 8:00-17:00 · Mon-Fri",
-          "person": "Ms. Cui"
+          "hours": "베이징 시간 8:00-17:00 · 월-금",
+          "person": "최(Cui) 담당자"
         },
         {
           "lang": "English",
           "number": "+86 130 6139 1463",
-          "hours": "Myanmar Time 7:30-18:00 · Mon-Sat",
-          "person": "Mr. Jay"
+          "hours": "미얀마 시간 7:30-18:00 · 월-토",
+          "person": "담당자 Jay"
         },
         {
           "lang": "မြန်မာ",
           "number": "+95 9 9856 70999",
-          "hours": "Myanmar Time 7:30-18:00 · Mon-Sat",
+          "hours": "미얀마 시간 7:30-18:00 · 월-토",
           "person": ""
         }
       ]
     },
     "email": {
-      "label": "Email Address",
+      "label": "이메일 주소",
       "value": "jay@betterbagsmm.com"
     },
     "whatsapp": {
@@ -567,110 +567,110 @@
       "value": "+1 814.880.1463"
     },
     "trust": {
-      "title": "Why Trust Us",
-      "responseTime": "24-hour response guarantee",
-      "experience": "20+ years manufacturing experience",
-      "certified": "Professional team · Factory-direct · Traceable production"
+      "title": "신뢰할 수 있는 이유",
+      "responseTime": "24시간 이내 회신 보장",
+      "experience": "20년 이상의 제조 경험",
+      "certified": "전문 인력 · 공장 직거래 · 추적 가능한 생산 이력"
     },
     "form": {
-      "title": "Get A Quote",
+      "title": "견적 요청",
       "name": {
-        "label": "Name",
-        "placeholder": "John Doe",
-        "error": "Please enter your name"
+        "label": "성함",
+        "placeholder": "홍길동",
+        "error": "성함을 입력해 주십시오"
       },
       "email": {
-        "label": "Email Address",
+        "label": "이메일 주소",
         "placeholder": "example@company.com",
-        "error": "Please enter a valid email address"
+        "error": "올바른 이메일 주소를 입력해 주십시오"
       },
       "countryRegion": {
-        "label": "Country/Region",
-        "placeholder": "Select a country/region",
-        "loading": "Detecting location...",
-        "error": "Please select your country/region",
-        "searchPlaceholder": "Search country or dial code",
-        "noResults": "No matching country",
-        "popularLabel": "Popular",
-        "allLabel": "All countries"
+        "label": "국가/지역",
+        "placeholder": "국가/지역 선택",
+        "loading": "위치 확인 중...",
+        "error": "국가/지역을 선택해 주십시오",
+        "searchPlaceholder": "국가명 또는 국가번호 검색",
+        "noResults": "일치하는 국가가 없습니다",
+        "popularLabel": "주요 국가",
+        "allLabel": "전체 국가"
       },
       "companyBrandName": {
-        "label": "Company/Brand Name",
-        "placeholder": "Your Company Name",
-        "error": "Please enter your company/brand name"
+        "label": "회사/브랜드명",
+        "placeholder": "회사명",
+        "error": "회사/브랜드명을 입력해 주십시오"
       },
       "phoneNumber": {
-        "label": "Phone Number (Optional)",
-        "placeholder": "Phone number",
-        "error": "Please enter a valid phone number",
-        "codeLabel": "Phone country code",
-        "codePlaceholder": "Code",
-        "codeError": "Please select a dial code"
+        "label": "전화번호 (선택)",
+        "placeholder": "전화번호",
+        "error": "올바른 전화번호를 입력해 주십시오",
+        "codeLabel": "전화 국가번호",
+        "codePlaceholder": "국가번호",
+        "codeError": "국가번호를 선택해 주십시오"
       },
       "subject": {
-        "label": "Subject",
-        "placeholder": "e.g. Custom Travel Backpack Inquiry",
-        "error": "Please enter a subject"
+        "label": "제목",
+        "placeholder": "예: 커스텀 여행용 백팩 견적 문의",
+        "error": "제목을 입력해 주십시오"
       },
       "message": {
-        "label": "Your Message (Optional)",
-        "placeholder": "Please describe your project needs, target quantity, timeline, and any special requirements...",
-        "error": "Message must be less than 2000 characters"
+        "label": "문의 내용 (선택)",
+        "placeholder": "프로젝트 요구 사항, 목표 수량, 납기 일정, 기타 특별 요청 사항을 기재해 주시기 바랍니다...",
+        "error": "문의 내용은 2000자 이내로 입력해 주십시오"
       },
       "orderQuantity": {
-        "label": "Estimated Order Quantity (per design)",
-        "placeholder": "Select quantity range",
-        "error": "Please select an order quantity",
+        "label": "예상 발주 수량 (디자인당)",
+        "placeholder": "수량 범위 선택",
+        "error": "발주 수량을 선택해 주십시오",
         "optionLabels": [
-          "Less than 100 pcs",
-          "100-300 pcs",
-          "300-1000 pcs",
-          "More than 1000 pcs"
+          "100개 미만",
+          "100-300개",
+          "300-1000개",
+          "1000개 이상"
         ]
       },
       "techPackAvailability": {
-        "label": "Do you have a tech pack or reference sample?",
-        "placeholder": "Select an option",
-        "error": "Please select an option",
+        "label": "테크팩 또는 참고 샘플을 보유하고 계십니까?",
+        "placeholder": "옵션 선택",
+        "error": "옵션을 선택해 주십시오",
         "optionLabels": [
-          "Yes, I have a tech pack",
-          "I have a physical sample",
-          "I only have an idea/sketch"
+          "테크팩을 보유하고 있습니다",
+          "실물 샘플을 보유하고 있습니다",
+          "아이디어/스케치만 있습니다"
         ]
       },
       "fileUpload": {
-        "label": "Upload Files (Optional)",
-        "description": "Upload tech packs, sketches, or sample photos. Max 5 files, 10MB each.",
-        "button": "Choose Files",
-        "dragDrop": "or drag and drop files here",
-        "acceptedFormats": "Accepted formats: JPG, PNG, WebP, PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX",
+        "label": "파일 업로드 (선택)",
+        "description": "테크팩, 스케치, 샘플 사진 등을 업로드해 주십시오. 최대 5개, 파일당 10MB.",
+        "button": "파일 선택",
+        "dragDrop": "또는 파일을 여기에 끌어다 놓으십시오",
+        "acceptedFormats": "지원 형식: JPG, PNG, WebP, PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX",
         "errors": {
-          "tooLarge": "File \"{name}\" is too large. Maximum size is {maxMb}MB",
-          "unsupportedType": "File \"{name}\" has an unsupported type. Please upload images or documents.",
-          "tooMany": "Maximum {maxCount} files allowed",
-          "uploadFailed": "Some files failed to upload. Please remove them and try again.",
-          "invalidRef": "File \"{name}\" has an invalid upload reference."
+          "tooLarge": "파일 \"{name}\"의 용량이 너무 큽니다. 최대 {maxMb}MB까지 업로드할 수 있습니다",
+          "unsupportedType": "파일 \"{name}\"은(는) 지원하지 않는 형식입니다. 이미지 또는 문서 파일을 업로드해 주십시오.",
+          "tooMany": "파일은 최대 {maxCount}개까지 업로드할 수 있습니다",
+          "uploadFailed": "일부 파일의 업로드에 실패했습니다. 해당 파일을 제거한 후 다시 시도해 주십시오.",
+          "invalidRef": "파일 \"{name}\"의 업로드 참조가 올바르지 않습니다."
         }
       },
       "humanVerification": {
-        "label": "Human Verification",
-        "placeholder": "Loading verification...",
-        "error": "Please complete the verification before submitting",
-        "notConfigured": "Verification is not configured. Form submissions will be accepted in development mode only."
+        "label": "보안 인증",
+        "placeholder": "인증 모듈을 불러오는 중...",
+        "error": "제출 전에 보안 인증을 완료해 주십시오",
+        "notConfigured": "보안 인증이 설정되어 있지 않습니다. 양식 제출은 개발 모드에서만 허용됩니다."
       },
-      "submit": "Submit Inquiry",
-      "submitting": "Submitting...",
+      "submit": "문의 제출",
+      "submitting": "제출 중...",
       "success": {
-        "title": "Thank You for Your Inquiry!",
-        "message": "We've received your message and will respond within 24 hours."
+        "title": "문의해 주셔서 감사합니다",
+        "message": "문의가 정상적으로 접수되었습니다. 24시간 이내에 회신드리겠습니다."
       },
       "error": {
-        "title": "Submission Failed",
-        "message": "Sorry, there was an error submitting your form. Please try again later or contact us directly."
+        "title": "제출 실패",
+        "message": "죄송합니다. 양식 제출 중 오류가 발생했습니다. 잠시 후 다시 시도하시거나 직접 연락해 주시기 바랍니다."
       },
       "draft": {
-        "restored": "Your previous draft has been restored",
-        "discard": "Discard draft"
+        "restored": "이전에 작성하시던 내용을 복원했습니다",
+        "discard": "임시 저장 삭제"
       }
     }
   },
@@ -681,31 +681,31 @@
       "email": "jay@betterbagsmm.com",
       "phone": "+1 814.880.1463"
     },
-    "email": "Email",
-    "tel": "Tel/WhatsApp",
-    "quickLinks": "Quick Links",
-    "hours": "Hours",
-    "hoursTime": "Mon-Fri 9:00am – 5:00pm",
-    "copyright": "All rights reserved | Powered by OEM Backpack Factory",
+    "email": "이메일",
+    "tel": "전화/WhatsApp",
+    "quickLinks": "바로가기",
+    "hours": "영업시간",
+    "hoursTime": "월-금 09:00 – 17:00",
+    "copyright": "모든 권리 보유 | Powered by OEM Backpack Factory",
     "links": [
       {
-        "name": "Home",
+        "name": "홈",
         "href": "#home"
       },
       {
-        "name": "About Us",
+        "name": "회사 소개",
         "href": "#about"
       },
       {
-        "name": "Features",
+        "name": "핵심 강점",
         "href": "#features"
       },
       {
-        "name": "Services",
+        "name": "서비스",
         "href": "#services"
       },
       {
-        "name": "Process",
+        "name": "프로세스",
         "href": "#process"
       },
       {
@@ -713,209 +713,209 @@
         "href": "#faq"
       },
       {
-        "name": "Contact Us",
+        "name": "문의하기",
         "href": "#contact"
       },
       {
-        "name": "Blogs",
+        "name": "블로그",
         "href": "#blogs"
       },
       {
-        "name": "Glossary",
+        "name": "용어집",
         "href": "/glossary"
       }
     ]
   },
   "blog": {
-    "title": "Latest Insights",
-    "subtitle": "Stay updated with industry trends, customization tips, and company news",
-    "readMore": "Read More",
-    "viewAll": "View All Articles",
+    "title": "최신 인사이트",
+    "subtitle": "업계 트렌드와 커스터마이징 노하우, 회사 소식을 전해 드립니다",
+    "readMore": "자세히 보기",
+    "viewAll": "전체 글 보기",
     "relatedLinks": {
-      "glossary": "Explore our Glossary"
+      "glossary": "용어집 보기"
     }
   },
   "blogList": {
-    "title": "Blog Articles",
-    "subtitle": "In-depth insights, trends, and best practices in the backpack manufacturing industry",
-    "backToHome": "Back to Home",
-    "totalArticles": "{count} Articles",
-    "readMore": "Read More",
-    "backToTop": "Back to Top",
-    "noArticles": "No articles available",
+    "title": "블로그 게시글",
+    "subtitle": "백팩 제조 산업의 심층 인사이트와 트렌드, 모범 사례를 전합니다",
+    "backToHome": "홈으로 돌아가기",
+    "totalArticles": "{count}건의 게시글",
+    "readMore": "자세히 보기",
+    "backToTop": "맨 위로",
+    "noArticles": "등록된 게시글이 없습니다",
     "relatedLinks": {
-      "glossary": "Browse Manufacturing Glossary",
-      "faq": "Check our FAQ"
+      "glossary": "제조 용어집 보기",
+      "faq": "FAQ 보기"
     }
   },
   "blogDetail": {
-    "home": "Home",
-    "blog": "Blog",
-    "backToList": "Back to Articles",
-    "backToTop": "Back to Top",
-    "noContent": "Article content not available",
+    "home": "홈",
+    "blog": "블로그",
+    "backToList": "목록으로 돌아가기",
+    "backToTop": "맨 위로",
+    "noContent": "게시글 내용을 불러올 수 없습니다.",
     "cta": {
-      "title": "Ready to Start Your Custom Backpack Project?",
-      "subtitle": "Contact us for professional OEM/ODM solutions",
-      "button": "Contact Us Now"
+      "title": "맞춤 제작 백팩 프로젝트를 시작할 준비가 되셨습니까?",
+      "subtitle": "전문 OEM/ODM 솔루션이 필요하시면 지금 문의해 주십시오",
+      "button": "지금 문의하기"
     }
   },
   "language": {
-    "selectLanguage": "Select Language",
-    "currentLanguage": "Current: {language}"
+    "selectLanguage": "언어 선택",
+    "currentLanguage": "현재: {language}"
   },
   "languageBanner": {
-    "message": "You have been automatically redirected to the {language} version",
-    "keep": "Keep {language}",
-    "switchToEnglish": "Switch to English",
-    "close": "Close"
+    "message": "{language} 버전으로 자동 이동되었습니다",
+    "keep": "{language} 유지",
+    "switchToEnglish": "영어로 전환",
+    "close": "닫기"
   },
   "glossary": {
-    "title": "Backpack Manufacturing Glossary",
-    "subtitle": "Essential industry terms and definitions for OEM/ODM backpack production",
-    "description": "Learn the key terminology used in backpack manufacturing, from materials and production processes to quality control and logistics.",
-    "allCategories": "All",
+    "title": "백팩 제조 용어집",
+    "subtitle": "OEM/ODM 백팩 생산에 필요한 핵심 업계 용어와 정의",
+    "description": "원단·소재와 생산 공정부터 품질 관리, 물류까지 백팩 제조에 사용되는 핵심 용어를 정리했습니다.",
+    "allCategories": "전체",
     "categories": {
-      "materials": "Materials",
-      "manufacturing": "Manufacturing",
-      "quality": "Quality Control",
-      "logistics": "Logistics",
-      "design": "Design"
+      "materials": "소재",
+      "manufacturing": "제조",
+      "quality": "품질 관리",
+      "logistics": "물류",
+      "design": "디자인"
     },
-    "backToHome": "Back to Home",
+    "backToHome": "홈으로 돌아가기",
     "relatedLinks": {
-      "faq": "Have questions? Check our FAQ",
-      "blog": "Read our latest articles"
+      "faq": "궁금한 점은 FAQ에서 확인",
+      "blog": "최신 블로그 글 보기"
     },
     "terms": {
       "oem": {
-        "term": "OEM (Original Equipment Manufacturer)",
-        "definition": "A company that manufactures products based on the buyer's specifications and designs. The buyer owns the brand and design, while the OEM handles production."
+        "term": "OEM (주문자 상표 부착 생산)",
+        "definition": "바이어의 사양과 디자인에 따라 제품을 생산하는 방식입니다. 브랜드와 디자인의 소유권은 바이어에게 있으며, OEM 제조업체는 생산을 담당합니다."
       },
       "odm": {
-        "term": "ODM (Original Design Manufacturer)",
-        "definition": "A manufacturer that designs and produces products which are then rebranded by the buyer. Unlike OEM, the ODM provides both design and manufacturing services."
+        "term": "ODM (제조업자 개발 생산)",
+        "definition": "제조업체가 직접 디자인하고 생산한 제품을 바이어가 자사 브랜드로 판매하는 방식입니다. OEM과 달리 ODM은 디자인과 제조를 모두 제공합니다."
       },
       "moq": {
-        "term": "MOQ (Minimum Order Quantity)",
-        "definition": "The smallest number of units a manufacturer is willing to produce in a single order. MOQ varies by product complexity and materials."
+        "term": "MOQ (최소 주문 수량)",
+        "definition": "제조업체가 단일 발주로 생산할 수 있는 최소 수량입니다. MOQ는 제품의 복잡도와 소재에 따라 달라집니다."
       },
       "tech-pack": {
-        "term": "Tech Pack",
-        "definition": "A detailed technical document containing all specifications needed to manufacture a product, including dimensions, materials, colors, hardware, and construction details."
+        "term": "테크팩 (Tech Pack)",
+        "definition": "치수, 소재, 컬러, 부자재, 봉제 구조 등 제품 생산에 필요한 모든 사양을 담은 기술 문서입니다."
       },
       "denier": {
-        "term": "Denier",
-        "definition": "A unit of measurement for the fiber thickness of individual threads used in fabric. Higher denier numbers indicate thicker, more durable fabric (e.g., 600D polyester)."
+        "term": "데니어 (Denier)",
+        "definition": "원단에 사용되는 원사의 굵기를 나타내는 단위입니다. 데니어 수치가 높을수록 더 두껍고 내구성이 뛰어난 원단을 의미합니다(예: 600D 폴리에스터)."
       },
       "ripstop": {
-        "term": "Ripstop",
-        "definition": "A fabric weaving technique using reinforcement threads in a crosshatch pattern to prevent tears from spreading. Commonly used in outdoor and tactical backpacks."
+        "term": "립스톱 (Ripstop)",
+        "definition": "보강사를 격자 형태로 삽입해 찢어짐이 번지지 않도록 하는 원단 제직 기법입니다. 아웃도어 및 택티컬 백팩에 널리 사용됩니다."
       },
       "cordura": {
-        "term": "Cordura",
-        "definition": "A brand name for a collection of high-performance fabrics known for exceptional durability, abrasion resistance, and tear strength. Widely used in premium backpacks."
+        "term": "코듀라 (Cordura)",
+        "definition": "뛰어난 내구성, 내마모성, 인열 강도로 잘 알려진 고성능 원단 브랜드입니다. 프리미엄 백팩에 널리 사용됩니다."
       },
       "bartack": {
-        "term": "Bartack",
-        "definition": "A dense, reinforced stitching pattern used at stress points on bags, such as strap attachments and handle bases, to prevent seam failure under load."
+        "term": "바택 (Bartack)",
+        "definition": "스트랩 부착부, 핸들 부착부 등 하중이 집중되는 부위에 적용하는 고밀도 보강 봉제입니다. 하중에 의한 봉제선 파손을 방지합니다."
       },
       "aql": {
-        "term": "AQL (Acceptable Quality Level)",
-        "definition": "A statistical sampling method used in quality inspection to determine the maximum acceptable number of defective items in a batch. Common standard is AQL 2.5 for bags."
+        "term": "AQL (합격 품질 수준)",
+        "definition": "검품 시 로트 내에서 허용 가능한 최대 불량 수를 판정하는 통계적 샘플링 검사 방식입니다. 가방류에는 일반적으로 AQL 2.5 기준이 적용됩니다."
       },
       "fob": {
-        "term": "FOB (Free On Board)",
-        "definition": "A shipping term indicating that the seller delivers goods to the port of shipment. The buyer assumes responsibility and cost once goods are loaded onto the vessel."
+        "term": "FOB (본선 인도 조건)",
+        "definition": "판매자가 선적항까지 화물을 인도하는 무역 조건입니다. 화물이 본선에 선적된 이후의 비용과 책임은 구매자가 부담합니다."
       },
       "bom": {
-        "term": "BOM (Bill of Materials)",
-        "definition": "A comprehensive list of all raw materials, components, and hardware needed to manufacture a product, including quantities and specifications."
+        "term": "BOM (자재 명세서)",
+        "definition": "제품 생산에 필요한 모든 원자재, 구성품, 부자재를 수량 및 사양과 함께 정리한 목록입니다."
       },
       "ykk": {
         "term": "YKK",
-        "definition": "The world's largest zipper manufacturer, headquartered in Japan. YKK zippers are considered the industry standard for quality and reliability in bag manufacturing."
+        "definition": "일본에 본사를 둔 세계 최대 지퍼 제조업체입니다. YKK 지퍼는 가방 제조에서 품질과 신뢰성의 업계 표준으로 인정받고 있습니다."
       },
       "pantone": {
         "term": "Pantone (PMS)",
-        "definition": "A standardized color matching system used worldwide to ensure consistent color reproduction across different materials and production runs."
+        "definition": "소재와 생산 차수가 달라져도 일관된 색상 재현을 보장하기 위해 전 세계적으로 사용되는 표준 컬러 매칭 시스템입니다."
       },
       "grs": {
         "term": "GRS (Global Recycled Standard)",
-        "definition": "An international certification that verifies recycled content in products and tracks the supply chain from recycled input to finished product."
+        "definition": "제품 내 재활용 원료 함량을 검증하고, 재활용 원료 투입부터 완제품까지 공급망을 추적하는 국제 인증입니다."
       },
       "oeko-tex": {
         "term": "OEKO-TEX Standard 100",
-        "definition": "An independent testing and certification system for textile products at all stages of production, ensuring they are free from harmful substances."
+        "definition": "생산 전 단계의 섬유 제품을 대상으로 유해 물질이 포함되어 있지 않음을 확인하는 독립 시험·인증 시스템입니다."
       },
       "cif": {
-        "term": "CIF (Cost, Insurance, and Freight)",
-        "definition": "A shipping term where the seller covers the cost of goods, insurance, and freight charges to deliver products to the buyer's designated port."
+        "term": "CIF (운임·보험료 포함 인도 조건)",
+        "definition": "판매자가 구매자가 지정한 도착항까지의 물품 대금, 보험료, 운임을 부담하는 무역 조건입니다."
       },
       "exw": {
-        "term": "EXW (Ex Works)",
-        "definition": "A shipping term where the buyer is responsible for all transportation costs and risks from the manufacturer's facility to the final destination."
+        "term": "EXW (공장 인도 조건)",
+        "definition": "제조업체 공장에서 최종 목적지까지의 모든 운송 비용과 위험을 구매자가 부담하는 무역 조건입니다."
       },
       "pp-sample": {
-        "term": "PP Sample (Pre-Production Sample)",
-        "definition": "A sample produced before mass production begins to verify design, materials, and construction. Must be approved by the buyer before production starts."
+        "term": "PP Sample (양산 전 샘플)",
+        "definition": "양산 시작 전에 디자인, 소재, 봉제 구조를 확인하기 위해 제작하는 샘플입니다. 양산에 착수하기 전에 바이어의 승인을 받아야 합니다."
       },
       "top-sample": {
-        "term": "TOP Sample (Top of Production Sample)",
-        "definition": "A sample pulled from the actual production line during manufacturing to verify that quality and specifications match the approved PP sample."
+        "term": "TOP Sample (양산 라인 샘플)",
+        "definition": "양산 중 실제 생산 라인에서 채취하는 샘플로, 품질과 사양이 승인된 PP Sample과 일치하는지 확인하는 데 사용합니다."
       },
       "tpu": {
-        "term": "TPU (Thermoplastic Polyurethane)",
-        "definition": "A flexible, durable plastic material used for waterproof coatings, labels, and patches on backpacks. Known for its excellent abrasion and weather resistance."
+        "term": "TPU (열가소성 폴리우레탄)",
+        "definition": "백팩의 방수 코팅, 라벨, 패치 등에 사용되는 유연하고 내구성이 뛰어난 플라스틱 소재입니다. 우수한 내마모성과 내후성으로 잘 알려져 있습니다."
       }
     }
   },
   "testimonials": {
-    "title": "What Our Clients Say",
-    "subtitle": "Trusted by brands worldwide for quality OEM backpack manufacturing",
+    "title": "고객사의 평가",
+    "subtitle": "전 세계 브랜드가 신뢰하는 백팩 OEM 생산 파트너입니다",
     "items": [
       {
-        "name": "Shimizu Kota",
-        "role": "Merchandise Management Head",
+        "name": "시미즈 고타",
+        "role": "상품 관리 총괄",
         "company": "Carrot Company",
         "rating": 4.5,
-        "quote": "If I had to rate them on a 10-point scale, I would give a 9. There was something small I noticed on my second visit to the Myanmar factory, but apart from that everything has been really good — more than enough for our current needs. We did run into a few challenges on the production line, but that happens at every factory; outside of those, there were no real issues. Overall, I think they are doing a solid, dependable job."
+        "quote": "10점 만점으로 평가한다면 9점을 주고 싶습니다. 미얀마 공장을 두 번째 방문했을 때 사소한 부분이 하나 눈에 띄기는 했지만, 그 외에는 모든 면에서 매우 만족스러웠고 현재 당사의 요구 수준에는 충분하고도 남습니다. 생산 라인에서 몇 가지 어려움이 있었던 것은 사실이지만, 이는 어느 공장에서나 있는 일이며 그 외에 실질적인 문제는 없었습니다. 전반적으로 견실하고 믿을 수 있는 파트너라고 생각합니다."
       }
     ],
     "carousel": {
-      "previous": "Previous slide",
-      "next": "Next slide",
-      "goTo": "Go to slide {index}",
-      "status": "Slide {current} of {total}"
+      "previous": "이전 슬라이드",
+      "next": "다음 슬라이드",
+      "goTo": "{index}번 슬라이드로 이동",
+      "status": "전체 {total}개 중 {current}번째 슬라이드"
     }
   },
   "author": {
-    "writtenBy": "Written by",
-    "readingTime": "Reading time",
-    "minRead": "min read",
-    "aboutAuthor": "About the Author"
+    "writtenBy": "작성자",
+    "readingTime": "읽는 시간",
+    "minRead": "분 소요",
+    "aboutAuthor": "작성자 소개"
   },
   "certifications": {
-    "title": "Certifications",
+    "title": "인증",
     "iso9001": "ISO 9001",
     "oekoTex": "OEKO-TEX",
     "grs": "GRS",
     "gots": "GOTS"
   },
   "quoteWidget": {
-    "openLabel": "Get A Quote",
-    "minimize": "Minimize",
-    "dragHandle": "Drag to move",
-    "mobileJumpLabel": "Jump to quote form"
+    "openLabel": "견적 요청",
+    "minimize": "최소화",
+    "dragHandle": "드래그하여 이동",
+    "mobileJumpLabel": "견적 양식으로 이동"
   },
   "metadata": {
     "home": {
-      "title": "Better Bags Myanmar - Premium OEM Backpack Factory",
-      "description": "Top-tier custom backpack manufacturer in Myanmar. 20+ years of experience, 600+ employees, primarily serving Japanese brands."
+      "title": "Better Bags Myanmar - 프리미엄 OEM 백팩 공장",
+      "description": "미얀마 소재 프리미엄 커스텀 백팩 제조업체입니다. 20년 이상의 경험과 600명 이상의 인력으로 일본 브랜드 중심의 OEM 생산 실적을 보유하고 있습니다."
     },
     "blogList": {
-      "title": "Blog - Better Bags Myanmar | Industry Insights",
-      "description": "Explore backpack manufacturing insights, industry trends, and sustainability practices from Better Bags Myanmar."
+      "title": "블로그 - Better Bags Myanmar | 업계 인사이트",
+      "description": "Better Bags Myanmar가 전하는 백팩 제조 인사이트, 업계 트렌드, 지속가능성 실천 사례를 확인하실 수 있습니다."
     }
   }
 }
