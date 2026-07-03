@@ -1,675 +1,675 @@
 {
   "bento": {
     "brand": {
-      "title": "Better Bags since 2003",
-      "subtitle": "#Top Tier Custom Backpacks Factory in Myanmar",
-      "description": "One-stop solutions for your backpack needs"
+      "title": "Better Bags depuis 2003",
+      "subtitle": "#Usine de sacs à dos personnalisés de premier rang au Myanmar",
+      "description": "Votre guichet unique pour tous vos projets de sacs à dos"
     },
     "dashboard": {
-      "title": "Key Metrics"
+      "title": "Chiffres clés"
     },
     "trust": {
-      "title": "Trusted By",
+      "title": "Ils nous font confiance",
       "certifications": "Certifications",
-      "partners": "Partner Brands",
-      "more": "+20 more"
+      "partners": "Marques partenaires",
+      "more": "+20 autres"
     },
     "cta": {
-      "title": "Ready to Start Your Project?",
-      "subtitle": "Get a free quote within 24 hours",
-      "button": "Get A Quote",
-      "note": "No obligation, free consultation"
+      "title": "Prêt à lancer votre projet ?",
+      "subtitle": "Recevez un devis gratuit sous 24 heures",
+      "button": "Demander un devis",
+      "note": "Sans engagement, consultation gratuite"
     }
   },
   "nav": {
-    "banner": "Home",
-    "about": "About Us",
-    "features": "Features",
+    "banner": "Accueil",
+    "about": "À propos",
+    "features": "Atouts",
     "services": "Services",
-    "process": "Process",
+    "process": "Processus",
     "faq": "FAQ",
-    "contact": "Contact Us",
+    "contact": "Contact",
     "blog": "Blog",
-    "skipToContent": "Skip to main content"
+    "skipToContent": "Aller au contenu principal"
   },
   "banner": {
-    "line1": "Better Bags since 2003",
-    "line2": "#Top Tier Custom Backpacks Factory in Myanmar",
+    "line1": "Better Bags depuis 2003",
+    "line2": "#Usine de sacs à dos personnalisés de premier plan au Myanmar",
     "p1": {
-      "pre": "At Better Bags, we provide a ",
-      "highlight": "one-stop",
-      "post": " solutions for your backpack needs—including material sourcing, sampling, mass production, strict quality control, and global delivery."
+      "pre": "Chez Better Bags, nous vous proposons un ",
+      "highlight": "guichet unique",
+      "post": " pour tous vos projets de sacs à dos : sourcing des matières, échantillonnage, production en série, contrôle qualité rigoureux et livraison partout dans le monde."
     },
-    "p2": "With more than 20 years of experience and a primary focus on the Japanese market—including 15+ years of long-term partnerships with leading Japanese brands such as Anello—we also support select clients from Korea, the U.S., and Europe. We manufacture a wide variety of bags: travel bags, backpacks, shoulder bags, tote bags, and more—tailored to your exact requirements.",
-    "p3": "Our competitive pricing and sustainable production options make us the perfect partner for businesses, organizations, and events of any scale.",
-    "cta": "Get A Quote"
+    "p2": "Forts de plus de 20 ans d'expérience, principalement tournés vers le marché japonais — dont plus de 15 ans de partenariats durables avec de grandes marques japonaises telles qu'Anello — nous accompagnons également une clientèle choisie en Corée, aux États-Unis et en Europe. Nous fabriquons une grande variété de sacs : sacs de voyage, sacs à dos, sacs à bandoulière, sacs cabas et bien d'autres, réalisés au plus près de vos exigences.",
+    "p3": "Nos tarifs compétitifs et nos options de production éco-responsables font de nous le partenaire idéal des entreprises, organisations et événements de toute envergure.",
+    "cta": "Demander un devis"
   },
   "about": {
-    "title": "About Us",
+    "title": "À propos de nous",
     "mission": {
-      "title": "Our Mission",
-      "desc": "To empower global brands and partners by delivering innovative, high-quality, and cost-effective backpack solutions—manufactured responsibly and guided by integrity, craftsmanship, and customer-centric service at every step."
+      "title": "Notre mission",
+      "desc": "Accompagner les marques et partenaires du monde entier en leur proposant des solutions de sacs à dos innovantes, de haute qualité et compétitives — fabriquées de manière responsable, avec pour fil conducteur l'intégrité, le savoir-faire et un service centré sur le client à chaque étape."
     },
     "vision": {
-      "title": "Our Vision",
-      "desc": "To be recognized worldwide as the most trusted and forward-thinking backpack manufacturing partner—setting industry benchmarks in quality, innovation, sustainability, and operational excellence, while creating lasting value for our clients, employees, communities, and the environment."
+      "title": "Notre vision",
+      "desc": "Être reconnu dans le monde entier comme le partenaire de fabrication de sacs à dos le plus fiable et le plus visionnaire — en établissant les références du secteur en matière de qualité, d'innovation, de durabilité et d'excellence opérationnelle, tout en créant une valeur durable pour nos clients, nos collaborateurs, les communautés et l'environnement."
     },
-    "valuesTitle": "Our Core Values",
+    "valuesTitle": "Nos valeurs fondamentales",
     "values": [
       {
-        "title": "Integrity & Transparency",
-        "desc": "We conduct our business with honesty, accountability, and the highest ethical standards—building trust with every commitment to our customers, employees, and partners."
+        "title": "Intégrité et transparence",
+        "desc": "Nous conduisons nos activités avec honnêteté, sens des responsabilités et les plus hauts standards éthiques — chaque engagement tenu renforce la confiance de nos clients, de nos collaborateurs et de nos partenaires."
       },
       {
-        "title": "Pursuit of Excellence",
-        "desc": "We are dedicated to quality, precision, and continuous improvement—striving to exceed expectations across every order, partnership, and interaction."
+        "title": "Quête de l'excellence",
+        "desc": "Nous cultivons la qualité, la précision et l'amélioration continue — avec la volonté de dépasser les attentes à chaque commande, chaque partenariat et chaque échange."
       },
       {
-        "title": "Customer Focus",
-        "desc": "Our clients' needs drive every decision. We anticipate challenges, act responsively, and tailor solutions to ensure our customers' enduring success."
+        "title": "Priorité au client",
+        "desc": "Les besoins de nos clients guident chacune de nos décisions. Nous anticipons les difficultés, réagissons avec diligence et concevons des solutions sur mesure pour assurer leur réussite dans la durée."
       },
       {
-        "title": "Innovation & Progress",
-        "desc": "We embrace change and bring creativity to all aspects of design, production, and problem-solving—enabling us to offer cutting-edge products and manufacturing processes."
+        "title": "Innovation et progrès",
+        "desc": "Nous accueillons le changement et insufflons de la créativité dans chaque aspect du design, de la production et de la résolution de problèmes — afin de proposer des produits et des procédés de fabrication à la pointe."
       },
       {
-        "title": "Sustainability & Responsibility",
-        "desc": "We are committed to sustainable sourcing, minimizing our environmental impact, and fostering safe, fair, and respectful working conditions for all."
+        "title": "Durabilité et responsabilité",
+        "desc": "Nous nous engageons pour un approvisionnement durable, la réduction de notre empreinte environnementale et des conditions de travail sûres, équitables et respectueuses pour tous."
       },
       {
-        "title": "Collaboration & Empowerment",
-        "desc": "We value teamwork, diverse perspectives, and empowering every team member—cultivating a culture where people, ideas, and partnerships flourish."
+        "title": "Collaboration et valorisation des talents",
+        "desc": "Nous croyons au travail d'équipe, à la diversité des points de vue et à l'autonomie de chaque collaborateur — en cultivant une culture où les personnes, les idées et les partenariats s'épanouissent."
       }
     ],
     "founder": {
-      "title": "Meet Our Founder"
+      "title": "Rencontrez notre fondateur"
     },
     "company": {
       "title": "Better Bags Myanmar Company Limited",
-      "p1": "Founded in 2003, Better Bags Myanmar specializes in the OEM/ODM manufacturing of premium backpacks, designed for a global client. Our comprehensive capabilities cover leisure, travel, climbing, and fashion bags, crafted from responsibly sourced polyester, cotton, and synthetic leather.",
-      "p2": "Our story began in Shenzhen, China, where our founder, Mr. Li Guangtong, gained deep expertise working with top international brands. Driven by a vision of global excellence, we later established our main production base in Shandong (Rizhao) — paired with a dedicated sampling and development center in Qingdao — and, following thorough research, launched our state-of-the-art production base in Yangon, Myanmar in 2023.",
-      "p3": "Over the past two decades, our primary focus has been the Japanese market, and we have proudly partnered with multiple Japanese brands — including Anello — alongside selected global brands such as New Balance, Nike, and Fila. Our unwavering commitment to quality, reliability, and proactive service has enabled us to maintain long-term partnerships, with many leading Japanese brands working with us for over 15 years.",
-      "p4": "Today, Better Bags stands at the intersection of tradition and innovation. By optimizing our dual-factory model, investing in people and systems, and adhering strictly to international standards, we meet the evolving needs of global customers with efficiency, flexibility, and future-oriented solutions. As we look ahead, our goal is to set new benchmarks in both client satisfaction and responsible manufacturing."
+      "p1": "Fondée en 2003, Better Bags Myanmar est spécialisée dans la fabrication OEM/ODM de sacs à dos haut de gamme, conçus pour une clientèle internationale. Notre savoir-faire couvre les sacs de loisirs, de voyage, d'escalade et de mode, confectionnés en polyester, en coton et en cuir synthétique issus d'un approvisionnement responsable.",
+      "p2": "Notre histoire commence à Shenzhen, en Chine, où notre fondateur, M. Li Guangtong, a forgé son expertise auprès de grandes marques internationales. Portés par une ambition d'excellence mondiale, nous avons ensuite établi notre principale base de production dans le Shandong (Rizhao) — accompagnée d'un centre d'échantillonnage et de développement dédié à Qingdao — avant d'inaugurer, en 2023 et après des études approfondies, notre site de production de dernière génération à Yangon, au Myanmar.",
+      "p3": "Depuis deux décennies, le marché japonais constitue notre principal axe de développement : nous sommes fiers de collaborer avec de nombreuses marques japonaises — dont Anello — ainsi qu'avec des marques internationales de renom telles que New Balance, Nike et Fila. Notre engagement constant envers la qualité, la fiabilité et un service proactif nous a permis de bâtir des partenariats durables : plusieurs grandes marques japonaises nous font confiance depuis plus de 15 ans.",
+      "p4": "Aujourd'hui, Better Bags se situe à la croisée de la tradition et de l'innovation. En optimisant notre modèle à deux usines, en investissant dans nos équipes et nos systèmes, et en respectant rigoureusement les normes internationales, nous répondons aux besoins évolutifs de nos clients internationaux avec efficacité, flexibilité et des solutions tournées vers l'avenir. Notre ambition : établir de nouvelles références tant en matière de satisfaction client que de fabrication responsable."
     },
-    "trustedBrands": "Trusted by Global Brands"
+    "trustedBrands": "La confiance des grandes marques internationales"
   },
   "costAdvantage": {
-    "title": "Why Myanmar: The Cost-vs-Lead-Time Sweet Spot",
-    "subtitle": "Same product, same destination (Japan). Different trade-offs. See how our Myanmar production stacks up against China and Vietnam.",
+    "title": "Pourquoi le Myanmar : le juste équilibre entre coût et délai de production",
+    "subtitle": "Même produit, même destination (le Japon), mais des compromis différents. Découvrez comment notre production au Myanmar se positionne face à la Chine et au Vietnam.",
     "countries": [
       {
         "code": "CN",
-        "name": "China",
-        "priceLabel": "Price",
-        "priceValue": "Baseline",
+        "name": "Chine",
+        "priceLabel": "Prix",
+        "priceValue": "Référence",
         "pricePercent": 100,
-        "leadTimeLabel": "Lead Time",
-        "leadTimeValue": "Baseline",
+        "leadTimeLabel": "Délai de production",
+        "leadTimeValue": "Référence",
         "leadTimePercent": 33
       },
       {
         "code": "VN",
         "name": "Vietnam",
-        "priceLabel": "Price",
-        "priceValue": "Same as China",
+        "priceLabel": "Prix",
+        "priceValue": "Identique à la Chine",
         "pricePercent": 100,
-        "leadTimeLabel": "Lead Time",
-        "leadTimeValue": "+1 month",
+        "leadTimeLabel": "Délai de production",
+        "leadTimeValue": "+1 mois",
         "leadTimePercent": 66
       },
       {
         "code": "MM",
         "name": "Myanmar (Better Bags)",
-        "priceLabel": "Price",
-        "priceValue": "-10% vs China & Vietnam",
+        "priceLabel": "Prix",
+        "priceValue": "-10 % vs Chine et Vietnam",
         "pricePercent": 90,
-        "leadTimeLabel": "Lead Time",
-        "leadTimeValue": "+2 months",
+        "leadTimeLabel": "Délai de production",
+        "leadTimeValue": "+2 mois",
         "leadTimePercent": 100,
-        "badge": "Best Value"
+        "badge": "Meilleur rapport qualité-prix"
       }
     ],
-    "takeaway": "Trade 2 months of extra lead time for 10% lower cost — that's our value proposition for OEM buyers.",
-    "cta": "Get A Quote"
+    "takeaway": "Accepter 2 mois de délai supplémentaire en échange d'un coût réduit de 10 % : voilà notre proposition de valeur pour les acheteurs OEM.",
+    "cta": "Demander un devis"
   },
   "whatSetsUsApart": {
-    "title": "What Sets Us Apart",
-    "subtitle": "Three operational disciplines that separate Better Bags from typical OEM factories.",
+    "title": "Ce qui nous distingue",
+    "subtitle": "Trois disciplines opérationnelles qui démarquent Better Bags des usines OEM ordinaires.",
     "items": [
       {
         "key": "qc",
-        "title": "Japanese-Grade Quality Control",
-        "description": "Strict broken-needle replacement logs and 100% X-ray screening — we physically eliminate customer-complaint risk at the production line, not after the fact."
+        "title": "Contrôle qualité aux standards japonais",
+        "description": "Registres stricts de remplacement des aiguilles cassées et passage de 100 % des pièces aux rayons X : nous éliminons physiquement le risque de réclamation client dès la ligne de production, et non après coup."
       },
       {
         "key": "cost",
-        "title": "China-Myanmar Cost Engineering",
-        "description": "Chinese supply-chain orchestration paired with Yangon-based labor settlement compresses unit cost on bulk orders without compromising quality."
+        "title": "Ingénierie des coûts Chine-Myanmar",
+        "description": "Nous orchestrons la chaîne d'approvisionnement depuis la Chine tout en rémunérant la main-d'œuvre à Yangon : cette combinaison comprime le coût unitaire de vos commandes en volume, sans le moindre compromis sur la qualité."
       },
       {
         "key": "leadTime",
-        "title": "Capacity-Locked 4-Month Lead Time",
-        "description": "We never over-book. Every order locks in a 4-month production and delivery window so your launch dates stay predictable."
+        "title": "Délai de 4 mois, capacité verrouillée",
+        "description": "Nous ne surchargeons jamais notre planning. Chaque commande verrouille une fenêtre de production et de livraison de 4 mois, afin que vos dates de lancement restent parfaitement prévisibles."
       }
     ]
   },
   "marketPositioning": {
-    "title": "Where Better Bags Stands in the OEM Market",
-    "subtitle": "Map every OEM factory onto a profit × quality grid — and see who lives in which corner.",
+    "title": "La position de Better Bags sur le marché OEM",
+    "subtitle": "Situez chaque usine OEM sur une grille rentabilité × qualité — et découvrez qui occupe quel quadrant.",
     "axes": {
       "profit": {
-        "low": "Thin margins",
-        "high": "Healthy margins"
+        "low": "Marges réduites",
+        "high": "Marges confortables"
       },
       "quality": {
-        "low": "Unstable quality & high risk",
-        "high": "Reliable quality & on-time delivery"
+        "low": "Qualité instable et risque élevé",
+        "high": "Qualité fiable et livraison dans les délais"
       }
     },
     "quadrants": [
       {
         "position": "topRight",
         "title": "Better Bags",
-        "description": "Cost-efficient Myanmar production paired with Japanese-grade QC — high margins, low risk, scalable bulk orders.",
-        "badge": "Best Position"
+        "description": "Une production birmane compétitive alliée à un contrôle qualité (QC) aux standards japonais — marges élevées, risque maîtrisé et commandes en volume évolutives.",
+        "badge": "Position idéale"
       },
       {
         "position": "topLeft",
-        "title": "Large-Scale Chinese Factories",
-        "description": "Delivery quality is generally stable, but rising Chinese labor costs and policy risk squeeze your margins thin."
+        "title": "Grandes usines chinoises",
+        "description": "Une qualité de livraison globalement stable, mais la hausse des coûts salariaux en Chine et les risques réglementaires compriment vos marges."
       },
       {
         "position": "bottomRight",
-        "title": "Low-End Southeast Asian Shops",
-        "description": "Pricing looks attractive, but the absence of a QC system exposes you to breach-of-contract and claim risk at any moment."
+        "title": "Ateliers bas de gamme d'Asie du Sud-Est",
+        "description": "Des prix séduisants en apparence, mais l'absence de système de contrôle qualité (QC) vous expose à tout moment à des ruptures de contrat et à des réclamations."
       },
       {
         "position": "bottomLeft",
-        "title": "Under-Resourced Workshops",
-        "description": "No economies of scale on cost, and unable to pass the bulk-production audits that serious clients require."
+        "title": "Ateliers aux moyens limités",
+        "description": "Aucune économie d'échelle sur les coûts, et une incapacité à passer les audits de production en série qu'exigent les donneurs d'ordre sérieux."
       }
     ]
   },
   "features": {
     "stats": [
       {
-        "label": "Professional Employees",
+        "label": "Collaborateurs qualifiés",
         "value": "600+"
       },
       {
-        "label": "Low MOQ",
-        "value": "From 1,500 PCS"
+        "label": "MOQ réduit",
+        "value": "À partir de 1 500 pièces"
       },
       {
-        "label": "Proofing Time",
-        "value": "2 Weeks"
+        "label": "Délai d'échantillonnage",
+        "value": "2 semaines"
       },
       {
-        "label": "Quality Inspection",
-        "value": "100%"
+        "label": "Inspection qualité",
+        "value": "100 %"
       },
       {
-        "label": "Online Support",
-        "value": "24 Hrs"
+        "label": "Support en ligne",
+        "value": "24 h/24"
       },
       {
-        "label": "Monthly Production",
-        "value": "50,000+ PCS"
+        "label": "Production mensuelle",
+        "value": "50 000+ pièces"
       }
     ],
     "jay": {
-      "title": "Welcome, I'm Jay.",
-      "desc1": "As the next-generation leader of Better Bags — a family-owned manufacturer with global vision—I draw upon more than 8 years of study and professional experience in Pennsylvania, United States. Being an alumnus of ",
-      "and": " and ",
-      "desc2": " I am proud to bring proven international expertise as well as cross-cultural communication skills to our clients and partners. My mission is to bridge the best of East and West, ensuring every partner enjoys premium products, seamless project communication, and reliable after-sales support—no matter where you are in the world."
+      "title": "Bienvenue, je suis Jay.",
+      "desc1": "En tant que dirigeant de la nouvelle génération de Better Bags — fabricant familial porté par une vision internationale —, je m'appuie sur plus de 8 années d'études et d'expérience professionnelle en Pennsylvanie, aux États-Unis. Diplômé de ",
+      "and": " et de ",
+      "desc2": ", je suis fier d'apporter à nos clients et partenaires une expertise internationale éprouvée ainsi que de solides compétences en communication interculturelle. Ma mission : réunir le meilleur de l'Orient et de l'Occident, afin que chaque partenaire bénéficie de produits haut de gamme, d'une communication de projet fluide et d'un service après-vente fiable — où que vous soyez dans le monde."
     },
-    "title": "Why Better Bags",
+    "title": "Pourquoi choisir Better Bags",
     "list": [
       {
-        "title": "Flexibility",
+        "title": "Flexibilité",
         "color": "#81C3D7",
-        "desc": "With production bases in both Shandong (Rizhao), China and Yangon, Myanmar — supported by a dedicated sampling and development center in Qingdao — we offer unparalleled flexibility to meet our customers' diverse needs. Our Myanmar factory is fully equipped to handle large-volume production with speed and efficiency, while our long-established Shandong operation (20+ years of expertise) excels at design, sampling, sourcing, and personalized project management. Whether you need rapid prototyping, small custom batches, or are scaling up to large bulk orders, our dual-factory model ensures your requirements are fulfilled with agility and precision."
+        "desc": "Avec des sites de production au Shandong (Rizhao), en Chine, et à Yangon, au Myanmar — épaulés par un centre d'échantillonnage et de développement dédié à Qingdao —, nous offrons une flexibilité inégalée pour répondre aux besoins les plus variés de nos clients. Notre usine du Myanmar est pleinement équipée pour absorber les productions en grands volumes avec rapidité et efficacité, tandis que notre site historique du Shandong (plus de 20 ans d'expertise) excelle dans le design, l'échantillonnage, le sourcing et la gestion de projet personnalisée. Prototypage rapide, petites séries sur mesure ou montée en puissance vers de gros volumes : notre modèle à double usine garantit que vos exigences sont satisfaites avec agilité et précision."
       },
       {
         "title": "Communication",
         "color": "#416788",
-        "desc": "At Better Bags, effective communication is the foundation of all our partnerships. Our founder, Mr. Li Guangtong, built our business on the trust and high standards of Japanese clients—reflecting a deep understanding of international requirements. Drawing on our multicultural team—including professionals with extensive study and work experience in the United States—we seamlessly connect with global customers. We are especially adept at bridging cultural and language gaps, ensuring clarity, transparency, and a smooth cooperation experience from start to finish."
+        "desc": "Chez Better Bags, une communication efficace est le fondement de tous nos partenariats. Notre fondateur, M. Li Guangtong, a bâti notre entreprise sur la confiance et les exigences élevées de clients japonais — le signe d'une compréhension profonde des standards internationaux. Forts d'une équipe multiculturelle — dont des professionnels riches d'une longue expérience d'études et de travail aux États-Unis —, nous échangeons en toute fluidité avec nos clients du monde entier. Nous excellons tout particulièrement à faire le pont entre les cultures et les langues, garantissant clarté, transparence et une coopération sereine du début à la fin."
       },
       {
-        "title": "Quality Control",
+        "title": "Contrôle qualité",
         "color": "#5a6d7c",
-        "desc": "The backbone of our reputation is unwavering quality control. Years of collaboration with demanding markets like Japan have forged a meticulous approach at every stage of production, from sourcing to final inspection. Our experienced QA teams ensure that every order not only meets but often exceeds international standards for craftsmanship, durability, and reliability—guaranteeing peace of mind with every delivery."
+        "desc": "Notre réputation repose sur un contrôle qualité (QC) sans concession. Des années de collaboration avec des marchés exigeants comme le Japon ont façonné une approche méticuleuse à chaque étape de la production, du sourcing à l'inspection finale. Nos équipes d'assurance qualité expérimentées veillent à ce que chaque commande réponde aux standards internationaux — et souvent les dépasse — en matière de savoir-faire, de durabilité et de fiabilité, pour une tranquillité d'esprit garantie à chaque livraison."
       },
       {
-        "title": "Competitive Pricing",
+        "title": "Prix compétitifs",
         "color": "#2f6690",
-        "desc": "Our primary production base in Myanmar gives us a significant cost advantage—production costs here are much lower than in China, and even compared to other Southeast Asian countries such as Vietnam and Thailand, we are able to offer more competitive prices under the same quality standards. This means our clients receive high-quality products at a better value, without compromise.\n\nMyanmar's cost efficiency perfectly complements our China operation — our Shandong (Rizhao) production base together with our Qingdao sampling and development center, which specialize in design, sampling, and sourcing. By combining Myanmar's unbeatable production pricing with China's strong development capabilities, we achieve the \"sweet spot\" in global manufacturing—offering clients both outstanding quality and truly competitive pricing."
+        "desc": "Notre principale base de production au Myanmar nous confère un avantage de coût significatif : les coûts de production y sont nettement inférieurs à ceux de la Chine et, même face à d'autres pays d'Asie du Sud-Est comme le Vietnam ou la Thaïlande, nous sommes en mesure de proposer des prix plus compétitifs à standards de qualité équivalents. Nos clients bénéficient ainsi de produits de haute qualité offrant un meilleur rapport qualité-prix, sans le moindre compromis.\n\nL'efficience économique du Myanmar complète parfaitement nos opérations en Chine — notre base de production du Shandong (Rizhao) et notre centre d'échantillonnage et de développement de Qingdao, spécialisés dans le design, l'échantillonnage et le sourcing. En alliant les prix de production imbattables du Myanmar aux solides capacités de développement de la Chine, nous atteignons le « juste équilibre » de la fabrication mondiale : une qualité remarquable alliée à des prix véritablement compétitifs pour nos clients."
       }
     ]
   },
   "customization": {
-    "title": "Customization Options",
-    "intro": "As an experienced backpack manufacturer, we provide a comprehensive range of tailor-made solutions for clients worldwide. From <span style='font-weight:800'>initial concept to production and delivery</span>, every detail is customizable to ensure your products stand out in the market.",
+    "title": "Options de personnalisation",
+    "intro": "En tant que fabricant de sacs à dos expérimenté, nous proposons une gamme complète de solutions sur mesure à des clients du monde entier. Du <span style='font-weight:800'>concept initial jusqu'à la production et la livraison</span>, chaque détail est personnalisable afin que vos produits se distinguent sur le marché.",
     "features": [
       {
-        "title": "Extensive Backpack Styles",
-        "desc": "No matter the style you need, our experienced R&D team can guide you through the selection process to ensure you find the ideal fit for your project.",
+        "title": "Un large éventail de styles de sacs à dos",
+        "desc": "Quel que soit le style recherché, notre équipe R&D expérimentée vous accompagne dans votre sélection afin de trouver le modèle idéal pour votre projet.",
         "highlights": [
-          "Casual, Travel, Hiking, Business",
-          "Camera, Sports, Tote, Anti-theft",
-          "Tactical, Sling, School, Rolling",
-          "Multi-functional, Eco-friendly, Fishing, Accessories"
+          "Décontracté, voyage, randonnée, affaires",
+          "Photo, sport, cabas, antivol",
+          "Tactique, bandoulière (sling), scolaire, à roulettes",
+          "Multifonction, écoresponsable, pêche, accessoires"
         ]
       },
       {
-        "title": "Multiple Sizes and Capacities",
-        "desc": "Flexible size configurations to fit any scenario, all customizable with smart compartments and layouts.",
+        "title": "Tailles et capacités multiples",
+        "desc": "Des configurations de taille flexibles adaptées à chaque usage, toutes personnalisables avec des compartiments et des agencements intelligents.",
         "highlights": [
-          "Small (10L–20L): Daily/Children/Light Essentials",
-          "Medium (20L–40L): Commute/Trip/Students",
-          "Large (40L–60L): Travel/Outdoor/More Space",
-          "Extra Large (60L+): Long Trip/Pro Use/Special Needs"
+          "Petit (10L–20L) : quotidien / enfants / essentiels légers",
+          "Moyen (20L–40L) : trajets quotidiens / escapades / étudiants",
+          "Grand (40L–60L) : voyage / plein air / volume supérieur",
+          "Très grand (60L+) : longs séjours / usage professionnel / besoins spécifiques"
         ]
       },
       {
-        "title": "Superior & Eco-friendly Materials",
-        "desc": "Premium global materials, responsibly sourced. All can be custom colored, processed, or finished to match your vision!",
+        "title": "Matières premium et écoresponsables",
+        "desc": "Des matières haut de gamme sélectionnées dans le monde entier et sourcées de manière responsable. Toutes peuvent être teintes, traitées ou finies sur mesure pour correspondre à votre vision !",
         "highlights": [
-          "Polyester, Nylon, Canvas, Leather",
-          "Jute, Tyvek, Neoprene, PVC, TPU",
-          "Recycled & Eco Options",
-          "Any custom color, print, or finish"
+          "Polyester, nylon, toile, cuir",
+          "Jute, Tyvek, néoprène, PVC, TPU",
+          "Options recyclées et écoresponsables",
+          "Toute couleur, impression ou finition sur mesure"
         ]
       },
       {
-        "title": "Professional Color Solutions",
-        "desc": "Achieve flawless color consistency and bring your brand vision to life with our comprehensive color services.",
+        "title": "Solutions couleur professionnelles",
+        "desc": "Garantissez une parfaite constance des coloris et donnez vie à l'identité de votre marque grâce à nos services couleur complets.",
         "highlights": [
-          "Pantone-matched custom dyes",
-          "Color sample proofing",
-          "Strict colorfastness testing"
+          "Teintures sur mesure avec correspondance Pantone",
+          "Validation d'échantillons couleur",
+          "Tests rigoureux de solidité des couleurs"
         ]
       },
       {
-        "title": "Custom Imprint & Branding",
-        "desc": "Your brand, your way. Multiple logo and graphic application methods for a lasting impression.",
+        "title": "Marquage et identité de marque sur mesure",
+        "desc": "Votre marque, à votre façon. De multiples techniques d'application de logos et de graphismes pour une impression durable.",
         "highlights": [
-          "Embroidery / Silk Screen / Heat Transfer",
-          "Embossing / Debossing / TPU Labels",
-          "Rubber patches / Metal badges",
-          "Graphics, taglines, custom artwork"
+          "Broderie / Sérigraphie / Transfert thermique",
+          "Embossage / Débossage / Étiquettes TPU",
+          "Écussons en caoutchouc / Badges métalliques",
+          "Graphismes, slogans, créations sur mesure"
         ]
       },
       {
-        "title": "Accessories & Hardware",
-        "desc": "Upgrade every detail—premium zippers, buckles, trims. Each part can be color- and function-customized.",
+        "title": "Accessoires et quincaillerie",
+        "desc": "Sublimez chaque détail : fermetures éclair, boucles et finitions haut de gamme. Chaque élément peut être personnalisé en couleur comme en fonction.",
         "highlights": [
-          "Zippers: Waterproof, Two-way, Invisible, etc.",
-          "Buckles: Plastic, Metal, Magnetic, Quick-release, D-rings",
-          "Loops, pulls, trims—all configurable",
-          "Match finishes & color"
+          "Fermetures éclair : étanches, double curseur, invisibles, etc.",
+          "Boucles : plastique, métal, magnétiques, à ouverture rapide, anneaux en D",
+          "Passants, tirettes, finitions — entièrement configurables",
+          "Harmonisation des finitions et des coloris"
         ]
       },
       {
-        "title": "Enhanced Functional Features",
-        "desc": "Tailored features for safety, tech, travel, or specialist needs—because every use case is unique.",
+        "title": "Fonctionnalités avancées",
+        "desc": "Des fonctionnalités adaptées à la sécurité, à la technologie, au voyage ou aux usages spécialisés — car chaque cas d'usage est unique.",
         "highlights": [
-          "Expansion: Roll-top, Zippers, Drawstring",
-          "Weatherproofing: Coated fabrics, Rain covers, Ventilated backs",
-          "Security: Anti-theft locks, RFID shields",
-          "Tech: USB ports, cable routing, reflective details, LED integration",
-          "Travel: TSA-friendly, Trolley sleeves"
+          "Extension : roll-top, fermetures éclair, cordon de serrage",
+          "Protection contre les intempéries : tissus enduits, housses de pluie, dos ventilés",
+          "Sécurité : serrures antivol, protections RFID",
+          "Technologie : ports USB, passages de câbles, détails réfléchissants, intégration LED",
+          "Voyage : compatible TSA, passants trolley"
         ]
       },
       {
-        "title": "Private Label & Logo Customization",
-        "desc": "Fully customizable branding—even for private label requirements.",
+        "title": "Marque privée et personnalisation du logo",
+        "desc": "Une identité de marque entièrement personnalisable — y compris pour vos exigences de marque privée.",
         "highlights": [
-          "Woven & Fabric Labels",
-          "TPU/PU Badges",
-          "Metal Patches",
-          "Showcase your unique identity"
+          "Étiquettes tissées et en tissu",
+          "Badges TPU/PU",
+          "Plaques métalliques",
+          "Mettez en valeur votre identité unique"
         ]
       }
     ],
-    "ready": "Ready to bring your vision to life? <br />Contact us for a tailor-made solution—and discover why top brands worldwide trust us as their manufacturing partner.",
-    "cta": "Customize Now"
+    "ready": "Prêt à donner vie à votre vision ? <br />Contactez-nous pour une solution sur mesure — et découvrez pourquoi les plus grandes marques internationales nous font confiance comme partenaire de fabrication.",
+    "cta": "Personnalisez dès maintenant"
   },
   "services": {
-    "title": "Optimized All-in-One Service for Mass Production",
+    "title": "Un service guichet unique optimisé pour la production en série",
     "steps": [
       {
-        "title": "Handle Customer Inquiry",
-        "desc": "Send us an inquiry and share the details of your project. Our dedicated team will quickly respond to understand your needs and expectations."
+        "title": "Prise en charge de votre demande",
+        "desc": "Envoyez-nous votre demande et partagez les détails de votre projet. Notre équipe dédiée vous répond rapidement afin de cerner vos besoins et vos attentes."
       },
       {
-        "title": "Manufacture Quotation",
-        "desc": "If your project fits our standard MOQ and production capabilities, we will promptly provide an initial quotation based on your tech pack, selected fabric quality, and requested quantity."
+        "title": "Devis de fabrication",
+        "desc": "Si votre projet correspond à notre MOQ (quantité minimale de commande) standard et à nos capacités de production, nous vous adressons rapidement un premier devis établi à partir de votre Tech Pack (dossier technique), de la qualité de tissu retenue et des quantités souhaitées."
       },
       {
-        "title": "Sample Development",
-        "desc": "Once the quotation is approved, we move forward with sample development. This ensures that quality and specifications are confirmed before bulk production begins."
+        "title": "Développement de l'échantillon",
+        "desc": "Une fois le devis validé, nous lançons le développement de l'échantillon. La qualité et les spécifications sont ainsi confirmées avant le démarrage de la production en série."
       },
       {
-        "title": "Bulk Production",
-        "desc": "After you confirm the order and provide a deposit, we commence bulk production—strictly following all agreed specifications with careful attention to detail."
+        "title": "Production en série",
+        "desc": "Après confirmation de la commande et versement de l'acompte, nous lançons la production en série, dans le strict respect des spécifications convenues et avec le plus grand soin du détail."
       },
       {
-        "title": "Quality Control",
-        "desc": "Our rigorous QC procedures include 100% end-line inspections and application of AQL 2.5 standards for final checks. We also welcome third-party QC to further guarantee quality and transparency."
+        "title": "Contrôle qualité (QC)",
+        "desc": "Nos procédures QC rigoureuses comprennent une inspection à 100 % en fin de ligne et l'application de la norme AQL 2.5 pour les contrôles finaux. Nous accueillons également volontiers les inspections QC tierces, gage supplémentaire de qualité et de transparence."
       },
       {
-        "title": "Packaging & Shipping",
-        "desc": "After quality confirmation, your products are carefully packaged and shipped in bulk to your designated warehouse, ensuring safe and efficient delivery."
+        "title": "Emballage et expédition",
+        "desc": "Une fois la qualité confirmée, vos produits sont soigneusement emballés puis expédiés en volume vers l'entrepôt de votre choix, pour une livraison sûre et efficace."
       }
     ],
-    "processNote": "<highlight1>De la demande a la livraison</highlight1>, notre equipe professionnelle vous accompagne tout au long du processus, garantissant que chaque etape soit <highlight2>efficace et transparente</highlight2>, pour que votre projet personnalise soit livre sans accroc."
+    "processNote": "<highlight1>De la demande à la livraison</highlight1>, notre équipe professionnelle vous accompagne tout au long du processus et veille à ce que chaque étape soit <highlight2>efficace et transparente</highlight2>, afin que votre projet sur mesure puisse être livré en toute sérénité."
   },
   "faq": {
-    "title": "Frequently Asked Questions (FAQ)",
+    "title": "Foire aux questions (FAQ)",
     "sections": [
       {
-        "title": "General & Pre-Sale",
+        "title": "Questions générales et avant-vente",
         "items": [
           {
-            "q": "What should I prepare before contacting you?",
-            "a": "Please have your tech pack (or clear design sketches), estimated order quantity, preferred materials, and any special requirements ready. The more specific your brief, the faster and more accurate our quotation and recommendations."
+            "q": "Que dois-je préparer avant de vous contacter ?",
+            "a": "Veuillez préparer votre Tech Pack (dossier technique) ou des croquis de design clairs, la quantité de commande estimée, les matières souhaitées ainsi que toute exigence particulière. Plus votre brief est précis, plus notre devis et nos recommandations seront rapides et justes."
           },
           {
-            "q": "Do you provide a catalogue of your products?",
-            "a": "No, we are a pure OEM/ODM manufacturer and do not have our own product catalogue. All products are custom-made to client specifications."
+            "q": "Proposez-vous un catalogue de vos produits ?",
+            "a": "Non, nous sommes un fabricant purement OEM/ODM et ne disposons pas de notre propre catalogue. Tous nos produits sont fabriqués sur mesure selon le cahier des charges de chaque client."
           },
           {
-            "q": "Can you share samples or images of previous work for reference?",
-            "a": "Due to strict NDAs with our clients, we cannot share images of previous products. However, we highly recommend ordering a sample or arranging a factory tour to assess our craftsmanship and quality for yourself."
+            "q": "Pouvez-vous partager des échantillons ou des images de réalisations précédentes à titre de référence ?",
+            "a": "En raison des accords de confidentialité (NDA) stricts qui nous lient à nos clients, nous ne pouvons pas partager d'images de productions antérieures. Nous vous recommandons vivement de commander un échantillon ou d'organiser une visite d'usine afin de juger par vous-même de notre savoir-faire et de notre qualité."
           },
           {
-            "q": "Can you provide references from existing clients?",
-            "a": "While we cannot share client contacts due to confidentiality, we welcome video calls, sample reviews, and factory tours for your assurance."
+            "q": "Pouvez-vous fournir des références de clients existants ?",
+            "a": "La confidentialité nous interdit de communiquer les coordonnées de nos clients ; en revanche, nous vous proposons volontiers des visioconférences, des revues d'échantillons et des visites d'usine pour vous apporter toutes les garanties."
           },
           {
-            "q": "Do I get a dedicated project manager or team?",
-            "a": "Yes, every project is assigned to a dedicated project manager and project team for smooth, timely and personalized service."
+            "q": "Bénéficierai-je d'un chef de projet ou d'une équipe dédiés ?",
+            "a": "Oui, chaque projet est confié à un chef de projet dédié et à une équipe projet, pour un service fluide, réactif et personnalisé."
           },
           {
-            "q": "How will I know the timeline for my project?",
-            "a": "After confirmation, we provide a detailed production schedule covering sampling, production, and shipment milestones, keeping you informed at every stage."
+            "q": "Comment serai-je informé du calendrier de mon projet ?",
+            "a": "Après confirmation, nous vous remettons un planning de production détaillé couvrant les jalons d'échantillonnage, de production et d'expédition, afin de vous tenir informé à chaque étape."
           }
         ]
       },
       {
-        "title": "Orders, Sampling & Quotation",
+        "title": "Commandes, échantillonnage et devis",
         "items": [
           {
-            "q": "Do you accept OEM and ODM orders?",
-            "a": "Yes, we only accept OEM/ODM orders. We do not manufacture or sell our own branded products."
+            "q": "Acceptez-vous les commandes OEM et ODM ?",
+            "a": "Oui, nous acceptons exclusivement les commandes OEM/ODM. Nous ne fabriquons ni ne vendons de produits sous notre propre marque."
           },
           {
-            "q": "What is your typical Minimum Order Quantity (MOQ)?",
-            "a": "For Myanmar bulk production our MOQ is 1,500 pcs per design and color. Our China (Shandong) facility additionally accepts sample and rush orders, ranging from a few hundred up to tens of thousands of pcs per design — get in touch to discuss your specific needs."
+            "q": "Quel est votre MOQ (quantité minimale de commande) habituel ?",
+            "a": "Pour la production en série au Myanmar, notre MOQ est de 1 500 pièces par modèle et par coloris. Notre site chinois (Shandong) accepte en outre les échantillons et les commandes urgentes, de quelques centaines à plusieurs dizaines de milliers de pièces par modèle — contactez-nous pour étudier vos besoins spécifiques."
           },
           {
-            "q": "How is your quotation process structured?",
-            "a": "We first provide an estimated quotation based on your tech pack and details. A final binding quote is issued after prototype/sample approval. Prices are quoted FOB Yangon for Myanmar bulk orders, or FOB Qingdao for sample and rush orders from our Shandong facility. CIF quotes are available on request."
+            "q": "Comment se déroule votre processus de devis ?",
+            "a": "Nous établissons d'abord un devis estimatif sur la base de votre Tech Pack et de vos spécifications. Un devis ferme et définitif est émis après validation du prototype ou de l'échantillon. Les prix s'entendent FOB Yangon pour les productions en série au Myanmar, et FOB Qingdao pour les échantillons et commandes urgentes issus de notre site du Shandong. Des devis CIF sont disponibles sur demande."
           },
           {
-            "q": "What are your payment terms?",
-            "a": "Payment terms are tiered: New clients pay 30% T/T deposit with the PO, with the 70% balance T/T after inspection passes. Long-term clients enjoy a credit line — T/T within 1 week of the B/L copy or pickup. For large or special orders we also accept L/C to safeguard both sides."
+            "q": "Quelles sont vos conditions de paiement ?",
+            "a": "Nos conditions de paiement sont échelonnées : les nouveaux clients versent un acompte de 30 % par virement T/T à la commande (PO), le solde de 70 % étant réglé par T/T après validation de l'inspection. Les clients de longue date bénéficient d'un encours de crédit : paiement par T/T sous 1 semaine à compter de la copie du B/L ou de l'enlèvement. Pour les commandes importantes ou particulières, nous acceptons également la L/C afin de sécuriser les deux parties."
           },
           {
-            "q": "Can you provide materials with special certifications (e.g., OEKO-TEX, GRS, GOTS)?",
-            "a": "Yes, we can source and certify materials to various international standards. Let us know your compliance requirements in advance."
+            "q": "Pouvez-vous fournir des matières bénéficiant de certifications spécifiques (OEKO-TEX, GRS, GOTS, par exemple) ?",
+            "a": "Oui, nous pouvons sourcer et faire certifier des matières selon différents référentiels internationaux. Merci de nous indiquer vos exigences de conformité en amont."
           }
         ]
       },
       {
-        "title": "Sample Development",
+        "title": "Développement des échantillons",
         "items": [
           {
-            "q": "How many rounds of sample revisions are allowed?",
-            "a": "Most orders go through 1–2 sample revisions (e.g. 2nd / 3rd sample) before the PP sample is approved and bulk production is scheduled; additional revision packages can be arranged as needed."
+            "q": "Combien de séries de révisions d'échantillons sont possibles ?",
+            "a": "La plupart des commandes passent par 1 à 2 révisions d'échantillon (2e / 3e échantillon, par exemple) avant validation de l'échantillon PP et lancement de la production en série ; des révisions supplémentaires peuvent être organisées si nécessaire."
           },
           {
-            "q": "What is your lead time for sample/prototype production?",
-            "a": "Samples are generally ready in about 2 weeks, depending on material availability and scheduling."
+            "q": "Quel est votre délai de réalisation d'un échantillon ou d'un prototype ?",
+            "a": "Les échantillons sont généralement prêts en 2 semaines environ, selon la disponibilité des matières et le planning."
           },
           {
-            "q": "What materials will you use if the specified ones are unavailable?",
-            "a": "We will use the closest available substitute for development, and inform you of any differences before proceeding."
+            "q": "Quelles matières utiliserez-vous si celles spécifiées ne sont pas disponibles ?",
+            "a": "Nous utiliserons le substitut disponible le plus proche pour le développement et vous informerons de toute différence avant de poursuivre."
           },
           {
-            "q": "Does the sample fee include shipping?",
-            "a": "No, the sample fee does not cover shipping or potential third-party costs (e.g. molds, plates). Express shipping (e.g. FedEx, DHL) can be arranged at additional cost."
+            "q": "Les frais d'échantillonnage incluent-ils l'expédition ?",
+            "a": "Non, les frais d'échantillonnage ne couvrent ni l'expédition ni les éventuels coûts de prestataires tiers (moules, plaques, etc.). Un envoi express (FedEx ou DHL, par exemple) peut être organisé moyennant un coût supplémentaire."
           },
           {
-            "q": "Do you provide pre-production samples (PP) for approval?",
-            "a": "Yes, a PP sample must be formally approved by you before mass production begins."
+            "q": "Fournissez-vous des échantillons de pré-production (PP) pour validation ?",
+            "a": "Oui, un échantillon PP doit être formellement approuvé par vos soins avant le lancement de la production en série."
           }
         ]
       },
       {
-        "title": "Production, Progress & Shipping",
+        "title": "Production, suivi et expédition",
         "items": [
           {
-            "q": "Can we make changes after bulk production begins?",
-            "a": "Usually not, as materials are ordered and production started. We may accept small changes if timing and resources allow, but this could affect delivery and cost."
+            "q": "Peut-on modifier la commande une fois la production en série lancée ?",
+            "a": "En principe non, les matières étant déjà commandées et la production engagée. De petites modifications restent envisageables si le calendrier et les ressources le permettent, mais elles peuvent affecter les délais et les coûts."
           },
           {
-            "q": "How do I receive production progress updates?",
-            "a": "We provide milestone-based progress updates, and can share photos or videos from your order upon request."
+            "q": "Comment suis-je informé de l'avancement de la production ?",
+            "a": "Nous communiquons l'avancement à chaque jalon et pouvons, sur demande, partager des photos ou des vidéos de votre commande."
           },
           {
-            "q": "How do you ensure production efficiency and flexibility?",
-            "a": "We implement LEAN methodologies and continuous improvement, optimizing lines for cost, efficiency, and order size flexibility."
+            "q": "Comment garantissez-vous l'efficacité et la flexibilité de la production ?",
+            "a": "Nous appliquons les méthodes LEAN et une démarche d'amélioration continue, en optimisant nos lignes en matière de coûts, d'efficacité et de flexibilité selon la taille des commandes."
           },
           {
-            "q": "What is your standard production lead time?",
-            "a": "Standard bulk lead time is about 3 months from PP sample approval to factory completion, including overseas material sourcing and Myanmar production scheduling. Consolidation delays and production-queue timing may extend this on a per-project basis."
+            "q": "Quel est votre délai de production standard ?",
+            "a": "Le délai de production en série standard est d'environ 3 mois entre la validation de l'échantillon PP et la sortie d'usine, incluant l'approvisionnement des matières à l'étranger et la planification de la production au Myanmar. Les délais de consolidation et la file d'attente de production peuvent l'allonger selon les projets."
           },
           {
-            "q": "What's your main port of loading?",
-            "a": "Myanmar bulk orders ship FOB Yangon Port, Yangon, Myanmar. For samples and rush orders shipped from our Shandong facility, the default is FOB Qingdao."
+            "q": "Quel est votre principal port de chargement ?",
+            "a": "Les productions en série au Myanmar sont expédiées FOB Yangon Port, Yangon, Myanmar. Pour les échantillons et commandes urgentes expédiés depuis notre site du Shandong, la condition par défaut est FOB Qingdao."
           },
           {
-            "q": "Can you customize packaging/handling for my orders?",
-            "a": "Yes, we offer packaging customization and can help with labeling, bundling, carton specifications and even special shipping needs."
+            "q": "Pouvez-vous personnaliser l'emballage et le conditionnement de mes commandes ?",
+            "a": "Oui, nous proposons la personnalisation des emballages et pouvons vous accompagner sur l'étiquetage, le groupage, les spécifications des cartons et même les besoins d'expédition particuliers."
           },
           {
-            "q": "Are you able to help with export documentation and compliance?",
-            "a": "Yes, we will provide all necessary export documents (e.g., invoice, packing list, COO, Form E) and can support any special certifications required."
+            "q": "Pouvez-vous nous assister sur la documentation export et la conformité ?",
+            "a": "Oui, nous fournissons tous les documents d'exportation nécessaires (facture, liste de colisage, certificat d'origine COO, Form E, etc.) et pouvons prendre en charge toute certification spécifique requise."
           }
         ]
       },
       {
-        "title": "Quality Control & After-Sale Support",
+        "title": "Contrôle qualité et support après-vente",
         "items": [
           {
-            "q": "How do you ensure quality and material consistency?",
-            "a": "Incoming materials are strictly inspected and verified. QC stations at every major step catch deviations early. All orders undergo 100% end-of-line inspection, and we welcome third-party QC upon client request."
+            "q": "Comment garantissez-vous la qualité et la constance des matières ?",
+            "a": "Les matières reçues sont rigoureusement inspectées et vérifiées. Des postes de contrôle qualité (QC) à chaque étape clé détectent les écarts au plus tôt. Toutes les commandes font l'objet d'une inspection à 100 % en fin de ligne, et nous accueillons volontiers un contrôle qualité tiers à la demande du client."
           },
           {
-            "q": "Do you provide independent audit or inspection support?",
-            "a": "Absolutely. We welcome third-party audits, remote factory visits, and client inspections at any step."
+            "q": "Acceptez-vous les audits ou inspections indépendants ?",
+            "a": "Absolument. Nous accueillons volontiers les audits tiers, les visites d'usine à distance et les inspections client à chaque étape."
           },
           {
-            "q": "How do you handle defective products or production complaints?",
-            "a": "We investigate all reports thoroughly and, depending on the situation, provide repair, replacement or negotiated settlement."
+            "q": "Comment traitez-vous les produits défectueux ou les réclamations de production ?",
+            "a": "Nous examinons chaque signalement en profondeur et proposons, selon la situation, une réparation, un remplacement ou un règlement négocié."
           },
           {
-            "q": "Do you offer any warranty or after-sales guarantee?",
-            "a": "We require clients to inspect all shipments within 14 days. As we manufacture to your specifications, we do not offer extended warranties."
+            "q": "Offrez-vous une garantie ou un engagement après-vente ?",
+            "a": "Nous demandons à nos clients d'inspecter toutes les livraisons sous 14 jours. Fabriquant selon vos spécifications, nous n'offrons pas de garantie étendue."
           },
           {
-            "q": "Can you provide technical support for bag pattern or hardware development?",
-            "a": "Yes, our experienced team can advise on feasibility, cost, construction methods, and component selection."
+            "q": "Proposez-vous un accompagnement technique pour le développement des patronages ou de la quincaillerie ?",
+            "a": "Oui, notre équipe expérimentée peut vous conseiller sur la faisabilité, les coûts, les méthodes de construction et le choix des composants."
           },
           {
-            "q": "Don't see your question here?",
-            "a": "Please contact us directly – our team is always ready to assist with anything you need."
+            "q": "Vous ne trouvez pas votre question ici ?",
+            "a": "Contactez-nous directement : notre équipe se tient à votre disposition pour toute demande."
           }
         ]
       }
     ],
     "cta": {
-      "text": "Can't find what you're looking for?",
-      "highlight": "Feel free to contact us",
-      "suffix": "-- our team is here to help.",
-      "button": "Contact Us",
-      "glossaryLink": "Browse our Glossary for industry terms",
-      "blogLink": "Read our latest articles"
+      "text": "Vous ne trouvez pas ce que vous cherchez ?",
+      "highlight": "N'hésitez pas à nous contacter",
+      "suffix": "— notre équipe est à votre écoute.",
+      "button": "Contactez-nous",
+      "glossaryLink": "Consultez notre glossaire des termes du métier",
+      "blogLink": "Lisez nos derniers articles"
     }
   },
   "contact": {
-    "title": "Contact Us",
-    "subtitle": "Ready to Start Your Backpack Project?",
-    "intro": "Fill out the form below and we'll get back to you within 24 hours. For urgent inquiries, call or WhatsApp us directly.",
+    "title": "Contactez-nous",
+    "subtitle": "Prêt à lancer votre projet de sac à dos ?",
+    "intro": "Remplissez le formulaire ci-dessous et nous vous répondrons sous 24 heures. Pour toute demande urgente, appelez-nous ou écrivez-nous directement sur WhatsApp.",
     "address": {
-      "label": "Address",
+      "label": "Adresse",
       "value": "Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai Industrial Zone, Yangon, Myanmar",
-      "viewOnMap": "View on Google Maps"
+      "viewOnMap": "Voir sur Google Maps"
     },
     "phone": {
-      "label": "Phone Number",
-      "fallback": "For other languages, please contact us via email",
+      "label": "Numéro de téléphone",
+      "fallback": "Pour les autres langues, veuillez nous contacter par e-mail",
       "lines": [
         {
           "lang": "中文",
           "number": "+86 (532) 8856-2277",
-          "hours": "Beijing Time 8:00-17:00 · Mon-Fri",
+          "hours": "Heure de Pékin 8:00-17:00 · lun.-ven.",
           "person": ""
         },
         {
           "lang": "日本語 / 한국어",
           "number": "+86 152 5320 6760",
-          "hours": "Beijing Time 8:00-17:00 · Mon-Fri",
-          "person": "Ms. Cui"
+          "hours": "Heure de Pékin 8:00-17:00 · lun.-ven.",
+          "person": "Mme Cui"
         },
         {
           "lang": "English",
           "number": "+86 130 6139 1463",
-          "hours": "Myanmar Time 7:30-18:00 · Mon-Sat",
-          "person": "Mr. Jay"
+          "hours": "Heure du Myanmar 7:30-18:00 · lun.-sam.",
+          "person": "M. Jay"
         },
         {
           "lang": "မြန်မာ",
           "number": "+95 9 9856 70999",
-          "hours": "Myanmar Time 7:30-18:00 · Mon-Sat",
+          "hours": "Heure du Myanmar 7:30-18:00 · lun.-sam.",
           "person": ""
         }
       ]
     },
     "email": {
-      "label": "Email Address",
+      "label": "Adresse e-mail",
       "value": "jay@betterbagsmm.com"
     },
     "whatsapp": {
-      "label": "Whatsapp",
+      "label": "WhatsApp",
       "value": "+1 814.880.1463"
     },
     "trust": {
-      "title": "Why Trust Us",
-      "responseTime": "24-hour response guarantee",
-      "experience": "20+ years manufacturing experience",
-      "certified": "ISO 9001, OEKO-TEX, GRS, GOTS certified"
+      "title": "Pourquoi nous faire confiance",
+      "responseTime": "Réponse garantie sous 24 heures",
+      "experience": "Plus de 20 ans d’expérience en fabrication",
+      "certified": "Équipe professionnelle · Direct usine · Production traçable"
     },
     "form": {
-      "title": "Get A Quote",
+      "title": "Demander un devis",
       "name": {
-        "label": "Name",
-        "placeholder": "John Doe",
-        "error": "Please enter your name"
+        "label": "Nom",
+        "placeholder": "Jean Dupont",
+        "error": "Veuillez saisir votre nom"
       },
       "email": {
-        "label": "Email Address",
-        "placeholder": "example@company.com",
-        "error": "Please enter a valid email address"
+        "label": "Adresse e-mail",
+        "placeholder": "exemple@entreprise.com",
+        "error": "Veuillez saisir une adresse e-mail valide"
       },
       "countryRegion": {
-        "label": "Country/Region",
-        "placeholder": "United States",
-        "error": "Please enter your country/region",
-        "loading": "Detection de l'emplacement...",
-        "searchPlaceholder": "Search country or dial code",
-        "noResults": "No matching country",
-        "popularLabel": "Popular",
-        "allLabel": "All countries"
+        "label": "Pays/Région",
+        "placeholder": "Sélectionnez un pays ou une région",
+        "loading": "Détection de votre localisation...",
+        "error": "Veuillez sélectionner votre pays ou région",
+        "searchPlaceholder": "Rechercher un pays ou un indicatif",
+        "noResults": "Aucun pays correspondant",
+        "popularLabel": "Populaires",
+        "allLabel": "Tous les pays"
       },
       "companyBrandName": {
-        "label": "Company/Brand Name",
-        "placeholder": "Your Company Name",
-        "error": "Please enter your company/brand name"
+        "label": "Société/Marque",
+        "placeholder": "Nom de votre société",
+        "error": "Veuillez saisir le nom de votre société ou de votre marque"
       },
       "phoneNumber": {
-        "label": "Phone Number (Optional)",
+        "label": "Numéro de téléphone (facultatif)",
         "placeholder": "Numéro de téléphone",
-        "error": "Please enter a valid phone number",
-        "codeLabel": "Phone country code",
-        "codePlaceholder": "Code",
-        "codeError": "Please select a dial code"
+        "error": "Veuillez saisir un numéro de téléphone valide",
+        "codeLabel": "Indicatif téléphonique",
+        "codePlaceholder": "Indicatif",
+        "codeError": "Veuillez sélectionner un indicatif"
       },
       "subject": {
-        "label": "Subject",
-        "placeholder": "e.g. Custom Travel Backpack Inquiry",
-        "error": "Please enter a subject"
+        "label": "Objet",
+        "placeholder": "ex. : demande de devis pour sac à dos de voyage personnalisé",
+        "error": "Veuillez saisir un objet"
       },
       "message": {
-        "label": "Your Message (Optional)",
-        "placeholder": "Please describe your project needs, target quantity, timeline, and any special requirements...",
-        "error": "Message must be less than 2000 characters"
+        "label": "Votre message (facultatif)",
+        "placeholder": "Décrivez votre projet : besoins, quantités visées, délais et exigences particulières...",
+        "error": "Le message ne doit pas dépasser 2000 caractères"
       },
       "orderQuantity": {
-        "label": "Estimated Order Quantity (per design)",
-        "placeholder": "Select quantity range",
-        "error": "Please select an order quantity",
+        "label": "Quantité de commande estimée (par modèle)",
+        "placeholder": "Sélectionnez une fourchette de quantité",
+        "error": "Veuillez sélectionner une quantité de commande",
         "optionLabels": [
-          "Less than 100 pcs",
-          "100-300 pcs",
-          "300-1000 pcs",
-          "More than 1000 pcs"
+          "Moins de 100 pièces",
+          "100 à 300 pièces",
+          "300 à 1000 pièces",
+          "Plus de 1000 pièces"
         ]
       },
       "techPackAvailability": {
-        "label": "Do you have a tech pack or reference sample?",
-        "placeholder": "Select an option",
-        "error": "Please select an option",
+        "label": "Disposez-vous d’un dossier technique (Tech Pack) ou d’un échantillon de référence ?",
+        "placeholder": "Sélectionnez une option",
+        "error": "Veuillez sélectionner une option",
         "optionLabels": [
-          "Yes, I have a tech pack",
-          "I have a physical sample",
-          "I only have an idea/sketch"
+          "Oui, je dispose d’un Tech Pack",
+          "Je dispose d’un échantillon physique",
+          "Je n’ai qu’une idée ou un croquis"
         ]
       },
       "fileUpload": {
-        "label": "Upload Files (Optional)",
-        "description": "Upload tech packs, sketches, or sample photos. Max 5 files, 10MB each.",
-        "button": "Choose Files",
-        "dragDrop": "or drag and drop files here",
-        "acceptedFormats": "Accepted formats: JPG, PNG, WebP, PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX",
+        "label": "Joindre des fichiers (facultatif)",
+        "description": "Transmettez vos Tech Packs, croquis ou photos d’échantillons. 5 fichiers maximum, 10 Mo chacun.",
+        "button": "Choisir des fichiers",
+        "dragDrop": "ou glissez-déposez vos fichiers ici",
+        "acceptedFormats": "Formats acceptés : JPG, PNG, WebP, PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX",
         "errors": {
-          "tooLarge": "File \"{name}\" is too large. Maximum size is {maxMb}MB",
-          "unsupportedType": "File \"{name}\" has an unsupported type. Please upload images or documents.",
-          "tooMany": "Maximum {maxCount} files allowed",
-          "uploadFailed": "Some files failed to upload. Please remove them and try again.",
-          "invalidRef": "File \"{name}\" has an invalid upload reference."
+          "tooLarge": "Le fichier « {name} » est trop volumineux. La taille maximale est de {maxMb} Mo",
+          "unsupportedType": "Le format du fichier « {name} » n’est pas pris en charge. Veuillez transmettre des images ou des documents.",
+          "tooMany": "{maxCount} fichiers maximum autorisés",
+          "uploadFailed": "Certains fichiers n’ont pas pu être transférés. Veuillez les retirer puis réessayer.",
+          "invalidRef": "Le fichier « {name} » possède une référence de transfert invalide."
         }
       },
       "humanVerification": {
-        "label": "Verification Humaine",
-        "placeholder": "Loading verification...",
-        "error": "Please complete the verification before submitting",
-        "notConfigured": "Verification is not configured. Form submissions will be accepted in development mode only."
+        "label": "Vérification anti-robot",
+        "placeholder": "Chargement de la vérification...",
+        "error": "Veuillez compléter la vérification avant l’envoi",
+        "notConfigured": "La vérification n’est pas configurée. Les envois de formulaire ne seront acceptés qu’en mode développement."
       },
-      "submit": "Submit Inquiry",
-      "submitting": "Submitting...",
+      "submit": "Envoyer la demande",
+      "submitting": "Envoi en cours...",
       "success": {
-        "title": "Thank You for Your Inquiry!",
-        "message": "We've received your message and will respond within 24 hours."
+        "title": "Merci pour votre demande !",
+        "message": "Nous avons bien reçu votre message et vous répondrons sous 24 heures."
       },
       "error": {
-        "title": "Submission Failed",
-        "message": "Sorry, there was an error submitting your form. Please try again later or contact us directly."
+        "title": "Échec de l’envoi",
+        "message": "Une erreur est survenue lors de l’envoi de votre formulaire. Veuillez réessayer ultérieurement ou nous contacter directement."
       },
       "draft": {
-        "restored": "Votre brouillon precedent a ete restaure",
+        "restored": "Votre brouillon précédent a été restauré",
         "discard": "Supprimer le brouillon"
       }
     }
@@ -681,23 +681,23 @@
       "email": "jay@betterbagsmm.com",
       "phone": "+1 814.880.1463"
     },
-    "email": "Email",
-    "tel": "Tel/WhatsApp",
-    "quickLinks": "Quick Links",
-    "hours": "Hours",
-    "hoursTime": "Mon-Fri 9:00am – 5:00pm",
-    "copyright": "All rights reserved | Powered by OEM Backpack Factory",
+    "email": "E-mail",
+    "tel": "Tél. / WhatsApp",
+    "quickLinks": "Liens rapides",
+    "hours": "Horaires",
+    "hoursTime": "Lun.–Ven. 9 h 00 – 17 h 00",
+    "copyright": "Tous droits réservés | Propulsé par OEM Backpack Factory",
     "links": [
       {
-        "name": "Home",
+        "name": "Accueil",
         "href": "#home"
       },
       {
-        "name": "About Us",
+        "name": "À propos",
         "href": "#about"
       },
       {
-        "name": "Features",
+        "name": "Nos atouts",
         "href": "#features"
       },
       {
@@ -705,7 +705,7 @@
         "href": "#services"
       },
       {
-        "name": "Process",
+        "name": "Processus",
         "href": "#process"
       },
       {
@@ -713,187 +713,187 @@
         "href": "#faq"
       },
       {
-        "name": "Contact Us",
+        "name": "Nous contacter",
         "href": "#contact"
       },
       {
-        "name": "Blogs",
+        "name": "Blog",
         "href": "#blogs"
       },
       {
-        "name": "Glossary",
+        "name": "Glossaire",
         "href": "/glossary"
       }
     ]
   },
   "blog": {
-    "title": "Latest Insights",
-    "subtitle": "Stay updated with industry trends, customization tips, and company news",
-    "readMore": "Read More",
-    "viewAll": "View All Articles",
+    "title": "Nos dernières actualités",
+    "subtitle": "Restez informé des tendances du secteur, de nos conseils en personnalisation et des actualités de notre entreprise",
+    "readMore": "Lire la suite",
+    "viewAll": "Voir tous les articles",
     "relatedLinks": {
-      "glossary": "Explore our Glossary"
+      "glossary": "Découvrez notre glossaire"
     }
   },
   "blogList": {
-    "title": "Blog Articles",
-    "subtitle": "In-depth insights, trends, and best practices in the backpack manufacturing industry",
-    "backToHome": "Back to Home",
-    "totalArticles": "{count} Articles",
-    "readMore": "Read More",
-    "backToTop": "Back to Top",
-    "noArticles": "No articles available",
+    "title": "Articles de blog",
+    "subtitle": "Analyses approfondies, tendances et bonnes pratiques de l'industrie de la fabrication de sacs à dos",
+    "backToHome": "Retour à l'accueil",
+    "totalArticles": "{count} articles",
+    "readMore": "Lire la suite",
+    "backToTop": "Retour en haut",
+    "noArticles": "Aucun article disponible",
     "relatedLinks": {
-      "glossary": "Browse Manufacturing Glossary",
-      "faq": "Check our FAQ"
+      "glossary": "Consulter le glossaire de la fabrication",
+      "faq": "Consultez notre FAQ"
     }
   },
   "blogDetail": {
-    "home": "Home",
+    "home": "Accueil",
     "blog": "Blog",
-    "backToList": "Back to Articles",
-    "backToTop": "Back to Top",
-    "noContent": "Article content not available",
+    "backToList": "Retour aux articles",
+    "backToTop": "Retour en haut",
+    "noContent": "Contenu de l'article indisponible",
     "cta": {
-      "title": "Ready to Start Your Custom Backpack Project?",
-      "subtitle": "Contact us for professional OEM/ODM solutions",
-      "button": "Contact Us Now"
+      "title": "Prêt à lancer votre projet de sac à dos sur mesure ?",
+      "subtitle": "Contactez-nous pour des solutions OEM/ODM professionnelles",
+      "button": "Contactez-nous dès maintenant"
     }
   },
   "language": {
     "selectLanguage": "Choisir la langue",
-    "currentLanguage": "Actuel: {language}"
+    "currentLanguage": "Langue actuelle : {language}"
   },
   "languageBanner": {
-    "message": "Vous avez ete automatiquement redirige vers la version {language}",
-    "keep": "Garder {language}",
-    "switchToEnglish": "Passer a l'anglais",
+    "message": "Vous avez été automatiquement redirigé vers la version {language}",
+    "keep": "Conserver {language}",
+    "switchToEnglish": "Passer à l’anglais",
     "close": "Fermer"
   },
   "glossary": {
-    "title": "Backpack Manufacturing Glossary",
-    "subtitle": "Essential industry terms and definitions for OEM/ODM backpack production",
-    "description": "Learn the key terminology used in backpack manufacturing, from materials and production processes to quality control and logistics.",
-    "allCategories": "All",
+    "title": "Glossaire de la fabrication de sacs à dos",
+    "subtitle": "Termes et définitions essentiels du secteur pour la production OEM/ODM de sacs à dos",
+    "description": "Découvrez la terminologie clé de la fabrication de sacs à dos, des matières et procédés de production jusqu'au contrôle qualité et à la logistique.",
+    "allCategories": "Toutes",
     "categories": {
-      "materials": "Materials",
-      "manufacturing": "Manufacturing",
-      "quality": "Quality Control",
-      "logistics": "Logistics",
+      "materials": "Matières",
+      "manufacturing": "Fabrication",
+      "quality": "Contrôle qualité",
+      "logistics": "Logistique",
       "design": "Design"
     },
-    "backToHome": "Back to Home",
+    "backToHome": "Retour à l'accueil",
     "relatedLinks": {
-      "faq": "Have questions? Check our FAQ",
-      "blog": "Read our latest articles"
+      "faq": "Des questions ? Consultez notre FAQ",
+      "blog": "Lisez nos derniers articles"
     },
     "terms": {
       "oem": {
         "term": "OEM (Original Equipment Manufacturer)",
-        "definition": "A company that manufactures products based on the buyer's specifications and designs. The buyer owns the brand and design, while the OEM handles production."
+        "definition": "Entreprise qui fabrique des produits selon les spécifications et les designs de l'acheteur. L'acheteur détient la marque et le design, tandis que le fabricant OEM assure la production."
       },
       "odm": {
         "term": "ODM (Original Design Manufacturer)",
-        "definition": "A manufacturer that designs and produces products which are then rebranded by the buyer. Unlike OEM, the ODM provides both design and manufacturing services."
+        "definition": "Fabricant qui conçoit et produit des articles ensuite commercialisés sous la marque de l'acheteur. À la différence de l'OEM, l'ODM assure à la fois la conception et la fabrication."
       },
       "moq": {
-        "term": "MOQ (Minimum Order Quantity)",
-        "definition": "The smallest number of units a manufacturer is willing to produce in a single order. MOQ varies by product complexity and materials."
+        "term": "MOQ (quantité minimale de commande)",
+        "definition": "Quantité minimale d'unités qu'un fabricant accepte de produire pour une même commande. Le MOQ varie selon la complexité du produit et les matières utilisées."
       },
       "tech-pack": {
-        "term": "Tech Pack",
-        "definition": "A detailed technical document containing all specifications needed to manufacture a product, including dimensions, materials, colors, hardware, and construction details."
+        "term": "Tech Pack (dossier technique)",
+        "definition": "Document technique détaillé regroupant toutes les spécifications nécessaires à la fabrication d'un produit : dimensions, matières, coloris, quincaillerie et détails de construction."
       },
       "denier": {
         "term": "Denier",
-        "definition": "A unit of measurement for the fiber thickness of individual threads used in fabric. Higher denier numbers indicate thicker, more durable fabric (e.g., 600D polyester)."
+        "definition": "Unité de mesure de l'épaisseur des fils composant un tissu. Plus le denier est élevé, plus le tissu est épais et résistant (par exemple, polyester 600D)."
       },
       "ripstop": {
         "term": "Ripstop",
-        "definition": "A fabric weaving technique using reinforcement threads in a crosshatch pattern to prevent tears from spreading. Commonly used in outdoor and tactical backpacks."
+        "definition": "Technique de tissage utilisant des fils de renfort disposés en quadrillage afin d'empêcher la propagation des déchirures. Couramment employée pour les sacs à dos outdoor et tactiques."
       },
       "cordura": {
         "term": "Cordura",
-        "definition": "A brand name for a collection of high-performance fabrics known for exceptional durability, abrasion resistance, and tear strength. Widely used in premium backpacks."
+        "definition": "Marque désignant une gamme de tissus haute performance réputés pour leur durabilité exceptionnelle et leur résistance à l'abrasion comme à la déchirure. Très présente sur les sacs à dos haut de gamme."
       },
       "bartack": {
-        "term": "Bartack",
-        "definition": "A dense, reinforced stitching pattern used at stress points on bags, such as strap attachments and handle bases, to prevent seam failure under load."
+        "term": "Bartack (point d'arrêt)",
+        "definition": "Couture dense de renfort réalisée aux points de tension du sac, tels que la fixation des bretelles et la base des poignées, afin d'éviter toute rupture de couture sous charge."
       },
       "aql": {
-        "term": "AQL (Acceptable Quality Level)",
-        "definition": "A statistical sampling method used in quality inspection to determine the maximum acceptable number of defective items in a batch. Common standard is AQL 2.5 for bags."
+        "term": "AQL (niveau de qualité acceptable)",
+        "definition": "Méthode d'échantillonnage statistique utilisée lors des inspections qualité pour déterminer le nombre maximal d'articles défectueux acceptable dans un lot. La norme courante pour les sacs est AQL 2.5."
       },
       "fob": {
         "term": "FOB (Free On Board)",
-        "definition": "A shipping term indicating that the seller delivers goods to the port of shipment. The buyer assumes responsibility and cost once goods are loaded onto the vessel."
+        "definition": "Incoterm selon lequel le vendeur livre la marchandise au port d'embarquement. L'acheteur assume les coûts et les risques dès le chargement des marchandises à bord du navire."
       },
       "bom": {
-        "term": "BOM (Bill of Materials)",
-        "definition": "A comprehensive list of all raw materials, components, and hardware needed to manufacture a product, including quantities and specifications."
+        "term": "BOM (nomenclature des matières)",
+        "definition": "Liste exhaustive de l'ensemble des matières premières, composants et éléments de quincaillerie nécessaires à la fabrication d'un produit, avec leurs quantités et spécifications."
       },
       "ykk": {
         "term": "YKK",
-        "definition": "The world's largest zipper manufacturer, headquartered in Japan. YKK zippers are considered the industry standard for quality and reliability in bag manufacturing."
+        "definition": "Premier fabricant mondial de fermetures éclair, dont le siège se situe au Japon. Les fermetures YKK sont considérées comme la référence du secteur en matière de qualité et de fiabilité pour la fabrication de sacs."
       },
       "pantone": {
         "term": "Pantone (PMS)",
-        "definition": "A standardized color matching system used worldwide to ensure consistent color reproduction across different materials and production runs."
+        "definition": "Système normalisé de correspondance des couleurs utilisé dans le monde entier pour garantir une reproduction fidèle et constante des coloris sur différents matériaux et d'une série de production à l'autre."
       },
       "grs": {
         "term": "GRS (Global Recycled Standard)",
-        "definition": "An international certification that verifies recycled content in products and tracks the supply chain from recycled input to finished product."
+        "definition": "Certification internationale qui atteste la teneur en matières recyclées des produits et assure la traçabilité de la chaîne d'approvisionnement, de la matière recyclée au produit fini."
       },
       "oeko-tex": {
         "term": "OEKO-TEX Standard 100",
-        "definition": "An independent testing and certification system for textile products at all stages of production, ensuring they are free from harmful substances."
+        "definition": "Système indépendant de tests et de certification des produits textiles à toutes les étapes de la production, garantissant l'absence de substances nocives."
       },
       "cif": {
         "term": "CIF (Cost, Insurance, and Freight)",
-        "definition": "A shipping term where the seller covers the cost of goods, insurance, and freight charges to deliver products to the buyer's designated port."
+        "definition": "Incoterm selon lequel le vendeur prend en charge le coût des marchandises, l'assurance et le fret jusqu'au port de destination désigné par l'acheteur."
       },
       "exw": {
         "term": "EXW (Ex Works)",
-        "definition": "A shipping term where the buyer is responsible for all transportation costs and risks from the manufacturer's facility to the final destination."
+        "definition": "Incoterm selon lequel l'acheteur assume l'ensemble des coûts et des risques de transport, depuis l'usine du fabricant jusqu'à la destination finale."
       },
       "pp-sample": {
-        "term": "PP Sample (Pre-Production Sample)",
-        "definition": "A sample produced before mass production begins to verify design, materials, and construction. Must be approved by the buyer before production starts."
+        "term": "PP Sample (échantillon de pré-production)",
+        "definition": "Échantillon réalisé avant le lancement de la production en série afin de valider le design, les matières et la construction. Il doit être approuvé par l'acheteur avant le démarrage de la production."
       },
       "top-sample": {
-        "term": "TOP Sample (Top of Production Sample)",
-        "definition": "A sample pulled from the actual production line during manufacturing to verify that quality and specifications match the approved PP sample."
+        "term": "TOP Sample (échantillon de début de production)",
+        "definition": "Échantillon prélevé directement sur la ligne de production afin de vérifier que la qualité et les spécifications sont conformes à l'échantillon PP approuvé."
       },
       "tpu": {
-        "term": "TPU (Thermoplastic Polyurethane)",
-        "definition": "A flexible, durable plastic material used for waterproof coatings, labels, and patches on backpacks. Known for its excellent abrasion and weather resistance."
+        "term": "TPU (polyuréthane thermoplastique)",
+        "definition": "Matière plastique souple et durable utilisée pour les enductions imperméables, les étiquettes et les écussons des sacs à dos. Réputée pour son excellente résistance à l'abrasion et aux intempéries."
       }
     }
   },
   "testimonials": {
     "title": "Ce que disent nos clients",
-    "subtitle": "Fait confiance par des marques du monde entier pour la fabrication de sacs a dos OEM",
+    "subtitle": "La confiance de marques du monde entier pour une fabrication OEM de sacs à dos de qualité",
     "items": [
       {
         "name": "Shimizu Kota",
-        "role": "Directeur de la gestion des marchandises",
+        "role": "Responsable de la gestion des marchandises",
         "company": "Carrot Company",
         "rating": 4.5,
-        "quote": "Sur une échelle de 10, je leur donnerais un 9. Un petit point m’a interpellé lors de ma deuxième visite à l’usine au Myanmar, mais sinon tout est très bien — largement suffisant pour nos besoins actuels. Nous avons rencontré quelques défis sur la ligne de production, mais cela arrive dans toutes les usines ; en dehors de cela, aucun problème. Dans l’ensemble, ils font un travail solide et fiable."
+        "quote": "Si je devais les noter sur une échelle de 1 à 10, je leur donnerais un 9. J'ai remarqué un petit détail lors de ma deuxième visite de l'usine au Myanmar, mais en dehors de cela, tout s'est vraiment bien passé — plus que suffisant pour nos besoins actuels. Nous avons rencontré quelques difficultés sur la ligne de production, mais cela arrive dans toutes les usines ; en dehors de ces épisodes, il n'y a eu aucun véritable problème. Dans l'ensemble, je pense qu'ils accomplissent un travail solide et fiable."
       }
     ],
     "carousel": {
-      "previous": "Previous slide",
-      "next": "Next slide",
-      "goTo": "Go to slide {index}",
-      "status": "Slide {current} of {total}"
+      "previous": "Diapositive précédente",
+      "next": "Diapositive suivante",
+      "goTo": "Aller à la diapositive {index}",
+      "status": "Diapositive {current} sur {total}"
     }
   },
   "author": {
-    "writtenBy": "Written by",
-    "readingTime": "Reading time",
-    "minRead": "min read",
-    "aboutAuthor": "About the Author"
+    "writtenBy": "Rédigé par",
+    "readingTime": "Temps de lecture",
+    "minRead": "min de lecture",
+    "aboutAuthor": "À propos de l’auteur"
   },
   "certifications": {
     "title": "Certifications",
@@ -903,19 +903,19 @@
     "gots": "GOTS"
   },
   "quoteWidget": {
-    "openLabel": "Get A Quote",
-    "minimize": "Minimize",
-    "dragHandle": "Drag to move",
-    "mobileJumpLabel": "Jump to quote form"
+    "openLabel": "Demander un devis",
+    "minimize": "Réduire",
+    "dragHandle": "Glisser pour déplacer",
+    "mobileJumpLabel": "Aller au formulaire de devis"
   },
   "metadata": {
     "home": {
-      "title": "Better Bags Myanmar - Premium OEM Backpack Factory",
-      "description": "Top-tier custom backpack manufacturer in Myanmar. 20+ years of experience, 600+ employees, primarily serving Japanese brands."
+      "title": "Better Bags Myanmar - Usine OEM de sacs à dos haut de gamme",
+      "description": "Fabricant de sacs à dos sur mesure de premier plan au Myanmar. 20+ ans d'expérience, 600+ employés, au service de marques japonaises."
     },
     "blogList": {
-      "title": "Blog - Better Bags Myanmar | Industry Insights",
-      "description": "Explore backpack manufacturing insights, industry trends, and sustainability practices from Better Bags Myanmar."
+      "title": "Blog - Better Bags Myanmar | Analyses du secteur",
+      "description": "Découvrez les analyses de Better Bags Myanmar sur la fabrication de sacs à dos, les tendances du secteur et les pratiques éco-responsables."
     }
   }
 }

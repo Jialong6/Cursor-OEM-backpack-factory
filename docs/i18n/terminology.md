@@ -30,7 +30,7 @@ sourcing convention; when in doubt, keep the English term.
 | OEM production | OEM-Fertigung | production OEM | fabricacion OEM | producao OEM | OEM-productie | OEM-производство | OEM 생산 | OEM ထုတ်လုပ်မှု | OEM 代工 |
 | sample | Muster | echantillon | muestra | amostra | sample / monster | образец | 샘플 | 樣品 |
 | sampling / proto | Musterfertigung | echantillonnage | muestreo | amostragem | bemonstering | изготовление образцов | 샘플 제작 | 打樣 |
-| quotation / quote | Angebot | devis | cotizacion | cotacao | offerte | расчет стоимости / КП | 견적 | စျေးနှုန်းအဆိုပြုလွှာ | 報價 |
+| quotation / quote | Angebot | devis | cotizacion | orcamento | offerte | расчет стоимости / КП | 견적 | စျေးနှုန်းအဆိုပြုလွှာ | 報價 |
 | lead time | Lieferzeit | delai de production | plazo de entrega | prazo de entrega | levertijd | срок производства | 납기 / 리드타임 | ထုတ်လုပ်ချိန် | 交期 |
 | quality control | Qualitaetskontrolle (QC) | controle qualite (QC) | control de calidad (QC) | controle de qualidade (QC) | kwaliteitscontrole (QC) | контроль качества (QC) | 품질 관리 (QC) | အရည်အသွေး ထိန်းချုပ်မှု (QC) | 品質管控 (QC) |
 | inspection | Inspektion / Pruefung | inspection | inspeccion | inspecao | inspectie | инспекция | 검품 | စစ်ဆေးမှု | 驗貨 |
@@ -38,7 +38,9 @@ sourcing convention; when in doubt, keep the English term.
 | fabric / material | Stoff / Material | tissu / matiere | tejido / material | tecido / material | stof / materiaal | ткань / материал | 원단 / 소재 | အထည် / ကုန်ကြမ်း | 布料 / 材質 |
 | webbing | Gurtband | sangle | cinta / correa | fita / alca | band | стропа | 웨빙 | ကြိုးပြား (webbing) | 織帶 |
 | zipper | Reissverschluss | fermeture eclair | cremallera | ziper | rits | молния | 지퍼 | ဇစ် | 拉鍊 |
-| hardware (bags) | Zubehoer / Beschlaege | accessoires metalliques | herrajes | ferragens | fournituren | фурнитура | 부자재 | သံထည်ပစ္စည်း | 五金配件 |
+| hardware (bags) | Zubehoer / Beschlaege | quincaillerie | herrajes | ferragens | fournituren | фурнитура | 부자재 | သံထည်ပစ္စည်း | 五金配件 |
+| one-stop (solution) | Komplettloesung / One-Stop | guichet unique | solucion integral | solucao completa | one-stop / totaaloplossing | комплексное решение | 원스톱 | တစ်နေရာတည်း ဝန်ဆောင်မှု | 一站式 |
+| private label | Eigenmarke / Private Label | marque privee | marca propia | marca propria | private label | СТМ / private label | 자체 브랜드 (Private Label) | ကိုယ်ပိုင်အမှတ်တံဆိပ် | 自有品牌 |
 | stitching / sewing | Naht / Naehen | couture | costura | costura | stiksel / naaiwerk | пошив | 봉제 | ချုပ်လုပ်မှု | 車縫 |
 | customization | Individualisierung / kundenspezifisch | personnalisation | personalizacion | personalizacao | maatwerk | индивидуальное производство | 커스터마이징 / 맞춤 제작 | စိတ်ကြိုက်ပြုလုပ်မှု | 客製化 |
 | sustainability | Nachhaltigkeit | durabilite / eco-responsabilite | sostenibilidad | sustentabilidade | duurzaamheid | устойчивое производство | 지속가능성 | ရေရှည်တည်တံ့မှု | 永續 |
