@@ -11,8 +11,16 @@
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
+import { fetch as undiciFetch, ProxyAgent } from 'undici';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../../..');
+
+// Node 的全局 fetch 不读 HTTP(S)_PROXY 环境变量(curl 读)。Gemini API 有地区
+// 限制,必须经系统代理出网,故显式接上代理;无代理环境则直连。
+const PROXY_URL =
+  process.env.HTTPS_PROXY || process.env.https_proxy ||
+  process.env.HTTP_PROXY || process.env.http_proxy || '';
+const dispatcher = PROXY_URL ? new ProxyAgent(PROXY_URL) : undefined;
 
 /** 手动解析 .env.local(KEY=VALUE 行,忽略注释与空行) */
 function loadEnvLocal() {
@@ -84,13 +92,14 @@ export async function callGemini({ system, user, json = false, temperature = 0.3
     }
     let res;
     try {
-      res = await fetch(`${API_BASE}/models/${GEMINI_MODEL}:generateContent`, {
+      res = await undiciFetch(`${API_BASE}/models/${GEMINI_MODEL}:generateContent`, {
         method: 'POST',
         headers: {
           'x-goog-api-key': GEMINI_API_KEY,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(body),
+        ...(dispatcher ? { dispatcher } : {}),
       });
     } catch (err) {
       lastError = `network error: ${err.message}`;
