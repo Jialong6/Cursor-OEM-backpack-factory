@@ -35,8 +35,8 @@ export const FACTORY_INFO = {
     longitude: 96.199379,
   },
   numberOfEmployees: {
-    minValue: 800,
-    maxValue: 1000,
+    minValue: 600,
+    maxValue: 700,
   },
   credentials: ['ISO 9001', 'OEKO-TEX', 'GRS', 'GOTS'],
 };
@@ -537,7 +537,7 @@ describe('Property 10: JSON-LD Schema Validity', () => {
         {
           title: 'General',
           items: [
-            { q: 'What is your MOQ?', a: 'Our MOQ is 150 pieces.' },
+            { q: 'What is your MOQ?', a: 'Our MOQ is 1,500 pieces.' },
           ],
         },
       ];
@@ -545,7 +545,7 @@ describe('Property 10: JSON-LD Schema Validity', () => {
       const schema = generateFAQPageSchema(sections);
 
       expect(schema.mainEntity[0].name).toBe('What is your MOQ?');
-      expect(schema.mainEntity[0].acceptedAnswer.text).toBe('Our MOQ is 150 pieces.');
+      expect(schema.mainEntity[0].acceptedAnswer.text).toBe('Our MOQ is 1,500 pieces.');
     });
   });
 
