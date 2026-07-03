@@ -7,6 +7,8 @@
 
 import { BLOG_POSTS } from './blog-posts';
 import type { BlogPost } from './blog-posts/types';
+import { FALLBACK_CHAIN } from './blog-utils';
+import type { Locale } from '@/i18n';
 
 export { BLOG_POSTS } from './blog-posts';
 export type { BlogPost } from './blog-posts/types';
@@ -30,4 +32,34 @@ export function getAllBlogPosts(): BlogPost[] {
  */
 export function getFeaturedBlogPosts(count: number = 3): BlogPost[] {
   return getAllBlogPosts().slice(0, count);
+}
+
+/**
+ * 按 locale 异步加载文章正文(服务端专用)
+ *
+ * 正文按语言拆分为独立模块,经动态 import 按需加载;
+ * 加载顺序:当前 locale → FALLBACK_CHAIN → en → zh。
+ * SSG 构建时每个 locale 页面只打包对应语言一份正文。
+ */
+export async function getBlogPostContent(
+  slug: string,
+  locale: string
+): Promise<string | undefined> {
+  const post = getBlogPostBySlug(slug);
+  if (!post) return undefined;
+
+  const chain: Locale[] = [
+    locale as Locale,
+    ...(FALLBACK_CHAIN[locale as Locale] ?? []),
+    'en',
+    'zh',
+  ];
+
+  for (const lang of chain) {
+    const load = post.contentLoaders[lang];
+    if (load) {
+      return (await load()).default;
+    }
+  }
+  return undefined;
 }

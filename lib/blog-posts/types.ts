@@ -1,22 +1,29 @@
 /**
  * 博客文章数据类型
  *
- * 站点目前发布日文（原文）+ 简体中文（翻译）。
- * 英文版可选 —— 缺省时由 getLocalizedField 兜底回退到中文。
- * category / tags 同样多语言化，由 getLocalizedField 按 locale 取值。
+ * 元数据(title / excerpt / category / tags)多语言内嵌,由
+ * getLocalizedField 按 locale 取值(ja/zh/en 必填,其余语言渐进补齐)。
+ *
+ * 正文按语言拆分为 lib/blog-posts/{slug}/content.{locale}.ts,
+ * 经 contentLoaders 动态 import 按需加载 —— 12 语正文不进客户端
+ * bundle,SSG 构建时每个 locale 页面只取对应语言一份。
  */
+import type { Locale } from '@/i18n';
 import type { LocalizedField } from '../blog-utils';
+
+/** 单语正文加载器:显式 () => import('./content.xx') 保证打包器可静态分析 */
+export type ContentLoaders = Partial<Record<Locale, () => Promise<{ default: string }>>>;
 
 export interface BlogPost {
   id: string;
   slug: string;
   title: LocalizedField<string>;
   excerpt: LocalizedField<string>;
-  content?: LocalizedField<string>;
   date: string;
   thumbnail: string;
   category: LocalizedField<string>;
   author?: string;
   authorId?: string;
   tags?: LocalizedField<string[]>;
+  contentLoaders: ContentLoaders;
 }

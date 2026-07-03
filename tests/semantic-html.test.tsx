@@ -14,9 +14,14 @@ import { render } from '@testing-library/react';
 import BlogListPage from '@/app/[locale]/blog/page';
 import BlogDetailPage from '@/app/[locale]/blog/[slug]/page';
 
-// Mock next-intl
+// Mock next-intl (client hooks)
 vi.mock('next-intl', () => ({
   useTranslations: () => (key: string) => key,
+}));
+
+// Mock next-intl/server (BlogDetailPage 已 server 化,用 getTranslations)
+vi.mock('next-intl/server', () => ({
+  getTranslations: async () => (key: string) => key,
 }));
 
 // Mock next/navigation
@@ -25,31 +30,38 @@ vi.mock('next/navigation', () => ({
   usePathname: () => '/en',
 }));
 
-// Mock blog data
+// Mock blog data(正文改为 getBlogPostContent 异步加载)
 vi.mock('@/lib/blog-data', () => ({
   getAllBlogPosts: () => [
     {
       slug: 'test-post',
-      title: { en: 'Test Post', zh: '测试文章' },
-      excerpt: { en: 'Test excerpt', zh: '测试摘要' },
+      title: { ja: 'テスト', en: 'Test Post', zh: '测试文章' },
+      excerpt: { ja: 'テスト', en: 'Test excerpt', zh: '测试摘要' },
       date: '2024-01-01',
-      category: { en: 'Industry', zh: '行业' },
-      tags: { en: ['test'], zh: ['测试'] },
+      category: { ja: '業界', en: 'Industry', zh: '行业' },
+      tags: { ja: ['テスト'], en: ['test'], zh: ['测试'] },
       thumbnail: '/images/test.jpg',
-      content: { en: 'Test content', zh: '测试内容' },
     },
   ],
   getBlogPostBySlug: () => ({
     slug: 'test-post',
-    title: { en: 'Test Post', zh: '测试文章' },
-    excerpt: { en: 'Test excerpt', zh: '测试摘要' },
+    title: { ja: 'テスト', en: 'Test Post', zh: '测试文章' },
+    excerpt: { ja: 'テスト', en: 'Test excerpt', zh: '测试摘要' },
     date: '2024-01-01',
-    category: 'Industry',
-    tags: ['test'],
+    category: { ja: '業界', en: 'Industry', zh: '行业' },
+    tags: { ja: ['テスト'], en: ['test'], zh: ['测试'] },
     thumbnail: '/images/test.jpg',
-    content: { en: '# Heading\n\nTest content', zh: '# 标题\n\n测试内容' },
   }),
+  getBlogPostContent: async () => '# Heading\n\nTest content',
 }));
+
+/** 渲染 async server 组件的辅助:先 await 组件函数,再交给 RTL */
+async function renderBlogDetailPage() {
+  const element = await BlogDetailPage({
+    params: Promise.resolve({ locale: 'en', slug: 'test-post' }),
+  });
+  return render(element);
+}
 
 describe('语义化HTML结构（需求 14.4, 14.5）', () => {
   /**
@@ -63,8 +75,8 @@ describe('语义化HTML结构（需求 14.4, 14.5）', () => {
       expect(h1Elements.length).toBe(1);
     });
 
-    it('博客详情页应该只有一个 h1 标题', () => {
-      const { container } = render(<BlogDetailPage />);
+    it('博客详情页应该只有一个 h1 标题', async () => {
+      const { container } = await renderBlogDetailPage();
       const h1Elements = container.querySelectorAll('h1');
 
       // 博客详情页应该只有文章标题是 h1
@@ -72,8 +84,8 @@ describe('语义化HTML结构（需求 14.4, 14.5）', () => {
       expect(h1Elements.length).toBe(1);
     });
 
-    it('博客详情页 Markdown 内容中的 # 应该渲染为 h2', () => {
-      const { container } = render(<BlogDetailPage />);
+    it('博客详情页 Markdown 内容中的 # 应该渲染为 h2', async () => {
+      const { container } = await renderBlogDetailPage();
 
       // 检查是否有 h2 标签（来自 Markdown 的 #）
       const h2Elements = container.querySelectorAll('h2');
@@ -92,8 +104,8 @@ describe('语义化HTML结构（需求 14.4, 14.5）', () => {
       expect(mainElement).not.toBeNull();
     });
 
-    it('博客详情页应该使用 main 和 article 标签', () => {
-      const { container } = render(<BlogDetailPage />);
+    it('博客详情页应该使用 main 和 article 标签', async () => {
+      const { container } = await renderBlogDetailPage();
 
       const mainElement = container.querySelector('main');
       const articleElement = container.querySelector('article');
@@ -115,12 +127,14 @@ describe('语义化HTML结构（需求 14.4, 14.5）', () => {
       expect(h1Element).not.toBeNull();
     });
 
-    it('博客详情页的 h1 应该在 article 元素内', () => {
-      const { container } = render(<BlogDetailPage />);
+    it('博客详情页的 h1 应该在 article 元素内', async () => {
+      const { container } = await renderBlogDetailPage();
       const articleElement = container.querySelector('article');
       const h1Element = articleElement?.querySelector('h1');
 
-      expect(h1Element).not.toBeNull();
+      // articleElement 缺失时 h1Element 为 undefined,显式断言两者都存在
+      expect(articleElement).not.toBeNull();
+      expect(h1Element ?? null).not.toBeNull();
     });
   });
 
@@ -137,8 +151,8 @@ describe('语义化HTML结构（需求 14.4, 14.5）', () => {
       expect(h1Element?.textContent?.trim().length).toBeGreaterThan(0);
     });
 
-    it('博客详情页的 h1 应该是文章标题', () => {
-      const { container } = render(<BlogDetailPage />);
+    it('博客详情页的 h1 应该是文章标题', async () => {
+      const { container } = await renderBlogDetailPage();
       const h1Element = container.querySelector('h1');
 
       expect(h1Element).not.toBeNull();

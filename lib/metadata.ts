@@ -51,6 +51,8 @@ function getOgLocale(locale: Locale): string {
     pt: 'pt_PT',
     es: 'es_ES',
     ru: 'ru_RU',
+    my: 'my_MM',
+    ko: 'ko_KR',
   };
   return ogLocaleMap[locale] || 'en_US';
 }
