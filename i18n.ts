@@ -33,6 +33,7 @@ export const locales = [
   'zh-tw',
   'ru',
   'my',
+  'ko',
 ] as const;
 
 /**
@@ -115,6 +116,12 @@ export const localeConfig: Record<Locale, LocaleConfigItem> = {
     nativeName: '\u1019\u103C\u1014\u103A\u1019\u102C',
     flag: '\u{1F1F2}\u{1F1F2}',
     hreflang: 'my',
+  },
+  ko: {
+    name: 'Korean',
+    nativeName: '\uD55C\uAD6D\uC5B4',
+    flag: '\u{1F1F0}\u{1F1F7}',
+    hreflang: 'ko',
   },
 };
 

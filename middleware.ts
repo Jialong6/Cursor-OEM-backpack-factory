@@ -149,7 +149,7 @@ export const config = {
 
     // All locale-prefixed paths (keep in sync with locales in i18n.ts;
     // Next.js requires this to be a statically analyzable string)
-    '/(zh|en|ja|de|nl|fr|pt|es|zh-tw|ru|my)/:path*',
+    '/(zh|en|ja|de|nl|fr|pt|es|zh-tw|ru|my|ko)/:path*',
 
     // All other paths except static assets and API
     '/((?!api|_next|_vercel|.*\\..*).*)',

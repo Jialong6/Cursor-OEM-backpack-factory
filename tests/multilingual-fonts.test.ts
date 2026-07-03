@@ -22,7 +22,7 @@ import {
 /**
  * 需要 CJK 字体的语言列表
  */
-const CJK_LOCALES: readonly Locale[] = ['zh', 'zh-tw', 'ja'] as const;
+const CJK_LOCALES: readonly Locale[] = ['zh', 'zh-tw', 'ja', 'ko'] as const;
 
 /**
  * 使用西里尔字母的语言
@@ -65,6 +65,7 @@ describe('Task 16: 多语言字体配置', () => {
         zh: 'sc',
         'zh-tw': 'tc',
         ja: 'jp',
+        ko: 'kr',
       };
 
       for (const locale of CJK_LOCALES) {
@@ -112,6 +113,7 @@ describe('Task 16: 多语言字体配置', () => {
       expect(FONT_CSS_VARIABLES.sc).toBe('--font-noto-sans-sc');
       expect(FONT_CSS_VARIABLES.tc).toBe('--font-noto-sans-tc');
       expect(FONT_CSS_VARIABLES.jp).toBe('--font-noto-sans-jp');
+      expect(FONT_CSS_VARIABLES.kr).toBe('--font-noto-sans-kr');
       expect(FONT_CSS_VARIABLES.my).toBe('--font-noto-sans-myanmar');
     });
 
@@ -134,6 +136,9 @@ describe('Task 16: 多语言字体配置', () => {
 
       const jaVars = getRequiredCSSVariables('ja');
       expect(jaVars).toContain(FONT_CSS_VARIABLES.jp);
+
+      const koVars = getRequiredCSSVariables('ko');
+      expect(koVars).toContain(FONT_CSS_VARIABLES.kr);
     });
 
     it('缅甸语应该需要 Myanmar CSS 变量', () => {
@@ -215,6 +220,8 @@ describe('Task 16: 多语言字体配置', () => {
         'Microsoft YaHei',
         'MS Gothic',
         'SimHei',
+        'Apple SD Gothic Neo',
+        'Malgun Gothic',
       ];
 
       for (const locale of CJK_LOCALES) {

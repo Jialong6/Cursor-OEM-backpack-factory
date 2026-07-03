@@ -124,6 +124,7 @@ describe('Hreflang Tags - Property Tests', () => {
           { hreflang: 'zh-Hant', href: `${baseUrl}/zh-tw` },
           { hreflang: 'ru', href: `${baseUrl}/ru` },
           { hreflang: 'my', href: `${baseUrl}/my` },
+          { hreflang: 'ko', href: `${baseUrl}/ko` },
           { hreflang: 'x-default', href: `${baseUrl}/en` },
         ])
       );

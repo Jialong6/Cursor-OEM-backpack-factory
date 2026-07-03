@@ -19,7 +19,7 @@ import {
 
 describe('Locale Configuration Completeness', () => {
   // Expected locales (keep in sync with i18n.ts when adding languages)
-  const expectedLocales = ['en', 'zh', 'ja', 'de', 'nl', 'fr', 'pt', 'es', 'zh-tw', 'ru', 'my'] as const;
+  const expectedLocales = ['en', 'zh', 'ja', 'de', 'nl', 'fr', 'pt', 'es', 'zh-tw', 'ru', 'my', 'ko'] as const;
 
   describe('Unit Tests', () => {
     test('should support exactly the expected locales', () => {

@@ -63,6 +63,14 @@ const ruFontConfig: LocaleFontConfig = {
 };
 
 /**
+ * 韩语字体配置
+ */
+const koFontConfig: LocaleFontConfig = {
+  primary: ['Noto Sans KR', 'Noto Sans'],
+  fallback: ['Apple SD Gothic Neo', 'Malgun Gothic', 'system-ui', 'sans-serif'],
+};
+
+/**
  * 缅甸语字体配置（Myanmar 文字系统,Unicode）
  * 回退:macOS/iOS 的 Myanmar Sangam MN、Windows 的 Myanmar Text、
  * 缅甸本地常见的 Pyidaungsu
@@ -95,6 +103,7 @@ const localeFontConfigs: Record<Locale, LocaleFontConfig> = {
   ja: jaFontConfig,
   ru: ruFontConfig,
   my: myFontConfig,
+  ko: koFontConfig,
 };
 
 /**
@@ -128,6 +137,7 @@ export const FONT_CSS_VARIABLES = {
   sc: '--font-noto-sans-sc',
   tc: '--font-noto-sans-tc',
   jp: '--font-noto-sans-jp',
+  kr: '--font-noto-sans-kr',
   my: '--font-noto-sans-myanmar',
 } as const;
 
@@ -147,6 +157,8 @@ export function getRequiredCSSVariables(locale: Locale): readonly string[] {
       return [base, FONT_CSS_VARIABLES.tc];
     case 'ja':
       return [base, FONT_CSS_VARIABLES.jp];
+    case 'ko':
+      return [base, FONT_CSS_VARIABLES.kr];
     case 'my':
       return [base, FONT_CSS_VARIABLES.my];
     default:

@@ -41,8 +41,8 @@ import { FACTORY_INFO } from '@/components/seo/ManufacturingPlantSchema';
 describe('Checkpoint 1: Language System Completeness', () => {
   const localesDir = path.resolve(__dirname, '../locales');
 
-  it('should have exactly 11 supported locales (10 + my)', () => {
-    expect(locales).toHaveLength(11);
+  it('should have exactly 12 supported locales (10 + my + ko)', () => {
+    expect(locales).toHaveLength(12);
   });
 
   it('each locale should have a corresponding translation file', () => {
@@ -357,8 +357,8 @@ describe('Checkpoint 5: System-Level Invariants', () => {
     expect(defaultLocale).toBe('en');
   });
 
-  it('locales has exactly 11 entries (10 + my)', () => {
-    expect(locales).toHaveLength(11);
+  it('locales has exactly 12 entries (10 + my + ko)', () => {
+    expect(locales).toHaveLength(12);
   });
 
   it('Property: isValidLocale returns true iff value is in locales', () => {

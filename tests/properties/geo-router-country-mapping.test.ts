@@ -66,6 +66,7 @@ describe('Property 6: Country-to-Locale Mapping Correctness', () => {
         ['UA', 'ru'],
         ['CN', 'zh'],
         ['MM', 'my'],
+        ['KR', 'ko'],
       ];
 
       for (const [country, expectedLocale] of expectedMappings) {
@@ -302,8 +303,14 @@ describe('Accept-Language Header Parsing', () => {
       expect(matchLanguageToLocale('zh-Hans')).toBe('zh');
     });
 
+    test('supported languages ko and my match their locales', () => {
+      expect(matchLanguageToLocale('ko')).toBe('ko');
+      expect(matchLanguageToLocale('ko-KR')).toBe('ko');
+      expect(matchLanguageToLocale('my')).toBe('my');
+    });
+
     test('unsupported language returns null', () => {
-      expect(matchLanguageToLocale('ko')).toBeNull();
+      expect(matchLanguageToLocale('th')).toBeNull();
       expect(matchLanguageToLocale('ar')).toBeNull();
       expect(matchLanguageToLocale('hi')).toBeNull();
     });
@@ -316,11 +323,11 @@ describe('Accept-Language Header Parsing', () => {
     });
 
     test('skips unsupported languages', () => {
-      expect(getLocaleFromAcceptLanguage('ko,ar,ja;q=0.8')).toBe('ja');
+      expect(getLocaleFromAcceptLanguage('th,ar,ja;q=0.8')).toBe('ja');
     });
 
     test('returns null when no match', () => {
-      expect(getLocaleFromAcceptLanguage('ko,ar,hi')).toBeNull();
+      expect(getLocaleFromAcceptLanguage('th,ar,hi')).toBeNull();
     });
 
     test('handles empty header', () => {
@@ -351,7 +358,7 @@ describe('Full Geo-IP Routing: getLocaleFromGeoIP', () => {
   test('returns en as default when no detection works', () => {
     expect(getLocaleFromGeoIP(null, null)).toBe('en');
     expect(getLocaleFromGeoIP(null, '')).toBe('en');
-    expect(getLocaleFromGeoIP('XX', 'ko,ar')).toBe('en');
+    expect(getLocaleFromGeoIP('XX', 'th,ar')).toBe('en');
   });
 
   test('handles ambiguous country with Accept-Language', () => {
