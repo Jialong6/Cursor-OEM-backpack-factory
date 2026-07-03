@@ -118,13 +118,48 @@ export async function callGemini({ system, user, json = false, temperature = 0.3
     const data = await res.json();
     const candidate = data.candidates?.[0];
     const text = candidate?.content?.parts?.map((p) => p.text ?? '').join('') ?? '';
+    const finishReason = candidate?.finishReason ?? 'unknown';
     if (!text) {
-      lastError = `empty response (finishReason=${candidate?.finishReason ?? 'unknown'})`;
+      lastError = `empty response (finishReason=${finishReason})`;
+      continue;
+    }
+    // 非正常收尾(MAX_TOKENS/SAFETY/RECITATION 等)意味着输出被截断,重试
+    if (finishReason !== 'STOP') {
+      lastError = `truncated response (finishReason=${finishReason}, thoughts=${data.usageMetadata?.thoughtsTokenCount ?? 0}, out=${data.usageMetadata?.candidatesTokenCount ?? 0})`;
       continue;
     }
     return text;
   }
   throw new Error(`Gemini failed after ${maxRetries} retries: ${lastError}`);
+}
+
+/**
+ * 从文本中提取第一个括号配平的 JSON 对象
+ * (模型偶发在结尾多写一个 } 或附加围栏/注释;字符串内的 {placeholder}
+ * 花括号按 JSON 字符串语义跳过,不参与配平)
+ */
+function extractFirstJson(text) {
+  const start = text.indexOf('{');
+  if (start === -1) return null;
+  let depth = 0;
+  let inString = false;
+  let escaped = false;
+  for (let i = start; i < text.length; i++) {
+    const ch = text[i];
+    if (inString) {
+      if (escaped) escaped = false;
+      else if (ch === '\\') escaped = true;
+      else if (ch === '"') inString = false;
+      continue;
+    }
+    if (ch === '"') inString = true;
+    else if (ch === '{') depth++;
+    else if (ch === '}') {
+      depth--;
+      if (depth === 0) return text.slice(start, i + 1);
+    }
+  }
+  return null;
 }
 
 /**
@@ -134,18 +169,18 @@ export async function callGemini({ system, user, json = false, temperature = 0.3
 export async function callGeminiJson(opts) {
   for (let attempt = 0; attempt < 2; attempt++) {
     const text = await callGemini({ ...opts, json: true });
-    try {
-      return JSON.parse(text);
-    } catch {
-      // 容错:剥掉可能的 markdown 代码围栏后再试
-      const stripped = text.replace(/^\s*```(?:json)?\s*/i, '').replace(/\s*```\s*$/, '');
+    // 依次尝试:原文 → 去 markdown 围栏 → 深度扫描截取首个配平对象
+    const stripped = text.replace(/^\s*```(?:json)?\s*/i, '').replace(/\s*```\s*$/, '');
+    for (const candidate of [text, stripped, extractFirstJson(stripped)]) {
+      if (!candidate) continue;
       try {
-        return JSON.parse(stripped);
+        return JSON.parse(candidate);
       } catch {
-        if (attempt === 1) {
-          throw new Error(`Gemini returned non-JSON output: ${text.slice(0, 300)}`);
-        }
+        // try next candidate
       }
+    }
+    if (attempt === 1) {
+      throw new Error(`Gemini returned non-JSON output (${text.length} chars): ...${text.slice(-200)}`);
     }
   }
   throw new Error('unreachable');
