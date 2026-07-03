@@ -217,12 +217,6 @@
         "value": "50.000+ Stück"
       }
     ],
-    "jay": {
-      "title": "Willkommen, ich bin Jay.",
-      "desc1": "Als Vertreter der nächsten Generation an der Spitze von Better Bags, einem familiengeführten Hersteller mit internationaler Ausrichtung, stütze ich mich auf mehr als 8 Jahre Studien- und Berufserfahrung in Pennsylvania, USA. Als Absolvent von ",
-      "and": " und ",
-      "desc2": " bringe ich nachweisliche internationale Expertise sowie interkulturelle Kommunikationskompetenz in die Zusammenarbeit mit unseren Kunden und Partnern ein. Mein Anliegen ist es, die Stärken von Ost und West zu verbinden: hochwertige Produkte, reibungslose Projektkommunikation und verlässlicher After-Sales-Support für jeden Partner, ganz gleich, wo auf der Welt Sie tätig sind."
-    },
     "title": "Warum Better Bags",
     "list": [
       {
@@ -605,7 +599,8 @@
         "error": "Bitte geben Sie eine gültige Telefonnummer ein",
         "codeLabel": "Ländervorwahl",
         "codePlaceholder": "Vorwahl",
-        "codeError": "Bitte wählen Sie eine Ländervorwahl"
+        "codeError": "Bitte wählen Sie eine Ländervorwahl",
+        "example": "z. B. {example}"
       },
       "subject": {
         "label": "Betreff",
@@ -650,7 +645,11 @@
           "tooMany": "Es sind maximal {maxCount} Dateien zulässig",
           "uploadFailed": "Einige Dateien konnten nicht hochgeladen werden. Bitte entfernen Sie diese und versuchen Sie es erneut.",
           "invalidRef": "Die Datei \"{name}\" hat eine ungültige Upload-Referenz."
-        }
+        },
+        "list": "Hochgeladene Dateien",
+        "uploaded": "Hochgeladen",
+        "failed": "Upload fehlgeschlagen",
+        "remove": "Datei {name} entfernen"
       },
       "humanVerification": {
         "label": "Sicherheitsprüfung",
@@ -758,6 +757,10 @@
       "title": "Bereit für Ihr individuelles Rucksackprojekt?",
       "subtitle": "Kontaktieren Sie uns für professionelle OEM/ODM-Lösungen",
       "button": "Jetzt Kontakt aufnehmen"
+    },
+    "notFound": {
+      "title": "Beitrag nicht gefunden",
+      "description": "Der angeforderte Beitrag wurde nicht gefunden."
     }
   },
   "language": {
@@ -917,5 +920,11 @@
       "title": "Blog - Better Bags Myanmar | Brancheneinblicke",
       "description": "Einblicke in die Rucksackfertigung, Branchentrends und Nachhaltigkeitspraxis von Better Bags Myanmar."
     }
+  },
+  "a11y": {
+    "closeNotification": "Benachrichtigung schließen",
+    "notifications": "Benachrichtigungen",
+    "breadcrumb": "Brotkrumennavigation",
+    "pageSections": "Seitenabschnitte"
   }
 }

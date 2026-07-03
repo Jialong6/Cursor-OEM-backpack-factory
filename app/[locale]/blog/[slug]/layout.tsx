@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 import { getBlogPostBySlug, getAllBlogPosts } from '@/lib/blog-data';
 import { getLocalizedField } from '@/lib/blog-utils';
 import { generateBlogDetailMetadata, BASE_URL } from '@/lib/metadata';
@@ -34,11 +35,13 @@ export async function generateMetadata({
   // 获取文章数据
   const post = getBlogPostBySlug(slug);
 
-  // 如果文章不存在，返回默认元数据
+  // 如果文章不存在，返回本地化的默认元数据
   if (!post) {
+    const validNotFoundLocale = isValidLocale(locale) ? locale : defaultLocale;
+    const t = await getTranslations({ locale: validNotFoundLocale, namespace: 'blogDetail.notFound' });
     return {
-      title: 'Blog Post Not Found | Better Bags Myanmar',
-      description: 'The requested blog post could not be found.',
+      title: `${t('title')} | Better Bags Myanmar`,
+      description: t('description'),
     };
   }
 

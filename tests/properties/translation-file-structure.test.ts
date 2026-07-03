@@ -222,6 +222,7 @@ describe('Translation File Unit Tests', () => {
       'testimonials',
       'quoteWidget',
       'metadata',
+      'a11y',
     ];
 
     const actualSections = Object.keys(translations!).sort();

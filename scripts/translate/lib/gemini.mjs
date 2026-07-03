@@ -63,10 +63,10 @@ function sleep(ms) {
  * @param {string} opts.user - 用户内容(待翻译/待审校的 JSON 或文本)
  * @param {boolean} [opts.json=false] - 是否要求 JSON 结构化输出
  * @param {number} [opts.temperature=0.3] - 采样温度(翻译任务偏低)
- * @param {number} [opts.maxRetries=5]
+ * @param {number} [opts.maxRetries=8]
  * @returns {Promise<string>} 模型输出文本
  */
-export async function callGemini({ system, user, json = false, temperature = 0.3, maxRetries = 5 }) {
+export async function callGemini({ system, user, json = false, temperature = 0.3, maxRetries = 8 }) {
   if (!GEMINI_API_KEY) {
     throw new Error('GEMINI_API_KEY missing: set it in .env.local');
   }
@@ -86,7 +86,8 @@ export async function callGemini({ system, user, json = false, temperature = 0.3
   let lastError;
   for (let attempt = 0; attempt <= maxRetries; attempt++) {
     if (attempt > 0) {
-      const backoff = Math.min(60_000, 2_000 * 2 ** (attempt - 1));
+      // 429 限流退避上限放宽到 2 分钟(付费层按分钟窗口重置)
+      const backoff = Math.min(120_000, 2_000 * 2 ** (attempt - 1));
       process.stderr.write(`  retry ${attempt}/${maxRetries} in ${backoff / 1000}s (${lastError})\n`);
       await sleep(backoff);
     }

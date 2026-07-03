@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ReactNode } from 'react'
+import { useTranslations } from 'next-intl'
 
 /**
  * Breadcrumb item configuration
@@ -38,8 +39,10 @@ export default function Breadcrumb({
   items,
   separator = <span className="mx-2 text-neutral-400">/</span>,
 }: BreadcrumbProps) {
+  // useTranslations 在 server/client 组件中均可用(next-intl RSC 支持)
+  const tA11y = useTranslations('a11y')
   return (
-    <nav aria-label="Breadcrumb" className="text-sm">
+    <nav aria-label={tA11y('breadcrumb')} className="text-sm">
       <ol className="flex items-center flex-wrap">
         {items.map((item, index) => {
           const isLast = index === items.length - 1

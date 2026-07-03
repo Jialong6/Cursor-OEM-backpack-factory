@@ -217,12 +217,6 @@
         "value": "50,000+ PCS"
       }
     ],
-    "jay": {
-      "title": "Welcome, I'm Jay.",
-      "desc1": "As the next-generation leader of Better Bags — a family-owned manufacturer with global vision—I draw upon more than 8 years of study and professional experience in Pennsylvania, United States. Being an alumnus of ",
-      "and": " and ",
-      "desc2": " I am proud to bring proven international expertise as well as cross-cultural communication skills to our clients and partners. My mission is to bridge the best of East and West, ensuring every partner enjoys premium products, seamless project communication, and reliable after-sales support—no matter where you are in the world."
-    },
     "title": "Why Better Bags",
     "list": [
       {
@@ -605,7 +599,8 @@
         "error": "Please enter a valid phone number",
         "codeLabel": "Phone country code",
         "codePlaceholder": "Code",
-        "codeError": "Please select a dial code"
+        "codeError": "Please select a dial code",
+        "example": "e.g. {example}"
       },
       "subject": {
         "label": "Subject",
@@ -650,7 +645,11 @@
           "tooMany": "Maximum {maxCount} files allowed",
           "uploadFailed": "Some files failed to upload. Please remove them and try again.",
           "invalidRef": "File \"{name}\" has an invalid upload reference."
-        }
+        },
+        "list": "Uploaded files",
+        "uploaded": "Uploaded",
+        "failed": "Upload failed",
+        "remove": "Remove file {name}"
       },
       "humanVerification": {
         "label": "Human Verification",
@@ -758,6 +757,10 @@
       "title": "Ready to Start Your Custom Backpack Project?",
       "subtitle": "Contact us for professional OEM/ODM solutions",
       "button": "Contact Us Now"
+    },
+    "notFound": {
+      "title": "Blog Post Not Found",
+      "description": "The requested blog post could not be found."
     }
   },
   "language": {
@@ -917,5 +920,11 @@
       "title": "Blog - Better Bags Myanmar | Industry Insights",
       "description": "Explore backpack manufacturing insights, industry trends, and sustainability practices from Better Bags Myanmar."
     }
+  },
+  "a11y": {
+    "closeNotification": "Close notification",
+    "notifications": "Notifications",
+    "breadcrumb": "Breadcrumb",
+    "pageSections": "Page sections"
   }
 }

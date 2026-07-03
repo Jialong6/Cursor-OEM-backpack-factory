@@ -1,6 +1,7 @@
 'use client';
 
 import type { AuthorProfile } from '@/lib/author-data';
+import { getAuthorText } from '@/lib/author-data';
 import { FACTORY_INFO } from './ManufacturingPlantSchema';
 
 /**
@@ -55,9 +56,10 @@ export default function BlogPostingSchema({
     datePublished,
     author: {
       '@type': 'Person',
+      // 人名保持英文(跨语言实体对齐);头衔与简介跟随 inLanguage
       name: author.name.en,
-      jobTitle: author.role.en,
-      description: author.bio.en,
+      jobTitle: getAuthorText(author.role, locale),
+      description: getAuthorText(author.bio, locale),
     },
     publisher: {
       '@type': 'Organization',

@@ -352,21 +352,56 @@ export const COUNTRY_NAME_JA: Readonly<Record<string, string>> = Object.freeze({
 });
 
 /**
+ * Intl.DisplayNames 实例缓存(构造成本高,按 locale 复用;
+ * value 为 null 表示该运行时不支持此 locale,回退英文名)
+ */
+const displayNamesCache = new Map<string, Intl.DisplayNames | null>();
+
+function getRegionDisplayNames(locale: string): Intl.DisplayNames | null {
+  const cached = displayNamesCache.get(locale);
+  if (cached !== undefined) return cached;
+  let dn: Intl.DisplayNames | null = null;
+  try {
+    dn = new Intl.DisplayNames([locale], { type: 'region', fallback: 'code' });
+  } catch {
+    dn = null;
+  }
+  displayNamesCache.set(locale, dn);
+  return dn;
+}
+
+/**
  * 根据 locale 获取本地化国家列表
+ *
+ * 策略:en/zh/ja 沿用手工维护表(既有 UI 文案与测试基准);
+ * zh-tw 用 zh-Hant 的 CLDR 数据(繁体国名);其余 locale
+ * (de/nl/fr/pt/es/ru/my/ko)用运行时原生 Intl.DisplayNames,
+ * 249 国零翻译维护成本。CLDR 缺数据或老运行时回退英文名。
  */
 export function getLocalizedCountries(locale: string): LocalizedCountry[] {
-  const isZh = locale === 'zh' || locale.startsWith('zh-');
+  const isZhHans = locale === 'zh';
   const isJa = locale === 'ja';
+  const isEn = locale === 'en';
 
-  return COUNTRIES.map((country) => ({
-    code: country.code,
-    name: isJa
-      ? COUNTRY_NAME_JA[country.code] ?? country.nameEn
-      : isZh
-        ? country.nameZh
-        : country.nameEn,
-    dialCode: country.dialCode,
-  }));
+  const dn = !isEn && !isZhHans && !isJa
+    ? getRegionDisplayNames(locale === 'zh-tw' ? 'zh-Hant' : locale)
+    : null;
+
+  return COUNTRIES.map((country) => {
+    let name: string;
+    if (isJa) {
+      name = COUNTRY_NAME_JA[country.code] ?? country.nameEn;
+    } else if (isZhHans) {
+      name = country.nameZh;
+    } else if (dn) {
+      const localized = dn.of(country.code);
+      // fallback:'code' 时 of() 返回码本身,视为无数据回退英文
+      name = localized && localized !== country.code ? localized : country.nameEn;
+    } else {
+      name = country.nameEn;
+    }
+    return { code: country.code, name, dialCode: country.dialCode };
+  });
 }
 
 /**

@@ -217,12 +217,6 @@
         "value": "50 000+ pièces"
       }
     ],
-    "jay": {
-      "title": "Bienvenue, je suis Jay.",
-      "desc1": "En tant que dirigeant de la nouvelle génération de Better Bags — fabricant familial porté par une vision internationale —, je m'appuie sur plus de 8 années d'études et d'expérience professionnelle en Pennsylvanie, aux États-Unis. Diplômé de ",
-      "and": " et de ",
-      "desc2": ", je suis fier d'apporter à nos clients et partenaires une expertise internationale éprouvée ainsi que de solides compétences en communication interculturelle. Ma mission : réunir le meilleur de l'Orient et de l'Occident, afin que chaque partenaire bénéficie de produits haut de gamme, d'une communication de projet fluide et d'un service après-vente fiable — où que vous soyez dans le monde."
-    },
     "title": "Pourquoi choisir Better Bags",
     "list": [
       {
@@ -605,7 +599,8 @@
         "error": "Veuillez saisir un numéro de téléphone valide",
         "codeLabel": "Indicatif téléphonique",
         "codePlaceholder": "Indicatif",
-        "codeError": "Veuillez sélectionner un indicatif"
+        "codeError": "Veuillez sélectionner un indicatif",
+        "example": "ex. : {example}"
       },
       "subject": {
         "label": "Objet",
@@ -650,7 +645,11 @@
           "tooMany": "{maxCount} fichiers maximum autorisés",
           "uploadFailed": "Certains fichiers n’ont pas pu être transférés. Veuillez les retirer puis réessayer.",
           "invalidRef": "Le fichier « {name} » possède une référence de transfert invalide."
-        }
+        },
+        "list": "Fichiers téléversés",
+        "uploaded": "Téléversé",
+        "failed": "Échec du téléversement",
+        "remove": "Supprimer le fichier {name}"
       },
       "humanVerification": {
         "label": "Vérification anti-robot",
@@ -758,6 +757,10 @@
       "title": "Prêt à lancer votre projet de sac à dos sur mesure ?",
       "subtitle": "Contactez-nous pour des solutions OEM/ODM professionnelles",
       "button": "Contactez-nous dès maintenant"
+    },
+    "notFound": {
+      "title": "Article introuvable",
+      "description": "L'article demandé est introuvable."
     }
   },
   "language": {
@@ -917,5 +920,11 @@
       "title": "Blog - Better Bags Myanmar | Analyses du secteur",
       "description": "Découvrez les analyses de Better Bags Myanmar sur la fabrication de sacs à dos, les tendances du secteur et les pratiques éco-responsables."
     }
+  },
+  "a11y": {
+    "closeNotification": "Fermer la notification",
+    "notifications": "Notifications",
+    "breadcrumb": "Fil d'Ariane",
+    "pageSections": "Sections de la page"
   }
 }

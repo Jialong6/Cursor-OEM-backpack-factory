@@ -17,13 +17,15 @@ interface GlossarySchemaProps {
   terms: ReadonlyArray<{ term: string; definition: string }>;
   /** Current locale code */
   locale: string;
+  /** Localized glossary title (falls back to English if omitted) */
+  name?: string;
 }
 
-export default function GlossarySchema({ terms, locale }: GlossarySchemaProps) {
+export default function GlossarySchema({ terms, locale, name }: GlossarySchemaProps) {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'DefinedTermSet',
-    name: 'Backpack Manufacturing Glossary',
+    name: name ?? 'Backpack Manufacturing Glossary',
     inLanguage: locale,
     definedTerm: terms.map((item) => ({
       '@type': 'DefinedTerm',

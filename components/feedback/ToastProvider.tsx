@@ -1,6 +1,7 @@
 'use client'
 
 import React, { createContext, useContext, useState, useCallback, useMemo } from 'react'
+import { useTranslations } from 'next-intl'
 import Toast, { ToastData, ToastType } from './Toast'
 
 /**
@@ -75,6 +76,7 @@ export function ToastProvider({
   defaultDuration = 5000,
 }: ToastProviderProps) {
   const [toasts, setToasts] = useState<ToastData[]>([])
+  const tA11y = useTranslations('a11y')
 
   // Create a toast with given type
   const createToast = useCallback(
@@ -131,7 +133,7 @@ export function ToastProvider({
 
       {/* Toast container - fixed position at top-right */}
       <div
-        aria-label="Notifications"
+        aria-label={tA11y('notifications')}
         className="pointer-events-none fixed inset-0 z-50 flex flex-col items-end px-4 py-6 sm:p-6"
       >
         <div className="flex w-full flex-col items-end space-y-4">

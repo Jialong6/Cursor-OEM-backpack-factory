@@ -1,7 +1,12 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import { render } from '@testing-library/react'
 import * as fc from 'fast-check'
 import Breadcrumb, { BreadcrumbItem } from '@/components/layout/Breadcrumb'
+
+// Breadcrumb 的 aria-label 走 a11y namespace,测试无 Provider,mock 之
+vi.mock('next-intl', () => ({
+  useTranslations: () => (key: string) => key,
+}))
 
 /**
  * Breadcrumb property tests
@@ -21,7 +26,8 @@ describe('Breadcrumb', () => {
     const nav = container.querySelector('nav')
 
     expect(nav).toBeTruthy()
-    expect(nav?.getAttribute('aria-label')).toBe('Breadcrumb')
+    // mock 的 t 返回 key 本身;真实文案在各 locale 的 a11y.breadcrumb
+    expect(nav?.getAttribute('aria-label')).toBe('breadcrumb')
   })
 
   it('should render all items in order', () => {
@@ -135,7 +141,8 @@ describe('Breadcrumb', () => {
     const { container } = render(<Breadcrumb items={defaultItems} />)
 
     const nav = container.querySelector('nav')
-    expect(nav?.getAttribute('aria-label')).toBe('Breadcrumb')
+    // mock 的 t 返回 key 本身;真实文案在各 locale 的 a11y.breadcrumb
+    expect(nav?.getAttribute('aria-label')).toBe('breadcrumb')
 
     const ol = container.querySelector('ol')
     expect(ol).toBeTruthy()

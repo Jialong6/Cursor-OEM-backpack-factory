@@ -12,9 +12,8 @@ import * as fc from 'fast-check';
  * 验证需求：7.2 (Organization JSON-LD), 10.5 (FAQPage JSON-LD)
  */
 
-// 支持的语言列表
-const supportedLocales = ['en', 'zh', 'ja', 'ko', 'th', 'vi', 'de', 'fr', 'es', 'ar'] as const;
-type Locale = (typeof supportedLocales)[number];
+// 支持的语言列表:以 i18n.ts 为唯一事实来源
+import { locales as supportedLocales, type Locale } from '../../i18n';
 
 // 工厂基本信息常量（供组件和测试共用）
 export const FACTORY_INFO = {

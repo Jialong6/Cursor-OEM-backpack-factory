@@ -217,12 +217,6 @@
         "value": "50,000+ piezas"
       }
     ],
-    "jay": {
-      "title": "Bienvenidos, soy Jay.",
-      "desc1": "Como líder de la nueva generación de Better Bags —un fabricante familiar con visión global—, cuento con más de 8 años de estudios y experiencia profesional en Pensilvania, Estados Unidos. Como exalumno de ",
-      "and": " y ",
-      "desc2": " me enorgullece aportar a nuestros clientes y socios una experiencia internacional comprobada y habilidades de comunicación intercultural. Mi misión es unir lo mejor de Oriente y Occidente, para que cada socio disfrute de productos de primera calidad, una comunicación fluida en cada proyecto y un servicio posventa confiable, sin importar en qué parte del mundo se encuentren."
-    },
     "title": "¿Por qué Better Bags?",
     "list": [
       {
@@ -605,7 +599,8 @@
         "error": "Ingrese un número de teléfono válido",
         "codeLabel": "Prefijo telefónico del país",
         "codePlaceholder": "Prefijo",
-        "codeError": "Seleccione un prefijo telefónico"
+        "codeError": "Seleccione un prefijo telefónico",
+        "example": "p. ej. {example}"
       },
       "subject": {
         "label": "Asunto",
@@ -650,7 +645,11 @@
           "tooMany": "Se permiten como máximo {maxCount} archivos",
           "uploadFailed": "Algunos archivos no se pudieron subir. Elimínelos e inténtelo de nuevo.",
           "invalidRef": "El archivo \"{name}\" tiene una referencia de subida no válida."
-        }
+        },
+        "list": "Archivos subidos",
+        "uploaded": "Subido",
+        "failed": "Error al subir",
+        "remove": "Eliminar archivo {name}"
       },
       "humanVerification": {
         "label": "Verificación humana",
@@ -758,6 +757,10 @@
       "title": "¿Listo para iniciar su proyecto de mochilas personalizadas?",
       "subtitle": "Contáctenos para obtener soluciones profesionales OEM/ODM",
       "button": "Contáctenos ahora"
+    },
+    "notFound": {
+      "title": "Artículo no encontrado",
+      "description": "No se encontró el artículo solicitado."
     }
   },
   "language": {
@@ -917,5 +920,11 @@
       "title": "Blog - Better Bags Myanmar | Perspectivas del Sector",
       "description": "Descubra claves de la fabricación de mochilas, tendencias del sector y prácticas de sostenibilidad de Better Bags Myanmar."
     }
+  },
+  "a11y": {
+    "closeNotification": "Cerrar notificación",
+    "notifications": "Notificaciones",
+    "breadcrumb": "Ruta de navegación",
+    "pageSections": "Secciones de la página"
   }
 }

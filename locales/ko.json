@@ -217,12 +217,6 @@
         "value": "50,000+ PCS"
       }
     ],
-    "jay": {
-      "title": "안녕하십니까, Jay입니다.",
-      "desc1": "글로벌 비전을 갖춘 가족 경영 제조업체 Better Bags의 차세대 리더로서, 저는 미국 펜실베이니아에서 8년 이상 수학하며 실무 경험을 쌓았습니다. ",
-      "and": " 및 ",
-      "desc2": " 동문으로서, 검증된 국제 비즈니스 전문성과 문화 간 커뮤니케이션 역량을 고객과 파트너 여러분께 제공합니다. 동서양의 강점을 잇는 가교가 되어, 전 세계 어디에 계시든 모든 파트너가 프리미엄 제품, 원활한 프로젝트 커뮤니케이션, 신뢰할 수 있는 사후 지원을 누리실 수 있도록 하는 것이 저의 사명입니다."
-    },
     "title": "Better Bags를 선택하는 이유",
     "list": [
       {
@@ -605,7 +599,8 @@
         "error": "올바른 전화번호를 입력해 주십시오",
         "codeLabel": "전화 국가번호",
         "codePlaceholder": "국가번호",
-        "codeError": "국가번호를 선택해 주십시오"
+        "codeError": "국가번호를 선택해 주십시오",
+        "example": "예: {example}"
       },
       "subject": {
         "label": "제목",
@@ -650,7 +645,11 @@
           "tooMany": "파일은 최대 {maxCount}개까지 업로드할 수 있습니다",
           "uploadFailed": "일부 파일의 업로드에 실패했습니다. 해당 파일을 제거한 후 다시 시도해 주십시오.",
           "invalidRef": "파일 \"{name}\"의 업로드 참조가 올바르지 않습니다."
-        }
+        },
+        "list": "업로드된 파일",
+        "uploaded": "업로드 완료",
+        "failed": "업로드 실패",
+        "remove": "{name} 파일 제거"
       },
       "humanVerification": {
         "label": "보안 인증",
@@ -758,6 +757,10 @@
       "title": "맞춤 제작 백팩 프로젝트를 시작할 준비가 되셨습니까?",
       "subtitle": "전문 OEM/ODM 솔루션이 필요하시면 지금 문의해 주십시오",
       "button": "지금 문의하기"
+    },
+    "notFound": {
+      "title": "게시글을 찾을 수 없습니다",
+      "description": "요청하신 게시글을 찾을 수 없습니다."
     }
   },
   "language": {
@@ -917,5 +920,11 @@
       "title": "블로그 - Better Bags Myanmar | 업계 인사이트",
       "description": "Better Bags Myanmar가 전하는 백팩 제조 인사이트, 업계 트렌드, 지속가능성 실천 사례를 확인하실 수 있습니다."
     }
+  },
+  "a11y": {
+    "closeNotification": "알림 닫기",
+    "notifications": "알림",
+    "breadcrumb": "브레드크럼 내비게이션",
+    "pageSections": "페이지 섹션"
   }
 }

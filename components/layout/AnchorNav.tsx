@@ -34,6 +34,7 @@ export default function AnchorNav({
   variant = 'dots',
 }: AnchorNavProps) {
   const t = useTranslations('nav')
+  const tA11y = useTranslations('a11y')
 
   /**
    * Handle button click by creating a synthetic anchor event
@@ -52,7 +53,7 @@ export default function AnchorNav({
         fixed right-4 top-1/2 -translate-y-1/2 z-40
         flex-col items-end gap-2
       `}
-      aria-label="Page sections"
+      aria-label={tA11y('pageSections')}
     >
       {NAV_ITEMS.map(({ id, href, key }) => {
         const isActive = activeSection === id

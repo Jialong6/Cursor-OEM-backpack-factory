@@ -217,12 +217,6 @@
         "value": "50,000+ 件"
       }
     ],
-    "jay": {
-      "title": "歡迎，我是 Jay。",
-      "desc1": "身為 Better Bags 的新一代領導者——一家具備全球視野的家族後背包製造商——我在美國賓夕法尼亞州累積了超過 8 年的求學與工作經歷。作為 ",
-      "and": " 與 ",
-      "desc2": " 的校友，我很榮幸能為客戶與合作夥伴帶來成熟的國際專業知識與跨文化溝通能力。我的使命是結合東西方的優勢，讓全球每一位合作夥伴都能享有優質產品、順暢溝通與可靠的售後服務。"
-    },
     "title": "為什麼選擇 Better Bags",
     "list": [
       {
@@ -605,7 +599,8 @@
         "error": "請輸入有效的電話號碼",
         "codeLabel": "電話國碼",
         "codePlaceholder": "國碼",
-        "codeError": "請選擇國際電話國碼"
+        "codeError": "請選擇國際電話國碼",
+        "example": "例：{example}"
       },
       "subject": {
         "label": "主旨",
@@ -650,7 +645,11 @@
           "tooMany": "最多只能上傳 {maxCount} 個檔案",
           "uploadFailed": "部分檔案上傳失敗，請移除後再試一次。",
           "invalidRef": "檔案「{name}」的上傳參照無效。"
-        }
+        },
+        "list": "已上傳檔案",
+        "uploaded": "已上傳",
+        "failed": "上傳失敗",
+        "remove": "移除檔案 {name}"
       },
       "humanVerification": {
         "label": "真人驗證",
@@ -758,6 +757,10 @@
       "title": "準備開始您的客製化後背包專案嗎？",
       "subtitle": "歡迎與我們聯絡，取得專業的 OEM/ODM 解決方案",
       "button": "立即洽詢"
+    },
+    "notFound": {
+      "title": "找不到部落格文章",
+      "description": "您造訪的部落格文章不存在。"
     }
   },
   "language": {
@@ -917,5 +920,11 @@
       "title": "部落格 - Better Bags Myanmar | 產業洞察",
       "description": "探索 Better Bags Myanmar 的後背包製造洞察、產業趨勢與永續實踐。"
     }
+  },
+  "a11y": {
+    "closeNotification": "關閉通知",
+    "notifications": "通知",
+    "breadcrumb": "麵包屑導覽",
+    "pageSections": "頁面區塊"
   }
 }

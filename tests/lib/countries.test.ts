@@ -70,8 +70,34 @@ describe('lib/countries', () => {
       expect(china?.name).toBe('China');
     });
 
-    it('should default to English for unknown locale', () => {
+    it('should return French names for fr locale (Intl.DisplayNames)', () => {
       const countries = getLocalizedCountries('fr');
+      const china = countries.find((c) => c.code === 'CN');
+      expect(china).toBeDefined();
+      expect(china?.name).toBe('Chine');
+    });
+
+    it('should return Traditional Chinese names for zh-tw locale (zh-Hant CLDR)', () => {
+      const countries = getLocalizedCountries('zh-tw');
+      const germany = countries.find((c) => c.code === 'DE');
+      expect(germany).toBeDefined();
+      // zh-Hant CLDR: 德國(繁体)而非简体 德国
+      expect(germany?.name).toBe('德國');
+    });
+
+    it('should return Korean and Burmese names via Intl.DisplayNames', () => {
+      const koCountries = getLocalizedCountries('ko');
+      expect(koCountries.find((c) => c.code === 'JP')?.name).toBe('일본');
+
+      const myCountries = getLocalizedCountries('my');
+      const mm = myCountries.find((c) => c.code === 'MM');
+      expect(mm).toBeDefined();
+      // 缅文 CLDR 有数据时应为缅文,极端回退也至少是英文名
+      expect(mm?.name.length).toBeGreaterThan(0);
+    });
+
+    it('should default to English for genuinely unknown locale', () => {
+      const countries = getLocalizedCountries('xx-INVALID');
       const china = countries.find((c) => c.code === 'CN');
       expect(china).toBeDefined();
       expect(china?.name).toBe('China');

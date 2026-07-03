@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
+import { useTranslations } from 'next-intl'
 
 /**
  * Toast Component
@@ -99,6 +100,7 @@ export default function Toast({
 }: ToastProps) {
   const [isVisible, setIsVisible] = useState(false)
   const [isExiting, setIsExiting] = useState(false)
+  const tA11y = useTranslations('a11y')
   const styles = typeStyles[type]
 
   // Determine ARIA live region politeness
@@ -170,7 +172,7 @@ export default function Toast({
                 hover:bg-black/5 focus:outline-none focus:ring-2 focus:ring-offset-2
                 transition-colors duration-200
               `}
-              aria-label="Close notification"
+              aria-label={tA11y('closeNotification')}
             >
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />

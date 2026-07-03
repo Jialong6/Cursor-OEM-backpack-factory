@@ -62,7 +62,7 @@ export default function QuoteFormFields({
   const watchedPhoneCountry = watch('phoneCountryCode') || '';
   const phonePlaceholder = useMemo(() => {
     const ex = getLocalExampleNumber(watchedPhoneCountry);
-    return ex ? `e.g. ${ex}` : t('form.phoneNumber.placeholder');
+    return ex ? t('form.phoneNumber.example', { example: ex }) : t('form.phoneNumber.placeholder');
   }, [watchedPhoneCountry, t]);
 
   // message 自适应高度
@@ -407,7 +407,7 @@ export default function QuoteFormFields({
           </div>
 
           {uploads.length > 0 && (
-            <div className="mt-3 space-y-2" role="list" aria-label="Uploaded files">
+            <div className="mt-3 space-y-2" role="list" aria-label={t('form.fileUpload.list')}>
               {uploads.map((item) => (
                 <div
                   key={item.id}
@@ -422,12 +422,12 @@ export default function QuoteFormFields({
                       <span className="text-gray-500">{item.progress}%</span>
                     )}
                     {item.status === 'success' && (
-                      <span className="text-green-600" aria-label="Uploaded" title="Uploaded">
+                      <span className="text-green-600" aria-label={t('form.fileUpload.uploaded')} title={t('form.fileUpload.uploaded')}>
                         &#10003;
                       </span>
                     )}
                     {item.status === 'error' && (
-                      <span className="text-red-600" aria-label="Upload failed" title="Upload failed">
+                      <span className="text-red-600" aria-label={t('form.fileUpload.failed')} title={t('form.fileUpload.failed')}>
                         !
                       </span>
                     )}
@@ -436,7 +436,7 @@ export default function QuoteFormFields({
                     type="button"
                     onClick={() => removeFile(item.id)}
                     className="text-red-600 hover:text-red-800 ml-1"
-                    aria-label={`Remove file ${item.file.name}`}
+                    aria-label={t('form.fileUpload.remove', { name: item.file.name })}
                   >
                     X
                   </button>
