@@ -643,7 +643,14 @@
         "description": "Upload tech packs, sketches, or sample photos. Max 5 files, 10MB each.",
         "button": "Choose Files",
         "dragDrop": "or drag and drop files here",
-        "acceptedFormats": "Accepted formats: JPG, PNG, WebP, PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX"
+        "acceptedFormats": "Accepted formats: JPG, PNG, WebP, PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX",
+        "errors": {
+          "tooLarge": "File \"{name}\" is too large. Maximum size is {maxMb}MB",
+          "unsupportedType": "File \"{name}\" has an unsupported type. Please upload images or documents.",
+          "tooMany": "Maximum {maxCount} files allowed",
+          "uploadFailed": "Some files failed to upload. Please remove them and try again.",
+          "invalidRef": "File \"{name}\" has an invalid upload reference."
+        }
       },
       "humanVerification": {
         "label": "Menselijke Verificatie",
@@ -900,5 +907,15 @@
     "minimize": "Minimize",
     "dragHandle": "Drag to move",
     "mobileJumpLabel": "Jump to quote form"
+  },
+  "metadata": {
+    "home": {
+      "title": "Better Bags Myanmar - Premium OEM Backpack Factory",
+      "description": "Top-tier custom backpack manufacturer in Myanmar. 20+ years of experience, 600+ employees, primarily serving Japanese brands."
+    },
+    "blogList": {
+      "title": "Blog - Better Bags Myanmar | Industry Insights",
+      "description": "Explore backpack manufacturing insights, industry trends, and sustainability practices from Better Bags Myanmar."
+    }
   }
 }

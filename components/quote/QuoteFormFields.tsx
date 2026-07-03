@@ -449,7 +449,7 @@ export default function QuoteFormFields({
             <div className="mt-2 space-y-1" role="alert" aria-live="assertive">
               {fileErrors.map((error, index) => (
                 <p key={index} className="text-sm text-red-600">
-                  {error}
+                  {t(`form.fileUpload.errors.${error.code}`, error.params)}
                 </p>
               ))}
             </div>

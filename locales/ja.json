@@ -643,7 +643,14 @@
         "description": "Tech Pack・デザイン画・サンプル写真などをアップロードできます。最大 5 ファイル、各 10MB まで。",
         "button": "ファイルを選択",
         "dragDrop": "またはファイルをここにドラッグ＆ドロップ",
-        "acceptedFormats": "対応形式：JPG、PNG、WebP、PDF、DOC、DOCX、XLS、XLSX、PPT、PPTX"
+        "acceptedFormats": "対応形式：JPG、PNG、WebP、PDF、DOC、DOCX、XLS、XLSX、PPT、PPTX",
+        "errors": {
+          "tooLarge": "ファイル「{name}」のサイズが大きすぎます。1 ファイルあたり最大 {maxMb}MB です",
+          "unsupportedType": "ファイル「{name}」の形式には対応していません。画像または書類をアップロードしてください。",
+          "tooMany": "アップロードできるファイルは最大 {maxCount} 件です",
+          "uploadFailed": "一部のファイルのアップロードに失敗しました。該当ファイルを削除して再度お試しください。",
+          "invalidRef": "ファイル「{name}」のアップロード参照が無効です。"
+        }
       },
       "humanVerification": {
         "label": "本人確認（人間であることの確認）",
@@ -900,5 +907,15 @@
     "minimize": "最小化",
     "dragHandle": "ドラッグで移動",
     "mobileJumpLabel": "見積もりフォームへ移動"
+  },
+  "metadata": {
+    "home": {
+      "title": "Better Bags Myanmar - 高品質OEMバックパック工場",
+      "description": "ミャンマーのトップクラスのカスタムバックパックメーカー。20年以上の経験、600名以上のスタッフを擁し、主に日本ブランド向けに製造しています。"
+    },
+    "blogList": {
+      "title": "ブログ - Better Bags Myanmar | 業界インサイト",
+      "description": "Better Bags Myanmar による、バックパック製造のインサイト、業界トレンド、サステナビリティへの取り組みをご紹介します。"
+    }
   }
 }

@@ -221,13 +221,14 @@ describe('Translation File Unit Tests', () => {
       'glossary',
       'testimonials',
       'quoteWidget',
+      'metadata',
     ];
 
     const actualSections = Object.keys(translations!).sort();
     expect(actualSections).toEqual(expectedSections.sort());
   });
 
-  test('exactly 10 translation files exist', () => {
+  test('every supported locale has a translation file', () => {
     let count = 0;
     for (const locale of locales) {
       const filePath = path.join(LOCALES_DIR, `${locale}.json`);
@@ -235,6 +236,7 @@ describe('Translation File Unit Tests', () => {
         count++;
       }
     }
-    expect(count).toBe(10);
+    // 以 i18n.ts 的 locales 为唯一事实来源,新增语言时无需再改此处
+    expect(count).toBe(locales.length);
   });
 });

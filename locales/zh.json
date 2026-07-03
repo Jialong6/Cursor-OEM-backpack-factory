@@ -303,7 +303,14 @@
         "description": "上传技术包、草图或样品照片。最多5个文件，每个最大10MB。",
         "button": "选择文件",
         "dragDrop": "或拖放文件到这里",
-        "acceptedFormats": "支持格式：JPG, PNG, WebP, PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX"
+        "acceptedFormats": "支持格式：JPG, PNG, WebP, PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX",
+        "errors": {
+          "tooLarge": "文件“{name}”过大，单个文件最大 {maxMb}MB",
+          "unsupportedType": "文件“{name}”格式不支持，请上传图片或文档。",
+          "tooMany": "最多只能上传 {maxCount} 个文件",
+          "uploadFailed": "部分文件上传失败，请移除后重试。",
+          "invalidRef": "文件“{name}”的上传引用无效。"
+        }
       },
       "humanVerification": {
         "label": "人机验证",
@@ -900,5 +907,15 @@
     "minimize": "最小化",
     "dragHandle": "拖动以移动",
     "mobileJumpLabel": "前往报价表单"
+  },
+  "metadata": {
+    "home": {
+      "title": "Better Bags 缅甸 - 高端背包OEM工厂",
+      "description": "缅甸顶级定制背包制造商。20+年经验，600+专业员工，长期服务日本及多国品牌。"
+    },
+    "blogList": {
+      "title": "博客 - Better Bags 缅甸 | 行业洞察",
+      "description": "探索来自 Better Bags 缅甸的背包制造洞察、行业趋势和可持续发展实践。"
+    }
   }
 }
