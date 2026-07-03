@@ -47,7 +47,7 @@ interface FAQPageSchemaProps {
  *   {
  *     title: 'General',
  *     items: [
- *       { q: 'What is your MOQ?', a: 'Our MOQ is 150 pieces.' }
+ *       { q: 'What is your MOQ?', a: 'Our MOQ is 1,500 pieces.' }
  *     ]
  *   }
  * ];

@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import { getAuthorById } from '@/lib/author-data';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { TRUSTED_BRANDS } from '@/lib/brand-logos';
+import { FACTORY_INFO } from '@/components/seo/ManufacturingPlantSchema';
 
 /**
  * 关于我们区块组件
@@ -39,30 +40,31 @@ export default function AboutUs() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Organization',
-            name: 'Better Bags Myanmar Company Limited',
-            url: 'https://betterbagsmm.com',
-            logo: 'https://betterbagsmm.com/logo.png',
+            name: FACTORY_INFO.name,
+            url: FACTORY_INFO.url,
+            logo: FACTORY_INFO.logo,
             description: t('mission.desc'),
             address: {
               '@type': 'PostalAddress',
-              streetAddress: 'Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai Industrial Zone',
-              addressLocality: 'Yangon',
-              addressCountry: 'MM',
+              streetAddress: FACTORY_INFO.address.streetAddress,
+              addressLocality: FACTORY_INFO.address.addressLocality,
+              addressCountry: FACTORY_INFO.address.addressCountry,
+              postalCode: FACTORY_INFO.address.postalCode,
             },
             contactPoint: {
               '@type': 'ContactPoint',
-              telephone: '+1-814-880-1463',
+              telephone: FACTORY_INFO.telephone,
               contactType: 'Customer Service',
-              email: 'jay@betterbagsmm.com',
+              email: FACTORY_INFO.email,
             },
-            foundingDate: '2003',
+            foundingDate: FACTORY_INFO.foundingDate,
             founder: {
               '@type': 'Person',
               name: 'Li Guangtong',
               jobTitle: 'Founder & CEO',
               description: founder?.bio.en || '',
             },
-            hasCredential: ['ISO 9001', 'OEKO-TEX', 'GRS', 'GOTS'],
+            hasCredential: FACTORY_INFO.credentials,
           }),
         }}
       />

@@ -24,8 +24,8 @@ export const FACTORY_INFO = {
     longitude: 96.199379,
   },
   numberOfEmployees: {
-    minValue: 800,
-    maxValue: 1000,
+    minValue: 600,
+    maxValue: 700,
   },
   credentials: ['ISO 9001', 'OEKO-TEX', 'GRS', 'GOTS'],
 };
