@@ -35,14 +35,14 @@ import { generateHreflangTags } from '@/components/seo/HreflangTags';
 import { FACTORY_INFO } from '@/components/seo/ManufacturingPlantSchema';
 
 // ---------------------------------------------------------------------------
-// Checkpoint 1: 10 Language System Completeness
+// Checkpoint 1: Language System Completeness
 // ---------------------------------------------------------------------------
 
-describe('Checkpoint 1: 10 Language System Completeness', () => {
+describe('Checkpoint 1: Language System Completeness', () => {
   const localesDir = path.resolve(__dirname, '../locales');
 
-  it('should have exactly 10 supported locales', () => {
-    expect(locales).toHaveLength(10);
+  it('should have exactly 11 supported locales (10 + my)', () => {
+    expect(locales).toHaveLength(11);
   });
 
   it('each locale should have a corresponding translation file', () => {
@@ -276,14 +276,14 @@ describe('Checkpoint 3: Bot Bypass & Geo-IP Routing Integration', () => {
 describe('Checkpoint 4: SEO Structured Data Completeness', () => {
   const baseUrl = 'https://betterbagsmm.com';
 
-  it('Property: any locale generates exactly 11 hreflang tags (10 locales + x-default)', () => {
+  it('Property: any locale generates exactly locales.length + 1 hreflang tags (all locales + x-default)', () => {
     fc.assert(
       fc.property(
         fc.constantFrom(...locales),
         fc.constantFrom('', '/blog', '/blog/test-slug'),
         (locale: Locale, pagePath: string) => {
           const tags = generateHreflangTags(locale, pagePath, baseUrl);
-          expect(tags).toHaveLength(11);
+          expect(tags).toHaveLength(locales.length + 1);
         }
       ),
       { numRuns: 50 }
@@ -357,8 +357,8 @@ describe('Checkpoint 5: System-Level Invariants', () => {
     expect(defaultLocale).toBe('en');
   });
 
-  it('locales has exactly 10 entries', () => {
-    expect(locales).toHaveLength(10);
+  it('locales has exactly 11 entries (10 + my)', () => {
+    expect(locales).toHaveLength(11);
   });
 
   it('Property: isValidLocale returns true iff value is in locales', () => {

@@ -65,6 +65,7 @@ describe('Property 6: Country-to-Locale Mapping Correctness', () => {
         ['KZ', 'ru'],
         ['UA', 'ru'],
         ['CN', 'zh'],
+        ['MM', 'my'],
       ];
 
       for (const [country, expectedLocale] of expectedMappings) {

@@ -39,6 +39,7 @@ const mockLanguageTranslations: Record<Locale, { selectLanguage: string; current
   es: { selectLanguage: 'Seleccionar idioma', currentLanguage: 'Actual: {language}' },
   'zh-tw': { selectLanguage: '選擇語言', currentLanguage: '目前: {language}' },
   ru: { selectLanguage: 'Выбрать язык', currentLanguage: 'Текущий: {language}' },
+  my: { selectLanguage: 'ဘာသာစကား ရွေးချယ်ရန်', currentLanguage: 'လက်ရှိ: {language}' },
 };
 
 /**
