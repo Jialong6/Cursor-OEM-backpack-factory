@@ -44,6 +44,7 @@ const post: BlogPost = {
     es: () => import('./content.es'),
     'zh-tw': () => import('./content.zh-tw'),
     ru: () => import('./content.ru'),
+    my: () => import('./content.my'),
     ko: () => import('./content.ko'),
   },
   date: "2026-05-10",
