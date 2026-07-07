@@ -265,7 +265,8 @@
         "error": "请输入有效的电话号码",
         "codeLabel": "电话国家区号",
         "codePlaceholder": "区号",
-        "codeError": "请选择国际区号"
+        "codeError": "请选择国际区号",
+        "example": "例：{example}"
       },
       "subject": {
         "label": "主题",
@@ -303,7 +304,18 @@
         "description": "上传技术包、草图或样品照片。最多5个文件，每个最大10MB。",
         "button": "选择文件",
         "dragDrop": "或拖放文件到这里",
-        "acceptedFormats": "支持格式：JPG, PNG, WebP, PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX"
+        "acceptedFormats": "支持格式：JPG, PNG, WebP, PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX",
+        "errors": {
+          "tooLarge": "文件“{name}”过大，单个文件最大 {maxMb}MB",
+          "unsupportedType": "文件“{name}”格式不支持，请上传图片或文档。",
+          "tooMany": "最多只能上传 {maxCount} 个文件",
+          "uploadFailed": "部分文件上传失败，请移除后重试。",
+          "invalidRef": "文件“{name}”的上传引用无效。"
+        },
+        "list": "已上传文件",
+        "uploaded": "已上传",
+        "failed": "上传失败",
+        "remove": "移除文件 {name}"
       },
       "humanVerification": {
         "label": "人机验证",
@@ -508,12 +520,6 @@
         "value": "50,000+ 件"
       }
     ],
-    "jay": {
-      "title": "欢迎，我是 Jay。",
-      "desc1": "作为 Better Bags 的新一代领导者——一家拥有全球视野的家族背包制造商——我凭借在美国宾夕法尼亚州超过 8 年的学习与职业经历不断成长。作为 ",
-      "and": " 和 ",
-      "desc2": " 的校友，我自豪地为客户与合作伙伴带来成熟的国际专业知识与跨文化沟通能力。我的使命是融合东西方优势，确保全球每一位合作伙伴都能享受到优质产品、顺畅沟通与可靠售后支持。"
-    },
     "title": "为什么选择 Better Bags",
     "list": [
       {
@@ -751,6 +757,10 @@
       "title": "准备开始您的定制背包项目？",
       "subtitle": "联系我们获取专业的 OEM/ODM 解决方案",
       "button": "立即咨询"
+    },
+    "notFound": {
+      "title": "未找到博客文章",
+      "description": "您访问的博客文章不存在。"
     }
   },
   "language": {
@@ -900,5 +910,21 @@
     "minimize": "最小化",
     "dragHandle": "拖动以移动",
     "mobileJumpLabel": "前往报价表单"
+  },
+  "metadata": {
+    "home": {
+      "title": "Better Bags 缅甸 - 高端背包OEM工厂",
+      "description": "缅甸顶级定制背包制造商。20+年经验，600+专业员工，长期服务日本及多国品牌。"
+    },
+    "blogList": {
+      "title": "博客 - Better Bags 缅甸 | 行业洞察",
+      "description": "探索来自 Better Bags 缅甸的背包制造洞察、行业趋势和可持续发展实践。"
+    }
+  },
+  "a11y": {
+    "closeNotification": "关闭通知",
+    "notifications": "通知",
+    "breadcrumb": "面包屑导航",
+    "pageSections": "页面章节"
   }
 }

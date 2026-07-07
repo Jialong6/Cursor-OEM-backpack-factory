@@ -576,7 +576,8 @@ describe('Property 10: 表单验证完整性 - 单元测试补充', () => {
       const result = validateFile(largeFile);
       expect(result.valid).toBe(false);
       expect(result.error).toBeDefined();
-      expect(result.error).toContain('too large');
+      expect(result.error?.code).toBe('tooLarge');
+      expect(result.error?.params.name).toBe('large.jpg');
     });
 
     it('不支持的文件类型应返回错误', () => {
@@ -586,7 +587,7 @@ describe('Property 10: 表单验证完整性 - 单元测试补充', () => {
       const result = validateFile(unsupportedFile);
       expect(result.valid).toBe(false);
       expect(result.error).toBeDefined();
-      expect(result.error).toContain('unsupported type');
+      expect(result.error?.code).toBe('unsupportedType');
     });
 
     it('有效的文件应通过验证', () => {
@@ -609,7 +610,8 @@ describe('Property 10: 表单验证完整性 - 单元测试补充', () => {
       const result = validateFiles(files);
       expect(result.valid).toBe(false);
       expect(result.errors.length).toBeGreaterThan(0);
-      expect(result.errors[0]).toContain('Maximum 5 files');
+      expect(result.errors[0].code).toBe('tooMany');
+      expect(result.errors[0].params.maxCount).toBe(5);
     });
 
     it('少于 5 个有效文件应通过验证', () => {

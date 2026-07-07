@@ -26,47 +26,10 @@ export const TECH_PACK_OPTIONS = [
 
 export type TechPackAvailability = (typeof TECH_PACK_OPTIONS)[number];
 
-// 文件上传验证辅助函数
-export const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
-export const MAX_FILE_COUNT = 5;
-export const ACCEPTED_FILE_TYPES = [
-  'image/jpeg',
-  'image/jpg',
-  'image/png',
-  'image/webp',
-  'image/heic',
-  'image/heif',
-  'application/pdf',
-  'application/msword',
-  'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-  'application/vnd.ms-excel', // .xls
-  'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', // .xlsx
-  'application/vnd.ms-powerpoint', // .ppt
-  'application/vnd.openxmlformats-officedocument.presentationml.presentation', // .pptx
-];
-
-// 扩展名兜底白名单:部分浏览器对老 Office 格式(.xls/.ppt)给出空 MIME 或
-// application/octet-stream,仅靠 MIME 会误拒,故按文件名后缀二次放行
-export const ACCEPTED_FILE_EXTENSIONS = [
-  'jpg',
-  'jpeg',
-  'png',
-  'webp',
-  'heic',
-  'heif',
-  'pdf',
-  'doc',
-  'docx',
-  'xls',
-  'xlsx',
-  'ppt',
-  'pptx',
-];
-
-function hasAcceptedExtension(fileName: string): boolean {
-  const ext = fileName.split('.').pop()?.toLowerCase() ?? '';
-  return ACCEPTED_FILE_EXTENSIONS.includes(ext);
-}
+// 文件上传校验已迁至 lib/file-validation.ts(错误码化,支持 i18n);
+// 此处 re-export 保持既有 import 路径兼容
+export * from './file-validation';
+import { MAX_FILE_SIZE, ACCEPTED_FILE_TYPES } from './file-validation';
 
 /**
  * 联系表单 Schema
@@ -188,101 +151,6 @@ export type ContactFormResponse = {
   message: string;
   errors?: Record<string, string[]>;
 };
-
-/**
- * 验证辅助函数：检查单个文件
- */
-export function validateFile(file: File): { valid: boolean; error?: string } {
-  if (file.size > MAX_FILE_SIZE) {
-    return {
-      valid: false,
-      error: `File "${file.name}" is too large. Maximum size is ${MAX_FILE_SIZE / 1024 / 1024}MB`,
-    };
-  }
-
-  if (!ACCEPTED_FILE_TYPES.includes(file.type) && !hasAcceptedExtension(file.name)) {
-    return {
-      valid: false,
-      error: `File "${file.name}" has an unsupported type. Please upload images or documents.`,
-    };
-  }
-
-  return { valid: true };
-}
-
-/**
- * 验证辅助函数：检查多个文件
- */
-export function validateFiles(files: File[]): { valid: boolean; errors: string[] } {
-  const errors: string[] = [];
-
-  if (files.length > 5) {
-    errors.push('Maximum 5 files allowed');
-    return { valid: false, errors };
-  }
-
-  files.forEach((file) => {
-    const result = validateFile(file);
-    if (!result.valid && result.error) {
-      errors.push(result.error);
-    }
-  });
-
-  return {
-    valid: errors.length === 0,
-    errors,
-  };
-}
-
-/**
- * 已上传文件的引用（直传 Vercel Blob 后，前端只把元数据 + URL 发给后端）
- */
-export interface UploadedFileRef {
-  name: string;
-  /** R2 对象 key（由 /api/upload 生成并回传） */
-  key: string;
-  size: number;
-  type: string;
-}
-
-// 上传对象 key 的前缀（由 /api/upload 统一生成）；校验客户端回传的 key 形态，
-// 防止注入任意 key（key 仅在服务端用于签发 presigned GET，故只需限定前缀 + 禁止路径穿越）
-export const UPLOAD_KEY_PREFIX = 'inquiries/';
-
-/**
- * 校验直传后回传的文件引用：数量、key 形态、大小、类型
- */
-export function validateFileRefs(files: UploadedFileRef[]): { valid: boolean; errors: string[] } {
-  const errors: string[] = [];
-
-  if (files.length > MAX_FILE_COUNT) {
-    errors.push(`Maximum ${MAX_FILE_COUNT} files allowed`);
-    return { valid: false, errors };
-  }
-
-  files.forEach((file) => {
-    if (
-      typeof file.key !== 'string' ||
-      !file.key.startsWith(UPLOAD_KEY_PREFIX) ||
-      file.key.includes('..')
-    ) {
-      errors.push(`File "${file.name}" has an invalid upload reference.`);
-      return;
-    }
-    if (file.size > MAX_FILE_SIZE) {
-      errors.push(
-        `File "${file.name}" is too large. Maximum size is ${MAX_FILE_SIZE / 1024 / 1024}MB`
-      );
-    }
-    if (!ACCEPTED_FILE_TYPES.includes(file.type) && !hasAcceptedExtension(file.name)) {
-      errors.push(
-        `File "${file.name}" has an unsupported type. Please upload images or documents.`
-      );
-    }
-  });
-
-  return { valid: errors.length === 0, errors };
-}
 
 /**
  * 格式化 Zod 错误为用户友好的消息

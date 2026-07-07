@@ -26,16 +26,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
 
-  // 验证 locale 是否有效
-  if (!locales.includes(locale as any)) {
-    return {
-      ...generateHomeMetadata('en'),
-      metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://betterbagsmm.com'),
-    };
-  }
+  // 验证 locale 是否有效,无效回退英文（文案取自 locales JSON 的 metadata.home）
+  const validLocale = (locales.includes(locale as any) ? locale : 'en') as Locale;
+  const t = await getTranslations({ locale: validLocale, namespace: 'metadata.home' });
 
   return {
-    ...generateHomeMetadata(locale as Locale),
+    ...generateHomeMetadata(validLocale, { title: t('title'), description: t('description') }),
     metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://betterbagsmm.com'),
   };
 }

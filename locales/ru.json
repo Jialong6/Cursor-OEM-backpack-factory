@@ -1,668 +1,674 @@
 {
   "bento": {
     "brand": {
-      "title": "Better Bags since 2003",
-      "subtitle": "#Top Tier Custom Backpacks Factory in Myanmar",
-      "description": "One-stop solutions for your backpack needs"
+      "title": "Better Bags — с 2003 года",
+      "subtitle": "#Ведущая фабрика рюкзаков на заказ в Мьянме",
+      "description": "Производство рюкзаков под ключ — комплексное решение всех задач"
     },
     "dashboard": {
-      "title": "Key Metrics"
+      "title": "Ключевые показатели"
     },
     "trust": {
-      "title": "Trusted By",
-      "certifications": "Certifications",
-      "partners": "Partner Brands",
-      "more": "+20 more"
+      "title": "Нам доверяют",
+      "certifications": "Сертификаты",
+      "partners": "Бренды-партнеры",
+      "more": "еще +20"
     },
     "cta": {
-      "title": "Ready to Start Your Project?",
-      "subtitle": "Get a free quote within 24 hours",
-      "button": "Get A Quote",
-      "note": "No obligation, free consultation"
+      "title": "Готовы начать проект?",
+      "subtitle": "Бесплатный расчет стоимости в течение 24 часов",
+      "button": "Получить расчет",
+      "note": "Без обязательств, консультация бесплатна"
     }
   },
   "nav": {
-    "banner": "Home",
-    "about": "About Us",
-    "features": "Features",
-    "services": "Services",
-    "process": "Process",
+    "banner": "Главная",
+    "about": "О компании",
+    "features": "Преимущества",
+    "services": "Услуги",
+    "process": "Этапы работы",
     "faq": "FAQ",
-    "contact": "Contact Us",
-    "blog": "Blog",
-    "skipToContent": "Skip to main content"
+    "contact": "Контакты",
+    "blog": "Блог",
+    "skipToContent": "Перейти к основному содержанию"
   },
   "banner": {
-    "line1": "Better Bags since 2003",
-    "line2": "#Top Tier Custom Backpacks Factory in Myanmar",
+    "line1": "Better Bags — с 2003 года",
+    "line2": "#Ведущая фабрика по пошиву рюкзаков на заказ в Мьянме",
     "p1": {
-      "pre": "At Better Bags, we provide a ",
-      "highlight": "one-stop",
-      "post": " solutions for your backpack needs—including material sourcing, sampling, mass production, strict quality control, and global delivery."
+      "pre": "Better Bags — это производство рюкзаков ",
+      "highlight": "под ключ",
+      "post": ": закупка материалов, изготовление образцов, серийное производство, строгий контроль качества (QC) и доставка по всему миру."
     },
-    "p2": "With more than 20 years of experience and a primary focus on the Japanese market—including 15+ years of long-term partnerships with leading Japanese brands such as Anello—we also support select clients from Korea, the U.S., and Europe. We manufacture a wide variety of bags: travel bags, backpacks, shoulder bags, tote bags, and more—tailored to your exact requirements.",
-    "p3": "Our competitive pricing and sustainable production options make us the perfect partner for businesses, organizations, and events of any scale.",
-    "cta": "Get A Quote"
+    "p2": "Более 20 лет опыта с основным фокусом на японский рынок — включая 15+ лет долгосрочного сотрудничества с ведущими японскими брендами, такими как Anello. Также работаем с отдельными клиентами из Кореи, США и Европы. Производим широкий ассортимент изделий: дорожные сумки, рюкзаки, сумки через плечо, сумки-шоперы и многое другое — точно по вашим требованиям.",
+    "p3": "Конкурентоспособные цены и опции устойчивого производства делают нас оптимальным партнером для компаний, организаций и мероприятий любого масштаба.",
+    "cta": "Получить расчет"
   },
   "about": {
-    "title": "About Us",
+    "title": "О компании",
     "mission": {
-      "title": "Our Mission",
-      "desc": "To empower global brands and partners by delivering innovative, high-quality, and cost-effective backpack solutions—manufactured responsibly and guided by integrity, craftsmanship, and customer-centric service at every step."
+      "title": "Наша миссия",
+      "desc": "Помогать брендам и партнерам по всему миру расти, предлагая инновационные, качественные и выгодные по цене решения по производству рюкзаков — с ответственным подходом к производству, честностью, мастерством и вниманием к клиенту на каждом этапе."
     },
     "vision": {
-      "title": "Our Vision",
-      "desc": "To be recognized worldwide as the most trusted and forward-thinking backpack manufacturing partner—setting industry benchmarks in quality, innovation, sustainability, and operational excellence, while creating lasting value for our clients, employees, communities, and the environment."
+      "title": "Наше видение",
+      "desc": "Стать самым надежным и передовым в мире партнером по производству рюкзаков — задавать отраслевые ориентиры в качестве, инновациях, устойчивом производстве и операционной эффективности, создавая долгосрочную ценность для клиентов, сотрудников, местных сообществ и окружающей среды."
     },
-    "valuesTitle": "Our Core Values",
+    "valuesTitle": "Наши ключевые ценности",
     "values": [
       {
-        "title": "Integrity & Transparency",
-        "desc": "We conduct our business with honesty, accountability, and the highest ethical standards—building trust with every commitment to our customers, employees, and partners."
+        "title": "Честность и прозрачность",
+        "desc": "Мы ведем бизнес честно, ответственно и по самым высоким этическим стандартам — каждое выполненное обязательство укрепляет доверие клиентов, сотрудников и партнеров."
       },
       {
-        "title": "Pursuit of Excellence",
-        "desc": "We are dedicated to quality, precision, and continuous improvement—striving to exceed expectations across every order, partnership, and interaction."
+        "title": "Стремление к совершенству",
+        "desc": "Мы делаем ставку на качество, точность и постоянное совершенствование — и стремимся превосходить ожидания в каждом заказе, партнерстве и взаимодействии."
       },
       {
-        "title": "Customer Focus",
-        "desc": "Our clients' needs drive every decision. We anticipate challenges, act responsively, and tailor solutions to ensure our customers' enduring success."
+        "title": "Ориентация на клиента",
+        "desc": "Потребности клиентов определяют каждое наше решение. Мы предвидим сложности, оперативно реагируем и подбираем решения, которые обеспечивают долгосрочный успех заказчика."
       },
       {
-        "title": "Innovation & Progress",
-        "desc": "We embrace change and bring creativity to all aspects of design, production, and problem-solving—enabling us to offer cutting-edge products and manufacturing processes."
+        "title": "Инновации и развитие",
+        "desc": "Мы открыты переменам и применяем творческий подход в дизайне, производстве и решении задач — это позволяет предлагать передовые продукты и производственные процессы."
       },
       {
-        "title": "Sustainability & Responsibility",
-        "desc": "We are committed to sustainable sourcing, minimizing our environmental impact, and fostering safe, fair, and respectful working conditions for all."
+        "title": "Устойчивое производство и ответственность",
+        "desc": "Мы придерживаемся ответственных закупок, снижаем воздействие на окружающую среду и обеспечиваем безопасные, справедливые и уважительные условия труда для всех."
       },
       {
-        "title": "Collaboration & Empowerment",
-        "desc": "We value teamwork, diverse perspectives, and empowering every team member—cultivating a culture where people, ideas, and partnerships flourish."
+        "title": "Сотрудничество и доверие к команде",
+        "desc": "Мы ценим командную работу, разнообразие взглядов и самостоятельность каждого сотрудника — и развиваем культуру, в которой раскрываются люди, идеи и партнерства."
       }
     ],
     "founder": {
-      "title": "Meet Our Founder"
+      "title": "Основатель компании"
     },
     "company": {
       "title": "Better Bags Myanmar Company Limited",
-      "p1": "Founded in 2003, Better Bags Myanmar specializes in the OEM/ODM manufacturing of premium backpacks, designed for a global client. Our comprehensive capabilities cover leisure, travel, climbing, and fashion bags, crafted from responsibly sourced polyester, cotton, and synthetic leather.",
-      "p2": "Our story began in Shenzhen, China, where our founder, Mr. Li Guangtong, gained deep expertise working with top international brands. Driven by a vision of global excellence, we later established our main production base in Shandong (Rizhao) — paired with a dedicated sampling and development center in Qingdao — and, following thorough research, launched our state-of-the-art production base in Yangon, Myanmar in 2023.",
-      "p3": "Over the past two decades, our primary focus has been the Japanese market, and we have proudly partnered with multiple Japanese brands — including Anello — alongside selected global brands such as New Balance, Nike, and Fila. Our unwavering commitment to quality, reliability, and proactive service has enabled us to maintain long-term partnerships, with many leading Japanese brands working with us for over 15 years.",
-      "p4": "Today, Better Bags stands at the intersection of tradition and innovation. By optimizing our dual-factory model, investing in people and systems, and adhering strictly to international standards, we meet the evolving needs of global customers with efficiency, flexibility, and future-oriented solutions. As we look ahead, our goal is to set new benchmarks in both client satisfaction and responsible manufacturing."
+      "p1": "Компания Better Bags Myanmar, основанная в 2003 году, специализируется на OEM/ODM-производстве рюкзаков премиального качества для клиентов по всему миру. Мы выпускаем повседневные, дорожные, альпинистские и модные модели из полиэстера, хлопка и искусственной кожи, закупаемых у ответственных поставщиков.",
+      "p2": "Наша история началась в Шэньчжэне (Китай), где основатель компании г-н Ли Гуантун приобрел глубокую экспертизу, работая с ведущими международными брендами. Затем мы создали основную производственную базу в провинции Шаньдун (Жичжао) и отдельный центр разработки и изготовления образцов в Циндао, а в 2023 году, после тщательной подготовки, запустили современную производственную площадку в Янгоне (Мьянма).",
+      "p3": "Последние два десятилетия нашим ключевым рынком остается Япония: мы сотрудничаем с рядом японских брендов, включая Anello, а также с отдельными мировыми марками, такими как New Balance, Nike и Fila. Неизменная ставка на качество, надежность и проактивный сервис позволяет нам поддерживать долгосрочные партнерства — многие ведущие японские бренды работают с нами более 15 лет.",
+      "p4": "Сегодня Better Bags соединяет традиции и инновации. Оптимизируя модель с двумя фабриками, инвестируя в людей и системы и строго следуя международным стандартам, мы отвечаем на меняющиеся потребности клиентов по всему миру — эффективно, гибко и с расчетом на будущее. Наша цель — задавать новые ориентиры как в удовлетворенности клиентов, так и в ответственном производстве."
     },
-    "trustedBrands": "Trusted by Global Brands"
+    "trustedBrands": "Нам доверяют мировые бренды"
   },
   "costAdvantage": {
-    "title": "Why Myanmar: The Cost-vs-Lead-Time Sweet Spot",
-    "subtitle": "Same product, same destination (Japan). Different trade-offs. See how our Myanmar production stacks up against China and Vietnam.",
+    "title": "Почему Мьянма: оптимальный баланс цены и срока производства",
+    "subtitle": "Один и тот же продукт, одно направление поставки (Япония) — разные условия. Сравните наше производство в Мьянме с Китаем и Вьетнамом.",
     "countries": [
       {
         "code": "CN",
-        "name": "China",
-        "priceLabel": "Price",
-        "priceValue": "Baseline",
+        "name": "Китай",
+        "priceLabel": "Цена",
+        "priceValue": "Базовый уровень",
         "pricePercent": 100,
-        "leadTimeLabel": "Lead Time",
-        "leadTimeValue": "Baseline",
+        "leadTimeLabel": "Срок производства",
+        "leadTimeValue": "Базовый уровень",
         "leadTimePercent": 33
       },
       {
         "code": "VN",
-        "name": "Vietnam",
-        "priceLabel": "Price",
-        "priceValue": "Same as China",
+        "name": "Вьетнам",
+        "priceLabel": "Цена",
+        "priceValue": "Как в Китае",
         "pricePercent": 100,
-        "leadTimeLabel": "Lead Time",
-        "leadTimeValue": "+1 month",
+        "leadTimeLabel": "Срок производства",
+        "leadTimeValue": "+1 месяц",
         "leadTimePercent": 66
       },
       {
         "code": "MM",
-        "name": "Myanmar (Better Bags)",
-        "priceLabel": "Price",
-        "priceValue": "-10% vs China & Vietnam",
+        "name": "Мьянма (Better Bags)",
+        "priceLabel": "Цена",
+        "priceValue": "-10% по сравнению с Китаем и Вьетнамом",
         "pricePercent": 90,
-        "leadTimeLabel": "Lead Time",
-        "leadTimeValue": "+2 months",
+        "leadTimeLabel": "Срок производства",
+        "leadTimeValue": "+2 месяца",
         "leadTimePercent": 100,
-        "badge": "Best Value"
+        "badge": "Лучший баланс цены и сроков"
       }
     ],
-    "takeaway": "Trade 2 months of extra lead time for 10% lower cost — that's our value proposition for OEM buyers.",
-    "cta": "Get A Quote"
+    "takeaway": "Дополнительные 2 месяца срока производства в обмен на цену на 10% ниже — вот наше предложение для OEM-заказчиков.",
+    "cta": "Получить расчет"
   },
   "whatSetsUsApart": {
-    "title": "What Sets Us Apart",
-    "subtitle": "Three operational disciplines that separate Better Bags from typical OEM factories.",
+    "title": "Что нас отличает",
+    "subtitle": "Три принципа организации производства, которые отличают Better Bags от типичных OEM-фабрик.",
     "items": [
       {
         "key": "qc",
-        "title": "Japanese-Grade Quality Control",
-        "description": "Strict broken-needle replacement logs and 100% X-ray screening — we physically eliminate customer-complaint risk at the production line, not after the fact."
+        "title": "Контроль качества по японским стандартам",
+        "description": "Строгий журнал замены сломанных игл и 100% рентген-контроль готовых изделий — мы устраняем риск рекламаций прямо на производственной линии, а не постфактум."
       },
       {
         "key": "cost",
-        "title": "China-Myanmar Cost Engineering",
-        "description": "Chinese supply-chain orchestration paired with Yangon-based labor settlement compresses unit cost on bulk orders without compromising quality."
+        "title": "Оптимизация себестоимости: Китай + Мьянма",
+        "description": "Отлаженная китайская цепочка поставок в сочетании с пошивом в Янгоне снижает себестоимость единицы продукции на оптовых заказах без ущерба для качества."
       },
       {
         "key": "leadTime",
-        "title": "Capacity-Locked 4-Month Lead Time",
-        "description": "We never over-book. Every order locks in a 4-month production and delivery window so your launch dates stay predictable."
+        "title": "Фиксированный срок производства: 4 месяца",
+        "description": "Мы никогда не перегружаем производство. За каждым заказом закрепляется 4-месячное окно на производство и отгрузку, поэтому вы можете точно планировать запуск продаж."
       }
     ]
   },
   "marketPositioning": {
-    "title": "Where Better Bags Stands in the OEM Market",
-    "subtitle": "Map every OEM factory onto a profit × quality grid — and see who lives in which corner.",
+    "title": "Позиция Better Bags на рынке OEM-производства",
+    "subtitle": "Расположите любую OEM-фабрику на карте «маржа × качество» — и вы увидите, кто занимает какой сегмент.",
     "axes": {
       "profit": {
-        "low": "Thin margins",
-        "high": "Healthy margins"
+        "low": "Низкая маржа",
+        "high": "Высокая маржа"
       },
       "quality": {
-        "low": "Unstable quality & high risk",
-        "high": "Reliable quality & on-time delivery"
+        "low": "Нестабильное качество и высокие риски",
+        "high": "Надежное качество и поставка в срок"
       }
     },
     "quadrants": [
       {
         "position": "topRight",
         "title": "Better Bags",
-        "description": "Cost-efficient Myanmar production paired with Japanese-grade QC — high margins, low risk, scalable bulk orders.",
-        "badge": "Best Position"
+        "description": "Экономичное производство в Мьянме плюс контроль качества (QC) японского уровня — высокая маржа, низкие риски и масштабируемые оптовые заказы.",
+        "badge": "Оптимальная позиция"
       },
       {
         "position": "topLeft",
-        "title": "Large-Scale Chinese Factories",
-        "description": "Delivery quality is generally stable, but rising Chinese labor costs and policy risk squeeze your margins thin."
+        "title": "Крупные китайские фабрики",
+        "description": "Качество поставок в целом стабильное, однако рост стоимости рабочей силы в Китае и политические риски сводят вашу маржу к минимуму."
       },
       {
         "position": "bottomRight",
-        "title": "Low-End Southeast Asian Shops",
-        "description": "Pricing looks attractive, but the absence of a QC system exposes you to breach-of-contract and claim risk at any moment."
+        "title": "Бюджетные цеха Юго-Восточной Азии",
+        "description": "Цены выглядят привлекательно, но отсутствие системы контроля качества (QC) в любой момент подвергает вас риску срыва контракта и рекламаций."
       },
       {
         "position": "bottomLeft",
-        "title": "Under-Resourced Workshops",
-        "description": "No economies of scale on cost, and unable to pass the bulk-production audits that serious clients require."
+        "title": "Мастерские с ограниченными ресурсами",
+        "description": "Нет эффекта масштаба в себестоимости, а аудит серийного производства, который требуют серьезные заказчики, такие цеха пройти не могут."
       }
     ]
   },
   "features": {
     "stats": [
       {
-        "label": "Professional Employees",
+        "label": "Квалифицированный персонал",
         "value": "600+"
       },
       {
-        "label": "Low MOQ",
-        "value": "From 1,500 PCS"
+        "label": "Низкий MOQ",
+        "value": "от 1 500 шт."
       },
       {
-        "label": "Proofing Time",
-        "value": "2 Weeks"
+        "label": "Изготовление образца",
+        "value": "2 недели"
       },
       {
-        "label": "Quality Inspection",
+        "label": "Контроль качества",
         "value": "100%"
       },
       {
-        "label": "Online Support",
-        "value": "24 Hrs"
+        "label": "Онлайн-поддержка",
+        "value": "24 часа"
       },
       {
-        "label": "Monthly Production",
-        "value": "50,000+ PCS"
+        "label": "Выпуск в месяц",
+        "value": "50 000+ шт."
       }
     ],
-    "jay": {
-      "title": "Welcome, I'm Jay.",
-      "desc1": "As the next-generation leader of Better Bags — a family-owned manufacturer with global vision—I draw upon more than 8 years of study and professional experience in Pennsylvania, United States. Being an alumnus of ",
-      "and": " and ",
-      "desc2": " I am proud to bring proven international expertise as well as cross-cultural communication skills to our clients and partners. My mission is to bridge the best of East and West, ensuring every partner enjoys premium products, seamless project communication, and reliable after-sales support—no matter where you are in the world."
-    },
-    "title": "Why Better Bags",
+    "title": "Почему Better Bags",
     "list": [
       {
-        "title": "Flexibility",
+        "title": "Гибкость",
         "color": "#81C3D7",
-        "desc": "With production bases in both Shandong (Rizhao), China and Yangon, Myanmar — supported by a dedicated sampling and development center in Qingdao — we offer unparalleled flexibility to meet our customers' diverse needs. Our Myanmar factory is fully equipped to handle large-volume production with speed and efficiency, while our long-established Shandong operation (20+ years of expertise) excels at design, sampling, sourcing, and personalized project management. Whether you need rapid prototyping, small custom batches, or are scaling up to large bulk orders, our dual-factory model ensures your requirements are fulfilled with agility and precision."
+        "desc": "Две производственные площадки — в провинции Шаньдун (Жичжао, Китай) и в Yangon (Мьянма) — вместе с отдельным центром разработки и изготовления образцов в Циндао дают нам исключительную гибкость в решении самых разных задач клиентов. Фабрика в Мьянме полностью оснащена для быстрого и эффективного выпуска крупных партий, а площадка в Шаньдуне с опытом 20+ лет отвечает за дизайн, изготовление образцов, закупку материалов и индивидуальное ведение проектов. Быстрое прототипирование, небольшие партии на заказ или масштабирование до крупных оптовых заказов — модель двух фабрик обеспечивает точное и оперативное выполнение ваших требований."
       },
       {
-        "title": "Communication",
+        "title": "Коммуникация",
         "color": "#416788",
-        "desc": "At Better Bags, effective communication is the foundation of all our partnerships. Our founder, Mr. Li Guangtong, built our business on the trust and high standards of Japanese clients—reflecting a deep understanding of international requirements. Drawing on our multicultural team—including professionals with extensive study and work experience in the United States—we seamlessly connect with global customers. We are especially adept at bridging cultural and language gaps, ensuring clarity, transparency, and a smooth cooperation experience from start to finish."
+        "desc": "В Better Bags эффективная коммуникация — основа всех наших партнерств. Наш основатель, г-н Ли Гуантун, построил бизнес на доверии и высоких стандартах японских клиентов, что отражает глубокое понимание международных требований. Многонациональная команда, в том числе специалисты с многолетним опытом учебы и работы в США, позволяет нам свободно взаимодействовать с заказчиками по всему миру. Мы умеем преодолевать культурные и языковые барьеры, обеспечивая ясность, прозрачность и комфортное сотрудничество на всем протяжении проекта."
       },
       {
-        "title": "Quality Control",
+        "title": "Контроль качества",
         "color": "#5a6d7c",
-        "desc": "The backbone of our reputation is unwavering quality control. Years of collaboration with demanding markets like Japan have forged a meticulous approach at every stage of production, from sourcing to final inspection. Our experienced QA teams ensure that every order not only meets but often exceeds international standards for craftsmanship, durability, and reliability—guaranteeing peace of mind with every delivery."
+        "desc": "Наша репутация держится на неукоснительном контроле качества. Многолетняя работа с такими требовательными рынками, как Япония, сформировала скрупулезный подход на каждом этапе производства — от закупки материалов до финальной инспекции. Опытные команды QA следят за тем, чтобы каждый заказ соответствовал международным стандартам качества исполнения, прочности и надежности, а зачастую и превосходил их, — вы можете быть спокойны за каждую поставку."
       },
       {
-        "title": "Competitive Pricing",
+        "title": "Конкурентные цены",
         "color": "#2f6690",
-        "desc": "Our primary production base in Myanmar gives us a significant cost advantage—production costs here are much lower than in China, and even compared to other Southeast Asian countries such as Vietnam and Thailand, we are able to offer more competitive prices under the same quality standards. This means our clients receive high-quality products at a better value, without compromise.\n\nMyanmar's cost efficiency perfectly complements our China operation — our Shandong (Rizhao) production base together with our Qingdao sampling and development center, which specialize in design, sampling, and sourcing. By combining Myanmar's unbeatable production pricing with China's strong development capabilities, we achieve the \"sweet spot\" in global manufacturing—offering clients both outstanding quality and truly competitive pricing."
+        "desc": "Основная производственная база в Мьянме дает нам существенное ценовое преимущество: себестоимость производства здесь значительно ниже, чем в Китае, и даже в сравнении с другими странами Юго-Восточной Азии — Вьетнамом и Таиландом — мы предлагаем более выгодные цены при тех же стандартах качества. Для наших клиентов это означает качественную продукцию по лучшей цене — без компромиссов.\n\nЭкономичность производства в Мьянме идеально дополняет наше китайское подразделение — производственную базу в Шаньдуне (Жичжао) и центр разработки и изготовления образцов в Циндао, которые специализируются на дизайне, образцах и закупке материалов. Сочетая низкую себестоимость производства в Мьянме с сильной базой разработки в Китае, мы находим оптимальный баланс в глобальном производстве и предлагаем клиентам одновременно высокое качество и по-настоящему конкурентные цены."
       }
     ]
   },
   "customization": {
-    "title": "Customization Options",
-    "intro": "As an experienced backpack manufacturer, we provide a comprehensive range of tailor-made solutions for clients worldwide. From <span style='font-weight:800'>initial concept to production and delivery</span>, every detail is customizable to ensure your products stand out in the market.",
+    "title": "Возможности индивидуального производства",
+    "intro": "Как опытный производитель рюкзаков, мы предлагаем клиентам по всему миру полный спектр решений под ключ. От <span style='font-weight:800'>первоначальной идеи до производства и отгрузки</span> — каждая деталь изготавливается на заказ, чтобы ваша продукция выделялась на рынке.",
     "features": [
       {
-        "title": "Extensive Backpack Styles",
-        "desc": "No matter the style you need, our experienced R&D team can guide you through the selection process to ensure you find the ideal fit for your project.",
+        "title": "Широкий выбор моделей рюкзаков",
+        "desc": "Какая бы модель вам ни требовалась, наша опытная команда разработчиков поможет с выбором и подберет оптимальный вариант для вашего проекта.",
         "highlights": [
-          "Casual, Travel, Hiking, Business",
-          "Camera, Sports, Tote, Anti-theft",
-          "Tactical, Sling, School, Rolling",
-          "Multi-functional, Eco-friendly, Fishing, Accessories"
+          "Городские, дорожные, туристические, деловые",
+          "Для фототехники, спортивные, тоуты, антикражные",
+          "Тактические, слинги, школьные, на колесах",
+          "Многофункциональные, экологичные, для рыбалки, аксессуары"
         ]
       },
       {
-        "title": "Multiple Sizes and Capacities",
-        "desc": "Flexible size configurations to fit any scenario, all customizable with smart compartments and layouts.",
+        "title": "Разные размеры и объемы",
+        "desc": "Гибкие конфигурации размеров под любой сценарий использования; внутренняя организация и отделения — полностью на заказ.",
         "highlights": [
-          "Small (10L–20L): Daily/Children/Light Essentials",
-          "Medium (20L–40L): Commute/Trip/Students",
-          "Large (40L–60L): Travel/Outdoor/More Space",
-          "Extra Large (60L+): Long Trip/Pro Use/Special Needs"
+          "Малые (10–20 л): на каждый день / детские / минимум вещей",
+          "Средние (20–40 л): город / поездки / учеба",
+          "Большие (40–60 л): путешествия / аутдор / больше места",
+          "Очень большие (60 л+): длительные поездки / профессиональное использование / особые задачи"
         ]
       },
       {
-        "title": "Superior & Eco-friendly Materials",
-        "desc": "Premium global materials, responsibly sourced. All can be custom colored, processed, or finished to match your vision!",
+        "title": "Качественные и экологичные материалы",
+        "desc": "Премиальные материалы от мировых поставщиков, ответственные закупки. Любой материал можно окрасить, обработать и отделать по вашему заданию.",
         "highlights": [
-          "Polyester, Nylon, Canvas, Leather",
-          "Jute, Tyvek, Neoprene, PVC, TPU",
-          "Recycled & Eco Options",
-          "Any custom color, print, or finish"
+          "Полиэстер, нейлон, канвас, кожа",
+          "Джут, Tyvek, неопрен, PVC, TPU",
+          "Переработанные и экологичные варианты",
+          "Любой цвет, принт и отделка на заказ"
         ]
       },
       {
-        "title": "Professional Color Solutions",
-        "desc": "Achieve flawless color consistency and bring your brand vision to life with our comprehensive color services.",
+        "title": "Профессиональная работа с цветом",
+        "desc": "Стабильность цвета от партии к партии: полный комплекс услуг по цвету поможет точно воплотить фирменную палитру вашего бренда.",
         "highlights": [
-          "Pantone-matched custom dyes",
-          "Color sample proofing",
-          "Strict colorfastness testing"
+          "Окрашивание точно по Pantone",
+          "Согласование цветовых образцов",
+          "Строгие тесты на стойкость окраски"
         ]
       },
       {
-        "title": "Custom Imprint & Branding",
-        "desc": "Your brand, your way. Multiple logo and graphic application methods for a lasting impression.",
+        "title": "Нанесение логотипа и брендирование",
+        "desc": "Ваш бренд — по вашим правилам. Разные способы нанесения логотипов и графики, чтобы ваш бренд запомнился надолго.",
         "highlights": [
-          "Embroidery / Silk Screen / Heat Transfer",
-          "Embossing / Debossing / TPU Labels",
-          "Rubber patches / Metal badges",
-          "Graphics, taglines, custom artwork"
+          "Вышивка / шелкография / термотрансфер",
+          "Эмбоссинг / дебоссинг / лейблы из TPU",
+          "Резиновые патчи / металлические шильды",
+          "Графика, слоганы, макеты на заказ"
         ]
       },
       {
-        "title": "Accessories & Hardware",
-        "desc": "Upgrade every detail—premium zippers, buckles, trims. Each part can be color- and function-customized.",
+        "title": "Аксессуары и фурнитура",
+        "desc": "Продумана каждая деталь: качественные молнии, пряжки, отделка. Цвет и функционал любого элемента — под ваш заказ.",
         "highlights": [
-          "Zippers: Waterproof, Two-way, Invisible, etc.",
-          "Buckles: Plastic, Metal, Magnetic, Quick-release, D-rings",
-          "Loops, pulls, trims—all configurable",
-          "Match finishes & color"
+          "Молнии: водонепроницаемые, двусторонние, потайные и др.",
+          "Пряжки: пластиковые, металлические, магнитные, фастексы, полукольца",
+          "Шлевки, пуллеры, канты — любая комплектация",
+          "Подбор цвета и покрытия под единый стиль"
         ]
       },
       {
-        "title": "Enhanced Functional Features",
-        "desc": "Tailored features for safety, tech, travel, or specialist needs—because every use case is unique.",
+        "title": "Расширенный функционал",
+        "desc": "Функции под конкретные задачи: безопасность, гаджеты, путешествия, специальное применение — каждый сценарий уникален.",
         "highlights": [
-          "Expansion: Roll-top, Zippers, Drawstring",
-          "Weatherproofing: Coated fabrics, Rain covers, Ventilated backs",
-          "Security: Anti-theft locks, RFID shields",
-          "Tech: USB ports, cable routing, reflective details, LED integration",
-          "Travel: TSA-friendly, Trolley sleeves"
+          "Увеличение объема: ролл-топ, молнии, утяжка",
+          "Защита от непогоды: ткани с покрытием, дождевые чехлы, вентилируемая спинка",
+          "Безопасность: антикражные замки, RFID-защита",
+          "Технологии: USB-порты, кабель-каналы, светоотражающие элементы, LED-подсветка",
+          "Для путешествий: совместимость с TSA, крепление на ручку чемодана"
         ]
       },
       {
-        "title": "Private Label & Logo Customization",
-        "desc": "Fully customizable branding—even for private label requirements.",
+        "title": "СТМ (private label) и логотипы",
+        "desc": "Полностью настраиваемое брендирование — в том числе под собственную торговую марку (СТМ).",
         "highlights": [
-          "Woven & Fabric Labels",
-          "TPU/PU Badges",
-          "Metal Patches",
-          "Showcase your unique identity"
+          "Жаккардовые и тканевые этикетки",
+          "Лейблы из TPU/PU",
+          "Металлические шильды",
+          "Подчеркните уникальность вашего бренда"
         ]
       }
     ],
-    "ready": "Ready to bring your vision to life? <br />Contact us for a tailor-made solution—and discover why top brands worldwide trust us as their manufacturing partner.",
-    "cta": "Customize Now"
+    "ready": "Готовы воплотить свою идею? <br />Свяжитесь с нами за индивидуальным решением — и убедитесь, почему ведущие мировые бренды выбирают нас производственным партнером.",
+    "cta": "Начать проект"
   },
   "services": {
-    "title": "Optimized All-in-One Service for Mass Production",
+    "title": "Комплексный сервис под ключ для серийного производства",
     "steps": [
       {
-        "title": "Handle Customer Inquiry",
-        "desc": "Send us an inquiry and share the details of your project. Our dedicated team will quickly respond to understand your needs and expectations."
+        "title": "Обработка запроса",
+        "desc": "Отправьте нам запрос и опишите детали вашего проекта. Наша команда оперативно свяжется с вами, чтобы уточнить ваши требования и ожидания."
       },
       {
-        "title": "Manufacture Quotation",
-        "desc": "If your project fits our standard MOQ and production capabilities, we will promptly provide an initial quotation based on your tech pack, selected fabric quality, and requested quantity."
+        "title": "Расчет стоимости",
+        "desc": "Если ваш проект соответствует нашему стандартному MOQ (минимальному объему заказа) и производственным возможностям, мы оперативно подготовим предварительное коммерческое предложение (КП) на основе вашего техпака (Tech Pack), выбранного качества ткани и требуемого количества."
       },
       {
-        "title": "Sample Development",
-        "desc": "Once the quotation is approved, we move forward with sample development. This ensures that quality and specifications are confirmed before bulk production begins."
+        "title": "Изготовление образца",
+        "desc": "После согласования КП мы приступаем к изготовлению образца. Это позволяет подтвердить качество и спецификации до запуска серийного производства."
       },
       {
-        "title": "Bulk Production",
-        "desc": "After you confirm the order and provide a deposit, we commence bulk production—strictly following all agreed specifications with careful attention to detail."
+        "title": "Серийное производство",
+        "desc": "После подтверждения заказа и внесения предоплаты мы запускаем серийное производство — строго по всем согласованным спецификациям и с вниманием к каждой детали."
       },
       {
-        "title": "Quality Control",
-        "desc": "Our rigorous QC procedures include 100% end-line inspections and application of AQL 2.5 standards for final checks. We also welcome third-party QC to further guarantee quality and transparency."
+        "title": "Контроль качества (QC)",
+        "desc": "Строгие процедуры QC включают 100% инспекцию на выходе с линии и финальную проверку по стандарту AQL 2.5. Мы также приветствуем инспекцию третьей стороной — для дополнительной гарантии качества и прозрачности."
       },
       {
-        "title": "Packaging & Shipping",
-        "desc": "After quality confirmation, your products are carefully packaged and shipped in bulk to your designated warehouse, ensuring safe and efficient delivery."
+        "title": "Упаковка и отгрузка",
+        "desc": "После подтверждения качества продукция тщательно упаковывается и отгружается партией на указанный вами склад — с гарантией безопасной и своевременной доставки."
       }
     ],
-    "processNote": "<highlight1>От запроса до доставки</highlight1> наша профессиональная команда поддерживает вас на протяжении всего процесса, обеспечивая <highlight2>эффективность и прозрачность</highlight2> каждого этапа, чтобы ваш индивидуальный проект был реализован без проблем."
+    "processNote": "<highlight1>От запроса до отгрузки</highlight1> наша профессиональная команда сопровождает вас на всех этапах, обеспечивая <highlight2>эффективность и прозрачность</highlight2> каждого шага, чтобы ваш проект был реализован без сбоев."
   },
   "faq": {
-    "title": "Frequently Asked Questions (FAQ)",
+    "title": "Часто задаваемые вопросы (FAQ)",
     "sections": [
       {
-        "title": "General & Pre-Sale",
+        "title": "Общие вопросы и подготовка к заказу",
         "items": [
           {
-            "q": "What should I prepare before contacting you?",
-            "a": "Please have your tech pack (or clear design sketches), estimated order quantity, preferred materials, and any special requirements ready. The more specific your brief, the faster and more accurate our quotation and recommendations."
+            "q": "Что подготовить перед обращением к нам?",
+            "a": "Подготовьте, пожалуйста, техпак (Tech Pack) или понятные эскизы дизайна, ориентировочный объем заказа, предпочтительные материалы и особые требования, если они есть. Чем конкретнее ваше техническое задание, тем быстрее и точнее мы подготовим расчет стоимости и рекомендации."
           },
           {
-            "q": "Do you provide a catalogue of your products?",
-            "a": "No, we are a pure OEM/ODM manufacturer and do not have our own product catalogue. All products are custom-made to client specifications."
+            "q": "Есть ли у вас каталог готовой продукции?",
+            "a": "Нет. Мы работаем исключительно как OEM/ODM-производитель и собственного каталога не имеем. Вся продукция изготавливается на заказ по спецификациям клиента."
           },
           {
-            "q": "Can you share samples or images of previous work for reference?",
-            "a": "Due to strict NDAs with our clients, we cannot share images of previous products. However, we highly recommend ordering a sample or arranging a factory tour to assess our craftsmanship and quality for yourself."
+            "q": "Можете ли вы показать образцы или фотографии предыдущих работ?",
+            "a": "Из-за строгих соглашений о неразглашении (NDA) с клиентами мы не можем показывать фотографии ранее выпущенной продукции. Рекомендуем заказать образец или посетить фабрику, чтобы лично оценить качество пошива и исполнения."
           },
           {
-            "q": "Can you provide references from existing clients?",
-            "a": "While we cannot share client contacts due to confidentiality, we welcome video calls, sample reviews, and factory tours for your assurance."
+            "q": "Можете ли вы предоставить рекомендации от действующих клиентов?",
+            "a": "Контакты клиентов мы не раскрываем по соображениям конфиденциальности, но с готовностью проведем видеозвонок, отправим образцы на оценку и организуем визит на фабрику."
           },
           {
-            "q": "Do I get a dedicated project manager or team?",
-            "a": "Yes, every project is assigned to a dedicated project manager and project team for smooth, timely and personalized service."
+            "q": "Будет ли у меня персональный менеджер или команда проекта?",
+            "a": "Да, за каждым проектом закрепляются персональный менеджер и проектная команда — это обеспечивает четкую, своевременную и индивидуальную работу с вами."
           },
           {
-            "q": "How will I know the timeline for my project?",
-            "a": "After confirmation, we provide a detailed production schedule covering sampling, production, and shipment milestones, keeping you informed at every stage."
+            "q": "Как я узнаю сроки по своему проекту?",
+            "a": "После подтверждения заказа мы предоставляем подробный график с ключевыми этапами: изготовление образцов, производство и отгрузка — и информируем вас на каждом шаге."
           }
         ]
       },
       {
-        "title": "Orders, Sampling & Quotation",
+        "title": "Заказы, образцы и расчет стоимости",
         "items": [
           {
-            "q": "Do you accept OEM and ODM orders?",
-            "a": "Yes, we only accept OEM/ODM orders. We do not manufacture or sell our own branded products."
+            "q": "Принимаете ли вы заказы OEM и ODM?",
+            "a": "Да, мы работаем только по схемам OEM/ODM. Продукцию под собственным брендом мы не производим и не продаем."
           },
           {
-            "q": "What is your typical Minimum Order Quantity (MOQ)?",
-            "a": "For Myanmar bulk production our MOQ is 1,500 pcs per design and color. Our China (Shandong) facility additionally accepts sample and rush orders, ranging from a few hundred up to tens of thousands of pcs per design — get in touch to discuss your specific needs."
+            "q": "Каков ваш минимальный объем заказа (MOQ)?",
+            "a": "Для серийного производства в Мьянме MOQ составляет 1 500 шт. на модель и цвет. Наша фабрика в Китае (провинция Шаньдун) дополнительно принимает заказы на образцы и срочные партии — от нескольких сотен до десятков тысяч штук на модель. Свяжитесь с нами, чтобы обсудить вашу задачу."
           },
           {
-            "q": "How is your quotation process structured?",
-            "a": "We first provide an estimated quotation based on your tech pack and details. A final binding quote is issued after prototype/sample approval. Prices are quoted FOB Yangon for Myanmar bulk orders, or FOB Qingdao for sample and rush orders from our Shandong facility. CIF quotes are available on request."
+            "q": "Как устроен процесс расчета стоимости?",
+            "a": "Сначала мы готовим предварительный расчет на основе вашего техпака (Tech Pack) и деталей проекта. Окончательное коммерческое предложение (КП) выставляется после утверждения прототипа или образца. Цены указываются на условиях FOB Yangon для серийных заказов из Мьянмы и FOB Qingdao для образцов и срочных заказов с фабрики в Шаньдуне. По запросу подготовим расчет на условиях CIF."
           },
           {
-            "q": "What are your payment terms?",
-            "a": "Payment terms are tiered: New clients pay 30% T/T deposit with the PO, with the 70% balance T/T after inspection passes. Long-term clients enjoy a credit line — T/T within 1 week of the B/L copy or pickup. For large or special orders we also accept L/C to safeguard both sides."
+            "q": "Какие у вас условия оплаты?",
+            "a": "Условия оплаты зависят от статуса клиента. Новые клиенты вносят предоплату 30% банковским переводом (T/T) при размещении заказа (PO), остаток 70% — T/T после успешного прохождения инспекции. Постоянным клиентам предоставляется отсрочка платежа: T/T в течение 1 недели с момента получения копии коносамента (B/L) или забора груза. Для крупных и нестандартных заказов принимаем также аккредитив (L/C) — это защищает обе стороны."
           },
           {
-            "q": "Can you provide materials with special certifications (e.g., OEKO-TEX, GRS, GOTS)?",
-            "a": "Yes, we can source and certify materials to various international standards. Let us know your compliance requirements in advance."
+            "q": "Можете ли вы поставить материалы со специальными сертификатами (например, OEKO-TEX, GRS, GOTS)?",
+            "a": "Да, мы подбираем и сертифицируем материалы по различным международным стандартам. Сообщите ваши требования к сертификации заранее."
           }
         ]
       },
       {
-        "title": "Sample Development",
+        "title": "Изготовление образцов",
         "items": [
           {
-            "q": "How many rounds of sample revisions are allowed?",
-            "a": "Most orders go through 1–2 sample revisions (e.g. 2nd / 3rd sample) before the PP sample is approved and bulk production is scheduled; additional revision packages can be arranged as needed."
+            "q": "Сколько раундов доработки образца предусмотрено?",
+            "a": "Как правило, до утверждения PP Sample и постановки заказа в производство выполняется 1–2 доработки образца (2-й / 3-й образец); при необходимости можно согласовать дополнительные раунды."
           },
           {
-            "q": "What is your lead time for sample/prototype production?",
-            "a": "Samples are generally ready in about 2 weeks, depending on material availability and scheduling."
+            "q": "Каков срок изготовления образца или прототипа?",
+            "a": "Обычно образец готов примерно за 2 недели — срок зависит от наличия материалов и загрузки производства."
           },
           {
-            "q": "What materials will you use if the specified ones are unavailable?",
-            "a": "We will use the closest available substitute for development, and inform you of any differences before proceeding."
+            "q": "Какие материалы вы используете, если указанных нет в наличии?",
+            "a": "Для разработки мы берем максимально близкий доступный аналог и до начала работ сообщаем вам обо всех отличиях."
           },
           {
-            "q": "Does the sample fee include shipping?",
-            "a": "No, the sample fee does not cover shipping or potential third-party costs (e.g. molds, plates). Express shipping (e.g. FedEx, DHL) can be arranged at additional cost."
+            "q": "Включает ли стоимость образца доставку?",
+            "a": "Нет, в стоимость образца не входят доставка и возможные расходы третьих сторон (например, пресс-формы, клише). Экспресс-доставку (FedEx, DHL) организуем за дополнительную плату."
           },
           {
-            "q": "Do you provide pre-production samples (PP) for approval?",
-            "a": "Yes, a PP sample must be formally approved by you before mass production begins."
+            "q": "Предоставляете ли вы предсерийный образец (PP Sample) на утверждение?",
+            "a": "Да, перед запуском серийного производства PP Sample должен быть официально утвержден вами."
           }
         ]
       },
       {
-        "title": "Production, Progress & Shipping",
+        "title": "Производство, ход выполнения и отгрузка",
         "items": [
           {
-            "q": "Can we make changes after bulk production begins?",
-            "a": "Usually not, as materials are ordered and production started. We may accept small changes if timing and resources allow, but this could affect delivery and cost."
+            "q": "Можно ли внести изменения после запуска серийного производства?",
+            "a": "Как правило, нет: материалы уже закуплены, а производство запущено. Небольшие изменения возможны, если позволяют сроки и ресурсы, но это может повлиять на срок поставки и стоимость."
           },
           {
-            "q": "How do I receive production progress updates?",
-            "a": "We provide milestone-based progress updates, and can share photos or videos from your order upon request."
+            "q": "Как я буду получать информацию о ходе производства?",
+            "a": "Мы отчитываемся по ключевым этапам производства и по запросу присылаем фото и видео вашего заказа."
           },
           {
-            "q": "How do you ensure production efficiency and flexibility?",
-            "a": "We implement LEAN methodologies and continuous improvement, optimizing lines for cost, efficiency, and order size flexibility."
+            "q": "Как вы обеспечиваете эффективность и гибкость производства?",
+            "a": "Мы применяем принципы бережливого производства (LEAN) и непрерывных улучшений, оптимизируя линии по себестоимости, производительности и гибкости под разные объемы заказов."
           },
           {
-            "q": "What is your standard production lead time?",
-            "a": "Standard bulk lead time is about 3 months from PP sample approval to factory completion, including overseas material sourcing and Myanmar production scheduling. Consolidation delays and production-queue timing may extend this on a per-project basis."
+            "q": "Каков стандартный срок производства?",
+            "a": "Стандартный срок серийного производства — около 3 месяцев от утверждения PP Sample до готовности продукции на фабрике, включая закупку материалов за рубежом и постановку в производственный график в Мьянме. Задержки при консолидации грузов и очередь производства могут увеличить срок в зависимости от проекта."
           },
           {
-            "q": "What's your main port of loading?",
-            "a": "Myanmar bulk orders ship FOB Yangon Port, Yangon, Myanmar. For samples and rush orders shipped from our Shandong facility, the default is FOB Qingdao."
+            "q": "Какой у вас основной порт отгрузки?",
+            "a": "Серийные заказы из Мьянмы отгружаются на условиях FOB Yangon Port (Янгон, Мьянма). Для образцов и срочных заказов с фабрики в Шаньдуне стандартное условие — FOB Qingdao."
           },
           {
-            "q": "Can you customize packaging/handling for my orders?",
-            "a": "Yes, we offer packaging customization and can help with labeling, bundling, carton specifications and even special shipping needs."
+            "q": "Можно ли заказать индивидуальную упаковку и обработку заказа?",
+            "a": "Да, мы предлагаем индивидуальную упаковку и поможем с этикетированием, комплектацией, спецификациями коробов и особыми требованиями к отгрузке."
           },
           {
-            "q": "Are you able to help with export documentation and compliance?",
-            "a": "Yes, we will provide all necessary export documents (e.g., invoice, packing list, COO, Form E) and can support any special certifications required."
+            "q": "Помогаете ли вы с экспортной документацией и таможенными требованиями?",
+            "a": "Да, мы предоставляем весь пакет экспортных документов (инвойс, упаковочный лист, сертификат происхождения COO, Form E) и при необходимости поможем оформить требуемые специальные сертификаты."
           }
         ]
       },
       {
-        "title": "Quality Control & After-Sale Support",
+        "title": "Контроль качества (QC) и постпродажная поддержка",
         "items": [
           {
-            "q": "How do you ensure quality and material consistency?",
-            "a": "Incoming materials are strictly inspected and verified. QC stations at every major step catch deviations early. All orders undergo 100% end-of-line inspection, and we welcome third-party QC upon client request."
+            "q": "Как вы обеспечиваете качество и стабильность материалов?",
+            "a": "Все поступающие материалы проходят строгий входной контроль. Посты QC на каждом ключевом этапе выявляют отклонения на ранней стадии. Каждый заказ проходит 100% финальную инспекцию, а по запросу клиента мы приветствуем проведение стороннего QC."
           },
           {
-            "q": "Do you provide independent audit or inspection support?",
-            "a": "Absolutely. We welcome third-party audits, remote factory visits, and client inspections at any step."
+            "q": "Поддерживаете ли вы независимые аудиты и инспекции?",
+            "a": "Безусловно. Мы открыты для сторонних аудитов, дистанционных туров по фабрике и клиентских инспекций на любом этапе."
           },
           {
-            "q": "How do you handle defective products or production complaints?",
-            "a": "We investigate all reports thoroughly and, depending on the situation, provide repair, replacement or negotiated settlement."
+            "q": "Как вы работаете с браком и претензиями по производству?",
+            "a": "Мы тщательно разбираем каждое обращение и в зависимости от ситуации предлагаем ремонт, замену или согласованную компенсацию."
           },
           {
-            "q": "Do you offer any warranty or after-sales guarantee?",
-            "a": "We require clients to inspect all shipments within 14 days. As we manufacture to your specifications, we do not offer extended warranties."
+            "q": "Предоставляете ли вы гарантию или постпродажные обязательства?",
+            "a": "Мы просим клиентов проверять все поставки в течение 14 дней. Поскольку продукция изготавливается по вашим спецификациям, расширенную гарантию мы не предоставляем."
           },
           {
-            "q": "Can you provide technical support for bag pattern or hardware development?",
-            "a": "Yes, our experienced team can advise on feasibility, cost, construction methods, and component selection."
+            "q": "Оказываете ли вы техническую поддержку по конструкции изделий и фурнитуре?",
+            "a": "Да, наша опытная команда проконсультирует по технологичности, стоимости, способам сборки и подбору комплектующих."
           },
           {
-            "q": "Don't see your question here?",
-            "a": "Please contact us directly – our team is always ready to assist with anything you need."
+            "q": "Не нашли свой вопрос?",
+            "a": "Свяжитесь с нами напрямую — наша команда всегда готова помочь по любому вопросу."
           }
         ]
       }
     ],
     "cta": {
-      "text": "Can't find what you're looking for?",
-      "highlight": "Feel free to contact us",
-      "suffix": "-- our team is here to help.",
-      "button": "Contact Us",
-      "glossaryLink": "Browse our Glossary for industry terms",
-      "blogLink": "Read our latest articles"
+      "text": "Не нашли нужную информацию?",
+      "highlight": "Напишите нам",
+      "suffix": "— наша команда готова помочь.",
+      "button": "Связаться с нами",
+      "glossaryLink": "Отраслевые термины — в нашем глоссарии",
+      "blogLink": "Читайте наши свежие статьи"
     }
   },
   "contact": {
-    "title": "Contact Us",
-    "subtitle": "Ready to Start Your Backpack Project?",
-    "intro": "Fill out the form below and we'll get back to you within 24 hours. For urgent inquiries, call or WhatsApp us directly.",
+    "title": "Свяжитесь с нами",
+    "subtitle": "Готовы запустить проект по пошиву рюкзаков?",
+    "intro": "Заполните форму ниже — мы ответим в течение 24 часов. По срочным вопросам позвоните или напишите нам напрямую в WhatsApp.",
     "address": {
-      "label": "Address",
+      "label": "Адрес",
       "value": "Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai Industrial Zone, Yangon, Myanmar",
-      "viewOnMap": "View on Google Maps"
+      "viewOnMap": "Открыть в Google Maps"
     },
     "phone": {
-      "label": "Phone Number",
-      "fallback": "For other languages, please contact us via email",
+      "label": "Телефон",
+      "fallback": "Для общения на других языках свяжитесь с нами по email",
       "lines": [
         {
           "lang": "中文",
           "number": "+86 (532) 8856-2277",
-          "hours": "Beijing Time 8:00-17:00 · Mon-Fri",
+          "hours": "Пекинское время 8:00-17:00 · Пн-Пт",
           "person": ""
         },
         {
           "lang": "日本語 / 한국어",
           "number": "+86 152 5320 6760",
-          "hours": "Beijing Time 8:00-17:00 · Mon-Fri",
-          "person": "Ms. Cui"
+          "hours": "Пекинское время 8:00-17:00 · Пн-Пт",
+          "person": "Г-жа Цуй"
         },
         {
           "lang": "English",
           "number": "+86 130 6139 1463",
-          "hours": "Myanmar Time 7:30-18:00 · Mon-Sat",
-          "person": "Mr. Jay"
+          "hours": "Время Мьянмы 7:30-18:00 · Пн-Сб",
+          "person": "Г-н Джей"
         },
         {
           "lang": "မြန်မာ",
           "number": "+95 9 9856 70999",
-          "hours": "Myanmar Time 7:30-18:00 · Mon-Sat",
+          "hours": "Время Мьянмы 7:30-18:00 · Пн-Сб",
           "person": ""
         }
       ]
     },
     "email": {
-      "label": "Email Address",
+      "label": "Email",
       "value": "jay@betterbagsmm.com"
     },
     "whatsapp": {
-      "label": "Whatsapp",
+      "label": "WhatsApp",
       "value": "+1 814.880.1463"
     },
     "trust": {
-      "title": "Why Trust Us",
-      "responseTime": "24-hour response guarantee",
-      "experience": "20+ years manufacturing experience",
-      "certified": "ISO 9001, OEKO-TEX, GRS, GOTS certified"
+      "title": "Почему нам доверяют",
+      "responseTime": "Гарантированный ответ в течение 24 часов",
+      "experience": "20+ лет опыта в производстве",
+      "certified": "Профессиональная команда · Прямые поставки от производителя · Прослеживаемое производство"
     },
     "form": {
-      "title": "Get A Quote",
+      "title": "Получить расчет стоимости",
       "name": {
-        "label": "Name",
-        "placeholder": "John Doe",
-        "error": "Please enter your name"
+        "label": "Имя",
+        "placeholder": "Иван Иванов",
+        "error": "Пожалуйста, укажите ваше имя"
       },
       "email": {
-        "label": "Email Address",
+        "label": "Email",
         "placeholder": "example@company.com",
-        "error": "Please enter a valid email address"
+        "error": "Пожалуйста, введите корректный email"
       },
       "countryRegion": {
-        "label": "Country/Region",
-        "placeholder": "United States",
-        "error": "Please enter your country/region",
-        "loading": "Определение местоположения...",
-        "searchPlaceholder": "Search country or dial code",
-        "noResults": "No matching country",
-        "popularLabel": "Popular",
-        "allLabel": "All countries"
+        "label": "Страна/регион",
+        "placeholder": "Выберите страну/регион",
+        "loading": "Определяем местоположение...",
+        "error": "Пожалуйста, выберите страну/регион",
+        "searchPlaceholder": "Поиск по стране или телефонному коду",
+        "noResults": "Страна не найдена",
+        "popularLabel": "Популярные",
+        "allLabel": "Все страны"
       },
       "companyBrandName": {
-        "label": "Company/Brand Name",
-        "placeholder": "Your Company Name",
-        "error": "Please enter your company/brand name"
+        "label": "Название компании/бренда",
+        "placeholder": "Название вашей компании",
+        "error": "Пожалуйста, укажите название компании или бренда"
       },
       "phoneNumber": {
-        "label": "Phone Number (Optional)",
+        "label": "Телефон (необязательно)",
         "placeholder": "Номер телефона",
-        "error": "Please enter a valid phone number",
-        "codeLabel": "Phone country code",
-        "codePlaceholder": "Code",
-        "codeError": "Please select a dial code"
+        "error": "Пожалуйста, введите корректный номер телефона",
+        "codeLabel": "Телефонный код страны",
+        "codePlaceholder": "Код",
+        "codeError": "Пожалуйста, выберите код страны",
+        "example": "Например: {example}"
       },
       "subject": {
-        "label": "Subject",
-        "placeholder": "e.g. Custom Travel Backpack Inquiry",
-        "error": "Please enter a subject"
+        "label": "Тема",
+        "placeholder": "Например: запрос на пошив дорожных рюкзаков",
+        "error": "Пожалуйста, укажите тему"
       },
       "message": {
-        "label": "Your Message (Optional)",
-        "placeholder": "Please describe your project needs, target quantity, timeline, and any special requirements...",
-        "error": "Message must be less than 2000 characters"
+        "label": "Сообщение (необязательно)",
+        "placeholder": "Опишите задачи проекта, планируемое количество, сроки и особые требования...",
+        "error": "Сообщение не должно превышать 2000 символов"
       },
       "orderQuantity": {
-        "label": "Estimated Order Quantity (per design)",
-        "placeholder": "Select quantity range",
-        "error": "Please select an order quantity",
+        "label": "Ориентировочный объем заказа (на одну модель)",
+        "placeholder": "Выберите объем заказа",
+        "error": "Пожалуйста, выберите объем заказа",
         "optionLabels": [
-          "Less than 100 pcs",
-          "100-300 pcs",
-          "300-1000 pcs",
-          "More than 1000 pcs"
+          "Менее 100 шт.",
+          "100-300 шт.",
+          "300-1000 шт.",
+          "Более 1000 шт."
         ]
       },
       "techPackAvailability": {
-        "label": "Do you have a tech pack or reference sample?",
-        "placeholder": "Select an option",
-        "error": "Please select an option",
+        "label": "Есть ли у вас техпак (Tech Pack) или образец-референс?",
+        "placeholder": "Выберите вариант",
+        "error": "Пожалуйста, выберите вариант",
         "optionLabels": [
-          "Yes, I have a tech pack",
-          "I have a physical sample",
-          "I only have an idea/sketch"
+          "Да, у меня есть техпак (Tech Pack)",
+          "У меня есть физический образец",
+          "У меня есть только идея/эскиз"
         ]
       },
       "fileUpload": {
-        "label": "Upload Files (Optional)",
-        "description": "Upload tech packs, sketches, or sample photos. Max 5 files, 10MB each.",
-        "button": "Choose Files",
-        "dragDrop": "or drag and drop files here",
-        "acceptedFormats": "Accepted formats: JPG, PNG, WebP, PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX"
+        "label": "Загрузка файлов (необязательно)",
+        "description": "Загрузите техпак, эскизы или фото образцов. Не более 5 файлов по 10 МБ каждый.",
+        "button": "Выбрать файлы",
+        "dragDrop": "или перетащите файлы сюда",
+        "acceptedFormats": "Поддерживаемые форматы: JPG, PNG, WebP, PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX",
+        "errors": {
+          "tooLarge": "Файл «{name}» слишком большой. Максимальный размер — {maxMb} МБ",
+          "unsupportedType": "Файл «{name}» имеет неподдерживаемый формат. Загрузите изображения или документы.",
+          "tooMany": "Можно загрузить не более {maxCount} файлов",
+          "uploadFailed": "Часть файлов не удалось загрузить. Удалите их и попробуйте снова.",
+          "invalidRef": "У файла «{name}» некорректная ссылка загрузки."
+        },
+        "list": "Загруженные файлы",
+        "uploaded": "Загружено",
+        "failed": "Ошибка загрузки",
+        "remove": "Удалить файл {name}"
       },
       "humanVerification": {
-        "label": "Human Verification",
-        "placeholder": "Loading verification...",
-        "error": "Please complete the verification before submitting",
-        "notConfigured": "Verification is not configured. Form submissions will be accepted in development mode only."
+        "label": "Подтверждение, что вы не робот",
+        "placeholder": "Загрузка проверки...",
+        "error": "Пожалуйста, пройдите проверку перед отправкой",
+        "notConfigured": "Проверка не настроена. Отправка формы доступна только в режиме разработки."
       },
-      "submit": "Submit Inquiry",
-      "submitting": "Submitting...",
+      "submit": "Отправить запрос",
+      "submitting": "Отправка...",
       "success": {
-        "title": "Thank You for Your Inquiry!",
-        "message": "We've received your message and will respond within 24 hours."
+        "title": "Спасибо за ваш запрос!",
+        "message": "Мы получили ваше сообщение и ответим в течение 24 часов."
       },
       "error": {
-        "title": "Submission Failed",
-        "message": "Sorry, there was an error submitting your form. Please try again later or contact us directly."
+        "title": "Ошибка отправки",
+        "message": "К сожалению, при отправке формы произошла ошибка. Попробуйте позже или свяжитесь с нами напрямую."
       },
       "draft": {
-        "restored": "Ваш предыдущий черновик был восстановлен",
+        "restored": "Ваш предыдущий черновик восстановлен",
         "discard": "Удалить черновик"
       }
     }
@@ -674,231 +680,251 @@
       "email": "jay@betterbagsmm.com",
       "phone": "+1 814.880.1463"
     },
-    "email": "Email",
-    "tel": "Tel/WhatsApp",
-    "quickLinks": "Quick Links",
-    "hours": "Hours",
-    "hoursTime": "Mon-Fri 9:00am – 5:00pm",
-    "copyright": "All rights reserved | Powered by OEM Backpack Factory",
+    "email": "Эл. почта",
+    "tel": "Тел./WhatsApp",
+    "quickLinks": "Навигация",
+    "hours": "Часы работы",
+    "hoursTime": "Пн–Пт 9:00 – 17:00",
+    "copyright": "Все права защищены | OEM-фабрика по производству рюкзаков",
     "links": [
       {
-        "name": "Home",
+        "name": "Главная",
         "href": "#home"
       },
       {
-        "name": "About Us",
+        "name": "О компании",
         "href": "#about"
       },
       {
-        "name": "Features",
+        "name": "Преимущества",
         "href": "#features"
       },
       {
-        "name": "Services",
+        "name": "Услуги",
         "href": "#services"
       },
       {
-        "name": "Process",
+        "name": "Процесс работы",
         "href": "#process"
       },
       {
-        "name": "FAQ",
+        "name": "Вопросы и ответы",
         "href": "#faq"
       },
       {
-        "name": "Contact Us",
+        "name": "Контакты",
         "href": "#contact"
       },
       {
-        "name": "Blogs",
+        "name": "Блог",
         "href": "#blogs"
       },
       {
-        "name": "Glossary",
+        "name": "Глоссарий",
         "href": "/glossary"
       }
     ]
   },
   "blog": {
-    "title": "Latest Insights",
-    "subtitle": "Stay updated with industry trends, customization tips, and company news",
-    "readMore": "Read More",
-    "viewAll": "View All Articles",
+    "title": "Последние публикации",
+    "subtitle": "Будьте в курсе трендов отрасли, советов по кастомизации и новостей компании",
+    "readMore": "Читать далее",
+    "viewAll": "Все статьи",
     "relatedLinks": {
-      "glossary": "Explore our Glossary"
+      "glossary": "Перейти в глоссарий"
     }
   },
   "blogList": {
-    "title": "Blog Articles",
-    "subtitle": "In-depth insights, trends, and best practices in the backpack manufacturing industry",
-    "backToHome": "Back to Home",
-    "totalArticles": "{count} Articles",
-    "readMore": "Read More",
-    "backToTop": "Back to Top",
-    "noArticles": "No articles available",
+    "title": "Статьи блога",
+    "subtitle": "Экспертные материалы, тренды и лучшие практики в производстве рюкзаков",
+    "backToHome": "На главную",
+    "totalArticles": "Статей: {count}",
+    "readMore": "Читать далее",
+    "backToTop": "Наверх",
+    "noArticles": "Статей пока нет",
     "relatedLinks": {
-      "glossary": "Browse Manufacturing Glossary",
-      "faq": "Check our FAQ"
+      "glossary": "Глоссарий терминов производства",
+      "faq": "Ответы на частые вопросы (FAQ)"
     }
   },
   "blogDetail": {
-    "home": "Home",
-    "blog": "Blog",
-    "backToList": "Back to Articles",
-    "backToTop": "Back to Top",
-    "noContent": "Article content not available",
+    "home": "Главная",
+    "blog": "Блог",
+    "backToList": "К списку статей",
+    "backToTop": "Наверх",
+    "noContent": "Содержимое статьи недоступно",
     "cta": {
-      "title": "Ready to Start Your Custom Backpack Project?",
-      "subtitle": "Contact us for professional OEM/ODM solutions",
-      "button": "Contact Us Now"
+      "title": "Готовы запустить производство рюкзаков на заказ?",
+      "subtitle": "Свяжитесь с нами — предложим профессиональное OEM/ODM-решение",
+      "button": "Связаться с нами"
+    },
+    "notFound": {
+      "title": "Статья не найдена",
+      "description": "Запрошенная статья не найдена."
     }
   },
   "language": {
-    "selectLanguage": "Выбрать язык",
+    "selectLanguage": "Выберите язык",
     "currentLanguage": "Текущий: {language}"
   },
   "languageBanner": {
-    "message": "Vy byli avtomaticheski perenapravleny na versiyu {language}",
-    "keep": "Ostavit {language}",
-    "switchToEnglish": "Pereklyuchit na angliyskiy",
-    "close": "Zakryt"
+    "message": "Вы были автоматически перенаправлены на версию сайта на языке: {language}",
+    "keep": "Оставить {language}",
+    "switchToEnglish": "Перейти на английский",
+    "close": "Закрыть"
   },
   "glossary": {
-    "title": "Backpack Manufacturing Glossary",
-    "subtitle": "Essential industry terms and definitions for OEM/ODM backpack production",
-    "description": "Learn the key terminology used in backpack manufacturing, from materials and production processes to quality control and logistics.",
-    "allCategories": "All",
+    "title": "Глоссарий по производству рюкзаков",
+    "subtitle": "Ключевые отраслевые термины и определения для OEM/ODM-производства рюкзаков",
+    "description": "Основная терминология производства рюкзаков на заказ: от материалов и производственных процессов до контроля качества (QC) и логистики.",
+    "allCategories": "Все",
     "categories": {
-      "materials": "Materials",
-      "manufacturing": "Manufacturing",
-      "quality": "Quality Control",
-      "logistics": "Logistics",
-      "design": "Design"
+      "materials": "Материалы",
+      "manufacturing": "Производство",
+      "quality": "Контроль качества",
+      "logistics": "Логистика",
+      "design": "Дизайн"
     },
-    "backToHome": "Back to Home",
+    "backToHome": "На главную",
     "relatedLinks": {
-      "faq": "Have questions? Check our FAQ",
-      "blog": "Read our latest articles"
+      "faq": "Остались вопросы? Загляните в наш FAQ",
+      "blog": "Читайте наши свежие статьи"
     },
     "terms": {
       "oem": {
         "term": "OEM (Original Equipment Manufacturer)",
-        "definition": "A company that manufactures products based on the buyer's specifications and designs. The buyer owns the brand and design, while the OEM handles production."
+        "definition": "Компания, которая производит продукцию по спецификациям и дизайну заказчика. Бренд и дизайн принадлежат заказчику, а OEM-производитель отвечает за выпуск продукции."
       },
       "odm": {
         "term": "ODM (Original Design Manufacturer)",
-        "definition": "A manufacturer that designs and produces products which are then rebranded by the buyer. Unlike OEM, the ODM provides both design and manufacturing services."
+        "definition": "Производитель, который сам разрабатывает и выпускает продукцию, продаваемую затем под брендом заказчика. В отличие от OEM, ODM предоставляет и дизайн, и производство."
       },
       "moq": {
         "term": "MOQ (Minimum Order Quantity)",
-        "definition": "The smallest number of units a manufacturer is willing to produce in a single order. MOQ varies by product complexity and materials."
+        "definition": "Минимальное количество единиц, которое производитель готов выпустить в рамках одного заказа. MOQ зависит от сложности изделия и материалов."
       },
       "tech-pack": {
-        "term": "Tech Pack",
-        "definition": "A detailed technical document containing all specifications needed to manufacture a product, including dimensions, materials, colors, hardware, and construction details."
+        "term": "Tech Pack (техпак)",
+        "definition": "Подробный технический документ со всеми спецификациями, необходимыми для производства изделия: размеры, материалы, цвета, фурнитура и особенности конструкции."
       },
       "denier": {
-        "term": "Denier",
-        "definition": "A unit of measurement for the fiber thickness of individual threads used in fabric. Higher denier numbers indicate thicker, more durable fabric (e.g., 600D polyester)."
+        "term": "Denier (денье)",
+        "definition": "Единица измерения толщины отдельных нитей, из которых соткана ткань. Чем выше значение денье, тем плотнее и прочнее материал (например, полиэстер 600D)."
       },
       "ripstop": {
-        "term": "Ripstop",
-        "definition": "A fabric weaving technique using reinforcement threads in a crosshatch pattern to prevent tears from spreading. Commonly used in outdoor and tactical backpacks."
+        "term": "Ripstop (рипстоп)",
+        "definition": "Техника плетения ткани с усиливающими нитями, образующими сетчатый узор и не дающими разрыву распространяться. Широко применяется в туристических и тактических рюкзаках."
       },
       "cordura": {
         "term": "Cordura",
-        "definition": "A brand name for a collection of high-performance fabrics known for exceptional durability, abrasion resistance, and tear strength. Widely used in premium backpacks."
+        "definition": "Торговая марка семейства высокопрочных тканей, известных исключительной износостойкостью, устойчивостью к истиранию и прочностью на разрыв. Широко используется в рюкзаках премиум-класса."
       },
       "bartack": {
-        "term": "Bartack",
-        "definition": "A dense, reinforced stitching pattern used at stress points on bags, such as strap attachments and handle bases, to prevent seam failure under load."
+        "term": "Bartack (закрепка)",
+        "definition": "Плотная усиленная строчка в точках повышенной нагрузки — на креплениях лямок и основаниях ручек, — предотвращающая расхождение швов под нагрузкой."
       },
       "aql": {
         "term": "AQL (Acceptable Quality Level)",
-        "definition": "A statistical sampling method used in quality inspection to determine the maximum acceptable number of defective items in a batch. Common standard is AQL 2.5 for bags."
+        "definition": "Статистический метод выборочного контроля при инспекции качества, определяющий максимально допустимое количество дефектных изделий в партии. Для сумок и рюкзаков стандартом считается AQL 2.5."
       },
       "fob": {
         "term": "FOB (Free On Board)",
-        "definition": "A shipping term indicating that the seller delivers goods to the port of shipment. The buyer assumes responsibility and cost once goods are loaded onto the vessel."
+        "definition": "Условия поставки, при которых продавец доставляет товар в порт отгрузки. После погрузки на судно ответственность и расходы переходят к покупателю."
       },
       "bom": {
         "term": "BOM (Bill of Materials)",
-        "definition": "A comprehensive list of all raw materials, components, and hardware needed to manufacture a product, including quantities and specifications."
+        "definition": "Полный перечень всех материалов, комплектующих и фурнитуры, необходимых для производства изделия, с указанием количества и спецификаций."
       },
       "ykk": {
         "term": "YKK",
-        "definition": "The world's largest zipper manufacturer, headquartered in Japan. YKK zippers are considered the industry standard for quality and reliability in bag manufacturing."
+        "definition": "Крупнейший в мире производитель молний со штаб-квартирой в Японии. Молнии YKK считаются отраслевым стандартом качества и надежности в производстве сумок."
       },
       "pantone": {
         "term": "Pantone (PMS)",
-        "definition": "A standardized color matching system used worldwide to ensure consistent color reproduction across different materials and production runs."
+        "definition": "Международная система стандартизации цвета, обеспечивающая точное воспроизведение оттенков на разных материалах и в разных производственных партиях."
       },
       "grs": {
         "term": "GRS (Global Recycled Standard)",
-        "definition": "An international certification that verifies recycled content in products and tracks the supply chain from recycled input to finished product."
+        "definition": "Международный сертификат, подтверждающий содержание переработанных материалов в продукции и отслеживающий цепочку поставок от вторичного сырья до готового изделия."
       },
       "oeko-tex": {
         "term": "OEKO-TEX Standard 100",
-        "definition": "An independent testing and certification system for textile products at all stages of production, ensuring they are free from harmful substances."
+        "definition": "Независимая система тестирования и сертификации текстильной продукции на всех этапах производства, гарантирующая отсутствие вредных веществ."
       },
       "cif": {
         "term": "CIF (Cost, Insurance, and Freight)",
-        "definition": "A shipping term where the seller covers the cost of goods, insurance, and freight charges to deliver products to the buyer's designated port."
+        "definition": "Условия поставки, при которых продавец оплачивает стоимость товара, страхование и фрахт до указанного покупателем порта назначения."
       },
       "exw": {
         "term": "EXW (Ex Works)",
-        "definition": "A shipping term where the buyer is responsible for all transportation costs and risks from the manufacturer's facility to the final destination."
+        "definition": "Условия поставки, при которых покупатель несет все транспортные расходы и риски от площадки производителя до конечного пункта назначения."
       },
       "pp-sample": {
         "term": "PP Sample (Pre-Production Sample)",
-        "definition": "A sample produced before mass production begins to verify design, materials, and construction. Must be approved by the buyer before production starts."
+        "definition": "Образец, изготавливаемый до запуска массового производства для проверки дизайна, материалов и конструкции. Производство начинается только после его утверждения заказчиком."
       },
       "top-sample": {
         "term": "TOP Sample (Top of Production Sample)",
-        "definition": "A sample pulled from the actual production line during manufacturing to verify that quality and specifications match the approved PP sample."
+        "definition": "Образец, снятый непосредственно с производственной линии в ходе выпуска партии, чтобы подтвердить, что качество и спецификации соответствуют утвержденному PP Sample."
       },
       "tpu": {
         "term": "TPU (Thermoplastic Polyurethane)",
-        "definition": "A flexible, durable plastic material used for waterproof coatings, labels, and patches on backpacks. Known for its excellent abrasion and weather resistance."
+        "definition": "Гибкий и прочный полимерный материал, используемый для водонепроницаемых покрытий, лейблов и нашивок на рюкзаках. Отличается высокой стойкостью к истиранию и погодным воздействиям."
       }
     }
   },
   "testimonials": {
-    "title": "Otzyvy nashikh klientov",
-    "subtitle": "Doveriye brendov po vsemu miru dlya kachestvennogo proizvodstva ryukzakov OEM",
+    "title": "Отзывы наших клиентов",
+    "subtitle": "Нам доверяют бренды по всему миру: качественное OEM-производство рюкзаков",
     "items": [
       {
-        "name": "Шимидзу Кота",
-        "role": "Начальник отдела управления товарами",
+        "name": "Симидзу Кота",
+        "role": "Руководитель товарного направления",
         "company": "Carrot Company",
         "rating": 4.5,
-        "quote": "Если оценивать по 10-балльной шкале, я бы поставил 9. Во время моего второго визита на фабрику в Мьянме я заметил небольшой нюанс, но в остальном всё очень хорошо — более чем достаточно для наших текущих задач. На производственной линии были некоторые сложности, но это бывает на любом заводе; кроме этого никаких проблем. В целом, они делают добротную и надёжную работу."
+        "quote": "Если оценивать по 10-балльной шкале, я бы поставил 9. Во время второго визита на фабрику в Мьянме я заметил одну мелочь, но в остальном все было действительно хорошо — более чем достаточно для наших текущих задач. На производственной линии возникали отдельные сложности, но такое случается на любой фабрике; кроме этого, никаких реальных проблем не было. В целом, считаю, что они работают надежно и добротно."
       }
     ],
     "carousel": {
-      "previous": "Previous slide",
-      "next": "Next slide",
-      "goTo": "Go to slide {index}",
-      "status": "Slide {current} of {total}"
+      "previous": "Предыдущий слайд",
+      "next": "Следующий слайд",
+      "goTo": "Перейти к слайду {index}",
+      "status": "Слайд {current} из {total}"
     }
   },
   "author": {
-    "writtenBy": "Written by",
-    "readingTime": "Reading time",
-    "minRead": "min read",
-    "aboutAuthor": "About the Author"
+    "writtenBy": "Автор",
+    "readingTime": "Время чтения",
+    "minRead": "мин чтения",
+    "aboutAuthor": "Об авторе"
   },
   "certifications": {
-    "title": "Certifications",
+    "title": "Сертификаты",
     "iso9001": "ISO 9001",
     "oekoTex": "OEKO-TEX",
     "grs": "GRS",
     "gots": "GOTS"
   },
   "quoteWidget": {
-    "openLabel": "Get A Quote",
-    "minimize": "Minimize",
-    "dragHandle": "Drag to move",
-    "mobileJumpLabel": "Jump to quote form"
+    "openLabel": "Получить расчет",
+    "minimize": "Свернуть",
+    "dragHandle": "Перетащите для перемещения",
+    "mobileJumpLabel": "Перейти к форме расчета"
+  },
+  "metadata": {
+    "home": {
+      "title": "Better Bags Myanmar — премиальная OEM-фабрика рюкзаков",
+      "description": "Ведущий производитель рюкзаков на заказ в Мьянме. 20+ лет опыта, 600+ сотрудников, основные клиенты — японские бренды."
+    },
+    "blogList": {
+      "title": "Блог — Better Bags Myanmar | Аналитика отрасли",
+      "description": "Экспертные статьи Better Bags Myanmar: пошив рюкзаков, тренды отрасли и устойчивое производство."
+    }
+  },
+  "a11y": {
+    "closeNotification": "Закрыть уведомление",
+    "notifications": "Уведомления",
+    "breadcrumb": "Навигационная цепочка",
+    "pageSections": "Разделы страницы"
   }
 }

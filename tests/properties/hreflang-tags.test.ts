@@ -22,7 +22,7 @@ describe('Hreflang Tags - Property Tests', () => {
   const baseUrl = 'https://betterbagsmm.com';
 
   describe('Property 9: Any locale + path generates correct hreflang tags', () => {
-    it('should generate exactly 11 hreflang tags (10 languages + x-default)', () => {
+    it('should generate exactly locales.length + 1 hreflang tags (all languages + x-default)', () => {
       fc.assert(
         fc.property(
           fc.constantFrom(...locales),
@@ -33,7 +33,7 @@ describe('Hreflang Tags - Property Tests', () => {
           ),
           (locale: Locale, path: string) => {
             const tags = generateHreflangTags(locale, path, baseUrl);
-            expect(tags).toHaveLength(11);
+            expect(tags).toHaveLength(locales.length + 1);
           }
         ),
         { numRuns: 100 }
@@ -123,6 +123,8 @@ describe('Hreflang Tags - Property Tests', () => {
           { hreflang: 'es', href: `${baseUrl}/es` },
           { hreflang: 'zh-Hant', href: `${baseUrl}/zh-tw` },
           { hreflang: 'ru', href: `${baseUrl}/ru` },
+          { hreflang: 'my', href: `${baseUrl}/my` },
+          { hreflang: 'ko', href: `${baseUrl}/ko` },
           { hreflang: 'x-default', href: `${baseUrl}/en` },
         ])
       );

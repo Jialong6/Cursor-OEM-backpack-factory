@@ -18,12 +18,12 @@ import {
  */
 
 describe('Locale Configuration Completeness', () => {
-  // Expected locales for v2
-  const expectedLocales = ['en', 'zh', 'ja', 'de', 'nl', 'fr', 'pt', 'es', 'zh-tw', 'ru'] as const;
+  // Expected locales (keep in sync with i18n.ts when adding languages)
+  const expectedLocales = ['en', 'zh', 'ja', 'de', 'nl', 'fr', 'pt', 'es', 'zh-tw', 'ru', 'my', 'ko'] as const;
 
   describe('Unit Tests', () => {
-    test('should support exactly 10 locales', () => {
-      expect(locales).toHaveLength(10);
+    test('should support exactly the expected locales', () => {
+      expect(locales).toHaveLength(expectedLocales.length);
     });
 
     test('should have all expected locales', () => {

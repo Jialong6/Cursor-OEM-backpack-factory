@@ -28,6 +28,8 @@ const config: Config = {
           'var(--font-noto-sans-sc)',
           'var(--font-noto-sans-tc)',
           'var(--font-noto-sans-jp)',
+          'var(--font-noto-sans-kr)',
+          'var(--font-noto-sans-myanmar)',
           'Arial',
           'Helvetica Neue',
           'system-ui',

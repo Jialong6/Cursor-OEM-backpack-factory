@@ -1,626 +1,621 @@
 {
   "bento": {
     "brand": {
-      "title": "Better Bags since 2003",
-      "subtitle": "#Top Tier Custom Backpacks Factory in Myanmar",
-      "description": "One-stop solutions for your backpack needs"
+      "title": "Better Bags 始於 2003",
+      "subtitle": "#緬甸頂尖客製化後背包工廠",
+      "description": "一站式後背包解決方案"
     },
     "dashboard": {
-      "title": "Key Metrics"
+      "title": "核心指標"
     },
     "trust": {
-      "title": "Trusted By",
-      "certifications": "Certifications",
-      "partners": "Partner Brands",
-      "more": "+20 more"
+      "title": "信賴夥伴",
+      "certifications": "專業認證",
+      "partners": "合作品牌",
+      "more": "還有 20+ 家"
     },
     "cta": {
-      "title": "Ready to Start Your Project?",
-      "subtitle": "Get a free quote within 24 hours",
-      "button": "Get A Quote",
-      "note": "No obligation, free consultation"
+      "title": "準備好啟動您的專案了嗎？",
+      "subtitle": "24 小時內取得免費報價",
+      "button": "索取報價",
+      "note": "免費諮詢，無任何義務"
     }
   },
   "nav": {
-    "banner": "Home",
-    "about": "About Us",
-    "features": "Features",
-    "services": "Services",
-    "process": "Process",
-    "faq": "FAQ",
-    "contact": "Contact Us",
-    "blog": "Blog",
-    "skipToContent": "跳轉到主要內容"
+    "banner": "首頁",
+    "about": "關於我們",
+    "features": "特色",
+    "services": "服務",
+    "process": "流程",
+    "faq": "常見問題",
+    "contact": "聯絡我們",
+    "blog": "部落格",
+    "skipToContent": "跳至主要內容"
   },
   "banner": {
-    "line1": "Better Bags since 2003",
-    "line2": "#Top Tier Custom Backpacks Factory in Myanmar",
+    "line1": "Better Bags 創立於 2003 年",
+    "line2": "#緬甸頂尖客製化後背包工廠",
     "p1": {
-      "pre": "At Better Bags, we provide a ",
-      "highlight": "one-stop",
-      "post": " solutions for your backpack needs—including material sourcing, sampling, mass production, strict quality control, and global delivery."
+      "pre": "在 Better Bags，我們提供",
+      "highlight": "一站式",
+      "post": "後背包解決方案，涵蓋材料採購、打樣、量產、嚴格品質管控與全球出貨。"
     },
-    "p2": "With more than 20 years of experience and a primary focus on the Japanese market—including 15+ years of long-term partnerships with leading Japanese brands such as Anello—we also support select clients from Korea, the U.S., and Europe. We manufacture a wide variety of bags: travel bags, backpacks, shoulder bags, tote bags, and more—tailored to your exact requirements.",
-    "p3": "Our competitive pricing and sustainable production options make us the perfect partner for businesses, organizations, and events of any scale.",
-    "cta": "Get A Quote"
+    "p2": "我們深耕袋包製造超過 20 年，以日本市場為主——與 Anello 等多家日本一線品牌維持 15 年以上的長期合作，亦服務來自韓國、美國與歐洲的部分國際客戶。我們生產各式旅行袋、後背包、側背包、托特包等包款，竭誠滿足您的客製化需求。",
+    "p3": "憑藉具競爭力的價格與永續生產選項，我們是各種規模的企業、組織與活動的理想合作夥伴。",
+    "cta": "索取報價"
   },
   "about": {
-    "title": "About Us",
+    "title": "關於我們",
     "mission": {
-      "title": "Our Mission",
-      "desc": "To empower global brands and partners by delivering innovative, high-quality, and cost-effective backpack solutions—manufactured responsibly and guided by integrity, craftsmanship, and customer-centric service at every step."
+      "title": "我們的使命",
+      "desc": "以負責任的生產方式，為全球品牌與合作夥伴提供創新、高品質且具成本效益的後背包解決方案，並以誠信、工藝與以客為尊的服務貫徹每一個環節。"
     },
     "vision": {
-      "title": "Our Vision",
-      "desc": "To be recognized worldwide as the most trusted and forward-thinking backpack manufacturing partner—setting industry benchmarks in quality, innovation, sustainability, and operational excellence, while creating lasting value for our clients, employees, communities, and the environment."
+      "title": "我們的願景",
+      "desc": "成為全球公認最值得信賴、最具前瞻性的後背包製造夥伴，在品質、創新、永續與卓越營運上樹立業界標竿，為客戶、員工、社區與環境創造長遠價值。"
     },
-    "valuesTitle": "Our Core Values",
+    "valuesTitle": "我們的核心價值",
     "values": [
       {
-        "title": "Integrity & Transparency",
-        "desc": "We conduct our business with honesty, accountability, and the highest ethical standards—building trust with every commitment to our customers, employees, and partners."
+        "title": "誠信與透明",
+        "desc": "以誠實、負責與最高道德標準經營事業，透過每一次承諾，贏得客戶、員工與合作夥伴的信任。"
       },
       {
-        "title": "Pursuit of Excellence",
-        "desc": "We are dedicated to quality, precision, and continuous improvement—striving to exceed expectations across every order, partnership, and interaction."
+        "title": "追求卓越",
+        "desc": "專注於品質、精準與持續改善，期望在每一張訂單、每一次合作與互動中超越期待。"
       },
       {
-        "title": "Customer Focus",
-        "desc": "Our clients' needs drive every decision. We anticipate challenges, act responsively, and tailor solutions to ensure our customers' enduring success."
+        "title": "以客為尊",
+        "desc": "客戶的需求引導我們的每一項決策。我們預先掌握挑戰、即時回應，並提供量身打造的方案，協助客戶長久成功。"
       },
       {
-        "title": "Innovation & Progress",
-        "desc": "We embrace change and bring creativity to all aspects of design, production, and problem-solving—enabling us to offer cutting-edge products and manufacturing processes."
+        "title": "創新與進步",
+        "desc": "我們擁抱變化，在設計、生產與解決問題的每個環節注入創意，提供領先業界的產品與製程。"
       },
       {
-        "title": "Sustainability & Responsibility",
-        "desc": "We are committed to sustainable sourcing, minimizing our environmental impact, and fostering safe, fair, and respectful working conditions for all."
+        "title": "永續與責任",
+        "desc": "我們致力於永續採購，盡可能降低對環境的影響，並提供安全、公平且相互尊重的工作環境。"
       },
       {
-        "title": "Collaboration & Empowerment",
-        "desc": "We value teamwork, diverse perspectives, and empowering every team member—cultivating a culture where people, ideas, and partnerships flourish."
+        "title": "合作與賦能",
+        "desc": "我們重視團隊合作與多元觀點，支持每一位夥伴發揮所長，打造讓人才、創意與夥伴關係共同茁壯的文化。"
       }
     ],
     "founder": {
-      "title": "創始人介紹"
+      "title": "創辦人介紹"
     },
     "company": {
       "title": "Better Bags Myanmar Company Limited",
-      "p1": "Founded in 2003, Better Bags Myanmar specializes in the OEM/ODM manufacturing of premium backpacks, designed for a global client. Our comprehensive capabilities cover leisure, travel, climbing, and fashion bags, crafted from responsibly sourced polyester, cotton, and synthetic leather.",
-      "p2": "Our story began in Shenzhen, China, where our founder, Mr. Li Guangtong, gained deep expertise working with top international brands. Driven by a vision of global excellence, we later established our main production base in Shandong (Rizhao) — paired with a dedicated sampling and development center in Qingdao — and, following thorough research, launched our state-of-the-art production base in Yangon, Myanmar in 2023.",
-      "p3": "Over the past two decades, our primary focus has been the Japanese market, and we have proudly partnered with multiple Japanese brands — including Anello — alongside selected global brands such as New Balance, Nike, and Fila. Our unwavering commitment to quality, reliability, and proactive service has enabled us to maintain long-term partnerships, with many leading Japanese brands working with us for over 15 years.",
-      "p4": "Today, Better Bags stands at the intersection of tradition and innovation. By optimizing our dual-factory model, investing in people and systems, and adhering strictly to international standards, we meet the evolving needs of global customers with efficiency, flexibility, and future-oriented solutions. As we look ahead, our goal is to set new benchmarks in both client satisfaction and responsible manufacturing."
+      "p1": "Better Bags Myanmar 成立於 2003 年，專注為全球客戶提供 OEM/ODM 高階後背包代工製造服務。我們具備完整的生產能力，涵蓋休閒、旅行、登山與時尚包款，並採用負責任採購的聚酯纖維、棉料與合成皮革等材質。",
+      "p2": "我們的故事始於中國深圳，創辦人李光同先生在此累積了與國際一線品牌合作的豐富經驗。其後，我們在山東日照設立主要生產基地，並於青島成立專屬打樣開發中心；經過縝密評估，更於 2023 年在緬甸仰光啟用最先進的生產基地。",
+      "p3": "過去二十年來，我們以日本市場為主，與多家日本品牌（如 Anello）長期合作，同時也服務 New Balance、Nike、Fila 等國際品牌。我們始終堅守對品質、可靠度與主動服務的承諾，與多家日本領先品牌的合作已超過 15 年。",
+      "p4": "如今，Better Bags 正站在傳統與創新的交會點。我們持續優化雙工廠模式，投資人才與系統，嚴格遵循國際標準，以高效率、彈性且面向未來的解決方案，回應全球客戶不斷變化的需求。展望未來，我們期許在客戶滿意度與負責任生產上樹立全新標竿。"
     },
-    "trustedBrands": "與全球知名品牌合作"
+    "trustedBrands": "深受全球知名品牌信賴"
   },
   "costAdvantage": {
-    "title": "Why Myanmar: The Cost-vs-Lead-Time Sweet Spot",
-    "subtitle": "Same product, same destination (Japan). Different trade-offs. See how our Myanmar production stacks up against China and Vietnam.",
+    "title": "為何選擇緬甸：成本與交期的最佳平衡",
+    "subtitle": "同樣的產品，同樣外銷日本，取捨卻不相同。看看緬甸生產與中國、越南的比較。",
     "countries": [
       {
         "code": "CN",
-        "name": "China",
-        "priceLabel": "Price",
-        "priceValue": "Baseline",
+        "name": "中國",
+        "priceLabel": "價格",
+        "priceValue": "基準",
         "pricePercent": 100,
-        "leadTimeLabel": "Lead Time",
-        "leadTimeValue": "Baseline",
+        "leadTimeLabel": "交期",
+        "leadTimeValue": "基準",
         "leadTimePercent": 33
       },
       {
         "code": "VN",
-        "name": "Vietnam",
-        "priceLabel": "Price",
-        "priceValue": "Same as China",
+        "name": "越南",
+        "priceLabel": "價格",
+        "priceValue": "與中國持平",
         "pricePercent": 100,
-        "leadTimeLabel": "Lead Time",
-        "leadTimeValue": "+1 month",
+        "leadTimeLabel": "交期",
+        "leadTimeValue": "+1 個月",
         "leadTimePercent": 66
       },
       {
         "code": "MM",
-        "name": "Myanmar (Better Bags)",
-        "priceLabel": "Price",
-        "priceValue": "-10% vs China & Vietnam",
+        "name": "緬甸（Better Bags）",
+        "priceLabel": "價格",
+        "priceValue": "較中國/越南低 10%",
         "pricePercent": 90,
-        "leadTimeLabel": "Lead Time",
-        "leadTimeValue": "+2 months",
+        "leadTimeLabel": "交期",
+        "leadTimeValue": "+2 個月",
         "leadTimePercent": 100,
-        "badge": "Best Value"
+        "badge": "最佳 CP 值"
       }
     ],
-    "takeaway": "Trade 2 months of extra lead time for 10% lower cost — that's our value proposition for OEM buyers.",
-    "cta": "Get A Quote"
+    "takeaway": "以多 2 個月的交期，換取 10% 的成本節省——這正是我們為 OEM 代工客戶提供的核心價值。",
+    "cta": "取得報價"
   },
   "whatSetsUsApart": {
-    "title": "What Sets Us Apart",
-    "subtitle": "Three operational disciplines that separate Better Bags from typical OEM factories.",
+    "title": "我們與眾不同之處",
+    "subtitle": "三項營運準則，讓 Better Bags 與一般 OEM 代工廠拉開差距。",
     "items": [
       {
         "key": "qc",
-        "title": "Japanese-Grade Quality Control",
-        "description": "Strict broken-needle replacement logs and 100% X-ray screening — we physically eliminate customer-complaint risk at the production line, not after the fact."
+        "title": "日式品質管控標準",
+        "description": "嚴格的斷針換針紀錄，搭配 X 光機 100% 全檢——從物理層面杜絕客訴風險，把問題攔截在產線上，而非事後補救。"
       },
       {
         "key": "cost",
-        "title": "China-Myanmar Cost Engineering",
-        "description": "Chinese supply-chain orchestration paired with Yangon-based labor settlement compresses unit cost on bulk orders without compromising quality."
+        "title": "中緬結合的成本優勢",
+        "description": "以中國供應鏈統籌調度，搭配仰光在地人力成本結算，有效壓低大宗訂單的製造成本，同時不犧牲品質。"
       },
       {
         "key": "leadTime",
-        "title": "Capacity-Locked 4-Month Lead Time",
-        "description": "We never over-book. Every order locks in a 4-month production and delivery window so your launch dates stay predictable."
+        "title": "鎖定產能的 4 個月交期",
+        "description": "絕不超接產能，每張訂單皆鎖定 4 個月的排程與交貨週期，讓您的上市時程可以預期。"
       }
     ]
   },
   "marketPositioning": {
-    "title": "Where Better Bags Stands in the OEM Market",
-    "subtitle": "Map every OEM factory onto a profit × quality grid — and see who lives in which corner.",
+    "title": "Better Bags 的市場定位",
+    "subtitle": "把每家 OEM 工廠放進「利潤 × 品管」兩個維度來看，誰落在哪一格，一目瞭然。",
     "axes": {
       "profit": {
-        "low": "Thin margins",
-        "high": "Healthy margins"
+        "low": "利潤微薄",
+        "high": "利潤可觀"
       },
       "quality": {
-        "low": "Unstable quality & high risk",
-        "high": "Reliable quality & on-time delivery"
+        "low": "品質失控、風險高",
+        "high": "高品質與穩定交期"
       }
     },
     "quadrants": [
       {
         "position": "topRight",
         "title": "Better Bags",
-        "description": "Cost-efficient Myanmar production paired with Japanese-grade QC — high margins, low risk, scalable bulk orders.",
-        "badge": "Best Position"
+        "description": "具成本優勢的緬甸生產，搭配日式品管——讓您以高利潤、低風險放心承接大單。",
+        "badge": "最佳定位"
       },
       {
         "position": "topLeft",
-        "title": "Large-Scale Chinese Factories",
-        "description": "Delivery quality is generally stable, but rising Chinese labor costs and policy risk squeeze your margins thin."
+        "title": "中國規模型大廠",
+        "description": "交付品質相對穩定，但中國人力成本持續攀升，又有政策風險，訂單利潤微薄。"
       },
       {
         "position": "bottomRight",
-        "title": "Low-End Southeast Asian Shops",
-        "description": "Pricing looks attractive, but the absence of a QC system exposes you to breach-of-contract and claim risk at any moment."
+        "title": "東南亞低階代工廠",
+        "description": "報價雖然也低，但缺乏品管制度，隨時可能面臨違約與索賠風險。"
       },
       {
         "position": "bottomLeft",
-        "title": "Under-Resourced Workshops",
-        "description": "No economies of scale on cost, and unable to pass the bulk-production audits that serious clients require."
+        "title": "缺乏實力的小型工坊",
+        "description": "既沒有規模化帶來的成本優勢，也無法通過大客戶的大貨驗廠標準。"
       }
     ]
   },
   "features": {
     "stats": [
       {
-        "label": "Professional Employees",
+        "label": "專業員工",
         "value": "600+"
       },
       {
-        "label": "Low MOQ",
-        "value": "From 1,500 PCS"
+        "label": "低 MOQ",
+        "value": "1,500 件起"
       },
       {
-        "label": "Proofing Time",
-        "value": "2 Weeks"
+        "label": "打樣時間",
+        "value": "2 週"
       },
       {
-        "label": "Quality Inspection",
+        "label": "品質檢驗",
         "value": "100%"
       },
       {
-        "label": "Online Support",
-        "value": "24 Hrs"
+        "label": "線上支援",
+        "value": "24 小時"
       },
       {
-        "label": "Monthly Production",
-        "value": "50,000+ PCS"
+        "label": "月產能",
+        "value": "50,000+ 件"
       }
     ],
-    "jay": {
-      "title": "Welcome, I'm Jay.",
-      "desc1": "As the next-generation leader of Better Bags — a family-owned manufacturer with global vision—I draw upon more than 8 years of study and professional experience in Pennsylvania, United States. Being an alumnus of ",
-      "and": " and ",
-      "desc2": " I am proud to bring proven international expertise as well as cross-cultural communication skills to our clients and partners. My mission is to bridge the best of East and West, ensuring every partner enjoys premium products, seamless project communication, and reliable after-sales support—no matter where you are in the world."
-    },
-    "title": "Why Better Bags",
+    "title": "為什麼選擇 Better Bags",
     "list": [
       {
-        "title": "Flexibility",
+        "title": "彈性",
         "color": "#81C3D7",
-        "desc": "With production bases in both Shandong (Rizhao), China and Yangon, Myanmar — supported by a dedicated sampling and development center in Qingdao — we offer unparalleled flexibility to meet our customers' diverse needs. Our Myanmar factory is fully equipped to handle large-volume production with speed and efficiency, while our long-established Shandong operation (20+ years of expertise) excels at design, sampling, sourcing, and personalized project management. Whether you need rapid prototyping, small custom batches, or are scaling up to large bulk orders, our dual-factory model ensures your requirements are fulfilled with agility and precision."
+        "desc": "憑藉位於中國山東（日照）與緬甸仰光的雙生產基地，並輔以青島的專責打樣開發中心，我們能提供無可比擬的彈性，滿足客戶多元的需求。緬甸工廠設備完善，可高效處理大批量生產；擁有 20 餘年經驗的山東營運團隊，則擅長設計、打樣、採購與客製化專案管理。無論是快速打樣、小量客製，還是大規模量產，我們的雙廠模式都能敏捷且精準地達成您的要求。"
       },
       {
-        "title": "Communication",
+        "title": "溝通交流",
         "color": "#416788",
-        "desc": "At Better Bags, effective communication is the foundation of all our partnerships. Our founder, Mr. Li Guangtong, built our business on the trust and high standards of Japanese clients—reflecting a deep understanding of international requirements. Drawing on our multicultural team—including professionals with extensive study and work experience in the United States—we seamlessly connect with global customers. We are especially adept at bridging cultural and language gaps, ensuring clarity, transparency, and a smooth cooperation experience from start to finish."
+        "desc": "在 Better Bags，有效溝通是所有合作的基石。創辦人李光同先生憑藉與日本客戶的長期合作，奠定了信任與高標準的基礎——展現我們對國際要求的深刻理解。加上具備美國留學與工作背景的多元團隊，我們能與全球客戶無縫接軌，擅長跨越文化與語言的隔閡，確保合作自始至終清晰、透明且順暢。"
       },
       {
-        "title": "Quality Control",
+        "title": "品質管控",
         "color": "#5a6d7c",
-        "desc": "The backbone of our reputation is unwavering quality control. Years of collaboration with demanding markets like Japan have forged a meticulous approach at every stage of production, from sourcing to final inspection. Our experienced QA teams ensure that every order not only meets but often exceeds international standards for craftsmanship, durability, and reliability—guaranteeing peace of mind with every delivery."
+        "desc": "我們的信譽來自始終如一的品質管控。多年來與要求嚴謹的日本市場合作，讓我們在每個生產階段——從採購到最終驗貨——都建立了極為嚴謹的流程。經驗豐富的 QA 團隊確保每批訂單不僅符合、更經常超越國際標準的工藝、耐用度與可靠性，讓您每一次交貨都能安心。"
       },
       {
-        "title": "Competitive Pricing",
+        "title": "價格競爭力",
         "color": "#2f6690",
-        "desc": "Our primary production base in Myanmar gives us a significant cost advantage—production costs here are much lower than in China, and even compared to other Southeast Asian countries such as Vietnam and Thailand, we are able to offer more competitive prices under the same quality standards. This means our clients receive high-quality products at a better value, without compromise.\n\nMyanmar's cost efficiency perfectly complements our China operation — our Shandong (Rizhao) production base together with our Qingdao sampling and development center, which specialize in design, sampling, and sourcing. By combining Myanmar's unbeatable production pricing with China's strong development capabilities, we achieve the \"sweet spot\" in global manufacturing—offering clients both outstanding quality and truly competitive pricing."
+        "desc": "緬甸的主要生產基地為我們帶來顯著的成本優勢——生產成本遠低於中國，甚至優於越南、泰國等東南亞國家，能在相同品質標準下提供更具競爭力的價格。這代表客戶無須犧牲品質，即可享有更具價值的採購方案。\n\n緬甸的成本效率與我們的中國營運——山東（日照）生產基地及青島打樣開發中心——相輔相成，後者在設計、打樣與採購方面實力堅強。結合緬甸無可比擬的生產價格與中國深厚的開發能量，我們在全球製造中取得最佳平衡——為客戶同時帶來卓越品質與真正具競爭力的價格。"
       }
     ]
   },
   "customization": {
-    "title": "Customization Options",
-    "intro": "As an experienced backpack manufacturer, we provide a comprehensive range of tailor-made solutions for clients worldwide. From <span style='font-weight:800'>initial concept to production and delivery</span>, every detail is customizable to ensure your products stand out in the market.",
+    "title": "客製化選項",
+    "intro": "身為經驗豐富的後背包製造商，我們為全球客戶提供完整的客製化解決方案。從 <span style='font-weight:800'>概念初期到生產交付</span>，每個細節皆可客製，協助您的產品在市場中脫穎而出。",
     "features": [
       {
-        "title": "Extensive Backpack Styles",
-        "desc": "No matter the style you need, our experienced R&D team can guide you through the selection process to ensure you find the ideal fit for your project.",
+        "title": "多樣後背包款式",
+        "desc": "無論您需要哪種風格，經驗豐富的研發團隊都會全程協助，確保找到與專案完美契合的方案。",
         "highlights": [
-          "Casual, Travel, Hiking, Business",
-          "Camera, Sports, Tote, Anti-theft",
-          "Tactical, Sling, School, Rolling",
-          "Multi-functional, Eco-friendly, Fishing, Accessories"
+          "休閒、旅行、登山、商務",
+          "攝影、運動、托特、防盜",
+          "戰術、單肩、學生、拉桿",
+          "多功能、環保、釣魚、配件"
         ]
       },
       {
-        "title": "Multiple Sizes and Capacities",
-        "desc": "Flexible size configurations to fit any scenario, all customizable with smart compartments and layouts.",
+        "title": "多元尺寸與容量",
+        "desc": "彈性的尺寸配置，適用於任何場合，並可客製智慧隔層與內部配置。",
         "highlights": [
-          "Small (10L–20L): Daily/Children/Light Essentials",
-          "Medium (20L–40L): Commute/Trip/Students",
-          "Large (40L–60L): Travel/Outdoor/More Space",
-          "Extra Large (60L+): Long Trip/Pro Use/Special Needs"
+          "小型 (10L–20L)：日常 / 兒童 / 輕量隨行",
+          "中型 (20L–40L)：通勤 / 短程 / 學生",
+          "大型 (40L–60L)：旅行 / 戶外 / 大容量",
+          "超大 (60L+)：長途 / 專業 / 特殊需求"
         ]
       },
       {
-        "title": "Superior & Eco-friendly Materials",
-        "desc": "Premium global materials, responsibly sourced. All can be custom colored, processed, or finished to match your vision!",
+        "title": "優質與環保材質",
+        "desc": "嚴選全球高品質原料，負責任採購。所有材質皆可客製顏色、加工或表面處理，完美貼合您的設計！",
         "highlights": [
-          "Polyester, Nylon, Canvas, Leather",
-          "Jute, Tyvek, Neoprene, PVC, TPU",
-          "Recycled & Eco Options",
-          "Any custom color, print, or finish"
+          "聚酯纖維、尼龍、帆布、皮革",
+          "黃麻、Tyvek、氯丁橡膠、PVC、TPU",
+          "再生與環保選項",
+          "顏色、印花或表面處理皆可客製"
         ]
       },
       {
-        "title": "Professional Color Solutions",
-        "desc": "Achieve flawless color consistency and bring your brand vision to life with our comprehensive color services.",
+        "title": "專業色彩方案",
+        "desc": "透過完善的色彩管理，實現精準的顏色一致性，忠實呈現品牌願景。",
         "highlights": [
-          "Pantone-matched custom dyes",
-          "Color sample proofing",
-          "Strict colorfastness testing"
+          "Pantone 客製染色",
+          "色樣打樣確認",
+          "嚴格色牢度測試"
         ]
       },
       {
-        "title": "Custom Imprint & Branding",
-        "desc": "Your brand, your way. Multiple logo and graphic application methods for a lasting impression.",
+        "title": "客製印刷與品牌呈現",
+        "desc": "品牌由您主導。多種 Logo 與圖案應用方式，打造深刻持久的品牌印象。",
         "highlights": [
-          "Embroidery / Silk Screen / Heat Transfer",
-          "Embossing / Debossing / TPU Labels",
-          "Rubber patches / Metal badges",
-          "Graphics, taglines, custom artwork"
+          "刺繡 / 網版印刷 / 熱轉印",
+          "壓印 / 凹印 / TPU 標籤",
+          "橡膠章 / 金屬徽章",
+          "圖案、標語、客製圖稿"
         ]
       },
       {
-        "title": "Accessories & Hardware",
-        "desc": "Upgrade every detail—premium zippers, buckles, trims. Each part can be color- and function-customized.",
+        "title": "配件與五金",
+        "desc": "升級每一處細節——優質拉鍊、扣具與飾件，皆可客製顏色與功能。",
         "highlights": [
-          "Zippers: Waterproof, Two-way, Invisible, etc.",
-          "Buckles: Plastic, Metal, Magnetic, Quick-release, D-rings",
-          "Loops, pulls, trims—all configurable",
-          "Match finishes & color"
+          "拉鍊：防水、雙向、隱形等",
+          "扣具：塑膠、金屬、磁吸、快拆、D 環",
+          "織帶、拉頭、滾邊——皆可客製",
+          "外觀與顏色完美搭配"
         ]
       },
       {
-        "title": "Enhanced Functional Features",
-        "desc": "Tailored features for safety, tech, travel, or specialist needs—because every use case is unique.",
+        "title": "功能強化選項",
+        "desc": "針對安全、科技、旅行或專業需求的客製功能——因為每種使用情境都獨一無二。",
         "highlights": [
-          "Expansion: Roll-top, Zippers, Drawstring",
-          "Weatherproofing: Coated fabrics, Rain covers, Ventilated backs",
-          "Security: Anti-theft locks, RFID shields",
-          "Tech: USB ports, cable routing, reflective details, LED integration",
-          "Travel: TSA-friendly, Trolley sleeves"
+          "擴充：捲口、拉鍊、抽繩",
+          "防護：塗層布料、防雨罩、透氣背板",
+          "安全：防盜鎖、RFID 防護",
+          "科技：USB 連接埠、線材走線、反光細節、LED 整合",
+          "旅行：TSA 友善設計、行李箱拉桿套"
         ]
       },
       {
-        "title": "Private Label & Logo Customization",
-        "desc": "Fully customizable branding—even for private label requirements.",
+        "title": "自有品牌與 Logo 客製化",
+        "desc": "全方位可客製的品牌方案——完整滿足自有品牌（Private Label）需求。",
         "highlights": [
-          "Woven & Fabric Labels",
-          "TPU/PU Badges",
-          "Metal Patches",
-          "Showcase your unique identity"
+          "織標 & 布標",
+          "TPU/PU 徽章",
+          "金屬銘牌",
+          "展現您獨特的品牌個性"
         ]
       }
     ],
-    "ready": "Ready to bring your vision to life? <br />Contact us for a tailor-made solution—and discover why top brands worldwide trust us as their manufacturing partner.",
-    "cta": "Customize Now"
+    "ready": "準備好讓您的創意成真了嗎？<br />歡迎聯絡我們，取得量身打造的解決方案——了解全球頂尖品牌為何信賴我們作為製造合作夥伴。",
+    "cta": "立即客製"
   },
   "services": {
-    "title": "Optimized All-in-One Service for Mass Production",
+    "title": "為量產最佳化的一站式服務",
     "steps": [
       {
-        "title": "Handle Customer Inquiry",
-        "desc": "Send us an inquiry and share the details of your project. Our dedicated team will quickly respond to understand your needs and expectations."
+        "title": "接收客戶詢價",
+        "desc": "歡迎來信詢價並分享您的專案細節，我們的專業團隊將迅速回覆，深入了解您的需求與期望。"
       },
       {
-        "title": "Manufacture Quotation",
-        "desc": "If your project fits our standard MOQ and production capabilities, we will promptly provide an initial quotation based on your tech pack, selected fabric quality, and requested quantity."
+        "title": "生產報價",
+        "desc": "若您的專案符合標準 MOQ 與產能條件，我們將依據 Tech Pack（技術規格書）、布料品質與數量，儘速提供初步報價。"
       },
       {
-        "title": "Sample Development",
-        "desc": "Once the quotation is approved, we move forward with sample development. This ensures that quality and specifications are confirmed before bulk production begins."
+        "title": "樣品開發",
+        "desc": "報價確認後，我們即展開樣品開發，確保在量產前先行確認品質與規格。"
       },
       {
-        "title": "Bulk Production",
-        "desc": "After you confirm the order and provide a deposit, we commence bulk production—strictly following all agreed specifications with careful attention to detail."
+        "title": "量產",
+        "desc": "在您確認訂單並支付訂金後，我們隨即依照所有約定規格投入量產，並用心把關每一個細節。"
       },
       {
-        "title": "Quality Control",
-        "desc": "Our rigorous QC procedures include 100% end-line inspections and application of AQL 2.5 standards for final checks. We also welcome third-party QC to further guarantee quality and transparency."
+        "title": "品質管控",
+        "desc": "嚴謹的 QC 流程包含 100% 終檢，並依 AQL 2.5 標準進行最終抽檢。我們也歡迎第三方驗貨，進一步確保品質與透明度。"
       },
       {
-        "title": "Packaging & Shipping",
-        "desc": "After quality confirmation, your products are carefully packaged and shipped in bulk to your designated warehouse, ensuring safe and efficient delivery."
+        "title": "包裝與出貨",
+        "desc": "品質確認後，產品將妥善包裝，並整批出貨至您指定的倉庫，確保交付安全且有效率。"
       }
     ],
-    "processNote": "<highlight1>從詢盤到交付</highlight1>，我們的專業團隊全程支持，<highlight2>確保每個環節高效透明</highlight2>，讓您的定制項目順利落地。"
+    "processNote": "<highlight1>從詢價到交貨</highlight1>，我們的專業團隊全程支援，<highlight2>確保每個環節透明又有效率</highlight2>，讓您的客製化專案順利完成。"
   },
   "faq": {
-    "title": "Frequently Asked Questions (FAQ)",
+    "title": "常見問題（FAQ）",
     "sections": [
       {
-        "title": "General & Pre-Sale",
+        "title": "一般與售前",
         "items": [
           {
-            "q": "What should I prepare before contacting you?",
-            "a": "Please have your tech pack (or clear design sketches), estimated order quantity, preferred materials, and any special requirements ready. The more specific your brief, the faster and more accurate our quotation and recommendations."
+            "q": "聯絡你們前需要準備什麼？",
+            "a": "請備妥 Tech Pack（技術規格書）或清楚的設計草圖、預計訂購數量、偏好的布料，以及任何特殊需求。資訊越具體，我們的報價與建議就能越快速、準確。"
           },
           {
-            "q": "Do you provide a catalogue of your products?",
-            "a": "No, we are a pure OEM/ODM manufacturer and do not have our own product catalogue. All products are custom-made to client specifications."
+            "q": "你們有產品型錄嗎？",
+            "a": "沒有。我們是純 OEM/ODM 代工廠，不販售自有品牌產品，所有產品皆依客戶規格客製化生產。"
           },
           {
-            "q": "Can you share samples or images of previous work for reference?",
-            "a": "Due to strict NDAs with our clients, we cannot share images of previous products. However, we highly recommend ordering a sample or arranging a factory tour to assess our craftsmanship and quality for yourself."
+            "q": "可以提供過往樣品或圖片參考嗎？",
+            "a": "由於與客戶簽有嚴格的保密協定，我們無法分享過往產品的圖片。但誠摯建議您訂購樣品或安排參觀工廠，親自評估我們的工藝與品質。"
           },
           {
-            "q": "Can you provide references from existing clients?",
-            "a": "While we cannot share client contacts due to confidentiality, we welcome video calls, sample reviews, and factory tours for your assurance."
+            "q": "可以提供現有客戶的推薦嗎？",
+            "a": "基於保密原則，我們無法提供客戶聯絡方式。不過，歡迎透過視訊會議、樣品評估與工廠參觀，增加您對我們的信心。"
           },
           {
-            "q": "Do I get a dedicated project manager or team?",
-            "a": "Yes, every project is assigned to a dedicated project manager and project team for smooth, timely and personalized service."
+            "q": "會有專屬的專案經理或團隊嗎？",
+            "a": "會的。每個專案都會指派一位專屬專案經理與專案團隊，確保服務順暢、及時且貼近您的需求。"
           },
           {
-            "q": "How will I know the timeline for my project?",
-            "a": "After confirmation, we provide a detailed production schedule covering sampling, production, and shipment milestones, keeping you informed at every stage."
+            "q": "我如何掌握專案時程？",
+            "a": "訂單確認後，我們會提供詳細的生產時程表，涵蓋打樣、生產與出貨等里程碑，讓您在每個階段都能掌握進度。"
           }
         ]
       },
       {
-        "title": "Orders, Sampling & Quotation",
+        "title": "訂單、打樣與報價",
         "items": [
           {
-            "q": "Do you accept OEM and ODM orders?",
-            "a": "Yes, we only accept OEM/ODM orders. We do not manufacture or sell our own branded products."
+            "q": "接受 OEM 與 ODM 訂單嗎？",
+            "a": "是的，我們只承接 OEM/ODM 訂單，不生產或販售自有品牌產品。"
           },
           {
-            "q": "What is your typical Minimum Order Quantity (MOQ)?",
-            "a": "For Myanmar bulk production our MOQ is 1,500 pcs per design and color. Our China (Shandong) facility additionally accepts sample and rush orders, ranging from a few hundred up to tens of thousands of pcs per design — get in touch to discuss your specific needs."
+            "q": "通常的最低訂購量（MOQ）是多少？",
+            "a": "緬甸大貨生產的 MOQ 為每款每色 1,500 件。我們位於中國山東的工廠另可承接打樣與急單，單款數量從數百件到數萬件不等——歡迎與我們聯絡，討論您的具體需求。"
           },
           {
-            "q": "How is your quotation process structured?",
-            "a": "We first provide an estimated quotation based on your tech pack and details. A final binding quote is issued after prototype/sample approval. Prices are quoted FOB Yangon for Myanmar bulk orders, or FOB Qingdao for sample and rush orders from our Shandong facility. CIF quotes are available on request."
+            "q": "你們的報價流程是如何進行的？",
+            "a": "我們會先依據 Tech Pack 等資訊提供預估報價；樣品確認後再提出最終報價。緬甸大貨預設以 FOB 仰光報價；山東工廠的打樣與急單則預設以 FOB 青島報價。如有需要，也可提供 CIF 報價。"
           },
           {
-            "q": "What are your payment terms?",
-            "a": "Payment terms are tiered: New clients pay 30% T/T deposit with the PO, with the 70% balance T/T after inspection passes. Long-term clients enjoy a credit line — T/T within 1 week of the B/L copy or pickup. For large or special orders we also accept L/C to safeguard both sides."
+            "q": "付款條件是什麼？",
+            "a": "付款條件分為三種：新客戶下單時支付 30% 訂金（T/T），大貨驗貨合格後支付 70% 尾款（T/T）；長期合作客戶享有信用額度，憑提單影本或提貨後 1 週內以 T/T 付款；大額訂單或特殊結算方式可接受信用狀（L/C），保障雙方權益。"
           },
           {
-            "q": "Can you provide materials with special certifications (e.g., OEKO-TEX, GRS, GOTS)?",
-            "a": "Yes, we can source and certify materials to various international standards. Let us know your compliance requirements in advance."
+            "q": "可以提供具特殊認證的布料嗎？（如 OEKO-TEX、GRS、GOTS）",
+            "a": "可以。請提前告知所需的合規要求，我們可依需求採購並提供相應認證。"
           }
         ]
       },
       {
-        "title": "Sample Development",
+        "title": "樣品開發",
         "items": [
           {
-            "q": "How many rounds of sample revisions are allowed?",
-            "a": "Most orders go through 1–2 sample revisions (e.g. 2nd / 3rd sample) before the PP sample is approved and bulk production is scheduled; additional revision packages can be arranged as needed."
+            "q": "打樣可以修改幾次？",
+            "a": "通常經過 1–2 次樣品修改（如二次樣、三次樣），即可確認產前樣（PP Sample）並安排大貨生產；若需更多次修改，可另行加購修改方案。"
           },
           {
-            "q": "What is your lead time for sample/prototype production?",
-            "a": "Samples are generally ready in about 2 weeks, depending on material availability and scheduling."
+            "q": "樣品/原型的交期需要多久？",
+            "a": "通常約 2 週，視布料到貨與排程而定。"
           },
           {
-            "q": "What materials will you use if the specified ones are unavailable?",
-            "a": "We will use the closest available substitute for development, and inform you of any differences before proceeding."
+            "q": "若指定布料缺貨，會使用什麼材料？",
+            "a": "我們會採用最接近的替代材質，並在繼續進行前告知您任何差異。"
           },
           {
-            "q": "Does the sample fee include shipping?",
-            "a": "No, the sample fee does not cover shipping or potential third-party costs (e.g. molds, plates). Express shipping (e.g. FedEx, DHL) can be arranged at additional cost."
+            "q": "樣品費是否包含運費？",
+            "a": "不包含。樣品費不含運費及第三方費用（如模具、印刷版）。如需快遞（FedEx、DHL 等），將另行計費。"
           },
           {
-            "q": "Do you provide pre-production samples (PP) for approval?",
-            "a": "Yes, a PP sample must be formally approved by you before mass production begins."
+            "q": "是否提供大貨前樣（PP）審核？",
+            "a": "有的。須經您正式確認 PP 樣後，才會進入大貨生產。"
           }
         ]
       },
       {
-        "title": "Production, Progress & Shipping",
+        "title": "生產、進度與出貨",
         "items": [
           {
-            "q": "Can we make changes after bulk production begins?",
-            "a": "Usually not, as materials are ordered and production started. We may accept small changes if timing and resources allow, but this could affect delivery and cost."
+            "q": "大貨生產開始後還能變更嗎？",
+            "a": "原則上不行，因為材料已下單並投入生產。若時程與資源允許，可接受小幅變更，但可能影響交期與成本。"
           },
           {
-            "q": "How do I receive production progress updates?",
-            "a": "We provide milestone-based progress updates, and can share photos or videos from your order upon request."
+            "q": "如何得知生產進度？",
+            "a": "我們依里程碑回報進度，並可依您的需求提供訂單照片或影片。"
           },
           {
-            "q": "How do you ensure production efficiency and flexibility?",
-            "a": "We implement LEAN methodologies and continuous improvement, optimizing lines for cost, efficiency, and order size flexibility."
+            "q": "如何確保生產效率與彈性？",
+            "a": "我們採用精實生產與持續改善方法，優化產線以降低成本、提升效率，並因應不同的訂單量。"
           },
           {
-            "q": "What is your standard production lead time?",
-            "a": "Standard bulk lead time is about 3 months from PP sample approval to factory completion, including overseas material sourcing and Myanmar production scheduling. Consolidation delays and production-queue timing may extend this on a per-project basis."
+            "q": "標準生產週期多久？",
+            "a": "大貨標準交期約為 PP 產前樣確認後 3 個月內完成，已包含海外布料與副料採購，以及緬甸工廠排程。實際專案可能因併櫃延誤或緬甸工廠當期排程而略有延長。"
           },
           {
-            "q": "What's your main port of loading?",
-            "a": "Myanmar bulk orders ship FOB Yangon Port, Yangon, Myanmar. For samples and rush orders shipped from our Shandong facility, the default is FOB Qingdao."
+            "q": "主要的裝運港是哪裡？",
+            "a": "緬甸大貨預設 FOB 緬甸仰光港。由山東工廠出貨的打樣與急單，則預設 FOB 青島。"
           },
           {
-            "q": "Can you customize packaging/handling for my orders?",
-            "a": "Yes, we offer packaging customization and can help with labeling, bundling, carton specifications and even special shipping needs."
+            "q": "可以客製化包裝或特殊處理嗎？",
+            "a": "可以。我們可提供貼標、綑包、紙箱規格等客製化包裝，並配合特殊運輸需求。"
           },
           {
-            "q": "Are you able to help with export documentation and compliance?",
-            "a": "Yes, we will provide all necessary export documents (e.g., invoice, packing list, COO, Form E) and can support any special certifications required."
+            "q": "能協助出口單據與合規事宜嗎？",
+            "a": "可以。我們會提供發票、裝箱單、產地證明（COO）、Form E 等所有必要單據，並可支援特殊認證需求。"
           }
         ]
       },
       {
-        "title": "Quality Control & After-Sale Support",
+        "title": "品質管控與售後支援",
         "items": [
           {
-            "q": "How do you ensure quality and material consistency?",
-            "a": "Incoming materials are strictly inspected and verified. QC stations at every major step catch deviations early. All orders undergo 100% end-of-line inspection, and we welcome third-party QC upon client request."
+            "q": "如何確保品質與材料的一致性？",
+            "a": "所有進料皆經嚴格檢驗。主要工序均設有 QC 站，及早發現偏差。所有訂單皆進行 100% 終檢，並歡迎第三方驗貨。"
           },
           {
-            "q": "Do you provide independent audit or inspection support?",
-            "a": "Absolutely. We welcome third-party audits, remote factory visits, and client inspections at any step."
+            "q": "能提供獨立稽核或驗貨支援嗎？",
+            "a": "當然可以。我們歡迎第三方稽核、遠端工廠參觀，以及任何階段的客戶驗貨。"
           },
           {
-            "q": "How do you handle defective products or production complaints?",
-            "a": "We investigate all reports thoroughly and, depending on the situation, provide repair, replacement or negotiated settlement."
+            "q": "若出現不良品或客訴，如何處理？",
+            "a": "我們會徹底調查，視情況提供返修、換貨或協商解決方案。"
           },
           {
-            "q": "Do you offer any warranty or after-sales guarantee?",
-            "a": "We require clients to inspect all shipments within 14 days. As we manufacture to your specifications, we do not offer extended warranties."
+            "q": "是否提供保固或售後保證？",
+            "a": "請於收貨後 14 天內完成驗貨。由於產品依客戶規格生產，我們不提供延長保固。"
           },
           {
-            "q": "Can you provide technical support for bag pattern or hardware development?",
-            "a": "Yes, our experienced team can advise on feasibility, cost, construction methods, and component selection."
+            "q": "能提供包型或五金配件開發的技術支援嗎？",
+            "a": "可以。我們的專業團隊可就可行性、成本、結構工藝與配件選擇提供建議。"
           },
           {
-            "q": "Don't see your question here?",
-            "a": "Please contact us directly – our team is always ready to assist with anything you need."
+            "q": "這裡沒有找到我的問題怎麼辦？",
+            "a": "歡迎直接與我們聯絡——我們的團隊隨時竭誠為您服務！"
           }
         ]
       }
     ],
     "cta": {
-      "text": "Can't find what you're looking for?",
-      "highlight": "Feel free to contact us",
-      "suffix": "-- our team is here to help.",
-      "button": "Contact Us",
-      "glossaryLink": "Browse our Glossary for industry terms",
-      "blogLink": "Read our latest articles"
+      "text": "沒有找到您想要的答案？",
+      "highlight": "歡迎隨時與我們聯絡",
+      "suffix": "，我們的團隊將竭誠為您解答。",
+      "button": "聯絡我們",
+      "glossaryLink": "瀏覽術語表，認識產業術語",
+      "blogLink": "閱讀最新文章"
     }
   },
   "contact": {
-    "title": "Contact Us",
-    "subtitle": "Ready to Start Your Backpack Project?",
-    "intro": "Fill out the form below and we'll get back to you within 24 hours. For urgent inquiries, call or WhatsApp us directly.",
+    "title": "聯絡我們",
+    "subtitle": "準備好啟動您的後背包專案了嗎？",
+    "intro": "請填寫下方表單，我們將於 24 小時內回覆。如需緊急洽詢，歡迎直接來電，或透過 WhatsApp 與我們聯絡。",
     "address": {
-      "label": "Address",
+      "label": "地址",
       "value": "Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai Industrial Zone, Yangon, Myanmar",
-      "viewOnMap": "View on Google Maps"
+      "viewOnMap": "在 Google 地圖上查看"
     },
     "phone": {
-      "label": "Phone Number",
-      "fallback": "For other languages, please contact us via email",
+      "label": "電話",
+      "fallback": "其他語言請透過電子郵件與我們聯絡",
       "lines": [
         {
           "lang": "中文",
           "number": "+86 (532) 8856-2277",
-          "hours": "Beijing Time 8:00-17:00 · Mon-Fri",
+          "hours": "北京時間 8:00-17:00 · 週一至週五",
           "person": ""
         },
         {
           "lang": "日本語 / 한국어",
           "number": "+86 152 5320 6760",
-          "hours": "Beijing Time 8:00-17:00 · Mon-Fri",
-          "person": "Ms. Cui"
+          "hours": "北京時間 8:00-17:00 · 週一至週五",
+          "person": "崔小姐"
         },
         {
           "lang": "English",
           "number": "+86 130 6139 1463",
-          "hours": "Myanmar Time 7:30-18:00 · Mon-Sat",
+          "hours": "緬甸時間 7:30-18:00 · 週一至週六",
           "person": "Mr. Jay"
         },
         {
           "lang": "မြန်မာ",
           "number": "+95 9 9856 70999",
-          "hours": "Myanmar Time 7:30-18:00 · Mon-Sat",
+          "hours": "緬甸時間 7:30-18:00 · 週一至週六",
           "person": ""
         }
       ]
     },
     "email": {
-      "label": "Email Address",
+      "label": "電子郵件",
       "value": "jay@betterbagsmm.com"
     },
     "whatsapp": {
-      "label": "Whatsapp",
+      "label": "WhatsApp",
       "value": "+1 814.880.1463"
     },
     "trust": {
-      "title": "為什麼信賴我們",
-      "responseTime": "24小時響應保證",
+      "title": "值得您信賴的理由",
+      "responseTime": "24小時回覆保證",
       "experience": "20年以上製造經驗",
-      "certified": "ISO 9001、OEKO-TEX、GRS、GOTS 認證"
+      "certified": "專業團隊 · 工廠直營 · 生產可追溯"
     },
     "form": {
-      "title": "Get A Quote",
+      "title": "取得報價",
       "name": {
-        "label": "Name",
-        "placeholder": "John Doe",
-        "error": "Please enter your name"
+        "label": "姓名",
+        "placeholder": "王小明",
+        "error": "請輸入姓名"
       },
       "email": {
-        "label": "Email Address",
+        "label": "電子郵件地址",
         "placeholder": "example@company.com",
-        "error": "Please enter a valid email address"
+        "error": "請輸入有效的電子郵件地址"
       },
       "countryRegion": {
-        "label": "Country/Region",
-        "placeholder": "United States",
-        "error": "Please enter your country/region",
-        "loading": "正在偵測位置...",
-        "searchPlaceholder": "Search country or dial code",
-        "noResults": "No matching country",
-        "popularLabel": "Popular",
-        "allLabel": "All countries"
+        "label": "國家/地區",
+        "placeholder": "請選擇國家/地區",
+        "loading": "正在偵測您的位置...",
+        "error": "請選擇國家/地區",
+        "searchPlaceholder": "搜尋國家或國碼",
+        "noResults": "找不到符合的國家",
+        "popularLabel": "常用",
+        "allLabel": "全部國家"
       },
       "companyBrandName": {
-        "label": "Company/Brand Name",
-        "placeholder": "Your Company Name",
-        "error": "Please enter your company/brand name"
+        "label": "公司/品牌名稱",
+        "placeholder": "您的公司名稱",
+        "error": "請輸入公司/品牌名稱"
       },
       "phoneNumber": {
-        "label": "Phone Number (Optional)",
+        "label": "電話號碼（選填）",
         "placeholder": "電話號碼",
-        "error": "Please enter a valid phone number",
-        "codeLabel": "Phone country code",
-        "codePlaceholder": "Code",
-        "codeError": "Please select a dial code"
+        "error": "請輸入有效的電話號碼",
+        "codeLabel": "電話國碼",
+        "codePlaceholder": "國碼",
+        "codeError": "請選擇國際電話國碼",
+        "example": "例：{example}"
       },
       "subject": {
-        "label": "Subject",
-        "placeholder": "e.g. Custom Travel Backpack Inquiry",
-        "error": "Please enter a subject"
+        "label": "主旨",
+        "placeholder": "例如：客製化旅行後背包詢價",
+        "error": "請輸入主旨"
       },
       "message": {
-        "label": "Your Message (Optional)",
-        "placeholder": "Please describe your project needs, target quantity, timeline, and any special requirements...",
-        "error": "Message must be less than 2000 characters"
+        "label": "您的訊息（選填）",
+        "placeholder": "請說明您的專案需求、目標數量、時程，以及任何特殊要求...",
+        "error": "訊息不得超過 2000 個字元"
       },
       "orderQuantity": {
-        "label": "Estimated Order Quantity (per design)",
-        "placeholder": "Select quantity range",
-        "error": "Please select an order quantity",
+        "label": "預計訂單數量（每款設計）",
+        "placeholder": "請選擇數量範圍",
+        "error": "請選擇訂單數量",
         "optionLabels": [
           "少於 100 件",
           "100-300 件",
@@ -629,41 +624,52 @@
         ]
       },
       "techPackAvailability": {
-        "label": "Do you have a tech pack or reference sample?",
-        "placeholder": "Select an option",
-        "error": "Please select an option",
+        "label": "您是否已有 Tech Pack（技術規格書）或參考樣品？",
+        "placeholder": "請選擇一個選項",
+        "error": "請選擇一個選項",
         "optionLabels": [
-          "是，我有技術包",
-          "我有實物樣品",
-          "我只有想法/草圖"
+          "是，我已有 Tech Pack",
+          "我有實體樣品",
+          "我目前只有構想/草圖"
         ]
       },
       "fileUpload": {
-        "label": "Upload Files (Optional)",
-        "description": "Upload tech packs, sketches, or sample photos. Max 5 files, 10MB each.",
-        "button": "Choose Files",
-        "dragDrop": "or drag and drop files here",
-        "acceptedFormats": "Accepted formats: JPG, PNG, WebP, PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX"
+        "label": "上傳檔案（選填）",
+        "description": "可上傳 Tech Pack、草圖或樣品照片。最多 5 個檔案，每個檔案上限 10MB。",
+        "button": "選擇檔案",
+        "dragDrop": "或將檔案拖曳至此",
+        "acceptedFormats": "支援格式：JPG, PNG, WebP, PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX",
+        "errors": {
+          "tooLarge": "檔案「{name}」過大，單一檔案上限 {maxMb}MB",
+          "unsupportedType": "檔案「{name}」格式不支援，請上傳圖片或文件檔案。",
+          "tooMany": "最多只能上傳 {maxCount} 個檔案",
+          "uploadFailed": "部分檔案上傳失敗，請移除後再試一次。",
+          "invalidRef": "檔案「{name}」的上傳參照無效。"
+        },
+        "list": "已上傳檔案",
+        "uploaded": "已上傳",
+        "failed": "上傳失敗",
+        "remove": "移除檔案 {name}"
       },
       "humanVerification": {
-        "label": "Human Verification",
-        "placeholder": "Loading verification...",
-        "error": "Please complete the verification before submitting",
-        "notConfigured": "Verification is not configured. Form submissions will be accepted in development mode only."
+        "label": "真人驗證",
+        "placeholder": "驗證載入中...",
+        "error": "請先完成真人驗證再送出",
+        "notConfigured": "尚未設定真人驗證，僅於開發環境可送出表單。"
       },
-      "submit": "Submit Inquiry",
-      "submitting": "Submitting...",
+      "submit": "送出詢價",
+      "submitting": "送出中...",
       "success": {
-        "title": "Thank You for Your Inquiry!",
-        "message": "We've received your message and will respond within 24 hours."
+        "title": "感謝您的詢價！",
+        "message": "我們已收到您的訊息，將於 24 小時內回覆。"
       },
       "error": {
-        "title": "Submission Failed",
-        "message": "Sorry, there was an error submitting your form. Please try again later or contact us directly."
+        "title": "送出失敗",
+        "message": "很抱歉，送出時發生錯誤，請稍後再試，或直接與我們聯絡。"
       },
       "draft": {
-        "restored": "已恢復您之前的草稿",
-        "discard": "放棄草稿"
+        "restored": "已為您還原先前的草稿",
+        "discard": "捨棄草稿"
       }
     }
   },
@@ -674,212 +680,216 @@
       "email": "jay@betterbagsmm.com",
       "phone": "+1 814.880.1463"
     },
-    "email": "Email",
-    "tel": "Tel/WhatsApp",
-    "quickLinks": "Quick Links",
-    "hours": "Hours",
-    "hoursTime": "Mon-Fri 9:00am – 5:00pm",
-    "copyright": "All rights reserved | Powered by OEM Backpack Factory",
+    "email": "電子郵件",
+    "tel": "電話/WhatsApp",
+    "quickLinks": "快速連結",
+    "hours": "服務時間",
+    "hoursTime": "週一至週五 9:00 – 17:00",
+    "copyright": "版權所有 | 由 OEM Backpack Factory 提供技術支援",
     "links": [
       {
-        "name": "Home",
+        "name": "首頁",
         "href": "#home"
       },
       {
-        "name": "About Us",
+        "name": "關於我們",
         "href": "#about"
       },
       {
-        "name": "Features",
+        "name": "工廠特色",
         "href": "#features"
       },
       {
-        "name": "Services",
+        "name": "服務項目",
         "href": "#services"
       },
       {
-        "name": "Process",
+        "name": "合作流程",
         "href": "#process"
       },
       {
-        "name": "FAQ",
+        "name": "常見問題",
         "href": "#faq"
       },
       {
-        "name": "Contact Us",
+        "name": "聯絡我們",
         "href": "#contact"
       },
       {
-        "name": "Blogs",
+        "name": "部落格",
         "href": "#blogs"
       },
       {
-        "name": "Glossary",
+        "name": "術語表",
         "href": "/glossary"
       }
     ]
   },
   "blog": {
-    "title": "Latest Insights",
-    "subtitle": "Stay updated with industry trends, customization tips, and company news",
-    "readMore": "Read More",
-    "viewAll": "View All Articles",
+    "title": "最新資訊",
+    "subtitle": "掌握產業趨勢、客製化技巧與公司最新消息",
+    "readMore": "閱讀更多",
+    "viewAll": "查看所有文章",
     "relatedLinks": {
-      "glossary": "Explore our Glossary"
+      "glossary": "瀏覽術語表"
     }
   },
   "blogList": {
-    "title": "Blog Articles",
-    "subtitle": "In-depth insights, trends, and best practices in the backpack manufacturing industry",
-    "backToHome": "Back to Home",
-    "totalArticles": "{count} Articles",
-    "readMore": "Read More",
-    "backToTop": "Back to Top",
-    "noArticles": "No articles available",
+    "title": "部落格文章",
+    "subtitle": "深入了解後背包製造產業的專業見解、趨勢與最佳實務",
+    "backToHome": "回到首頁",
+    "totalArticles": "共 {count} 篇文章",
+    "readMore": "閱讀更多",
+    "backToTop": "回到頂端",
+    "noArticles": "目前尚無文章",
     "relatedLinks": {
-      "glossary": "Browse Manufacturing Glossary",
-      "faq": "Check our FAQ"
+      "glossary": "瀏覽製造術語表",
+      "faq": "查看常見問題"
     }
   },
   "blogDetail": {
-    "home": "Home",
-    "blog": "Blog",
-    "backToList": "Back to Articles",
-    "backToTop": "Back to Top",
-    "noContent": "Article content not available",
+    "home": "首頁",
+    "blog": "部落格",
+    "backToList": "返回文章列表",
+    "backToTop": "回到頁首",
+    "noContent": "文章內容暫未提供",
     "cta": {
-      "title": "Ready to Start Your Custom Backpack Project?",
-      "subtitle": "Contact us for professional OEM/ODM solutions",
-      "button": "Contact Us Now"
+      "title": "準備開始您的客製化後背包專案嗎？",
+      "subtitle": "歡迎與我們聯絡，取得專業的 OEM/ODM 解決方案",
+      "button": "立即洽詢"
+    },
+    "notFound": {
+      "title": "找不到部落格文章",
+      "description": "您造訪的部落格文章不存在。"
     }
   },
   "language": {
     "selectLanguage": "選擇語言",
-    "currentLanguage": "目前: {language}"
+    "currentLanguage": "目前：{language}"
   },
   "languageBanner": {
-    "message": "您已被自動重新導向到{language}版本",
-    "keep": "保持{language}",
-    "switchToEnglish": "切換到英文",
+    "message": "系統已自動將您導向{language}版本",
+    "keep": "維持{language}",
+    "switchToEnglish": "切換至英文",
     "close": "關閉"
   },
   "glossary": {
-    "title": "Backpack Manufacturing Glossary",
-    "subtitle": "Essential industry terms and definitions for OEM/ODM backpack production",
-    "description": "Learn the key terminology used in backpack manufacturing, from materials and production processes to quality control and logistics.",
-    "allCategories": "All",
+    "title": "後背包製造術語表",
+    "subtitle": "OEM/ODM 後背包生產的核心產業術語與定義",
+    "description": "認識後背包製造中的關鍵術語，涵蓋材質、生產流程、品質管控與物流等面向。",
+    "allCategories": "全部",
     "categories": {
-      "materials": "Materials",
-      "manufacturing": "Manufacturing",
-      "quality": "Quality Control",
-      "logistics": "Logistics",
-      "design": "Design"
+      "materials": "材質",
+      "manufacturing": "生產製造",
+      "quality": "品質管控",
+      "logistics": "物流",
+      "design": "設計"
     },
-    "backToHome": "Back to Home",
+    "backToHome": "返回首頁",
     "relatedLinks": {
-      "faq": "Have questions? Check our FAQ",
-      "blog": "Read our latest articles"
+      "faq": "有疑問嗎？查看常見問題",
+      "blog": "閱讀最新文章"
     },
     "terms": {
       "oem": {
-        "term": "OEM (Original Equipment Manufacturer)",
-        "definition": "A company that manufactures products based on the buyer's specifications and designs. The buyer owns the brand and design, while the OEM handles production."
+        "term": "OEM（原廠委託製造）",
+        "definition": "指依買方提供的規格與設計進行代工生產的公司。品牌與設計歸買方所有，OEM 廠負責生產製造。"
       },
       "odm": {
-        "term": "ODM (Original Design Manufacturer)",
-        "definition": "A manufacturer that designs and produces products which are then rebranded by the buyer. Unlike OEM, the ODM provides both design and manufacturing services."
+        "term": "ODM（原廠委託設計製造）",
+        "definition": "指自行設計並生產產品，再由買方以自有品牌銷售的製造商。與 OEM 不同，ODM 同時提供設計與製造服務。"
       },
       "moq": {
-        "term": "MOQ (Minimum Order Quantity)",
-        "definition": "The smallest number of units a manufacturer is willing to produce in a single order. MOQ varies by product complexity and materials."
+        "term": "MOQ（最低訂購量）",
+        "definition": "製造商願意在單筆訂單中生產的最低數量。MOQ 會依產品複雜度與材質而有所不同。"
       },
       "tech-pack": {
-        "term": "Tech Pack",
-        "definition": "A detailed technical document containing all specifications needed to manufacture a product, including dimensions, materials, colors, hardware, and construction details."
+        "term": "Tech Pack（技術規格書）",
+        "definition": "載明製造產品所需全部規格的詳細技術文件，包括尺寸、材質、顏色、五金配件與結構細節。"
       },
       "denier": {
-        "term": "Denier",
-        "definition": "A unit of measurement for the fiber thickness of individual threads used in fabric. Higher denier numbers indicate thicker, more durable fabric (e.g., 600D polyester)."
+        "term": "Denier（丹尼）",
+        "definition": "用於衡量布料中單根纖維粗細的單位。丹尼數越高，布料越厚實耐用（如 600D 聚酯纖維）。"
       },
       "ripstop": {
-        "term": "Ripstop",
-        "definition": "A fabric weaving technique using reinforcement threads in a crosshatch pattern to prevent tears from spreading. Commonly used in outdoor and tactical backpacks."
+        "term": "Ripstop（防撕裂）",
+        "definition": "一種以強化紗線織成十字格紋的織造技術，可防止破損擴大。常用於戶外與戰術後背包。"
       },
       "cordura": {
         "term": "Cordura",
-        "definition": "A brand name for a collection of high-performance fabrics known for exceptional durability, abrasion resistance, and tear strength. Widely used in premium backpacks."
+        "definition": "一系列高性能布料的品牌名稱，以卓越的耐用性、耐磨性與抗撕裂強度著稱，廣泛應用於高階後背包。"
       },
       "bartack": {
-        "term": "Bartack",
-        "definition": "A dense, reinforced stitching pattern used at stress points on bags, such as strap attachments and handle bases, to prevent seam failure under load."
+        "term": "Bartack（套結）",
+        "definition": "在包款受力點（如肩帶連接處與提把底部）使用的高密度加強車縫方式，防止負重時車縫處綻裂。"
       },
       "aql": {
-        "term": "AQL (Acceptable Quality Level)",
-        "definition": "A statistical sampling method used in quality inspection to determine the maximum acceptable number of defective items in a batch. Common standard is AQL 2.5 for bags."
+        "term": "AQL（允收品質水準）",
+        "definition": "品質檢驗中使用的統計抽樣方法，用於界定一批產品中可允收的最大不良品數量。袋包產品常用標準為 AQL 2.5。"
       },
       "fob": {
-        "term": "FOB (Free On Board)",
-        "definition": "A shipping term indicating that the seller delivers goods to the port of shipment. The buyer assumes responsibility and cost once goods are loaded onto the vessel."
+        "term": "FOB（船上交貨價）",
+        "definition": "一種國際貿易條件，指賣方將貨物運送至裝運港並裝上船；貨物裝船後，風險與費用即轉由買方承擔。"
       },
       "bom": {
-        "term": "BOM (Bill of Materials)",
-        "definition": "A comprehensive list of all raw materials, components, and hardware needed to manufacture a product, including quantities and specifications."
+        "term": "BOM（物料清單）",
+        "definition": "製造產品所需的所有原物料、部件與五金配件的完整清單，包含數量與規格。"
       },
       "ykk": {
         "term": "YKK",
-        "definition": "The world's largest zipper manufacturer, headquartered in Japan. YKK zippers are considered the industry standard for quality and reliability in bag manufacturing."
+        "definition": "全球最大的拉鍊製造商，總部位於日本。YKK 拉鍊被視為袋包製造中品質與可靠性的業界標準。"
       },
       "pantone": {
-        "term": "Pantone (PMS)",
-        "definition": "A standardized color matching system used worldwide to ensure consistent color reproduction across different materials and production runs."
+        "term": "Pantone（PMS 色票）",
+        "definition": "全球通用的標準化色彩比對系統，用於確保不同材質與生產批次之間的顏色一致性。"
       },
       "grs": {
-        "term": "GRS (Global Recycled Standard)",
-        "definition": "An international certification that verifies recycled content in products and tracks the supply chain from recycled input to finished product."
+        "term": "GRS（全球回收標準）",
+        "definition": "一項國際認證，用於驗證產品中的回收成分含量，並追蹤從回收原料到成品的完整供應鏈。"
       },
       "oeko-tex": {
         "term": "OEKO-TEX Standard 100",
-        "definition": "An independent testing and certification system for textile products at all stages of production, ensuring they are free from harmful substances."
+        "definition": "針對各生產階段紡織品的獨立檢測與認證系統，確保產品不含有害物質。"
       },
       "cif": {
-        "term": "CIF (Cost, Insurance, and Freight)",
-        "definition": "A shipping term where the seller covers the cost of goods, insurance, and freight charges to deliver products to the buyer's designated port."
+        "term": "CIF（含運保費價）",
+        "definition": "一種國際貿易條件，由賣方負擔貨物成本、保險與運費，將產品運送至買方指定港口。"
       },
       "exw": {
-        "term": "EXW (Ex Works)",
-        "definition": "A shipping term where the buyer is responsible for all transportation costs and risks from the manufacturer's facility to the final destination."
+        "term": "EXW（工廠交貨價）",
+        "definition": "一種國際貿易條件，由買方自行承擔自製造商工廠至最終目的地的全部運輸成本與風險。"
       },
       "pp-sample": {
-        "term": "PP Sample (Pre-Production Sample)",
-        "definition": "A sample produced before mass production begins to verify design, materials, and construction. Must be approved by the buyer before production starts."
+        "term": "PP Sample（產前樣品）",
+        "definition": "量產前製作的樣品，用於確認設計、材質與結構。須經買方核可後，方可正式進入量產。"
       },
       "top-sample": {
-        "term": "TOP Sample (Top of Production Sample)",
-        "definition": "A sample pulled from the actual production line during manufacturing to verify that quality and specifications match the approved PP sample."
+        "term": "TOP Sample（產中樣品）",
+        "definition": "量產期間自實際產線抽取的樣品，用於確認品質與規格是否與已核可的 PP 樣品一致。"
       },
       "tpu": {
-        "term": "TPU (Thermoplastic Polyurethane)",
-        "definition": "A flexible, durable plastic material used for waterproof coatings, labels, and patches on backpacks. Known for its excellent abrasion and weather resistance."
+        "term": "TPU（熱塑性聚氨酯）",
+        "definition": "一種柔韌且耐用的塑膠材料，用於後背包的防水塗層、標籤與貼片，以優異的耐磨性與耐候性著稱。"
       }
     }
   },
   "testimonials": {
     "title": "客戶評價",
-    "subtitle": "全球品牌信賴的優質OEM背包製造商",
+    "subtitle": "深受全球品牌信賴的優質後背包 OEM 代工製造商",
     "items": [
       {
         "name": "清水幸太",
         "role": "商品管理部 部長",
         "company": "Carrot Company",
         "rating": 4.5,
-        "quote": "如果用 10 分制來打分的話，我會給 9 分。第二次到緬甸工廠視察的時候有一點點讓我在意的地方，但除此之外都非常好——以現在的情況來說已經完全足夠了。生產線上確實碰到過一些課題，但這是任何工廠都會遇到的，除此之外沒有什麼問題。整體來說，我評價你們做得很扎實。"
+        "quote": "如果以 10 分制來評分，我會給 9 分。第二次到緬甸工廠視察時，有一點小地方讓我比較在意，但除此之外都非常好——以目前的狀況來說已經相當足夠。產線上確實遇過一些課題，不過這是任何工廠都會碰到的，除此之外沒有什麼問題。整體而言，我認為你們做得非常扎實。"
       }
     ],
     "carousel": {
-      "previous": "上一張",
-      "next": "下一張",
-      "goTo": "跳轉到第 {index} 張",
-      "status": "第 {current} 張，共 {total} 張"
+      "previous": "上一則",
+      "next": "下一則",
+      "goTo": "前往第 {index} 則",
+      "status": "第 {current} 則，共 {total} 則"
     }
   },
   "author": {
@@ -889,16 +899,32 @@
     "aboutAuthor": "關於作者"
   },
   "certifications": {
-    "title": "認證資質",
+    "title": "國際認證",
     "iso9001": "ISO 9001",
     "oekoTex": "OEKO-TEX",
     "grs": "GRS",
     "gots": "GOTS"
   },
   "quoteWidget": {
-    "openLabel": "Get A Quote",
-    "minimize": "Minimize",
-    "dragHandle": "Drag to move",
-    "mobileJumpLabel": "Jump to quote form"
+    "openLabel": "取得報價",
+    "minimize": "最小化",
+    "dragHandle": "拖曳以移動",
+    "mobileJumpLabel": "前往報價表單"
+  },
+  "metadata": {
+    "home": {
+      "title": "Better Bags Myanmar - 高品質後背包 OEM 代工廠",
+      "description": "緬甸頂級客製化後背包製造商。20+ 年經驗、600+ 名專業員工，主要服務日本品牌。"
+    },
+    "blogList": {
+      "title": "部落格 - Better Bags Myanmar | 產業洞察",
+      "description": "探索 Better Bags Myanmar 的後背包製造洞察、產業趨勢與永續實踐。"
+    }
+  },
+  "a11y": {
+    "closeNotification": "關閉通知",
+    "notifications": "通知",
+    "breadcrumb": "麵包屑導覽",
+    "pageSections": "頁面區塊"
   }
 }

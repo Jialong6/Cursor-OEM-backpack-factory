@@ -22,7 +22,7 @@ import {
 /**
  * 需要 CJK 字体的语言列表
  */
-const CJK_LOCALES: readonly Locale[] = ['zh', 'zh-tw', 'ja'] as const;
+const CJK_LOCALES: readonly Locale[] = ['zh', 'zh-tw', 'ja', 'ko'] as const;
 
 /**
  * 使用西里尔字母的语言
@@ -33,6 +33,11 @@ const CYRILLIC_LOCALES: readonly Locale[] = ['ru'] as const;
  * 使用拉丁字母的语言
  */
 const LATIN_LOCALES: readonly Locale[] = ['en', 'de', 'nl', 'fr', 'pt', 'es'] as const;
+
+/**
+ * 使用缅甸文字系统的语言
+ */
+const MYANMAR_LOCALES: readonly Locale[] = ['my'] as const;
 
 describe('Task 16: 多语言字体配置', () => {
   describe('16.1 Noto Sans 字体家族配置', () => {
@@ -60,6 +65,7 @@ describe('Task 16: 多语言字体配置', () => {
         zh: 'sc',
         'zh-tw': 'tc',
         ja: 'jp',
+        ko: 'kr',
       };
 
       for (const locale of CJK_LOCALES) {
@@ -86,6 +92,19 @@ describe('Task 16: 多语言字体配置', () => {
       const config = getLocaleFontConfig('ru');
       expect(config.primary).toContain('Noto Sans');
     });
+
+    it('缅甸语应该有专用 Myanmar 字体', () => {
+      for (const locale of MYANMAR_LOCALES) {
+        const config = getLocaleFontConfig(locale);
+        const hasMyanmarFont = config.primary.some((name: string) =>
+          name.includes('Myanmar')
+        );
+        expect(
+          hasMyanmarFont,
+          `locale "${locale}" should have a Myanmar font`
+        ).toBe(true);
+      }
+    });
   });
 
   describe('16.2 按语言加载字体（CSS 变量映射）', () => {
@@ -94,6 +113,8 @@ describe('Task 16: 多语言字体配置', () => {
       expect(FONT_CSS_VARIABLES.sc).toBe('--font-noto-sans-sc');
       expect(FONT_CSS_VARIABLES.tc).toBe('--font-noto-sans-tc');
       expect(FONT_CSS_VARIABLES.jp).toBe('--font-noto-sans-jp');
+      expect(FONT_CSS_VARIABLES.kr).toBe('--font-noto-sans-kr');
+      expect(FONT_CSS_VARIABLES.my).toBe('--font-noto-sans-myanmar');
     });
 
     it('每个 locale 应该返回正确的 CSS 变量列表', () => {
@@ -115,6 +136,16 @@ describe('Task 16: 多语言字体配置', () => {
 
       const jaVars = getRequiredCSSVariables('ja');
       expect(jaVars).toContain(FONT_CSS_VARIABLES.jp);
+
+      const koVars = getRequiredCSSVariables('ko');
+      expect(koVars).toContain(FONT_CSS_VARIABLES.kr);
+    });
+
+    it('缅甸语应该需要 Myanmar CSS 变量', () => {
+      const myVars = getRequiredCSSVariables('my');
+      expect(myVars).toContain(FONT_CSS_VARIABLES.my);
+      expect(myVars).toContain(FONT_CSS_VARIABLES.base);
+      expect(myVars.length).toBe(2);
     });
 
     it('拉丁语言只需要基础 CSS 变量', () => {
@@ -189,6 +220,8 @@ describe('Task 16: 多语言字体配置', () => {
         'Microsoft YaHei',
         'MS Gothic',
         'SimHei',
+        'Apple SD Gothic Neo',
+        'Malgun Gothic',
       ];
 
       for (const locale of CJK_LOCALES) {

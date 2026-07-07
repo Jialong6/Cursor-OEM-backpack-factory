@@ -4,8 +4,9 @@
  * 功能：
  * - 为每个页面配置唯一的标题和描述
  * - 配置 Open Graph 元标签
- * - 配置 hreflang 标签（支持 10 种语言）
- * - 支持多语言内容
+ * - 配置 hreflang 标签（覆盖 i18n.ts 中的全部语言）
+ * - 多语言文案存放于 locales/*.json 的 metadata namespace,
+ *   由各 layout 的 generateMetadata 用 getTranslations 取出后传入
  *
  * 验证需求：14.1, 14.2, 14.3, 14.8
  */
@@ -26,48 +27,12 @@ export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://betterbagsm
 export const DEFAULT_OG_IMAGE = '/images/og-image.jpg';
 
 /**
- * 页面元数据配置
+ * 页面元数据文案（title/description 来自 locales JSON 的 metadata namespace）
  */
-interface PageMetadata {
+export interface PageMetadata {
   title: string;
   description: string;
 }
-
-/**
- * 首页元数据
- */
-export const homeMetadata = {
-  en: {
-    title: 'Better Bags Myanmar - Premium OEM Backpack Factory',
-    description: 'Top-tier custom backpack manufacturer in Myanmar. 20+ years of experience, 600+ employees, primarily serving Japanese brands.',
-  },
-  zh: {
-    title: 'Better Bags 缅甸 - 高端背包OEM工厂',
-    description: '缅甸顶级定制背包制造商。20+年经验，600+专业员工，长期服务日本及多国品牌。',
-  },
-  ja: {
-    title: 'Better Bags Myanmar - 高品質OEMバックパック工場',
-    description: 'ミャンマーのトップクラスのカスタムバックパックメーカー。20年以上の経験、600名以上のスタッフを擁し、主に日本ブランド向けに製造しています。',
-  },
-} as const;
-
-/**
- * 博客列表页元数据
- */
-export const blogListMetadata = {
-  en: {
-    title: 'Blog - Better Bags Myanmar | Industry Insights',
-    description: 'Explore backpack manufacturing insights, industry trends, and sustainability practices from Better Bags Myanmar.',
-  },
-  zh: {
-    title: '博客 - Better Bags 缅甸 | 行业洞察',
-    description: '探索来自 Better Bags 缅甸的背包制造洞察、行业趋势和可持续发展实践。',
-  },
-  ja: {
-    title: 'ブログ - Better Bags Myanmar | 業界インサイト',
-    description: 'Better Bags Myanmar による、バックパック製造のインサイト、業界トレンド、サステナビリティへの取り組みをご紹介します。',
-  },
-} as const;
 
 /**
  * 获取 OpenGraph locale 代码
@@ -86,6 +51,8 @@ function getOgLocale(locale: Locale): string {
     pt: 'pt_PT',
     es: 'es_ES',
     ru: 'ru_RU',
+    my: 'my_MM',
+    ko: 'ko_KR',
   };
   return ogLocaleMap[locale] || 'en_US';
 }
@@ -94,86 +61,22 @@ function getOgLocale(locale: Locale): string {
  * 生成首页元数据
  *
  * @param locale 当前语言
+ * @param meta 当前语言的 title/description（取自 metadata.home namespace）
  * @returns Metadata 对象
  */
-export function generateHomeMetadata(locale: Locale): Metadata {
-  // 对于没有翻译的语言，回退到英文
-  const metaLocale = (locale === 'en' || locale === 'zh' || locale === 'ja') ? locale : 'en';
-  const meta = homeMetadata[metaLocale];
-
-  return {
-    title: meta.title,
-    description: meta.description,
-    openGraph: {
-      title: meta.title,
-      description: meta.description,
-      url: `${BASE_URL}/${locale}`,
-      siteName: 'Better Bags Myanmar',
-      images: [
-        {
-          url: DEFAULT_OG_IMAGE,
-          width: 1200,
-          height: 630,
-          alt: meta.title,
-        },
-      ],
-      locale: getOgLocale(locale),
-      type: 'website',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: meta.title,
-      description: meta.description,
-      images: [DEFAULT_OG_IMAGE],
-    },
-    alternates: {
-      canonical: `${BASE_URL}/${locale}`,
-      languages: generateHreflangMetadata(''),
-    },
-  };
+export function generateHomeMetadata(locale: Locale, meta: PageMetadata): Metadata {
+  return generateGenericMetadata(locale, meta.title, meta.description, '');
 }
 
 /**
  * 生成博客列表页元数据
  *
  * @param locale 当前语言
+ * @param meta 当前语言的 title/description（取自 metadata.blogList namespace）
  * @returns Metadata 对象
  */
-export function generateBlogListMetadata(locale: Locale): Metadata {
-  // 对于没有翻译的语言，回退到英文
-  const metaLocale = (locale === 'en' || locale === 'zh' || locale === 'ja') ? locale : 'en';
-  const meta = blogListMetadata[metaLocale];
-
-  return {
-    title: meta.title,
-    description: meta.description,
-    openGraph: {
-      title: meta.title,
-      description: meta.description,
-      url: `${BASE_URL}/${locale}/blog`,
-      siteName: 'Better Bags Myanmar',
-      images: [
-        {
-          url: DEFAULT_OG_IMAGE,
-          width: 1200,
-          height: 630,
-          alt: meta.title,
-        },
-      ],
-      locale: getOgLocale(locale),
-      type: 'website',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: meta.title,
-      description: meta.description,
-      images: [DEFAULT_OG_IMAGE],
-    },
-    alternates: {
-      canonical: `${BASE_URL}/${locale}/blog`,
-      languages: generateHreflangMetadata('/blog'),
-    },
-  };
+export function generateBlogListMetadata(locale: Locale, meta: PageMetadata): Metadata {
+  return generateGenericMetadata(locale, meta.title, meta.description, '/blog');
 }
 
 /**

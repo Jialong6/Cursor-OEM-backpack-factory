@@ -290,7 +290,7 @@ describe('Google Rich Results 结构验证', () => {
     });
 
     it('对于任意 locale，必需字段都应存在', () => {
-      const locales = ['en', 'zh', 'ja', 'ko', 'th', 'vi', 'de', 'fr', 'es', 'ar'];
+      const locales = ['en', 'zh', 'ja', 'de', 'nl', 'fr', 'pt', 'es', 'zh-tw', 'ru', 'my', 'ko'];
 
       locales.forEach((locale) => {
         const schema = generateManufacturingBusinessJsonLd(locale, `Desc for ${locale}`);

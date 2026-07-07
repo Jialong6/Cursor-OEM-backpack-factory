@@ -1,7 +1,7 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
-import { getAuthorById } from '@/lib/author-data';
+import { useTranslations, useLocale } from 'next-intl';
+import { getAuthorById, getAuthorText } from '@/lib/author-data';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { TRUSTED_BRANDS } from '@/lib/brand-logos';
 import { FACTORY_INFO } from '@/components/seo/ManufacturingPlantSchema';
@@ -19,6 +19,7 @@ import { FACTORY_INFO } from '@/components/seo/ManufacturingPlantSchema';
  */
 export default function AboutUs() {
   const t = useTranslations('about');
+  const locale = useLocale();
   const founder = getAuthorById('jay');
 
   const titleAnim = useScrollAnimation({ variant: 'fade-up' });
@@ -60,9 +61,10 @@ export default function AboutUs() {
             foundingDate: FACTORY_INFO.foundingDate,
             founder: {
               '@type': 'Person',
+              // 人名/头衔保持英文(跨语言实体对齐);简介按当前 locale 输出
               name: 'Li Guangtong',
               jobTitle: 'Founder & CEO',
-              description: founder?.bio.en || '',
+              description: founder ? getAuthorText(founder.bio, locale) : '',
             },
             hasCredential: FACTORY_INFO.credentials,
           }),

@@ -112,6 +112,9 @@ export default function ManufacturingPlantSchema({
       minValue: FACTORY_INFO.numberOfEmployees.minValue,
       maxValue: FACTORY_INFO.numberOfEmployees.maxValue,
     },
+    // 服务目录名刻意保留英文:OEM/ODM/QC 等为跨语言 B2B 行业术语
+    // (与 docs/i18n/terminology.md 的保留拉丁缩写规则一致),
+    // 且 Schema.org 服务名以英文标注有利于跨语言实体对齐
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: 'Backpack Manufacturing Services',

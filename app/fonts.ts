@@ -18,6 +18,8 @@ import {
   Noto_Sans_SC,
   Noto_Sans_TC,
   Noto_Sans_JP,
+  Noto_Sans_KR,
+  Noto_Sans_Myanmar,
 } from 'next/font/google';
 import type { Locale } from '@/i18n';
 
@@ -79,6 +81,32 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 /**
+ * Noto Sans KR - 韩语
+ * 韩文字形由 Google Fonts 的 unicode-range 切片按需下发(与 SC/TC/JP 同模式)
+ */
+const notoSansKR = Noto_Sans_KR({
+  variable: '--font-noto-sans-kr',
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ['400', '500', '700'],
+  preload: true,
+});
+
+/**
+ * Noto Sans Myanmar - 缅甸语
+ * 非可变字体(weight 必填);Myanmar 文字系统无 Arial 度量映射,
+ * 关闭 adjustFontFallback 避免构建警告与异常 size-adjust
+ */
+const notoSansMyanmar = Noto_Sans_Myanmar({
+  variable: '--font-noto-sans-myanmar',
+  subsets: ['myanmar'],
+  display: 'swap',
+  weight: ['400', '500', '700'],
+  preload: true,
+  adjustFontFallback: false,
+});
+
+/**
  * 获取指定 locale 的 CSS 变量类名字符串
  *
  * next/font/google 的每个字体实例生成一个 CSS 变量类名，
@@ -97,6 +125,10 @@ export function getFontVariables(locale: Locale): string {
       return `${base} ${notoSansTC.variable}`;
     case 'ja':
       return `${base} ${notoSansJP.variable}`;
+    case 'ko':
+      return `${base} ${notoSansKR.variable}`;
+    case 'my':
+      return `${base} ${notoSansMyanmar.variable}`;
     default:
       return base;
   }
@@ -120,6 +152,10 @@ export function getFontClassName(locale: Locale): string {
       return `${base} ${notoSansTC.className}`;
     case 'ja':
       return `${base} ${notoSansJP.className}`;
+    case 'ko':
+      return `${base} ${notoSansKR.className}`;
+    case 'my':
+      return `${base} ${notoSansMyanmar.className}`;
     default:
       return base;
   }

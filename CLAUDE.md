@@ -274,28 +274,22 @@ Reusable skills in `skills/` folder provide best practices:
 
 ## Internationalization (i18n)
 
-- Supported languages: Chinese (zh), English (en)
-- Translations in `locales/zh.json` and `locales/en.json`
-- Use `useTranslations()` hook from next-intl
-- All user-facing text must be translatable
-- SEO metadata in both languages
+- Locale source of truth: `locales` array in `i18n.ts` (12 languages: en, zh, ja, de, nl, fr, pt, es, zh-tw, ru, my, ko)
+- Translations in `locales/{locale}.json` (one file per locale, keys must match en.json exactly)
+- Use `useTranslations()` hook from next-intl (client) / `getTranslations()` (server, incl. generateMetadata)
+- All user-facing text must be translatable; SEO metadata lives in the `metadata` namespace of each locale JSON
+- Adding a locale requires: i18n.ts, middleware.ts matcher regex (static string), lib/geo-router.ts,
+  app/fonts.ts + lib/font-config.ts + tailwind.config.ts (fonts), lib/email-ack-template.ts, locales/{locale}.json
+- Translation toolchain (Gemini): `scripts/translate/` — translate.mjs / backtranslate.mjs /
+  review.mjs / validate-structure.mjs; terminology and market briefs in `docs/i18n/`
 
-## Version 2.0 Planning (i18n-geo-routing)
+## Version 2.0 (i18n-geo-routing) — SHIPPED
 
-**Planned Features**:
-
-- Expand from 2 to 10 languages (zh, en, ja, ko, th, vi, de, fr, es, ar)
-- IP-based geo-routing for automatic language detection
+- IP-based geo-routing for automatic language detection (Vercel `x-vercel-ip-country`)
 - Browser Accept-Language header detection
 - User language preference persistence (cookies)
-- Fallback chain: User preference > Geo-IP > Browser > Default (en)
-
-**Technical Approach**:
-
-- Next.js middleware for geo-routing logic
-- GeoLite2 database for IP-to-country mapping
-- Cookie-based preference storage
-- Structured translation workflow with namespaces
+- Fallback chain: URL path > Cookie preference > Geo-IP > Accept-Language > Default (en)
+- Implementation: middleware.ts + lib/geo-router.ts + lib/bot-detector.ts + lib/language-preference.ts
 
 See `requirements.md`, `design.md`, and `tasks.md` for detailed v2 specifications.
 

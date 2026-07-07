@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import * as fc from 'fast-check';
 import { GLOSSARY_TERMS, GLOSSARY_CATEGORIES, getTermsByCategory } from '../../lib/glossary-data';
+import { locales } from '../../i18n';
 
 /**
  * Property-based tests: Glossary DefinedTermSet JSON-LD validity
@@ -41,7 +42,8 @@ function generateGlossarySchema(
   };
 }
 
-const supportedLocales = ['en', 'zh', 'ja', 'de', 'nl', 'fr', 'pt', 'es', 'zh-tw', 'ru'] as const;
+// 以 i18n.ts 的 locales 为唯一事实来源,新增语言自动覆盖
+const supportedLocales = locales;
 
 describe('Property: Glossary DefinedTermSet JSON-LD Validity', () => {
   it('DefinedTermSet should contain required fields (@context, @type, definedTerm)', () => {

@@ -12,12 +12,13 @@ import {
 import { useForm, type UseFormReturn } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useLocale } from 'next-intl';
+import { contactFormSchema, type ContactFormData } from '@/lib/validations';
 import {
-  contactFormSchema,
+  makeFileError,
   validateFiles,
-  type ContactFormData,
+  type FileError,
   type UploadedFileRef,
-} from '@/lib/validations';
+} from '@/lib/file-validation';
 import { useFormDraft } from '@/hooks/useFormDraft';
 import { useGeoCountry } from '@/hooks/useGeoCountry';
 import { getCountryByCode } from '@/lib/countries';
@@ -58,7 +59,8 @@ export interface QuoteFormContextValue {
 
   // 文件上传（即选即传）
   uploads: UploadItem[];
-  fileErrors: string[];
+  /** 文件校验/上传错误(错误码 + 参数,由消费方按当前语言渲染) */
+  fileErrors: FileError[];
   handleFileChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   removeFile: (id: string) => void;
 
@@ -97,7 +99,7 @@ export function QuoteFormProvider({ children }: { children: ReactNode }) {
   const locale = useLocale();
 
   const [uploads, setUploads] = useState<UploadItem[]>([]);
-  const [fileErrors, setFileErrors] = useState<string[]>([]);
+  const [fileErrors, setFileErrors] = useState<FileError[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus>('idle');
   const [submittingVariant, setSubmittingVariant] = useState<SubmitVariant | null>(null);
@@ -282,7 +284,7 @@ export function QuoteFormProvider({ children }: { children: ReactNode }) {
         });
         if (failed > 0) {
           setSubmitStatus('error');
-          setFileErrors(['Some files failed to upload. Please remove them and try again.']);
+          setFileErrors([makeFileError('uploadFailed')]);
           return;
         }
 

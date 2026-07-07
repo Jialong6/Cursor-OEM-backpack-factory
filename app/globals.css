@@ -38,7 +38,7 @@ body {
     )
     rgb(var(--background-start-rgb));
   /* Task 16: 多语言字体回退栈 */
-  font-family: var(--font-noto-sans), var(--font-noto-sans-sc), var(--font-noto-sans-tc), var(--font-noto-sans-jp), 'Arial', 'Helvetica Neue', system-ui, sans-serif;
+  font-family: var(--font-noto-sans), var(--font-noto-sans-sc), var(--font-noto-sans-tc), var(--font-noto-sans-jp), var(--font-noto-sans-kr), var(--font-noto-sans-myanmar), 'Arial', 'Helvetica Neue', system-ui, sans-serif;
   font-size: clamp(0.875rem, 0.75rem + 0.5vw, 1.125rem); /* 14px-18px */
   line-height: 1.75;
 }
@@ -83,6 +83,33 @@ body {
     line-height: 1.6;
     font-weight: 600;
   }
+}
+
+/**
+ * 缅甸文(Myanmar script)行高修正
+ * 缅文的上下堆叠符号(如 ဩ / ဋ္ဌ / ို)纵向延伸大,
+ * 默认标题行高 1.2/1.3 会导致字形裁切或行间重叠。
+ * 故意不放进 @layer base:未分层样式优先级高于 Tailwind utilities,
+ * 确保 text-h1 等工具类的行高也被覆盖。
+ */
+:lang(my) body,
+body:lang(my) {
+  line-height: 2;
+}
+
+:lang(my) h1 {
+  line-height: 1.5;
+}
+
+:lang(my) h2 {
+  line-height: 1.55;
+}
+
+:lang(my) h3,
+:lang(my) h4,
+:lang(my) h5,
+:lang(my) h6 {
+  line-height: 1.7;
 }
 
 /**

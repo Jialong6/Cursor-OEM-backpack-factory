@@ -51,6 +51,12 @@ export const COUNTRY_LOCALE_MAP: Record<string, Locale> = Object.assign(Object.c
 
   // Simplified Chinese
   CN: 'zh',
+
+  // Burmese (MM = Myanmar; do not confuse with MY = Malaysia, which stays unmapped)
+  MM: 'my',
+
+  // Korean
+  KR: 'ko',
 });
 
 /**
@@ -173,6 +179,8 @@ const LANGUAGE_LOCALE_MAP: Record<string, Locale> = Object.assign(Object.create(
   pt: 'pt',
   es: 'es',
   ru: 'ru',
+  my: 'my',
+  ko: 'ko',
 
   // Traditional Chinese variants
   'zh-tw': 'zh-tw',

@@ -279,7 +279,8 @@ describe('Property 11: Localized Schema Description', () => {
      * 属性测试：inLanguage 应该是有效的 BCP 47 语言标签
      */
     it('inLanguage 应该是有效的语言代码格式', () => {
-      const validLanguageCodes = ['en', 'zh', 'ja', 'ko', 'th', 'vi', 'de', 'fr', 'es', 'ar'];
+      // 以实际支持的 12 语为准(zh-tw 为 BCP 47 中含 region 子标签的形态)
+      const validLanguageCodes = ['en', 'zh', 'ja', 'de', 'nl', 'fr', 'pt', 'es', 'ru', 'my', 'ko'];
 
       fc.assert(
         fc.property(fc.constantFrom(...validLanguageCodes), (locale) => {

@@ -1,113 +1,113 @@
-# Better Bags Myanmar - OEM Backpack Factory Website
+# Better Bags Myanmar — Official Website
 
-Better Bags Myanmar 背包 OEM 工厂独立站，采用单页滚动式（One-Page Scroll）海报风格设计，支持中英文国际化。
+The official website of [Better Bags Myanmar](https://betterbagsmm.com), a premium
+[OEM/ODM custom backpack manufacturer in Yangon, Myanmar](https://betterbagsmm.com/en).
+Built with Next.js 15 and fully localized into **12 languages**, including Burmese.
 
-## 技术栈
+**Live site:** [betterbagsmm.com](https://betterbagsmm.com)
 
-- **前端**: Next.js 15.1+ (App Router), React 19, TypeScript 5
-- **样式**: Tailwind CSS 3.4+
-- **国际化**: next-intl
-- **表单**: React Hook Form + Zod
-- **邮件**: Resend/SendGrid API
-- **验证**: mCaptcha
-- **部署**: Vercel
+## About Better Bags Myanmar
 
-## 快速开始
+[Better Bags Myanmar](https://betterbagsmm.com/en) has manufactured custom backpacks,
+travel bags, shoulder bags, and tote bags since 2003. With 600+ professional employees
+at its Yangon factory and 15+ years of long-term partnerships with leading Japanese
+brands such as Anello, the factory delivers Japanese-grade quality control — including
+a strict [broken-needle control system](https://betterbagsmm.com/en/blog/danshin-needle-control-myanmar)
+with 100% X-ray inspection and
+[third-party inspection with I-pack](https://betterbagsmm.com/en/blog/ipack-third-party-inspection-myanmar) —
+at Myanmar production costs.
 
-### 安装依赖
+Curious what the factory floor actually looks like? Take the
+[virtual factory tour](https://betterbagsmm.com/en/blog/factory-tour-one-day-myanmar),
+or browse the [backpack manufacturing glossary](https://betterbagsmm.com/en/glossary)
+covering OEM/ODM, MOQ, AQL, and other sourcing terms.
+
+## 12 Language Versions
+
+Every page — UI, SEO metadata, forms, and long-form blog articles — is professionally
+localized per market, not machine-translated word by word.
+
+| Language | Live URL |
+| --- | --- |
+| English | [betterbagsmm.com/en](https://betterbagsmm.com/en) |
+| 中文（简体） | [betterbagsmm.com/zh](https://betterbagsmm.com/zh) |
+| 日本語 | [betterbagsmm.com/ja](https://betterbagsmm.com/ja) |
+| 中文（繁體・台灣） | [betterbagsmm.com/zh-tw](https://betterbagsmm.com/zh-tw) |
+| 한국어 | [betterbagsmm.com/ko](https://betterbagsmm.com/ko) |
+| မြန်မာ (Burmese) | [betterbagsmm.com/my](https://betterbagsmm.com/my) |
+| Deutsch | [betterbagsmm.com/de](https://betterbagsmm.com/de) |
+| Français | [betterbagsmm.com/fr](https://betterbagsmm.com/fr) |
+| Español | [betterbagsmm.com/es](https://betterbagsmm.com/es) |
+| Português | [betterbagsmm.com/pt](https://betterbagsmm.com/pt) |
+| Nederlands | [betterbagsmm.com/nl](https://betterbagsmm.com/nl) |
+| Русский | [betterbagsmm.com/ru](https://betterbagsmm.com/ru) |
+
+## Engineering Highlights
+
+- **12-locale i18n architecture** (next-intl): locale-prefixed routing, Geo-IP +
+  Accept-Language detection with cookie persistence, canonical hreflang
+  (`zh-Hans` / `zh-Hant` / `x-default`) across pages and sitemap
+- **AI-assisted translation pipeline** (`scripts/translate/`): terminology sheets and
+  per-market briefs drive translation; every locale passes structure validation,
+  native-reviewer cross-checks, and back-translation drift audits
+  (reports in `docs/i18n/reports/`)
+- **Per-language blog code splitting**: article bodies live in
+  `content.{locale}.ts` modules loaded server-side via dynamic import — 12 languages
+  of long-form content without bloating the client bundle
+- **Per-locale font loading**: Noto Sans SC/TC/JP/KR/Myanmar loaded only for the
+  matching locale, with Myanmar-script line-height corrections
+- **Property-based testing** (fast-check): 1,000+ tests guard translation-file
+  structure, ICU placeholders, hreflang completeness, and locale routing
+- **72 statically generated pages** (12 locales × homepage, blog, 3 articles, glossary)
+
+## Tech Stack
+
+- **Framework**: Next.js 15 (App Router), React 19, TypeScript 5 (strict)
+- **Styling**: Tailwind CSS 3.4
+- **i18n**: next-intl (12 locales)
+- **Forms**: React Hook Form + Zod, Cloudflare Turnstile, direct-to-R2 uploads
+- **Email**: Resend (localized acknowledgment emails)
+- **Testing**: Vitest + fast-check (property-based), Testing Library
+- **Deployment**: Vercel + Cloudflare DNS
+
+## Quick Start
 
 ```bash
 npm install
-```
-
-### 开发模式
-
-```bash
-# 标准启动
-npm run dev
-
-# 或清理缓存后启动（推荐）
-rm -rf .next && npm run dev
-```
-
-访问：
-- **http://localhost:3000/en** - 英文版
-- **http://localhost:3000/zh** - 中文版
-
-### 构建生产版本
-
-```bash
-npm run build
-npm start
-```
-
-### 运行测试
-
-```bash
-# 运行所有测试
-npm test
-
-# 监听模式
-npm run test:watch
-
-# 覆盖率报告
-npm run test:coverage
-```
-
-## 当前状态（v1.0）
-
-- **158 tests passed, 2 skipped**
-- **13 个属性测试**（Property-Based Testing, fast-check）
-- **22 个静态页面**
-- **首页 First Load JS: 185 kB**
-
-## 功能特性
-
-- 响应式设计（移动端和桌面端）
-- 中英文双语支持
-- 单页滚动式海报风格
-- 表单提交和验证（Zod）
-- SEO 优化（sitemap.xml, Open Graph, hreflang）
-- 无障碍设计（WCAG AA）
-- 性能优化（图片懒加载、WebP/AVIF、tree-shaking）
-
-## 第二版规划 (v2.0) - i18n-geo-routing
-
-**计划扩展至 10 种语言**：
-- 亚洲：中文(zh)、日语(ja)、韩语(ko)、泰语(th)、越南语(vi)
-- 欧洲：英语(en)、德语(de)、法语(fr)、西班牙语(es)
-- 中东：阿拉伯语(ar)
-
-**核心功能**：
-- 基于 IP 地理位置自动路由
-- 浏览器 Accept-Language 检测
-- 用户语言偏好持久化（Cookie）
-- 智能回退链：用户偏好 > Geo-IP > 浏览器 > 默认(en)
-
-详见 `requirements.md`、`design.md` 和 `tasks.md`。
-
-## 故障排查
-
-**快速修复**:
-
-```bash
-# 一键清理并重启
-rm -rf .next && \
-lsof -ti:3000,3001,3002,3003 | xargs kill -9 2>/dev/null && \
 npm run dev
 ```
 
-## 项目文档
+Then open `http://localhost:3000/en` (or any locale prefix: `/zh`, `/ja`, `/my`, ...).
 
-- [需求文档](./requirements.md)
-- [设计文档](./design.md)
-- [任务列表](./tasks.md)
-- [Claude 指导文档](./CLAUDE.md)
+### Tests and Build
 
-## MCP 配置
+```bash
+npm test              # full suite (1,000+ tests)
+npm run test:coverage # coverage report
+npm run build         # production build (72 SSG pages)
+```
 
-已配置多个 MCP 服务器：Filesystem, Brave Search, Context7, GitHub。详见 [MCP 快速开始指南](./MCP-QUICKSTART.md)。
+## Project Structure
 
-## 许可证
+```text
+app/[locale]/        # localized routes (home, blog, glossary)
+components/          # sections, layout, UI, SEO (JSON-LD)
+lib/                 # blog data (per-language content), validations, i18n utils
+locales/             # 12 translation files (structure-validated against en.json)
+scripts/translate/   # translation / back-translation / review toolchain
+docs/i18n/           # terminology sheet, market briefs, audit reports
+tests/               # unit + property-based tests
+```
 
-[待定]
+## Documentation
+
+- [Requirements](./requirements.md)
+- [Design](./design.md)
+- [Task list](./tasks.md)
+- [Claude Code project guide](./CLAUDE.md)
+
+## About
+
+Maintained by [Better Bags Myanmar](https://betterbagsmm.com) — custom backpack
+manufacturing partner for brands worldwide. For OEM/ODM inquiries, visit the
+[contact page](https://betterbagsmm.com/en#contact) or email `jay@betterbagsmm.com`.

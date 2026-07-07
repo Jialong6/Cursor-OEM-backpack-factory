@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import type { AuthorProfile } from '@/lib/author-data';
-import { estimateReadingTime } from '@/lib/author-data';
+import { estimateReadingTime, getAuthorText } from '@/lib/author-data';
 import OptimizedImage, { IMAGE_SIZES, ASPECT_RATIOS } from '@/components/ui/OptimizedImage';
 
 /**
@@ -110,19 +110,10 @@ export default function AuthorByline({
 }: AuthorBylineProps) {
   const t = useTranslations('author');
 
-  const pickLocalized = (field: {
-    readonly en: string;
-    readonly zh: string;
-    readonly ja: string;
-  }) =>
-    locale === 'ja'
-      ? field.ja
-      : locale === 'zh' || locale === 'zh-tw'
-        ? field.zh
-        : field.en;
-  const authorName = pickLocalized(author.name);
-  const authorRole = pickLocalized(author.role);
-  const authorBio = pickLocalized(author.bio);
+  // 作者档案已覆盖全部 12 语,直接按 locale 取值(未识别回退英文)
+  const authorName = getAuthorText(author.name, locale);
+  const authorRole = getAuthorText(author.role, locale);
+  const authorBio = getAuthorText(author.bio, locale);
   const readingTime = content ? estimateReadingTime(content) : undefined;
   const formattedDate = formatDate(publishDate, locale);
   const initials = getInitials(author.name.en);

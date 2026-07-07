@@ -16,7 +16,10 @@ export interface LocaleConfigItem {
 }
 
 /**
- * Supported locales list (v2: 10 languages)
+ * Supported locales list (v2: 10 languages + my/ko expansion)
+ * NOTE: adding a locale here also requires updating middleware.ts matcher
+ * (static regex), lib/geo-router.ts, app/fonts.ts, lib/font-config.ts,
+ * lib/email-ack-template.ts, and creating locales/{locale}.json
  */
 export const locales = [
   'en',
@@ -29,6 +32,8 @@ export const locales = [
   'es',
   'zh-tw',
   'ru',
+  'my',
+  'ko',
 ] as const;
 
 /**
@@ -105,6 +110,18 @@ export const localeConfig: Record<Locale, LocaleConfigItem> = {
     nativeName: '\u0420\u0443\u0441\u0441\u043A\u0438\u0439',
     flag: '\u{1F1F7}\u{1F1FA}',
     hreflang: 'ru',
+  },
+  my: {
+    name: 'Burmese',
+    nativeName: '\u1019\u103C\u1014\u103A\u1019\u102C',
+    flag: '\u{1F1F2}\u{1F1F2}',
+    hreflang: 'my',
+  },
+  ko: {
+    name: 'Korean',
+    nativeName: '\uD55C\uAD6D\uC5B4',
+    flag: '\u{1F1F0}\u{1F1F7}',
+    hreflang: 'ko',
   },
 };
 

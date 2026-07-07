@@ -1,25 +1,32 @@
-'use client';
-
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
-import { useParams } from 'next/navigation';
-import { getBlogPostBySlug } from '@/lib/blog-data';
+import { getBlogPostBySlug, getBlogPostContent } from '@/lib/blog-data';
 import { getAuthorForPost } from '@/lib/author-data';
 import { getLocalizedField } from '@/lib/blog-utils';
 import { notFound } from 'next/navigation';
 import OptimizedImage, { IMAGE_SIZES, ASPECT_RATIOS } from '@/components/ui/OptimizedImage';
 import AuthorByline from '@/components/content/AuthorByline';
+import BackToTopButton from '@/components/content/BackToTopButton';
 import { BlogPostingSchema } from '@/components/seo';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 
-export default function BlogDetailPage() {
-  const t = useTranslations('blogDetail');
-  const params = useParams();
-  const locale = params.locale as string;
-  const slug = params.slug as string;
+/**
+ * 博客详情页(server 组件)
+ *
+ * 正文经 getBlogPostContent 按 locale 动态加载 —— 12 语正文
+ * 完全不进客户端 bundle,SSG 时每个 locale 只渲染对应语言。
+ * 页面内唯一交互点(返回顶部)抽为 BackToTopButton client 组件。
+ */
+export default async function BlogDetailPage({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}) {
+  const { locale, slug } = await params;
+  const t = await getTranslations({ locale, namespace: 'blogDetail' });
 
   const post = getBlogPostBySlug(slug);
 
@@ -30,7 +37,7 @@ export default function BlogDetailPage() {
   const author = getAuthorForPost(post);
   const title = getLocalizedField(post.title, locale) ?? '';
   const excerpt = getLocalizedField(post.excerpt, locale) ?? '';
-  const content = getLocalizedField(post.content, locale);
+  const content = await getBlogPostContent(slug, locale);
   const category = getLocalizedField(post.category, locale);
   const tags = getLocalizedField(post.tags, locale);
 
@@ -170,15 +177,7 @@ export default function BlogDetailPage() {
               {t('backToList')}
             </Link>
 
-            <button
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="inline-flex items-center text-gray-600 hover:text-primary font-semibold transition-colors"
-            >
-              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-              </svg>
-              {t('backToTop')}
-            </button>
+            <BackToTopButton label={t('backToTop')} />
           </div>
 
           <div className="mt-12 p-8 bg-gradient-to-r from-primary to-primary-dark rounded-lg text-center">

@@ -12,6 +12,7 @@
  *
  * 验证需求：4.5, 15.1, 15.2, 15.3
  */
+'use client';
 
 import Image from 'next/image';
 import { useState } from 'react';

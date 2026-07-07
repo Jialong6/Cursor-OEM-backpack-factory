@@ -2,41 +2,56 @@
  * SEO 元数据测试
  *
  * 功能：
- * - 验证元数据配置正确性
- * - 确保标题和描述符合 SEO 要求
- * - 检查 Open Graph 标签配置
+ * - 验证 locales JSON 中 metadata namespace 的文案符合 SEO 要求（全语言）
+ * - 验证元数据生成函数的 Open Graph / hreflang / canonical 配置
  *
  * 验证需求：14.1, 14.2, 14.3, 14.8
  */
 
 import { describe, it, expect } from 'vitest';
+import fs from 'fs';
+import path from 'path';
 import {
   generateHomeMetadata,
   generateBlogListMetadata,
   generateBlogDetailMetadata,
-  homeMetadata,
-  blogListMetadata,
+  type PageMetadata,
 } from '@/lib/metadata';
+import { locales } from '@/i18n';
+
+const LOCALES_DIR = path.join(__dirname, '..', 'locales');
+
+interface LocaleMetadata {
+  home: PageMetadata;
+  blogList: PageMetadata;
+}
+
+/** 读取每个 locale JSON 的 metadata namespace */
+function loadAllMetadata(): Record<string, LocaleMetadata> {
+  const result: Record<string, LocaleMetadata> = {};
+  for (const locale of locales) {
+    const raw = fs.readFileSync(path.join(LOCALES_DIR, `${locale}.json`), 'utf8');
+    const parsed = JSON.parse(raw) as { metadata: LocaleMetadata };
+    result[locale] = parsed.metadata;
+  }
+  return result;
+}
+
+const allMetadata = loadAllMetadata();
+const enHome: PageMetadata = allMetadata.en.home;
+const enBlogList: PageMetadata = allMetadata.en.blogList;
 
 describe('SEO 元数据配置', () => {
   /**
-   * 需求 14.1: 标题应在 60 字符以内
+   * 需求 14.1: 标题应在 60 字符以内（全语言）
    */
   describe('标题长度验证（需求 14.1）', () => {
-    it('首页英文标题应不超过 60 字符', () => {
-      expect(homeMetadata.en.title.length).toBeLessThanOrEqual(60);
+    it.each(locales)('%s 首页标题应不超过 60 字符', (locale) => {
+      expect(allMetadata[locale].home.title.length).toBeLessThanOrEqual(60);
     });
 
-    it('首页中文标题应不超过 60 字符', () => {
-      expect(homeMetadata.zh.title.length).toBeLessThanOrEqual(60);
-    });
-
-    it('博客列表页英文标题应不超过 60 字符', () => {
-      expect(blogListMetadata.en.title.length).toBeLessThanOrEqual(60);
-    });
-
-    it('博客列表页中文标题应不超过 60 字符', () => {
-      expect(blogListMetadata.zh.title.length).toBeLessThanOrEqual(60);
+    it.each(locales)('%s 博客列表页标题应不超过 60 字符', (locale) => {
+      expect(allMetadata[locale].blogList.title.length).toBeLessThanOrEqual(60);
     });
 
     it('博客详情页标题应自动截断超过 60 字符的标题', () => {
@@ -49,23 +64,15 @@ describe('SEO 元数据配置', () => {
   });
 
   /**
-   * 需求 14.2: 描述应在 150 字符以内
+   * 需求 14.2: 描述应在 150 字符以内（全语言）
    */
   describe('描述长度验证（需求 14.2）', () => {
-    it('首页英文描述应不超过 150 字符', () => {
-      expect(homeMetadata.en.description.length).toBeLessThanOrEqual(150);
+    it.each(locales)('%s 首页描述应不超过 150 字符', (locale) => {
+      expect(allMetadata[locale].home.description.length).toBeLessThanOrEqual(150);
     });
 
-    it('首页中文描述应不超过 150 字符', () => {
-      expect(homeMetadata.zh.description.length).toBeLessThanOrEqual(150);
-    });
-
-    it('博客列表页英文描述应不超过 150 字符', () => {
-      expect(blogListMetadata.en.description.length).toBeLessThanOrEqual(150);
-    });
-
-    it('博客列表页中文描述应不超过 150 字符', () => {
-      expect(blogListMetadata.zh.description.length).toBeLessThanOrEqual(150);
+    it.each(locales)('%s 博客列表页描述应不超过 150 字符', (locale) => {
+      expect(allMetadata[locale].blogList.description.length).toBeLessThanOrEqual(150);
     });
 
     it('博客详情页描述应自动截断超过 150 字符的描述', () => {
@@ -83,7 +90,7 @@ describe('SEO 元数据配置', () => {
    */
   describe('Open Graph 标签验证（需求 14.3）', () => {
     it('首页应包含 Open Graph 标签', () => {
-      const metadata = generateHomeMetadata('en');
+      const metadata = generateHomeMetadata('en', enHome);
 
       expect(metadata.openGraph).toBeDefined();
       expect(metadata.openGraph?.title).toBeDefined();
@@ -93,7 +100,7 @@ describe('SEO 元数据配置', () => {
     });
 
     it('博客列表页应包含 Open Graph 标签', () => {
-      const metadata = generateBlogListMetadata('en');
+      const metadata = generateBlogListMetadata('en', enBlogList);
 
       expect(metadata.openGraph).toBeDefined();
       expect(metadata.openGraph?.title).toBeDefined();
@@ -113,7 +120,7 @@ describe('SEO 元数据配置', () => {
     });
 
     it('Open Graph 应包含图片尺寸信息', () => {
-      const metadata = generateHomeMetadata('en');
+      const metadata = generateHomeMetadata('en', enHome);
       const images = metadata.openGraph?.images as any[];
 
       expect(images).toBeDefined();
@@ -128,7 +135,7 @@ describe('SEO 元数据配置', () => {
    */
   describe('hreflang 标签验证（需求 14.8）', () => {
     it('首页应包含 hreflang 标签', () => {
-      const metadata = generateHomeMetadata('en');
+      const metadata = generateHomeMetadata('en', enHome);
 
       expect(metadata.alternates).toBeDefined();
       expect(metadata.alternates?.languages).toBeDefined();
@@ -138,11 +145,10 @@ describe('SEO 元数据配置', () => {
     });
 
     it('博客列表页应包含 hreflang 标签', () => {
-      const metadata = generateBlogListMetadata('en');
+      const metadata = generateBlogListMetadata('en', enBlogList);
 
       expect(metadata.alternates).toBeDefined();
       expect(metadata.alternates?.languages).toBeDefined();
-      // 使用 ISO hreflang 代码: en 和 zh-Hans
       expect(metadata.alternates?.languages?.en).toBeDefined();
       expect(metadata.alternates?.languages?.['zh-Hans']).toBeDefined();
     });
@@ -152,22 +158,20 @@ describe('SEO 元数据配置', () => {
 
       expect(metadata.alternates).toBeDefined();
       expect(metadata.alternates?.languages).toBeDefined();
-      // 使用 ISO hreflang 代码: en 和 zh-Hans
       expect(metadata.alternates?.languages?.en).toBeDefined();
       expect(metadata.alternates?.languages?.['zh-Hans']).toBeDefined();
     });
 
     it('hreflang 应包含 x-default 回退', () => {
-      const metadata = generateHomeMetadata('en');
+      const metadata = generateHomeMetadata('en', enHome);
 
       expect(metadata.alternates?.languages).toHaveProperty('x-default');
     });
 
     it('hreflang URL 应包含正确的语言路径', () => {
-      const metadata = generateHomeMetadata('en');
+      const metadata = generateHomeMetadata('en', enHome);
       const languages = metadata.alternates?.languages as Record<string, string>;
 
-      // 使用 ISO hreflang 代码
       expect(languages.en).toContain('/en');
       expect(languages['zh-Hans']).toContain('/zh');
     });
@@ -178,7 +182,7 @@ describe('SEO 元数据配置', () => {
    */
   describe('Twitter Card 标签验证', () => {
     it('首页应包含 Twitter Card 标签', () => {
-      const metadata = generateHomeMetadata('en');
+      const metadata = generateHomeMetadata('en', enHome);
 
       expect(metadata.twitter).toBeDefined();
       expect(metadata.twitter?.card).toBe('summary_large_image');
@@ -200,13 +204,13 @@ describe('SEO 元数据配置', () => {
    */
   describe('语言特定配置验证', () => {
     it('英文元数据应使用 en_US locale', () => {
-      const metadata = generateHomeMetadata('en');
+      const metadata = generateHomeMetadata('en', enHome);
 
       expect(metadata.openGraph?.locale).toBe('en_US');
     });
 
     it('中文元数据应使用 zh_CN locale', () => {
-      const metadata = generateHomeMetadata('zh');
+      const metadata = generateHomeMetadata('zh', allMetadata.zh.home);
 
       expect(metadata.openGraph?.locale).toBe('zh_CN');
     });
@@ -217,14 +221,14 @@ describe('SEO 元数据配置', () => {
    */
   describe('Canonical URL 验证', () => {
     it('首页应包含 canonical URL', () => {
-      const metadata = generateHomeMetadata('en');
+      const metadata = generateHomeMetadata('en', enHome);
 
       expect(metadata.alternates?.canonical).toBeDefined();
       expect(metadata.alternates?.canonical).toContain('/en');
     });
 
     it('博客列表页应包含 canonical URL', () => {
-      const metadata = generateBlogListMetadata('en');
+      const metadata = generateBlogListMetadata('en', enBlogList);
 
       expect(metadata.alternates?.canonical).toBeDefined();
       expect(metadata.alternates?.canonical).toContain('/en/blog');
@@ -239,22 +243,20 @@ describe('SEO 元数据配置', () => {
   });
 
   /**
-   * 内容质量验证
+   * 内容质量验证（全语言）
    */
   describe('内容质量验证', () => {
-    it('标题应包含品牌名称', () => {
-      expect(homeMetadata.en.title).toContain('Better Bags');
-      expect(homeMetadata.zh.title).toContain('Better Bags');
+    it.each(locales)('%s 首页标题应包含品牌名称', (locale) => {
+      expect(allMetadata[locale].home.title).toContain('Better Bags');
     });
 
-    it('标题应包含关键词', () => {
-      expect(homeMetadata.en.title.toLowerCase()).toMatch(/backpack|oem|factory/);
-      expect(homeMetadata.zh.title).toMatch(/背包|OEM|工厂/);
+    it('英文/中文标题应包含关键词', () => {
+      expect(enHome.title.toLowerCase()).toMatch(/backpack|oem|factory/);
+      expect(allMetadata.zh.home.title).toMatch(/背包|OEM|工厂/);
     });
 
-    it('描述应具有描述性且不为空', () => {
-      expect(homeMetadata.en.description.length).toBeGreaterThan(50);
-      expect(homeMetadata.zh.description.length).toBeGreaterThan(20);
+    it.each(locales)('%s 首页描述应具有描述性且不为空', (locale) => {
+      expect(allMetadata[locale].home.description.length).toBeGreaterThan(20);
     });
   });
 });
