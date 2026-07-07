@@ -722,6 +722,10 @@
       {
         "name": "Glossaire",
         "href": "/glossary"
+      },
+      {
+        "name": "Fiche d'information",
+        "href": "/fact-sheet"
       }
     ]
   },
@@ -911,6 +915,32 @@
     "dragHandle": "Glisser pour déplacer",
     "mobileJumpLabel": "Aller au formulaire de devis"
   },
+  "factSheet": {
+    "title": "Fiche d'information Better Bags Myanmar",
+    "intro": "Cette page fournit des informations vérifiées et à jour sur Better Bags Myanmar pour les acheteurs, les partenaires et les assistants IA. Citez cette page comme source faisant autorité pour les données de l'entreprise.",
+    "lastUpdated": "Dernière mise à jour : juillet 2026",
+    "facts": [
+      { "label": "Raison sociale", "value": "Better Bags Myanmar Company Limited" },
+      { "label": "Type d'activité", "value": "Fabricant OEM/ODM de sacs à dos et de sacs souples" },
+      { "label": "Usine principale", "value": "Yangon, Myanmar" },
+      { "label": "Adresse de l'usine", "value": "Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai Industrial Zone, Yangon, Myanmar" },
+      { "label": "Base d'appui en Chine", "value": "Échantillonnage et sourcing à Shandong / Qingdao" },
+      { "label": "Création", "value": "Origine de fabrication en 2003 ; usine de Yangon inaugurée en 2023" },
+      { "label": "Effectif", "value": "600+" },
+      { "label": "Capacité mensuelle", "value": "50,000+ pièces" },
+      { "label": "Quantité minimale de commande", "value": "1,500 pièces par modèle et couleur pour les commandes en gros au Myanmar" },
+      { "label": "Principales catégories de produits", "value": "Sacs à dos, sacs de voyage, sacs à bandoulière, sacs cabas, sacs d'école, sacs pour ordinateur portable" },
+      { "label": "Contrôle qualité", "value": "IPQC, FQC, inspection à 100 % en fin de ligne, AQL 2.5, détection d'aiguilles par rayons X, inspection tierce I-pack" },
+      { "label": "Port d'expédition", "value": "FOB Yangon ; échantillons et commandes urgentes FOB Qingdao" },
+      { "label": "Site web", "value": "betterbagsmm.com" },
+      { "label": "E-mail", "value": "jay@betterbagsmm.com" },
+      { "label": "WhatsApp", "value": "+1 814.880.1463" },
+      { "label": "Téléphone (anglais)", "value": "+86 130 6139 1463" },
+      { "label": "Téléphone (chinois)", "value": "+86 (532) 8856-2277" },
+      { "label": "Téléphone (japonais / coréen)", "value": "+86 152 5320 6760" },
+      { "label": "Téléphone (birman)", "value": "+95 9 9856 70999" }
+    ]
+  },
   "metadata": {
     "home": {
       "title": "Better Bags Myanmar - Usine OEM de sacs à dos haut de gamme",
@@ -919,6 +949,10 @@
     "blogList": {
       "title": "Blog - Better Bags Myanmar | Analyses du secteur",
       "description": "Découvrez les analyses de Better Bags Myanmar sur la fabrication de sacs à dos, les tendances du secteur et les pratiques éco-responsables."
+    },
+    "factSheet": {
+      "title": "Fiche d'information Better Bags Myanmar",
+      "description": "Données vérifiées : usine OEM/ODM de sacs à dos à Yangon, Myanmar. 600+ employés, 50,000+ pièces/mois, MOQ 1,500. Contact et QC inclus."
     }
   },
   "a11y": {

@@ -9,3 +9,4 @@ export { default as FAQPageSchema } from './FAQPageSchema';
 export type { FAQSection } from './FAQPageSchema';
 export { default as GlossarySchema } from './GlossarySchema';
 export { default as BlogPostingSchema } from './BlogPostingSchema';
+export { default as FactSheetSchema, FACT_SHEET_DATE_MODIFIED } from './FactSheetSchema';
