@@ -3,14 +3,16 @@
  *
  * Features:
  * - Lists all public pages (homepage, glossary, blog list, blog posts)
- * - Supports all 10 languages with hreflang alternates
+ * - Supports all locales in i18n.ts with hreflang alternates
+ * - hreflang codes use the canonical BCP 47 form from localeConfig
+ *   (zh -> zh-Hans, zh-tw -> zh-Hant), plus x-default -> /en
  * - Includes last modified dates, priority, and change frequency
  */
 
 import { MetadataRoute } from 'next';
 import { getAllBlogPosts } from '@/lib/blog-data';
 import { BASE_URL } from '@/lib/metadata';
-import { locales } from '@/i18n';
+import { locales, localeConfig, defaultLocale } from '@/i18n';
 
 /**
  * Generate language alternates for a given path across all locales
@@ -18,8 +20,9 @@ import { locales } from '@/i18n';
 function generateAlternates(path: string): Record<string, string> {
   const alternates: Record<string, string> = {};
   for (const locale of locales) {
-    alternates[locale] = `${BASE_URL}/${locale}${path}`;
+    alternates[localeConfig[locale].hreflang] = `${BASE_URL}/${locale}${path}`;
   }
+  alternates['x-default'] = `${BASE_URL}/${defaultLocale}${path}`;
   return alternates;
 }
 
