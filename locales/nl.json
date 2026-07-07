@@ -2,7 +2,7 @@
   "bento": {
     "brand": {
       "title": "Better Bags sinds 2003",
-      "subtitle": "#Toonaangevende fabriek voor maatwerk rugzakken in Myanmar",
+      "subtitle": "#Toonaangevende fabriek voor maatwerkrugzakken in Myanmar",
       "description": "Totaaloplossing voor uw rugzakproductie"
     },
     "dashboard": {
@@ -12,7 +12,7 @@
       "title": "Vertrouwd door",
       "certifications": "Certificeringen",
       "partners": "Partnermerken",
-      "more": "+20 meer"
+      "more": "+20 andere"
     },
     "cta": {
       "title": "Klaar om uw project te starten?",
@@ -34,7 +34,7 @@
   },
   "banner": {
     "line1": "Better Bags sinds 2003",
-    "line2": "#Toonaangevende rugzakkenfabriek voor maatwerk in Myanmar",
+    "line2": "#Toonaangevende fabriek voor maatwerkrugzakken in Myanmar",
     "p1": {
       "pre": "Better Bags biedt u een ",
       "highlight": "totaaloplossing",
@@ -52,13 +52,13 @@
     },
     "vision": {
       "title": "Onze visie",
-      "desc": "Wereldwijd erkend worden als de meest betrouwbare en vooruitstrevende productiepartner voor rugzakken — met de maatstaf in kwaliteit, innovatie, duurzaamheid en operationele excellentie, en blijvende waarde voor onze klanten, medewerkers, gemeenschappen en het milieu."
+      "desc": "Wereldwijd erkend worden als de meest betrouwbare en vooruitstrevende productiepartner voor rugzakken — die de maatstaf zet in kwaliteit, innovatie, duurzaamheid en operationele excellentie, en blijvende waarde creëert voor onze klanten, medewerkers, gemeenschappen en het milieu."
     },
     "valuesTitle": "Onze kernwaarden",
     "values": [
       {
         "title": "Integriteit en transparantie",
-        "desc": "Wij werken eerlijk, aanspreekbaar en volgens de hoogste ethische normen — en bouwen zo met elke afspraak vertrouwen op bij klanten, medewerkers en partners."
+        "desc": "Wij werken eerlijk, met verantwoordelijkheidsgevoel en volgens de hoogste ethische normen — en bouwen zo met elke afspraak vertrouwen op bij klanten, medewerkers en partners."
       },
       {
         "title": "Streven naar excellentie",
@@ -222,7 +222,7 @@
       {
         "title": "Flexibiliteit",
         "color": "#81C3D7",
-        "desc": "Met productielocaties in Shandong (Rizhao), China en Yangon, Myanmar — plus een eigen sample- en ontwikkelcentrum in Qingdao — spelen wij flexibel in op uiteenlopende wensen. Onze fabriek in Myanmar is volledig ingericht op snelle en efficiënte productie van grote volumes, terwijl onze vestiging in Shandong (20+ jaar ervaring) sterk is in ontwerp, bemonstering, inkoop en persoonlijk projectmanagement. Of u nu snel een prototype nodig heeft, kleine maatwerkseries of grote bulkorders: ons model met twee fabrieken levert wendbaar en precies."
+        "desc": "Met productielocaties in Shandong (Rizhao), China en Yangon, Myanmar — plus een eigen sample- en ontwikkelcentrum in Qingdao — spelen wij flexibel in op uiteenlopende wensen. Onze fabriek in Myanmar is volledig ingericht op snelle en efficiënte productie van grote volumes, terwijl onze vestiging in Shandong (20+ jaar ervaring) sterk is in ontwerp, bemonstering, inkoop en persoonlijk projectmanagement. Of u nu snel een prototype nodig heeft, kleine maatwerkseries of grote bulkorders: ons model met twee fabrieken zorgt ervoor dat we flexibel en nauwkeurig aan uw eisen kunnen voldoen."
       },
       {
         "title": "Communicatie",
@@ -252,7 +252,7 @@
           "Casual, reis, hiking, business",
           "Camera, sport, tote, antidiefstal",
           "Tactisch, sling, school, trolley",
-          "Multifunctioneel, duurzaam, vissen, accessoires"
+          "Multifunctioneel, duurzaam, hengelsport, accessoires"
         ]
       },
       {
@@ -404,7 +404,7 @@
           },
           {
             "q": "Hoe verloopt uw offerteproces?",
-            "a": "Eerst geven wij een indicatieve offerte op basis van uw tech pack en gegevens. De definitieve, bindende offerte volgt na goedkeuring van het prototype of de sample. Prijzen zijn FOB Yangon voor bulkorders uit Myanmar, of FOB Qingdao voor sample- en spoedorders uit onze vestiging in Shandong. CIF-offertes zijn op aanvraag beschikbaar."
+            "a": "Eerst geven wij een indicatieve offerte op basis van uw tech pack en gegevens. De definitieve, bindende offerte volgt na goedkeuring van het prototype of het sample. Prijzen zijn FOB Yangon voor bulkorders uit Myanmar, of FOB Qingdao voor sample- en spoedorders uit onze vestiging in Shandong. CIF-offertes zijn op aanvraag beschikbaar."
           },
           {
             "q": "Wat zijn uw betalingsvoorwaarden?",
@@ -421,7 +421,7 @@
         "items": [
           {
             "q": "Hoeveel samplerevisierondes zijn mogelijk?",
-            "a": "De meeste orders doorlopen 1–2 samplerevisies (bijv. 2e/3e sample) voordat de PP Sample wordt goedgekeurd en de bulkproductie wordt ingepland; extra revisierondes zijn in overleg mogelijk."
+            "a": "De meeste orders doorlopen 1–2 samplerevisies (bijv. 2e/3e sample) voordat het PP-sample wordt goedgekeurd en de bulkproductie wordt ingepland; extra revisierondes zijn in overleg mogelijk."
           },
           {
             "q": "Wat is de levertijd voor samples/prototypes?",
@@ -437,7 +437,7 @@
           },
           {
             "q": "Levert u pre-productiesamples (PP) ter goedkeuring?",
-            "a": "Ja, de PP Sample moet formeel door u zijn goedgekeurd voordat de massaproductie start."
+            "a": "Ja, het PP-sample moet formeel door u zijn goedgekeurd voordat de massaproductie start."
           }
         ]
       },
@@ -458,7 +458,7 @@
           },
           {
             "q": "Wat is uw standaard productielevertijd?",
-            "a": "De standaard levertijd voor bulk is circa 3 maanden, van goedkeuring van de PP Sample tot gereed af fabriek, inclusief internationale materiaalinkoop en productieplanning in Myanmar. Consolidatievertragingen en de productiewachtrij kunnen dit per project verlengen."
+            "a": "De standaard levertijd voor bulk is circa 3 maanden, van goedkeuring van het PP-sample tot gereed af fabriek, inclusief internationale materiaalinkoop en productieplanning in Myanmar. Consolidatievertragingen en de productiewachtrij kunnen dit per project verlengen."
           },
           {
             "q": "Wat is uw belangrijkste laadhaven?",
@@ -754,7 +754,7 @@
     "backToTop": "Terug naar boven",
     "noContent": "Artikelinhoud niet beschikbaar",
     "cta": {
-      "title": "Klaar om uw eigen rugzakproject te starten?",
+      "title": "Klaar om uw rugzakproject op maat te starten?",
       "subtitle": "Neem contact met ons op voor professionele OEM/ODM-oplossingen",
       "button": "Neem direct contact op"
     },
@@ -768,7 +768,7 @@
     "currentLanguage": "Huidig: {language}"
   },
   "languageBanner": {
-    "message": "U bent automatisch doorgestuurd naar de {language} versie",
+    "message": "U bent automatisch doorgestuurd naar de versie in het {language}",
     "keep": "{language} behouden",
     "switchToEnglish": "Overschakelen naar Engels",
     "close": "Sluiten"
@@ -914,7 +914,7 @@
   "metadata": {
     "home": {
       "title": "Better Bags Myanmar - Premium OEM-rugzakfabriek",
-      "description": "Toonaangevende fabrikant van maatwerk rugzakken in Myanmar. 20+ jaar ervaring, 600+ medewerkers, voornamelijk voor Japanse merken."
+      "description": "Toonaangevende fabrikant van maatwerkrugzakken in Myanmar. 20+ jaar ervaring, 600+ medewerkers, voornamelijk voor Japanse merken."
     },
     "blogList": {
       "title": "Blog - Better Bags Myanmar | Branche-inzichten",

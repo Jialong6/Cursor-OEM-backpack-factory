@@ -15,7 +15,8 @@ import { callGeminiJson, ROOT, GEMINI_MODEL } from './lib/gemini.mjs';
 import { flatten } from './lib/json-utils.mjs';
 
 // 分块不宜过大:大输出更易触发模型提前收笔/截断
-const CHUNK_SIZE = 25;
+// (含多段长文时 25 仍会截断,降到 12)
+const CHUNK_SIZE = 12;
 
 function parseArgs(argv) {
   const args = { namespaces: null };
