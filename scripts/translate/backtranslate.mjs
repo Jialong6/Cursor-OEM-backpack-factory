@@ -72,17 +72,40 @@ async function main() {
   }
   console.log(`backtranslate ${args.locale} | model=${GEMINI_MODEL} | ${pairs.length} strings, ${Math.ceil(pairs.length / CHUNK_SIZE)} chunks`);
 
-  // 第一遍:回译
+  // 第一遍:回译(失败块对半重试,仍失败则跳过并记录,不让单块拖垮全量)
   const backMap = new Map();
-  for (const [i, group] of chunk(pairs, CHUNK_SIZE).entries()) {
-    process.stdout.write(`  chunk ${i + 1}: back-translating ${group.length} strings... `);
+  const skipped = [];
+
+  async function backtranslateGroup(group) {
     const payload = Object.fromEntries(group);
     const result = await callGeminiJson({ system: BACKTRANSLATE_SYSTEM, user: JSON.stringify(payload, null, 2), temperature: 0.1 });
     for (const [key, value] of Object.entries(result)) backMap.set(key, String(value));
-    console.log('ok');
   }
 
-  // 第二遍:语义漂移评审
+  for (const [i, group] of chunk(pairs, CHUNK_SIZE).entries()) {
+    process.stdout.write(`  chunk ${i + 1}: back-translating ${group.length} strings... `);
+    try {
+      await backtranslateGroup(group);
+      console.log('ok');
+    } catch {
+      process.stdout.write('failed, splitting... ');
+      const half = Math.ceil(group.length / 2);
+      for (const sub of [group.slice(0, half), group.slice(half)]) {
+        if (sub.length === 0) continue;
+        try {
+          await backtranslateGroup(sub);
+        } catch {
+          skipped.push(...sub.map(([key]) => key));
+        }
+      }
+      console.log(`done (skipped so far: ${skipped.length})`);
+    }
+  }
+  if (skipped.length) {
+    console.log(`  WARNING: ${skipped.length} strings unchecked after retries: ${skipped.slice(0, 10).join(', ')}${skipped.length > 10 ? ' ...' : ''}`);
+  }
+
+  // 第二遍:语义漂移评审(同样容错)
   const judgeItems = pairs
     .filter(([key]) => backMap.has(key) && baseFlat.has(key))
     .map(([key]) => ({ key, source: String(baseFlat.get(key)), backTranslation: backMap.get(key) }));
@@ -90,9 +113,14 @@ async function main() {
   const flagged = [];
   for (const [i, group] of chunk(judgeItems, CHUNK_SIZE).entries()) {
     process.stdout.write(`  chunk ${i + 1}: judging ${group.length} pairs... `);
-    const result = await callGeminiJson({ system: JUDGE_SYSTEM, user: JSON.stringify(group, null, 2), temperature: 0.1 });
-    if (Array.isArray(result)) flagged.push(...result);
-    console.log(`${Array.isArray(result) ? result.length : 0} flagged`);
+    try {
+      const result = await callGeminiJson({ system: JUDGE_SYSTEM, user: JSON.stringify(group, null, 2), temperature: 0.1 });
+      if (Array.isArray(result)) flagged.push(...result);
+      console.log(`${Array.isArray(result) ? result.length : 0} flagged`);
+    } catch {
+      skipped.push(...group.map((item) => item.key));
+      console.log('judge failed, skipped');
+    }
   }
 
   // 报告
@@ -106,9 +134,12 @@ async function main() {
   const lines = [
     `# Back-translation report: ${args.locale}`,
     '',
-    `- Strings checked: ${pairs.length}`,
+    `- Strings checked: ${pairs.length - skipped.length} / ${pairs.length}`,
     `- Flagged: ${flagged.length} (high: ${flagged.filter((f) => f.severity === 'high').length}, medium: ${flagged.filter((f) => f.severity === 'medium').length}, low: ${flagged.filter((f) => f.severity === 'low').length})`,
     `- Model: ${GEMINI_MODEL}`,
+    ...(skipped.length
+      ? ['', `## Unchecked (Gemini truncation, retries exhausted)`, '', ...skipped.map((k) => `- ${k}`)]
+      : []),
     '',
     '## Flagged items',
     '',
