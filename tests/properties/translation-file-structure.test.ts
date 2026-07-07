@@ -221,6 +221,7 @@ describe('Translation File Unit Tests', () => {
       'glossary',
       'testimonials',
       'quoteWidget',
+      'factSheet',
       'metadata',
       'a11y',
     ];

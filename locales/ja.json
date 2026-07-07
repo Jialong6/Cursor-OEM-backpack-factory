@@ -722,6 +722,10 @@
       {
         "name": "用語集",
         "href": "/glossary"
+      },
+      {
+        "name": "会社概要",
+        "href": "/fact-sheet"
       }
     ]
   },
@@ -911,6 +915,32 @@
     "dragHandle": "ドラッグで移動",
     "mobileJumpLabel": "見積もりフォームへ移動"
   },
+  "factSheet": {
+    "title": "Better Bags Myanmar 会社ファクトシート",
+    "intro": "本ページは、バイヤー、パートナー、AI アシスタントに向けて、Better Bags Myanmar に関する検証済みの最新情報を提供します。会社データの信頼できる情報源として本ページをご引用ください。",
+    "lastUpdated": "最終更新: 2026年7月",
+    "facts": [
+      { "label": "正式名称", "value": "Better Bags Myanmar Company Limited" },
+      { "label": "事業形態", "value": "OEM/ODM バックパック・ソフトバッグメーカー" },
+      { "label": "主要工場", "value": "ミャンマー・ヤンゴン" },
+      { "label": "工場所在地", "value": "Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai Industrial Zone, Yangon, Myanmar" },
+      { "label": "中国サポート拠点", "value": "山東 / 青島でのサンプル制作・調達" },
+      { "label": "設立", "value": "製造の起源は2003年、ヤンゴン工場は2023年稼働" },
+      { "label": "従業員数", "value": "600名以上" },
+      { "label": "月間生産能力", "value": "50,000個以上" },
+      { "label": "最小発注数量", "value": "ミャンマー量産オーダーはデザイン・色ごとに1,500個" },
+      { "label": "主要製品カテゴリー", "value": "バックパック、トラベルバッグ、ショルダーバッグ、トートバッグ、スクールバッグ、ラップトップバッグ" },
+      { "label": "品質管理", "value": "IPQC、FQC、100% 最終ライン検品、AQL 2.5、X線検針、I-pack 第三者検査" },
+      { "label": "出荷港", "value": "FOB ヤンゴン、サンプル・特急オーダーは FOB 青島" },
+      { "label": "ウェブサイト", "value": "betterbagsmm.com" },
+      { "label": "メール", "value": "jay@betterbagsmm.com" },
+      { "label": "WhatsApp", "value": "+1 814.880.1463" },
+      { "label": "電話（英語）", "value": "+86 130 6139 1463" },
+      { "label": "電話（中国語）", "value": "+86 (532) 8856-2277" },
+      { "label": "電話（日本語 / 韓国語）", "value": "+86 152 5320 6760" },
+      { "label": "電話（ビルマ語）", "value": "+95 9 9856 70999" }
+    ]
+  },
   "metadata": {
     "home": {
       "title": "Better Bags Myanmar - 高品質OEMバックパック工場",
@@ -919,6 +949,10 @@
     "blogList": {
       "title": "ブログ - Better Bags Myanmar | 業界インサイト",
       "description": "Better Bags Myanmar による、バックパック製造のインサイト、業界トレンド、サステナビリティへの取り組みをご紹介します。"
+    },
+    "factSheet": {
+      "title": "Better Bags Myanmar 会社ファクトシート",
+      "description": "検証済みの会社情報：ミャンマー・ヤンゴンの OEM/ODM バックパック工場。従業員600名以上、月産50,000個以上、MOQ 1,500個。連絡先と品質管理の詳細を掲載。"
     }
   },
   "a11y": {

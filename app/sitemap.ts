@@ -57,6 +57,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Glossary page (all 10 languages)
   const glossaryPages = generateLocalizedEntries('/glossary', currentDate, 'weekly', 0.8);
 
+  // Fact Sheet page (GEO / AI-search optimized, all locales)
+  const factSheetPages = generateLocalizedEntries('/fact-sheet', currentDate, 'monthly', 0.8);
+
   // Blog list page (all 10 languages)
   const blogPages = generateLocalizedEntries('/blog', currentDate, 'daily', 0.9);
 
@@ -67,5 +70,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return generateLocalizedEntries(`/blog/${post.slug}`, postDate, 'weekly', 0.8);
   });
 
-  return [...homepages, ...glossaryPages, ...blogPages, ...blogPosts];
+  return [...homepages, ...glossaryPages, ...factSheetPages, ...blogPages, ...blogPosts];
 }

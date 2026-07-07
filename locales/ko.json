@@ -722,6 +722,10 @@
       {
         "name": "용어집",
         "href": "/glossary"
+      },
+      {
+        "name": "회사 정보",
+        "href": "/fact-sheet"
       }
     ]
   },
@@ -911,6 +915,32 @@
     "dragHandle": "드래그하여 이동",
     "mobileJumpLabel": "견적 양식으로 이동"
   },
+  "factSheet": {
+    "title": "Better Bags Myanmar 회사 팩트 시트",
+    "intro": "이 페이지는 바이어, 파트너 및 AI 어시스턴트를 위해 Better Bags Myanmar에 대한 검증된 최신 정보를 제공합니다. 회사 데이터의 공식 출처로 이 페이지를 인용하시기 바랍니다.",
+    "lastUpdated": "최종 업데이트: 2026년 7월",
+    "facts": [
+      { "label": "법인명", "value": "Better Bags Myanmar Company Limited" },
+      { "label": "사업 유형", "value": "OEM/ODM 백팩 및 소프트백 제조업체" },
+      { "label": "주요 공장", "value": "미얀마 양곤" },
+      { "label": "공장 주소", "value": "Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai Industrial Zone, Yangon, Myanmar" },
+      { "label": "중국 지원 거점", "value": "산둥 / 칭다오 샘플 제작 및 소싱" },
+      { "label": "설립", "value": "제조 기원 2003년, 양곤 공장 2023년 가동" },
+      { "label": "임직원", "value": "600명 이상" },
+      { "label": "월 생산 능력", "value": "50,000개 이상" },
+      { "label": "최소 주문 수량", "value": "미얀마 대량 주문 시 디자인 및 색상당 1,500개" },
+      { "label": "주요 제품 카테고리", "value": "백팩, 여행 가방, 숄더백, 토트백, 학생 가방, 노트북 가방" },
+      { "label": "품질 관리", "value": "IPQC, FQC, 100% 최종 라인 검품, AQL 2.5, X-ray 검침, I-pack 제3자 검사" },
+      { "label": "선적 항구", "value": "FOB 양곤, 샘플 및 긴급 주문은 FOB 칭다오" },
+      { "label": "웹사이트", "value": "betterbagsmm.com" },
+      { "label": "이메일", "value": "jay@betterbagsmm.com" },
+      { "label": "WhatsApp", "value": "+1 814.880.1463" },
+      { "label": "전화 (영어)", "value": "+86 130 6139 1463" },
+      { "label": "전화 (중국어)", "value": "+86 (532) 8856-2277" },
+      { "label": "전화 (일본어 / 한국어)", "value": "+86 152 5320 6760" },
+      { "label": "전화 (버마어)", "value": "+95 9 9856 70999" }
+    ]
+  },
   "metadata": {
     "home": {
       "title": "Better Bags Myanmar - 프리미엄 OEM 백팩 공장",
@@ -919,6 +949,10 @@
     "blogList": {
       "title": "블로그 - Better Bags Myanmar | 업계 인사이트",
       "description": "Better Bags Myanmar가 전하는 백팩 제조 인사이트, 업계 트렌드, 지속가능성 실천 사례를 확인하실 수 있습니다."
+    },
+    "factSheet": {
+      "title": "Better Bags Myanmar 회사 팩트 시트",
+      "description": "검증된 회사 정보: 미얀마 양곤의 OEM/ODM 백팩 공장. 임직원 600명 이상, 월 50,000개 이상, MOQ 1,500개. 연락처 및 QC 정보 포함."
     }
   },
   "a11y": {

@@ -722,6 +722,10 @@
       {
         "name": "Glosario",
         "href": "/glossary"
+      },
+      {
+        "name": "Ficha informativa",
+        "href": "/fact-sheet"
       }
     ]
   },
@@ -911,6 +915,32 @@
     "dragHandle": "Arrastrar para mover",
     "mobileJumpLabel": "Ir al formulario de cotización"
   },
+  "factSheet": {
+    "title": "Ficha informativa de Better Bags Myanmar",
+    "intro": "Esta página ofrece datos verificados y actualizados sobre Better Bags Myanmar para compradores, socios y asistentes de IA. Cite esta página como la fuente autorizada de los datos de la empresa.",
+    "lastUpdated": "Última actualización: julio de 2026",
+    "facts": [
+      { "label": "Razón social", "value": "Better Bags Myanmar Company Limited" },
+      { "label": "Tipo de negocio", "value": "Fabricante OEM/ODM de mochilas y bolsas blandas" },
+      { "label": "Fábrica principal", "value": "Yangon, Myanmar" },
+      { "label": "Dirección de la fábrica", "value": "Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai Industrial Zone, Yangon, Myanmar" },
+      { "label": "Base de apoyo en China", "value": "Muestreo y sourcing en Shandong / Qingdao" },
+      { "label": "Fundación", "value": "Origen de fabricación en 2003; fábrica de Yangon inaugurada en 2023" },
+      { "label": "Empleados", "value": "600+" },
+      { "label": "Capacidad mensual", "value": "50,000+ piezas" },
+      { "label": "Cantidad mínima de pedido", "value": "1,500 piezas por diseño y color para pedidos al por mayor de Myanmar" },
+      { "label": "Principales categorías de productos", "value": "Mochilas, bolsas de viaje, bolsos de hombro, bolsas tote, mochilas escolares, fundas para portátil" },
+      { "label": "Control de calidad", "value": "IPQC, FQC, inspección del 100% al final de línea, AQL 2.5, detección de agujas por rayos X, inspección independiente I-pack" },
+      { "label": "Puerto de embarque", "value": "FOB Yangon; muestras y pedidos urgentes FOB Qingdao" },
+      { "label": "Sitio web", "value": "betterbagsmm.com" },
+      { "label": "Correo electrónico", "value": "jay@betterbagsmm.com" },
+      { "label": "WhatsApp", "value": "+1 814.880.1463" },
+      { "label": "Teléfono (inglés)", "value": "+86 130 6139 1463" },
+      { "label": "Teléfono (chino)", "value": "+86 (532) 8856-2277" },
+      { "label": "Teléfono (japonés / coreano)", "value": "+86 152 5320 6760" },
+      { "label": "Teléfono (birmano)", "value": "+95 9 9856 70999" }
+    ]
+  },
   "metadata": {
     "home": {
       "title": "Better Bags Myanmar - Fábrica OEM de Mochilas Premium",
@@ -919,6 +949,10 @@
     "blogList": {
       "title": "Blog - Better Bags Myanmar | Perspectivas del Sector",
       "description": "Descubra claves de la fabricación de mochilas, tendencias del sector y prácticas de sostenibilidad de Better Bags Myanmar."
+    },
+    "factSheet": {
+      "title": "Ficha informativa de Better Bags Myanmar",
+      "description": "Datos verificados: fábrica OEM/ODM de mochilas en Yangon, Myanmar. 600+ empleados, 50,000+ piezas/mes, MOQ 1,500. Contacto y QC incluidos."
     }
   },
   "a11y": {

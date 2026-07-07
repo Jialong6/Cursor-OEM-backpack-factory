@@ -15,6 +15,7 @@ import {
   generateHomeMetadata,
   generateBlogListMetadata,
   generateBlogDetailMetadata,
+  generateGenericMetadata,
   type PageMetadata,
 } from '@/lib/metadata';
 import { locales } from '@/i18n';
@@ -24,6 +25,7 @@ const LOCALES_DIR = path.join(__dirname, '..', 'locales');
 interface LocaleMetadata {
   home: PageMetadata;
   blogList: PageMetadata;
+  factSheet: PageMetadata;
 }
 
 /** 读取每个 locale JSON 的 metadata namespace */
@@ -257,6 +259,46 @@ describe('SEO 元数据配置', () => {
 
     it.each(locales)('%s 首页描述应具有描述性且不为空', (locale) => {
       expect(allMetadata[locale].home.description.length).toBeGreaterThan(20);
+    });
+  });
+
+  /**
+   * Fact Sheet 页元数据验证(全语言)
+   *
+   * 需求 14.1/14.2:标题 ≤60、描述 ≤150;GEO 页要求全语言直接达标(非运行时截断)
+   */
+  describe('Fact Sheet 元数据验证', () => {
+    it.each(locales)('%s Fact Sheet 标题应不超过 60 字符', (locale) => {
+      expect(allMetadata[locale].factSheet.title.length).toBeLessThanOrEqual(60);
+    });
+
+    it.each(locales)('%s Fact Sheet 描述应不超过 150 字符', (locale) => {
+      expect(allMetadata[locale].factSheet.description.length).toBeLessThanOrEqual(150);
+    });
+
+    it.each(locales)('%s Fact Sheet 描述应具有描述性且不为空', (locale) => {
+      expect(allMetadata[locale].factSheet.description.length).toBeGreaterThan(20);
+    });
+
+    it.each(locales)('%s Fact Sheet 标题应包含品牌名称', (locale) => {
+      expect(allMetadata[locale].factSheet.title).toContain('Better Bags');
+    });
+
+    it('generateGenericMetadata 应为 /fact-sheet 生成正确的 canonical', () => {
+      const meta = allMetadata.en.factSheet;
+      const metadata = generateGenericMetadata(
+        'en',
+        meta.title,
+        meta.description,
+        '/fact-sheet'
+      );
+
+      expect(metadata.alternates?.canonical).toBeDefined();
+      expect(metadata.alternates?.canonical).toContain('/en/fact-sheet');
+      expect(metadata.alternates?.languages).toBeDefined();
+      expect(metadata.alternates?.languages?.en).toBeDefined();
+      expect(metadata.alternates?.languages?.['zh-Hans']).toBeDefined();
+      expect(metadata.alternates?.languages).toHaveProperty('x-default');
     });
   });
 });
