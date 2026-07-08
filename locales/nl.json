@@ -1018,6 +1018,8 @@
       "languageNote": "De boekingskalender wordt mogelijk in het Engels weergegeven."
     },
     "fallback": {
+      "emailSubject": "Aanvraag virtuele fabriekstour",
+      "messageTemplate": "Hallo, ik wil graag een virtuele fabriekstour van 60 minuten boeken. Mijn voorkeursdatum en -tijd (Myanmar-tijd, ma-za 07:30-17:00): ",
       "title": "Boek uw tour via WhatsApp of e-mail",
       "desc": "Stuur ons uw voorkeursdatum en -tijd (ma–za, 07:30–17:00 uur Myanmar-tijd) en wij bevestigen uw virtuele tour binnen 24 uur.",
       "whatsappCta": "WhatsApp ons",

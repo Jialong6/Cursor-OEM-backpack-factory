@@ -1018,6 +1018,8 @@
       "languageNote": "Der Buchungskalender wird möglicherweise auf Englisch angezeigt."
     },
     "fallback": {
+      "emailSubject": "Anfrage: Virtuelle Werksbesichtigung",
+      "messageTemplate": "Hallo, ich möchte eine 60-minütige virtuelle Werksbesichtigung buchen. Mein Wunschtermin (Myanmar-Zeit, Mo-Sa 07:30-17:00): ",
       "title": "Besichtigung per WhatsApp oder E-Mail buchen",
       "desc": "Senden Sie uns Ihren Wunschtermin (Mo–Sa, 07:30–17:00 Uhr Myanmar-Zeit) — wir bestätigen Ihre virtuelle Besichtigung innerhalb von 24 Stunden.",
       "whatsappCta": "Per WhatsApp schreiben",

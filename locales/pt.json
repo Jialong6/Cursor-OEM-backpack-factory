@@ -1018,6 +1018,8 @@
       "languageNote": "O calendário de agendamento pode ser exibido em inglês."
     },
     "fallback": {
+      "emailSubject": "Solicitação de tour virtual pela fábrica",
+      "messageTemplate": "Olá, gostaria de agendar um tour virtual de 60 minutos pela fábrica. Minha data e horário preferidos (horário de Mianmar, seg-sáb 07h30-17h00): ",
       "title": "Agende seu tour por WhatsApp ou e-mail",
       "desc": "Envie sua data e horário preferidos (seg–sáb, 07h30–17h00, horário de Mianmar) e confirmaremos seu tour virtual em até 24 horas.",
       "whatsappCta": "Fale conosco no WhatsApp",

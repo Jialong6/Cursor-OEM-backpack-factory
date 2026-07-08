@@ -1018,6 +1018,8 @@
       "languageNote": "Le calendrier de réservation peut s'afficher en anglais."
     },
     "fallback": {
+      "emailSubject": "Demande de visite virtuelle de l'usine",
+      "messageTemplate": "Bonjour, je souhaite réserver une visite virtuelle de l'usine de 60 minutes. Mes date et heure préférées (heure du Myanmar, lun-sam 07h30-17h00) : ",
       "title": "Réservez votre visite par WhatsApp ou e-mail",
       "desc": "Envoyez-nous vos date et heure préférées (lun–sam, 07 h 30 – 17 h 00, heure du Myanmar) et nous confirmerons votre visite virtuelle sous 24 heures.",
       "whatsappCta": "Nous écrire sur WhatsApp",
