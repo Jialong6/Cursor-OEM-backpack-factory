@@ -188,6 +188,9 @@
       "value": "Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai工业区，仰光，缅甸",
       "viewOnMap": "在 Google 地图上查看"
     },
+    "map": {
+      "title": "Better Bags Myanmar 工厂位置地图"
+    },
     "phone": {
       "label": "电话",
       "fallback": "其他语言请通过邮件联系",

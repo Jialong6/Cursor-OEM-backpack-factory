@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import TrustSignals from '@/components/content/TrustSignals';
+import FactoryMapEmbed from '@/components/content/FactoryMapEmbed';
 import QuoteFormFields from '@/components/quote/QuoteFormFields';
 
 /**
@@ -49,6 +50,8 @@ export default function Contact() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               </a>
+              {/* 交互式地图预览（zh 因大陆无法访问 Google Maps 不渲染） */}
+              <FactoryMapEmbed />
             </div>
 
             {/* 电话：按语言区分 4 个号码 */}

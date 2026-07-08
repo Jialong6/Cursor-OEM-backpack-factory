@@ -522,6 +522,9 @@
       "value": "Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai Industrial Zone, Yangon, Myanmar",
       "viewOnMap": "Auf Google Maps ansehen"
     },
+    "map": {
+      "title": "Karte des Fabrikstandorts von Better Bags Myanmar"
+    },
     "phone": {
       "label": "Telefonnummer",
       "fallback": "Für weitere Sprachen kontaktieren Sie uns bitte per E-Mail",
