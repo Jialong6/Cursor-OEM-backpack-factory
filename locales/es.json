@@ -18,6 +18,7 @@
       "title": "¿Listo para iniciar su proyecto?",
       "subtitle": "Reciba una cotización gratuita en 24 horas",
       "button": "Solicitar cotización",
+      "tourLink": "O reserve un tour virtual por la fábrica",
       "note": "Sin compromiso, asesoría gratuita"
     }
   },
@@ -33,6 +34,7 @@
     "skipToContent": "Saltar al contenido principal"
   },
   "banner": {
+    "secondaryCta": "Reservar tour virtual",
     "line1": "Better Bags desde 2003",
     "line2": "#Fábrica líder de mochilas personalizadas en Myanmar",
     "p1": {
@@ -509,11 +511,17 @@
       "highlight": "No dude en contactarnos",
       "suffix": "-- nuestro equipo está aquí para ayudarle.",
       "button": "Contáctenos",
+      "tourLink": "Reservar un tour virtual por la fábrica",
       "glossaryLink": "Consulte nuestro glosario de términos del sector",
       "blogLink": "Lea nuestros artículos más recientes"
     }
   },
   "contact": {
+    "tour": {
+      "title": "¿Quiere ver la fábrica primero?",
+      "desc": "Participe gratis en un tour virtual en vivo de 60 minutos por nuestra planta de Yangon, vía Zoom o Google Meet.",
+      "cta": "Reservar tour virtual"
+    },
     "title": "Contáctenos",
     "subtitle": "¿Listo para iniciar su proyecto de mochilas?",
     "intro": "Complete el formulario a continuación y le responderemos en un plazo de 24 horas. Para consultas urgentes, llámenos o escríbanos directamente por WhatsApp.",
@@ -729,6 +737,10 @@
       {
         "name": "Ficha informativa",
         "href": "/fact-sheet"
+      },
+      {
+        "name": "Tour virtual por la fábrica",
+        "href": "/virtual-factory-tour"
       }
     ]
   },
@@ -944,7 +956,84 @@
       { "label": "Teléfono (birmano)", "value": "+95 9 9856 70999" }
     ]
   },
+  "virtualTour": {
+    "title": "Reserve un tour virtual por la fábrica",
+    "subtitle": "Vea en vivo nuestra planta de producción en Yangon — desde cualquier parte del mundo",
+    "intro": "Recorra Better Bags Myanmar en una videollamada en vivo de 60 minutos. Conozca al equipo detrás de sus futuros pedidos, vea nuestras líneas de producción en acción y obtenga respuesta a todas sus preguntas en tiempo real — sin necesidad de volar a Yangon.",
+    "highlights": [
+      "60 minutos · totalmente gratis",
+      "Zoom o Google Meet — usted elige",
+      "Preguntas y respuestas en vivo con nuestro equipo comercial y de producción"
+    ],
+    "whatYouSee": {
+      "title": "Qué verá durante el tour",
+      "items": [
+        {
+          "title": "Corte y preparación de materiales",
+          "desc": "Inspección de telas a su llegada, almacén de materiales y corte de precisión — aquí comienza cada pedido."
+        },
+        {
+          "title": "Líneas de costura",
+          "desc": "Toda nuestra planta de costura en acción: distribución de líneas, calidad de confección y el ritmo detrás de una capacidad mensual de más de 50.000 piezas."
+        },
+        {
+          "title": "Control de calidad y detección de agujas por rayos X",
+          "desc": "Estaciones de QC en línea, inspección final al 100 % y el detector de agujas por rayos X que protege cada envío."
+        },
+        {
+          "title": "Empaque y almacén de producto terminado",
+          "desc": "Líneas de empaque, manejo de cartones y mercancía lista para exportación en espera del embarque FOB Yangon."
+        }
+      ]
+    },
+    "howItWorks": {
+      "title": "Cómo funciona",
+      "steps": [
+        {
+          "title": "Elija un horario",
+          "desc": "Seleccione cualquier espacio libre en el calendario de abajo — los horarios se muestran automáticamente en su zona horaria."
+        },
+        {
+          "title": "Reciba su enlace de reunión",
+          "desc": "Recibirá de inmediato un correo de confirmación con su enlace de Zoom o Google Meet y una invitación de calendario."
+        },
+        {
+          "title": "Únase al tour en vivo",
+          "desc": "Nuestro equipo lo guiará por la fábrica durante 60 minutos, cámara en mano, respondiendo sus preguntas sobre la marcha."
+        }
+      ]
+    },
+    "details": {
+      "title": "Detalles del tour",
+      "items": [
+        { "label": "Duración", "value": "60 minutos" },
+        { "label": "Plataforma", "value": "Zoom o Google Meet — se elige al reservar" },
+        { "label": "Horario disponible", "value": "Lun–sáb, 07:30–17:00, hora de Myanmar (UTC+6:30)" },
+        { "label": "Idiomas", "value": "English · 日本語 · 中文 · 한국어" },
+        { "label": "Costo", "value": "Gratis — sin compromiso" }
+      ]
+    },
+    "booking": {
+      "title": "Elija el horario de su tour",
+      "languageNote": "El calendario de reservas puede mostrarse en inglés."
+    },
+    "fallback": {
+      "title": "Reserve su tour por WhatsApp o correo",
+      "desc": "Envíenos su fecha y hora preferidas (lun–sáb, 07:30–17:00, hora de Myanmar) y confirmaremos su tour virtual en un plazo de 24 horas.",
+      "whatsappCta": "Escríbanos por WhatsApp",
+      "emailCta": "Envíenos un correo",
+      "contactCta": "Use el formulario de contacto"
+    },
+    "alternative": {
+      "text": "¿Prefiere coordinarlo por correo o WhatsApp?",
+      "linkText": "Contáctenos directamente"
+    }
+  },
   "metadata": {
+    "virtualTour": {
+      "title": "Tour virtual por la fábrica - Better Bags Myanmar",
+      "description": "Visite en vivo nuestra fábrica de mochilas en Yangon por Zoom o Google Meet. Tour gratuito de 60 minutos: costura, QC y detección de agujas."
+    },
     "home": {
       "title": "Better Bags Myanmar - Fábrica OEM de Mochilas Premium",
       "description": "Fabricante líder de mochilas personalizadas en Myanmar. 20+ años de experiencia, 600+ empleados, sirviendo principalmente a marcas japonesas."

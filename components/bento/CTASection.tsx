@@ -1,6 +1,7 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import Link from 'next/link';
+import { useTranslations, useLocale } from 'next-intl';
 
 /**
  * CTASection - CTA区块组件 (右下象限)
@@ -16,6 +17,7 @@ import { useTranslations } from 'next-intl';
 export function CTASection() {
   const t = useTranslations('banner');
   const tb = useTranslations('bento');
+  const locale = useLocale();
 
   const handleScrollToContact = () => {
     const contactSection = document.getElementById('contact');
@@ -84,6 +86,14 @@ export function CTASection() {
       <p className="mt-4 text-xs text-neutral-500 md:text-sm">
         {tb('cta.note')}
       </p>
+
+      {/* 预约虚拟看厂入口 */}
+      <Link
+        href={`/${locale}/virtual-factory-tour`}
+        className="mt-2 text-xs font-medium text-primary underline-offset-2 hover:text-primary-dark hover:underline md:text-sm"
+      >
+        {tb('cta.tourLink')}
+      </Link>
     </div>
   );
 }

@@ -1,11 +1,13 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import Link from 'next/link';
+import { useTranslations, useLocale } from 'next-intl';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 export default function HeroBanner() {
   const t = useTranslations('banner');
   const tFeatures = useTranslations('features');
+  const locale = useLocale();
 
   const titleAnim = useScrollAnimation({ variant: 'fade-in' });
   const descAnim = useScrollAnimation({ variant: 'fade-up', delay: 100 });
@@ -61,14 +63,20 @@ export default function HeroBanner() {
           <p>{t('p3')}</p>
         </div>
 
-        {/* CTA 按钮 */}
-        <div ref={ctaAnim.ref as React.RefObject<HTMLDivElement>} className={ctaAnim.animationClassName}>
+        {/* CTA 按钮:主(报价)+ 次级(预约虚拟看厂) */}
+        <div ref={ctaAnim.ref as React.RefObject<HTMLDivElement>} className={`mb-12 flex flex-col items-center justify-center gap-4 sm:flex-row ${ctaAnim.animationClassName}`}>
           <button
             onClick={handleScrollToContact}
-            className="mb-12 rounded-lg bg-primary px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-primary-dark hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-primary/30"
+            className="rounded-lg bg-primary px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-primary-dark hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-primary/30"
           >
             {t('cta')}
           </button>
+          <Link
+            href={`/${locale}/virtual-factory-tour`}
+            className="rounded-lg border-2 border-primary px-8 py-4 text-lg font-semibold text-primary transition-all hover:bg-primary hover:text-white hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-primary/30"
+          >
+            {t('secondaryCta')}
+          </Link>
         </div>
 
         {/* 统计数据 */}

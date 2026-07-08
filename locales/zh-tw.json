@@ -18,6 +18,7 @@
       "title": "準備好啟動您的專案了嗎？",
       "subtitle": "24 小時內取得免費報價",
       "button": "索取報價",
+      "tourLink": "或預約一場線上視訊看廠",
       "note": "免費諮詢，無任何義務"
     }
   },
@@ -33,6 +34,7 @@
     "skipToContent": "跳至主要內容"
   },
   "banner": {
+    "secondaryCta": "預約線上視訊看廠",
     "line1": "Better Bags 創立於 2003 年",
     "line2": "#緬甸頂尖客製化後背包工廠",
     "p1": {
@@ -509,11 +511,17 @@
       "highlight": "歡迎隨時與我們聯絡",
       "suffix": "，我們的團隊將竭誠為您解答。",
       "button": "聯絡我們",
+      "tourLink": "預約線上直播看廠",
       "glossaryLink": "瀏覽術語表，認識產業術語",
       "blogLink": "閱讀最新文章"
     }
   },
   "contact": {
+    "tour": {
+      "title": "想先看看工廠?",
+      "desc": "免費參加 60 分鐘仰光工廠直播導覽,透過 Zoom 或 Google Meet 進行。",
+      "cta": "預約視訊看廠"
+    },
     "title": "聯絡我們",
     "subtitle": "準備好啟動您的後背包專案了嗎？",
     "intro": "請填寫下方表單，我們將於 24 小時內回覆。如需緊急洽詢，歡迎直接來電，或透過 WhatsApp 與我們聯絡。",
@@ -729,6 +737,10 @@
       {
         "name": "公司資料",
         "href": "/fact-sheet"
+      },
+      {
+        "name": "線上視訊看廠",
+        "href": "/virtual-factory-tour"
       }
     ]
   },
@@ -944,7 +956,84 @@
       { "label": "電話（緬甸語）", "value": "+95 9 9856 70999" }
     ]
   },
+  "virtualTour": {
+    "title": "預約線上視訊看廠",
+    "subtitle": "不必出門,即時參觀我們的仰光工廠",
+    "intro": "透過 60 分鐘視訊直播,走進 Better Bags Myanmar 生產現場:認識為您服務的團隊,親眼見證生產線的實際運作,所有問題現場即時解答——無需飛往仰光。",
+    "highlights": [
+      "60 分鐘 · 完全免費",
+      "Zoom 或 Google Meet 任選",
+      "業務與生產團隊線上答覆"
+    ],
+    "whatYouSee": {
+      "title": "視訊看廠您將看到什麼",
+      "items": [
+        {
+          "title": "裁剪與備料",
+          "desc": "布料進廠檢驗、原料倉庫與精準裁剪——每張訂單的起點。"
+        },
+        {
+          "title": "車縫生產線",
+          "desc": "完整車縫廠區實況:產線配置、工藝水準,以及月產能 50,000+ 件背後的生產節奏。"
+        },
+        {
+          "title": "品質管控與 X 光驗針",
+          "desc": "產線 QC 站、100% 成品全檢,以及為每批貨把關的 X 光驗針機。"
+        },
+        {
+          "title": "包裝與成品倉",
+          "desc": "包裝產線、裝箱作業,以及等待 FOB 仰光出貨的成品。"
+        }
+      ]
+    },
+    "howItWorks": {
+      "title": "預約流程",
+      "steps": [
+        {
+          "title": "選擇時間",
+          "desc": "在下方日曆中任選空檔時段——時間自動依您所在時區顯示。"
+        },
+        {
+          "title": "取得會議連結",
+          "desc": "預約後立即收到確認信,內含 Zoom 或 Google Meet 會議連結與行事曆邀請。"
+        },
+        {
+          "title": "進入直播看廠",
+          "desc": "我們的團隊手持鏡頭帶您參觀工廠 60 分鐘,全程隨時回答您的問題。"
+        }
+      ]
+    },
+    "details": {
+      "title": "看廠詳情",
+      "items": [
+        { "label": "時長", "value": "60 分鐘" },
+        { "label": "平台", "value": "Zoom 或 Google Meet——預約時自選" },
+        { "label": "開放時段", "value": "週一至週六 07:30–17:00(緬甸時間,UTC+6:30)" },
+        { "label": "服務語言", "value": "中文 · English · 日本語 · 한국어" },
+        { "label": "費用", "value": "免費,無任何附帶義務" }
+      ]
+    },
+    "booking": {
+      "title": "選擇您的看廠時間",
+      "languageNote": "預約日曆可能以英文顯示。"
+    },
+    "fallback": {
+      "title": "透過 WhatsApp 或電子郵件預約",
+      "desc": "將您方便的日期與時間(緬甸時間週一至週六 07:30–17:00)傳給我們,我們將在 24 小時內確認您的視訊看廠。",
+      "whatsappCta": "WhatsApp 聯繫",
+      "emailCta": "寄送郵件",
+      "contactCta": "填寫聯絡表單"
+    },
+    "alternative": {
+      "text": "偏好透過電子郵件或 WhatsApp 安排?",
+      "linkText": "直接與我們聯繫"
+    }
+  },
   "metadata": {
+    "virtualTour": {
+      "title": "預約線上視訊看廠 - Better Bags Myanmar",
+      "description": "透過 Zoom 或 Google Meet 即時參觀我們的仰光後背包工廠。免費 60 分鐘直播:車縫產線、品質管控與 X 光驗針。週一至週六開放。"
+    },
     "home": {
       "title": "Better Bags Myanmar - 高品質後背包 OEM 代工廠",
       "description": "緬甸頂級客製化後背包製造商。20+ 年經驗、600+ 名專業員工，主要服務日本品牌。"

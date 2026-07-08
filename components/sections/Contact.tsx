@@ -1,6 +1,7 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import Link from 'next/link';
+import { useTranslations, useLocale } from 'next-intl';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import TrustSignals from '@/components/content/TrustSignals';
 import FactoryMapEmbed from '@/components/content/FactoryMapEmbed';
@@ -18,6 +19,7 @@ import QuoteFormFields from '@/components/quote/QuoteFormFields';
  */
 export default function Contact() {
   const t = useTranslations('contact');
+  const locale = useLocale();
 
   const titleAnim = useScrollAnimation({ variant: 'fade-up' });
   const formAnim = useScrollAnimation({ variant: 'fade-up', delay: 100 });
@@ -98,6 +100,18 @@ export default function Contact() {
               >
                 {t('whatsapp.value')}
               </a>
+            </div>
+
+            {/* 预约虚拟看厂 */}
+            <div className="bg-neutral-50 rounded-lg border border-neutral-200 p-6">
+              <h3 className="text-lg font-semibold text-neutral-800 mb-3">{t('tour.title')}</h3>
+              <p className="text-sm text-neutral-600 mb-4">{t('tour.desc')}</p>
+              <Link
+                href={`/${locale}/virtual-factory-tour`}
+                className="inline-block rounded-lg border border-primary px-5 py-2.5 text-sm font-semibold text-primary transition-all hover:bg-primary hover:text-white focus:outline-none focus:ring-4 focus:ring-primary/30"
+              >
+                {t('tour.cta')}
+              </Link>
             </div>
 
             {/* 信任信号 */}

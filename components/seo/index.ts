@@ -12,3 +12,4 @@ export { default as BlogPostingSchema } from './BlogPostingSchema';
 export { default as FactSheetSchema, FACT_SHEET_DATE_MODIFIED } from './FactSheetSchema';
 export { default as BreadcrumbSchema } from './BreadcrumbSchema';
 export type { BreadcrumbSchemaItem } from './BreadcrumbSchema';
+export { default as VirtualTourSchema } from './VirtualTourSchema';

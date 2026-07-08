@@ -103,6 +103,12 @@ export default function FAQ() {
               >
                 {t('cta.blogLink')}
               </Link>
+              <Link
+                href={`/${locale}/virtual-factory-tour`}
+                className="text-primary hover:text-primary-dark font-medium transition-colors"
+              >
+                {t('cta.tourLink')}
+              </Link>
             </div>
           </div>
         </div>
