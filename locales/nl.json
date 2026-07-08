@@ -18,6 +18,7 @@
       "title": "Klaar om uw project te starten?",
       "subtitle": "Ontvang binnen 24 uur een gratis offerte",
       "button": "Offerte aanvragen",
+      "tourLink": "Of boek een virtuele fabriekstour",
       "note": "Vrijblijvend, gratis advies"
     }
   },
@@ -33,6 +34,7 @@
     "skipToContent": "Ga naar hoofdinhoud"
   },
   "banner": {
+    "secondaryCta": "Boek een virtuele fabriekstour",
     "line1": "Better Bags sinds 2003",
     "line2": "#Toonaangevende fabriek voor maatwerkrugzakken in Myanmar",
     "p1": {
@@ -509,11 +511,17 @@
       "highlight": "Neem gerust contact op",
       "suffix": "-- ons team helpt u graag.",
       "button": "Neem contact op",
+      "tourLink": "Boek een virtuele fabriekstour",
       "glossaryLink": "Bekijk onze woordenlijst met vaktermen",
       "blogLink": "Lees onze nieuwste artikelen"
     }
   },
   "contact": {
+    "tour": {
+      "title": "Wilt u eerst de fabriek zien?",
+      "desc": "Neem gratis deel aan een 60 minuten durende live tour door onze productie in Yangon via Zoom of Google Meet.",
+      "cta": "Boek een virtuele tour"
+    },
     "title": "Contact",
     "subtitle": "Klaar om uw rugzakproject te starten?",
     "intro": "Vul het onderstaande formulier in en u ontvangt binnen 24 uur een reactie. Voor dringende vragen kunt u ons direct bellen of via WhatsApp bereiken.",
@@ -729,6 +737,10 @@
       {
         "name": "Factsheet",
         "href": "/fact-sheet"
+      },
+      {
+        "name": "Virtuele fabriekstour",
+        "href": "/virtual-factory-tour"
       }
     ]
   },
@@ -944,7 +956,84 @@
       { "label": "Telefoon (Birmaans)", "value": "+95 9 9856 70999" }
     ]
   },
+  "virtualTour": {
+    "title": "Boek een virtuele fabriekstour",
+    "subtitle": "Bekijk onze productievloer in Yangon live — waar u ook bent",
+    "intro": "Loop mee door Better Bags Myanmar tijdens een live videogesprek van 60 minuten. Maak kennis met het team achter uw toekomstige orders, zie onze productielijnen in bedrijf en krijg al uw vragen direct beantwoord — zonder vlucht naar Yangon.",
+    "highlights": [
+      "60 minuten · volledig gratis",
+      "Zoom of Google Meet — u kiest",
+      "Live Q&A met ons sales- en productieteam"
+    ],
+    "whatYouSee": {
+      "title": "Wat u tijdens de tour ziet",
+      "items": [
+        {
+          "title": "Snijden & materiaalvoorbereiding",
+          "desc": "Ingangscontrole van stoffen, het materiaalmagazijn en precisiesnijden — hier begint elke order."
+        },
+        {
+          "title": "Naailijnen",
+          "desc": "Onze volledige naaiafdeling in bedrijf: lijnindeling, vakmanschap en het tempo achter een maandcapaciteit van 50.000+ stuks."
+        },
+        {
+          "title": "Kwaliteitscontrole & X-ray naalddetectie",
+          "desc": "QC-stations in de lijn, 100% eindcontrole en de X-ray naalddetector die elke zending beschermt."
+        },
+        {
+          "title": "Verpakking & magazijn gereed product",
+          "desc": "Verpakkingslijnen, kartonafhandeling en exportklare goederen voor verscheping FOB Yangon."
+        }
+      ]
+    },
+    "howItWorks": {
+      "title": "Zo werkt het",
+      "steps": [
+        {
+          "title": "Kies een tijdstip",
+          "desc": "Kies een vrij moment in de kalender hieronder — tijden worden automatisch in uw tijdzone getoond."
+        },
+        {
+          "title": "Ontvang uw meetinglink",
+          "desc": "U ontvangt direct een bevestigingsmail met uw Zoom- of Google Meet-link en een agenda-uitnodiging."
+        },
+        {
+          "title": "Neem deel aan de live tour",
+          "desc": "Ons team leidt u 60 minuten met de camera door de fabriek en beantwoordt uw vragen ter plekke."
+        }
+      ]
+    },
+    "details": {
+      "title": "Tourdetails",
+      "items": [
+        { "label": "Duur", "value": "60 minuten" },
+        { "label": "Platform", "value": "Zoom of Google Meet — te kiezen bij het boeken" },
+        { "label": "Beschikbare tijden", "value": "ma–za, 07:30–17:00 uur Myanmar-tijd (UTC+6:30)" },
+        { "label": "Talen", "value": "English · 日本語 · 中文 · 한국어" },
+        { "label": "Kosten", "value": "Gratis — geheel vrijblijvend" }
+      ]
+    },
+    "booking": {
+      "title": "Kies uw tourtijdstip",
+      "languageNote": "De boekingskalender wordt mogelijk in het Engels weergegeven."
+    },
+    "fallback": {
+      "title": "Boek uw tour via WhatsApp of e-mail",
+      "desc": "Stuur ons uw voorkeursdatum en -tijd (ma–za, 07:30–17:00 uur Myanmar-tijd) en wij bevestigen uw virtuele tour binnen 24 uur.",
+      "whatsappCta": "WhatsApp ons",
+      "emailCta": "E-mail ons",
+      "contactCta": "Gebruik het contactformulier"
+    },
+    "alternative": {
+      "text": "Regelt u het liever per e-mail of WhatsApp?",
+      "linkText": "Neem direct contact op"
+    }
+  },
   "metadata": {
+    "virtualTour": {
+      "title": "Boek een virtuele fabriekstour - Better Bags Myanmar",
+      "description": "Bezoek onze rugzakfabriek in Yangon live via Zoom of Google Meet. Gratis rondleiding van 60 minuten: naailijnen, QC en naalddetectie. Ma-za."
+    },
     "home": {
       "title": "Better Bags Myanmar - Premium OEM-rugzakfabriek",
       "description": "Toonaangevende fabrikant van maatwerkrugzakken in Myanmar. 20+ jaar ervaring, 600+ medewerkers, voornamelijk voor Japanse merken."

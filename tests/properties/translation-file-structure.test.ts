@@ -222,6 +222,7 @@ describe('Translation File Unit Tests', () => {
       'testimonials',
       'quoteWidget',
       'factSheet',
+      'virtualTour',
       'metadata',
       'notFound',
       'a11y',

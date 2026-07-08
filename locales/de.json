@@ -18,6 +18,7 @@
       "title": "Bereit, Ihr Projekt zu starten?",
       "subtitle": "Erhalten Sie innerhalb von 24 Stunden ein kostenloses Angebot",
       "button": "Angebot anfordern",
+      "tourLink": "Oder buchen Sie eine virtuelle Werksbesichtigung",
       "note": "Unverbindliche und kostenlose Beratung"
     }
   },
@@ -33,6 +34,7 @@
     "skipToContent": "Zum Hauptinhalt springen"
   },
   "banner": {
+    "secondaryCta": "Virtuelle Werksbesichtigung buchen",
     "line1": "Better Bags seit 2003",
     "line2": "#Führender Hersteller kundenspezifischer Rucksäcke in Myanmar",
     "p1": {
@@ -509,11 +511,17 @@
       "highlight": "Kontaktieren Sie uns gern",
       "suffix": "– unser Team hilft Ihnen weiter.",
       "button": "Kontakt aufnehmen",
+      "tourLink": "Virtuelle Werksbesichtigung buchen",
       "glossaryLink": "Fachbegriffe in unserem Glossar nachschlagen",
       "blogLink": "Unsere aktuellen Fachbeiträge lesen"
     }
   },
   "contact": {
+    "tour": {
+      "title": "Möchten Sie zuerst das Werk sehen?",
+      "desc": "Nehmen Sie an einer kostenlosen 60-minütigen Live-Besichtigung unserer Produktion in Yangon teil — per Zoom oder Google Meet.",
+      "cta": "Virtuelle Tour buchen"
+    },
     "title": "Kontakt",
     "subtitle": "Bereit, Ihr Rucksackprojekt zu starten?",
     "intro": "Füllen Sie das folgende Formular aus und wir melden uns innerhalb von 24 Stunden bei Ihnen. Bei dringenden Anfragen erreichen Sie uns direkt per Telefon oder WhatsApp.",
@@ -729,6 +737,10 @@
       {
         "name": "Factsheet",
         "href": "/fact-sheet"
+      },
+      {
+        "name": "Virtuelle Werksbesichtigung",
+        "href": "/virtual-factory-tour"
       }
     ]
   },
@@ -944,7 +956,84 @@
       { "label": "Telefon (Birmanisch)", "value": "+95 9 9856 70999" }
     ]
   },
+  "virtualTour": {
+    "title": "Virtuelle Werksbesichtigung buchen",
+    "subtitle": "Erleben Sie unsere Produktion in Yangon live — von überall auf der Welt",
+    "intro": "Besichtigen Sie Better Bags Myanmar in einem 60-minütigen Live-Videoanruf. Lernen Sie das Team hinter Ihren künftigen Aufträgen kennen, sehen Sie unsere Produktionslinien in Aktion und erhalten Sie alle Antworten in Echtzeit — ganz ohne Flug nach Yangon.",
+    "highlights": [
+      "60 Minuten · völlig kostenlos",
+      "Zoom oder Google Meet — Sie entscheiden",
+      "Live-Fragerunde mit unserem Vertriebs- und Produktionsteam"
+    ],
+    "whatYouSee": {
+      "title": "Das sehen Sie bei der Besichtigung",
+      "items": [
+        {
+          "title": "Zuschnitt & Materialvorbereitung",
+          "desc": "Wareneingangsprüfung der Stoffe, Materiallager und präziser Zuschnitt — hier beginnt jeder Auftrag."
+        },
+        {
+          "title": "Nählinien",
+          "desc": "Unsere komplette Näherei in Aktion: Linienlayout, Verarbeitungsqualität und das Tempo hinter einer Monatskapazität von über 50.000 Stück."
+        },
+        {
+          "title": "Qualitätskontrolle & Röntgen-Nadeldetektion",
+          "desc": "QC-Stationen in der Linie, 100%-Endkontrolle und der Röntgen-Nadeldetektor, der jede Lieferung absichert."
+        },
+        {
+          "title": "Verpackung & Fertigwarenlager",
+          "desc": "Verpackungslinien, Kartonhandling und exportfertige Ware für die Verschiffung FOB Yangon."
+        }
+      ]
+    },
+    "howItWorks": {
+      "title": "So funktioniert es",
+      "steps": [
+        {
+          "title": "Termin wählen",
+          "desc": "Wählen Sie einen freien Termin im Kalender unten — die Zeiten werden automatisch in Ihrer Zeitzone angezeigt."
+        },
+        {
+          "title": "Meeting-Link erhalten",
+          "desc": "Sie erhalten sofort eine Bestätigungs-E-Mail mit Ihrem Zoom- oder Google-Meet-Link und einer Kalendereinladung."
+        },
+        {
+          "title": "Live teilnehmen",
+          "desc": "Unser Team führt Sie 60 Minuten mit der Kamera durch das Werk und beantwortet Ihre Fragen direkt."
+        }
+      ]
+    },
+    "details": {
+      "title": "Details zur Besichtigung",
+      "items": [
+        { "label": "Dauer", "value": "60 Minuten" },
+        { "label": "Plattform", "value": "Zoom oder Google Meet — Auswahl bei der Buchung" },
+        { "label": "Verfügbare Zeiten", "value": "Mo–Sa, 07:30–17:00 Uhr Myanmar-Zeit (UTC+6:30)" },
+        { "label": "Sprachen", "value": "English · 日本語 · 中文 · 한국어" },
+        { "label": "Kosten", "value": "Kostenlos — völlig unverbindlich" }
+      ]
+    },
+    "booking": {
+      "title": "Wählen Sie Ihren Termin",
+      "languageNote": "Der Buchungskalender wird möglicherweise auf Englisch angezeigt."
+    },
+    "fallback": {
+      "title": "Besichtigung per WhatsApp oder E-Mail buchen",
+      "desc": "Senden Sie uns Ihren Wunschtermin (Mo–Sa, 07:30–17:00 Uhr Myanmar-Zeit) — wir bestätigen Ihre virtuelle Besichtigung innerhalb von 24 Stunden.",
+      "whatsappCta": "Per WhatsApp schreiben",
+      "emailCta": "E-Mail senden",
+      "contactCta": "Kontaktformular nutzen"
+    },
+    "alternative": {
+      "text": "Lieber per E-Mail oder WhatsApp vereinbaren?",
+      "linkText": "Kontaktieren Sie uns direkt"
+    }
+  },
   "metadata": {
+    "virtualTour": {
+      "title": "Virtuelle Werksbesichtigung - Better Bags Myanmar",
+      "description": "Rucksackfabrik in Yangon live per Zoom oder Google Meet besichtigen. Kostenlose 60-Minuten-Tour: Nählinien, QC, Nadeldetektion. Mo-Sa buchbar."
+    },
     "home": {
       "title": "Better Bags Myanmar - Premium-OEM-Rucksackhersteller",
       "description": "Kundenspezifischer OEM-Rucksackhersteller in Myanmar. 20+ Jahre Erfahrung, 600+ Mitarbeiter, vorwiegend für japanische Marken tätig."

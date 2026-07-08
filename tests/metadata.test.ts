@@ -26,6 +26,7 @@ interface LocaleMetadata {
   home: PageMetadata;
   blogList: PageMetadata;
   factSheet: PageMetadata;
+  virtualTour: PageMetadata;
 }
 
 /** 读取每个 locale JSON 的 metadata namespace */
@@ -295,6 +296,48 @@ describe('SEO 元数据配置', () => {
 
       expect(metadata.alternates?.canonical).toBeDefined();
       expect(metadata.alternates?.canonical).toContain('/en/fact-sheet');
+      expect(metadata.alternates?.languages).toBeDefined();
+      expect(metadata.alternates?.languages?.en).toBeDefined();
+      expect(metadata.alternates?.languages?.['zh-Hans']).toBeDefined();
+      expect(metadata.alternates?.languages).toHaveProperty('x-default');
+    });
+  });
+
+  /**
+   * 虚拟看厂落地页元数据验证(全语言)
+   *
+   * 需求 14.1/14.2:标题 ≤60、描述 ≤150,全语言直接达标(非运行时截断)
+   */
+  describe('Virtual Tour 元数据验证', () => {
+    it.each(locales)('%s Virtual Tour 标题应不超过 60 字符', (locale) => {
+      expect(allMetadata[locale].virtualTour.title.length).toBeLessThanOrEqual(60);
+    });
+
+    it.each(locales)('%s Virtual Tour 描述应不超过 150 字符', (locale) => {
+      expect(allMetadata[locale].virtualTour.description.length).toBeLessThanOrEqual(150);
+    });
+
+    it.each(locales)('%s Virtual Tour 描述应具有描述性且不为空', (locale) => {
+      expect(allMetadata[locale].virtualTour.description.length).toBeGreaterThan(20);
+    });
+
+    it.each(locales)('%s Virtual Tour 标题应包含品牌名称', (locale) => {
+      expect(allMetadata[locale].virtualTour.title).toContain('Better Bags');
+    });
+
+    it('generateGenericMetadata 应为 /virtual-factory-tour 生成正确的 canonical', () => {
+      const meta = allMetadata.en.virtualTour;
+      const metadata = generateGenericMetadata(
+        'en',
+        meta.title,
+        meta.description,
+        '/virtual-factory-tour'
+      );
+
+      expect(metadata.alternates?.canonical).toBeDefined();
+      expect(metadata.alternates?.canonical).toContain(
+        '/en/virtual-factory-tour'
+      );
       expect(metadata.alternates?.languages).toBeDefined();
       expect(metadata.alternates?.languages?.en).toBeDefined();
       expect(metadata.alternates?.languages?.['zh-Hans']).toBeDefined();

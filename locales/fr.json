@@ -18,6 +18,7 @@
       "title": "Prêt à lancer votre projet ?",
       "subtitle": "Recevez un devis gratuit sous 24 heures",
       "button": "Demander un devis",
+      "tourLink": "Ou réservez une visite virtuelle de l'usine",
       "note": "Sans engagement, consultation gratuite"
     }
   },
@@ -33,6 +34,7 @@
     "skipToContent": "Aller au contenu principal"
   },
   "banner": {
+    "secondaryCta": "Réserver une visite virtuelle",
     "line1": "Better Bags depuis 2003",
     "line2": "#Usine de sacs à dos personnalisés de premier plan au Myanmar",
     "p1": {
@@ -509,11 +511,17 @@
       "highlight": "N'hésitez pas à nous contacter",
       "suffix": "— notre équipe est à votre écoute.",
       "button": "Contactez-nous",
+      "tourLink": "Réserver une visite virtuelle de l'usine",
       "glossaryLink": "Consultez notre glossaire des termes du métier",
       "blogLink": "Lisez nos derniers articles"
     }
   },
   "contact": {
+    "tour": {
+      "title": "Envie de voir l'usine d'abord ?",
+      "desc": "Participez gratuitement à une visite en direct de 60 minutes de notre site de production de Yangon, via Zoom ou Google Meet.",
+      "cta": "Réserver une visite virtuelle"
+    },
     "title": "Contactez-nous",
     "subtitle": "Prêt à lancer votre projet de sac à dos ?",
     "intro": "Remplissez le formulaire ci-dessous et nous vous répondrons sous 24 heures. Pour toute demande urgente, appelez-nous ou écrivez-nous directement sur WhatsApp.",
@@ -729,6 +737,10 @@
       {
         "name": "Fiche d'information",
         "href": "/fact-sheet"
+      },
+      {
+        "name": "Visite virtuelle de l'usine",
+        "href": "/virtual-factory-tour"
       }
     ]
   },
@@ -944,7 +956,84 @@
       { "label": "Téléphone (birman)", "value": "+95 9 9856 70999" }
     ]
   },
+  "virtualTour": {
+    "title": "Réserver une visite virtuelle de l'usine",
+    "subtitle": "Découvrez en direct notre site de production de Yangon — où que vous soyez",
+    "intro": "Visitez Better Bags Myanmar lors d'un appel vidéo en direct de 60 minutes. Rencontrez l'équipe derrière vos futures commandes, observez nos lignes de production en action et obtenez des réponses à toutes vos questions en temps réel — sans avoir à vous rendre à Yangon.",
+    "highlights": [
+      "60 minutes · entièrement gratuit",
+      "Zoom ou Google Meet — à vous de choisir",
+      "Questions-réponses en direct avec nos équipes commerciale et production"
+    ],
+    "whatYouSee": {
+      "title": "Ce que vous verrez pendant la visite",
+      "items": [
+        {
+          "title": "Coupe et préparation des matières",
+          "desc": "Contrôle des tissus à réception, entrepôt de matières et coupe de précision — c'est ici que commence chaque commande."
+        },
+        {
+          "title": "Lignes de couture",
+          "desc": "Notre atelier de couture en pleine activité : implantation des lignes, qualité d'exécution et cadence d'une capacité mensuelle de plus de 50 000 pièces."
+        },
+        {
+          "title": "Contrôle qualité et détection d'aiguilles par rayons X",
+          "desc": "Postes QC en ligne, inspection finale à 100 % et détecteur d'aiguilles à rayons X qui sécurise chaque expédition."
+        },
+        {
+          "title": "Emballage et entrepôt de produits finis",
+          "desc": "Lignes d'emballage, gestion des cartons et marchandises prêtes à l'export en attente d'expédition FOB Yangon."
+        }
+      ]
+    },
+    "howItWorks": {
+      "title": "Comment ça marche",
+      "steps": [
+        {
+          "title": "Choisissez un créneau",
+          "desc": "Sélectionnez un créneau libre dans le calendrier ci-dessous — les horaires s'affichent automatiquement dans votre fuseau horaire."
+        },
+        {
+          "title": "Recevez votre lien de réunion",
+          "desc": "Vous recevez immédiatement un e-mail de confirmation avec votre lien Zoom ou Google Meet et une invitation d'agenda."
+        },
+        {
+          "title": "Participez à la visite en direct",
+          "desc": "Notre équipe vous guide dans l'usine pendant 60 minutes, caméra à la main, en répondant à vos questions au fil de la visite."
+        }
+      ]
+    },
+    "details": {
+      "title": "Détails de la visite",
+      "items": [
+        { "label": "Durée", "value": "60 minutes" },
+        { "label": "Plateforme", "value": "Zoom ou Google Meet — au choix lors de la réservation" },
+        { "label": "Horaires disponibles", "value": "Lun–sam, 07 h 30 – 17 h 00, heure du Myanmar (UTC+6:30)" },
+        { "label": "Langues", "value": "English · 日本語 · 中文 · 한국어" },
+        { "label": "Coût", "value": "Gratuit — sans engagement" }
+      ]
+    },
+    "booking": {
+      "title": "Choisissez votre créneau de visite",
+      "languageNote": "Le calendrier de réservation peut s'afficher en anglais."
+    },
+    "fallback": {
+      "title": "Réservez votre visite par WhatsApp ou e-mail",
+      "desc": "Envoyez-nous vos date et heure préférées (lun–sam, 07 h 30 – 17 h 00, heure du Myanmar) et nous confirmerons votre visite virtuelle sous 24 heures.",
+      "whatsappCta": "Nous écrire sur WhatsApp",
+      "emailCta": "Nous envoyer un e-mail",
+      "contactCta": "Utiliser le formulaire de contact"
+    },
+    "alternative": {
+      "text": "Vous préférez organiser la visite par e-mail ou WhatsApp ?",
+      "linkText": "Contactez-nous directement"
+    }
+  },
   "metadata": {
+    "virtualTour": {
+      "title": "Visite virtuelle de l'usine - Better Bags Myanmar",
+      "description": "Visitez en direct notre usine de sacs à dos de Yangon via Zoom ou Google Meet. Visite gratuite de 60 min : couture, QC, détection d'aiguilles."
+    },
     "home": {
       "title": "Better Bags Myanmar - Usine OEM de sacs à dos haut de gamme",
       "description": "Fabricant de sacs à dos sur mesure de premier plan au Myanmar. 20+ ans d'expérience, 600+ employés, au service de marques japonaises."

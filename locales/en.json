@@ -18,7 +18,8 @@
       "title": "Ready to Start Your Project?",
       "subtitle": "Get a free quote within 24 hours",
       "button": "Get A Quote",
-      "note": "No obligation, free consultation"
+      "note": "No obligation, free consultation",
+      "tourLink": "Or book a live virtual factory tour"
     }
   },
   "nav": {
@@ -42,7 +43,8 @@
     },
     "p2": "With more than 20 years of experience and a primary focus on the Japanese market—including 15+ years of long-term partnerships with leading Japanese brands such as Anello—we also support select clients from Korea, the U.S., and Europe. We manufacture a wide variety of bags: travel bags, backpacks, shoulder bags, tote bags, and more—tailored to your exact requirements.",
     "p3": "Our competitive pricing and sustainable production options make us the perfect partner for businesses, organizations, and events of any scale.",
-    "cta": "Get A Quote"
+    "cta": "Get A Quote",
+    "secondaryCta": "Book a Virtual Factory Tour"
   },
   "about": {
     "title": "About Us",
@@ -510,7 +512,8 @@
       "suffix": "-- our team is here to help.",
       "button": "Contact Us",
       "glossaryLink": "Browse our Glossary for industry terms",
-      "blogLink": "Read our latest articles"
+      "blogLink": "Read our latest articles",
+      "tourLink": "Book a live virtual factory tour"
     }
   },
   "contact": {
@@ -562,6 +565,11 @@
     "whatsapp": {
       "label": "WhatsApp",
       "value": "+1 814.880.1463"
+    },
+    "tour": {
+      "title": "Want to See the Factory First?",
+      "desc": "Join a free 60-minute live virtual tour of our Yangon production floor via Zoom or Google Meet.",
+      "cta": "Book a Virtual Tour"
     },
     "trust": {
       "title": "Why Trust Us",
@@ -729,6 +737,10 @@
       {
         "name": "Fact Sheet",
         "href": "/fact-sheet"
+      },
+      {
+        "name": "Virtual Factory Tour",
+        "href": "/virtual-factory-tour"
       }
     ]
   },
@@ -944,6 +956,79 @@
       { "label": "Phone (Burmese)", "value": "+95 9 9856 70999" }
     ]
   },
+  "virtualTour": {
+    "title": "Book a Virtual Factory Tour",
+    "subtitle": "See our Yangon production floor live — from anywhere in the world",
+    "intro": "Walk through Better Bags Myanmar on a live 60-minute video call. Meet the team behind your future orders, watch our production lines in action, and get every question answered in real time — no flight to Yangon required.",
+    "highlights": [
+      "60 minutes · completely free",
+      "Zoom or Google Meet — you choose",
+      "Live Q&A with our sales and production team"
+    ],
+    "whatYouSee": {
+      "title": "What You'll See on the Tour",
+      "items": [
+        {
+          "title": "Cutting & Material Preparation",
+          "desc": "Incoming fabric inspection, the material warehouse, and precision cutting — where every order starts."
+        },
+        {
+          "title": "Sewing Production Lines",
+          "desc": "Our full sewing floor in action: line layout, workmanship, and the pace behind a 50,000+ pcs monthly capacity."
+        },
+        {
+          "title": "Quality Control & X-ray Needle Detection",
+          "desc": "Inline QC stations, 100% end-of-line inspection, and the X-ray needle detector that protects every shipment."
+        },
+        {
+          "title": "Packing & Finished-Goods Warehouse",
+          "desc": "Packing lines, carton handling, and export-ready goods awaiting FOB Yangon shipment."
+        }
+      ]
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "steps": [
+        {
+          "title": "Pick a time",
+          "desc": "Choose any open slot in the calendar below — times are shown in your local time zone automatically."
+        },
+        {
+          "title": "Get your meeting link",
+          "desc": "You'll instantly receive a confirmation email with your Zoom or Google Meet link and a calendar invite."
+        },
+        {
+          "title": "Join the live tour",
+          "desc": "Our team walks you through the factory for 60 minutes, camera in hand, answering your questions as we go."
+        }
+      ]
+    },
+    "details": {
+      "title": "Tour Details",
+      "items": [
+        { "label": "Duration", "value": "60 minutes" },
+        { "label": "Platform", "value": "Zoom or Google Meet — selected when you book" },
+        { "label": "Available hours", "value": "Mon–Sat, 07:30–17:00 Myanmar time (UTC+6:30)" },
+        { "label": "Languages", "value": "English · 日本語 · 中文 · 한국어" },
+        { "label": "Cost", "value": "Free — no obligation" }
+      ]
+    },
+    "booking": {
+      "title": "Choose Your Tour Time",
+      "languageNote": "The booking calendar may be displayed in English."
+    },
+    "fallback": {
+      "title": "Book your tour via WhatsApp or email",
+      "desc": "Send us your preferred date and time (Mon–Sat, 07:30–17:00 Myanmar time) and we'll confirm your virtual tour within 24 hours.",
+      "whatsappCta": "WhatsApp us",
+      "emailCta": "Email us",
+      "contactCta": "Use the contact form"
+    },
+    "alternative": {
+      "text": "Prefer to arrange it by email or WhatsApp instead?",
+      "linkText": "Contact us directly"
+    }
+  },
   "metadata": {
     "home": {
       "title": "Better Bags Myanmar - Premium OEM Backpack Factory",
@@ -956,6 +1041,10 @@
     "factSheet": {
       "title": "Better Bags Myanmar Company Fact Sheet",
       "description": "Verified company facts: OEM/ODM backpack factory in Yangon, Myanmar. 600+ staff, 50,000+ pcs monthly, MOQ 1,500 pcs. Contact and QC details inside."
+    },
+    "virtualTour": {
+      "title": "Book a Virtual Factory Tour - Better Bags Myanmar",
+      "description": "Tour our Yangon backpack factory live on Zoom or Google Meet. Free 60-minute walkthrough of sewing lines, QC and X-ray needle detection. Mon-Sat."
     }
   },
   "notFound": {
