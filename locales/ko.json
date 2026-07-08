@@ -522,6 +522,9 @@
       "value": "Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai Industrial Zone, Yangon, Myanmar",
       "viewOnMap": "Google 지도에서 보기"
     },
+    "map": {
+      "title": "Better Bags Myanmar 공장 위치 지도"
+    },
     "phone": {
       "label": "전화번호",
       "fallback": "기타 언어는 이메일로 문의해 주시기 바랍니다",
@@ -954,6 +957,12 @@
       "title": "Better Bags Myanmar 회사 팩트 시트",
       "description": "검증된 회사 정보: 미얀마 양곤의 OEM/ODM 백팩 공장. 임직원 600명 이상, 월 50,000개 이상, MOQ 1,500개. 연락처 및 QC 정보 포함."
     }
+  },
+  "notFound": {
+    "title": "페이지를 찾을 수 없습니다",
+    "description": "찾으시는 페이지가 존재하지 않거나 이동되었습니다.",
+    "backHome": "홈으로 돌아가기",
+    "viewBlog": "블로그 보기"
   },
   "a11y": {
     "closeNotification": "알림 닫기",

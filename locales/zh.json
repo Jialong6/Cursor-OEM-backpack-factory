@@ -188,6 +188,9 @@
       "value": "Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai工业区，仰光，缅甸",
       "viewOnMap": "在 Google 地图上查看"
     },
+    "map": {
+      "title": "Better Bags Myanmar 工厂位置地图"
+    },
     "phone": {
       "label": "电话",
       "fallback": "其他语言请通过邮件联系",
@@ -954,6 +957,12 @@
       "title": "Better Bags Myanmar 公司资料概览",
       "description": "经核实的公司事实：缅甸仰光 OEM/ODM 背包工厂。600+ 员工，月产 50,000+ 件，最小起订量 1,500 件。含联系方式与品控详情。"
     }
+  },
+  "notFound": {
+    "title": "页面未找到",
+    "description": "您访问的页面不存在或已被移动。",
+    "backHome": "返回首页",
+    "viewBlog": "阅读博客"
   },
   "a11y": {
     "closeNotification": "关闭通知",

@@ -223,6 +223,7 @@ describe('Translation File Unit Tests', () => {
       'quoteWidget',
       'factSheet',
       'metadata',
+      'notFound',
       'a11y',
     ];
 

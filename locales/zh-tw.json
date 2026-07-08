@@ -522,6 +522,9 @@
       "value": "Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai Industrial Zone, Yangon, Myanmar",
       "viewOnMap": "在 Google 地圖上查看"
     },
+    "map": {
+      "title": "Better Bags Myanmar 工廠位置地圖"
+    },
     "phone": {
       "label": "電話",
       "fallback": "其他語言請透過電子郵件與我們聯絡",
@@ -954,6 +957,12 @@
       "title": "Better Bags Myanmar 公司資料表",
       "description": "已驗證的公司資訊：緬甸仰光 OEM/ODM 後背包工廠。600+ 員工，月產 50,000+ 件，最小訂購量 1,500 件。含聯絡方式與品管詳情。"
     }
+  },
+  "notFound": {
+    "title": "頁面未找到",
+    "description": "您造訪的頁面不存在或已被移動。",
+    "backHome": "返回首頁",
+    "viewBlog": "閱讀部落格"
   },
   "a11y": {
     "closeNotification": "關閉通知",

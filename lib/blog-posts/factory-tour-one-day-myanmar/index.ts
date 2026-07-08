@@ -48,6 +48,7 @@ const post: BlogPost = {
     ko: () => import('./content.ko'),
   },
   date: "2026-05-20",
+  dateModified: "2026-07-07",
   thumbnail: "/images/blog/placeholder-factory-tour.svg",
   category: {
     "ja": "工場見学",

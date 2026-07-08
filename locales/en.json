@@ -522,6 +522,9 @@
       "value": "Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai Industrial Zone, Yangon, Myanmar",
       "viewOnMap": "View on Google Maps"
     },
+    "map": {
+      "title": "Map of Better Bags Myanmar factory location"
+    },
     "phone": {
       "label": "Phone Number",
       "fallback": "For other languages, please contact us via email",
@@ -954,6 +957,12 @@
       "title": "Better Bags Myanmar Company Fact Sheet",
       "description": "Verified company facts: OEM/ODM backpack factory in Yangon, Myanmar. 600+ staff, 50,000+ pcs monthly, MOQ 1,500 pcs. Contact and QC details inside."
     }
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "The page you are looking for does not exist or has been moved.",
+    "backHome": "Back to Homepage",
+    "viewBlog": "Read Our Blog"
   },
   "a11y": {
     "closeNotification": "Close notification",

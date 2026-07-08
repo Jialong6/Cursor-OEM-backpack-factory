@@ -19,15 +19,23 @@ export const FACTORY_INFO = {
     addressCountry: 'MM',
     postalCode: '11000',
   },
+  // 坐标取自 Google Business Profile 档案(Ngwe Pin Lai 工业区实地定位,
+  // 2026-07-08 经 Google Maps 核实;旧值 16.871311,96.199379 指向市区东侧,系错误数据)
   geo: {
-    latitude: 16.871311,
-    longitude: 96.199379,
+    latitude: 16.9304653,
+    longitude: 96.0619768,
   },
   numberOfEmployees: {
     minValue: 600,
     maxValue: 700,
   },
   credentials: ['ISO 9001', 'OEKO-TEX', 'GRS', 'GOTS'],
+  // 站外权威档案(实体消歧):LinkedIn 公司页 + Google 商家档案。
+  // 搜索引擎与 AI 引擎靠 sameAs 将网站与站外实体对齐(GEO 关键信号)
+  sameAs: [
+    'https://www.linkedin.com/company/better-bags-myanmar/',
+    'https://www.google.com/maps/place/Better+Bags+Myanmar/@16.9304653,96.0619768,17z/',
+  ],
 };
 
 /**
@@ -86,6 +94,7 @@ export default function ManufacturingPlantSchema({
     url: FACTORY_INFO.url,
     logo: FACTORY_INFO.logo,
     description,
+    sameAs: FACTORY_INFO.sameAs,
     inLanguage: locale,
     foundingDate: FACTORY_INFO.foundingDate,
     address: {

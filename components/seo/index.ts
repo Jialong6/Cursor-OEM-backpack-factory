@@ -10,3 +10,5 @@ export type { FAQSection } from './FAQPageSchema';
 export { default as GlossarySchema } from './GlossarySchema';
 export { default as BlogPostingSchema } from './BlogPostingSchema';
 export { default as FactSheetSchema, FACT_SHEET_DATE_MODIFIED } from './FactSheetSchema';
+export { default as BreadcrumbSchema } from './BreadcrumbSchema';
+export type { BreadcrumbSchemaItem } from './BreadcrumbSchema';

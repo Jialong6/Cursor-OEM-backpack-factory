@@ -12,6 +12,8 @@ interface BlogPostingSchemaProps {
   readonly description: string;
   readonly image: string;
   readonly datePublished: string;
+  /** 最后实质性更新日期;缺省回退 datePublished(保证新鲜度信号字段完整) */
+  readonly dateModified?: string;
   readonly author: AuthorProfile;
   readonly locale: string;
 }
@@ -38,6 +40,7 @@ export default function BlogPostingSchema({
   description,
   image,
   datePublished,
+  dateModified,
   author,
   locale,
 }: BlogPostingSchemaProps) {
@@ -54,6 +57,7 @@ export default function BlogPostingSchema({
     description,
     image: imageUrl,
     datePublished,
+    dateModified: dateModified ?? datePublished,
     author: {
       '@type': 'Person',
       // 人名保持英文(跨语言实体对齐);头衔与简介跟随 inLanguage

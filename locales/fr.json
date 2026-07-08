@@ -522,6 +522,9 @@
       "value": "Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai Industrial Zone, Yangon, Myanmar",
       "viewOnMap": "Voir sur Google Maps"
     },
+    "map": {
+      "title": "Carte de l'emplacement de l'usine Better Bags Myanmar"
+    },
     "phone": {
       "label": "Numéro de téléphone",
       "fallback": "Pour les autres langues, veuillez nous contacter par e-mail",
@@ -954,6 +957,12 @@
       "title": "Fiche d'information Better Bags Myanmar",
       "description": "Données vérifiées : usine OEM/ODM de sacs à dos à Yangon, Myanmar. 600+ employés, 50,000+ pièces/mois, MOQ 1,500. Contact et QC inclus."
     }
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "description": "La page que vous recherchez n'existe pas ou a été déplacée.",
+    "backHome": "Retour à l'accueil",
+    "viewBlog": "Lire notre blog"
   },
   "a11y": {
     "closeNotification": "Fermer la notification",

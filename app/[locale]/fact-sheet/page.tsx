@@ -3,7 +3,7 @@ import { getTranslations } from 'next-intl/server';
 import { locales, type Locale } from '@/i18n';
 import { generateGenericMetadata } from '@/lib/metadata';
 import FactSheet from '@/components/sections/FactSheet';
-import { FactSheetSchema } from '@/components/seo';
+import { BreadcrumbSchema, FactSheetSchema } from '@/components/seo';
 
 /**
  * Fact Sheet 页(GEO / AI 搜索优化)
@@ -62,6 +62,10 @@ export default async function FactSheetPage({
     locale: validLocale,
     namespace: 'factSheet',
   });
+  const tNav = await getTranslations({
+    locale: validLocale,
+    namespace: 'nav',
+  });
 
   const title = t('title');
   const intro = t('intro');
@@ -74,6 +78,12 @@ export default async function FactSheetPage({
   return (
     <>
       <FactSheetSchema locale={validLocale} name={title} description={intro} />
+      <BreadcrumbSchema
+        items={[
+          { name: tNav('banner'), path: `/${validLocale}` },
+          { name: title },
+        ]}
+      />
       <FactSheet
         title={title}
         intro={intro}

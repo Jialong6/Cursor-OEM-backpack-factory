@@ -6,6 +6,7 @@ import { useParams } from 'next/navigation';
 import { getAllBlogPosts } from '@/lib/blog-data';
 import { getLocalizedField } from '@/lib/blog-utils';
 import OptimizedImage, { IMAGE_SIZES, ASPECT_RATIOS } from '@/components/ui/OptimizedImage';
+import { BreadcrumbSchema } from '@/components/seo';
 
 /**
  * 博客列表页面
@@ -22,6 +23,7 @@ import OptimizedImage, { IMAGE_SIZES, ASPECT_RATIOS } from '@/components/ui/Opti
  */
 export default function BlogListPage() {
   const t = useTranslations('blogList');
+  const tNav = useTranslations('nav');
   const params = useParams();
   const locale = params.locale as string;
   const allPosts = getAllBlogPosts();
@@ -52,6 +54,12 @@ export default function BlogListPage() {
 
   return (
     <main className="min-h-screen bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+      <BreadcrumbSchema
+        items={[
+          { name: tNav('banner'), path: `/${locale}` },
+          { name: tNav('blog') },
+        ]}
+      />
       <div className="max-w-7xl mx-auto">
         {/* 页面标题 */}
         <div className="text-center mb-12">

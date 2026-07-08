@@ -140,15 +140,19 @@ describe('FactSheetPage server 页(块 2)', () => {
     const scripts = container.querySelectorAll(
       'script[type="application/ld+json"]'
     );
-    expect(scripts.length).toBe(1);
+    // 页面含 AboutPage + BreadcrumbList 两段 JSON-LD
+    expect(scripts.length).toBe(2);
 
-    const schema = JSON.parse(scripts[0].textContent || '') as Record<
-      string,
-      unknown
-    >;
-    expect(schema['@type']).toBe('AboutPage');
-    const mainEntity = schema.mainEntity as Record<string, unknown>;
+    const schemas = Array.from(scripts).map(
+      (s) => JSON.parse(s.textContent || '') as Record<string, unknown>
+    );
+    const schema = schemas.find((s) => s['@type'] === 'AboutPage');
+    expect(schema, '缺少 AboutPage JSON-LD').toBeDefined();
+    const mainEntity = schema!.mainEntity as Record<string, unknown>;
     expect(mainEntity['@id']).toBe('https://betterbagsmm.com/#organization');
+
+    const breadcrumb = schemas.find((s) => s['@type'] === 'BreadcrumbList');
+    expect(breadcrumb, '缺少 BreadcrumbList JSON-LD').toBeDefined();
   });
 
   it('应渲染 19 组 dt/dd', async () => {
