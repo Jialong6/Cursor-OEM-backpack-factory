@@ -955,6 +955,12 @@
       "description": "Verified company facts: OEM/ODM backpack factory in Yangon, Myanmar. 600+ staff, 50,000+ pcs monthly, MOQ 1,500 pcs. Contact and QC details inside."
     }
   },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "The page you are looking for does not exist or has been moved.",
+    "backHome": "Back to Homepage",
+    "viewBlog": "Read Our Blog"
+  },
   "a11y": {
     "closeNotification": "Close notification",
     "notifications": "Notifications",

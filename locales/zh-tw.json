@@ -955,6 +955,12 @@
       "description": "已驗證的公司資訊：緬甸仰光 OEM/ODM 後背包工廠。600+ 員工，月產 50,000+ 件，最小訂購量 1,500 件。含聯絡方式與品管詳情。"
     }
   },
+  "notFound": {
+    "title": "頁面未找到",
+    "description": "您造訪的頁面不存在或已被移動。",
+    "backHome": "返回首頁",
+    "viewBlog": "閱讀部落格"
+  },
   "a11y": {
     "closeNotification": "關閉通知",
     "notifications": "通知",

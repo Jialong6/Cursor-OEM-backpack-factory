@@ -20,6 +20,8 @@ export interface BlogPost {
   title: LocalizedField<string>;
   excerpt: LocalizedField<string>;
   date: string;
+  /** 最后实质性更新日期(ISO);未更新过则与 date 相同 */
+  dateModified?: string;
   thumbnail: string;
   category: LocalizedField<string>;
   author?: string;

@@ -48,6 +48,7 @@ const post: BlogPost = {
     ko: () => import('./content.ko'),
   },
   date: "2026-05-10",
+  dateModified: "2026-07-07",
   thumbnail: "/images/blog/placeholder-ipack.svg",
   category: {
     "ja": "品質管理",

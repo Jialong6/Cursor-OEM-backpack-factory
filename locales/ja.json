@@ -955,6 +955,12 @@
       "description": "検証済みの会社情報：ミャンマー・ヤンゴンの OEM/ODM バックパック工場。従業員600名以上、月産50,000個以上、MOQ 1,500個。連絡先と品質管理の詳細を掲載。"
     }
   },
+  "notFound": {
+    "title": "ページが見つかりません",
+    "description": "お探しのページは存在しないか、移動された可能性があります。",
+    "backHome": "ホームへ戻る",
+    "viewBlog": "ブログを読む"
+  },
   "a11y": {
     "closeNotification": "通知を閉じる",
     "notifications": "通知",

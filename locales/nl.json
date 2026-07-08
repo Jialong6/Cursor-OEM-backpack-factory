@@ -955,6 +955,12 @@
       "description": "Geverifieerde bedrijfsfeiten: OEM/ODM-rugzakfabriek in Yangon, Myanmar. 600+ medewerkers, 50,000+ stuks/maand, MOQ 1,500. Met contact- en QC-gegevens."
     }
   },
+  "notFound": {
+    "title": "Pagina niet gevonden",
+    "description": "De pagina die u zoekt bestaat niet of is verplaatst.",
+    "backHome": "Terug naar de homepage",
+    "viewBlog": "Lees onze blog"
+  },
   "a11y": {
     "closeNotification": "Melding sluiten",
     "notifications": "Meldingen",

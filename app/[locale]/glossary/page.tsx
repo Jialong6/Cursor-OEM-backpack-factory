@@ -3,7 +3,7 @@
 import { useState, useMemo } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
-import { GlossarySchema } from '@/components/seo';
+import { BreadcrumbSchema, GlossarySchema } from '@/components/seo';
 import {
   GLOSSARY_CATEGORIES,
   GLOSSARY_TERMS,
@@ -18,6 +18,7 @@ import {
  */
 export default function GlossaryPage() {
   const t = useTranslations('glossary');
+  const tNav = useTranslations('nav');
   const locale = useLocale();
   const [activeCategory, setActiveCategory] = useState<GlossaryCategory | 'all'>('all');
 
@@ -49,6 +50,12 @@ export default function GlossaryPage() {
   return (
     <>
       <GlossarySchema terms={schemaTerms} locale={locale} name={t('title')} />
+      <BreadcrumbSchema
+        items={[
+          { name: tNav('banner'), path: `/${locale}` },
+          { name: t('title') },
+        ]}
+      />
 
       <main className="min-h-screen bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">

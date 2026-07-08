@@ -955,6 +955,12 @@
       "description": "Datos verificados: fábrica OEM/ODM de mochilas en Yangon, Myanmar. 600+ empleados, 50,000+ piezas/mes, MOQ 1,500. Contacto y QC incluidos."
     }
   },
+  "notFound": {
+    "title": "Página no encontrada",
+    "description": "La página que busca no existe o ha sido movida.",
+    "backHome": "Volver a la página de inicio",
+    "viewBlog": "Leer nuestro blog"
+  },
   "a11y": {
     "closeNotification": "Cerrar notificación",
     "notifications": "Notificaciones",

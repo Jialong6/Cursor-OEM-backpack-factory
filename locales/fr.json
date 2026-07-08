@@ -955,6 +955,12 @@
       "description": "Données vérifiées : usine OEM/ODM de sacs à dos à Yangon, Myanmar. 600+ employés, 50,000+ pièces/mois, MOQ 1,500. Contact et QC inclus."
     }
   },
+  "notFound": {
+    "title": "Page introuvable",
+    "description": "La page que vous recherchez n'existe pas ou a été déplacée.",
+    "backHome": "Retour à l'accueil",
+    "viewBlog": "Lire notre blog"
+  },
   "a11y": {
     "closeNotification": "Fermer la notification",
     "notifications": "Notifications",

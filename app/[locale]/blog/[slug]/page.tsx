@@ -7,7 +7,7 @@ import { notFound } from 'next/navigation';
 import OptimizedImage, { IMAGE_SIZES, ASPECT_RATIOS } from '@/components/ui/OptimizedImage';
 import AuthorByline from '@/components/content/AuthorByline';
 import BackToTopButton from '@/components/content/BackToTopButton';
-import { BlogPostingSchema } from '@/components/seo';
+import { BlogPostingSchema, BreadcrumbSchema } from '@/components/seo';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
@@ -48,8 +48,16 @@ export default async function BlogDetailPage({
         description={excerpt}
         image={post.thumbnail}
         datePublished={post.date}
+        dateModified={post.dateModified}
         author={author}
         locale={locale}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: t('home'), path: `/${locale}` },
+          { name: t('blog'), path: `/${locale}/blog` },
+          { name: title },
+        ]}
       />
 
       <article className="max-w-4xl mx-auto">

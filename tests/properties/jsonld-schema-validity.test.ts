@@ -30,8 +30,8 @@ export const FACTORY_INFO = {
     postalCode: '11000',
   },
   geo: {
-    latitude: 16.871311,
-    longitude: 96.199379,
+    latitude: 16.9304653,
+    longitude: 96.0619768,
   },
   numberOfEmployees: {
     minValue: 600,

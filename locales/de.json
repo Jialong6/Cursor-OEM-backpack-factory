@@ -955,6 +955,12 @@
       "description": "Geprüfte Unternehmensdaten: OEM/ODM-Rucksackfabrik in Yangon, Myanmar. 600+ Mitarbeiter, 50.000+ Stück/Monat, MOQ 1.500. Kontakt und QC inklusive."
     }
   },
+  "notFound": {
+    "title": "Seite nicht gefunden",
+    "description": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+    "backHome": "Zurück zur Startseite",
+    "viewBlog": "Unseren Blog lesen"
+  },
   "a11y": {
     "closeNotification": "Benachrichtigung schließen",
     "notifications": "Benachrichtigungen",
