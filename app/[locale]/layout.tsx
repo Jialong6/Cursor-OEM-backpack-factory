@@ -9,6 +9,7 @@ import { generateHomeMetadata } from '@/lib/metadata';
 import { ManufacturingPlantSchema } from '@/components/seo';
 import { LanguageBanner } from '@/components/i18n';
 import { getFontVariables } from '@/app/fonts';
+import { Analytics } from '@vercel/analytics/next';
 import "../globals.css";
 
 /**
@@ -90,6 +91,7 @@ export default async function RootLayout({
             {children}
           </main>
           <Footer />
+          <Analytics />
         </NextIntlClientProvider>
       </body>
     </html>
