@@ -1018,6 +1018,8 @@
       "languageNote": "The booking calendar may be displayed in English."
     },
     "fallback": {
+      "emailSubject": "Virtual Factory Tour Booking Request",
+      "messageTemplate": "Hello, I would like to book a 60-minute virtual factory tour. My preferred date and time (Myanmar time, Mon-Sat 07:30-17:00): ",
       "title": "Book your tour via WhatsApp or email",
       "desc": "Send us your preferred date and time (Mon–Sat, 07:30–17:00 Myanmar time) and we'll confirm your virtual tour within 24 hours.",
       "whatsappCta": "WhatsApp us",

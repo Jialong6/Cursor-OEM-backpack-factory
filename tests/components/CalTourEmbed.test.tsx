@@ -34,6 +34,8 @@ const messages = {
     fallback: {
       title: 'Book your tour via WhatsApp or email',
       desc: 'Message us your preferred time and we will confirm within 24 hours.',
+      emailSubject: 'Virtual Factory Tour Booking Request',
+      messageTemplate: 'Hello, I would like to book a tour. Preferred time: ',
       whatsappCta: 'WhatsApp us',
       emailCta: 'Email us',
       contactCta: 'Use the contact form',
@@ -89,22 +91,36 @@ describe('CalTourEmbed', () => {
       messages.virtualTour.fallback.title
     );
 
-    // WhatsApp 链接:wa.me + 去空格号码
+    // WhatsApp 链接:wa.me 号码部分必须是纯数字(旧实现残留 + 与点号,
+    // "+1 814.880.1463" 会生成无效链接),并带预填消息
     const whatsappLink = container.querySelector('a[href^="https://wa.me/"]');
     expect(whatsappLink).not.toBeNull();
     expect(whatsappLink!.getAttribute('href')).toBe(
-      'https://wa.me/+959123456789'
+      `https://wa.me/959123456789?text=${encodeURIComponent(
+        messages.virtualTour.fallback.messageTemplate
+      )}`
     );
 
-    // mailto 链接
+    // mailto 链接:带预填主题与正文
     const mailtoLink = container.querySelector(
-      'a[href="mailto:jay@betterbagsmm.com"]'
+      'a[href^="mailto:jay@betterbagsmm.com"]'
     );
     expect(mailtoLink).not.toBeNull();
+    expect(mailtoLink!.getAttribute('href')).toBe(
+      `mailto:jay@betterbagsmm.com?subject=${encodeURIComponent(
+        messages.virtualTour.fallback.emailSubject
+      )}&body=${encodeURIComponent(
+        messages.virtualTour.fallback.messageTemplate
+      )}`
+    );
 
     // 联系表单链接(带 locale 前缀)
     const contactLink = container.querySelector('a[href="/zh#contact"]');
     expect(contactLink).not.toBeNull();
+
+    // 明文兜底:号码与邮箱直接可见(跳转失败也能手动联系)
+    expect(container.textContent).toContain('+95 9 123 456 789');
+    expect(container.textContent).toContain('jay@betterbagsmm.com');
   });
 
   it('shows the English-form language note for my (Burmese unsupported by Cal.com)', () => {

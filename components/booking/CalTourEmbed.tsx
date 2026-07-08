@@ -6,6 +6,7 @@ import Cal, { getCalApi } from '@calcom/embed-react';
 import { useLocale, useTranslations } from 'next-intl';
 import { isValidLocale } from '@/i18n';
 import { getCalLink, isEmbedHiddenLocale, toCalLocale } from '@/lib/cal-tour';
+import { buildWhatsAppHref, buildMailtoHref } from '@/lib/contact-links';
 
 /**
  * 虚拟看厂预约嵌入组件(Cal.com)
@@ -25,11 +26,6 @@ const CAL_NAMESPACE = 'virtual-factory-tour';
 
 /** 品牌色(tailwind primary DEFAULT),用于 embed 内部按钮与选中态 */
 const CAL_BRAND_COLOR = '#87A575';
-
-/** 复用 Contact 区的 wa.me 规则:去掉空格/括号/连字符 */
-function toWhatsAppHref(displayNumber: string): string {
-  return `https://wa.me/${displayNumber.replace(/[\s()-]/g, '')}`;
-}
 
 export default function CalTourEmbed() {
   const locale = useLocale();
@@ -67,6 +63,10 @@ export default function CalTourEmbed() {
   }, [showEmbed]);
 
   if (!showEmbed) {
+    const whatsappDisplay = tContact('whatsapp.value');
+    const emailAddress = tContact('email.value');
+    const messageTemplate = t('fallback.messageTemplate');
+
     return (
       <div className="bg-neutral-50 rounded-lg border border-neutral-200 p-8 text-center">
         <h3 className="text-xl font-semibold text-neutral-800 mb-3">
@@ -77,7 +77,7 @@ export default function CalTourEmbed() {
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-3">
           <a
-            href={toWhatsAppHref(tContact('whatsapp.value'))}
+            href={buildWhatsAppHref(whatsappDisplay, messageTemplate)}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block rounded-lg bg-primary px-6 py-3 font-semibold text-white transition-all hover:bg-primary-dark focus:outline-none focus:ring-4 focus:ring-primary/30"
@@ -85,7 +85,10 @@ export default function CalTourEmbed() {
             {t('fallback.whatsappCta')}
           </a>
           <a
-            href={`mailto:${tContact('email.value')}`}
+            href={buildMailtoHref(emailAddress, {
+              subject: t('fallback.emailSubject'),
+              body: messageTemplate,
+            })}
             className="inline-block rounded-lg border border-primary px-6 py-3 font-semibold text-primary transition-all hover:bg-primary hover:text-white focus:outline-none focus:ring-4 focus:ring-primary/30"
           >
             {t('fallback.emailCta')}
@@ -97,6 +100,10 @@ export default function CalTourEmbed() {
             {t('fallback.contactCta')}
           </Link>
         </div>
+        {/* 明文兜底:访客设备没配邮件客户端/装 WhatsApp 时可直接复制 */}
+        <p className="mt-5 text-sm text-neutral-500 select-all">
+          {whatsappDisplay} · {emailAddress}
+        </p>
       </div>
     );
   }

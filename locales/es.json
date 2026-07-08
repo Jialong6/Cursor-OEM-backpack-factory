@@ -1018,6 +1018,8 @@
       "languageNote": "El calendario de reservas puede mostrarse en inglés."
     },
     "fallback": {
+      "emailSubject": "Solicitud de tour virtual por la fábrica",
+      "messageTemplate": "Hola, me gustaría reservar un tour virtual de 60 minutos por la fábrica. Mi fecha y hora preferidas (hora de Myanmar, lun-sáb 07:30-17:00): ",
       "title": "Reserve su tour por WhatsApp o correo",
       "desc": "Envíenos su fecha y hora preferidas (lun–sáb, 07:30–17:00, hora de Myanmar) y confirmaremos su tour virtual en un plazo de 24 horas.",
       "whatsappCta": "Escríbanos por WhatsApp",

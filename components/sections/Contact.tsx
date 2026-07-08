@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { buildWhatsAppHref } from '@/lib/contact-links';
 import TrustSignals from '@/components/content/TrustSignals';
 import FactoryMapEmbed from '@/components/content/FactoryMapEmbed';
 import QuoteFormFields from '@/components/quote/QuoteFormFields';
@@ -93,7 +94,7 @@ export default function Contact() {
             <div className="bg-neutral-50 rounded-lg border border-neutral-200 p-6">
               <h3 className="text-lg font-semibold text-neutral-800 mb-3">{t('whatsapp.label')}</h3>
               <a
-                href={`https://wa.me/${t('whatsapp.value').replace(/[\s()-]/g, '')}`}
+                href={buildWhatsAppHref(t('whatsapp.value'))}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary hover:text-primary-dark font-medium"
