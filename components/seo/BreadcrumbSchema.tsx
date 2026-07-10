@@ -1,6 +1,8 @@
-// 复用同目录常量取站点 URL(与 BlogPostingSchema 一致);
-// 不从 lib/metadata 引入,避免联动 HreflangTags -> i18n 的重依赖链
-import { FACTORY_INFO } from './ManufacturingPlantSchema';
+// 从纯数据模块取站点 URL:本组件是 server 组件,若从 'use client'
+// 模块(如 ManufacturingPlantSchema)导入,拿到的是 client-reference
+// 代理,FACTORY_INFO.url 会变成 undefined(曾致线上输出 "undefined/zh");
+// 也不从 lib/metadata 引入,避免联动 HreflangTags -> i18n 的重依赖链
+import { FACTORY_INFO } from '@/lib/factory-info';
 
 /**
  * 面包屑条目

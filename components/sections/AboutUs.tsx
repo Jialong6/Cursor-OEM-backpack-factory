@@ -4,7 +4,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import { getAuthorById, getAuthorText } from '@/lib/author-data';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { TRUSTED_BRANDS } from '@/lib/brand-logos';
-import { FACTORY_INFO } from '@/components/seo/ManufacturingPlantSchema';
+import { FACTORY_INFO } from '@/lib/factory-info';
 
 /**
  * 关于我们区块组件

@@ -1,6 +1,6 @@
 'use client';
 
-import { FACTORY_INFO } from './ManufacturingPlantSchema';
+import { FACTORY_INFO } from '@/lib/factory-info';
 
 /**
  * Fact Sheet 页面 JSON-LD 的 dateModified(公司事实的最后核实日期)
@@ -30,7 +30,7 @@ interface FactSheetSchemaProps {
  * 识别为公司数据的权威来源。
  *
  * 设计说明:
- * - 与 BlogPostingSchema 同款:'use client' + import 'use client' 模块 FACTORY_INFO
+ * - 与 BlogPostingSchema 同款:'use client' + 复用 lib/factory-info 常量
  * - url 指向具体语言版本:${FACTORY_INFO.url}/${locale}/fact-sheet
  * - dateModified 使用导出常量 FACT_SHEET_DATE_MODIFIED
  *

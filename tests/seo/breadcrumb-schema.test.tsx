@@ -11,7 +11,7 @@
 import { describe, it, expect } from 'vitest';
 import { render } from '@testing-library/react';
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
-import { FACTORY_INFO } from '@/components/seo/ManufacturingPlantSchema';
+import { FACTORY_INFO } from '@/lib/factory-info';
 
 const BASE_URL = FACTORY_INFO.url;
 

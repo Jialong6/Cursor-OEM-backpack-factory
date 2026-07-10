@@ -12,7 +12,7 @@
 
 import { describe, it, expect } from 'vitest';
 import * as fc from 'fast-check';
-import { FACTORY_INFO } from '@/components/seo/ManufacturingPlantSchema';
+import { FACTORY_INFO } from '@/lib/factory-info';
 
 /**
  * 模拟 ManufacturingBusiness JSON-LD 生成（与组件行为一致）

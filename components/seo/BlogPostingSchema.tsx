@@ -2,7 +2,7 @@
 
 import type { AuthorProfile } from '@/lib/author-data';
 import { getAuthorText } from '@/lib/author-data';
-import { FACTORY_INFO } from './ManufacturingPlantSchema';
+import { FACTORY_INFO } from '@/lib/factory-info';
 
 /**
  * BlogPostingSchema 组件属性

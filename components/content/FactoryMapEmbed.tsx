@@ -1,7 +1,7 @@
 'use client';
 
 import { useLocale, useTranslations } from 'next-intl';
-import { FACTORY_INFO } from '@/components/seo/ManufacturingPlantSchema';
+import { FACTORY_INFO } from '@/lib/factory-info';
 
 /**
  * 工厂位置交互式地图(Google Maps 嵌入)

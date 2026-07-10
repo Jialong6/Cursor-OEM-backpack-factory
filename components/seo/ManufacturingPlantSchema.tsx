@@ -1,42 +1,9 @@
 'use client';
 
 import { useTranslations, useLocale } from 'next-intl';
-
-/**
- * 工厂基本信息常量
- * 供组件和测试共用
- */
-export const FACTORY_INFO = {
-  name: 'Better Bags Myanmar Company Limited',
-  url: 'https://betterbagsmm.com',
-  logo: 'https://betterbagsmm.com/logo.png',
-  foundingDate: '2003',
-  telephone: '+1-814-880-1463',
-  email: 'jay@betterbagsmm.com',
-  address: {
-    streetAddress: 'Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai Industrial Zone',
-    addressLocality: 'Yangon',
-    addressCountry: 'MM',
-    postalCode: '11000',
-  },
-  // 坐标取自 Google Business Profile 档案(Ngwe Pin Lai 工业区实地定位,
-  // 2026-07-08 经 Google Maps 核实;旧值 16.871311,96.199379 指向市区东侧,系错误数据)
-  geo: {
-    latitude: 16.9304653,
-    longitude: 96.0619768,
-  },
-  numberOfEmployees: {
-    minValue: 600,
-    maxValue: 700,
-  },
-  credentials: ['ISO 9001', 'OEKO-TEX', 'GRS', 'GOTS'],
-  // 站外权威档案(实体消歧):LinkedIn 公司页 + Google 商家档案。
-  // 搜索引擎与 AI 引擎靠 sameAs 将网站与站外实体对齐(GEO 关键信号)
-  sameAs: [
-    'https://www.linkedin.com/company/better-bags-myanmar/',
-    'https://www.google.com/maps/place/Better+Bags+Myanmar/@16.9304653,96.0619768,17z/',
-  ],
-};
+// 常量住在纯数据模块 lib/factory-info:server 组件(如 BreadcrumbSchema)
+// 也要取值,若定义在本 'use client' 文件内会拿到 client-reference 代理
+import { FACTORY_INFO } from '@/lib/factory-info';
 
 /**
  * ManufacturingPlantSchema 组件属性

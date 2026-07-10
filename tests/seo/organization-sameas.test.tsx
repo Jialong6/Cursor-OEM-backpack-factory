@@ -22,9 +22,8 @@ vi.mock('next-intl', () => ({
   useLocale: () => 'en',
 }));
 
-import ManufacturingPlantSchema, {
-  FACTORY_INFO,
-} from '@/components/seo/ManufacturingPlantSchema';
+import ManufacturingPlantSchema from '@/components/seo/ManufacturingPlantSchema';
+import { FACTORY_INFO } from '@/lib/factory-info';
 
 const LINKEDIN_URL = 'https://www.linkedin.com/company/better-bags-myanmar/';
 const GOOGLE_MAPS_URL =
