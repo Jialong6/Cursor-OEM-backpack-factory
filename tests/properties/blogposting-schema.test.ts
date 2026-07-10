@@ -3,7 +3,7 @@ import * as fc from 'fast-check';
 import { AUTHORS, getAuthorForPost } from '@/lib/author-data';
 import type { AuthorProfile } from '@/lib/author-data';
 import { BLOG_POSTS } from '@/lib/blog-data';
-import { FACTORY_INFO } from '@/components/seo/ManufacturingPlantSchema';
+import { FACTORY_INFO } from '@/lib/factory-info';
 
 /**
  * BlogPosting Schema 属性测试

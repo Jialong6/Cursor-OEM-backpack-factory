@@ -3,7 +3,7 @@ import { render, cleanup } from '@testing-library/react';
 import { NextIntlClientProvider } from 'next-intl';
 import fc from 'fast-check';
 import FactoryMapEmbed from '@/components/content/FactoryMapEmbed';
-import { FACTORY_INFO } from '@/components/seo/ManufacturingPlantSchema';
+import { FACTORY_INFO } from '@/lib/factory-info';
 import { locales } from '@/i18n';
 
 const messages = {

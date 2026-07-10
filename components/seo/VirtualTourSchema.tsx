@@ -1,6 +1,6 @@
 'use client';
 
-import { FACTORY_INFO } from './ManufacturingPlantSchema';
+import { FACTORY_INFO } from '@/lib/factory-info';
 
 /**
  * VirtualTourSchema 组件属性

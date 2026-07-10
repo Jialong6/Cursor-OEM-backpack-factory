@@ -32,7 +32,7 @@ import {
 import { LANG_COOKIE_NAME } from '@/lib/language-preference';
 
 import { generateHreflangTags } from '@/components/seo/HreflangTags';
-import { FACTORY_INFO } from '@/components/seo/ManufacturingPlantSchema';
+import { FACTORY_INFO } from '@/lib/factory-info';
 
 // ---------------------------------------------------------------------------
 // Checkpoint 1: Language System Completeness
