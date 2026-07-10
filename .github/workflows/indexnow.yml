@@ -1,0 +1,38 @@
+# IndexNow 自动推送
+#
+# 触发:Vercel 生产部署成功后(deployment_status),从生产 sitemap.xml
+# 拉取全量 URL 提交到 api.indexnow.org(Bing / Naver / Yandex / Seznam 共享)。
+# 该时序保证 sitemap 已包含本次部署新增的页面,无需 sleep 或轮询。
+#
+# workflow_dispatch 提供 GitHub UI 手动兜底(本地兜底: npm run indexnow)。
+# 脚本零 npm 依赖,无需 npm ci,无需任何 secret。
+#
+# 备注:Preview 部署也会产生 deployment_status 事件,由 job 级 if 跳过。
+# 若 Vercel 集成未产生 deployment_status 事件,fallback 方案见 PR 描述
+# (push to main + paths 过滤 + sleep)。
+
+name: IndexNow
+
+on:
+  deployment_status:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  submit:
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.deployment_status.state == 'success' &&
+       startsWith(github.event.deployment.environment, 'Production'))
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Submit URLs to IndexNow
+        run: node scripts/indexnow/submit.mjs
