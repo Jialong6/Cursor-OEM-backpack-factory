@@ -322,6 +322,7 @@ npm run test:watch       # Watch mode for TDD
 npm run test:coverage    # Generate coverage report
 npm run build            # Production build
 npm run lint             # ESLint check
+npm run indexnow         # Push all sitemap URLs to IndexNow (--dry-run to preview)
 
 # Testing Commands
 /tdd                     # Start TDD session
