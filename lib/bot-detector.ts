@@ -21,6 +21,7 @@ export const BOT_PATTERNS: RegExp[] = [
   /yandexbot/i,
   /duckduckbot/i,
   /slurp/i, // Yahoo
+  /yeti/i, // Naver
 
   // Social media crawlers
   /facebookexternalhit/i,
