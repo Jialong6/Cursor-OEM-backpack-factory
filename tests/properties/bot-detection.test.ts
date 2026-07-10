@@ -23,6 +23,7 @@ describe('Property 4: Bot Detection Accuracy', () => {
     'WhatsApp/2.21.4.22',
     'Mozilla/5.0 (compatible; AhrefsBot/7.0)',
     'Mozilla/5.0 (compatible; SemrushBot/7)',
+    'Mozilla/5.0 (compatible; Yeti/1.1; +https://naver.me/spd)',
   ];
 
   // Normal browser User-Agents that MUST NOT be detected as bots
