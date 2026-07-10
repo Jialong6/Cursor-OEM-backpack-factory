@@ -246,7 +246,7 @@ describe('SEO 元数据配置', () => {
   });
 
   /**
-   * 站长平台验证标签（Naver Search Advisor 站点所有权验证）
+   * 站长平台验证标签（Naver Search Advisor / Yandex Webmaster 站点所有权验证）
    */
   describe('站长平台验证标签', () => {
     it.each(locales)('%s 首页元数据应包含 naver-site-verification 验证码', (locale) => {
@@ -256,6 +256,12 @@ describe('SEO 元数据配置', () => {
       expect(other?.['naver-site-verification']).toBe(
         '902febe431ab2c1939298f861bafa0fcb52c9cd4'
       );
+    });
+
+    it.each(locales)('%s 首页元数据应包含 yandex-verification 验证码', (locale) => {
+      const metadata = generateHomeMetadata(locale, allMetadata[locale].home);
+
+      expect(metadata.verification?.yandex).toBe('24ff1f8e3aa08047');
     });
   });
 

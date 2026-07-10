@@ -33,6 +33,12 @@ export const DEFAULT_OG_IMAGE = '/images/og-image.jpg';
 export const NAVER_SITE_VERIFICATION = '902febe431ab2c1939298f861bafa0fcb52c9cd4';
 
 /**
+ * Yandex Webmaster 站点所有权验证码
+ * 公开信息（随 HTML 明文输出），非机密，无需环境变量
+ */
+export const YANDEX_SITE_VERIFICATION = '24ff1f8e3aa08047';
+
+/**
  * 页面元数据文案（title/description 来自 locales JSON 的 metadata namespace）
  */
 export interface PageMetadata {
@@ -73,9 +79,11 @@ function getOgLocale(locale: Locale): string {
 export function generateHomeMetadata(locale: Locale, meta: PageMetadata): Metadata {
   return {
     ...generateGenericMetadata(locale, meta.title, meta.description, ''),
-    // 站长平台所有权验证（渲染为 <meta name="naver-site-verification" .../>）
-    // 根 layout 使用本函数，全部 locale 首页的 head 均输出该标签
+    // 站长平台所有权验证，根 layout 使用本函数，全部 locale 首页的 head 均输出
+    // Yandex 走 Metadata API 原生字段；Naver 无原生字段，走 other
+    // （分别渲染为 <meta name="yandex-verification"/> 与 <meta name="naver-site-verification"/>）
     verification: {
+      yandex: YANDEX_SITE_VERIFICATION,
       other: {
         'naver-site-verification': NAVER_SITE_VERIFICATION,
       },
