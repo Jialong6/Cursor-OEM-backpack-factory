@@ -19,6 +19,7 @@
     "@aws-sdk/s3-request-presigner": "^3.1056.0",
     "@calcom/embed-react": "^1.5.3",
     "@hookform/resolvers": "^5.2.2",
+    "@vercel/analytics": "^2.0.1",
     "@vercel/blob": "^2.4.0",
     "libphonenumber-js": "^1.13.3",
     "next": "15.5.7",
