@@ -1,11 +1,17 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from 'next-intl/plugin';
+import { buildRedirects } from './lib/redirects';
 
 const withNextIntl = createNextIntlPlugin('./i18n.ts');
 
 const nextConfig: NextConfig = {
   // 解决多 lockfile 警告：明确指定项目根目录为工作区
   outputFileTracingRoot: __dirname,
+
+  // www 归一 + 旧博客 slug 308(规则与测试见 lib/redirects.ts)
+  async redirects() {
+    return buildRedirects();
+  },
 
   /**
    * 性能优化配置 - 需求 15.4, 15.5

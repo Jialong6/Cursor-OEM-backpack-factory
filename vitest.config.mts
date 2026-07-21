@@ -41,6 +41,14 @@ export default defineConfig({
 
     // 属性测试（fast-check asyncProperty）需要更长的超时时间
     testTimeout: 30000,
+
+    // next-intl 的 ESM 产物含无扩展名的 next/server 裸导入,
+    // 须经 vite 内联转换才能在测试中导入 middleware(见 middleware-link-header.test.ts)
+    server: {
+      deps: {
+        inline: ['next-intl'],
+      },
+    },
   },
 
   resolve: {

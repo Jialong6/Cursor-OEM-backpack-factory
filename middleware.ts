@@ -24,7 +24,8 @@ import {
  * 5. Default locale (en)
  *
  * Special handling:
- * - Bots: Use botMiddleware (no locale detection, no redirect)
+ * - Bots: no geo/cookie detection; unprefixed paths 308 to /en,
+ *   prefixed paths served via botMiddleware
  */
 
 /**
@@ -36,6 +37,11 @@ const intlMiddleware = createMiddleware({
   localePrefix: 'always',
   // Disable auto detection - we handle priority manually
   localeDetection: false,
+  // No Link-header hreflang: its codes (zh/zh-tw) conflict with the
+  // zh-Hans/zh-Hant set in HTML + sitemap, its x-default points at
+  // redirecting unprefixed paths, and it follows the request host (www).
+  // hreflang source of truth = HTML head + sitemap.
+  alternateLinks: false,
 });
 
 /**
@@ -51,6 +57,7 @@ const botMiddleware = createMiddleware({
   defaultLocale,
   localePrefix: 'always',
   localeDetection: false,
+  alternateLinks: false,
 });
 
 /**
@@ -83,6 +90,15 @@ export default function middleware(request: NextRequest): NextResponse {
 
   // 1. Bot detection: use botMiddleware (no locale detection)
   if (detectBot(userAgent)) {
+    // Unprefixed paths are permanently at /en for crawlers (matches
+    // x-default), so send 308 instead of next-intl's default 307 --
+    // a temporary redirect keeps Google from consolidating the URLs.
+    if (!getLocaleFromPath(request.nextUrl.pathname)) {
+      return NextResponse.redirect(
+        buildRedirectUrl(request.url, defaultLocale),
+        308
+      );
+    }
     return botMiddleware(request);
   }
 
