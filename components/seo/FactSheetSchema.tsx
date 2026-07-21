@@ -1,13 +1,15 @@
 'use client';
 
 import { FACTORY_INFO } from '@/lib/factory-info';
+import { FACT_SHEET_DATE_MODIFIED } from '@/lib/content-dates';
 
 /**
  * Fact Sheet 页面 JSON-LD 的 dateModified(公司事实的最后核实日期)
  *
- * 单独导出为常量,便于测试断言与后续统一维护。
+ * 常量本体住在 lib/content-dates(纯模块,app/sitemap.ts 共用);
+ * 此处 re-export 保持 components/seo 既有导入路径兼容。
  */
-export const FACT_SHEET_DATE_MODIFIED = '2026-07-01';
+export { FACT_SHEET_DATE_MODIFIED };
 
 /**
  * FactSheetSchema 组件属性

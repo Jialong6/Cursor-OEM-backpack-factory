@@ -10,9 +10,15 @@
  */
 
 import { MetadataRoute } from 'next';
-import { getAllBlogPosts } from '@/lib/blog-data';
+import { getAllBlogPosts, type BlogPost } from '@/lib/blog-data';
 import { BASE_URL } from '@/lib/metadata';
 import { locales, localeConfig, defaultLocale } from '@/i18n';
+import {
+  HOME_DATE_MODIFIED,
+  GLOSSARY_DATE_MODIFIED,
+  FACT_SHEET_DATE_MODIFIED,
+  VIRTUAL_TOUR_DATE_MODIFIED,
+} from '@/lib/content-dates';
 
 /**
  * Generate language alternates for a given path across all locales
@@ -48,30 +54,41 @@ function generateLocalizedEntries(
   }));
 }
 
+/**
+ * Real last-modified date of a blog post (falls back to publish date)
+ */
+function postLastModified(post: BlogPost): Date {
+  return new Date(post.dateModified ?? post.date);
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const currentDate = new Date();
+  // lastmod uses real content dates from lib/content-dates instead of
+  // new Date(): a build-time timestamp would mark every page as "changed"
+  // on each deployment and erode crawl trust.
 
-  // Homepage (all 10 languages)
-  const homepages = generateLocalizedEntries('', currentDate, 'daily', 1.0);
+  // Homepage (all locales)
+  const homepages = generateLocalizedEntries('', new Date(HOME_DATE_MODIFIED), 'daily', 1.0);
 
-  // Glossary page (all 10 languages)
-  const glossaryPages = generateLocalizedEntries('/glossary', currentDate, 'weekly', 0.8);
+  // Glossary page (all locales)
+  const glossaryPages = generateLocalizedEntries('/glossary', new Date(GLOSSARY_DATE_MODIFIED), 'weekly', 0.8);
 
   // Fact Sheet page (GEO / AI-search optimized, all locales)
-  const factSheetPages = generateLocalizedEntries('/fact-sheet', currentDate, 'monthly', 0.8);
+  const factSheetPages = generateLocalizedEntries('/fact-sheet', new Date(FACT_SHEET_DATE_MODIFIED), 'monthly', 0.8);
 
   // Virtual Factory Tour booking page (all locales)
-  const virtualTourPages = generateLocalizedEntries('/virtual-factory-tour', currentDate, 'monthly', 0.8);
+  const virtualTourPages = generateLocalizedEntries('/virtual-factory-tour', new Date(VIRTUAL_TOUR_DATE_MODIFIED), 'monthly', 0.8);
 
-  // Blog list page (all 10 languages)
-  const blogPages = generateLocalizedEntries('/blog', currentDate, 'daily', 0.9);
-
-  // Blog post pages (all 10 languages per post)
+  // Blog list page (all locales): newest modification date across posts
   const posts = getAllBlogPosts();
-  const blogPosts: MetadataRoute.Sitemap = posts.flatMap((post) => {
-    const postDate = new Date(post.date);
-    return generateLocalizedEntries(`/blog/${post.slug}`, postDate, 'weekly', 0.8);
-  });
+  const blogListDate = posts.length
+    ? new Date(Math.max(...posts.map((post) => postLastModified(post).getTime())))
+    : new Date(HOME_DATE_MODIFIED);
+  const blogPages = generateLocalizedEntries('/blog', blogListDate, 'daily', 0.9);
+
+  // Blog post pages (all locales per post)
+  const blogPosts: MetadataRoute.Sitemap = posts.flatMap((post) =>
+    generateLocalizedEntries(`/blog/${post.slug}`, postLastModified(post), 'weekly', 0.8)
+  );
 
   return [...homepages, ...glossaryPages, ...factSheetPages, ...virtualTourPages, ...blogPages, ...blogPosts];
 }
