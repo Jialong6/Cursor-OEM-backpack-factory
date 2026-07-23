@@ -107,6 +107,31 @@ describe('Hub & Spoke Links', () => {
         expect(glossaryLink?.href.startsWith('#')).toBe(false);
       }
     });
+
+    it('Footer links should include Blog entry (path-based) for all locales', () => {
+      for (const locale of locales) {
+        const translations = loadTranslationFile(locale);
+        const footer = translations.footer as Record<string, unknown>;
+        const links = footer.links as Array<{ name: string; href: string }>;
+
+        const blogLink = links.find((link) => link.href === '/blog');
+        expect(blogLink, `${locale}: footer missing /blog link`).toBeDefined();
+        expect(blogLink!.name.trim().length).toBeGreaterThan(0);
+      }
+    });
+
+    it('Footer should not keep broken #blogs anchor in any locale', () => {
+      for (const locale of locales) {
+        const translations = loadTranslationFile(locale);
+        const footer = translations.footer as Record<string, unknown>;
+        const links = footer.links as Array<{ name: string; href: string }>;
+
+        expect(
+          links.some((link) => link.href === '#blogs'),
+          `${locale}: broken #blogs anchor still present`
+        ).toBe(false);
+      }
+    });
   });
 
   describe('Glossary cross-links', () => {
