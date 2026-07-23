@@ -694,6 +694,7 @@
     "email": "E-mail",
     "tel": "Tel/WhatsApp",
     "quickLinks": "Links Rápidos",
+    "languages": "Idiomas",
     "hours": "Horário de Atendimento",
     "hoursTime": "Seg–Sex, 9h às 17h",
     "copyright": "Todos os direitos reservados | Desenvolvido por OEM Backpack Factory",
@@ -728,7 +729,7 @@
       },
       {
         "name": "Blog",
-        "href": "#blogs"
+        "href": "/blog"
       },
       {
         "name": "Glossário",

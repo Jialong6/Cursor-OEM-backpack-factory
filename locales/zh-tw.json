@@ -694,6 +694,7 @@
     "email": "電子郵件",
     "tel": "電話/WhatsApp",
     "quickLinks": "快速連結",
+    "languages": "語言",
     "hours": "服務時間",
     "hoursTime": "週一至週五 9:00 – 17:00",
     "copyright": "版權所有 | 由 OEM Backpack Factory 提供技術支援",
@@ -728,7 +729,7 @@
       },
       {
         "name": "部落格",
-        "href": "#blogs"
+        "href": "/blog"
       },
       {
         "name": "術語表",

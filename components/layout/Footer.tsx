@@ -3,6 +3,7 @@
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import Image from 'next/image';
+import FooterLanguageLinks from './FooterLanguageLinks';
 
 /**
  * 页脚组件
@@ -158,6 +159,9 @@ export default function Footer() {
             <p className="text-sm">{t('hoursTime')}</p>
           </div>
         </div>
+
+        {/* 跨语言链接 - SSR 可爬,SEO 内链(不挤现有栅格,全宽一行) */}
+        <FooterLanguageLinks />
 
         {/* 版权信息 - 需求 13.4 */}
         <div className="border-t border-neutral-800 mt-8 pt-8 text-center">

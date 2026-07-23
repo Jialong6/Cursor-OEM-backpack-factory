@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from 'next-intl/plugin';
 import { buildRedirects } from './lib/redirects';
+import { buildHeaders } from './lib/headers';
 
 const withNextIntl = createNextIntlPlugin('./i18n.ts');
 
@@ -11,6 +12,11 @@ const nextConfig: NextConfig = {
   // www 归一 + 旧博客 slug 308(规则与测试见 lib/redirects.ts)
   async redirects() {
     return buildRedirects();
+  },
+
+  // /_next/static 静态资源 noindex(规则与测试见 lib/headers.ts)
+  async headers() {
+    return buildHeaders();
   },
 
   /**

@@ -694,6 +694,7 @@
     "email": "E-mail",
     "tel": "Tel/WhatsApp",
     "quickLinks": "Snel naar",
+    "languages": "Talen",
     "hours": "Openingstijden",
     "hoursTime": "ma-vr 9:00 – 17:00 uur",
     "copyright": "Alle rechten voorbehouden | Powered by OEM Backpack Factory",
@@ -728,7 +729,7 @@
       },
       {
         "name": "Blog",
-        "href": "#blogs"
+        "href": "/blog"
       },
       {
         "name": "Begrippenlijst",
