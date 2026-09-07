@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="US import duty on bags by sourcing country, 2026: Myanmar 17.6%, Cambodia 27.6%, Indonesia 27.6%, Vietnam 30.1%, Thailand 30.1%, China 55.1%">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3f3a36"/>
+      <stop offset="100%" stop-color="#1f1d1b"/>
+    </linearGradient>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M60 0 L0 0 0 60" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect width="1200" height="675" fill="url(#grid)"/>
+  <g font-family="-apple-system, 'Helvetica Neue', 'Hiragino Sans', sans-serif" fill="#f5efe3">
+    <text x="80" y="92" font-size="20" letter-spacing="6" opacity="0.65">BETTER BAGS MYANMAR</text>
+    <text x="80" y="128" font-size="18" letter-spacing="4" opacity="0.85" fill="#d4a86a">SOURCING SERIES  Vol.01</text>
+    <text x="80" y="196" font-size="46" font-weight="700">US import duty on bags, 2026</text>
+    <text x="80" y="236" font-size="22" opacity="0.8">Total ad valorem duty by sourcing country · MMF laptop backpack, HTS 4202.92.31.20</text>
+    <g font-size="22">
+      <text x="80" y="308" font-weight="700" fill="#d4a86a">Myanmar</text>
+      <rect x="300" y="288" width="740" height="30" rx="4" fill="rgba(245,239,227,0.08)"/>
+      <rect x="300" y="288" width="217" height="30" rx="4" fill="#d4a86a"/>
+      <text x="530" y="311" font-weight="700" fill="#d4a86a">17.6%</text>
+
+      <text x="80" y="356" opacity="0.8">Cambodia</text>
+      <rect x="300" y="336" width="740" height="30" rx="4" fill="rgba(245,239,227,0.08)"/>
+      <rect x="300" y="336" width="340" height="30" rx="4" fill="rgba(245,239,227,0.32)"/>
+      <text x="653" y="359" opacity="0.8">27.6%</text>
+
+      <text x="80" y="404" opacity="0.8">Indonesia</text>
+      <rect x="300" y="384" width="740" height="30" rx="4" fill="rgba(245,239,227,0.08)"/>
+      <rect x="300" y="384" width="340" height="30" rx="4" fill="rgba(245,239,227,0.32)"/>
+      <text x="653" y="407" opacity="0.8">27.6%</text>
+
+      <text x="80" y="452" opacity="0.8">Vietnam</text>
+      <rect x="300" y="432" width="740" height="30" rx="4" fill="rgba(245,239,227,0.08)"/>
+      <rect x="300" y="432" width="371" height="30" rx="4" fill="rgba(245,239,227,0.32)"/>
+      <text x="684" y="455" opacity="0.8">30.1%</text>
+
+      <text x="80" y="500" opacity="0.8">Thailand</text>
+      <rect x="300" y="480" width="740" height="30" rx="4" fill="rgba(245,239,227,0.08)"/>
+      <rect x="300" y="480" width="371" height="30" rx="4" fill="rgba(245,239,227,0.32)"/>
+      <text x="684" y="503" opacity="0.8">30.1%</text>
+
+      <text x="80" y="548" opacity="0.8">China</text>
+      <rect x="300" y="528" width="740" height="30" rx="4" fill="rgba(245,239,227,0.08)"/>
+      <rect x="300" y="528" width="680" height="30" rx="4" fill="rgba(245,239,227,0.55)"/>
+      <text x="993" y="551" font-weight="700">55.1%</text>
+    </g>
+    <text x="80" y="630" font-size="17" opacity="0.55">MFN base rate + Section 301 + List 3 where applicable  ·  goods entered on or after Jul 24, 2026  ·  verified Aug 27, 2026 against USITC HTS Rev. 17</text>
+  </g>
+  <line x1="80" y1="258" x2="240" y2="258" stroke="#d4a86a" stroke-width="3"/>
+</svg>

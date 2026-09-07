@@ -22,6 +22,10 @@ Curious what the factory floor actually looks like? Take the
 or browse the [backpack manufacturing glossary](https://betterbagsmm.com/en/glossary)
 covering OEM/ODM, MOQ, AQL, and other sourcing terms.
 
+Sourcing for the US market? The [2026 US tariff guide](https://betterbagsmm.com/en/blog/us-tariff-myanmar-bags-2026)
+shows why Myanmar-made bags enter the US at the 17.6% MFN base rate only, against 30.1% for
+Vietnam and 55.1% for China, verified line by line against the USITC Harmonized Tariff Schedule.
+
 ## 12 Language Versions
 
 Every page — UI, SEO metadata, forms, and long-form blog articles — is professionally
