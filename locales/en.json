@@ -666,7 +666,9 @@
         "label": "Human Verification",
         "placeholder": "Loading verification...",
         "error": "Please complete the verification before submitting",
-        "notConfigured": "Verification is not configured. Form submissions will be accepted in development mode only."
+        "notConfigured": "Verification is not configured. Form submissions will be accepted in development mode only.",
+        "unavailable": "The verification service can't be reached on your network. You can still submit; we'll apply extra spam checks instead.",
+        "unavailableContact": "Or contact us directly:"
       },
       "submit": "Submit Inquiry",
       "submitting": "Submitting...",

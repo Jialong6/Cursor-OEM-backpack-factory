@@ -125,3 +125,79 @@ describe('TurnstileWidget', () => {
     });
   });
 });
+
+/**
+ * 脚本加载失败 / 超时(缅甸等地 challenges.cloudflare.com 被封)
+ *
+ * 不预置 window.turnstile,让组件真的创建 <script>。happy-dom 默认禁止加载外部脚本,
+ * 脚本一插入 DOM 就会触发 onerror;为模拟"运营商黑洞:既不 onload 也不 onerror",
+ * 这里拦截 document.head.appendChild,只捕获脚本元素而不真正插入。
+ */
+describe('TurnstileWidget script load failure', () => {
+  let capturedScript: HTMLScriptElement | null = null;
+  let appendSpy: ReturnType<typeof vi.spyOn> | null = null;
+
+  beforeEach(() => {
+    delete (window as unknown as { turnstile?: unknown }).turnstile;
+    capturedScript = null;
+    appendSpy = vi.spyOn(document.head, 'appendChild').mockImplementation((node) => {
+      if (node instanceof HTMLScriptElement && node.src.includes('challenges.cloudflare.com')) {
+        capturedScript = node;
+        return node;
+      }
+      return HTMLElement.prototype.appendChild.call(document.head, node);
+    });
+    vi.useFakeTimers();
+  });
+
+  afterEach(async () => {
+    // 跑完挂起的加载超时,让模块级单例 scriptPromise 归零,避免用例间串扰
+    await vi.runOnlyPendingTimersAsync();
+    vi.useRealTimers();
+    appendSpy?.mockRestore();
+  });
+
+  it('脚本在 loadTimeoutMs 内既未 onload 也未 onerror → onError("load-failed")', async () => {
+    const onError = vi.fn();
+    renderWidget({ siteKey: 'key', onVerify: vi.fn(), onError, loadTimeoutMs: 8000 });
+    expect(capturedScript).not.toBeNull();
+    const removeSpy = vi.spyOn(capturedScript!, 'remove');
+
+    await act(async () => {
+      await vi.advanceTimersByTimeAsync(7_999);
+    });
+    expect(onError).not.toHaveBeenCalled();
+
+    await act(async () => {
+      await vi.advanceTimersByTimeAsync(2);
+    });
+    expect(onError).toHaveBeenCalledWith('load-failed');
+    expect(removeSpy).toHaveBeenCalled();
+  });
+
+  it('超时后允许重试:下一次挂载会重新创建脚本', async () => {
+    const first = renderWidget({ siteKey: 'key', onVerify: vi.fn(), onError: vi.fn(), loadTimeoutMs: 1000 });
+    const firstScript = capturedScript;
+    await act(async () => {
+      await vi.advanceTimersByTimeAsync(1_001);
+    });
+    first.unmount();
+
+    capturedScript = null;
+    renderWidget({ siteKey: 'key', onVerify: vi.fn(), onError: vi.fn(), loadTimeoutMs: 1000 });
+    expect(capturedScript).not.toBeNull();
+    expect(capturedScript).not.toBe(firstScript);
+  });
+
+  it('脚本 onerror → onError("load-failed")', async () => {
+    const onError = vi.fn();
+    renderWidget({ siteKey: 'key', onVerify: vi.fn(), onError });
+    expect(capturedScript).not.toBeNull();
+
+    await act(async () => {
+      capturedScript!.onerror?.(new Event('error'));
+      await Promise.resolve();
+    });
+    expect(onError).toHaveBeenCalledWith('load-failed');
+  });
+});

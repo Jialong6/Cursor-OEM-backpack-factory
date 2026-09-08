@@ -666,7 +666,9 @@
         "label": "Verificação humana",
         "placeholder": "Carregando verificação...",
         "error": "Conclua a verificação antes de enviar",
-        "notConfigured": "A verificação não está configurada. Os envios do formulário serão aceitos apenas em modo de desenvolvimento."
+        "notConfigured": "A verificação não está configurada. Os envios do formulário serão aceitos apenas em modo de desenvolvimento.",
+        "unavailable": "O serviço de verificação não está acessível na sua rede. Você ainda pode enviar; aplicaremos verificações antispam adicionais.",
+        "unavailableContact": "Ou fale conosco diretamente:"
       },
       "submit": "Enviar consulta",
       "submitting": "Enviando...",
