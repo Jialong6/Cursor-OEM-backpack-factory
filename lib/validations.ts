@@ -97,8 +97,15 @@ export const contactFormSchema = z.object({
 
   techPackAvailability: z.enum(TECH_PACK_OPTIONS),
 
-  // Turnstile token（需求 11.8）
+  // Turnstile token（需求 11.8）;Turnstile 脚本被封时客户端提交哨兵值(lib/turnstile-fallback.ts)
   turnstileToken: z.string().min(1, 'Please complete the verification before submitting'),
+
+  // 蜜罐字段:真人看不到、永远为空。非空不在 schema 层拒绝(避免向 bot 暴露),
+  // 由服务端在 Turnstile 降级路径静默丢弃
+  website: z.string().max(200).optional().or(z.literal('')),
+
+  // 表单挂载时间戳(ms),Turnstile 降级路径据此判断停留时间
+  formStartedAt: z.number().int().nonnegative().optional(),
 }).superRefine((data, ctx) => {
   // 联合校验:phoneNumber 非空时,必须有 phoneCountryCode
   if (data.phoneNumber && !data.phoneCountryCode) {

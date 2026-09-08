@@ -666,7 +666,9 @@
         "label": "Sicherheitsprüfung",
         "placeholder": "Verifizierung wird geladen...",
         "error": "Bitte schließen Sie die Verifizierung ab, bevor Sie das Formular absenden",
-        "notConfigured": "Die Verifizierung ist nicht konfiguriert. Formulareinsendungen werden nur im Entwicklungsmodus angenommen."
+        "notConfigured": "Die Verifizierung ist nicht konfiguriert. Formulareinsendungen werden nur im Entwicklungsmodus angenommen.",
+        "unavailable": "Der Verifizierungsdienst ist über Ihr Netzwerk nicht erreichbar. Sie können trotzdem absenden; wir wenden stattdessen zusätzliche Spam-Prüfungen an.",
+        "unavailableContact": "Oder kontaktieren Sie uns direkt:"
       },
       "submit": "Anfrage senden",
       "submitting": "Wird gesendet...",

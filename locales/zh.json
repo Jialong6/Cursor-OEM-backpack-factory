@@ -331,7 +331,9 @@
         "label": "人机验证",
         "placeholder": "正在加载验证...",
         "error": "请先完成人机验证再提交",
-        "notConfigured": "未配置人机验证。仅在开发环境下可提交。"
+        "notConfigured": "未配置人机验证。仅在开发环境下可提交。",
+        "unavailable": "当前网络无法连接人机验证服务。您仍可直接提交,我们会改用额外的防垃圾检查。",
+        "unavailableContact": "或直接联系我们:"
       },
       "submit": "提交询价",
       "submitting": "提交中...",

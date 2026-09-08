@@ -666,7 +666,9 @@
         "label": "Vérification anti-robot",
         "placeholder": "Chargement de la vérification...",
         "error": "Veuillez compléter la vérification avant l’envoi",
-        "notConfigured": "La vérification n’est pas configurée. Les envois de formulaire ne seront acceptés qu’en mode développement."
+        "notConfigured": "La vérification n’est pas configurée. Les envois de formulaire ne seront acceptés qu’en mode développement.",
+        "unavailable": "Le service de vérification est inaccessible depuis votre réseau. Vous pouvez tout de même envoyer votre demande ; nous appliquerons des contrôles anti-spam supplémentaires.",
+        "unavailableContact": "Ou contactez-nous directement :"
       },
       "submit": "Envoyer la demande",
       "submitting": "Envoi en cours...",

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import {
   ORDER_QUANTITY_OPTIONS,
@@ -9,6 +9,8 @@ import {
 import CountrySelect from '@/components/ui/CountrySelect';
 import PhonePrefixSelect from '@/components/ui/PhonePrefixSelect';
 import TurnstileWidget from '@/components/ui/TurnstileWidget';
+import { TURNSTILE_UNAVAILABLE_TOKEN } from '@/lib/turnstile-fallback';
+import { buildMailtoHref, buildWhatsAppHref } from '@/lib/contact-links';
 import { useQuoteForm } from './QuoteFormContext';
 import { getLocalExampleNumber } from '@/lib/phone-examples';
 
@@ -55,6 +57,14 @@ export default function QuoteFormFields({
   } = form;
 
   const id = (name: string) => (idPrefix ? `${idPrefix}-${name}` : name);
+
+  // Turnstile 脚本被封(如缅甸)时切换到备用防护:允许提交并提示直接联系方式
+  const [verificationUnavailable, setVerificationUnavailable] = useState(false);
+
+  // 表单挂载/重置时记录时间戳,备用防护据此判断停留时间
+  useEffect(() => {
+    setValue('formStartedAt', Date.now());
+  }, [setValue, captchaResetSignal]);
   const spacing = variant === 'floating' ? 'space-y-4' : 'space-y-6';
   const pad = variant === 'floating' ? 'px-3 py-1.5 text-sm' : 'px-4 py-2';
 
@@ -465,10 +475,51 @@ export default function QuoteFormFields({
             siteKey={TURNSTILE_SITE_KEY}
             resetSignal={captchaResetSignal}
             onVerify={(token) => setValue('turnstileToken', token, { shouldValidate: true })}
-            onError={() => setValue('turnstileToken', '', { shouldValidate: true })}
+            onError={(reason) => {
+              if (reason === 'load-failed') {
+                setVerificationUnavailable(true);
+                setValue('turnstileToken', TURNSTILE_UNAVAILABLE_TOKEN, { shouldValidate: true });
+                return;
+              }
+              setValue('turnstileToken', '', { shouldValidate: true });
+            }}
           />
           <input type="hidden" {...register('turnstileToken')} />
-          {errors.turnstileToken && (
+          <input type="hidden" {...register('formStartedAt', { valueAsNumber: true })} />
+          {/* 蜜罐:真人看不到、永远为空;bot 填写后服务端静默丢弃 */}
+          <div className="hidden" aria-hidden="true">
+            <label htmlFor={id('website')}>Website</label>
+            <input
+              id={id('website')}
+              type="text"
+              autoComplete="off"
+              {...register('website')}
+            />
+          </div>
+          {verificationUnavailable && (
+            <div
+              role="status"
+              className="mt-2 rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm text-amber-800"
+            >
+              <p>{t('form.humanVerification.unavailable')}</p>
+              <p className="mt-1">
+                {t('form.humanVerification.unavailableContact')}{' '}
+                <a
+                  href={buildWhatsAppHref(t('whatsapp.value'))}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium underline"
+                >
+                  WhatsApp {t('whatsapp.value')}
+                </a>
+                {' · '}
+                <a href={buildMailtoHref(t('email.value'))} className="font-medium underline">
+                  {t('email.value')}
+                </a>
+              </p>
+            </div>
+          )}
+          {errors.turnstileToken && !verificationUnavailable && (
             <p id={`${id('turnstileToken')}-error`} className="mt-1 text-sm text-red-600" role="alert">
               {t('form.humanVerification.error')}
             </p>

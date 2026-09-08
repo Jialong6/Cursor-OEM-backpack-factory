@@ -666,7 +666,9 @@
         "label": "真人驗證",
         "placeholder": "驗證載入中...",
         "error": "請先完成真人驗證再送出",
-        "notConfigured": "尚未設定真人驗證，僅於開發環境可送出表單。"
+        "notConfigured": "尚未設定真人驗證，僅於開發環境可送出表單。",
+        "unavailable": "目前網路無法連線人機驗證服務。您仍可直接送出,我們會改用額外的防垃圾檢查。",
+        "unavailableContact": "或直接聯絡我們:"
       },
       "submit": "送出詢價",
       "submitting": "送出中...",

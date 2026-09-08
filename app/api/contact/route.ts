@@ -8,6 +8,12 @@ import {
 } from '@/lib/validations';
 import { sendInquiryEmail, sendCustomerAcknowledgment } from '@/lib/email';
 import { presignGetUrl } from '@/lib/r2';
+import {
+  appendFallbackNote,
+  checkFallbackSignals,
+  isFallbackToken,
+} from '@/lib/turnstile-fallback';
+import { createRateLimiter } from '@/lib/rate-limit';
 
 /**
  * Contact Form API Route
@@ -68,6 +74,24 @@ async function verifyTurnstileToken(token: string): Promise<boolean> {
   }
 }
 
+const SUCCESS_MESSAGE = 'Thank you for your inquiry! We will get back to you within 24 hours.';
+
+/**
+ * Turnstile 降级路径限流:每 IP 每小时 3 次
+ * 内存滑动窗口,Fluid Compute 实例间不共享、冷启动重置,作为兜底足够(见 lib/rate-limit.ts)
+ */
+const fallbackLimiter = createRateLimiter({ limit: 3, windowMs: 60 * 60 * 1000 });
+
+function readHeader(request: NextRequest, name: string): string | null {
+  return request.headers?.get?.(name) ?? null;
+}
+
+/** Vercel 把真实客户端 IP 放在 x-forwarded-for 首段 */
+function getClientIp(request: NextRequest): string {
+  const first = readHeader(request, 'x-forwarded-for')?.split(',')[0]?.trim();
+  return first || readHeader(request, 'x-real-ip') || 'unknown';
+}
+
 /**
  * 从请求体中安全提取文件引用数组（防御非法 shape）
  */
@@ -113,6 +137,8 @@ export async function POST(request: NextRequest) {
       orderQuantity: field('orderQuantity'),
       techPackAvailability: field('techPackAvailability'),
       turnstileToken: field('turnstileToken'),
+      website: field('website'),
+      formStartedAt: typeof body.formStartedAt === 'number' ? body.formStartedAt : undefined,
     };
 
     // 客户提交时的界面语言（用于回执邮件本地化;不参与表单 schema 校验）
@@ -134,21 +160,77 @@ export async function POST(request: NextRequest) {
 
     const validatedData = validationResult.data;
 
-    // 验证 Turnstile token
-    const isCaptchaValid = await verifyTurnstileToken(validatedData.turnstileToken);
+    // Turnstile 脚本被封(如缅甸)时客户端提交哨兵 token → 备用防护;dev 本就放行,不走此分支
+    const usingFallback =
+      process.env.NODE_ENV !== 'development' && isFallbackToken(validatedData.turnstileToken);
 
-    if (!isCaptchaValid) {
-      return NextResponse.json(
-        {
-          success: false,
-          message: 'Verification failed. Please try again.',
-          errors: {
-            turnstileToken: ['Verification failed. Please complete the challenge again.'],
-          },
-        } satisfies ContactFormResponse,
-        { status: 400 }
-      );
+    if (usingFallback) {
+      const signals = checkFallbackSignals({
+        website: validatedData.website,
+        formStartedAt: validatedData.formStartedAt,
+      });
+
+      if (!signals.ok && signals.reason === 'honeypot') {
+        // 蜜罐命中:对 bot 假装成功,不发邮件、不暴露判定依据
+        console.warn('[Turnstile] Fallback honeypot hit, dropping silently');
+        return NextResponse.json(
+          { success: true, message: SUCCESS_MESSAGE } satisfies ContactFormResponse,
+          { status: 200 }
+        );
+      }
+
+      if (!signals.ok) {
+        return NextResponse.json(
+          {
+            success: false,
+            message: 'Verification failed. Please try again.',
+            errors: {
+              turnstileToken: ['Verification failed. Please wait a moment and submit again.'],
+            },
+          } satisfies ContactFormResponse,
+          { status: 400 }
+        );
+      }
+
+      const ip = getClientIp(request);
+      const quota = fallbackLimiter.consume(ip);
+
+      if (!quota.allowed) {
+        return NextResponse.json(
+          {
+            success: false,
+            message: 'Too many submissions from your network. Please try again later or contact us directly.',
+          } satisfies ContactFormResponse,
+          { status: 429, headers: { 'Retry-After': String(Math.ceil(quota.retryAfterMs / 1000)) } }
+        );
+      }
+
+      console.warn('[Turnstile] Fallback path used', {
+        ip,
+        country: readHeader(request, 'x-vercel-ip-country'),
+      });
+    } else {
+      // 验证 Turnstile token
+      const isCaptchaValid = await verifyTurnstileToken(validatedData.turnstileToken);
+
+      if (!isCaptchaValid) {
+        return NextResponse.json(
+          {
+            success: false,
+            message: 'Verification failed. Please try again.',
+            errors: {
+              turnstileToken: ['Verification failed. Please complete the challenge again.'],
+            },
+          } satisfies ContactFormResponse,
+          { status: 400 }
+        );
+      }
     }
+
+    // 降级路径在留言末尾标注,便于人工甄别(不改邮件模板)
+    const inquiry = usingFallback
+      ? { ...validatedData, message: appendFallbackNote(validatedData.message) }
+      : validatedData;
 
     // 校验已上传文件引用（数量/URL 来源/大小/类型）
     const fileRefs = extractFileRefs(body);
@@ -184,7 +266,7 @@ export async function POST(request: NextRequest) {
     }
 
     // 发送询盘通知邮件给管理员
-    const emailResult = await sendInquiryEmail(validatedData, emailAttachments);
+    const emailResult = await sendInquiryEmail(inquiry, emailAttachments);
 
     if (!emailResult.success) {
       // 邮件发送失败：返回 500，避免询盘被静默丢弃（前端会提示用户直接联系我们）
@@ -200,7 +282,7 @@ export async function POST(request: NextRequest) {
 
     // 给客户本人发「已收到询盘」回执（best-effort：失败不影响询盘已成功捕获）
     try {
-      const ackResult = await sendCustomerAcknowledgment(validatedData, locale);
+      const ackResult = await sendCustomerAcknowledgment(inquiry, locale);
       if (!ackResult.success) {
         console.error('[API] Customer acknowledgment email failed:', ackResult.error);
       }
@@ -210,10 +292,7 @@ export async function POST(request: NextRequest) {
 
     // 返回成功响应
     return NextResponse.json(
-      {
-        success: true,
-        message: 'Thank you for your inquiry! We will get back to you within 24 hours.',
-      } satisfies ContactFormResponse,
+      { success: true, message: SUCCESS_MESSAGE } satisfies ContactFormResponse,
       { status: 200 }
     );
   } catch (error) {

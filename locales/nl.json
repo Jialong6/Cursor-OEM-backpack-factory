@@ -666,7 +666,9 @@
         "label": "Verificatie",
         "placeholder": "Verificatie laden...",
         "error": "Rond de verificatie af voordat u het formulier verzendt",
-        "notConfigured": "Verificatie is niet geconfigureerd. Inzendingen worden alleen in ontwikkelmodus geaccepteerd."
+        "notConfigured": "Verificatie is niet geconfigureerd. Inzendingen worden alleen in ontwikkelmodus geaccepteerd.",
+        "unavailable": "De verificatiedienst is via uw netwerk niet bereikbaar. U kunt toch verzenden; wij passen in plaats daarvan extra spamcontroles toe.",
+        "unavailableContact": "Of neem rechtstreeks contact op:"
       },
       "submit": "Aanvraag versturen",
       "submitting": "Versturen...",

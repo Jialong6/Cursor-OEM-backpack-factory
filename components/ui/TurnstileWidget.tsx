@@ -36,11 +36,13 @@ declare global {
 const SCRIPT_SRC =
   'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
 const DEV_SKIP_TOKEN = 'dev-skip-token';
+/** 脚本加载超时:运营商黑洞(如缅甸封锁 challenges.cloudflare.com)时 onerror 永不触发,只能靠超时兜底 */
+const DEFAULT_LOAD_TIMEOUT_MS = 8000;
 
 // 模块级单例：脚本只插入一次，多个 widget 实例共享同一次加载
 let scriptPromise: Promise<void> | null = null;
 
-function loadTurnstileScript(): Promise<void> {
+function loadTurnstileScript(timeoutMs: number): Promise<void> {
   if (typeof window === 'undefined') return Promise.resolve();
   if (window.turnstile) return Promise.resolve();
   if (scriptPromise) return scriptPromise;
@@ -50,8 +52,17 @@ function loadTurnstileScript(): Promise<void> {
     script.src = SCRIPT_SRC;
     script.async = true;
     script.defer = true;
-    script.onload = () => resolve();
+    const timer = setTimeout(() => {
+      scriptPromise = null; // 允许后续重试
+      script.remove();
+      reject(new Error('Turnstile script load timed out'));
+    }, timeoutMs);
+    script.onload = () => {
+      clearTimeout(timer);
+      resolve();
+    };
     script.onerror = () => {
+      clearTimeout(timer);
       scriptPromise = null; // 允许后续重试
       reject(new Error('Failed to load Turnstile script'));
     };
@@ -65,7 +76,10 @@ type TurnstileWidgetProps = {
   /** 调用方递增此值可强制 widget 重置（提交成功后清空 token） */
   resetSignal?: number;
   onVerify: (token: string) => void;
+  /** 'error' = challenge 失败;'load-failed' = 脚本加载失败或超时(可切换备用防护) */
   onError?: (message: string) => void;
+  /** 脚本加载超时(ms),默认 8000 */
+  loadTimeoutMs?: number;
 };
 
 export default function TurnstileWidget({
@@ -73,6 +87,7 @@ export default function TurnstileWidget({
   resetSignal = 0,
   onVerify,
   onError,
+  loadTimeoutMs = DEFAULT_LOAD_TIMEOUT_MS,
 }: TurnstileWidgetProps) {
   const t = useTranslations('contact.form.humanVerification');
   const isConfigured = Boolean(siteKey);
@@ -96,7 +111,7 @@ export default function TurnstileWidget({
     if (!isConfigured) return;
     let cancelled = false;
 
-    loadTurnstileScript()
+    loadTurnstileScript(loadTimeoutMs)
       .then(() => {
         if (cancelled || !containerRef.current || !window.turnstile) return;
         widgetIdRef.current = window.turnstile.render(containerRef.current, {
@@ -120,7 +135,7 @@ export default function TurnstileWidget({
         widgetIdRef.current = null;
       }
     };
-  }, [isConfigured, siteKey]);
+  }, [isConfigured, siteKey, loadTimeoutMs]);
 
   // 提交成功后重置（resetSignal 递增），清空已用过的 token
   useEffect(() => {

@@ -115,7 +115,7 @@ export function QuoteFormProvider({ children }: { children: ReactNode }) {
 
   const { restoreDraft, saveDraft, clearDraft, hasDraft } = useFormDraft<ContactFormData>({
     key: 'contact-form-draft',
-    excludeFields: ['turnstileToken'],
+    excludeFields: ['turnstileToken', 'website', 'formStartedAt'],
     debounceMs: 500,
   });
 
