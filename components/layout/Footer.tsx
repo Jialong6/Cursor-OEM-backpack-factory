@@ -168,6 +168,15 @@ export default function Footer() {
           <p className="text-sm text-neutral-500">
             © {new Date().getFullYear()} {t('copyright')}
           </p>
+          {/* 隐私政策:同意条与合规披露的落点,每页可达 */}
+          <p className="mt-2 text-sm">
+            <Link
+              href={`/${locale}/privacy`}
+              className="text-neutral-500 transition-colors hover:text-white"
+            >
+              {t('privacy')}
+            </Link>
+          </p>
         </div>
       </div>
     </footer>

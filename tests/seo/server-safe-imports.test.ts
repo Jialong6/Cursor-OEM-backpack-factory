@@ -14,7 +14,7 @@
  */
 
 import { describe, it, expect } from 'vitest';
-import { existsSync, readFileSync, statSync } from 'fs';
+import { existsSync, readdirSync, readFileSync, statSync } from 'fs';
 import { dirname, resolve } from 'path';
 
 const ROOT = resolve(__dirname, '../..');
@@ -109,6 +109,88 @@ describe('Server 组件导入安全(FACTORY_INFO 跨边界回归)', () => {
           'server 渲染时该模块导出的值是 client-reference 代理,' +
           '会重现 "undefined/zh" 无效网址问题'
       ).toBe(false);
+    }
+  });
+});
+
+/**
+ * 分析模块的边界约束
+ *
+ * 门禁逻辑被三处共用:中间件(Edge)、服务端组件、客户端组件。任何一个
+ * 纯模块不小心引入 next/server,都会在打包进客户端时炸掉;反过来,写
+ * cookie 的服务端模块一旦被客户端组件引用,同样会把 next/server 拖进
+ * 浏览器包。这两条方向相反的约束都靠静态检查锁死。
+ */
+const ANALYTICS_PURE_MODULES = [
+  'lib/analytics-config.ts',
+  'lib/consent-regions.ts',
+  'lib/consent-storage.ts',
+  'lib/consent-signals.ts',
+] as const;
+
+const SERVER_ONLY_MODULE = 'lib/geo-country-cookie.ts';
+
+/** 递归收集目录下的 .ts/.tsx 源文件 */
+function collectSourceFiles(dir: string): string[] {
+  const entries = readdirSync(dir, { withFileTypes: true });
+
+  return entries.flatMap((entry) => {
+    const full = resolve(dir, entry.name);
+
+    if (entry.isDirectory()) {
+      return collectSourceFiles(full);
+    }
+
+    return /\.tsx?$/.test(entry.name) ? [full] : [];
+  });
+}
+
+describe('分析模块的导入边界', () => {
+  it.each(ANALYTICS_PURE_MODULES)(
+    '%s 是纯模块:既无 use client 指令,也不引入 next/server',
+    (relativePath) => {
+      const modulePath = resolve(ROOT, relativePath);
+
+      expect(existsSync(modulePath), `${relativePath} 不存在`).toBe(true);
+      expect(
+        hasUseClientDirective(modulePath),
+        `${relativePath} 不得含 use client:中间件与 server 组件也要用它`
+      ).toBe(false);
+
+      const specifiers = extractValueImportSpecifiers(
+        readFileSync(modulePath, 'utf8')
+      );
+      expect(
+        specifiers,
+        `${relativePath} 不得引入 next/server:它会被打进客户端包`
+      ).not.toContain('next/server');
+    }
+  );
+
+  it('写 cookie 的服务端模块不被任何 use client 组件引用', () => {
+    const serverOnlyPath = resolve(ROOT, SERVER_ONLY_MODULE);
+    expect(existsSync(serverOnlyPath)).toBe(true);
+
+    const clientSources = [
+      ...collectSourceFiles(resolve(ROOT, 'components')),
+      ...collectSourceFiles(resolve(ROOT, 'hooks')),
+    ].filter((file) => hasUseClientDirective(file));
+
+    expect(clientSources.length).toBeGreaterThan(0);
+
+    for (const file of clientSources) {
+      const specifiers = extractValueImportSpecifiers(
+        readFileSync(file, 'utf8')
+      );
+
+      for (const specifier of specifiers) {
+        const target = resolveImportPath(specifier, file);
+        expect(
+          target,
+          `${file} 通过 ${specifier} 引用了 ${SERVER_ONLY_MODULE}:` +
+            '该模块引入 next/server,不能进客户端包'
+        ).not.toBe(serverOnlyPath);
+      }
     }
   });
 });

@@ -15,6 +15,7 @@
  * - GLOSSARY:     2026-07-08 页面增补 dateModified/Breadcrumb(词条数据本体 2026-02-04)
  * - FACT_SHEET:   2026-07-01 公司事实最后核实日(原 FactSheetSchema 常量迁入)
  * - VIRTUAL_TOUR: 2026-07-08 落地页上线及链接修复
+ * - PRIVACY:      2026-09-11 隐私政策页随访客分析接入一并上线
  */
 
 export const HOME_DATE_MODIFIED = '2026-07-08';
@@ -24,3 +25,5 @@ export const GLOSSARY_DATE_MODIFIED = '2026-07-08';
 export const FACT_SHEET_DATE_MODIFIED = '2026-07-01';
 
 export const VIRTUAL_TOUR_DATE_MODIFIED = '2026-07-08';
+
+export const PRIVACY_DATE_MODIFIED = '2026-09-11';

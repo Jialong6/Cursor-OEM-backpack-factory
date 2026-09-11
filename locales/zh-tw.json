@@ -685,6 +685,7 @@
     }
   },
   "footer": {
+    "privacy": "隱私權政策",
     "companyInfo": {
       "name": "Better Bags Myanmar Company Limited",
       "address": "Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai Industrial Zone, Yangon, Myanmar",
@@ -1033,6 +1034,10 @@
     }
   },
   "metadata": {
+    "privacy": {
+      "title": "隱私權政策 - Better Bags Myanmar",
+      "description": "了解 Better Bags Myanmar 如何處理詢價資訊與網站分析、我們使用的 Cookie 類型，以及您如何行使資料保護權利。"
+    },
     "virtualTour": {
       "title": "預約線上視訊看廠 - Better Bags Myanmar",
       "description": "透過 Zoom 或 Google Meet 即時參觀我們的仰光後背包工廠。免費 60 分鐘直播:車縫產線、品質管控與 X 光驗針。週一至週六開放。"
@@ -1061,5 +1066,91 @@
     "notifications": "通知",
     "breadcrumb": "麵包屑導覽",
     "pageSections": "頁面區塊"
+  },
+  "consent": {
+    "label": "Cookie 同意",
+    "message": "我們使用分析型 Cookie 來了解訪客如何使用本網站，藉此持續優化網站體驗。只有在您同意的情況下，我們才會啟用這些 Cookie。",
+    "accept": "接受",
+    "decline": "拒絕",
+    "privacyLink": "隱私權政策"
+  },
+  "privacy": {
+    "title": "隱私權政策",
+    "lastUpdated": "最後更新日期：{date}",
+    "intro": "Better Bags Myanmar 營運此網站，旨在處理有關後背包 OEM 代工與 ODM 製造的商業詢價。本政策將說明我們收集的資訊內容、收集原因，以及您可行使的相關權利。",
+    "sections": [
+      {
+        "heading": "關於我們",
+        "paragraphs": [
+          "Better Bags Myanmar 是一家位於緬甸仰光 (Yangon) 的後背包製造商。我們負責決定本政策中所述之個人資料的處理方式。",
+          "若您對本政策有任何疑問，請透過本頁底部的聯絡資訊與我們聯繫。"
+        ]
+      },
+      {
+        "heading": "您提供的資訊",
+        "paragraphs": [
+          "當您送出報價表單時，我們會收集您輸入的姓名、公司名稱、電子郵件地址、電話號碼、國家/地區、留言內容，以及您上傳的任何附件檔案。",
+          "我們僅將這些資訊用於回覆您的詢價及準備報價。我們絕不會出售您的資料，也不會將其用於廣告用途。"
+        ]
+      },
+      {
+        "heading": "自動收集的資訊",
+        "paragraphs": [
+          "當您瀏覽網頁時，我們的伺服器與分析服務供應商會記錄相關技術細節，例如您造訪的頁面、停留時間、來源網站、瀏覽器與裝置類型、語言設定，以及您的網路位址所對應的國家與城市。",
+          "您的網路位址絕不會以可讀形式儲存。系統會使用每日更新的密鑰，將其轉換為不可逆的數位指紋，這表示我們無法在跨日的情況下辨識出同一位訪客。"
+        ]
+      },
+      {
+        "heading": "Cookie 與類似技術",
+        "paragraphs": [
+          "有兩個 Cookie 是絕對必要且預設啟用的：一個用於記住您選擇的語言，另一個則記錄您的網路位址所對應的國家/地區，以便我們載入正確的程式碼。",
+          "來自 Google Analytics 與 Microsoft Clarity 的分析 Cookie，只有在您同意後才會啟用。若您位於歐洲經濟區 (EEA)、英國或瑞士，在您做出選擇前，我們不會啟用任何分析 Cookie，且您隨時可以更改您的設定。",
+          "您的選擇設定本身是儲存在您的瀏覽器中，而非透過 Cookie 儲存。"
+        ]
+      },
+      {
+        "heading": "我們使用資料的法律依據",
+        "paragraphs": [
+          "我們處理詢價資訊，是因為您要求我們提供回覆，且我們在營運與改善企業網站方面具有正當利益。",
+          "在法律要求的情況下，我們會在取得您的同意後才使用分析 Cookie。撤回同意的過程與給予同意一樣簡單。"
+        ]
+      },
+      {
+        "heading": "資料分享對象",
+        "paragraphs": [
+          "我們僅與少數服務供應商合作，且他們只能根據我們的指示處理資料。Vercel 負責網站代管，Cloudflare 提供網域、機器人防護與檔案儲存服務，Resend 負責發送我們的電子郵件，Cal.com 用於安排線上工廠導覽，而 Google Analytics 與 Microsoft Clarity 則提供網站分析服務。",
+          "我們絕不出售個人資料，也不會將其分享給廣告聯播網。"
+        ]
+      },
+      {
+        "heading": "資料保留期限",
+        "paragraphs": [
+          "只要我們仍在與您洽談專案，您的詢價電子郵件與附件就會被保留。上傳的檔案會在七天內從我們的儲存空間中自動刪除。",
+          "分析紀錄將於 180 天後刪除。我們的服務供應商會針對其持有的資料，套用他們自訂的保留期限。"
+        ]
+      },
+      {
+        "heading": "您的權利",
+        "paragraphs": [
+          "根據您居住的地區，您可能有權要求我們提供您的資料副本、要求更正或刪除資料、反對我們使用資料的方式，或要求我們限制資料處理。請來信與我們聯絡，我們將會為您處理。",
+          "若您位於歐洲經濟區 (EEA) 或英國，您亦有權向您所在國家的資料保護主管機關提出申訴。"
+        ]
+      },
+      {
+        "heading": "本政策的變更",
+        "paragraphs": [
+          "若我們進行重大變更，我們將更新本頁頂部的日期，並再次詢問您的 Cookie 選擇。"
+        ]
+      }
+    ],
+    "contactHeading": "聯絡我們",
+    "contactBody": "若對本政策有任何疑問，請發送電子郵件至 {email}。",
+    "choiceHeading": "您的 Cookie 選擇",
+    "choiceCurrent": "目前選擇：{state}",
+    "choiceGranted": "已接受分析 Cookie",
+    "choiceDenied": "已拒絕分析 Cookie",
+    "choiceUnset": "尚未記錄任何選擇",
+    "choiceReset": "變更我的選擇",
+    "choiceUnavailable": "針對您所在地區的訪客，我們不會使用分析 Cookie。"
   }
 }

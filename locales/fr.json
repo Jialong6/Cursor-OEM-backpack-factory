@@ -685,6 +685,7 @@
     }
   },
   "footer": {
+    "privacy": "Politique de confidentialité",
     "companyInfo": {
       "name": "Better Bags Myanmar Company Limited",
       "address": "Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai Industrial Zone, Yangon, Myanmar",
@@ -1033,6 +1034,10 @@
     }
   },
   "metadata": {
+    "privacy": {
+      "title": "Politique de confidentialité - Better Bags Myanmar",
+      "description": "Découvrez comment Better Bags Myanmar gère les demandes, les analyses du site, les cookies et vos droits sur la protection des données."
+    },
     "virtualTour": {
       "title": "Visite virtuelle de l'usine - Better Bags Myanmar",
       "description": "Visitez en direct notre usine de sacs à dos de Yangon via Zoom ou Google Meet. Visite gratuite de 60 min : couture, QC, détection d'aiguilles."
@@ -1061,5 +1066,91 @@
     "notifications": "Notifications",
     "breadcrumb": "Fil d'Ariane",
     "pageSections": "Sections de la page"
+  },
+  "consent": {
+    "label": "Consentement aux cookies",
+    "message": "Nous utilisons des cookies analytiques pour comprendre comment les visiteurs utilisent ce site, afin de l'améliorer. Ils ne sont déposés que si vous les acceptez.",
+    "accept": "Accepter",
+    "decline": "Refuser",
+    "privacyLink": "Politique de confidentialité"
+  },
+  "privacy": {
+    "title": "Politique de confidentialité",
+    "lastUpdated": "Dernière mise à jour : {date}",
+    "intro": "Better Bags Myanmar gère ce site web pour les demandes commerciales concernant la fabrication OEM et ODM de sacs à dos. Cette politique explique ce que nous collectons, pourquoi nous le collectons et ce que vous pouvez faire à ce sujet.",
+    "sections": [
+      {
+        "heading": "Qui sommes-nous ?",
+        "paragraphs": [
+          "Better Bags Myanmar est un fabricant de sacs à dos basé à Yangon, au Myanmar. Nous déterminons la manière dont les données personnelles décrites dans cette politique sont traitées.",
+          "Si vous avez une question concernant cette politique, veuillez utiliser les coordonnées figurant au bas de cette page."
+        ]
+      },
+      {
+        "heading": "Les informations que vous nous fournissez",
+        "paragraphs": [
+          "Lorsque vous soumettez le formulaire de devis, nous collectons le nom, l'entreprise, l'adresse e-mail, le numéro de téléphone, le pays et le message que vous saisissez, ainsi que tous les fichiers que vous y joignez.",
+          "Nous utilisons ces informations uniquement pour répondre à votre demande et préparer un devis. Nous ne les vendons pas et ne les utilisons pas à des fins publicitaires."
+        ]
+      },
+      {
+        "heading": "Les informations collectées automatiquement",
+        "paragraphs": [
+          "Lorsque vous consultez une page, nos serveurs et nos fournisseurs d'analyses enregistrent des détails techniques tels que les pages que vous visitez, la durée de votre visite, le site qui vous a référé, votre type de navigateur et d'appareil, votre langue, ainsi que le pays et la ville auxquels correspond votre adresse réseau.",
+          "Votre adresse réseau n'est jamais stockée sous une forme lisible. Elle est transformée en une empreinte numérique irréversible à l'aide d'un secret qui change chaque jour, ce qui signifie qu'un même visiteur ne peut pas être reconnu d'un jour à l'autre."
+        ]
+      },
+      {
+        "heading": "Cookies et technologies similaires",
+        "paragraphs": [
+          "Deux cookies sont strictement nécessaires et sont toujours configurés : l'un mémorise la langue que vous avez choisie, et l'autre enregistre le pays auquel correspond votre adresse réseau, afin que nous sachions quels scripts charger.",
+          "Les cookies d'analyse de Google Analytics et Microsoft Clarity ne sont configurés qu'après votre acceptation. Si vous vous trouvez dans l'Espace économique européen, au Royaume-Uni ou en Suisse, rien n'est configuré tant que vous n'avez pas fait ce choix, et vous pouvez le modifier à tout moment.",
+          "Votre choix lui-même est stocké dans votre navigateur plutôt que dans un cookie."
+        ]
+      },
+      {
+        "heading": "Pourquoi nous sommes autorisés à les utiliser",
+        "paragraphs": [
+          "Nous traitons les informations liées à vos demandes car vous nous avez demandé de vous répondre, et parce que nous avons un intérêt légitime à gérer et à améliorer un site web d'entreprise.",
+          "Nous nous appuyons sur votre consentement pour les cookies d'analyse partout où la loi l'exige. Retirer son consentement est aussi simple que de le donner."
+        ]
+      },
+      {
+        "heading": "Avec qui nous les partageons",
+        "paragraphs": [
+          "Nous faisons appel à un petit nombre de prestataires de services, chacun traitant les données uniquement sur nos instructions. Vercel héberge le site, Cloudflare fournit le domaine, la protection contre les bots et le stockage de fichiers, Resend gère l'envoi de nos e-mails, Cal.com planifie les visites virtuelles de l'usine, et Google Analytics et Microsoft Clarity fournissent les analyses du site web.",
+          "Nous ne vendons pas de données personnelles et nous ne les partageons pas avec des réseaux publicitaires."
+        ]
+      },
+      {
+        "heading": "Combien de temps nous les conservons",
+        "paragraphs": [
+          "Les e-mails de demande et les pièces jointes sont conservés tant que nous sommes en contact avec vous au sujet du projet. Les fichiers téléversés sont automatiquement supprimés de notre espace de stockage dans un délai de sept jours.",
+          "Les enregistrements d'analyse sont supprimés après 180 jours. Nos fournisseurs appliquent leurs propres durées de conservation aux données qu'ils détiennent."
+        ]
+      },
+      {
+        "heading": "Vos droits",
+        "paragraphs": [
+          "Selon votre lieu de résidence, vous pouvez nous demander une copie de vos données, nous demander de les corriger ou de les supprimer, vous opposer à la manière dont nous les utilisons, ou nous demander de les restreindre. Écrivez-nous et nous vous répondrons.",
+          "Si vous vous trouvez dans l'Espace économique européen ou au Royaume-Uni, vous avez également le droit de déposer une plainte auprès de votre autorité nationale de protection des données."
+        ]
+      },
+      {
+        "heading": "Modifications de cette politique",
+        "paragraphs": [
+          "Si nous apportons une modification substantielle, nous mettons à jour la date en haut de cette page et vous demandons à nouveau votre choix en matière de cookies."
+        ]
+      }
+    ],
+    "contactHeading": "Contact",
+    "contactBody": "Les questions concernant cette politique peuvent être envoyées à {email}.",
+    "choiceHeading": "Votre choix de cookies",
+    "choiceCurrent": "Choix actuel : {state}",
+    "choiceGranted": "cookies d'analyse acceptés",
+    "choiceDenied": "cookies d'analyse refusés",
+    "choiceUnset": "aucun choix enregistré",
+    "choiceReset": "Modifier mon choix",
+    "choiceUnavailable": "Les cookies d'analyse ne sont pas utilisés pour les visiteurs de votre région."
   }
 }

@@ -685,6 +685,7 @@
     }
   },
   "footer": {
+    "privacy": "Privacybeleid",
     "companyInfo": {
       "name": "Better Bags Myanmar Company Limited",
       "address": "Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai Industrial Zone, Yangon, Myanmar",
@@ -1033,6 +1034,10 @@
     }
   },
   "metadata": {
+    "privacy": {
+      "title": "Privacybeleid - Better Bags Myanmar",
+      "description": "Hoe Better Bags Myanmar omgaat met aanvraaggegevens en website-analyse, welke cookies worden gebruikt en hoe u uw privacyrechten kunt uitoefenen."
+    },
     "virtualTour": {
       "title": "Boek een virtuele fabriekstour - Better Bags Myanmar",
       "description": "Bezoek onze rugzakfabriek in Yangon live via Zoom of Google Meet. Gratis rondleiding van 60 minuten: naailijnen, QC en naalddetectie. Ma-za."
@@ -1061,5 +1066,91 @@
     "notifications": "Meldingen",
     "breadcrumb": "Kruimelpad",
     "pageSections": "Paginasecties"
+  },
+  "consent": {
+    "label": "Cookie-toestemming",
+    "message": "Wij gebruiken analytische cookies om te zien hoe bezoekers deze site gebruiken, zodat we deze kunnen verbeteren. Deze worden alleen geplaatst als u akkoord gaat.",
+    "accept": "Accepteren",
+    "decline": "Weigeren",
+    "privacyLink": "Privacybeleid"
+  },
+  "privacy": {
+    "title": "Privacybeleid",
+    "lastUpdated": "Laatst bijgewerkt: {date}",
+    "intro": "Better Bags Myanmar beheert deze website voor zakelijke aanvragen over OEM- en ODM-productie van rugzakken. Dit beleid legt uit wat we verzamelen, waarom we dat doen en wat uw rechten zijn.",
+    "sections": [
+      {
+        "heading": "Wie wij zijn",
+        "paragraphs": [
+          "Better Bags Myanmar is een rugzakfabrikant gevestigd in Yangon, Myanmar. Wij bepalen hoe de persoonsgegevens die in dit beleid worden beschreven, worden verwerkt.",
+          "Als u vragen heeft over dit beleid, gebruik dan de contactgegevens onderaan deze pagina."
+        ]
+      },
+      {
+        "heading": "Informatie die u ons verstrekt",
+        "paragraphs": [
+          "Wanneer u het offerteformulier indient, verzamelen wij de naam, het bedrijf, het e-mailadres, het telefoonnummer, het land en het bericht dat u invoert, samen met eventuele bijgevoegde bestanden.",
+          "Wij gebruiken deze gegevens uitsluitend om uw aanvraag te beantwoorden en een offerte op te stellen. Wij verkopen uw gegevens niet en gebruiken deze niet voor advertentiedoeleinden."
+        ]
+      },
+      {
+        "heading": "Automatisch verzamelde informatie",
+        "paragraphs": [
+          "Wanneer u een pagina bekijkt, registreren onze servers en analyseproviders technische gegevens, zoals de pagina's die u bezoekt, hoe lang u blijft, de verwijzende website, uw browser en apparaattype, uw taal, en het land en de stad waarnaar uw netwerkadres verwijst.",
+          "Uw netwerkadres wordt nooit in leesbare vorm opgeslagen. Het wordt omgezet in een onomkeerbare vingerafdruk met behulp van een sleutel die dagelijks verandert, wat betekent dat dezelfde bezoeker niet van de ene op de andere dag kan worden herkend."
+        ]
+      },
+      {
+        "heading": "Cookies en vergelijkbare technologieën",
+        "paragraphs": [
+          "Twee cookies zijn strikt noodzakelijk en worden altijd geplaatst: één onthoudt de door u gekozen taal en de andere registreert het land waarnaar uw netwerkadres verwijst, zodat we weten welke scripts we moeten laden.",
+          "Analysecookies van Google Analytics en Microsoft Clarity worden pas geplaatst nadat u deze heeft geaccepteerd. Als u zich in de Europese Economische Ruimte, het Verenigd Koninkrijk of Zwitserland bevindt, wordt er niets geplaatst totdat u die keuze maakt, en u kunt deze op elk moment wijzigen.",
+          "Uw keuze zelf wordt opgeslagen in uw browser in plaats van in een cookie."
+        ]
+      },
+      {
+        "heading": "Waarom wij deze gegevens mogen gebruiken",
+        "paragraphs": [
+          "Wij verwerken aanvraaggegevens omdat u ons heeft gevraagd te reageren, en omdat wij een gerechtvaardigd belang hebben bij het beheren en verbeteren van een zakelijke website.",
+          "Wij baseren ons op uw toestemming voor analysecookies waar de wet dit vereist. Het intrekken van toestemming is net zo eenvoudig als het geven ervan."
+        ]
+      },
+      {
+        "heading": "Met wie wij gegevens delen",
+        "paragraphs": [
+          "Wij maken gebruik van een klein aantal dienstverleners, die elk uitsluitend gegevens verwerken in onze opdracht. Vercel host de website, Cloudflare verzorgt het domein, de botbescherming en bestandsopslag, Resend levert onze e-mail, Cal.com plant virtuele fabrieksrondleidingen, en Google Analytics en Microsoft Clarity verzorgen de website-analyse.",
+          "Wij verkopen geen persoonsgegevens en delen deze niet met advertentienetwerken."
+        ]
+      },
+      {
+        "heading": "Hoe lang wij gegevens bewaren",
+        "paragraphs": [
+          "Aanvraag-e-mails en bijlagen worden bewaard zolang wij met u in contact zijn over het project. Geüploade bestanden worden binnen zeven dagen automatisch uit onze opslag verwijderd.",
+          "Analysegegevens worden na 180 dagen verwijderd. Onze providers hanteren hun eigen bewaartermijnen voor de gegevens die zij in beheer hebben."
+        ]
+      },
+      {
+        "heading": "Uw rechten",
+        "paragraphs": [
+          "Afhankelijk van waar u woont, kunt u ons vragen om een kopie van uw gegevens, ons verzoeken deze te corrigeren of te verwijderen, bezwaar maken tegen het gebruik ervan, of ons vragen de verwerking te beperken. Neem schriftelijk contact met ons op en wij zullen reageren.",
+          "Als u zich in de Europese Economische Ruimte of het Verenigd Koninkrijk bevindt, heeft u ook het recht om een klacht in te dienen bij uw nationale toezichthouder voor gegevensbescherming."
+        ]
+      },
+      {
+        "heading": "Wijzigingen in dit beleid",
+        "paragraphs": [
+          "Als wij een wezenlijke wijziging aanbrengen, werken wij de datum bovenaan deze pagina bij en vragen wij opnieuw naar uw cookievoorkeur."
+        ]
+      }
+    ],
+    "contactHeading": "Contact",
+    "contactBody": "Vragen over dit beleid kunnen worden gestuurd naar {email}.",
+    "choiceHeading": "Uw cookiekeuze",
+    "choiceCurrent": "Huidige keuze: {state}",
+    "choiceGranted": "analysecookies geaccepteerd",
+    "choiceDenied": "analysecookies geweigerd",
+    "choiceUnset": "geen keuze geregistreerd",
+    "choiceReset": "Mijn keuze wijzigen",
+    "choiceUnavailable": "Analysecookies worden niet gebruikt voor bezoekers in uw regio."
   }
 }

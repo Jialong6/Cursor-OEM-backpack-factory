@@ -13,6 +13,8 @@ export const LAYOUT_NAMESPACES = [
   'footer',
   'language',
   'languageBanner',
+  // 同意条挂在根布局里,和语言横幅同级
+  'consent',
 ] as const;
 
 /**
