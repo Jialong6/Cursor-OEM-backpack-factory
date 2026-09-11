@@ -226,6 +226,8 @@ describe('Translation File Unit Tests', () => {
       'metadata',
       'notFound',
       'a11y',
+      'consent',
+      'privacy',
     ];
 
     const actualSections = Object.keys(translations!).sort();

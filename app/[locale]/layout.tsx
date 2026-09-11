@@ -9,6 +9,7 @@ import { generateHomeMetadata } from '@/lib/metadata';
 import { ManufacturingPlantSchema } from '@/components/seo';
 import { LanguageBanner } from '@/components/i18n';
 import { getFontVariables } from '@/app/fonts';
+import AnalyticsScripts from '@/components/analytics';
 import "../globals.css";
 
 /**
@@ -90,6 +91,8 @@ export default async function RootLayout({
             {children}
           </main>
           <Footer />
+          {/* 访客分析:Vercel(无 cookie,全量)+ GA4/Clarity(按地区门禁) */}
+          <AnalyticsScripts />
         </NextIntlClientProvider>
       </body>
     </html>

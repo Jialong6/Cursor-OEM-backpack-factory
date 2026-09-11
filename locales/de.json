@@ -685,6 +685,7 @@
     }
   },
   "footer": {
+    "privacy": "Datenschutzerklärung",
     "companyInfo": {
       "name": "Better Bags Myanmar Company Limited",
       "address": "Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai Industrial Zone, Yangon, Myanmar",
@@ -1033,6 +1034,10 @@
     }
   },
   "metadata": {
+    "privacy": {
+      "title": "Datenschutzerklärung - Better Bags Myanmar",
+      "description": "Wie Better Bags Myanmar Anfragedaten und Website-Analysen verarbeitet, welche Cookies genutzt werden und wie Sie Ihre Datenschutzrechte ausüben."
+    },
     "virtualTour": {
       "title": "Virtuelle Werksbesichtigung - Better Bags Myanmar",
       "description": "Rucksackfabrik in Yangon live per Zoom oder Google Meet besichtigen. Kostenlose 60-Minuten-Tour: Nählinien, QC, Nadeldetektion. Mo-Sa buchbar."
@@ -1061,5 +1066,91 @@
     "notifications": "Benachrichtigungen",
     "breadcrumb": "Brotkrumennavigation",
     "pageSections": "Seitenabschnitte"
+  },
+  "consent": {
+    "label": "Cookie-Einwilligung",
+    "message": "Wir verwenden Analyse-Cookies, um die Nutzung unserer Website auszuwerten und unser Angebot zu optimieren. Diese werden nur mit Ihrer Zustimmung gesetzt.",
+    "accept": "Akzeptieren",
+    "decline": "Ablehnen",
+    "privacyLink": "Datenschutzerklärung"
+  },
+  "privacy": {
+    "title": "Datenschutzerklärung",
+    "lastUpdated": "Zuletzt aktualisiert: {date}",
+    "intro": "Better Bags Myanmar betreibt diese Website für Geschäftsanfragen zur OEM- und ODM-Rucksackfertigung. Diese Erklärung erläutert, welche Daten wir erfassen, warum wir dies tun und welche Rechte Sie diesbezüglich haben.",
+    "sections": [
+      {
+        "heading": "Verantwortliche Stelle",
+        "paragraphs": [
+          "Better Bags Myanmar ist ein Rucksackhersteller mit Sitz in Yangon, Myanmar. Wir sind verantwortlich für die Verarbeitung der in dieser Erklärung beschriebenen personenbezogenen Daten.",
+          "Wenn Sie Fragen zu dieser Datenschutzerklärung haben, nutzen Sie bitte die Kontaktdaten am Ende dieser Seite."
+        ]
+      },
+      {
+        "heading": "Daten, die Sie uns zur Verfügung stellen",
+        "paragraphs": [
+          "Wenn Sie das Formular für ein Angebot übermitteln, erfassen wir den Namen, das Unternehmen, die E-Mail-Adresse, die Telefonnummer, das Land und die Nachricht, die Sie eingeben, sowie alle von Ihnen angehängten Dateien.",
+          "Wir verwenden diese Daten ausschließlich, um Ihre Anfrage zu beantworten und ein Angebot zu erstellen. Wir verkaufen diese Daten nicht und nutzen sie nicht für Werbezwecke."
+        ]
+      },
+      {
+        "heading": "Automatisch erfasste Daten",
+        "paragraphs": [
+          "Wenn Sie eine Seite aufrufen, protokollieren unsere Server und unsere Analyseanbieter technische Details wie die von Ihnen besuchten Seiten, Ihre Verweildauer, die verweisende Website, Ihren Browser- und Gerätetyp, Ihre Sprache sowie das Land und die Stadt, denen Ihre Netzwerkadresse zugeordnet wird.",
+          "Ihre Netzwerkadresse wird niemals in lesbarer Form gespeichert. Sie wird mithilfe eines täglich wechselnden Schlüssels in einen irreversiblen Fingerabdruck umgewandelt, was bedeutet, dass derselbe Besucher nicht von einem Tag auf den anderen wiedererkannt werden kann."
+        ]
+      },
+      {
+        "heading": "Cookies und ähnliche Technologien",
+        "paragraphs": [
+          "Zwei Cookies sind zwingend erforderlich und werden immer gesetzt: Eines speichert die von Ihnen gewählte Sprache, und das andere erfasst das Land, dem Ihre Netzwerkadresse zugeordnet wird, damit wir wissen, welche Skripte geladen werden müssen.",
+          "Analyse-Cookies von Google Analytics und Microsoft Clarity werden nur gesetzt, nachdem Sie diesen zugestimmt haben. Wenn Sie sich im Europäischen Wirtschaftsraum, im Vereinigten Königreich oder in der Schweiz befinden, wird nichts gesetzt, bis Sie diese Entscheidung treffen, und Sie können diese jederzeit ändern.",
+          "Ihre Entscheidung selbst wird in Ihrem Browser und nicht in einem Cookie gespeichert."
+        ]
+      },
+      {
+        "heading": "Rechtsgrundlage der Verarbeitung",
+        "paragraphs": [
+          "Wir verarbeiten Anfragedetails, weil Sie uns um eine Antwort gebeten haben und weil wir ein berechtigtes Interesse daran haben, eine geschäftliche Website zu betreiben und zu verbessern.",
+          "Wir stützen uns auf Ihre Einwilligung für Analyse-Cookies, sofern dies gesetzlich vorgeschrieben ist. Der Widerruf der Einwilligung ist ebenso einfach wie deren Erteilung."
+        ]
+      },
+      {
+        "heading": "Weitergabe von Daten",
+        "paragraphs": [
+          "Wir nutzen eine kleine Anzahl von Dienstleistern, die Daten jeweils nur auf unsere Anweisung verarbeiten. Vercel hostet die Website, Cloudflare stellt die Domain, den Bot-Schutz und den Dateispeicher bereit, Resend liefert unsere E-Mails aus, Cal.com plant virtuelle Werksführungen, und Google Analytics sowie Microsoft Clarity stellen Website-Analysen bereit.",
+          "Wir verkaufen keine personenbezogenen Daten und geben diese nicht an Werbenetzwerke weiter."
+        ]
+      },
+      {
+        "heading": "Speicherdauer",
+        "paragraphs": [
+          "Anfrage-E-Mails und Anhänge werden so lange aufbewahrt, wie wir mit Ihnen bezüglich des Projekts in Kontakt stehen. Hochgeladene Dateien werden innerhalb von sieben Tagen automatisch aus unserem Speicher gelöscht.",
+          "Analysedatensätze werden nach 180 Tagen gelöscht. Unsere Anbieter wenden für die von ihnen gespeicherten Daten ihre eigenen Aufbewahrungsfristen an."
+        ]
+      },
+      {
+        "heading": "Ihre Rechte",
+        "paragraphs": [
+          "Abhängig von Ihrem Wohnort können Sie eine Kopie Ihrer Daten anfordern, uns bitten, diese zu korrigieren oder zu löschen, der Nutzung widersprechen oder eine Einschränkung der Verarbeitung verlangen. Schreiben Sie uns, und wir werden Ihnen antworten.",
+          "Wenn Sie sich im Europäischen Wirtschaftsraum oder im Vereinigten Königreich befinden, haben Sie zudem das Recht, eine Beschwerde bei Ihrer nationalen Datenschutzbehörde einzureichen."
+        ]
+      },
+      {
+        "heading": "Änderungen dieser Datenschutzerklärung",
+        "paragraphs": [
+          "Wenn wir eine wesentliche Änderung vornehmen, aktualisieren wir das Datum oben auf dieser Seite und fragen Ihre Cookie-Einstellungen erneut ab."
+        ]
+      }
+    ],
+    "contactHeading": "Kontakt",
+    "contactBody": "Fragen zu dieser Datenschutzerklärung können an {email} gesendet werden.",
+    "choiceHeading": "Ihre Cookie-Einstellungen",
+    "choiceCurrent": "Aktuelle Auswahl: {state}",
+    "choiceGranted": "Analyse-Cookies akzeptiert",
+    "choiceDenied": "Analyse-Cookies abgelehnt",
+    "choiceUnset": "keine Auswahl gespeichert",
+    "choiceReset": "Meine Auswahl ändern",
+    "choiceUnavailable": "Analyse-Cookies werden für Besucher in Ihrer Region nicht verwendet."
   }
 }

@@ -7,6 +7,7 @@ import {
   AUTO_REDIRECT_COOKIE_NAME,
 } from './lib/language-preference';
 import { detectBot } from './lib/bot-detector';
+import { syncGeoCountryCookie } from './lib/geo-country-cookie';
 import {
   getLocaleFromPath,
   getLocaleFromGeoIP,
@@ -26,6 +27,11 @@ import {
  * Special handling:
  * - Bots: no geo/cookie detection; unprefixed paths 308 to /en,
  *   prefixed paths served via botMiddleware
+ * - Human traffic also gets a client-readable `geo_cc` cookie carrying the
+ *   detected country. The analytics region gates (skip third-party scripts in
+ *   mainland China, show the consent banner in the EEA/UK/CH) read it without
+ *   an extra request, and without forcing the statically generated layout to
+ *   become dynamic. Bots skip it: crawlers never run the analytics scripts.
  */
 
 /**
@@ -115,6 +121,8 @@ export default function middleware(request: NextRequest): NextResponse {
     const response = intlMiddleware(request);
     // Update cookie with path locale (user's explicit choice)
     setLangPrefCookie(response, pathLocale);
+    // Expose the detected country to client scripts (analytics region gates)
+    syncGeoCountryCookie(request, response);
     return response;
   }
 
@@ -132,6 +140,9 @@ export default function middleware(request: NextRequest): NextResponse {
   // 6. Redirect to detected locale
   const redirectUrl = buildRedirectUrl(request.url, targetLocale);
   const response = NextResponse.redirect(redirectUrl, 302);
+
+  // Expose the detected country to client scripts (analytics region gates)
+  syncGeoCountryCookie(request, response);
 
   // 7. Set cookie for future visits (if not already set)
   if (!cookieLocale) {

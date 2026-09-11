@@ -556,6 +556,7 @@
     ]
   },
   "footer": {
+    "privacy": "隐私政策",
     "companyInfo": {
       "name": "Better Bags Myanmar Company Limited",
       "address": "Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai Industrial Zone, Yangon, Myanmar",
@@ -1033,6 +1034,10 @@
     }
   },
   "metadata": {
+    "privacy": {
+      "title": "隐私政策 - Better Bags Myanmar",
+      "description": "了解 Better Bags Myanmar 如何处理询价信息和网站分析数据，我们使用的 Cookie 类型，以及您如何行使数据保护权利。"
+    },
     "virtualTour": {
       "title": "预约线上云看厂 - Better Bags Myanmar",
       "description": "通过 Zoom 实时参观我们的仰光背包工厂。免费 60 分钟直播:缝制流水线、品质管控与 X 光验针。周一至周六开放,时区自动换算。"
@@ -1061,5 +1066,91 @@
     "notifications": "通知",
     "breadcrumb": "面包屑导航",
     "pageSections": "页面章节"
+  },
+  "consent": {
+    "label": "Cookie 同意",
+    "message": "我们使用分析类 Cookie 来了解访客如何使用本网站，以便持续优化用户体验。只有在您同意后，我们才会启用这些 Cookie。",
+    "accept": "接受",
+    "decline": "拒绝",
+    "privacyLink": "隐私政策"
+  },
+  "privacy": {
+    "title": "隐私政策",
+    "lastUpdated": "最后更新时间：{date}",
+    "intro": "Better Bags Myanmar 运营此网站旨在处理关于 OEM 和 ODM 背包制造的业务询价。本政策将说明我们收集哪些信息、收集原因以及您可以行使的权利。",
+    "sections": [
+      {
+        "heading": "关于我们",
+        "paragraphs": [
+          "Better Bags Myanmar 是一家位于缅甸仰光 (Yangon) 的背包制造商。我们负责决定如何处理本政策中所述的个人数据。",
+          "如果您对本政策有任何疑问，请通过本页底部的联系方式与我们联系。"
+        ]
+      },
+      {
+        "heading": "您提供的信息",
+        "paragraphs": [
+          "当您提交报价表单时，我们会收集您填写的姓名、公司名称、电子邮件地址、电话号码、国家/地区、留言内容以及您附加的任何文件。",
+          "我们仅将这些信息用于回复您的询价并准备报价。我们不会出售您的信息，也不会将其用于广告营销。"
+        ]
+      },
+      {
+        "heading": "自动收集的信息",
+        "paragraphs": [
+          "当您浏览网页时，我们的服务器和分析服务提供商会记录相关技术细节，例如您访问的页面、停留时间、引荐网站、您的浏览器和设备类型、语言偏好，以及您的网络地址解析出的国家和城市。",
+          "您的网络地址绝不会以可读形式存储。它会通过每天更换的密钥转换为不可逆的指纹，这意味着我们无法在不同日期识别出同一位访客。"
+        ]
+      },
+      {
+        "heading": "Cookie 及类似技术",
+        "paragraphs": [
+          "有两个 Cookie 是绝对必要的且始终处于启用状态：一个用于记住您选择的语言，另一个用于记录您的网络地址解析出的国家/地区，以便我们知道需要加载哪些脚本。",
+          "来自 Google Analytics 和 Microsoft Clarity 的分析类 Cookie 只有在您同意后才会启用。如果您位于欧洲经济区、英国或瑞士，在您做出选择之前我们不会设置任何 Cookie，并且您可以随时更改您的选择。",
+          "您的选择本身存储在您的浏览器中，而不是 Cookie 中。"
+        ]
+      },
+      {
+        "heading": "我们使用数据的法律依据",
+        "paragraphs": [
+          "我们处理询价信息是因为您要求我们做出回复，并且我们在运营和改进企业网站方面拥有合法利益。",
+          "在法律要求的情况下，我们会在获得您的同意后使用分析类 Cookie。撤回同意与授予同意一样简单。"
+        ]
+      },
+      {
+        "heading": "数据共享对象",
+        "paragraphs": [
+          "我们使用少数几家服务提供商，他们均严格按照我们的指示处理数据。Vercel 负责网站托管，Cloudflare 提供域名、机器人防护和文件存储，Resend 负责发送我们的电子邮件，Cal.com 用于安排线上工厂参观，Google Analytics 和 Microsoft Clarity 提供网站分析服务。",
+          "我们不会出售个人数据，也不会将其与广告网络共享。"
+        ]
+      },
+      {
+        "heading": "数据保留期限",
+        "paragraphs": [
+          "只要我们还在就项目与您保持联系，询价邮件及其附件就会被保留。您上传的文件将在 7 天内从我们的存储系统中自动删除。",
+          "分析记录将在 180 天后删除。我们的服务提供商对其持有的数据适用其各自的保留期限。"
+        ]
+      },
+      {
+        "heading": "您的权利",
+        "paragraphs": [
+          "根据您所在地区的法律，您可以要求获取您的数据副本，要求我们更正或删除数据，反对我们使用数据的方式，或要求我们限制数据的使用。请写信给我们，我们将予以回复。",
+          "如果您位于欧洲经济区或英国，您还有权向您所在国家/地区的数据保护机构提出投诉。"
+        ]
+      },
+      {
+        "heading": "本政策的变更",
+        "paragraphs": [
+          "如果我们做出重大变更，我们将更新本页顶部的日期，并再次询问您的 Cookie 选择。"
+        ]
+      }
+    ],
+    "contactHeading": "联系我们",
+    "contactBody": "有关本政策的疑问，请发送至 {email}。",
+    "choiceHeading": "您的 Cookie 选择",
+    "choiceCurrent": "当前选择：{state}",
+    "choiceGranted": "已接受分析类 Cookie",
+    "choiceDenied": "已拒绝分析类 Cookie",
+    "choiceUnset": "未记录选择",
+    "choiceReset": "更改我的选择",
+    "choiceUnavailable": "我们不对您所在地区的访客使用分析类 Cookie。"
   }
 }

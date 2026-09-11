@@ -18,6 +18,7 @@ import {
   GLOSSARY_DATE_MODIFIED,
   FACT_SHEET_DATE_MODIFIED,
   VIRTUAL_TOUR_DATE_MODIFIED,
+  PRIVACY_DATE_MODIFIED,
 } from '@/lib/content-dates';
 
 /**
@@ -78,6 +79,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Virtual Factory Tour booking page (all locales)
   const virtualTourPages = generateLocalizedEntries('/virtual-factory-tour', new Date(VIRTUAL_TOUR_DATE_MODIFIED), 'monthly', 0.8);
 
+  // Privacy policy (all locales): low priority, rarely changes, but it is
+  // linked from the consent banner and every footer, so it must be indexable.
+  const privacyPages = generateLocalizedEntries('/privacy', new Date(PRIVACY_DATE_MODIFIED), 'yearly', 0.3);
+
   // Blog list page (all locales): newest modification date across posts
   const posts = getAllBlogPosts();
   const blogListDate = posts.length
@@ -90,5 +95,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     generateLocalizedEntries(`/blog/${post.slug}`, postLastModified(post), 'weekly', 0.8)
   );
 
-  return [...homepages, ...glossaryPages, ...factSheetPages, ...virtualTourPages, ...blogPages, ...blogPosts];
+  return [...homepages, ...glossaryPages, ...factSheetPages, ...virtualTourPages, ...privacyPages, ...blogPages, ...blogPosts];
 }

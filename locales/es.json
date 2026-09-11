@@ -685,6 +685,7 @@
     }
   },
   "footer": {
+    "privacy": "Política de privacidad",
     "companyInfo": {
       "name": "Better Bags Myanmar Company Limited",
       "address": "Plot No. 48, Myay Taing Block No.24, Ngwe Pin Lai Industrial Zone, Yangon, Myanmar",
@@ -1033,6 +1034,10 @@
     }
   },
   "metadata": {
+    "privacy": {
+      "title": "Política de privacidad - Better Bags Myanmar",
+      "description": "Descubra cómo Better Bags Myanmar gestiona los datos de consultas, analítica web y cookies, y cómo ejercer sus derechos de protección de datos."
+    },
     "virtualTour": {
       "title": "Tour virtual por la fábrica - Better Bags Myanmar",
       "description": "Visite en vivo nuestra fábrica de mochilas en Yangon por Zoom o Google Meet. Tour gratuito de 60 minutos: costura, QC y detección de agujas."
@@ -1061,5 +1066,91 @@
     "notifications": "Notificaciones",
     "breadcrumb": "Ruta de navegación",
     "pageSections": "Secciones de la página"
+  },
+  "consent": {
+    "label": "Consentimiento de cookies",
+    "message": "Utilizamos cookies analíticas para entender cómo los visitantes usan este sitio y así poder mejorarlo. Solo se activarán si usted las acepta.",
+    "accept": "Aceptar",
+    "decline": "Rechazar",
+    "privacyLink": "Política de privacidad"
+  },
+  "privacy": {
+    "title": "Política de privacidad",
+    "lastUpdated": "Última actualización: {date}",
+    "intro": "Better Bags Myanmar opera este sitio web para consultas comerciales sobre la fabricación OEM y ODM de mochilas. Esta política explica qué información recopilamos, por qué la recopilamos y qué puede hacer usted al respecto.",
+    "sections": [
+      {
+        "heading": "Quiénes somos",
+        "paragraphs": [
+          "Better Bags Myanmar es un fabricante de mochilas con sede en Yangon, Myanmar. Nosotros decidimos cómo se gestionan los datos personales descritos en esta política.",
+          "Si tiene alguna pregunta sobre esta política, utilice los datos de contacto que se encuentran al final de esta página."
+        ]
+      },
+      {
+        "heading": "Información que usted nos proporciona",
+        "paragraphs": [
+          "Al enviar el formulario de cotización, recopilamos el nombre, la empresa, la dirección de correo electrónico, el número de teléfono, el país y el mensaje que usted ingresa, junto con cualquier archivo que adjunte.",
+          "Utilizamos esta información únicamente para responder a su consulta y preparar una cotización. No la vendemos ni la utilizamos con fines publicitarios."
+        ]
+      },
+      {
+        "heading": "Información recopilada automáticamente",
+        "paragraphs": [
+          "Cuando visita una página, nuestros servidores y proveedores de analítica registran detalles técnicos como las páginas que visita, el tiempo de permanencia, el sitio que lo remitió, su tipo de navegador y dispositivo, su idioma, y el país y ciudad a los que corresponde su dirección de red.",
+          "Su dirección de red nunca se almacena en un formato legible. Se convierte en una huella digital irreversible mediante un código secreto que cambia todos los días, lo que significa que no se puede reconocer al mismo visitante de un día para otro."
+        ]
+      },
+      {
+        "heading": "Cookies y tecnologías similares",
+        "paragraphs": [
+          "Dos cookies son estrictamente necesarias y siempre se instalan: una recuerda el idioma que eligió y otra registra el país al que corresponde su dirección de red, para que sepamos qué scripts cargar.",
+          "Las cookies analíticas de Google Analytics y Microsoft Clarity se instalan solo después de que usted las acepte. Si se encuentra en el Espacio Económico Europeo, el Reino Unido o Suiza, no se instala nada hasta que tome esa decisión, la cual puede cambiar en cualquier momento.",
+          "Su elección se almacena en su navegador en lugar de en una cookie."
+        ]
+      },
+      {
+        "heading": "Por qué estamos autorizados a utilizarla",
+        "paragraphs": [
+          "Gestionamos los detalles de las consultas porque usted nos solicitó una respuesta y porque tenemos un interés legítimo en operar y mejorar un sitio web comercial.",
+          "Nos basamos en su consentimiento para las cookies analíticas siempre que la ley lo exija. Retirar el consentimiento es tan fácil como otorgarlo."
+        ]
+      },
+      {
+        "heading": "Con quién la compartimos",
+        "paragraphs": [
+          "Utilizamos un número reducido de proveedores de servicios, y cada uno gestiona los datos únicamente siguiendo nuestras instrucciones. Vercel aloja el sitio, Cloudflare proporciona el dominio, la protección contra bots y el almacenamiento de archivos, Resend entrega nuestro correo electrónico, Cal.com programa los recorridos virtuales por la fábrica, y Google Analytics y Microsoft Clarity proporcionan la analítica del sitio web.",
+          "No vendemos datos personales ni los compartimos con redes publicitarias."
+        ]
+      },
+      {
+        "heading": "Cuánto tiempo la conservamos",
+        "paragraphs": [
+          "Los correos electrónicos de consulta y sus archivos adjuntos se conservan mientras estemos en contacto con usted sobre el proyecto. Los archivos subidos se eliminan de nuestro almacenamiento automáticamente en un plazo de siete días.",
+          "Los registros analíticos se eliminan después de 180 días. Nuestros proveedores aplican sus propios períodos de retención a los datos que conservan."
+        ]
+      },
+      {
+        "heading": "Sus derechos",
+        "paragraphs": [
+          "Dependiendo de dónde viva, puede solicitarnos una copia de sus datos, pedirnos que los corrijamos o eliminemos, oponerse a cómo los utilizamos o solicitarnos que restrinjamos su uso. Escríbanos y le responderemos.",
+          "Si se encuentra en el Espacio Económico Europeo o en el Reino Unido, también tiene derecho a presentar una queja ante su autoridad nacional de protección de datos."
+        ]
+      },
+      {
+        "heading": "Cambios en esta política",
+        "paragraphs": [
+          "Si realizamos un cambio sustancial, actualizaremos la fecha en la parte superior de esta página y le volveremos a solicitar su elección sobre las cookies."
+        ]
+      }
+    ],
+    "contactHeading": "Contacto",
+    "contactBody": "Las preguntas sobre esta política pueden enviarse a {email}.",
+    "choiceHeading": "Su elección de cookies",
+    "choiceCurrent": "Elección actual: {state}",
+    "choiceGranted": "cookies analíticas aceptadas",
+    "choiceDenied": "cookies analíticas rechazadas",
+    "choiceUnset": "ninguna elección registrada",
+    "choiceReset": "Cambiar mi elección",
+    "choiceUnavailable": "Las cookies analíticas no se utilizan para los visitantes de su región."
   }
 }
