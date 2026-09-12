@@ -28,7 +28,8 @@ vi.mock('@/lib/analytics-report', () => ({
 vi.mock('@/lib/analytics/queries', () => ({ pruneOlderThan: pruneMock }));
 
 import { GET as weeklyReport } from '@/app/api/cron/weekly-report/route';
-import { GET as prune, RETENTION_DAYS } from '@/app/api/cron/prune/route';
+import { GET as prune } from '@/app/api/cron/prune/route';
+import { RETENTION_DAYS } from '@/lib/analytics/retention';
 
 const SECRET = 'cron-secret-value';
 

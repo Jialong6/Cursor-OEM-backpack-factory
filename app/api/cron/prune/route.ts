@@ -2,6 +2,7 @@ import { NextResponse, type NextRequest } from 'next/server';
 import { isAnalyticsDbConfigured } from '@/lib/analytics/db';
 import { pruneOlderThan } from '@/lib/analytics/queries';
 import { authorizeCron } from '@/lib/cron-auth';
+import { RETENTION_DAYS } from '@/lib/analytics/retention';
 
 /**
  * 保留期清理(Vercel Cron 调用)
@@ -15,9 +16,6 @@ import { authorizeCron } from '@/lib/cron-auth';
  */
 
 export const runtime = 'nodejs';
-
-/** 与隐私政策里写给访客的天数保持一致 */
-export const RETENTION_DAYS = 180;
 
 export async function GET(request: NextRequest): Promise<NextResponse> {
   const auth = authorizeCron(
