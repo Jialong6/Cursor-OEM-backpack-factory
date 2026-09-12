@@ -39,6 +39,7 @@ export default function QuoteFormFields({
     isSubmitting,
     submitStatus,
     onSubmit,
+    onSubmitInvalid,
     showDraftNotice,
     handleDiscardDraft,
     captchaResetSignal,
@@ -104,7 +105,15 @@ export default function QuoteFormFields({
         </div>
       )}
 
-      <form onSubmit={handleSubmit((data) => onSubmit(data, variant))} className={spacing}>
+      <form
+      onSubmit={handleSubmit(
+        (data) => onSubmit(data, variant),
+        // 补上 onInvalid:「点了提交却被校验拦住」此前完全观测不到,
+        // 而这批人是整条漏斗里最热的线索
+        (errors) => onSubmitInvalid(errors, variant)
+      )}
+      className={spacing}
+    >
         {/* 姓名 */}
         <div>
           <label htmlFor={id('name')} className="block text-sm font-medium text-gray-700 mb-2">

@@ -31,13 +31,13 @@ function request(path: string, userAgent: string): NextRequest {
 }
 
 describe('middleware 不再输出 hreflang Link header', () => {
-  it('属性:任意 locale × 任意页面路径,爬虫请求带前缀 URL 响应无 Link header', () => {
-    fc.assert(
-      fc.property(
+  it('属性:任意 locale × 任意页面路径,爬虫请求带前缀 URL 响应无 Link header', async () => {
+    await fc.assert(
+      fc.asyncProperty(
         fc.constantFrom(...locales),
         fc.constantFrom(...PAGE_PATHS),
-        (locale: Locale, path: string) => {
-          const response = middleware(request(`/${locale}${path}`, GOOGLEBOT_UA));
+        async (locale: Locale, path: string) => {
+          const response = await middleware(request(`/${locale}${path}`, GOOGLEBOT_UA));
           expect(response.headers.get('link')).toBeNull();
         }
       ),
@@ -45,13 +45,13 @@ describe('middleware 不再输出 hreflang Link header', () => {
     );
   });
 
-  it('属性:任意 locale × 任意页面路径,普通用户请求带前缀 URL 响应无 Link header', () => {
-    fc.assert(
-      fc.property(
+  it('属性:任意 locale × 任意页面路径,普通用户请求带前缀 URL 响应无 Link header', async () => {
+    await fc.assert(
+      fc.asyncProperty(
         fc.constantFrom(...locales),
         fc.constantFrom(...PAGE_PATHS),
-        (locale: Locale, path: string) => {
-          const response = middleware(request(`/${locale}${path}`, CHROME_UA));
+        async (locale: Locale, path: string) => {
+          const response = await middleware(request(`/${locale}${path}`, CHROME_UA));
           expect(response.headers.get('link')).toBeNull();
         }
       ),
@@ -61,10 +61,10 @@ describe('middleware 不再输出 hreflang Link header', () => {
 });
 
 describe('爬虫无前缀路径 308 永久重定向', () => {
-  it('属性:任意无前缀页面路径,爬虫请求 308 到 /en 前缀版', () => {
-    fc.assert(
-      fc.property(fc.constantFrom(...PAGE_PATHS), (path: string) => {
-        const response = middleware(request(path || '/', GOOGLEBOT_UA));
+  it('属性:任意无前缀页面路径,爬虫请求 308 到 /en 前缀版', async () => {
+    await fc.assert(
+      fc.asyncProperty(fc.constantFrom(...PAGE_PATHS), async (path: string) => {
+        const response = await middleware(request(path || '/', GOOGLEBOT_UA));
         expect(response.status).toBe(308);
         expect(response.headers.get('location')).toBe(
           `https://betterbagsmm.com/en${path}`
@@ -74,22 +74,22 @@ describe('爬虫无前缀路径 308 永久重定向', () => {
     );
   });
 
-  it('爬虫请求根路径 / 应 308 到 /en', () => {
-    const response = middleware(request('/', GOOGLEBOT_UA));
+  it('爬虫请求根路径 / 应 308 到 /en', async () => {
+    const response = await middleware(request('/', GOOGLEBOT_UA));
     expect(response.status).toBe(308);
     expect(response.headers.get('location')).toBe('https://betterbagsmm.com/en');
   });
 });
 
 describe('普通用户重定向语义保持不变(回归保护)', () => {
-  it('无 cookie 无 geo 的用户请求 / 应 302 临时重定向(目标因人而异)', () => {
-    const response = middleware(request('/', CHROME_UA));
+  it('无 cookie 无 geo 的用户请求 / 应 302 临时重定向(目标因人而异)', async () => {
+    const response = await middleware(request('/', CHROME_UA));
     expect(response.status).toBe(302);
     expect(response.headers.get('location')).toBe('https://betterbagsmm.com/en');
   });
 
-  it('用户请求带前缀 URL 正常放行(非重定向)', () => {
-    const response = middleware(request('/zh/blog', CHROME_UA));
+  it('用户请求带前缀 URL 正常放行(非重定向)', async () => {
+    const response = await middleware(request('/zh/blog', CHROME_UA));
     expect(response.status).toBeLessThan(300);
   });
 });

@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
+import { useAnchorScroll } from '@/hooks/useNavigation';
 
 /**
  * CTASection - CTA区块组件 (右下象限)
@@ -16,23 +17,10 @@ import { useTranslations, useLocale } from 'next-intl';
  */
 export function CTASection() {
   const t = useTranslations('banner');
+  const scrollToAnchor = useAnchorScroll();
   const tb = useTranslations('bento');
   const locale = useLocale();
 
-  const handleScrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      const navbarHeight = 80;
-      const targetPosition =
-        contactSection.getBoundingClientRect().top +
-        window.pageYOffset -
-        navbarHeight;
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth',
-      });
-    }
-  };
 
   return (
     <div
@@ -58,7 +46,7 @@ export function CTASection() {
 
       {/* CTA 按钮 */}
       <button
-        onClick={handleScrollToContact}
+        onClick={() => scrollToAnchor('#contact', null, { cta: 'bento_cta' })}
         className="
           min-h-[44px]
           min-w-[44px]

@@ -2,10 +2,12 @@
 
 import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
+import { useAnchorScroll } from '@/hooks/useNavigation';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 export default function HeroBanner() {
   const t = useTranslations('banner');
+  const scrollToAnchor = useAnchorScroll();
   const tFeatures = useTranslations('features');
   const locale = useLocale();
 
@@ -14,20 +16,6 @@ export default function HeroBanner() {
   const ctaAnim = useScrollAnimation({ variant: 'fade-up', delay: 200 });
   const statsAnim = useScrollAnimation({ variant: 'fade-up', delay: 300 });
 
-  const handleScrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      const navbarHeight = 80;
-      const targetPosition =
-        contactSection.getBoundingClientRect().top +
-        window.pageYOffset -
-        navbarHeight;
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth',
-      });
-    }
-  };
 
   const stats = tFeatures.raw('stats') as Array<{
     label: string;
@@ -66,7 +54,7 @@ export default function HeroBanner() {
         {/* CTA 按钮:主(报价)+ 次级(预约虚拟看厂) */}
         <div ref={ctaAnim.ref as React.RefObject<HTMLDivElement>} className={`mb-12 flex flex-col items-center justify-center gap-4 sm:flex-row ${ctaAnim.animationClassName}`}>
           <button
-            onClick={handleScrollToContact}
+            onClick={() => scrollToAnchor('#contact', null, { cta: 'hero_primary' })}
             className="rounded-lg bg-primary px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-primary-dark hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-primary/30"
           >
             {t('cta')}

@@ -20,7 +20,23 @@ export const staticAssetsNoindexRule: HeaderRule = {
   headers: [{ key: 'X-Robots-Tag', value: 'noindex' }],
 };
 
+/**
+ * 看板页永远不该进搜索索引
+ *
+ * 两条规则而不是一条:Next 的 path-to-regexp 里 /admin/:path* 匹配不到
+ * 裸 /admin,少写一条会漏掉入口本身。
+ */
+export const adminNoindexRule: HeaderRule = {
+  source: '/admin',
+  headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+};
+
+export const adminSubpathNoindexRule: HeaderRule = {
+  source: '/admin/:path*',
+  headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+};
+
 /** next.config headers() 的唯一入口 */
 export function buildHeaders(): HeaderRule[] {
-  return [staticAssetsNoindexRule];
+  return [staticAssetsNoindexRule, adminNoindexRule, adminSubpathNoindexRule];
 }

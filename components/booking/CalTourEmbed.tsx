@@ -7,6 +7,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { isValidLocale } from '@/i18n';
 import { getCalLink, isEmbedHiddenLocale, toCalLocale } from '@/lib/cal-tour';
 import { buildWhatsAppHref, buildMailtoHref } from '@/lib/contact-links';
+import { track } from '@/lib/analytics/beacon';
 
 /**
  * 虚拟看厂预约嵌入组件(Cal.com)
@@ -56,11 +57,36 @@ export default function CalTourEmbed() {
           dark: { 'cal-brand': CAL_BRAND_COLOR },
         },
       });
+
+      // 预约成功是全站价值最高的转化,而 Cal.com 是跨源 iframe ——
+      // InsightTracker 的委托点击监听器看不见里面发生了什么,只能订阅它的事件。
+      // Cal 没有提供 off(),cleanup 里的 cancelled 标志就是退订
+      cal('on', {
+        action: 'bookingSuccessful',
+        callback: () => {
+          if (cancelled) {
+            return;
+          }
+          track('booking_success', { locale }, { immediate: true });
+        },
+      });
     })();
     return () => {
       cancelled = true;
     };
-  }, [showEmbed]);
+  }, [showEmbed, locale]);
+
+  // 走兜底卡意味着访客根本见不到日历。上报一次,才能看到有多少人
+  // 因此被挡在预约之外 —— 这正是要拿来改落地页的信号
+  useEffect(() => {
+    if (showEmbed) {
+      return;
+    }
+    track('booking_unavailable', {
+      locale,
+      reason: calLink === '' ? 'not_configured' : 'locale',
+    });
+  }, [showEmbed, locale, calLink]);
 
   if (!showEmbed) {
     const whatsappDisplay = tContact('whatsapp.value');

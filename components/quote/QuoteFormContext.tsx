@@ -9,7 +9,7 @@ import {
   useState,
   type ReactNode,
 } from 'react';
-import { useForm, type UseFormReturn } from 'react-hook-form';
+import { useForm, type FieldErrors, type UseFormReturn } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useLocale } from 'next-intl';
 import { contactFormSchema, type ContactFormData } from '@/lib/validations';
@@ -23,6 +23,8 @@ import { useFormDraft } from '@/hooks/useFormDraft';
 import { useGeoCountry } from '@/hooks/useGeoCountry';
 import { getCountryByCode } from '@/lib/countries';
 import { uploadOneFile } from '@/lib/upload';
+import { useQuoteFormAnalytics } from '@/hooks/useQuoteFormAnalytics';
+import type { SubmitFailureReason } from '@/lib/analytics/form-tracking';
 
 /**
  * Get A Quote 表单的全局 Context
@@ -70,6 +72,18 @@ export interface QuoteFormContextValue {
   /** 本次提交由哪个表单实例发起；提交反馈只在该实例渲染，避免双实例重复 */
   submittingVariant: SubmitVariant | null;
   onSubmit: (data: ContactFormData, variant?: SubmitVariant) => Promise<void>;
+  /**
+   * 提交被 zod 校验拦住时调用。这是整条漏斗里此前唯一完全观测不到的环节,
+   * 而这批人恰恰是最热的线索。
+   */
+  onSubmitInvalid: (errors: FieldErrors<ContactFormData>, variant?: SubmitVariant) => void;
+  /**
+   * 最近一次提交失败的原因
+   *
+   * 四条路径此前全塌缩成同一个 submitStatus='error'。这里先把它们分开,
+   * UI 文案本期不动 —— 拆成四态会牵动 12 个 locale JSON,PR 会失控。
+   */
+  lastFailureReason: SubmitFailureReason | null;
 
   // 草稿
   showDraftNotice: boolean;
@@ -105,6 +119,9 @@ export function QuoteFormProvider({ children }: { children: ReactNode }) {
   const [submittingVariant, setSubmittingVariant] = useState<SubmitVariant | null>(null);
   const [showDraftNotice, setShowDraftNotice] = useState(false);
   const [captchaResetSignal, setCaptchaResetSignal] = useState(0);
+  const [lastFailureReason, setLastFailureReason] = useState<SubmitFailureReason | null>(null);
+
+  const analytics = useQuoteFormAnalytics();
 
   // uploads 的 ref 镜像（事件回调里读最新值,避开闭包过期）+ 取消函数 + 在传 Promise
   const uploadsRef = useRef<UploadItem[]>([]);
@@ -151,8 +168,10 @@ export function QuoteFormProvider({ children }: { children: ReactNode }) {
         phoneCodeManuallySetRef.current = true;
       }
       setShowDraftNotice(true);
+      // 草稿写入的值不算「用户开始填表」,设为基线吃掉
+      analytics.setBaseline(draft as Record<string, unknown>);
     }
-  }, [restoreDraft, hasDraft, setValue]);
+  }, [restoreDraft, hasDraft, setValue, analytics]);
 
   // Geo-IP 自动填充国家
   useEffect(() => {
@@ -186,6 +205,12 @@ export function QuoteFormProvider({ children }: { children: ReactNode }) {
     saveDraftCallback();
   }, [saveDraftCallback]);
 
+  // 复用上面那个 watchedValues,不再新增第二个无参 watch() ——
+  // react-hook-form 的无参 watch 会订阅整张表单,两个订阅等于每次击键两次全量重渲染
+  useEffect(() => {
+    analytics.observeValues(watchedValues as Record<string, unknown>);
+  }, [watchedValues, analytics]);
+
   const handleDiscardDraft = useCallback(() => {
     clearDraft();
     reset();
@@ -217,12 +242,13 @@ export function QuoteFormProvider({ children }: { children: ReactNode }) {
           if (controller.signal.aborted) return; // 主动移除,不标错
           const message = err instanceof Error ? err.message : 'upload failed';
           patchUpload(item.id, { status: 'error', error: message });
+          analytics.trackFileUploadFail();
         })
         .finally(() => {
           abortMapRef.current.delete(item.id);
         });
     },
-    [patchUpload]
+    [patchUpload, analytics]
   );
 
   // 选文件：追加 + 去重 + 合并校验 + 即刻并行上传新文件
@@ -235,11 +261,16 @@ export function QuoteFormProvider({ children }: { children: ReactNode }) {
       const existing = uploadsRef.current;
       const seen = new Set(existing.map((u) => `${u.file.name}:${u.file.size}`));
       const fresh = incoming.filter((f) => !seen.has(`${f.name}:${f.size}`));
-      if (fresh.length === 0) return;
+      if (fresh.length === 0) {
+        // 全是重复文件,静默退出 —— 这条路径对用户是黑箱,至少要能在数据里看到
+        analytics.trackFileReject('duplicate');
+        return;
+      }
 
       const validation = validateFiles([...existing.map((u) => u.file), ...fresh]);
       if (!validation.valid) {
         setFileErrors(validation.errors);
+        analytics.trackFileReject(validation.errors[0]?.code ?? 'invalid');
         return;
       }
       setFileErrors([]);
@@ -254,7 +285,7 @@ export function QuoteFormProvider({ children }: { children: ReactNode }) {
       setUploads(uploadsRef.current);
       newItems.forEach(startUpload);
     },
-    [startUpload]
+    [startUpload, analytics]
   );
 
   // 移除文件：取消在传上传 + 从列表删除
@@ -283,8 +314,11 @@ export function QuoteFormProvider({ children }: { children: ReactNode }) {
           else failed++;
         });
         if (failed > 0) {
+          // 早退:根本没发出 POST,和服务端拒收是两回事
           setSubmitStatus('error');
+          setLastFailureReason('upload_failed');
           setFileErrors([makeFileError('uploadFailed')]);
+          analytics.trackSubmitFail({ variant, reason: 'upload_failed', failedFiles: failed });
           return;
         }
 
@@ -296,6 +330,8 @@ export function QuoteFormProvider({ children }: { children: ReactNode }) {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ ...data, files: fileRefs, locale }),
         });
+        // status 此前被丢掉了。留住它才分得清 400(校验/验证码)、429(限流)、500
+        const status = response.status;
         const body = (await response.json().catch(() => null)) as { success?: boolean } | null;
 
         if (body?.success) {
@@ -309,19 +345,33 @@ export function QuoteFormProvider({ children }: { children: ReactNode }) {
           promiseMapRef.current.clear();
           setFileErrors([]);
           setCaptchaResetSignal((n) => n + 1);
+          setLastFailureReason(null);
+          analytics.trackSubmitSuccess({ variant, fileCount: fileRefs.length });
         } else {
           setSubmitStatus('error');
+          setLastFailureReason('server_rejected');
+          analytics.trackSubmitFail({ variant, reason: 'server_rejected', status });
         }
       } catch (err) {
         // 暴露真实错误便于诊断（上传/网络/配置等），不静默吞掉
         console.error('[QuoteForm] 提交失败:', err);
         setSubmitStatus('error');
+        setLastFailureReason('network_error');
+        analytics.trackSubmitFail({ variant, reason: 'network_error' });
       } finally {
         setIsSubmitting(false);
         setSubmittingVariant(null);
       }
     },
-    [clearDraft, reset, locale]
+    [clearDraft, reset, locale, analytics]
+  );
+
+  const onSubmitInvalid = useCallback(
+    (errors: FieldErrors<ContactFormData>, variant: SubmitVariant = 'inline') => {
+      setLastFailureReason('validation');
+      analytics.trackValidationBlocked(errors, variant);
+    },
+    [analytics]
   );
 
   const value: QuoteFormContextValue = {
@@ -335,6 +385,8 @@ export function QuoteFormProvider({ children }: { children: ReactNode }) {
     submitStatus,
     submittingVariant,
     onSubmit,
+    onSubmitInvalid,
+    lastFailureReason,
     showDraftNotice,
     handleDiscardDraft,
     captchaResetSignal,

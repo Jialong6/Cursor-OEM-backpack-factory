@@ -2,6 +2,7 @@
 
 import type React from 'react';
 import { useTranslations } from 'next-intl';
+import { useAnchorScroll } from '@/hooks/useNavigation';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 type Country = {
@@ -24,6 +25,7 @@ type Country = {
  */
 export default function CostAdvantage() {
   const t = useTranslations('costAdvantage');
+  const scrollToAnchor = useAnchorScroll();
   const titleAnim = useScrollAnimation({ variant: 'fade-up' });
   const cardsAnim = useScrollAnimation({ variant: 'fade-up', delay: 100 });
 
@@ -60,8 +62,14 @@ export default function CostAdvantage() {
           {t('takeaway')}
         </p>
         <div className="mt-8 text-center">
+          {/*
+            href 保持不变:tests/components/CostAdvantage.test.tsx 断言它是
+            "#contact",而且 JS 挂掉时原生锚点仍然可用。加上 onClick 之后
+            这处才终于有了导航栏偏移与平滑滚动 —— 此前它是六处里唯一没有的。
+          */}
           <a
             href="#contact"
+            onClick={(e) => scrollToAnchor('#contact', e, { cta: 'cost_advantage' })}
             className="inline-block bg-primary hover:bg-primary-dark text-white font-bold px-8 py-3 rounded-lg transition-colors focus:outline-none focus:ring-4 focus:ring-primary/30"
           >
             {t('cta')}
