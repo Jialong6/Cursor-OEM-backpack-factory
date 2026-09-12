@@ -103,7 +103,8 @@ export async function fetchSectionDwell(days: number): Promise<readonly SectionD
     JOIN page_views pv ON pv.id = sd.page_view_id
     WHERE pv.last_seen_at > now() - $1::interval
     GROUP BY sd.section_id
-    HAVING COUNT(*) >= 3
+    -- 不设最小样本门槛:界面上每行都带着样本数,读的人自己判断够不够。
+    -- 设了门槛的话,刚上线那几天这块会是空的,反而看着像埋点坏了
     ORDER BY avg_ms DESC
     LIMIT 30
     `,
@@ -165,8 +166,8 @@ async function fetchTopBy(
     SELECT COALESCE(NULLIF(${column}, ''), '(unknown)') AS label, COUNT(*) AS count
     FROM page_views
     WHERE last_seen_at > now() - $1::interval
-    GROUP BY label
-    ORDER BY count DESC
+    GROUP BY 1
+    ORDER BY 2 DESC
     LIMIT ${Math.max(1, Math.round(limit))}
     `,
     [since(days)]
@@ -185,11 +186,13 @@ export const fetchLocales = (days: number) => fetchTopBy('locale', days);
 export async function fetchScrollDepth(days: number): Promise<readonly CountRow[]> {
   const rows = (await getDb().query(
     `
+    -- 用序号而不是别名:ORDER BY 里一旦套上表达式(这里要转成整数排序),
+    -- 就不能再引用 SELECT 的输出别名了
     SELECT (props->>'pct') AS label, COUNT(DISTINCT page_view_id) AS count
     FROM events
     WHERE name = 'scroll_depth' AND occurred_at > now() - $1::interval
-    GROUP BY label
-    ORDER BY (label)::int
+    GROUP BY 1
+    ORDER BY (props->>'pct')::int
     `,
     [since(days)]
   )) as Array<Record<string, string>>;
@@ -209,8 +212,8 @@ export async function fetchConversionEvents(days: number): Promise<readonly Coun
         'whatsapp_click', 'email_click', 'phone_click', 'map_click',
         'booking_success', 'booking_unavailable', 'language_switch'
       )
-    GROUP BY name
-    ORDER BY count DESC
+    GROUP BY 1
+    ORDER BY 2 DESC
     `,
     [since(days)]
   )) as Array<Record<string, string>>;
