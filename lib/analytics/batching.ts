@@ -18,6 +18,7 @@ import {
   MAX_EVENTS_PER_BATCH,
   type DwellPayloadEntry,
   type InsightEnvelope,
+  type InsightUtm,
   type InsightViewport,
   type QueuedEvent,
 } from './events';
@@ -29,6 +30,7 @@ export interface BatchContext {
   readonly locale: string;
   readonly referrer?: string;
   readonly viewport: InsightViewport;
+  readonly utm?: InsightUtm;
 }
 
 /** 粗估一条事件序列化后的字节数。只用于分包决策,不需要精确 */
@@ -126,6 +128,7 @@ export function buildBatches(
     locale: context.locale,
     ...(context.referrer ? { referrer: context.referrer } : {}),
     viewport: context.viewport,
+    ...(context.utm ? { utm: context.utm } : {}),
     events: batchEvents,
     dwell: batchDwell,
   });

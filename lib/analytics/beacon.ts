@@ -29,7 +29,7 @@ let dwellQueue: readonly DwellPayloadEntry[] = [];
 let pageViewId = '';
 let pageStartedAt = 0;
 let seq = 1;
-let referrerSent = false;
+let firstBatchSent = false;
 let lifecycleBound = false;
 let debounceTimer: ReturnType<typeof setTimeout> | null = null;
 let hardTimer: ReturnType<typeof setTimeout> | null = null;
@@ -146,14 +146,31 @@ function send(payload: string): void {
   }
 }
 
+/**
+ * 从当前 URL 读广告系列参数
+ *
+ * 只在首批发一次:客户端路由切换后 query 还在,但那已经不是新的来源了。
+ */
+function readUtm(): { source?: string; medium?: string; campaign?: string } | undefined {
+  const params = new URLSearchParams(window.location.search);
+  const utm = {
+    ...(params.get('utm_source') ? { source: params.get('utm_source') as string } : {}),
+    ...(params.get('utm_medium') ? { medium: params.get('utm_medium') as string } : {}),
+    ...(params.get('utm_campaign') ? { campaign: params.get('utm_campaign') as string } : {}),
+  };
+
+  return Object.keys(utm).length > 0 ? utm : undefined;
+}
+
 function currentContext(): BatchContext {
   return {
     pageViewId: ensurePageView(),
     path: window.location.pathname,
     locale: document.documentElement.lang || 'en',
     // referrer 只在首批发一次,后续批次省下这段带宽
-    ...(referrerSent || !document.referrer ? {} : { referrer: document.referrer }),
+    ...(firstBatchSent || !document.referrer ? {} : { referrer: document.referrer }),
     viewport: { w: window.innerWidth, h: window.innerHeight },
+    ...(firstBatchSent ? {} : { utm: readUtm() }),
   };
 }
 
@@ -186,9 +203,8 @@ export function flush(_reason: FlushReason): void {
 
   seq += batches.length;
 
-  if (context.referrer) {
-    referrerSent = true;
-  }
+  // referrer 与 utm 只随首批发一次,后续批次省下这段带宽
+  firstBatchSent = true;
 
   for (const batch of batches) {
     send(JSON.stringify(batch));
@@ -279,5 +295,5 @@ export function __resetBeaconForTests(): void {
   pageViewId = '';
   pageStartedAt = 0;
   seq = 1;
-  referrerSent = false;
+  firstBatchSent = false;
 }

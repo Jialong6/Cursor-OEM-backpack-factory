@@ -84,6 +84,13 @@ export interface InsightViewport {
   readonly h: number;
 }
 
+/** 广告系列参数。只在落地那一刻的 URL 上取得到,所以随首个信封一起发 */
+export interface InsightUtm {
+  readonly source?: string;
+  readonly medium?: string;
+  readonly campaign?: string;
+}
+
 /** 一次 POST 的载荷 */
 export interface InsightEnvelope {
   readonly v: number;
@@ -94,6 +101,7 @@ export interface InsightEnvelope {
   readonly locale: string;
   readonly referrer?: string;
   readonly viewport: InsightViewport;
+  readonly utm?: InsightUtm;
   readonly events: readonly QueuedEvent[];
   readonly dwell: readonly DwellPayloadEntry[];
 }
