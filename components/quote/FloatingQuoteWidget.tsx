@@ -5,6 +5,8 @@ import { useTranslations } from 'next-intl';
 import QuoteFormFields from './QuoteFormFields';
 import { useQuoteForm } from './QuoteFormContext';
 import { useDraggable } from '@/hooks/useDraggable';
+import { useAnchorScroll } from '@/hooks/useNavigation';
+import { NAVBAR_HEIGHT } from '@/lib/navigation';
 
 /**
  * 可拖动 Get A Quote 浮窗
@@ -24,7 +26,6 @@ const BUTTON_Y_KEY = 'quote_widget_button_y';
 const CARD_WIDTH = 420;
 const CARD_HEIGHT_VH = 0.75;
 const MOBILE_BREAKPOINT = 768;
-const NAVBAR_HEIGHT = 80;
 const BUTTON_VPAD = 8;
 const BUTTON_HEIGHT_GUESS = 48;
 const DEFAULT_BUTTON_Y = NAVBAR_HEIGHT + 16; // navbar 下方 16px
@@ -56,6 +57,7 @@ function readStoredButtonY(): number | null {
 export default function FloatingQuoteWidget() {
   const t = useTranslations('quoteWidget');
   const { isSubmitting } = useQuoteForm();
+  const scrollToAnchor = useAnchorScroll();
 
   const [mounted, setMounted] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
@@ -158,16 +160,14 @@ export default function FloatingQuoteWidget() {
         return;
       }
       if (!isDesktop) {
-        const el = document.getElementById('contact-form');
-        if (el) {
-          const top = el.getBoundingClientRect().top + window.scrollY - NAVBAR_HEIGHT;
-          window.scrollTo({ top, behavior: 'smooth' });
-        }
+        // 移动端没有展开空间,直接滚到页底表单。目标是 #contact-form
+        // 而不是 #contact —— 落在整节开头等于还要再滑一屏
+        scrollToAnchor('#contact-form', null, { cta: 'floating_widget' });
         return;
       }
       setState('expanded');
     },
-    [buttonDrag.wasDraggedRef, isDesktop]
+    [buttonDrag.wasDraggedRef, isDesktop, scrollToAnchor]
   );
 
   const handleMinimize = useCallback(() => {

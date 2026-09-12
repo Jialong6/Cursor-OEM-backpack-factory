@@ -89,6 +89,7 @@ vi.mock('@/hooks/useNavigation', () => ({
   useScrollState: () => false,
   useActiveSection: () => 'banner',
   useSmoothScroll: () => vi.fn(),
+  useAnchorScroll: () => vi.fn(),
   useMobileMenu: () => ({
     isOpen: false,
     toggle: vi.fn(),

@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations, useLocale } from 'next-intl';
+import { useAnchorScroll } from '@/hooks/useNavigation';
 import Link from 'next/link';
 import Accordion from '@/components/ui/Accordion';
 import { FAQPageSchema, type FAQSection } from '@/components/seo';
@@ -18,6 +19,7 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
  */
 export default function FAQ() {
   const t = useTranslations('faq');
+  const scrollToAnchor = useAnchorScroll();
   const locale = useLocale();
 
   const titleAnim = useScrollAnimation({ variant: 'fade-up' });
@@ -69,21 +71,7 @@ export default function FAQ() {
             </p>
             <a
               href="#contact"
-              onClick={(e) => {
-                e.preventDefault();
-                const contactSection = document.getElementById('contact');
-                if (contactSection) {
-                  const navbarHeight = 80;
-                  const targetPosition =
-                    contactSection.getBoundingClientRect().top +
-                    window.pageYOffset -
-                    navbarHeight;
-                  window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth',
-                  });
-                }
-              }}
+              onClick={(e) => scrollToAnchor('#contact', e, { cta: 'faq' })}
               className="inline-block rounded-lg bg-primary px-8 py-3 font-semibold text-white transition-all hover:bg-primary-dark hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-primary/30"
             >
               {t('cta.button')}

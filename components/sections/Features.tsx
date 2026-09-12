@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { useAnchorScroll } from '@/hooks/useNavigation';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 /**
@@ -16,6 +17,7 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
  */
 export default function Features() {
   const t = useTranslations('features');
+  const scrollToAnchor = useAnchorScroll();
   const tCustom = useTranslations('customization');
 
   const advantagesAnim = useScrollAnimation({ variant: 'fade-up', delay: 100 });
@@ -35,20 +37,6 @@ export default function Features() {
     highlights: string[];
   }>;
 
-  const handleScrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      const navbarHeight = 80;
-      const targetPosition =
-        contactSection.getBoundingClientRect().top +
-        window.pageYOffset -
-        navbarHeight;
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth',
-      });
-    }
-  };
 
   return (
     <section
@@ -137,7 +125,7 @@ export default function Features() {
               dangerouslySetInnerHTML={{ __html: tCustom.raw('ready') }}
             />
             <button
-              onClick={handleScrollToContact}
+              onClick={() => scrollToAnchor('#contact', null, { cta: 'features' })}
               className="rounded-lg bg-primary px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-primary-dark hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-primary/30"
             >
               {tCustom('cta')}

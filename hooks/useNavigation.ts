@@ -3,6 +3,8 @@
 import { useEffect, useState, useRef, useCallback } from 'react'
 import { usePathname } from 'next/navigation'
 import { NAVBAR_HEIGHT, SCROLL_THRESHOLD, SECTION_IDS } from '@/lib/navigation'
+import { usePrefersReducedMotion } from '@/hooks/useScrollAnimation'
+import { track } from '@/lib/analytics/beacon'
 
 /**
  * Hook to track if page has scrolled past a threshold
@@ -71,7 +73,80 @@ export function useActiveSection(sectionIds: readonly string[] = SECTION_IDS): s
 }
 
 /**
+ * 滚动到锚点时可附带的埋点信息
+ */
+export interface AnchorScrollMeta {
+  /** 点击来源。传了才上报 cta_click,没传表示是程序内部触发的滚动 */
+  cta?: string
+}
+
+export type AnchorScrollHandler = (
+  target: string,
+  event?: { preventDefault: () => void } | null,
+  meta?: AnchorScrollMeta
+) => void
+
+/**
+ * 滚动到站内锚点的唯一入口
+ *
+ * 站内原本有六处各写一遍的实现:HeroBanner / Features / bento CTASection
+ * 三处逐字相同,FAQ 是内联变体,CostAdvantage 是连偏移和平滑都没有的纯 <a>,
+ * 浮窗那处目标是 #contact-form 且要先过拖动守卫。往六处分别塞埋点等于把
+ * 代码复制六份,而且一定会有谁漏埋 —— 所以先收敛,再在这一个落点上报。
+ *
+ * 事件参数刻意做成可选且只要求 preventDefault:<button> 不需要传,
+ * <a> 传进来阻止默认跳转,浮窗那种自己先拦过的传 null。三种形态共用一个函数。
+ *
+ * 位置计算沿用 offsetTop。本站唯一的定位祖先是 app/[locale]/page.tsx 的
+ * <div className="relative">,它从文档 y=0 起(Navbar 是 fixed,不占文档流),
+ * 因此 offsetTop 与文档绝对位置等价。若将来在它之上再套定位容器,
+ * 这里要改成 getBoundingClientRect().top + window.scrollY。
+ *
+ * @param navbarHeight - 顶部固定导航的高度,滚动位置要减掉它
+ */
+export function useAnchorScroll(
+  navbarHeight: number = NAVBAR_HEIGHT
+): AnchorScrollHandler {
+  const pathname = usePathname()
+  const prefersReducedMotion = usePrefersReducedMotion()
+
+  return useCallback(
+    (target, event, meta) => {
+      const targetId = target.startsWith('#') ? target.slice(1) : target
+
+      if (meta?.cta) {
+        // 立刻发送:点完往往紧接着一次滚动或导航,攒批会来不及
+        track('cta_click', { cta: meta.cta, target: targetId }, { immediate: true })
+      }
+
+      const targetElement = document.getElementById(targetId)
+
+      if (!targetElement) {
+        // 当前页面没有该 section(如 blog / glossary 子路由)
+        // → 跳到首页对应 section。用整页跳转让浏览器原生处理 hash 滚动
+        // (App Router 的 router.push 切路由后不会自动滚到 hash)
+        event?.preventDefault()
+        const locale = pathname.split('/')[1] || 'en'
+        window.location.href = `/${locale}#${targetId}`
+        return
+      }
+
+      event?.preventDefault()
+
+      window.scrollTo({
+        top: targetElement.offsetTop - navbarHeight,
+        behavior: prefersReducedMotion ? 'auto' : 'smooth',
+      })
+    },
+    [navbarHeight, pathname, prefersReducedMotion]
+  )
+}
+
+/**
  * Hook that returns a smooth scroll handler function
+ *
+ * 现在是 useAnchorScroll 的薄适配器,签名一字未变 ——
+ * Navbar / DesktopNav / MobileNav / Footer 以及它们的现有测试都不受影响。
  *
  * @param navbarHeight - Height of navbar for offset calculation (default: NAVBAR_HEIGHT)
  * @returns Click handler function for navigation links
@@ -79,39 +154,17 @@ export function useActiveSection(sectionIds: readonly string[] = SECTION_IDS): s
 export function useSmoothScroll(
   navbarHeight: number = NAVBAR_HEIGHT
 ): (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void {
-  const pathname = usePathname()
+  const scrollToAnchor = useAnchorScroll(navbarHeight)
 
-  const handleNavClick = useCallback(
+  return useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
       // 非锚点（路径式）href 交给 next/Link 自行处理
       if (!href.startsWith('#')) return
 
-      const targetId = href.slice(1)
-      const targetElement = document.getElementById(targetId)
-
-      if (targetElement) {
-        // 当前页面存在该 section（首页）→ 平滑滚动
-        e.preventDefault()
-        const targetPosition = targetElement.offsetTop - navbarHeight
-
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth',
-        })
-        return
-      }
-
-      // 当前页面没有该 section（如 blog / glossary 子路由）
-      // → 跳到首页对应 section。用整页跳转让浏览器原生处理 hash 滚动
-      // （App Router 的 router.push 切路由后不会自动滚到 hash）
-      e.preventDefault()
-      const locale = pathname.split('/')[1] || 'en'
-      window.location.href = `/${locale}${href}`
+      scrollToAnchor(href, e, { cta: 'nav' })
     },
-    [navbarHeight, pathname]
+    [scrollToAnchor]
   )
-
-  return handleNavClick
 }
 
 /**
