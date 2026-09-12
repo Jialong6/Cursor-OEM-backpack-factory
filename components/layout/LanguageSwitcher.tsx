@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
+import { track } from '@/lib/analytics/beacon';
 import { usePathname, useRouter } from 'next/navigation';
 import { locales, localeConfig, type Locale } from '@/i18n';
 
@@ -75,6 +76,9 @@ export default function LanguageSwitcher() {
    */
   const handleSelectLocale = (newLocale: Locale) => {
     if (newLocale !== locale) {
+      // 放在守卫内:点当前语言不产生导航,不该算成一次切换
+      track('language_switch', { from: locale, to: newLocale, via: 'switcher' });
+
       // Set cookie for preference persistence
       setLangCookie(newLocale);
 

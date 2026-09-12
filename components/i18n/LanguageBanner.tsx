@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
+import { track } from '@/lib/analytics/beacon';
 import { type Locale, localeConfig, defaultLocale } from '@/i18n';
 import {
   LANG_COOKIE_NAME,
@@ -146,6 +147,7 @@ export default function LanguageBanner({ locale }: LanguageBannerProps) {
    * Sets cookie and closes banner
    */
   const handleKeepLanguage = useCallback(() => {
+    track('language_switch', { from: locale, to: locale, via: 'banner', action: 'keep' });
     setClientCookie(LANG_COOKIE_NAME, locale, COOKIE_MAX_AGE);
     handleClose();
   }, [locale, handleClose]);
@@ -155,6 +157,7 @@ export default function LanguageBanner({ locale }: LanguageBannerProps) {
    * Sets English preference and redirects
    */
   const handleSwitchToEnglish = useCallback(() => {
+    track('language_switch', { from: locale, to: defaultLocale, via: 'banner', action: 'switch_en' });
     setClientCookie(LANG_COOKIE_NAME, defaultLocale, COOKIE_MAX_AGE);
 
     // Build English URL by replacing locale in path

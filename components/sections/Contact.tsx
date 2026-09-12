@@ -69,6 +69,8 @@ export default function Contact() {
                     </div>
                     <a
                       href={`tel:${line.number.replace(/[\s()-]/g, '')}`}
+                      /* 只上报语言线路名。号码本身绝不进库 —— 委托监听器读这个属性 */
+                      data-analytics-label={line.lang}
                       className="text-primary hover:text-primary-dark font-medium block"
                     >
                       {line.number}
@@ -95,6 +97,7 @@ export default function Contact() {
               <h3 className="text-lg font-semibold text-neutral-800 mb-3">{t('whatsapp.label')}</h3>
               <a
                 href={buildWhatsAppHref(t('whatsapp.value'))}
+                data-analytics-label="contact_section"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary hover:text-primary-dark font-medium"

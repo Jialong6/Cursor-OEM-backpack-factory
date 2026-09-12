@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
+import { track } from '@/lib/analytics/beacon';
 import { locales, localeConfig, type Locale } from '@/i18n';
 import { buildLocaleHref } from '@/lib/locale-links';
 import { setLangCookieClient } from '@/lib/lang-cookie-client';
@@ -36,7 +37,10 @@ export default function FooterLanguageLinks() {
               lang={localeConfig[target].hreflang}
               prefetch={false}
               aria-current={target === locale ? 'true' : undefined}
-              onClick={() => setLangCookieClient(target)}
+              onClick={() => {
+                track('language_switch', { from: locale, to: target, via: 'footer' });
+                setLangCookieClient(target);
+              }}
               className="text-sm hover:text-primary transition-colors"
             >
               {localeConfig[target].nativeName}
