@@ -18,15 +18,24 @@ import { describe, it, expect } from 'vitest';
 import fc from 'fast-check';
 // Next 内部 API(15.x 路径稳定);若升级 Next 后挪位,退化为字符串断言即可
 import { getPathMatch } from 'next/dist/shared/lib/router/utils/path-match';
-import { staticAssetsNoindexRule, buildHeaders } from '@/lib/headers';
+import {
+  adminNoindexRule,
+  adminSubpathNoindexRule,
+  staticAssetsNoindexRule,
+  buildHeaders,
+} from '@/lib/headers';
 import robots from '@/app/robots';
 import { locales, type Locale } from '@/i18n';
 
 describe('/_next/static X-Robots-Tag 规则形状', () => {
-  it('buildHeaders 恰 1 条规则(范围最小化,防误伤其他路径)', () => {
+  it('buildHeaders 恰 3 条规则(范围最小化,防误伤其他路径)', () => {
     const rules = buildHeaders();
-    expect(rules).toHaveLength(1);
-    expect(rules[0]).toBe(staticAssetsNoindexRule);
+
+    // /_next/static 一条,看板两条(裸 /admin 与子路径各一条)
+    expect(rules).toHaveLength(3);
+    expect(rules).toContain(staticAssetsNoindexRule);
+    expect(rules).toContain(adminNoindexRule);
+    expect(rules).toContain(adminSubpathNoindexRule);
   });
 
   it('source 仅匹配 /_next/static,headers 恰为 X-Robots-Tag: noindex', () => {
@@ -110,6 +119,36 @@ describe('与 robots.txt 的分工守护', () => {
           `robots disallow ${entry} 会阻断渲染资源抓取`
         ).toBe(false);
       }
+    }
+  });
+});
+
+describe('/admin noindex 规则', () => {
+  it('两条规则合起来覆盖裸 /admin 与其子路径', () => {
+    const bare = getPathMatch(adminNoindexRule.source);
+    const sub = getPathMatch(adminSubpathNoindexRule.source);
+
+    // Next 的 path-to-regexp 里 /admin/:path* 匹配不到裸 /admin,
+    // 少写一条就会漏掉入口本身
+    expect(bare('/admin')).toBeTruthy();
+    expect(sub('/admin/analytics')).toBeTruthy();
+  });
+
+  it('不误伤站内其他路径', () => {
+    const bare = getPathMatch(adminNoindexRule.source);
+    const sub = getPathMatch(adminSubpathNoindexRule.source);
+
+    for (const path of ['/', '/en', '/en/admin', '/administrator', '/api/insight']) {
+      expect(bare(path)).toBeFalsy();
+      expect(sub(path)).toBeFalsy();
+    }
+  });
+
+  it('两条规则都是 noindex, nofollow', () => {
+    for (const rule of [adminNoindexRule, adminSubpathNoindexRule]) {
+      expect(rule.headers).toEqual([
+        { key: 'X-Robots-Tag', value: 'noindex, nofollow' },
+      ]);
     }
   });
 });

@@ -35,12 +35,12 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/_not-found'],
+        disallow: ['/api/', '/admin', '/_not-found'],
       },
       {
         userAgent: AI_CRAWLERS,
         allow: '/',
-        disallow: ['/api/'],
+        disallow: ['/api/', '/admin'],
       },
     ],
     sitemap: `${BASE_URL}/sitemap.xml`,

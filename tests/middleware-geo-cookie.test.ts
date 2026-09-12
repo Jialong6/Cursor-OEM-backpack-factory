@@ -30,55 +30,55 @@ function visit(
 }
 
 describe('geo_cc on locale-prefixed paths', () => {
-  test('is written when the geo header is present', () => {
-    const response = middleware(visit('/en', 'DE'));
+  test('is written when the geo header is present', async () => {
+    const response = await middleware(visit('/en', 'DE'));
     expect(response.cookies.get(GEO_COUNTRY_COOKIE)?.value).toBe('DE');
   });
 
-  test('is readable by client scripts', () => {
-    const response = middleware(visit('/en', 'DE'));
+  test('is readable by client scripts', async () => {
+    const response = await middleware(visit('/en', 'DE'));
     expect(response.cookies.get(GEO_COUNTRY_COOKIE)?.httpOnly).toBeFalsy();
   });
 
-  test('is written for mainland China so the China gate can act on it', () => {
-    const response = middleware(visit('/zh', 'CN'));
+  test('is written for mainland China so the China gate can act on it', async () => {
+    const response = await middleware(visit('/zh', 'CN'));
     expect(response.cookies.get(GEO_COUNTRY_COOKIE)?.value).toBe('CN');
   });
 
-  test('is not written when no geo header is present', () => {
-    const response = middleware(visit('/en'));
+  test('is not written when no geo header is present', async () => {
+    const response = await middleware(visit('/en'));
     expect(response.cookies.get(GEO_COUNTRY_COOKIE)).toBeUndefined();
   });
 
-  test('is written on inner pages too', () => {
-    const response = middleware(visit('/en/blog', 'FR'));
+  test('is written on inner pages too', async () => {
+    const response = await middleware(visit('/en/blog', 'FR'));
     expect(response.cookies.get(GEO_COUNTRY_COOKIE)?.value).toBe('FR');
   });
 });
 
 describe('geo_cc on the unprefixed redirect path', () => {
-  test('rides along with the locale redirect', () => {
-    const response = middleware(visit('/', 'NL'));
+  test('rides along with the locale redirect', async () => {
+    const response = await middleware(visit('/', 'NL'));
     expect(response.status).toBe(302);
     expect(response.cookies.get(GEO_COUNTRY_COOKIE)?.value).toBe('NL');
   });
 });
 
 describe('geo_cc and crawlers', () => {
-  test('is not written for bots, which never run the analytics scripts', () => {
-    const response = middleware(visit('/en', 'DE', GOOGLEBOT_UA));
+  test('is not written for bots, which never run the analytics scripts', async () => {
+    const response = await middleware(visit('/en', 'DE', GOOGLEBOT_UA));
     expect(response.cookies.get(GEO_COUNTRY_COOKIE)).toBeUndefined();
   });
 });
 
 describe('geo_cc does not disturb existing behaviour', () => {
-  test('the language preference cookie is still set', () => {
-    const response = middleware(visit('/de', 'DE'));
+  test('the language preference cookie is still set', async () => {
+    const response = await middleware(visit('/de', 'DE'));
     expect(response.cookies.get('NEXT_LOCALE')?.value).toBe('de');
   });
 
-  test('bots still get a 308 to the default locale', () => {
-    const response = middleware(visit('/', 'DE', GOOGLEBOT_UA));
+  test('bots still get a 308 to the default locale', async () => {
+    const response = await middleware(visit('/', 'DE', GOOGLEBOT_UA));
     expect(response.status).toBe(308);
   });
 });
