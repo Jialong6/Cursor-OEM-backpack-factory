@@ -7,6 +7,12 @@ import {
   AUTO_REDIRECT_COOKIE_NAME,
 } from './lib/language-preference';
 import { detectBot } from './lib/bot-detector';
+import {
+  buildUnauthorizedResponse,
+  isAdminPath,
+  isAuthorized,
+  readAdminCredentials,
+} from './lib/admin-auth';
 import { syncGeoCountryCookie } from './lib/geo-country-cookie';
 import {
   getLocaleFromPath,
@@ -91,7 +97,29 @@ function getGeoLocale(request: NextRequest): Locale {
  * 4. Geo-IP locale: Detect from country/Accept-Language
  * 5. Default locale: Fallback to 'en'
  */
-export default function middleware(request: NextRequest): NextResponse {
+export default async function middleware(
+  request: NextRequest
+): Promise<NextResponse> {
+  // 0. 看板页:在 bot 检测之前拦下。爬虫打 /admin 也该拿 401,
+  //    而且它不走 i18n —— matcher 会匹配 /admin,不早退就会被 302 到 /en/admin。
+  //    不把 admin 加进 matcher 的排除组,是因为那样 middleware 根本跑不到,
+  //    Basic 鉴权也就无处可挂。
+  if (isAdminPath(request.nextUrl.pathname)) {
+    const authorized = await isAuthorized(
+      request.headers.get('authorization'),
+      readAdminCredentials({
+        ADMIN_USER: process.env.ADMIN_USER,
+        ADMIN_PASSWORD: process.env.ADMIN_PASSWORD,
+      })
+    );
+
+    if (!authorized) {
+      return buildUnauthorizedResponse() as NextResponse;
+    }
+
+    return NextResponse.next();
+  }
+
   const userAgent = request.headers.get('user-agent') || '';
 
   // 1. Bot detection: use botMiddleware (no locale detection)
