@@ -72,6 +72,7 @@ export default function Navbar() {
                 alt="Better Bags Myanmar"
                 width={2481}
                 height={1038}
+                sizes="96px"
                 priority
                 className="h-9 w-auto md:h-10 transition-transform group-hover:scale-105"
               />

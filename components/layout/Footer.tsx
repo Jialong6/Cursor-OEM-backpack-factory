@@ -59,6 +59,7 @@ export default function Footer() {
                 alt="Better Bags Myanmar"
                 width={2481}
                 height={1038}
+                sizes="96px"
                 className="h-10 w-auto"
               />
             </span>
