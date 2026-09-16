@@ -42,6 +42,19 @@ const messages = {
     ],
     takeaway: 'Trade 2 months for 10% savings.',
     cta: 'Get A Quote',
+    // 美国进口关税对比带。数值本身的 12 语一致性在
+    // tests/components/cost-advantage-tariff.test.tsx 里锁,这里只要能渲染
+    tariff: {
+      title: 'Importing to the US?',
+      subtitle: 'US import duty on bags (HTS 4202), MFN base rate.',
+      rows: [
+        { code: 'MM', name: 'Myanmar', rate: '17.6%' },
+        { code: 'VN', name: 'Vietnam', rate: '30.1%' },
+        { code: 'CN', name: 'China', rate: '55.1%' },
+      ],
+      note: 'Verified against USITC HTS 2026 Revision 17.',
+      linkText: 'Read the 2026 tariff guide',
+    },
   },
 };
 

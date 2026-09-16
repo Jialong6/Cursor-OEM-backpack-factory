@@ -96,6 +96,29 @@
     "trustedBrands": "Trusted by Global Brands"
   },
   "costAdvantage": {
+    "tariff": {
+      "title": "Importing to the US? The duty gap is bigger than the price gap.",
+      "subtitle": "US import duty on bags (HTS 4202), MFN base rate. Myanmar carries no Section 301 surcharge.",
+      "rows": [
+        {
+          "code": "MM",
+          "name": "Myanmar",
+          "rate": "17.6%"
+        },
+        {
+          "code": "VN",
+          "name": "Vietnam",
+          "rate": "30.1%"
+        },
+        {
+          "code": "CN",
+          "name": "China",
+          "rate": "55.1%"
+        }
+      ],
+      "note": "Verified line by line against USITC HTS 2026 Revision 17. Rates change — check the guide for the current picture.",
+      "linkText": "Read the 2026 tariff guide"
+    },
     "title": "Why Myanmar: The Cost-vs-Lead-Time Sweet Spot",
     "subtitle": "Same product, same destination (Japan). Different trade-offs. See how our Myanmar production stacks up against China and Vietnam.",
     "countries": [
@@ -702,7 +725,7 @@
     "links": [
       {
         "name": "Home",
-        "href": "#home"
+        "href": "#banner"
       },
       {
         "name": "About Us",
@@ -717,8 +740,8 @@
         "href": "#services"
       },
       {
-        "name": "Process",
-        "href": "#process"
+        "name": "US Tariff Guide",
+        "href": "/blog/us-tariff-myanmar-bags-2026"
       },
       {
         "name": "FAQ",
@@ -1039,7 +1062,7 @@
       "description": "How Better Bags Myanmar handles enquiry details and website analytics, which cookies are used, and how to exercise your data protection rights."
     },
     "home": {
-      "title": "Better Bags Myanmar - Premium OEM Backpack Factory",
+      "title": "Better Bags Myanmar - OEM Backpack Factory in Yangon",
       "description": "Top-tier custom backpack manufacturer in Myanmar. 20+ years of experience, 600+ employees, primarily serving Japanese brands."
     },
     "blogList": {
@@ -1152,5 +1175,10 @@
     "choiceUnset": "no choice recorded",
     "choiceReset": "Change my choice",
     "choiceUnavailable": "Analytics cookies are not used for visitors in your region."
+  },
+  "floatingContact": {
+    "label": "Chat on WhatsApp",
+    "aria": "Chat with Better Bags Myanmar on WhatsApp",
+    "prefill": "Hi Better Bags Myanmar, I would like to ask about OEM backpack manufacturing."
   }
 }

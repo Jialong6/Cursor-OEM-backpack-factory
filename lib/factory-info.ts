@@ -11,6 +11,17 @@
  */
 export const FACTORY_INFO = {
   name: 'Better Bags Myanmar Company Limited',
+  /**
+   * 品牌词的其他写法
+   *
+   * SERP 实测(docs/seo/serp-audit-2026-08-01.md)发现:Google 上搜
+   * "Better Bags Myanmar",五个地区前 20 名都没有官网 —— 位置被
+   * Better Burma(慈善)、Better Corporate、竞品 Orient Bag 占着。
+   * alternateName 让搜索引擎把这几种写法归到同一个实体。
+   *
+   * 注册全名不列在这里:那是 name。
+   */
+  alternateName: ['Better Bags', 'Better Bags Myanmar', 'BetterBags Myanmar'],
   url: 'https://betterbagsmm.com',
   logo: 'https://betterbagsmm.com/logo.png',
   foundingDate: '2003',

@@ -58,6 +58,8 @@ export default function ManufacturingPlantSchema({
     '@type': 'ManufacturingBusiness',
     '@id': `${FACTORY_INFO.url}/#organization`,
     name: FACTORY_INFO.name,
+    // 品牌词的其他写法,帮搜索引擎把它们归到同一个实体
+    alternateName: FACTORY_INFO.alternateName,
     url: FACTORY_INFO.url,
     logo: FACTORY_INFO.logo,
     description,

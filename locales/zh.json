@@ -72,6 +72,29 @@
     "trustedBrands": "与全球知名品牌合作"
   },
   "costAdvantage": {
+    "tariff": {
+      "title": "出口美国?关税差距比出厂价差距大得多。",
+      "subtitle": "美国箱包进口关税(HTS 4202)MFN 基础税率。缅甸不加征 301 条款关税。",
+      "rows": [
+        {
+          "code": "MM",
+          "name": "缅甸",
+          "rate": "17.6%"
+        },
+        {
+          "code": "VN",
+          "name": "越南",
+          "rate": "30.1%"
+        },
+        {
+          "code": "CN",
+          "name": "中国",
+          "rate": "55.1%"
+        }
+      ],
+      "note": "逐行核对 USITC 2026 年 HTS 第 17 修订版。税率会变,最新情况见指南。",
+      "linkText": "查看 2026 年关税指南"
+    },
     "title": "为何选缅甸：成本与交期的最佳平衡",
     "subtitle": "同样的产品，同样出口日本，不同的取舍。看缅甸生产与中国、越南的对比。",
     "countries": [
@@ -573,7 +596,7 @@
     "links": [
       {
         "name": "首页",
-        "href": "#home"
+        "href": "#banner"
       },
       {
         "name": "关于我们",
@@ -588,8 +611,8 @@
         "href": "#services"
       },
       {
-        "name": "流程",
-        "href": "#process"
+        "name": "美国关税指南",
+        "href": "/blog/us-tariff-myanmar-bags-2026"
       },
       {
         "name": "常见问题",
@@ -1043,7 +1066,7 @@
       "description": "通过 Zoom 实时参观我们的仰光背包工厂。免费 60 分钟直播:缝制流水线、品质管控与 X 光验针。周一至周六开放,时区自动换算。"
     },
     "home": {
-      "title": "Better Bags 缅甸 - 高端背包OEM工厂",
+      "title": "Better Bags 缅甸 - 仰光高端背包OEM工厂",
       "description": "缅甸顶级定制背包制造商。20+年经验，600+专业员工，长期服务日本及多国品牌。"
     },
     "blogList": {
@@ -1152,5 +1175,10 @@
     "choiceUnset": "未记录选择",
     "choiceReset": "更改我的选择",
     "choiceUnavailable": "我们不对您所在地区的访客使用分析类 Cookie。"
+  },
+  "floatingContact": {
+    "label": "WhatsApp 咨询",
+    "aria": "通过 WhatsApp 联系 Better Bags Myanmar",
+    "prefill": "你好 Better Bags Myanmar,我想咨询背包 OEM 代工。"
   }
 }

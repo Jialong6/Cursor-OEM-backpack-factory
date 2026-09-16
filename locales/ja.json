@@ -96,6 +96,29 @@
     }
   },
   "costAdvantage": {
+    "tariff": {
+      "title": "米国向けなら、価格差より関税差のほうが大きい。",
+      "subtitle": "米国のバッグ輸入関税(HTS 4202)MFN 基本税率。ミャンマーは 301 条の上乗せなし。",
+      "rows": [
+        {
+          "code": "MM",
+          "name": "ミャンマー",
+          "rate": "17.6%"
+        },
+        {
+          "code": "VN",
+          "name": "ベトナム",
+          "rate": "30.1%"
+        },
+        {
+          "code": "CN",
+          "name": "中国",
+          "rate": "55.1%"
+        }
+      ],
+      "note": "USITC 2026 年版 HTS 第 17 改訂版と一行ずつ照合。税率は変わるため、最新はガイドをご確認ください。",
+      "linkText": "2026 年関税ガイドを読む"
+    },
     "title": "なぜミャンマーなのか：コストと納期のスイートスポット",
     "subtitle": "同じ製品、同じ仕向地（日本）。異なるのはトレードオフです。ミャンマー生産が中国・ベトナムとどう比較されるのか、ぜひご覧ください。",
     "countries": [
@@ -702,7 +725,7 @@
     "links": [
       {
         "name": "ホーム",
-        "href": "#home"
+        "href": "#banner"
       },
       {
         "name": "会社概要",
@@ -717,8 +740,8 @@
         "href": "#services"
       },
       {
-        "name": "プロセス",
-        "href": "#process"
+        "name": "米国関税ガイド",
+        "href": "/blog/us-tariff-myanmar-bags-2026"
       },
       {
         "name": "FAQ",
@@ -1043,7 +1066,7 @@
       "description": "ヤンゴンのバックパック工場を Zoom または Google Meet でライブ見学。縫製ライン・品質管理・X 線検針を 60 分間無料でご案内します。月〜土受付。"
     },
     "home": {
-      "title": "Better Bags Myanmar - 高品質OEMバックパック工場",
+      "title": "Better Bags Myanmar - ヤンゴンのOEMバックパック工場",
       "description": "ミャンマーのトップクラスのカスタムバックパックメーカー。20年以上の経験、600名以上のスタッフを擁し、主に日本ブランド向けに製造しています。"
     },
     "blogList": {
@@ -1152,5 +1175,10 @@
     "choiceUnset": "選択が記録されていません",
     "choiceReset": "選択を変更する",
     "choiceUnavailable": "お客様の地域からの訪問者に対しては、分析用Cookieは使用されません。"
+  },
+  "floatingContact": {
+    "label": "WhatsAppで相談",
+    "aria": "WhatsAppでBetter Bags Myanmarに問い合わせる",
+    "prefill": "Better Bags Myanmar 様、OEMバックパックの製造についてお伺いしたいです。"
   }
 }

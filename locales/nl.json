@@ -96,6 +96,29 @@
     "trustedBrands": "Vertrouwd door internationale merken"
   },
   "costAdvantage": {
+    "tariff": {
+      "title": "Importeren naar de VS? Het verschil in invoerrechten is groter dan in prijs.",
+      "subtitle": "Amerikaans invoerrecht op tassen (HTS 4202), MFN-basistarief. Myanmar heeft geen Section 301-toeslag.",
+      "rows": [
+        {
+          "code": "MM",
+          "name": "Myanmar",
+          "rate": "17,6 %"
+        },
+        {
+          "code": "VN",
+          "name": "Vietnam",
+          "rate": "30,1 %"
+        },
+        {
+          "code": "CN",
+          "name": "China",
+          "rate": "55,1 %"
+        }
+      ],
+      "note": "Regel voor regel getoetst aan USITC HTS 2026 Revision 17. Tarieven veranderen — raadpleeg de gids.",
+      "linkText": "Lees de tariefgids 2026"
+    },
     "title": "Waarom Myanmar: de optimale balans tussen kosten en levertijd",
     "subtitle": "Zelfde product, zelfde bestemming (Japan), andere afwegingen. Zo verhoudt onze productie in Myanmar zich tot China en Vietnam.",
     "countries": [
@@ -702,7 +725,7 @@
     "links": [
       {
         "name": "Home",
-        "href": "#home"
+        "href": "#banner"
       },
       {
         "name": "Over ons",
@@ -717,8 +740,8 @@
         "href": "#services"
       },
       {
-        "name": "Werkwijze",
-        "href": "#process"
+        "name": "VS-invoerrechten",
+        "href": "/blog/us-tariff-myanmar-bags-2026"
       },
       {
         "name": "FAQ",
@@ -1043,7 +1066,7 @@
       "description": "Bezoek onze rugzakfabriek in Yangon live via Zoom of Google Meet. Gratis rondleiding van 60 minuten: naailijnen, QC en naalddetectie. Ma-za."
     },
     "home": {
-      "title": "Better Bags Myanmar - Premium OEM-rugzakfabriek",
+      "title": "Better Bags Myanmar - OEM-rugzakfabriek in Yangon",
       "description": "Toonaangevende fabrikant van maatwerkrugzakken in Myanmar. 20+ jaar ervaring, 600+ medewerkers, voornamelijk voor Japanse merken."
     },
     "blogList": {
@@ -1152,5 +1175,10 @@
     "choiceUnset": "geen keuze geregistreerd",
     "choiceReset": "Mijn keuze wijzigen",
     "choiceUnavailable": "Analysecookies worden niet gebruikt voor bezoekers in uw regio."
+  },
+  "floatingContact": {
+    "label": "Chat via WhatsApp",
+    "aria": "Chat via WhatsApp met Better Bags Myanmar",
+    "prefill": "Hallo Better Bags Myanmar, ik heb een vraag over OEM-rugzakproductie."
   }
 }

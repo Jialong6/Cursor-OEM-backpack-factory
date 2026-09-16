@@ -5,8 +5,9 @@ import { usePathname } from 'next/navigation';
 import { useSectionDwell } from '@/hooks/useSectionDwell';
 import { classifyLink } from '@/lib/analytics/link-classifier';
 import { newMilestones, scrollPercent } from '@/lib/analytics/scroll-depth';
-import { resetPageView, track, trackDwell } from '@/lib/analytics/beacon';
+import { flush, resetPageView, track, trackDwell } from '@/lib/analytics/beacon';
 import type { DwellEntry } from '@/lib/analytics/dwell-accumulator';
+import type { DwellFlushReason } from '@/hooks/useSectionDwell';
 
 /**
  * 第二期自建埋点的唯一生命周期挂载点
@@ -97,9 +98,23 @@ export default function InsightTracker() {
   const pathname = usePathname();
   const mountedPathRef = useRef<string | null>(null);
 
-  const handleDwellFlush = useCallback((entries: readonly DwellEntry[]) => {
-    trackDwell(entries);
-  }, []);
+  /**
+   * 板块停留进队列;页面要走时再顺手把队列本身发走
+   *
+   * beacon 自己也挂着 pagehide,所以理论上不显式发也行 —— 但那要求本 hook
+   * 的监听器比 beacon 的先注册。那个顺序目前成立,却是隐式的,换个 hook
+   * 调用顺序就会静默失效。显式发一次,与注册顺序无关。
+   */
+  const handleDwellFlush = useCallback(
+    (entries: readonly DwellEntry[], reason: DwellFlushReason) => {
+      trackDwell(entries);
+
+      if (reason === 'pagehide') {
+        flush('pagehide');
+      }
+    },
+    []
+  );
 
   useSectionDwell({ pageKey: pathname, onFlush: handleDwellFlush });
   useOutboundClicks();

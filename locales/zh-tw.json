@@ -96,6 +96,29 @@
     "trustedBrands": "深受全球知名品牌信賴"
   },
   "costAdvantage": {
+    "tariff": {
+      "title": "出口美國?關稅差距比出廠價差距大得多。",
+      "subtitle": "美國包款進口關稅(HTS 4202)MFN 基本稅率。緬甸不加徵 301 條款關稅。",
+      "rows": [
+        {
+          "code": "MM",
+          "name": "緬甸",
+          "rate": "17.6%"
+        },
+        {
+          "code": "VN",
+          "name": "越南",
+          "rate": "30.1%"
+        },
+        {
+          "code": "CN",
+          "name": "中國",
+          "rate": "55.1%"
+        }
+      ],
+      "note": "逐行核對 USITC 2026 年 HTS 第 17 修訂版。稅率會變,最新情況見指南。",
+      "linkText": "查看 2026 年關稅指南"
+    },
     "title": "為何選擇緬甸：成本與交期的最佳平衡",
     "subtitle": "同樣的產品，同樣外銷日本，取捨卻不相同。看看緬甸生產與中國、越南的比較。",
     "countries": [
@@ -702,7 +725,7 @@
     "links": [
       {
         "name": "首頁",
-        "href": "#home"
+        "href": "#banner"
       },
       {
         "name": "關於我們",
@@ -717,8 +740,8 @@
         "href": "#services"
       },
       {
-        "name": "合作流程",
-        "href": "#process"
+        "name": "美國關稅指南",
+        "href": "/blog/us-tariff-myanmar-bags-2026"
       },
       {
         "name": "常見問題",
@@ -1043,7 +1066,7 @@
       "description": "透過 Zoom 或 Google Meet 即時參觀我們的仰光後背包工廠。免費 60 分鐘直播:車縫產線、品質管控與 X 光驗針。週一至週六開放。"
     },
     "home": {
-      "title": "Better Bags Myanmar - 高品質後背包 OEM 代工廠",
+      "title": "Better Bags Myanmar - 仰光後背包 OEM 代工廠",
       "description": "緬甸頂級客製化後背包製造商。20+ 年經驗、600+ 名專業員工，主要服務日本品牌。"
     },
     "blogList": {
@@ -1152,5 +1175,10 @@
     "choiceUnset": "尚未記錄任何選擇",
     "choiceReset": "變更我的選擇",
     "choiceUnavailable": "針對您所在地區的訪客，我們不會使用分析 Cookie。"
+  },
+  "floatingContact": {
+    "label": "WhatsApp 諮詢",
+    "aria": "透過 WhatsApp 聯絡 Better Bags Myanmar",
+    "prefill": "您好 Better Bags Myanmar,我想詢問後背包 OEM 代工。"
   }
 }

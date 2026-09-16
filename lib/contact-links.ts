@@ -53,3 +53,26 @@ export function buildMailtoHref(
     ? `mailto:${email}?${params.join('&')}`
     : `mailto:${email}`;
 }
+
+/**
+ * 展示格式号码 → 可拨的 tel: 链接
+ *
+ * 与 toWhatsAppNumber 同源的一个坑:站内原本各处自己写
+ * `number.replace(/[\s()-]/g, '')`,点号留在原地。四条电话线路碰巧都不带点,
+ * 所以一直没暴露;但页脚那个号是 "+1 814.880.1463",拼出来就是
+ * tel:+1814.880.1463 —— RFC 3966 的 global-number 只允许开头一个 + 与数字,
+ * 部分拨号盘直接拒绝。
+ *
+ * 只保留开头的加号:号码中间出现的加号是脏数据,留着同样不合法。
+ *
+ * @example toTelHref('+1 814.880.1463') === 'tel:+18148801463'
+ */
+export function toTelHref(displayNumber: string): string {
+  const digits = displayNumber.replace(/\D/g, '');
+
+  if (digits === '') {
+    return '';
+  }
+
+  return `tel:${displayNumber.trimStart().startsWith('+') ? '+' : ''}${digits}`;
+}

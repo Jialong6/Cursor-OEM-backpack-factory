@@ -11,14 +11,14 @@
  *
  * 维护规则:页面内容(文案/区块/数据)有实质修改时,手工更新对应常量。
  * 初始值依据 git log 中最后一次实质内容提交:
- * - HOME:         2026-07-08 Contact 区 Google Maps 嵌入 + WhatsApp 链接修复
+ * - HOME:         2026-09-16 成本优势区新增美国关税对比 + 首页 title 加入城市名
  * - GLOSSARY:     2026-07-08 页面增补 dateModified/Breadcrumb(词条数据本体 2026-02-04)
  * - FACT_SHEET:   2026-07-01 公司事实最后核实日(原 FactSheetSchema 常量迁入)
  * - VIRTUAL_TOUR: 2026-07-08 落地页上线及链接修复
  * - PRIVACY:      2026-09-11 隐私政策页随访客分析接入一并上线
  */
 
-export const HOME_DATE_MODIFIED = '2026-07-08';
+export const HOME_DATE_MODIFIED = '2026-09-16';
 
 export const GLOSSARY_DATE_MODIFIED = '2026-07-08';
 

@@ -96,6 +96,29 @@
     "trustedBrands": "글로벌 브랜드가 신뢰하는 파트너"
   },
   "costAdvantage": {
+    "tariff": {
+      "title": "미국으로 수출하시나요? 관세 격차가 단가 격차보다 큽니다.",
+      "subtitle": "미국 가방 수입 관세(HTS 4202) MFN 기본 세율. 미얀마는 Section 301 추가 관세가 없습니다.",
+      "rows": [
+        {
+          "code": "MM",
+          "name": "미얀마",
+          "rate": "17.6%"
+        },
+        {
+          "code": "VN",
+          "name": "베트남",
+          "rate": "30.1%"
+        },
+        {
+          "code": "CN",
+          "name": "중국",
+          "rate": "55.1%"
+        }
+      ],
+      "note": "USITC 2026년 HTS Revision 17과 한 줄씩 대조해 확인했습니다. 세율은 변동되므로 가이드를 확인하세요.",
+      "linkText": "2026년 관세 가이드 보기"
+    },
     "title": "왜 미얀마인가: 원가와 납기의 최적 균형점",
     "subtitle": "동일 제품, 동일 수출처(일본) 기준의 비교입니다. 당사 미얀마 생산이 중국·베트남 대비 어떤 조건을 제공하는지 확인해 보시기 바랍니다.",
     "countries": [
@@ -702,7 +725,7 @@
     "links": [
       {
         "name": "홈",
-        "href": "#home"
+        "href": "#banner"
       },
       {
         "name": "회사 소개",
@@ -717,8 +740,8 @@
         "href": "#services"
       },
       {
-        "name": "프로세스",
-        "href": "#process"
+        "name": "미국 관세 가이드",
+        "href": "/blog/us-tariff-myanmar-bags-2026"
       },
       {
         "name": "FAQ",
@@ -1043,7 +1066,7 @@
       "description": "양곤 백팩 공장을 Zoom 또는 Google Meet으로 실시간 견학하십시오. 봉제 라인, QC, X-ray 검침을 60분간 무료로 안내합니다. 월-토 예약 가능."
     },
     "home": {
-      "title": "Better Bags Myanmar - 프리미엄 OEM 백팩 공장",
+      "title": "Better Bags Myanmar - 양곤 OEM 백팩 공장",
       "description": "미얀마 소재 프리미엄 커스텀 백팩 제조업체입니다. 20년 이상의 경험과 600명 이상의 인력으로 일본 브랜드 중심의 OEM 생산 실적을 보유하고 있습니다."
     },
     "blogList": {
@@ -1152,5 +1175,10 @@
     "choiceUnset": "선택 내역 없음",
     "choiceReset": "설정 변경하기",
     "choiceUnavailable": "귀하의 지역 방문자에게는 분석 쿠키가 사용되지 않습니다."
+  },
+  "floatingContact": {
+    "label": "WhatsApp 문의",
+    "aria": "WhatsApp으로 Better Bags Myanmar에 문의하기",
+    "prefill": "안녕하세요 Better Bags Myanmar, OEM 백팩 제조에 대해 문의드립니다."
   }
 }

@@ -96,6 +96,29 @@
     "trustedBrands": "Con la confianza de marcas globales"
   },
   "costAdvantage": {
+    "tariff": {
+      "title": "¿Importa a EE. UU.? La diferencia arancelaria supera la de precio.",
+      "subtitle": "Arancel de importación de EE. UU. para bolsos (HTS 4202), tipo MFN base. Myanmar no tiene recargo de la Sección 301.",
+      "rows": [
+        {
+          "code": "MM",
+          "name": "Myanmar",
+          "rate": "17,6 %"
+        },
+        {
+          "code": "VN",
+          "name": "Vietnam",
+          "rate": "30,1 %"
+        },
+        {
+          "code": "CN",
+          "name": "China",
+          "rate": "55,1 %"
+        }
+      ],
+      "note": "Verificado línea por línea en el HTS 2026 de la USITC (Rev. 17). Los tipos cambian — consulte la guía.",
+      "linkText": "Leer la guía arancelaria 2026"
+    },
     "title": "¿Por qué Myanmar? El punto óptimo entre costo y plazo de entrega",
     "subtitle": "Mismo producto, mismo destino (Japón). Distintas condiciones. Vea cómo nuestra producción en Myanmar se compara con China y Vietnam.",
     "countries": [
@@ -702,7 +725,7 @@
     "links": [
       {
         "name": "Inicio",
-        "href": "#home"
+        "href": "#banner"
       },
       {
         "name": "Sobre nosotros",
@@ -717,8 +740,8 @@
         "href": "#services"
       },
       {
-        "name": "Proceso",
-        "href": "#process"
+        "name": "Aranceles de EE. UU.",
+        "href": "/blog/us-tariff-myanmar-bags-2026"
       },
       {
         "name": "Preguntas frecuentes",
@@ -1043,7 +1066,7 @@
       "description": "Visite en vivo nuestra fábrica de mochilas en Yangon por Zoom o Google Meet. Tour gratuito de 60 minutos: costura, QC y detección de agujas."
     },
     "home": {
-      "title": "Better Bags Myanmar - Fábrica OEM de Mochilas Premium",
+      "title": "Better Bags Myanmar - Fábrica OEM de Mochilas, Yangon",
       "description": "Fabricante líder de mochilas personalizadas en Myanmar. 20+ años de experiencia, 600+ empleados, sirviendo principalmente a marcas japonesas."
     },
     "blogList": {
@@ -1152,5 +1175,10 @@
     "choiceUnset": "ninguna elección registrada",
     "choiceReset": "Cambiar mi elección",
     "choiceUnavailable": "Las cookies analíticas no se utilizan para los visitantes de su región."
+  },
+  "floatingContact": {
+    "label": "Chatear por WhatsApp",
+    "aria": "Chatear con Better Bags Myanmar por WhatsApp",
+    "prefill": "Hola Better Bags Myanmar, quisiera consultar sobre la fabricación OEM de mochilas."
   }
 }

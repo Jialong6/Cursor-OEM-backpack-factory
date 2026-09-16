@@ -46,11 +46,19 @@ const ACTIVITY_EVENTS = Object.freeze([
   'touchstart',
 ] as const)
 
+/**
+ * 这次交出增量是因为什么
+ *
+ * 'pagehide' 对调用方有额外含义:页面马上要走,攒批的定时器会死在原地,
+ * 所以调用方拿到这个原因时应当把传输层也一并发走。
+ */
+export type DwellFlushReason = 'heartbeat' | 'hidden' | 'pagehide' | 'page-change'
+
 export interface UseSectionDwellOptions {
   /** 页面标识。变化时先把上一页的停留发走,再按新 DOM 重建观测 */
   pageKey: string
   /** 拿到增量时的回调 */
-  onFlush: (entries: readonly DwellEntry[]) => void
+  onFlush: (entries: readonly DwellEntry[], reason: DwellFlushReason) => void
   heartbeatMs?: number
 }
 
@@ -71,12 +79,12 @@ export function useSectionDwell(options: UseSectionDwellOptions): void {
     let observer: IntersectionObserver | null = null
     let rafId = 0
 
-    const flush = (): void => {
+    const flush = (reason: DwellFlushReason): void => {
       const result = flushDwell(stateRef.current, now())
       stateRef.current = result.state
 
       if (result.entries.length > 0) {
-        onFlushRef.current(result.entries)
+        onFlushRef.current(result.entries, reason)
       }
     }
 
@@ -84,7 +92,10 @@ export function useSectionDwell(options: UseSectionDwellOptions): void {
       const at = now()
 
       for (const entry of entries) {
-        const sectionId = entry.target.id || entry.target.getAttribute('data-analytics-section')
+        // 先读 data 属性再读 id:属性里放的是 collectSections 定下的 key,
+        // 那才是权威值。反过来读会让 <main id="main-content"> 这个兜底目标
+        // 上报自己的 id,哨兵 key 就永远出不来。
+        const sectionId = entry.target.getAttribute('data-analytics-section') || entry.target.id
 
         if (!sectionId) {
           continue
@@ -129,10 +140,9 @@ export function useSectionDwell(options: UseSectionDwellOptions): void {
       })
 
       for (const target of targets) {
-        // 观测的是元素本身,sectionId 从 id / data 属性回读
-        if (!target.element.id && !target.element.getAttribute('data-analytics-section')) {
-          target.element.setAttribute('data-analytics-section', target.key)
-        }
+        // 一律盖上 key:观测的是元素本身,回调里只能从属性回读。
+        // 无条件写入保证「上报的 key 恒等于 collectSections 定下的 key」。
+        target.element.setAttribute('data-analytics-section', target.key)
         observer.observe(target.element)
       }
     }
@@ -146,9 +156,28 @@ export function useSectionDwell(options: UseSectionDwellOptions): void {
       stateRef.current = setPaused(stateRef.current, now(), hidden)
 
       if (hidden) {
-        // 移动端唯一可靠的「会话可能结束」信号,立刻交数据
-        flush()
+        flush('hidden')
       }
+    }
+
+    /**
+     * 页面即将离开(关闭、跳走,或进 bfcache)
+     *
+     * 必须和 visibilitychange 一起挂,不能二选一:移动端 Safari 的部分关闭
+     * 路径只发 pagehide。lib/analytics/beacon.ts 两条都挂着,这边只挂一条
+     * 的后果就是队列被发走、而停留数据压根没进过队列 —— 线上真的丢过。
+     *
+     * 先暂停再交数据:进了 bfcache 的页面,performance.now() 还在走,
+     * 不暂停的话躺着的那几分钟会被算成有人在读。
+     */
+    const handlePageHide = (): void => {
+      stateRef.current = setPaused(stateRef.current, now(), true)
+      flush('pagehide')
+    }
+
+    /** 从 bfcache 回来,把钟重新起起来(setPaused(false) 顺带重置空闲基线) */
+    const handlePageShow = (): void => {
+      stateRef.current = setPaused(stateRef.current, now(), false)
     }
 
     rafId = requestAnimationFrame(() => scan(0))
@@ -157,8 +186,10 @@ export function useSectionDwell(options: UseSectionDwellOptions): void {
       window.addEventListener(eventName, handleActivity, { passive: true })
     }
     document.addEventListener('visibilitychange', handleVisibility)
+    window.addEventListener('pagehide', handlePageHide)
+    window.addEventListener('pageshow', handlePageShow)
 
-    const heartbeat = setInterval(flush, heartbeatMs)
+    const heartbeat = setInterval(() => flush('heartbeat'), heartbeatMs)
 
     return () => {
       disposed = true
@@ -169,11 +200,13 @@ export function useSectionDwell(options: UseSectionDwellOptions): void {
         window.removeEventListener(eventName, handleActivity)
       }
       document.removeEventListener('visibilitychange', handleVisibility)
+      window.removeEventListener('pagehide', handlePageHide)
+      window.removeEventListener('pageshow', handlePageShow)
 
       observer?.disconnect()
 
       // 先把上一页的数据发走,再让新的 effect 按新 DOM 重建
-      flush()
+      flush('page-change')
       stateRef.current = createDwellState(now())
     }
   }, [pageKey, heartbeatMs])
