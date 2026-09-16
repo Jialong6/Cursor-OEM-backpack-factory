@@ -12,6 +12,7 @@ import { describe, test, expect, beforeEach, afterEach, vi } from 'vitest';
 import { renderHook } from '@testing-library/react';
 import { installIntersectionObserver, type FakeIntersectionObserver } from '../helpers/intersection-observer';
 import { DEFAULT_IDLE_LIMIT_MS } from '../../lib/analytics/dwell-accumulator';
+import { PAGE_FALLBACK_KEY } from '../../lib/analytics/section-targets';
 import { useSectionDwell } from '../../hooks/useSectionDwell';
 import { NAVBAR_HEIGHT } from '../../lib/navigation';
 
@@ -268,5 +269,116 @@ describe('心跳与路由切换', () => {
     unmount();
 
     expect(onFlush).not.toHaveBeenCalled();
+  });
+});
+
+/**
+ * 页面关闭时的交付
+ *
+ * 线上 18 次访问里有 3 次(17%)明明滚到了 75%,却一条板块停留都没入库。
+ * 根因是本 hook 当初只挂了 visibilitychange:beacon 自己两条都挂,
+ * 于是「只触发 pagehide 不触发 visibilitychange」的那些关闭路径
+ * (移动端 Safari、进 bfcache)里,队列被发走了,而停留数据从没进过队列。
+ *
+ * 这一组用例就是那条数据缺口的回归测试。
+ */
+describe('页面关闭与 bfcache', () => {
+  test('pagehide 时把停留交出去 —— 有些关闭路径不会触发 visibilitychange', () => {
+    document.body.innerHTML = sectionsHtml(['costAdvantage']);
+    renderDwell();
+
+    io.emit([{ target: el('costAdvantage'), visibleHeight: 800, selfHeight: 900, viewportHeight: 800 }]);
+    setNow(41_000);
+    window.dispatchEvent(new Event('pagehide'));
+
+    const entries = onFlush.mock.calls.at(-1)?.[0] as ReadonlyArray<{ sectionId: string; ms: number }>;
+    expect(entries?.find((e) => e.sectionId === 'costAdvantage')?.ms).toBe(41_000);
+  });
+
+  test('告诉调用方这次 flush 的原因,调用方才能顺手把传输层也发走', () => {
+    document.body.innerHTML = sectionsHtml(['contact']);
+    renderDwell();
+
+    io.emit([{ target: el('contact'), visibleHeight: 800, selfHeight: 900, viewportHeight: 800 }]);
+    setNow(5_000);
+    window.dispatchEvent(new Event('pagehide'));
+
+    expect(onFlush.mock.calls.at(-1)?.[1]).toBe('pagehide');
+  });
+
+  test('躺在 bfcache 里的那段时间不算停留', () => {
+    document.body.innerHTML = sectionsHtml(['features']);
+    const { unmount } = renderDwell();
+
+    io.emit([{ target: el('features'), visibleHeight: 800, selfHeight: 900, viewportHeight: 800 }]);
+
+    // 看了 3 秒就切走
+    setNow(3_000);
+    window.dispatchEvent(new Event('pagehide'));
+
+    // 在 bfcache 里躺了 10 分钟 —— performance.now() 期间照常走
+    setNow(603_000);
+    window.dispatchEvent(new Event('pageshow'));
+
+    // 回来又看了 2 秒
+    setNow(605_000);
+    unmount();
+
+    const total = onFlush.mock.calls
+      .flatMap((call) => call[0] as ReadonlyArray<{ sectionId: string; ms: number }>)
+      .filter((e) => e.sectionId === 'features')
+      .reduce((sum, e) => sum + e.ms, 0);
+
+    expect(total).toBe(5_000);
+  });
+
+  test('bfcache 恢复之后还能继续计时,不是就此停摆', () => {
+    document.body.innerHTML = sectionsHtml(['about']);
+    const { unmount } = renderDwell();
+
+    io.emit([{ target: el('about'), visibleHeight: 800, selfHeight: 900, viewportHeight: 800 }]);
+    setNow(1_000);
+    window.dispatchEvent(new Event('pagehide'));
+
+    setNow(2_000);
+    window.dispatchEvent(new Event('pageshow'));
+    setNow(9_000);
+    unmount();
+
+    const total = onFlush.mock.calls
+      .flatMap((call) => call[0] as ReadonlyArray<{ sectionId: string; ms: number }>)
+      .filter((e) => e.sectionId === 'about')
+      .reduce((sum, e) => sum + e.ms, 0);
+
+    expect(total).toBe(8_000);
+  });
+
+  test('卸载后 pagehide 不再触发 flush', () => {
+    document.body.innerHTML = sectionsHtml(['faq']);
+    const { unmount } = renderDwell();
+
+    io.emit([{ target: el('faq'), visibleHeight: 800, selfHeight: 900, viewportHeight: 800 }]);
+    setNow(4_000);
+    unmount();
+    onFlush.mockClear();
+
+    window.dispatchEvent(new Event('pagehide'));
+
+    expect(onFlush).not.toHaveBeenCalled();
+  });
+});
+
+describe('兜底 key', () => {
+  test('无 section 的页面上报哨兵 key,而不是 main 元素自己的 id', () => {
+    document.body.innerHTML = '<main id="main-content"><article>post</article></main>';
+    const { unmount } = renderDwell('/en/blog/us-tariff-myanmar-bags-2026');
+
+    const main = document.getElementById('main-content') as Element;
+    io.emit([{ target: main, visibleHeight: 800, selfHeight: 4000, viewportHeight: 800 }]);
+    setNow(20_000);
+    unmount();
+
+    const entries = onFlush.mock.calls.at(-1)?.[0] as ReadonlyArray<{ sectionId: string }>;
+    expect(entries.map((e) => e.sectionId)).toEqual([PAGE_FALLBACK_KEY]);
   });
 });

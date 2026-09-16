@@ -211,6 +211,8 @@ describe('Translation File Unit Tests', () => {
       'services',
       'faq',
       'contact',
+      // 全站常驻的低门槛询盘入口(components/contact/FloatingWhatsApp.tsx)
+      'floatingContact',
       'footer',
       'blog',
       'blogList',

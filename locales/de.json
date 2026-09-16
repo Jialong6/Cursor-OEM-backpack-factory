@@ -96,6 +96,29 @@
     "trustedBrands": "Internationale Marken vertrauen uns"
   },
   "costAdvantage": {
+    "tariff": {
+      "title": "Import in die USA? Der Zollunterschied ist größer als der Preisunterschied.",
+      "subtitle": "US-Einfuhrzoll auf Taschen (HTS 4202), MFN-Basissatz. Für Myanmar kein Section-301-Zuschlag.",
+      "rows": [
+        {
+          "code": "MM",
+          "name": "Myanmar",
+          "rate": "17,6 %"
+        },
+        {
+          "code": "VN",
+          "name": "Vietnam",
+          "rate": "30,1 %"
+        },
+        {
+          "code": "CN",
+          "name": "China",
+          "rate": "55,1 %"
+        }
+      ],
+      "note": "Zeile für Zeile gegen USITC HTS 2026 Rev. 17 geprüft. Sätze ändern sich — aktuelle Lage im Ratgeber.",
+      "linkText": "Zum Zoll-Ratgeber 2026"
+    },
     "title": "Warum Myanmar: Das optimale Verhältnis von Kosten und Lieferzeit",
     "subtitle": "Gleiches Produkt, gleiches Zielland (Japan), unterschiedliche Abwägungen. Sehen Sie, wie sich unsere Fertigung in Myanmar im Vergleich zu China und Vietnam positioniert.",
     "countries": [
@@ -702,7 +725,7 @@
     "links": [
       {
         "name": "Startseite",
-        "href": "#home"
+        "href": "#banner"
       },
       {
         "name": "Über uns",
@@ -717,8 +740,8 @@
         "href": "#services"
       },
       {
-        "name": "Ablauf",
-        "href": "#process"
+        "name": "US-Zoll-Ratgeber",
+        "href": "/blog/us-tariff-myanmar-bags-2026"
       },
       {
         "name": "FAQ",
@@ -1043,7 +1066,7 @@
       "description": "Rucksackfabrik in Yangon live per Zoom oder Google Meet besichtigen. Kostenlose 60-Minuten-Tour: Nählinien, QC, Nadeldetektion. Mo-Sa buchbar."
     },
     "home": {
-      "title": "Better Bags Myanmar - Premium-OEM-Rucksackhersteller",
+      "title": "Better Bags Myanmar - OEM-Rucksackhersteller in Yangon",
       "description": "Kundenspezifischer OEM-Rucksackhersteller in Myanmar. 20+ Jahre Erfahrung, 600+ Mitarbeiter, vorwiegend für japanische Marken tätig."
     },
     "blogList": {
@@ -1152,5 +1175,10 @@
     "choiceUnset": "keine Auswahl gespeichert",
     "choiceReset": "Meine Auswahl ändern",
     "choiceUnavailable": "Analyse-Cookies werden für Besucher in Ihrer Region nicht verwendet."
+  },
+  "floatingContact": {
+    "label": "Chat per WhatsApp",
+    "aria": "Mit Better Bags Myanmar per WhatsApp chatten",
+    "prefill": "Hallo Better Bags Myanmar, ich habe eine Frage zur OEM-Rucksackfertigung."
   }
 }

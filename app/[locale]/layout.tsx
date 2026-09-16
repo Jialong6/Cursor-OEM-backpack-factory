@@ -10,6 +10,7 @@ import { ManufacturingPlantSchema } from '@/components/seo';
 import { LanguageBanner } from '@/components/i18n';
 import { getFontVariables } from '@/app/fonts';
 import AnalyticsScripts from '@/components/analytics';
+import FloatingWhatsApp from '@/components/contact/FloatingWhatsApp';
 import "../globals.css";
 
 /**
@@ -91,6 +92,9 @@ export default async function RootLayout({
             {children}
           </main>
           <Footer />
+          {/* 低门槛询盘入口。挂在根布局而不是首页:blog / glossary /
+              fact-sheet / virtual-factory-tour 此前一个询盘入口都没有 */}
+          <FloatingWhatsApp />
           {/* 访客分析:Vercel(无 cookie,全量)+ GA4/Clarity(按地区门禁) */}
           <AnalyticsScripts />
         </NextIntlClientProvider>

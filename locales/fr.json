@@ -96,6 +96,29 @@
     "trustedBrands": "La confiance des grandes marques internationales"
   },
   "costAdvantage": {
+    "tariff": {
+      "title": "Import vers les États-Unis ? L'écart de droits dépasse l'écart de prix.",
+      "subtitle": "Droits de douane US sur les sacs (HTS 4202), taux MFN de base. Pas de surtaxe Section 301 pour le Myanmar.",
+      "rows": [
+        {
+          "code": "MM",
+          "name": "Myanmar",
+          "rate": "17,6 %"
+        },
+        {
+          "code": "VN",
+          "name": "Vietnam",
+          "rate": "30,1 %"
+        },
+        {
+          "code": "CN",
+          "name": "Chine",
+          "rate": "55,1 %"
+        }
+      ],
+      "note": "Vérifié ligne par ligne dans le HTS 2026 de l'USITC (Revision 17). Les taux évoluent — voir le guide.",
+      "linkText": "Lire le guide des droits 2026"
+    },
     "title": "Pourquoi le Myanmar : le juste équilibre entre coût et délai de production",
     "subtitle": "Même produit, même destination (le Japon), mais des compromis différents. Découvrez comment notre production au Myanmar se positionne face à la Chine et au Vietnam.",
     "countries": [
@@ -702,7 +725,7 @@
     "links": [
       {
         "name": "Accueil",
-        "href": "#home"
+        "href": "#banner"
       },
       {
         "name": "À propos",
@@ -717,8 +740,8 @@
         "href": "#services"
       },
       {
-        "name": "Processus",
-        "href": "#process"
+        "name": "Droits de douane US",
+        "href": "/blog/us-tariff-myanmar-bags-2026"
       },
       {
         "name": "FAQ",
@@ -1043,7 +1066,7 @@
       "description": "Visitez en direct notre usine de sacs à dos de Yangon via Zoom ou Google Meet. Visite gratuite de 60 min : couture, QC, détection d'aiguilles."
     },
     "home": {
-      "title": "Better Bags Myanmar - Usine OEM de sacs à dos haut de gamme",
+      "title": "Better Bags Myanmar - Usine OEM de sacs à dos, Yangon",
       "description": "Fabricant de sacs à dos sur mesure de premier plan au Myanmar. 20+ ans d'expérience, 600+ employés, au service de marques japonaises."
     },
     "blogList": {
@@ -1152,5 +1175,10 @@
     "choiceUnset": "aucun choix enregistré",
     "choiceReset": "Modifier mon choix",
     "choiceUnavailable": "Les cookies d'analyse ne sont pas utilisés pour les visiteurs de votre région."
+  },
+  "floatingContact": {
+    "label": "Discuter sur WhatsApp",
+    "aria": "Discuter avec Better Bags Myanmar sur WhatsApp",
+    "prefill": "Bonjour Better Bags Myanmar, je souhaite me renseigner sur la fabrication OEM de sacs à dos."
   }
 }

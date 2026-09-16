@@ -11,6 +11,7 @@ import {
   toWhatsAppNumber,
   buildWhatsAppHref,
   buildMailtoHref,
+  toTelHref,
 } from '../../lib/contact-links';
 
 describe('toWhatsAppNumber', () => {
@@ -93,5 +94,37 @@ describe('buildMailtoHref', () => {
     expect(buildMailtoHref('a@b.co', { body: 'Hello there' })).toBe(
       'mailto:a@b.co?body=Hello%20there'
     );
+  });
+});
+
+/**
+ * tel: 链接
+ *
+ * 和 toWhatsAppNumber 同源的一个坑:Contact 区原本各写一遍
+ * `number.replace(/[\s()-]/g, '')`,点号留在原地。四条电话线路里
+ * 没有带点的,所以没暴露;但页脚那个号是 "+1 814.880.1463",
+ * 直接拼出来就是 tel:+1814.880.1463 —— 部分拨号盘会拒绝。
+ */
+describe('toTelHref', () => {
+  test('去掉空格、括号、横线与点号', () => {
+    expect(toTelHref('+1 814.880.1463')).toBe('tel:+18148801463');
+    expect(toTelHref('+86 (532) 8856-2277')).toBe('tel:+8653288562277');
+  });
+
+  test('保留国际区号前面的加号', () => {
+    expect(toTelHref('+95 9 9856 70999')).toBe('tel:+959985670999');
+  });
+
+  test('没有加号的号码原样收敛成纯数字', () => {
+    expect(toTelHref('(814) 880-1463')).toBe('tel:8148801463');
+  });
+
+  test('只认开头的加号,号码中间的加号是脏数据,要去掉', () => {
+    expect(toTelHref('+1 814+880')).toBe('tel:+1814880');
+  });
+
+  test('空串不产出一个只有协议头的死链', () => {
+    expect(toTelHref('')).toBe('');
+    expect(toTelHref('   ')).toBe('');
   });
 });

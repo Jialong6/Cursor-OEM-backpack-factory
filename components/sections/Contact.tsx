@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { buildWhatsAppHref } from '@/lib/contact-links';
+import { buildWhatsAppHref, toTelHref } from '@/lib/contact-links';
 import TrustSignals from '@/components/content/TrustSignals';
 import FactoryMapEmbed from '@/components/content/FactoryMapEmbed';
 import QuoteFormFields from '@/components/quote/QuoteFormFields';
@@ -68,7 +68,7 @@ export default function Contact() {
                       {line.person && <span className="text-neutral-500 font-normal"> · {line.person}</span>}
                     </div>
                     <a
-                      href={`tel:${line.number.replace(/[\s()-]/g, '')}`}
+                      href={toTelHref(line.number)}
                       /* 只上报语言线路名。号码本身绝不进库 —— 委托监听器读这个属性 */
                       data-analytics-label={line.lang}
                       className="text-primary hover:text-primary-dark font-medium block"

@@ -1,9 +1,17 @@
 'use client';
 
 import type React from 'react';
-import { useTranslations } from 'next-intl';
+import Link from 'next/link';
+import { useTranslations, useLocale } from 'next-intl';
 import { useAnchorScroll } from '@/hooks/useNavigation';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+
+/** 美国进口关税对比的一行 */
+type TariffRow = {
+  code: 'CN' | 'VN' | 'MM';
+  name: string;
+  rate: string;
+};
 
 type Country = {
   code: 'CN' | 'VN' | 'MM';
@@ -25,6 +33,7 @@ type Country = {
  */
 export default function CostAdvantage() {
   const t = useTranslations('costAdvantage');
+  const locale = useLocale();
   const scrollToAnchor = useAnchorScroll();
   const titleAnim = useScrollAnimation({ variant: 'fade-up' });
   const cardsAnim = useScrollAnimation({ variant: 'fade-up', delay: 100 });
@@ -58,6 +67,8 @@ export default function CostAdvantage() {
           ))}
         </div>
 
+        <TariffBand locale={locale} />
+
         <p className="mt-12 text-center text-base md:text-lg text-neutral-700 max-w-3xl mx-auto leading-relaxed">
           {t('takeaway')}
         </p>
@@ -77,6 +88,69 @@ export default function CostAdvantage() {
         </div>
       </div>
     </section>
+  );
+}
+
+/**
+ * 美国进口关税对比
+ *
+ * 为什么单独一条带,而不是塞进上面三张卡:那三张卡的口径是「同样出口日本」
+ * 的出厂价与交期,关税是美国专属的另一个维度,混在一起读者会以为
+ * 17.6% 和「低 10%」说的是一回事。它们恰恰不是一回事 ——
+ * 「低 10%」是出厂价,关税差的是落地成本,后者大得多。
+ *
+ * 数据出处写在页面上(USITC HTS 2026 Rev. 17):关税变得快,
+ * 标了口径和版本,读者才能自己复核 —— 写错税率比不写更伤信任。
+ */
+function TariffBand({ locale }: { locale: string }) {
+  const t = useTranslations('costAdvantage.tariff');
+  const rows = t.raw('rows') as TariffRow[];
+
+  return (
+    <div className="mt-12 rounded-xl border border-neutral-200 bg-white p-6 md:p-8">
+      <h3 className="text-xl md:text-2xl font-bold text-deep text-center">{t('title')}</h3>
+      <p className="mt-3 text-sm md:text-base text-neutral-600 text-center max-w-3xl mx-auto leading-relaxed">
+        {t('subtitle')}
+      </p>
+
+      <ul className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3">
+        {rows.map((row) => {
+          const highlight = row.code === 'MM';
+          return (
+            <li
+              key={row.code}
+              data-tariff-row={row.code}
+              className={`flex items-baseline justify-between gap-3 rounded-lg px-4 py-3 ${
+                highlight
+                  ? 'border-2 border-primary bg-primary/5'
+                  : 'border border-neutral-200 bg-neutral-50'
+              }`}
+            >
+              <span className="text-sm font-medium text-neutral-700">{row.name}</span>
+              <span
+                className={`text-lg font-bold tabular-nums ${
+                  highlight ? 'text-primary' : 'text-neutral-700'
+                }`}
+              >
+                {row.rate}
+              </span>
+            </li>
+          );
+        })}
+      </ul>
+
+      <p className="mt-5 text-xs text-neutral-500 text-center max-w-3xl mx-auto leading-relaxed">
+        {t('note')}
+      </p>
+      <div className="mt-4 text-center">
+        <Link
+          href={`/${locale}/blog/us-tariff-myanmar-bags-2026`}
+          className="text-sm font-semibold text-primary underline underline-offset-4 hover:text-primary-dark"
+        >
+          {t('linkText')}
+        </Link>
+      </div>
+    </div>
   );
 }
 

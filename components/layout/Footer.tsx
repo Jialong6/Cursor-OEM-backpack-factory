@@ -4,6 +4,8 @@ import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import Image from 'next/image';
 import FooterLanguageLinks from './FooterLanguageLinks';
+import { useAnchorScroll } from '@/hooks/useNavigation';
+import { toTelHref } from '@/lib/contact-links';
 
 /**
  * 页脚组件
@@ -21,26 +23,23 @@ export default function Footer() {
   const locale = useLocale();
 
   /**
-   * Handle link clicks: smooth scroll for anchor links, normal navigation otherwise
+   * 锚点链接的点击处理
+   *
+   * 这里原本是站内第七份各写一遍的滚动实现,而且是唯一一份「找不到元素
+   * 就什么都不做」的 —— 它先 preventDefault 再去 getElementById,于是在
+   * /blog、/glossary、/fact-sheet 上,页脚的「联系我们」点了毫无反应。
+   * useAnchorScroll 自带跨路由兜底(跳 /{locale}#{id}),顺带把 cta_click
+   * 也埋上了。
    */
+  const scrollToAnchor = useAnchorScroll();
+
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // 非锚点(路径式)href 交给 next/Link 自行处理
     if (!href.startsWith('#')) {
       return;
     }
 
-    e.preventDefault();
-    const targetId = href.replace('#', '');
-    const targetElement = document.getElementById(targetId);
-
-    if (targetElement) {
-      const navbarHeight = 80;
-      const targetPosition = targetElement.offsetTop - navbarHeight;
-
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth',
-      });
-    }
+    scrollToAnchor(href, e, { cta: 'footer' });
   };
 
   // 获取快捷链接数据
@@ -105,7 +104,15 @@ export default function Footer() {
                   />
                 </svg>
                 <span>
-                  {t('email')}: {t('companyInfo.email')}
+                  {t('email')}:{' '}
+                  <a
+                    href={`mailto:${t('companyInfo.email')}`}
+                    /* 只上报这个标签,邮箱地址一个字符都不进库 */
+                    data-analytics-label="footer"
+                    className="hover:text-primary transition-colors"
+                  >
+                    {t('companyInfo.email')}
+                  </a>
                 </span>
               </p>
               <p className="text-sm flex items-center gap-2">
@@ -124,7 +131,15 @@ export default function Footer() {
                   />
                 </svg>
                 <span>
-                  {t('tel')}: {t('companyInfo.phone')}
+                  {t('tel')}:{' '}
+                  <a
+                    href={toTelHref(t('companyInfo.phone'))}
+                    /* 同上:标签是固定字符串,号码不进库 */
+                    data-analytics-label="footer"
+                    className="hover:text-primary transition-colors"
+                  >
+                    {t('companyInfo.phone')}
+                  </a>
                 </span>
               </p>
             </div>

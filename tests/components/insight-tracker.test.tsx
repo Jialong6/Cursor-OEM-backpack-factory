@@ -205,4 +205,36 @@ describe('停留数据接线', () => {
 
     expect(trackDwellMock).toHaveBeenCalledWith(entries);
   });
+
+  /**
+   * 不能只靠「hook 的监听器碰巧比 beacon 的先注册」
+   *
+   * 那个顺序确实成立(useSectionDwell 在本组件里第一个被调用),但它是
+   * 隐式的:哪天有人把几个 hook 调用换个位置,停留数据就会重新开始丢,
+   * 而且没有任何测试会红。显式发一次,正确性就与注册顺序无关了。
+   */
+  test('pagehide 那次 flush 顺手把传输层也发走', () => {
+    render(<InsightTracker />);
+
+    const options = dwellMock.mock.calls[0][0] as {
+      onFlush: (entries: readonly unknown[], reason: string) => void;
+    };
+
+    options.onFlush([{ sectionId: 'costAdvantage', ms: 41_000, enterCount: 1, maxCoverage: 1 }], 'pagehide');
+
+    expect(flushMock).toHaveBeenCalledWith('pagehide');
+  });
+
+  test('心跳那次不必强发,攒批的防抖自己会走', () => {
+    render(<InsightTracker />);
+
+    const options = dwellMock.mock.calls[0][0] as {
+      onFlush: (entries: readonly unknown[], reason: string) => void;
+    };
+    flushMock.mockClear();
+
+    options.onFlush([{ sectionId: 'faq', ms: 30_000, enterCount: 1, maxCoverage: 0.9 }], 'heartbeat');
+
+    expect(flushMock).not.toHaveBeenCalled();
+  });
 });
