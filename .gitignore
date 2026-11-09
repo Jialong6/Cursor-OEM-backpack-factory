@@ -51,6 +51,9 @@ mcp-config.json
 # But keep the template version
 !mcp-config.json.template
 .claude/
+# Codex 把本地配置(含 API key)写在仓库目录里;整目录忽略,
+# 它以后再往同一处写别的东西也不必再改这里
+.codex/
 
 # Reference photos / raw assets (kept locally, not in repo)
 image/
