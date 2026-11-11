@@ -115,12 +115,61 @@ describe('作者档案', () => {
   });
 });
 
-describe('翻译文件', () => {
-  it.each(locales)('%s 的 certifications 命名空间里不含无凭据的认证', (locale) => {
-    const namespace = JSON.stringify(localeJson(locale as Locale).certifications ?? {});
+/**
+ * 翻译文件里允许提到那几个标准名的地方
+ *
+ * 这些是**教育性或能力性**内容,不是「我们持有」的声称:
+ * - FAQ 里买家问「能不能提供带这些认证的面料」。答案是能 ——
+ *   持证的是面料厂,不是箱包厂,这个说法本来就成立。
+ * - 词条页在解释这些标准分别是什么意思。
+ *
+ * 白名单按 JSON 路径前缀匹配,刻意写得很窄:放宽它等于放宽对外声称的口径。
+ */
+const ALLOWED_MENTION_PATHS: ReadonlyArray<string> = [
+  'faq.',       // 买家提问与回答(能力声明)
+  'glossary.',  // 词条释义(教育内容)
+];
 
-    for (const claim of UNBACKED_CLAIMS) {
-      expect(namespace).not.toContain(claim);
+/** 把嵌套对象摊平成 路径 -> 字符串 */
+function flatten(value: unknown, prefix = ''): ReadonlyArray<readonly [string, string]> {
+  if (typeof value === 'string') {
+    return [[prefix, value]];
+  }
+  if (Array.isArray(value)) {
+    return value.flatMap((item, index) => flatten(item, `${prefix}${index}.`));
+  }
+  if (value && typeof value === 'object') {
+    return Object.entries(value).flatMap(([key, item]) => flatten(item, `${prefix}${key}.`));
+  }
+  return [];
+}
+
+/**
+ * 整个 locale JSON 都要扫,不能只扫 certifications 命名空间
+ *
+ * 2026-11 的教训:第一版只扫了 certifications,结果漏掉了
+ * `contact.trust.certified` —— 那一行在联系区**可见地**写着
+ * 「ISO 9001・OEKO-TEX・GRS・GOTS 認証取得」。11 个语种此前被修过,
+ * 唯独日语漂在原处,而窄扫描一个用例都没红。
+ */
+describe('翻译文件', () => {
+  it.each(locales)('%s 的任何文案里都不含无凭据的自我声称', (locale) => {
+    for (const [keyPath, text] of flatten(localeJson(locale as Locale))) {
+      if (ALLOWED_MENTION_PATHS.some((allowed) => keyPath.startsWith(allowed))) {
+        continue;
+      }
+
+      for (const claim of UNBACKED_CLAIMS) {
+        expect(text, `${locale} @ ${keyPath}`).not.toContain(claim);
+      }
+    }
+  });
+
+  it.each(locales)('%s 的白名单路径确实存在 —— 免得白名单写错了还一直绿着', (locale) => {
+    const paths = flatten(localeJson(locale as Locale)).map(([keyPath]) => keyPath);
+
+    for (const allowed of ALLOWED_MENTION_PATHS) {
+      expect(paths.some((keyPath) => keyPath.startsWith(allowed)), allowed).toBe(true);
     }
   });
 });
