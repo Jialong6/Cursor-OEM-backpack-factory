@@ -920,11 +920,7 @@
     "aboutAuthor": "关于作者"
   },
   "certifications": {
-    "title": "认证资质",
-    "iso9001": "ISO 9001",
-    "oekoTex": "OEKO-TEX",
-    "grs": "GRS",
-    "gots": "GOTS"
+    "title": "合规与审核"
   },
   "quoteWidget": {
     "openLabel": "获取报价",

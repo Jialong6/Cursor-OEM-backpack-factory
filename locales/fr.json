@@ -920,11 +920,7 @@
     "aboutAuthor": "À propos de l’auteur"
   },
   "certifications": {
-    "title": "Certifications",
-    "iso9001": "ISO 9001",
-    "oekoTex": "OEKO-TEX",
-    "grs": "GRS",
-    "gots": "GOTS"
+    "title": "Conformité et audits"
   },
   "quoteWidget": {
     "openLabel": "Demander un devis",

@@ -920,11 +920,7 @@
     "aboutAuthor": "ရေးသားသူအကြောင်း"
   },
   "certifications": {
-    "title": "အသိအမှတ်ပြု လက်မှတ်များ",
-    "iso9001": "ISO 9001",
-    "oekoTex": "OEKO-TEX",
-    "grs": "GRS",
-    "gots": "GOTS"
+    "title": "စည်းမျဉ်းလိုက်နာမှုနှင့် စစ်ဆေးမှုများ"
   },
   "quoteWidget": {
     "openLabel": "စျေးနှုန်းအဆိုပြုလွှာ ရယူရန်",

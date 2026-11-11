@@ -37,7 +37,10 @@ export const FACTORY_INFO = {
     minValue: 600,
     maxValue: 700,
   },
-  credentials: ['ISO 9001', 'OEKO-TEX', 'GRS', 'GOTS'],
+  // 跟 lib/factory-info.ts 保持一致:那四项无凭据的认证已清空。
+  // 这份是本文件自用的夹具,之前它和真实常量各写一份,所以清空真常量时
+  // 这个文件一个用例都没红 —— 夹具漂移成了假声明的藏身处。
+  credentials: [] as ReadonlyArray<string>,
 };
 
 /**
@@ -389,15 +392,19 @@ describe('Property 10: JSON-LD Schema Validity', () => {
     });
 
     /**
-     * 单元测试：hasCredential 包含认证信息
+     * 单元测试：hasCredential 只输出真实持有的资质
+     *
+     * 这条原本断言必须含 ISO 9001 / OEKO-TEX / GRS / GOTS 四项 ——
+     * 而工厂并不持有它们,于是测试反过来替假声明站岗了。
+     * 现在改成:输出什么都行,但不能出现没有凭据的那几项。
      */
-    it('hasCredential 应该包含工厂认证信息', () => {
+    it('hasCredential 不输出无凭据的认证', () => {
       const schema = generateManufacturingBusinessSchema('en', 'Test description');
+      const claimed = (schema.hasCredential ?? []).join(' | ');
 
-      expect(schema.hasCredential).toContain('ISO 9001');
-      expect(schema.hasCredential).toContain('OEKO-TEX');
-      expect(schema.hasCredential).toContain('GRS');
-      expect(schema.hasCredential).toContain('GOTS');
+      for (const unbacked of ['ISO 9001', 'OEKO-TEX', 'GRS', 'GOTS', 'BSCI']) {
+        expect(claimed).not.toContain(unbacked);
+      }
     });
 
     /**
