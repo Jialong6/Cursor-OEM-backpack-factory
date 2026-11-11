@@ -335,8 +335,10 @@ describe('Checkpoint 4: SEO Structured Data Completeness', () => {
     // Additional: logo, foundingDate, credentials
     expect(FACTORY_INFO.logo).toBeTruthy();
     expect(FACTORY_INFO.foundingDate).toBeTruthy();
+    // credentials 刻意不要求非空:四项无凭据的认证已于 2026-11 清空,
+    // 空列表是合法状态 —— 声称一项查不到的资质,比什么都不声称更糟。
+    // 「每一项都必须有凭据」这条不变量在 tests/seo/credential-claims.test.ts。
     expect(FACTORY_INFO.credentials).toBeInstanceOf(Array);
-    expect(FACTORY_INFO.credentials.length).toBeGreaterThan(0);
   });
 
   it('FACTORY_INFO URL uses https scheme', () => {

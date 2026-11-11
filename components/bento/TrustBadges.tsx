@@ -14,40 +14,41 @@ interface Badge {
  * 古腾堡图表 Weak Fallow Area:
  * 展示认证和合作品牌，增强信任感
  *
+ * 2026-11 清理:原本硬编码了 ISO 9001:2015 / OEKO-TEX / BSCI 三个认证徽章,
+ * 工厂并不持有(已确认),全部撤下。本组件只在 ?bento=true 时渲染,
+ * 但公开可达,照样是对外声称。
+ *
+ * 合作品牌名(Anello / New Balance / Nike / Fila)同时撤下 —— 未经书面授权
+ * 公开代工客户名,既受保密条款约束,也有商标与暗示背书的风险。
+ * 拿到授权后再逐个放回来。
+ *
+ * 徽章位现在放有依据的事实:成立年份与员工规模(见 lib/factory-info.ts)。
+ * 读到 SMETA 报告原件后,这里可以加一条审核信息。
+ *
  * 功能:
- * - ISO 9001:2015, OEKO-TEX, BSCI 认证徽章
- * - 合作品牌展示 (仅名称，保密要求)
+ * - 可核验的事实徽章
  * - 响应式布局
  */
 export function TrustBadges() {
   const t = useTranslations('bento');
 
-  // 认证徽章数据
+  // 只放手里有依据的事实。新增一项前先去
+  // tests/seo/credential-claims.test.ts 的白名单登记并写下凭据出处。
   const certifications: Badge[] = [
     {
-      id: 'iso',
-      name: 'ISO 9001:2015',
-      description: 'Quality Management System',
+      id: 'experience',
+      name: '20+ Years',
+      description: 'OEM bag manufacturing since 2003',
     },
     {
-      id: 'oeko',
-      name: 'OEKO-TEX',
-      description: 'Tested for Harmful Substances',
-    },
-    {
-      id: 'bsci',
-      name: 'BSCI',
-      description: 'Business Social Compliance',
+      id: 'scale',
+      name: '600+ Staff',
+      description: 'In-house production team',
     },
   ];
 
-  // 合作品牌 (仅展示名称)
-  const partnerBrands = [
-    'Anello',
-    'New Balance',
-    'Nike',
-    'Fila',
-  ];
+  // 合作品牌暂不展示:需要客户的书面公开授权
+  const partnerBrands: readonly string[] = [];
 
   return (
     <div

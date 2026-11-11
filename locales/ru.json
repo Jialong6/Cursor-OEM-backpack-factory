@@ -920,11 +920,7 @@
     "aboutAuthor": "Об авторе"
   },
   "certifications": {
-    "title": "Сертификаты",
-    "iso9001": "ISO 9001",
-    "oekoTex": "OEKO-TEX",
-    "grs": "GRS",
-    "gots": "GOTS"
+    "title": "Соответствие и аудиты"
   },
   "quoteWidget": {
     "openLabel": "Получить расчет",

@@ -920,11 +920,7 @@
     "aboutAuthor": "작성자 소개"
   },
   "certifications": {
-    "title": "인증",
-    "iso9001": "ISO 9001",
-    "oekoTex": "OEKO-TEX",
-    "grs": "GRS",
-    "gots": "GOTS"
+    "title": "컴플라이언스 및 감사"
   },
   "quoteWidget": {
     "openLabel": "견적 요청",
